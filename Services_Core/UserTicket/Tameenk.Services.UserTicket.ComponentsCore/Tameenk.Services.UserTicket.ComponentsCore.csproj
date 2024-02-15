@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.Common.UtilitiesCore_New\Tameenk.Common.UtilitiesCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.Core.DomainCore_New\Tameenk.Core.DomainCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.CoreCore_New\Tameenk.CoreCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.DataCore_New\Tameenk.DataCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.Loggin.DALCore_New\Tameenk.Loggin.DALCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.ResourcesCore_New\Tameenk.ResourcesCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.SecurityCore_New\Tameenk.SecurityCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.ServicesCore_New\Tameenk.ServicesCore.csproj" />
+    <ProjectReference Include="..\..\..\TameenkDALCore\TameenkDALCore.csproj" />
+    <ProjectReference Include="..\..\Notification\Tameenk.Services.NotificationsCore\Tameenk.Services.NotificationsCore.csproj" />
+  </ItemGroup>
+
+</Project>

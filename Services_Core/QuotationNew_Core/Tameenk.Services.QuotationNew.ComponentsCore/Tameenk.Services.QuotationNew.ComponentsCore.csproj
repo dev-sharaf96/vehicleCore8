@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="NLog" Version="5.2.8" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Integration_Core\Tameenk.Integration.Core.Core\Tameenk.Integration.Core.Core.csproj" />
+    <ProjectReference Include="..\..\..\Integration_Core\Tameenk.Integration.DtoCore\Tameenk.Integration.DtoCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.Common.UtilitiesCore_New\Tameenk.Common.UtilitiesCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.Core.DomainCore_New\Tameenk.Core.DomainCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.CoreCore_New\Tameenk.CoreCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.DataCore_New\Tameenk.DataCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.Loggin.DALCore_New\Tameenk.Loggin.DALCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.RedisCore_New\Tameenk.RedisCore_New.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.ResourcesCore_New\Tameenk.ResourcesCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.SecurityCore_New\Tameenk.SecurityCore.csproj" />
+    <ProjectReference Include="..\..\..\Libraries_Core\Tameenk.ServicesCore_New\Tameenk.ServicesCore.csproj" />
+  </ItemGroup>
+
+</Project>
