@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6EBBE2E6-D90A-4287-A92F-F0341DF48186}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TameenkDAL</RootNamespace>
+    <AssemblyName>TameenkDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\TameenkDbContext.cs" />
+    <Compile Include="Interceptors\SoftDelete.cs" />
+    <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\ClientUser.cs" />
+    <Compile Include="Models\EntityFrameworkConfiguration.cs" />
+    <Compile Include="Models\OD\InquiryDriverExtraLicenseModel.cs" />
+    <Compile Include="Models\OD\InquiryDriverModel.cs" />
+    <Compile Include="Models\OD\InquiryInsuredModel.cs" />
+    <Compile Include="Models\OD\InquiryResponseModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\Notifications\AwaitingPaymentPolicyUpdNotificationModel.cs" />
+    <Compile Include="Models\Notifications\NotificationModel.cs" />
+    <Compile Include="Models\Notifications\NewPolicyUpdReqtNotificationModel.cs" />
+    <Compile Include="Models\Notifications\RejectedPolicyUpdReqNotification.cs" />
+    <Compile Include="Models\OD\InquiryVehicleModel.cs" />
+    <Compile Include="Models\PolicyModel.cs" />
+    <Compile Include="Models\RegisterationModel.cs" />
+    <Compile Include="Models\StatisticsModel.cs" />
+    <Compile Include="Models\UserProfileData.cs" />
+    <Compile Include="Models\UserTicketHistoryModel.cs" />
+    <Compile Include="Models\VehicleModel.cs" />
+    <Compile Include="Models\VehiclePlateModel.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Store\AdditionalInfoRepository.cs" />
+    <Compile Include="Store\CheckoutRepository.cs" />
+    <Compile Include="Store\DriverRepository.cs" />
+    <Compile Include="Store\GenericRepository.cs" />
+    <Compile Include="Store\LookupsRepository.cs" />
+    <Compile Include="Store\PayfortPaymentRepository.cs" />
+    <Compile Include="Store\PolicyRepository.cs" />
+    <Compile Include="Store\ProductRepository.cs" />
+    <Compile Include="Store\QuotationRequestRepository.cs" />
+    <Compile Include="Store\QuotationResponseRepository.cs" />
+    <Compile Include="Store\TawuniyaRepository.cs" />
+    <Compile Include="UoW\ITameenkUoW.cs" />
+    <Compile Include="UoW\TameenkUoW.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14F920B0-E1F2-4E7B-BE22-4BDE4FC9541F}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8edfcd3e-4461-4b2c-a83e-175983e9c6b7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5cd41905-ac08-410f-9ffb-b3975ffba538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Data\Tameenk.Data.csproj">
+      <Project>{9e27f8af-2b2d-4a16-a0b3-ebf07fac188e}</Project>
+      <Name>Tameenk.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Services\Tameenk.Services.csproj">
+      <Project>{9B11F328-DBF1-4B67-B86D-F3077B4EEA5E}</Project>
+      <Name>Tameenk.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

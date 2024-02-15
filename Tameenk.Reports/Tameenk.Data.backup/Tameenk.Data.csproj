@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C26DB77-7020-41AA-8DAF-E0854F3698CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Data</RootNamespace>
+    <AssemblyName>Tameenk.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\morelinq.3.0.0\lib\net451\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\InsuranceCompanyDataAccess.cs" />
+    <Compile Include="DAL\PolicyDataAccess.cs" />
+    <Compile Include="DAL\CheckoutDetailDataAccess.cs" />
+    <Compile Include="DAL\PolicyProcessingQueueDataAccess.cs" />
+    <Compile Include="DAL\SamaDataAccess.cs" />
+    <Compile Include="Entities\AdditionalInfo.cs" />
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\AspNetRole.cs" />
+    <Compile Include="Entities\AspNetUser.cs" />
+    <Compile Include="Entities\AspNetUserClaim.cs" />
+    <Compile Include="Entities\AspNetUserLogin.cs" />
+    <Compile Include="Entities\AspNetUserRole.cs" />
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\BankCode.cs" />
+    <Compile Include="Entities\Benefit.cs" />
+    <Compile Include="Entities\BreakingSystem.cs" />
+    <Compile Include="Entities\CameraType.cs" />
+    <Compile Include="Entities\CardIDType.cs" />
+    <Compile Include="Entities\CheckoutAdditionalDriver.cs" />
+    <Compile Include="Entities\CheckoutCarImage.cs" />
+    <Compile Include="Entities\CheckoutDetail.cs" />
+    <Compile Include="Entities\Checkout_RiyadBankMigsRequest.cs" />
+    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\Deductible.cs" />
+    <Compile Include="Entities\DistanceRange.cs" />
+    <Compile Include="Entities\Driver.cs" />
+    <Compile Include="Entities\DriverLicense.cs" />
+    <Compile Include="Entities\DriverMedicalCondition.cs" />
+    <Compile Include="Entities\DriverType.cs" />
+    <Compile Include="Entities\DriverViolation.cs" />
+    <Compile Include="Entities\DrivingLicenceYear.cs" />
+    <Compile Include="Entities\EducationLevel.cs" />
+    <Compile Include="Entities\ErrorCode.cs" />
+    <Compile Include="Entities\Gender.cs" />
+    <Compile Include="Entities\InsuaranceCompanyBenefit.cs" />
+    <Compile Include="Entities\InsuranceCompany.cs" />
+    <Compile Include="Entities\InsuranceCompanyProductTypeConfig.cs" />
+    <Compile Include="Entities\Insured.cs" />
+    <Compile Include="Entities\IntegrationTransaction.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\InvoiceFile.cs" />
+    <Compile Include="Entities\Invoice_Benefit.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\LicenseType.cs" />
+    <Compile Include="Entities\Logger.cs" />
+    <Compile Include="Entities\NajmStatu.cs" />
+    <Compile Include="Entities\NajmStatusHistory.cs" />
+    <Compile Include="Entities\NCDFreeYear.cs" />
+    <Compile Include="Entities\Notification.cs" />
+    <Compile Include="Entities\NotificationParameter.cs" />
+    <Compile Include="Entities\Occupation.cs" />
+    <Compile Include="Entities\OrderItem.cs" />
+    <Compile Include="Entities\OrderItemBenefit.cs" />
+    <Compile Include="Entities\ParkingPlace.cs" />
+    <Compile Include="Entities\PayfortPaymentRequest.cs" />
+    <Compile Include="Entities\PayfortPaymentResponse.cs" />
+    <Compile Include="Entities\Payment.cs" />
+    <Compile Include="Entities\PaymentMethod.cs" />
+    <Compile Include="Entities\Policy.cs" />
+    <Compile Include="Entities\PolicyDetail.cs" />
+    <Compile Include="Entities\PolicyFailedTransaction.cs" />
+    <Compile Include="Entities\PolicyFile.cs" />
+    <Compile Include="Entities\PolicyProcessingQueue.cs" />
+    <Compile Include="Entities\PolicyStatu.cs" />
+    <Compile Include="Entities\PolicyUpdatePayment.cs" />
+    <Compile Include="Entities\PolicyUpdateRequest.cs" />
+    <Compile Include="Entities\PolicyUpdateRequestAttachment.cs" />
+    <Compile Include="Entities\PriceDetail.cs" />
+    <Compile Include="Entities\PriceType.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductType.cs" />
+    <Compile Include="Entities\Product_Benefit.cs" />
+    <Compile Include="Entities\PromotionProgram.cs" />
+    <Compile Include="Entities\PromotionProgramCode.cs" />
+    <Compile Include="Entities\PromotionProgramDomain.cs" />
+    <Compile Include="Entities\PromotionProgramUser.cs" />
+    <Compile Include="Entities\QuotationRequest.cs" />
+    <Compile Include="Entities\QuotationResponse.cs" />
+    <Compile Include="Entities\Region.cs" />
+    <Compile Include="Entities\RiyadBankMigsRequest.cs" />
+    <Compile Include="Entities\RiyadBankMigsResponse.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\RoleType.cs" />
+    <Compile Include="Entities\SadadNotificationMessage.cs" />
+    <Compile Include="Entities\SadadNotificationResponse.cs" />
+    <Compile Include="Entities\SadadRequest.cs" />
+    <Compile Include="Entities\SadadResponse.cs" />
+    <Compile Include="Entities\ScheduleTask.cs" />
+    <Compile Include="Entities\Sensor.cs" />
+    <Compile Include="Entities\ShoppingCartItem.cs" />
+    <Compile Include="Entities\ShoppingCartItemBenefit.cs" />
+    <Compile Include="Entities\SMSLog.cs" />
+    <Compile Include="Entities\SpeedStabilizer.cs" />
+    <Compile Include="Model\FailPolicy.cs" />
+    <Compile Include="Model\Sama.cs" />
+    <Compile Include="Model\Tameenk.cs" />
+    <Compile Include="Entities\TawuniyaTempTable.cs" />
+    <Compile Include="Entities\Vehicle.cs" />
+    <Compile Include="Entities\VehicleBodyType.cs" />
+    <Compile Include="Entities\VehicleColor.cs" />
+    <Compile Include="Entities\VehicleIDType.cs" />
+    <Compile Include="Entities\VehicleMaker.cs" />
+    <Compile Include="Entities\VehicleModel.cs" />
+    <Compile Include="Entities\VehiclePlateText.cs" />
+    <Compile Include="Entities\VehiclePlateType.cs" />
+    <Compile Include="Entities\VehicleSpecification.cs" />
+    <Compile Include="Entities\VehicleTransmissionType.cs" />
+    <Compile Include="Entities\VehicleUsagePercentage.cs" />
+    <Compile Include="Entities\Violation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14F920B0-E1F2-4E7B-BE22-4BDE4FC9541F}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,391 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B0830B06-0684-47A3-9C8D-9DEB37C284A9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Services.Tasks</RootNamespace>
+    <AssemblyName>Tameenk.Services.Tasks</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXSSLibrary">
+      <HintPath>..\..\ExternalLibraries\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=4.9.3.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.9.3\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Tameenk\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\AutoMapperConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyRegistrar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.ACIG\Tameenk.Integration.Providers.ACIG.csproj">
+      <Project>{273ed9c3-bdcc-4757-bbe1-09217521807c}</Project>
+      <Name>Tameenk.Integration.Providers.ACIG</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Ahlia\Tameenk.Integration.Providers.Ahlia.csproj">
+      <Project>{18b525eb-fe56-44de-b171-8d897dc0580f}</Project>
+      <Name>Tameenk.Integration.Providers.Ahlia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.AICC\Tameenk.Integration.Providers.AICC.csproj">
+      <Project>{62c6fcd3-56aa-413d-ad19-b360c51fdf3e}</Project>
+      <Name>Tameenk.Integration.Providers.AICC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Alamiya\Tameenk.Integration.Providers.Alalamiya.csproj">
+      <Project>{0b598b0c-121a-4679-a7bd-aa89fc89287d}</Project>
+      <Name>Tameenk.Integration.Providers.Alalamiya</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.AlRajhi\Tameenk.Integration.Providers.AlRajhi.csproj">
+      <Project>{1d7f8df6-9cb2-46e6-81d7-f0a4428df448}</Project>
+      <Name>Tameenk.Integration.Providers.AlRajhi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.ArabianShield\Tameenk.Integration.Providers.ArabianShield.csproj">
+      <Project>{82c97430-e67a-4968-8fa2-a08f9adc2f9f}</Project>
+      <Name>Tameenk.Integration.Providers.ArabianShield</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.BCARE\Tameenk.Integration.Providers.BCARE.csproj">
+      <Project>{13e68208-07c1-4835-93b6-aedadd4b8d5f}</Project>
+      <Name>Tameenk.Integration.Providers.BCARE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.GGI\Tameenk.Integration.Providers.GGI.csproj">
+      <Project>{8a12c90b-966a-4175-9e6a-6e1295999903}</Project>
+      <Name>Tameenk.Integration.Providers.GGI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.GulfUnion\Tameenk.Integration.Providers.GulfUnion.csproj">
+      <Project>{00dbd7e1-09a4-4d82-b3b7-a5cd83b04ccc}</Project>
+      <Name>Tameenk.Integration.Providers.GulfUnion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Malath\Tameenk.Integration.Providers.Malath.csproj">
+      <Project>{70112e13-32f3-44f0-8b54-316f966d05d2}</Project>
+      <Name>Tameenk.Integration.Providers.Malath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.MedGulf\Tameenk.Integration.Providers.MedGulf.csproj">
+      <Project>{bd8fb99b-4d3f-4eb3-8617-1308c2d4b35b}</Project>
+      <Name>Tameenk.Integration.Providers.MedGulf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.SAICO\Tameenk.Integration.Providers.SAICO.csproj">
+      <Project>{1cf2470e-003e-4d02-8bea-5ec0553e2da2}</Project>
+      <Name>Tameenk.Integration.Providers.SAICO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Salama\Tameenk.Integration.Providers.Salama.csproj">
+      <Project>{77905da8-676d-453e-96de-6e2cee8f9a87}</Project>
+      <Name>Tameenk.Integration.Providers.Salama</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Saqr\Tameenk.Integration.Providers.Saqr.csproj">
+      <Project>{7f41f764-fd71-433b-b15d-3fe48166e934}</Project>
+      <Name>Tameenk.Integration.Providers.Saqr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Solidarity\Tameenk.Integration.Providers.Solidarity.csproj">
+      <Project>{be2bf045-f6d4-4c19-9c8f-94fea19aed5b}</Project>
+      <Name>Tameenk.Integration.Providers.Solidarity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Tawuniya\Tameenk.Integration.Providers.Tawuniya.csproj">
+      <Project>{c867fa5e-ef7d-432b-9030-dce7d2e5594b}</Project>
+      <Name>Tameenk.Integration.Providers.Tawuniya</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.TUIC\Tameenk.Integration.Providers.TUIC.csproj">
+      <Project>{77b5aac3-70e3-428e-9a7c-d9beb7e35887}</Project>
+      <Name>Tameenk.Integration.Providers.TUIC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.UCA\Tameenk.Integration.Providers.UCA.csproj">
+      <Project>{63f1d989-6f80-411d-bc8f-a44dbbbc1951}</Project>
+      <Name>Tameenk.Integration.Providers.UCA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Wafa\Tameenk.Integration.Providers.Wafa.csproj">
+      <Project>{ccf9e62c-68ef-46e8-baa7-69426b9a0099}</Project>
+      <Name>Tameenk.Integration.Providers.Wafa</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Wala\Tameenk.Integration.Providers.Wala.csproj">
+      <Project>{bbd3054f-927a-42e9-b6ae-4cc1869579a8}</Project>
+      <Name>Tameenk.Integration.Providers.Wala</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Wataniya\Tameenk.Integration.Providers.Wataniya.csproj">
+      <Project>{e8a3c64c-6839-4309-aa8f-05b260b81bb5}</Project>
+      <Name>Tameenk.Integration.Providers.Wataniya</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Tameenk.Integration.Core\Tameenk.Integration.Core.csproj">
+      <Project>{75031295-c1c2-499d-8dd3-1ac7357fc897}</Project>
+      <Name>Tameenk.Integration.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj">
+      <Project>{51816323-e9ba-457f-844c-0237993ac117}</Project>
+      <Name>Tameenk.Integration.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14f920b0-e1f2-4e7b-be22-4bde4fc9541f}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8EDFCD3E-4461-4B2C-A83E-175983E9C6B7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5CD41905-AC08-410F-9FFB-B3975FFBA538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Data\Tameenk.Data.csproj">
+      <Project>{9e27f8af-2b2d-4a16-a0b3-ebf07fac188e}</Project>
+      <Name>Tameenk.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj">
+      <Project>{339cf262-0f17-4c60-bb6f-fdc5133b3132}</Project>
+      <Name>Tameenk.Loggin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Security\Tameenk.Security.csproj">
+      <Project>{E0A5623C-439C-42EA-90D3-C40192ABAC16}</Project>
+      <Name>Tameenk.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Services.Policy.Components\Tameenk.Services.Policy.Components.csproj">
+      <Project>{99431696-B2B0-4507-9091-F52BF197F01F}</Project>
+      <Name>Tameenk.Services.Policy.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Services\Tameenk.Services.csproj">
+      <Project>{9B11F328-DBF1-4B67-B86D-F3077B4EEA5E}</Project>
+      <Name>Tameenk.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Checkout\Tameenk.Services.Checkout.Components\Tameenk.Services.Checkout.Components.csproj">
+      <Project>{ADCFEAD4-4FEB-4BE4-9343-63735C160FF7}</Project>
+      <Name>Tameenk.Services.Checkout.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Inquiry\Tameenk.Services.Inquiry.Components\Tameenk.Services.Inquiry.Components.csproj">
+      <Project>{DD676510-DEEE-4664-9D2F-AF11F9B8A792}</Project>
+      <Name>Tameenk.Services.Inquiry.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Inquiry\Tameenk.Services.YakeenIntegration.Business\Tameenk.Services.YakeenIntegration.Business.csproj">
+      <Project>{431DF20E-0472-4636-B5A7-8E94F2DEFE03}</Project>
+      <Name>Tameenk.Services.YakeenIntegration.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Payment\Tameenk.Payment.Esal.Component\Tameenk.Payment.Esal.Component.csproj">
+      <Project>{26A5D248-8A21-44AF-9E3B-8875A4E12806}</Project>
+      <Name>Tameenk.Payment.Esal.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Quotation\Tameenk.Services.Quotation.Components\Tameenk.Services.Quotation.Components.csproj">
+      <Project>{2F9AF120-775F-488E-89F4-22A0D6EC9EE4}</Project>
+      <Name>Tameenk.Services.Quotation.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tameenk.Services.Notifications\Tameenk.Services.Notifications.csproj">
+      <Project>{B4E3E35F-360A-4430-BFCD-A2DC4373D7CF}</Project>
+      <Name>Tameenk.Services.Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TameenkDAL\TameenkDAL.csproj">
+      <Project>{6EBBE2E6-D90A-4287-A92F-F0341DF48186}</Project>
+      <Name>TameenkDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tamkeen.bll\Tamkeen.bll.csproj">
+      <Project>{f0344826-89df-484d-8b72-a31d51c77790}</Project>
+      <Name>Tamkeen.bll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>28045</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:28045/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

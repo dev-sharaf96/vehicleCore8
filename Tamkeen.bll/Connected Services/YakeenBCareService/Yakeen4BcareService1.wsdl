@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://yakeen4bcare.yakeen.elm.com/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" name="Yakeen4BcareService" targetNamespace="http://yakeen4bcare.yakeen.elm.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://yakeen4bcare.yakeen.elm.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="CommonErrorObject">
+        <xs:sequence>
+          <xs:element name="Type" type="xs:string" />
+          <xs:element name="ErrorCode" type="xs:int" />
+          <xs:element name="ErrorMessage" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="citizenNameInfoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:string" />
+          <xs:element minOccurs="0" name="nin" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="citizenNameInfoResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="englishFirstName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishLastName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishSecondName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishThirdName" type="xs:string" />
+          <xs:element minOccurs="0" name="familyName" type="xs:string" />
+          <xs:element minOccurs="0" name="fatherName" type="xs:string" />
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="grandFatherName" type="xs:string" />
+          <xs:element name="logId" type="xs:int" />
+          <xs:element minOccurs="0" name="subtribeName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="citizenDriverInfoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element minOccurs="0" name="licExpiryDate" type="xs:string" />
+          <xs:element minOccurs="0" name="nin" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="citizenDriverInfoResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateOfBirthG" type="xs:string" />
+          <xs:element minOccurs="0" name="dateOfBirthH" type="xs:string" />
+          <xs:element minOccurs="0" name="englishFirstName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishLastName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishSecondName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishThirdName" type="xs:string" />
+          <xs:element minOccurs="0" name="familyName" type="xs:string" />
+          <xs:element minOccurs="0" name="fatherName" type="xs:string" />
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="gender" type="tns:gender" />
+          <xs:element minOccurs="0" name="grandFatherName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="licenseListList" nillable="true" type="tns:licenseList5" />
+          <xs:element name="logId" type="xs:int" />
+          <xs:element minOccurs="0" name="subtribeName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="licenseList5">
+        <xs:sequence>
+          <xs:element name="licnsTypeCode" type="xs:short" />
+          <xs:element minOccurs="0" name="licssExpiryDateH" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carInfoBySequenceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element name="ownerID" type="xs:long" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element name="sequenceNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carInfoBySequenceResult">
+        <xs:sequence>
+          <xs:element name="cylinders" type="xs:short" />
+          <xs:element minOccurs="0" name="licenseExpiryDate" type="xs:string" />
+          <xs:element name="logId" type="xs:int" />
+          <xs:element minOccurs="0" name="majorColor" type="xs:string" />
+          <xs:element minOccurs="0" name="minorColor" type="xs:string" />
+          <xs:element name="modelYear" type="xs:short" />
+          <xs:element name="plateTypeCode" type="xs:short" />
+          <xs:element minOccurs="0" name="regplace" type="xs:string" />
+          <xs:element name="vehicleBodyCode" type="xs:short" />
+          <xs:element name="vehicleLoad" type="xs:int" />
+          <xs:element minOccurs="0" name="vehicleMaker" type="xs:string" />
+          <xs:element name="vehicleMakerCode" type="xs:int" />
+          <xs:element minOccurs="0" name="vehicleModel" type="xs:string" />
+          <xs:element name="vehicleModelCode" type="xs:int" />
+          <xs:element name="vehicleWeight" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carPlateInfoBySequenceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element name="ownerID" type="xs:long" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element name="sequenceNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carPlateInfoBySequenceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chassisNumber" type="xs:string" />
+          <xs:element name="logId" type="xs:int" />
+          <xs:element minOccurs="0" name="ownerName" type="xs:string" />
+          <xs:element name="plateNumber" type="xs:short" />
+          <xs:element minOccurs="0" name="plateText1" type="xs:string" />
+          <xs:element minOccurs="0" name="plateText2" type="xs:string" />
+          <xs:element minOccurs="0" name="plateText3" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="alienDriverInfoByIqamaRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element minOccurs="0" name="iqamaNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="licExpiryDate" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="alienDriverInfoByIqamaResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateOfBirthG" type="xs:string" />
+          <xs:element minOccurs="0" name="dateOfBirthH" type="xs:string" />
+          <xs:element minOccurs="0" name="englishFirstName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishLastName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishSecondName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishThirdName" type="xs:string" />
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="gender" type="tns:gender" />
+          <xs:element minOccurs="0" name="lastName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="licensesListList" nillable="true" type="tns:licensesList6" />
+          <xs:element name="logId" type="xs:int" />
+          <xs:element name="nationalityCode" type="xs:short" />
+          <xs:element minOccurs="0" name="secondName" type="xs:string" />
+          <xs:element minOccurs="0" name="thirdName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="licensesList6">
+        <xs:sequence>
+          <xs:element name="licnsTypeCode" type="xs:short" />
+          <xs:element minOccurs="0" name="licssExpiryDateH" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="citizenIDInfoRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:string" />
+          <xs:element minOccurs="0" name="nin" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="citizenIDInfoResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateOfBirthG" type="xs:string" />
+          <xs:element minOccurs="0" name="dateOfBirthH" type="xs:string" />
+          <xs:element minOccurs="0" name="gender" type="tns:gender" />
+          <xs:element minOccurs="0" name="idExpiryDate" type="xs:string" />
+          <xs:element minOccurs="0" name="idIssuePlace" type="xs:string" />
+          <xs:element name="logId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carInfoByCustomRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element minOccurs="0" name="customCardNumber" type="xs:string" />
+          <xs:element name="modelYear" type="xs:short" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carInfoByCustomResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chassisNumber" type="xs:string" />
+          <xs:element name="cylinders" type="xs:short" />
+          <xs:element name="logId" type="xs:int" />
+          <xs:element minOccurs="0" name="majorColor" type="xs:string" />
+          <xs:element minOccurs="0" name="minorColor" type="xs:string" />
+          <xs:element name="modelYear" type="xs:short" />
+          <xs:element name="vehicleBodyCode" type="xs:short" />
+          <xs:element name="vehicleLoad" type="xs:int" />
+          <xs:element minOccurs="0" name="vehicleMaker" type="xs:string" />
+          <xs:element name="vehicleMakerCode" type="xs:int" />
+          <xs:element minOccurs="0" name="vehicleModel" type="xs:string" />
+          <xs:element name="vehicleModelCode" type="xs:int" />
+          <xs:element name="vehicleWeight" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carChassisNumberInfoByCustomRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element minOccurs="0" name="customCardNumber" type="xs:string" />
+          <xs:element name="modelYear" type="xs:short" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carChassisNumberInfoByCustomResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chassisNumber" type="xs:string" />
+          <xs:element name="logId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="alienNameInfoByIqamaRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:string" />
+          <xs:element minOccurs="0" name="iqamaNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="alienNameInfoByIqamaResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="englishFirstName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishLastName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishSecondName" type="xs:string" />
+          <xs:element minOccurs="0" name="englishThirdName" type="xs:string" />
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="lastName" type="xs:string" />
+          <xs:element name="logId" type="xs:int" />
+          <xs:element minOccurs="0" name="secondName" type="xs:string" />
+          <xs:element minOccurs="0" name="thirdName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="alienInfoByIqamaRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chargeCode" type="xs:string" />
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:string" />
+          <xs:element minOccurs="0" name="iqamaNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="alienInfoByIqamaResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateOfBirthG" type="xs:string" />
+          <xs:element minOccurs="0" name="dateOfBirthH" type="xs:string" />
+          <xs:element minOccurs="0" name="gender" type="tns:gender" />
+          <xs:element minOccurs="0" name="iqamaExpiryDateH" type="xs:string" />
+          <xs:element minOccurs="0" name="iqamaIssuePlaceDesc" type="xs:string" />
+          <xs:element name="logId" type="xs:int" />
+          <xs:element name="nationalityCode" type="xs:short" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="gender">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="M" />
+          <xs:enumeration value="F" />
+          <xs:enumeration value="U" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="Yakeen4BcareFault" type="tns:Yakeen4BcareFault" />
+      <xs:complexType name="Yakeen4BcareFault">
+        <xs:sequence>
+          <xs:element name="commonErrorObject" nillable="true" type="tns:CommonErrorObject" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCitizenNameInfo" type="tns:getCitizenNameInfo" />
+      <xs:complexType name="getCitizenNameInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CitizenNameInfoRequest" type="tns:citizenNameInfoRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCitizenNameInfoResponse" type="tns:getCitizenNameInfoResponse" />
+      <xs:complexType name="getCitizenNameInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CitizenNameInfoResult" type="tns:citizenNameInfoResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCitizenDriverInfo" type="tns:getCitizenDriverInfo" />
+      <xs:complexType name="getCitizenDriverInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CitizenDriverInfoRequest" type="tns:citizenDriverInfoRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCitizenDriverInfoResponse" type="tns:getCitizenDriverInfoResponse" />
+      <xs:complexType name="getCitizenDriverInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CitizenDriverInfoResult" type="tns:citizenDriverInfoResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCarInfoBySequence" type="tns:getCarInfoBySequence" />
+      <xs:complexType name="getCarInfoBySequence">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarInfoBySequenceRequest" type="tns:carInfoBySequenceRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCarInfoBySequenceResponse" type="tns:getCarInfoBySequenceResponse" />
+      <xs:complexType name="getCarInfoBySequenceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarInfoBySequenceResult" type="tns:carInfoBySequenceResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCarPlateInfoBySequence" type="tns:getCarPlateInfoBySequence" />
+      <xs:complexType name="getCarPlateInfoBySequence">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarPlateInfoBySequenceRequest" type="tns:carPlateInfoBySequenceRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCarPlateInfoBySequenceResponse" type="tns:getCarPlateInfoBySequenceResponse" />
+      <xs:complexType name="getCarPlateInfoBySequenceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarPlateInfoBySequenceResult" type="tns:carPlateInfoBySequenceResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAlienDriverInfoByIqama" type="tns:getAlienDriverInfoByIqama" />
+      <xs:complexType name="getAlienDriverInfoByIqama">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlienDriverInfoByIqamaRequest" type="tns:alienDriverInfoByIqamaRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAlienDriverInfoByIqamaResponse" type="tns:getAlienDriverInfoByIqamaResponse" />
+      <xs:complexType name="getAlienDriverInfoByIqamaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlienDriverInfoByIqamaResult" type="tns:alienDriverInfoByIqamaResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCitizenIDInfo" type="tns:getCitizenIDInfo" />
+      <xs:complexType name="getCitizenIDInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CitizenIDInfoRequest" type="tns:citizenIDInfoRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCitizenIDInfoResponse" type="tns:getCitizenIDInfoResponse" />
+      <xs:complexType name="getCitizenIDInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CitizenIDInfoResult" type="tns:citizenIDInfoResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCarInfoByCustom" type="tns:getCarInfoByCustom" />
+      <xs:complexType name="getCarInfoByCustom">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarInfoByCustomRequest" type="tns:carInfoByCustomRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCarInfoByCustomResponse" type="tns:getCarInfoByCustomResponse" />
+      <xs:complexType name="getCarInfoByCustomResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarInfoByCustomResult" type="tns:carInfoByCustomResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCarChassisNumberInfoByCustom" type="tns:getCarChassisNumberInfoByCustom" />
+      <xs:complexType name="getCarChassisNumberInfoByCustom">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarChassisNumberInfoByCustomRequest" type="tns:carChassisNumberInfoByCustomRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getCarChassisNumberInfoByCustomResponse" type="tns:getCarChassisNumberInfoByCustomResponse" />
+      <xs:complexType name="getCarChassisNumberInfoByCustomResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarChassisNumberInfoByCustomResult" type="tns:carChassisNumberInfoByCustomResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAlienNameInfoByIqama" type="tns:getAlienNameInfoByIqama" />
+      <xs:complexType name="getAlienNameInfoByIqama">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlienNameInfoByIqamaRequest" type="tns:alienNameInfoByIqamaRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAlienNameInfoByIqamaResponse" type="tns:getAlienNameInfoByIqamaResponse" />
+      <xs:complexType name="getAlienNameInfoByIqamaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlienNameInfoByIqamaResult" type="tns:alienNameInfoByIqamaResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAlienInfoByIqama" type="tns:getAlienInfoByIqama" />
+      <xs:complexType name="getAlienInfoByIqama">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlienInfoByIqamaRequest" type="tns:alienInfoByIqamaRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAlienInfoByIqamaResponse" type="tns:getAlienInfoByIqamaResponse" />
+      <xs:complexType name="getAlienInfoByIqamaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AlienInfoByIqamaResult" type="tns:alienInfoByIqamaResult" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAlienNameInfoByIqama">
+    <wsdl:part name="parameters" element="tns:getAlienNameInfoByIqama" />
+  </wsdl:message>
+  <wsdl:message name="getAlienDriverInfoByIqamaResponse">
+    <wsdl:part name="parameters" element="tns:getAlienDriverInfoByIqamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCarChassisNumberInfoByCustomResponse">
+    <wsdl:part name="parameters" element="tns:getCarChassisNumberInfoByCustomResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCarInfoByCustomResponse">
+    <wsdl:part name="parameters" element="tns:getCarInfoByCustomResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlienNameInfoByIqamaResponse">
+    <wsdl:part name="parameters" element="tns:getAlienNameInfoByIqamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCitizenNameInfo">
+    <wsdl:part name="parameters" element="tns:getCitizenNameInfo" />
+  </wsdl:message>
+  <wsdl:message name="getCitizenDriverInfoResponse">
+    <wsdl:part name="parameters" element="tns:getCitizenDriverInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCarPlateInfoBySequenceResponse">
+    <wsdl:part name="parameters" element="tns:getCarPlateInfoBySequenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCarChassisNumberInfoByCustom">
+    <wsdl:part name="parameters" element="tns:getCarChassisNumberInfoByCustom" />
+  </wsdl:message>
+  <wsdl:message name="getAlienInfoByIqamaResponse">
+    <wsdl:part name="parameters" element="tns:getAlienInfoByIqamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCarInfoByCustom">
+    <wsdl:part name="parameters" element="tns:getCarInfoByCustom" />
+  </wsdl:message>
+  <wsdl:message name="getCitizenIDInfo">
+    <wsdl:part name="parameters" element="tns:getCitizenIDInfo" />
+  </wsdl:message>
+  <wsdl:message name="getAlienInfoByIqama">
+    <wsdl:part name="parameters" element="tns:getAlienInfoByIqama" />
+  </wsdl:message>
+  <wsdl:message name="getCitizenIDInfoResponse">
+    <wsdl:part name="parameters" element="tns:getCitizenIDInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCitizenDriverInfo">
+    <wsdl:part name="parameters" element="tns:getCitizenDriverInfo" />
+  </wsdl:message>
+  <wsdl:message name="getCarInfoBySequence">
+    <wsdl:part name="parameters" element="tns:getCarInfoBySequence" />
+  </wsdl:message>
+  <wsdl:message name="getCarInfoBySequenceResponse">
+    <wsdl:part name="parameters" element="tns:getCarInfoBySequenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCarPlateInfoBySequence">
+    <wsdl:part name="parameters" element="tns:getCarPlateInfoBySequence" />
+  </wsdl:message>
+  <wsdl:message name="getCitizenNameInfoResponse">
+    <wsdl:part name="parameters" element="tns:getCitizenNameInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlienDriverInfoByIqama">
+    <wsdl:part name="parameters" element="tns:getAlienDriverInfoByIqama" />
+  </wsdl:message>
+  <wsdl:message name="Yakeen4BcareFault">
+    <wsdl:part name="Yakeen4BcareFault" element="tns:Yakeen4BcareFault" />
+  </wsdl:message>
+  <wsdl:portType name="Yakeen4Bcare">
+    <wsdl:operation name="getCitizenNameInfo">
+      <wsdl:input name="getCitizenNameInfo" message="tns:getCitizenNameInfo" />
+      <wsdl:output name="getCitizenNameInfoResponse" message="tns:getCitizenNameInfoResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getCitizenDriverInfo">
+      <wsdl:input name="getCitizenDriverInfo" message="tns:getCitizenDriverInfo" />
+      <wsdl:output name="getCitizenDriverInfoResponse" message="tns:getCitizenDriverInfoResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getCarInfoBySequence">
+      <wsdl:input name="getCarInfoBySequence" message="tns:getCarInfoBySequence" />
+      <wsdl:output name="getCarInfoBySequenceResponse" message="tns:getCarInfoBySequenceResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getCarPlateInfoBySequence">
+      <wsdl:input name="getCarPlateInfoBySequence" message="tns:getCarPlateInfoBySequence" />
+      <wsdl:output name="getCarPlateInfoBySequenceResponse" message="tns:getCarPlateInfoBySequenceResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlienDriverInfoByIqama">
+      <wsdl:input name="getAlienDriverInfoByIqama" message="tns:getAlienDriverInfoByIqama" />
+      <wsdl:output name="getAlienDriverInfoByIqamaResponse" message="tns:getAlienDriverInfoByIqamaResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getCitizenIDInfo">
+      <wsdl:input name="getCitizenIDInfo" message="tns:getCitizenIDInfo" />
+      <wsdl:output name="getCitizenIDInfoResponse" message="tns:getCitizenIDInfoResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getCarInfoByCustom">
+      <wsdl:input name="getCarInfoByCustom" message="tns:getCarInfoByCustom" />
+      <wsdl:output name="getCarInfoByCustomResponse" message="tns:getCarInfoByCustomResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getCarChassisNumberInfoByCustom">
+      <wsdl:input name="getCarChassisNumberInfoByCustom" message="tns:getCarChassisNumberInfoByCustom" />
+      <wsdl:output name="getCarChassisNumberInfoByCustomResponse" message="tns:getCarChassisNumberInfoByCustomResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlienNameInfoByIqama">
+      <wsdl:input name="getAlienNameInfoByIqama" message="tns:getAlienNameInfoByIqama" />
+      <wsdl:output name="getAlienNameInfoByIqamaResponse" message="tns:getAlienNameInfoByIqamaResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlienInfoByIqama">
+      <wsdl:input name="getAlienInfoByIqama" message="tns:getAlienInfoByIqama" />
+      <wsdl:output name="getAlienInfoByIqamaResponse" message="tns:getAlienInfoByIqamaResponse" />
+      <wsdl:fault name="Yakeen4BcareFault" message="tns:Yakeen4BcareFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Yakeen4BcareServiceSoapBinding" type="tns:Yakeen4Bcare">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCitizenNameInfo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCitizenNameInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCitizenNameInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCitizenDriverInfo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCitizenDriverInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCitizenDriverInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCarInfoBySequence">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCarInfoBySequence">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCarInfoBySequenceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCarPlateInfoBySequence">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCarPlateInfoBySequence">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCarPlateInfoBySequenceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAlienDriverInfoByIqama">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAlienDriverInfoByIqama">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAlienDriverInfoByIqamaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCarInfoByCustom">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCarInfoByCustom">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCarInfoByCustomResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCitizenIDInfo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCitizenIDInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCitizenIDInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAlienInfoByIqama">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAlienInfoByIqama">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAlienInfoByIqamaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAlienNameInfoByIqama">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAlienNameInfoByIqama">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAlienNameInfoByIqamaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCarChassisNumberInfoByCustom">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCarChassisNumberInfoByCustom">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCarChassisNumberInfoByCustomResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Yakeen4BcareFault">
+        <soap:fault use="literal" name="Yakeen4BcareFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Yakeen4BcareService">
+    <wsdl:port name="Yakeen4BcarePort" binding="tns:Yakeen4BcareServiceSoapBinding">
+      <soap:address location="https://yakeen.eserve.com.sa/Yakeen4Bcare/Yakeen4Bcare" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

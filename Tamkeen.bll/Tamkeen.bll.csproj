@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0344826-89DF-484D-8B72-A31D51C77790}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tamkeen.bll</RootNamespace>
+    <AssemblyName>Tamkeen.bll</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auth\ILogin.cs" />
+    <Compile Include="Auth\Login.cs" />
+    <Compile Include="Business\CheckoutBusiness.cs" />
+    <Compile Include="Business\DriverBusiness.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Connected Services\NajmServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\YakeenBCareService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Langbll.Ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Langbll.Ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Langbll.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Langbll.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageValues.cs" />
+    <Compile Include="Lookups\BankLookup.cs" />
+    <Compile Include="Lookups\BreakingSystemLookup.cs" />
+    <Compile Include="Lookups\CameraTypeLookup.cs" />
+    <Compile Include="Lookups\CityLookup.cs" />
+    <Compile Include="Lookups\ColorLookup.cs" />
+    <Compile Include="Lookups\CountryLookup.cs" />
+    <Compile Include="Lookups\Deductible.cs" />
+    <Compile Include="Lookups\DistanceRangeLookup.cs" />
+    <Compile Include="Lookups\DriverMedicalConditionLookup.cs" />
+    <Compile Include="Lookups\DrivingLicenceYearLookup.cs" />
+    <Compile Include="Lookups\IBankLookup.cs" />
+    <Compile Include="Lookups\IBreakingSystemLookup.cs" />
+    <Compile Include="Lookups\ICameraTypeLookup.cs" />
+    <Compile Include="Lookups\ICityLookup.cs" />
+    <Compile Include="Lookups\IColorLookup.cs" />
+    <Compile Include="Lookups\ICountryLookup.cs" />
+    <Compile Include="Lookups\IDistanceRangeLookup.cs" />
+    <Compile Include="Lookups\IDriverMedicalConditionLookup.cs" />
+    <Compile Include="Lookups\IDrivingLicenceYearLookup.cs" />
+    <Compile Include="Lookups\IEducationLevelLookup.cs" />
+    <Compile Include="Lookups\IMonthLookup.cs" />
+    <Compile Include="Lookups\IOccupationLookup.cs" />
+    <Compile Include="Lookups\IParkingPlaceLookup.cs" />
+    <Compile Include="Lookups\ISensorLookup.cs" />
+    <Compile Include="Lookups\ISpeedStabilizerLookup.cs" />
+    <Compile Include="Lookups\IVehicleTransmissionTypeLookup.cs" />
+    <Compile Include="Lookups\IVehicleUsagePercentageLookup.cs" />
+    <Compile Include="Lookups\IYearLookup.cs" />
+    <Compile Include="Lookups\Nationality.cs" />
+    <Compile Include="Lookups\Gender.cs" />
+    <Compile Include="Lookups\INationality.cs" />
+    <Compile Include="Lookups\IGender.cs" />
+    <Compile Include="Lookups\IProductTypes.cs" />
+    <Compile Include="Lookups\ParkingPlaceLookup.cs" />
+    <Compile Include="Lookups\PrdouctType.cs" />
+    <Compile Include="Lookups\SensorLookup.cs" />
+    <Compile Include="Lookups\SpeedStabilizerLookup.cs" />
+    <Compile Include="Lookups\VehicleTransmissionTypeLookup.cs" />
+    <Compile Include="Lookups\VehicleUsagePercentageLookup.cs" />
+    <Compile Include="Model\PaymentRequestModel.cs" />
+    <Compile Include="Model\PolicyDetails.cs" />
+    <Compile Include="Model\PolicyRequestDriver.cs" />
+    <Compile Include="Model\PolicyResponseMessage.cs" />
+    <Compile Include="Model\PolicyScheduleRequest.cs" />
+    <Compile Include="Model\PolicyScheduleResponse.cs" />
+    <Compile Include="Model\QuotationResponseModel.cs" />
+    <Compile Include="Model\VehicleModel.cs" />
+    <Compile Include="Services\UserProfileService.cs" />
+    <Compile Include="Model\CarPlateInfo.cs" />
+    <Compile Include="Lookups\VehicleType.cs" />
+    <Compile Include="Lookups\YearLookup.cs" />
+    <Compile Include="Model\Cites.cs" />
+    <Compile Include="Model\CardType.cs" />
+    <Compile Include="Model\Driver.cs" />
+    <Compile Include="Model\Error.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\Invoice.cs" />
+    <Compile Include="Model\Lookup.cs" />
+    <Compile Include="Model\Nationalities.cs" />
+    <Compile Include="Model\PrdouctType.cs" />
+    <Compile Include="Model\PriceDetail.cs" />
+    <Compile Include="Model\QuotationServicesApiRequestMessage.cs" />
+    <Compile Include="Model\SadadPaymentResponse.cs" />
+    <Compile Include="Model\UserLogin.cs" />
+    <Compile Include="Model\VehicleTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Najm\INajmService.cs" />
+    <Compile Include="Services\Najm\model\Najm.cs" />
+    <Compile Include="Services\Najm\NajmService.cs" />
+    <Compile Include="Services\Payments\Sadad\Models\Message.cs" />
+    <Compile Include="Services\Payments\Sadad\Models\MessageWebsrevices.cs" />
+    <Compile Include="Services\Payments\Sadad\Models\SadadRequest.cs" />
+    <Compile Include="Services\Payments\Sadad\Models\SadadResponse.cs" />
+    <Compile Include="Services\ServicesConst.cs" />
+    <Compile Include="Services\Yakeen\IYakeenService.cs" />
+    <Compile Include="Services\Yakeen\Models\CarInfoResult.cs" />
+    <Compile Include="Services\Yakeen\Models\CarPlateResult.cs" />
+    <Compile Include="Services\Yakeen\Models\CustomerIdInfoResult.cs" />
+    <Compile Include="Services\Yakeen\Models\CustomerNameInfoResult.cs" />
+    <Compile Include="Services\Yakeen\Models\DriverInfoResult.cs" />
+    <Compile Include="Services\Yakeen\Models\DriverLicense.cs" />
+    <Compile Include="Services\Yakeen\Models\ErrorType.cs" />
+    <Compile Include="Services\Yakeen\Models\YakeenError.cs" />
+    <Compile Include="Services\Yakeen\Models\YakeenRequest.cs" />
+    <Compile Include="Services\Yakeen\Models\YakeenResponse.cs" />
+    <Compile Include="Services\Yakeen\YakeenService.cs" />
+    <Compile Include="UnifiedTextForEnglishAndArabic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnifiedTextForEnglishAndArabic.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOfWork\ILookupUOW.cs" />
+    <Compile Include="UnitOfWork\LookupUOW.cs" />
+    <Compile Include="Utils\CarPlateUtils.cs" />
+    <Compile Include="Utils\Validate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\NajmServices\NCDService.wsdl" />
+    <None Include="Connected Services\NajmServices\NCDService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\NajmServices\NCDService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.alienDriverInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.alienInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.alienNameInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.carChassisNumberInfoByCustomResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.carInfoByCustomResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.carInfoBySequenceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.carPlateInfoBySequenceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.citizenDriverInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.citizenIDInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.citizenNameInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getAlienDriverInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getAlienInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getAlienNameInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getCarChassisNumberInfoByCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getCarInfoByCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getCarInfoBySequenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getCarPlateInfoBySequenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getCitizenDriverInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getCitizenIDInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tamkeen.bll.YakeenBCareService.getCitizenNameInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Yakeen4BcareService1.wsdl" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Services\Payments\Sadad\Key\key_sadad_biller_online_uat.p12">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="UnusedRuleSet.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\NajmServices\" />
+    <WCFMetadataStorage Include="Connected Services\YakeenBCareService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NajmServices\NCDService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NajmServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NajmServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NajmServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj">
+      <Project>{51816323-E9BA-457F-844C-0237993AC117}</Project>
+      <Name>Tameenk.Integration.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8edfcd3e-4461-4b2c-a83e-175983e9c6b7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5cd41905-ac08-410f-9ffb-b3975ffba538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Data\Tameenk.Data.csproj">
+      <Project>{9e27f8af-2b2d-4a16-a0b3-ebf07fac188e}</Project>
+      <Name>Tameenk.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Services\Tameenk.Services.csproj">
+      <Project>{9b11f328-dbf1-4b67-b86d-f3077b4eea5e}</Project>
+      <Name>Tameenk.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TameenkDAL\TameenkDAL.csproj">
+      <Project>{6ebbe2e6-d90a-4287-a92f-f0341df48186}</Project>
+      <Name>TameenkDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\YakeenBCareService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\YakeenBCareService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\YakeenBCareService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Langbll.Ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Langbll.Ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Langbll.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Langbll.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnifiedTextForEnglishAndArabic.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnifiedTextForEnglishAndArabic.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
