@@ -1,0 +1,37 @@
+﻿<ResponseData>
+  <CaseDetails>
+    <Noofaccident>2</Noofaccident>
+    <Name></Name>
+    <ReferenceNo>15021791799127</ReferenceNo>
+    <CaseDetail>
+      <CaseNumber>RD030816757</CaseNumber>
+      <AccidentDate>2016-08-03T16:50:03</AccidentDate>
+      <Liability>50</Liability>
+      <CityName>Riyadh</CityName>
+      <DriverAge>29</DriverAge>
+      <CarModel></CarModel>
+      <CarType>Nissan</CarType>
+      <DriverID>1049034331</DriverID>
+      <SequenceNumber>862899410</SequenceNumber>
+      <OwnerID>1049034299</OwnerID>
+      <EstimatedAmount />
+      <DamageParts>Front Right</DamageParts>
+      <CauseOfAccident />
+    </CaseDetail>
+    <CaseDetail>
+      <CaseNumber>BD030816757</CaseNumber>
+      <AccidentDate>2017-08-03T16:50:03</AccidentDate>
+      <Liability>100</Liability>
+      <CityName>Riyadh</CityName>
+      <DriverAge>29</DriverAge>
+      <CarModel></CarModel>
+      <CarType>Nissan</CarType>
+      <DriverID>1049034331</DriverID>
+      <SequenceNumber>862899410</SequenceNumber>
+      <OwnerID>1049034299</OwnerID>
+      <EstimatedAmount />
+      <DamageParts>Front Right</DamageParts>
+      <CauseOfAccident />
+    </CaseDetail>
+  </CaseDetails>
+</ResponseData>

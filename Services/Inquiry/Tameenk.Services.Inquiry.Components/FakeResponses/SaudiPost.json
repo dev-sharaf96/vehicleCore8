@@ -1,0 +1,23 @@
+﻿{
+  "totalSearchResults": 1,
+  "PostCode": 7880,
+  "success": true,
+  "statusdescription": "SUCCESS",
+  "fullexception": "",
+  "Addresses": [
+    {
+      "Title": "شركة عناية الوسيط لوساطة التأمين",
+      "Address1": "التعاون – طريق الدائري الشمالي الفرعي – 2355",
+      "Address2": "الرياض 1277 – 78189",
+      "BuildingNumber": "2335",
+      "District": "التعاون",
+      "Street": "طريق الدائري الشمالي الفرعي",
+      "City": "الرياض",
+      "CityId": "1",
+      "PostCode": "78189",
+      "AdditionalNumber": "7277",
+      "UnitNumber": "2"
+    }
+  ]
+
+}

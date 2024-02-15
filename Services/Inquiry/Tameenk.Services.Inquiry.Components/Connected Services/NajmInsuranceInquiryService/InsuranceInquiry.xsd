@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetDriverCaseDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="driverId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDriverCaseDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDriverCaseDetailResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDriverCaseDetailWithInquiryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="driverId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+        <xs:element minOccurs="0" name="inquiryType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDriverCaseDetailWithInquiryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDriverCaseDetailWithInquiryTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDriverCaseDetailV2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="driverId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDriverCaseDetailV2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDriverCaseDetailV2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDriverCaseDetailV2WithInquiryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="driverId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+        <xs:element minOccurs="0" name="inquiryType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDriverCaseDetailV2WithInquiryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDriverCaseDetailV2WithInquiryTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehiclePlateNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registrationType" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleCaseDetailResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailWithInquiryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehiclePlateNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registrationType" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+        <xs:element minOccurs="0" name="inquiryType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailWithInquiryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleCaseDetailWithInquiryTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailV2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehiclePlateNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registrationType" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailV2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleCaseDetailV2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailV2WithInquiryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehiclePlateNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registrationType" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+        <xs:element minOccurs="0" name="inquiryType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailV2WithInquiryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleCaseDetailV2WithInquiryTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleMultiInsuranceByPlateNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehiclePlateNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registrationType" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleMultiInsuranceByPlateNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleMultiInsuranceByPlateNoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleMultiInsuranceByPlateNoWithInquiryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehiclePlateNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registrationType" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+        <xs:element minOccurs="0" name="inquiryType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleMultiInsuranceByPlateNoWithInquiryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleMultiInsuranceByPlateNoWithInquiryTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleMultiInsuranceBySequenceNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleSequenceno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleMultiInsuranceBySequenceNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleMultiInsuranceBySequenceNoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleMultiInsuranceBySequenceNoWithInquiryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleSequenceno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+        <xs:element minOccurs="0" name="inquiryType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleMultiInsuranceBySequenceNoWithInquiryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleMultiInsuranceBySequenceNoWithInquiryTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailBySequenceNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleSequenceno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailBySequenceNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleCaseDetailBySequenceNoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailBySequenceNoWithInquiryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleSequenceno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+        <xs:element minOccurs="0" name="inquiryType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailBySequenceNoWithInquiryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleCaseDetailBySequenceNoWithInquiryTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailBySequenceNoV2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleSequenceno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailBySequenceNoV2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleCaseDetailBySequenceNoV2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailBySequenceNoV2WithInquiryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleSequenceno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="insuranceID" type="xs:int" />
+        <xs:element minOccurs="0" name="inquiryType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleCaseDetailBySequenceNoV2WithInquiryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleCaseDetailBySequenceNoV2WithInquiryTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

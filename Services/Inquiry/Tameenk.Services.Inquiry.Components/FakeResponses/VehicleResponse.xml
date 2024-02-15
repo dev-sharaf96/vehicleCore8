@@ -1,0 +1,37 @@
+﻿<ResponseData>
+  <CaseDetails>
+    <Noofaccident>2</Noofaccident>
+    <Name></Name>
+    <ReferenceNo>15021791799134</ReferenceNo>
+    <CaseDetail>
+      <CaseNumber>RD310315275</CaseNumber>
+      <AccidentDate>2015-03-31T10:56:51</AccidentDate>
+      <Liability>100</Liability>
+      <CityName>Riyadh</CityName>
+      <DriverAge>27</DriverAge>
+      <CarModel></CarModel>
+      <CarType>GMC</CarType>
+      <DriverID>2374728190</DriverID>
+      <SequenceNumber />
+      <OwnerID />
+      <EstimatedAmount />
+      <DamageParts>Other</DamageParts>
+      <CauseOfAccident>others</CauseOfAccident>
+    </CaseDetail>
+    <CaseDetail>
+      <CaseNumber>RD301215129</CaseNumber>
+      <AccidentDate>2015-12-30T08:13:51</AccidentDate>
+      <Liability>0</Liability>
+      <CityName>Riyadh</CityName>
+      <DriverAge>28</DriverAge>
+      <CarModel></CarModel>
+      <CarType>GMC</CarType>
+      <DriverID>2374728190</DriverID>
+      <SequenceNumber />
+      <OwnerID />
+      <EstimatedAmount />
+      <DamageParts>Rear Left</DamageParts>
+      <CauseOfAccident />
+    </CaseDetail>
+  </CaseDetails>
+</ResponseData>

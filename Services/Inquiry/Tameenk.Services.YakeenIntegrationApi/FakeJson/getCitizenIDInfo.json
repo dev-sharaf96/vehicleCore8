@@ -1,0 +1,27 @@
+﻿{
+  "dateOfBirthG": "12-09-1969",
+  "dateOfBirthH": "01-07-1389",
+  "englishFirstName": "ALI",
+  "englishLastName": "ALFURAIH",
+  "englishSecondName": "SAAD",
+  "englishThirdName": "M",
+  "familyName": "الفريح",
+  "fatherName": "سعد",
+  "firstName": "علي",
+  "gender": 0,
+  "genderSpecified": true,
+  "grandFatherName": "محمد",
+  "idExpiryDate": "28-06-1440",
+  "idIssuePlace": "الرياض",
+  "licenseListList": [
+    {
+      "licnsTypeDesc": "خاصة                     ",
+      "licssExpiryDateH": "27-02-1443",
+      "licssIssueDate": "25-02-1408"
+    }
+  ],
+  "logId": 148114634,
+  "occupationCode": "G",
+  "socialStatusDetailedDesc": "متزوج",
+  "subtribeName": ""
+}

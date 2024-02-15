@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d7837774-d128-48e7-b81d-469a645dd3db" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://portalservices1.najm.sa/NCDService/NCDService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NCDService1.wsdl" MetadataType="Wsdl" ID="8470e7cf-62fd-428e-b3a7-7aa721451ec8" SourceId="1" SourceUrl="https://portalservices1.najm.sa/NCDService/NCDService.svc?wsdl" />
+    <MetadataFile FileName="NCDService2.xsd" MetadataType="Schema" ID="c67082ff-439b-416b-ade7-d332ad18474e" SourceId="1" SourceUrl="https://portalservices1.najm.sa/NCDService/NCDService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NCDService3.xsd" MetadataType="Schema" ID="acdd488d-1282-410a-b0d0-a5819b936878" SourceId="1" SourceUrl="https://portalservices1.najm.sa/NCDService/NCDService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NCDService.disco" MetadataType="Disco" ID="6fc1d091-d6ad-4605-86f6-1972908328aa" SourceId="1" SourceUrl="https://portalservices1.najm.sa/NCDService/NCDService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

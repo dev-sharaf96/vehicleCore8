@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InsuranceInquiry" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IInsuranceInquiry_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://portaluat.najm.sa/InsuranceInquiry/InsuranceInquiry.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://portaluat.najm.sa/InsuranceInquiry/InsuranceInquiry.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInsuranceInquiry_GetDriverCaseDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverCaseDetail" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetDriverCaseDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverCaseDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetDriverCaseDetailWithInquiryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverCaseDetailWithInquiryType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetDriverCaseDetailWithInquiryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverCaseDetailWithInquiryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetDriverCaseDetailV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverCaseDetailV2" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetDriverCaseDetailV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverCaseDetailV2Response" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetDriverCaseDetailV2WithInquiryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverCaseDetailV2WithInquiryType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetDriverCaseDetailV2WithInquiryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDriverCaseDetailV2WithInquiryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetail" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailWithInquiryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailWithInquiryType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailWithInquiryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailWithInquiryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailV2" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailV2Response" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailV2WithInquiryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailV2WithInquiryType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailV2WithInquiryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailV2WithInquiryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleMultiInsuranceByPlateNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleMultiInsuranceByPlateNo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleMultiInsuranceByPlateNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleMultiInsuranceByPlateNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleMultiInsuranceByPlateNoWithInquiryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleMultiInsuranceByPlateNoWithInquiryType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleMultiInsuranceByPlateNoWithInquiryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleMultiInsuranceByPlateNoWithInquiryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleMultiInsuranceBySequenceNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleMultiInsuranceBySequenceNo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleMultiInsuranceBySequenceNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleMultiInsuranceBySequenceNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleMultiInsuranceBySequenceNoWithInquiryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleMultiInsuranceBySequenceNoWithInquiryType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleMultiInsuranceBySequenceNoWithInquiryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleMultiInsuranceBySequenceNoWithInquiryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailBySequenceNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailBySequenceNo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailBySequenceNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailBySequenceNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoWithInquiryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailBySequenceNoWithInquiryType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoWithInquiryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailBySequenceNoWithInquiryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailBySequenceNoV2" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailBySequenceNoV2Response" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoV2WithInquiryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailBySequenceNoV2WithInquiryType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoV2WithInquiryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleCaseDetailBySequenceNoV2WithInquiryTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInsuranceInquiry">
+    <wsdl:operation name="GetDriverCaseDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetail" message="tns:IInsuranceInquiry_GetDriverCaseDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailResponse" message="tns:IInsuranceInquiry_GetDriverCaseDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverCaseDetailWithInquiryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailWithInquiryType" message="tns:IInsuranceInquiry_GetDriverCaseDetailWithInquiryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailWithInquiryTypeResponse" message="tns:IInsuranceInquiry_GetDriverCaseDetailWithInquiryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverCaseDetailV2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailV2" message="tns:IInsuranceInquiry_GetDriverCaseDetailV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailV2Response" message="tns:IInsuranceInquiry_GetDriverCaseDetailV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverCaseDetailV2WithInquiryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailV2WithInquiryType" message="tns:IInsuranceInquiry_GetDriverCaseDetailV2WithInquiryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailV2WithInquiryTypeResponse" message="tns:IInsuranceInquiry_GetDriverCaseDetailV2WithInquiryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetail" message="tns:IInsuranceInquiry_GetVehicleCaseDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailResponse" message="tns:IInsuranceInquiry_GetVehicleCaseDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailWithInquiryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailWithInquiryType" message="tns:IInsuranceInquiry_GetVehicleCaseDetailWithInquiryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailWithInquiryTypeResponse" message="tns:IInsuranceInquiry_GetVehicleCaseDetailWithInquiryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailV2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailV2" message="tns:IInsuranceInquiry_GetVehicleCaseDetailV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailV2Response" message="tns:IInsuranceInquiry_GetVehicleCaseDetailV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailV2WithInquiryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailV2WithInquiryType" message="tns:IInsuranceInquiry_GetVehicleCaseDetailV2WithInquiryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailV2WithInquiryTypeResponse" message="tns:IInsuranceInquiry_GetVehicleCaseDetailV2WithInquiryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMultiInsuranceByPlateNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceByPlateNo" message="tns:IInsuranceInquiry_GetVehicleMultiInsuranceByPlateNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceByPlateNoResponse" message="tns:IInsuranceInquiry_GetVehicleMultiInsuranceByPlateNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMultiInsuranceByPlateNoWithInquiryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceByPlateNoWithInquiryType" message="tns:IInsuranceInquiry_GetVehicleMultiInsuranceByPlateNoWithInquiryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceByPlateNoWithInquiryTypeResponse" message="tns:IInsuranceInquiry_GetVehicleMultiInsuranceByPlateNoWithInquiryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMultiInsuranceBySequenceNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceBySequenceNo" message="tns:IInsuranceInquiry_GetVehicleMultiInsuranceBySequenceNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceBySequenceNoResponse" message="tns:IInsuranceInquiry_GetVehicleMultiInsuranceBySequenceNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMultiInsuranceBySequenceNoWithInquiryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceBySequenceNoWithInquiryType" message="tns:IInsuranceInquiry_GetVehicleMultiInsuranceBySequenceNoWithInquiryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceBySequenceNoWithInquiryTypeResponse" message="tns:IInsuranceInquiry_GetVehicleMultiInsuranceBySequenceNoWithInquiryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailBySequenceNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNo" message="tns:IInsuranceInquiry_GetVehicleCaseDetailBySequenceNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoResponse" message="tns:IInsuranceInquiry_GetVehicleCaseDetailBySequenceNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailBySequenceNoWithInquiryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoWithInquiryType" message="tns:IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoWithInquiryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoWithInquiryTypeResponse" message="tns:IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoWithInquiryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailBySequenceNoV2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoV2" message="tns:IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoV2Response" message="tns:IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailBySequenceNoV2WithInquiryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoV2WithInquiryType" message="tns:IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoV2WithInquiryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoV2WithInquiryTypeResponse" message="tns:IInsuranceInquiry_GetVehicleCaseDetailBySequenceNoV2WithInquiryType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IInsuranceInquiry" type="tns:IInsuranceInquiry">
+    <wsp:PolicyReference URI="#WSHttpBinding_IInsuranceInquiry_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDriverCaseDetail">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverCaseDetailWithInquiryType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailWithInquiryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverCaseDetailV2">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverCaseDetailV2WithInquiryType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetDriverCaseDetailV2WithInquiryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetail">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailWithInquiryType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailWithInquiryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailV2">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailV2WithInquiryType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailV2WithInquiryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMultiInsuranceByPlateNo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceByPlateNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMultiInsuranceByPlateNoWithInquiryType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceByPlateNoWithInquiryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMultiInsuranceBySequenceNo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceBySequenceNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleMultiInsuranceBySequenceNoWithInquiryType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleMultiInsuranceBySequenceNoWithInquiryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailBySequenceNo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailBySequenceNoWithInquiryType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoWithInquiryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailBySequenceNoV2">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleCaseDetailBySequenceNoV2WithInquiryType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceInquiry/GetVehicleCaseDetailBySequenceNoV2WithInquiryType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InsuranceInquiry">
+    <wsdl:port name="WSHttpBinding_IInsuranceInquiry" binding="tns:WSHttpBinding_IInsuranceInquiry">
+      <soap12:address location="https://portaluat.najm.sa/InsuranceInquiry/InsuranceInquiry.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://portaluat.najm.sa/InsuranceInquiry/InsuranceInquiry.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
