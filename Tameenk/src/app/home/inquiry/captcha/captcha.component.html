@@ -1,0 +1,14 @@
+<div class="col-xs-6 bx-right md-mar no-pd">
+    <span class="captcha-container">
+        <img class="captcha-img" alt="الرمز" title="الرمز" [src]="image" [ngClass]="{'red-border': isValid('captchaImg')}" *ngIf="image">
+        <button type="button" class="reload-btn" (click)="getCaptcha()" [title]="'inquiry.captcha.reload' | translate"><i class="fas fa-sync"></i></button>
+        <span *ngFor="let error of validationErrors.captcha['captchaImg']" class="field-error" style="color:red;position:absolute;bottom: -22px;">{{error | translate}}</span>
+    </span>
+</div>
+<div class="col-xs-5 bx-right md-mar no-pd">
+    <div class="input-container" style="margin-top: 3px; width:100%" [ngClass]="{'red-border': isValid('captchaInput')}">
+        <input class="input-element" appFloatedLabel type="tel" id="captchaCode" [(ngModel)]="captcha.captchaInput" appNumberOnly (keypress)="restrictNumeric($event)" autocomplete="off" maxlength="4" (input)="checkCaptchaInput($event)" />
+        <label class="input-label" for="captchaCode" translate>inquiry.captcha.input_symbols</label>
+        <span *ngFor="let error of validationErrors.captcha['captchaInput']" class="field-error" style="color:red;position:absolute;min-width: 140px">{{error | translate}}</span>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/sampleData.css">
+    <script>
+        $(function () {
+            var myData =
+                {
+"ReferenceId" : "T0126738e266f2c",
+"PolicyNo" : "P/2017/4384659",
+"StatusCode" : 1,
+"StatusDescription" : "SUBMITTED",
+"UploadedDate" : "2017-08-24T15:45:28+03:00",
+"UploadedReference" : "123456789"
+};
+            var textedJson = JSON.stringify(myData, undefined, 4);
+            $('#myTextarea').text(textedJson);
+        });
+
+    </script>
+
+</head>
+<body>
+    <textarea name="" id="myTextarea" ></textarea>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<div class="cd-cart-container" [ngClass]="[comparProducts.length > 0 && compareListIsOpen ? 'cart-open' : 'hide-cart', comparProducts.length === 0 ? 'empty' : '']">
+  <a href="javascript:void(0)" (click)="toggleCompareList()" class="cd-cart-trigger" translate>
+      quotation.Search_List_of_Comparisons
+    <ul class="count">
+      <!-- cart items count -->
+      <li>{{comparProducts.length}}</li>
+    </ul>
+    <!-- .count -->
+  </a>
+  <div class="cd-cart">
+    <div class="wrapper">
+      <header>
+        <h2 translate>quotation.Search_List_of_Comparisons</h2>
+        <span class="undo">
+          تم الحذف
+          <a href="javascript:void(0)">اعاده</a>
+        </span>
+      </header>
+      <div class="body">
+        <ul>
+          <li class="product" *ngFor="let compareProduct of comparProducts">
+            <div class="product-image">
+              <a href="javascript:void(0)">
+                <img [src]="'/resources/imgs/insurerlogos/' + compareProduct.companyKey + '.png'" [alt]="compareProduct.companyKey" [title]="compareProduct.companyKey">
+              </a>
+            </div>
+            <div class="product-details">
+              <h3>
+                <a href="javascript:void(0)">{{compareProduct.productNameAr}}</a>
+              </h3><a href="javascript:void(0)" class="delete-item ic-plus rotate" (click)="deleteProduct(compareProduct)"></a>
+              <span class="txt-sm f_width dis-block bx-right txt-mgray xs-mar">
+                <strong>{{compareProduct.productPrice |  number:'1.0-2'}}</strong> {{'quotation.SAR' | translate}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <a href="javascript:void(0)" class="checkout btn closeComparison" (click)="openComparison()" translate>quotation.Search_See_Comparison</a>
+      </footer>
+    </div>
+  </div>
+  <!-- .cd-cart -->
+</div>
+
+<section class="compare-container" *ngIf="compareIsOpen && comparProducts.length > 0">
+
+  <!-- <ul class="thead-mobile">
+    <li class="bg-blue" *ngFor="let compareProduct of comparProducts">
+      <div class="img-holder">
+        <img [src]="'/resources/imgs/insurerlogos/' + compareProduct.companyKey + '.png'" [alt]="compareProduct.companyKey">
+      </div>
+      <div class="price-holder">
+        <span class="txt-sm f_width dis-block bx-right txt-mgray xs-mar">
+          <strong>{{compareProduct.productPrice |  number:'1.0-2'}}</strong><br />{{'quotation.SAR' | translate}}</span>
+      </div>
+    </li>
+  </ul> -->
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <a href="javascript:void(0)" class="closeThis btn sm dis-block txt-white login txt-brand borderd-hvr txt-xs bg-gr-main  circ-rdus l-shadow"
+            (click)="closeComparisonModel()" translate>quotation.Search_Close</a>
+        </th>
+        <th class="bg-blue" *ngFor="let compareProduct of comparProducts">
+          <div class="img-holder">
+            <img [src]="'/resources/imgs/insurerlogos/' + compareProduct.companyKey + '.png'" [alt]="compareProduct.companyKey"  [title]="compareProduct.companyKey">
+          </div>
+          <div class="price-holder">
+            <span class="txt-sm f_width dis-block bx-right txt-mgray xs-mar">
+              <strong>{{compareProduct.productPrice |  number:'1.0-2'}}</strong><br />{{'quotation.SAR' | translate}}</span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let benefitFromList of benefitsList">
+        <td>
+          {{benefitFromList.description}}
+        </td>
+        <td *ngFor="let compareProduct of comparProducts; let productIndex = index">
+          <span class="tick" *ngFor="let benefitFromCompare of compareProduct.productBenefits; let benefitIndex = index">
+            <!-- &#10004; -->
+              <span *ngIf="benefitFromCompare.benefit.code == benefitFromList.code" #available>
+                  <!-- &#10004; -->
+                  <div class="checkbox-holder" *ngIf="!benefitFromCompare.isReadOnly">
+                      <input type="checkbox" [attr.checked]="benefitFromCompare.isSelected ? '' : null" (change)="changeSelected(productIndex, benefitIndex)"
+                             [id]="benefitFromList.logo +'-'+productIndex" class="inp-checkbox" style="display: none">
+                      <label [for]="benefitFromList.logo + '-'+productIndex" class="mainCheckBox">
+                          <span>
+                              <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                              </svg>
+                          </span>
+                      </label>
+                  </div>
+                  <p *ngIf="benefitFromCompare.isReadOnly && benefitFromCompare.isSelected; else notIncluded">{{'quotation.included' | translate}}</p>
+                  <ng-template #notIncluded>
+                      <p class="bx-right">
+                        {{benefitFromCompare.benefitPrice |  number:'1.0-2'}}
+                      </p>
+                  </ng-template>
+              </span>
+          </span>
+          <!-- <span>*</span> -->
+        </td>
+        <!-- <td><span class="tick">&#10004;</span></td>
+          <td class="default"><span class="tick">&#10004;</span></td>
+          <td><span class="tick">&#10004;</span></td> -->
+      </tr>
+      <tr>
+        <td></td>
+        <td *ngFor="let compareProduct of comparProducts">
+          <form ngNoForm action="/ShoppingCart/AddItemToCart" method="POST">
+            <input type="hidden" name="ReferenceId" [value]="compareProduct.referenceId">
+            <input type="hidden" name="QuotaionRequestExternalId" [value]="quotationRequestId">
+            <input type="hidden" name="ProductId" [value]="compareProduct.id">
+            <span *ngFor="let formBenfit of compareProduct.productBenefits">
+              <input type="hidden" name="SelectedProductBenfitId" [value]="formBenfit.id" *ngIf="formBenfit.isSelected">
+            </span>
+            <input type="submit" [value]="'quotation.Search_buy_now' | translate" class="borderd-hvr btn sm dis-inline-block sm-mar txt-white txt-green txt-green-hvr  txt-sm bg-green  circ-rdus l-shadow">
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>

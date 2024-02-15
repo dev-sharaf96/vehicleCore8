@@ -1,0 +1,396 @@
+<section class="addional-info">
+  <div class="container">
+    <div class="row">
+      <h1 style="color:#f7811c; padding-bottom: 0px;" class="txt-black txt-lr md-lh txt-right">additional information</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-12 col-md-12 md-mar">
+        <div class="col-xs-12 col-lg-6 col-md-6">
+          <h2 class="txt-black txt-lr md-lh txt-right">Insured information</h2>
+          <div class="row">
+            <div class="col-xs-12 col-lg-5 col-md-5">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" id="insuredEducationLevelCode" [(ngModel)]="additionalInfo.insured.educationLevelCode">
+                  <!---->
+                  <option value="1">ال يوجد</option>
+                  <option value="2">ابتدائي</option>
+                  <option value="3">ثانوي</option>
+                  <option value="4">جامعي</option>
+                  <option value="5">دراسات عليا</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="insuredEducationLevelCode">
+                  <span class="input-label-content input-label-content--ichiro">مستوى التعليم</span>
+                </label>
+              </span>
+              <span style="color:red;position:absolute" id="EducationLevelCodeError"></span>
+            </div>
+            <div class="col-xs-12 col-lg-5 col-md-5">
+              <span class="input input--ichiro">
+                <input class="input__field input__field--ichiro insuredChildrenCount" type="text" [(ngModel)]="additionalInfo.insured.childrenCount"
+                />
+                <label class="input-label input-label--ichiro" for="insuredChildrenCount">
+                  <span class="input-label-content input-label-content--ichiro">Number of children under age 16 years</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-12 col-lg-5 col-md-5">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" id="insuredHomecity" [(ngModel)]="additionalInfo.insured.homeCityCode">
+                  <option value="1"> Riyadh </option>
+                  <option> Jeddah </option>
+                  <option> Qassim </option>
+                  <option> Riyadh </option>
+                  <option> Jeddah </option>
+                  <option> Qassim </option>
+                </select>
+                <label class="input-label input-label--ichiro" for="insuredHomecity">
+                  <span class="input-label-content input-label-content--ichiro">Insured Home City</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-12 col-lg-4 col-md-4">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.insured.workCityCode">
+                  <option value="1"> Riyadh </option>
+                  <option> Jeddah </option>
+                  <option> Qassim </option>
+                  <option> Riyadh </option>
+                  <option> Jeddah </option>
+                  <option> Qassim </option>
+                </select>
+                <label class="input-label input-label--ichiro" for="insuredWorkcity">
+                  <span class="input-label-content input-label-content--ichiro">Insured Work City</span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-lg-6 col-md-6">
+          <h2 class="txt-black txt-lr md-lh txt-right">Vehicle information</h2>
+          <div class="row">
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.engineSizes">
+                  <option class="removeonfocus"></option>
+                  <option value="1"> Up To 2,000 CC </option>
+                </select>
+                <label class="input-label input-label--ichiro" for="engineSizes">
+                  <span class="input-label-content input-label-content--ichiro">Vehicle Engine Sizes</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <input class="input__field input__field--ichiro idnumber" type="text" [(ngModel)]="additionalInfo.vehicle.currentMileage" />
+                <label class="input-label input-label--ichiro" for="currentMileage">
+                  <span class="input-label-content input-label-content--ichiro">Vehicle Current Mileage</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.transmissionType">
+                  <option class="removeonfocus"></option>
+                  <option value="1">Manual</option>
+                  <option value="1">Automatic</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="transmissionType">
+                  <span class="input-label-content input-label-content--ichiro">Vehicle Transmission Type</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.annualMileages">
+                  <option class="removeonfocus"></option>
+                  <option value="1">Less than 50,000 KM</option>
+                  <option value="1">50,000 - 100,000 KM</option>
+                  <option value="1">More than 100,000 KM</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="annualMileages">
+                  <span class="input-label-content input-label-content--ichiro">Vehicle Annual Mileages</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.axlesWeight">
+                  <option class="removeonfocus"></option>
+                  <option value="1">Up Tp 20 Tons</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="axlesWeight">
+                  <span class="input-label-content input-label-content--ichiro">Vehicle Axles Weight</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.parkingLocation">
+                  <option class="removeonfocus"></option>
+                  <option value="1">Road-Side</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="parking">
+                  <span class="input-label-content input-label-content--ichiro">مكان إيقاف المركبة</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3" style="margin-top: 3em;">
+              <label for="antiTheftAlarm" style="clear: both;display: flex;padding-top: 20px;align-items: center;">
+                <div class="col-xs-3 col-lg-1 col-md-1 checkbox-holder">
+                  <input type="checkbox" id="antiTheftAlarm" style="display:block !important" [(ngModel)]="additionalInfo.vehicle.vehicleSpecifications.antiTheftAlarm">
+                </div>
+                <div class="txt-black txt-xs dis-block over-hidden xs-mar xs-mar-bot">
+                  <h4>جهاز إنذار ضد السرقة (صالح)</h4>
+                </div>
+              </label>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3" style="margin-top: 3em;">
+              <label for="extinguisher" style="clear: both;display: flex;padding-top: 20px;align-items: center;">
+                <div class="col-xs-3 col-lg-1 col-md-1 checkbox-holder">
+                  <input type="checkbox" id="extinguisher" class="extinguisher" style="display:block !important" [(ngModel)]="additionalInfo.vehicle.vehicleSpecifications.extinguisher">
+                </div>
+                <div class="txt-black txt-xs dis-block over-hidden xs-mar xs-mar-bot">
+                  <h4>طفاية الحريق</h4>
+                </div>
+              </label>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3" style="clear: both;">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.vehicleSpecifications.breakSystemCode">
+                  <option class="removeonfocus"></option>
+                  <option value="1">Less than 50,000 KM</option>
+                  <option value="1">50,000 - 100,000 KM</option>
+                  <option value="1">More than 100,000 KM</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="BreakSystemCode">
+                  <span class="input-label-content input-label-content--ichiro">نظام المكابح</span>
+                </label>
+              </span>
+              <span style="color:red;position:absolute" id="BreakSystemCodeError"></span>
+
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.vehicleSpecifications.speedStabilizerCode">
+                  <option class="removeonfocus"></option>
+                  <option value="1">Less than 50,000 KM</option>
+                  <option value="1">50,000 - 100,000 KM</option>
+                  <option value="1">More than 100,000 KM</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="SpeedStabilizerCode">
+                  <span class="input-label-content input-label-content--ichiro">نظام مثبت السرعة</span>
+                </label>
+              </span>
+              <span style="color:red;position:absolute" id="SpeedStabilizerCodeError"></span>
+
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.vehicleSpecifications.sensorCode">
+                  <option class="removeonfocus"></option>
+                  <option value="1">Less than 50,000 KM</option>
+                  <option value="1">50,000 - 100,000 KM</option>
+                  <option value="1">More than 100,000 KM</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="SensorCode">
+                  <span class="input-label-content input-label-content--ichiro">حساسات المركبة</span>
+                </label>
+              </span>
+              <span style="color:red;position:absolute" id="SensorCodeError"></span>
+            </div>
+            <div class="col-xs-12 col-lg-3 col-md-3">
+              <span class="input input--ichiro">
+                <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.vehicle.vehicleSpecifications.cameraCode">
+                  <option class="removeonfocus"></option>
+                  <option value="1">Less than 50,000 KM</option>
+                  <option value="1">50,000 - 100,000 KM</option>
+                  <option value="1">More than 100,000 KM</option>
+                </select>
+                <label class="input-label input-label--ichiro" for="CameraCode">
+                  <span class="input-label-content input-label-content--ichiro">كاميرا المركبة</span>
+                </label>
+              </span>
+              <span style="color:red;position:absolute" id="CameraCodeError"></span>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-lg-3 col-md-3" style="margin-top: 3em;">
+              <label for="modificationCheck" style="clear: both;display: flex;padding-top: 20px;align-items: center;">
+                <div class="col-xs-3 col-lg-1 col-md-1 checkbox-holder">
+                  <input type="checkbox" (change)="toggleModification($event.target.checked)" id="modificationCheck" class="modificationCheck"
+                    style="display:block !important">
+                </div>
+                <div class="txt-black txt-xs dis-block over-hidden xs-mar xs-mar-bot">
+                  <h4>التعديلات على المركبة</h4>
+                </div>
+              </label>
+            </div>
+            <div class="col-xs-12 col-lg-9 col-md-9">
+              <span class="input input--ichiro" *ngIf="thereModification">
+                <textarea class="input__field input__field--ichiro" id="modification-input" style="padding-top: 10px;resize:  none;" [(ngModel)]="additionalInfo.vehicle.modificationDetails"></textarea>
+                <label class="input-label input-label--ichiro" for="modification-input">
+                  <span class="input-label-content input-label-content--ichiro">
+                    التعديلات
+                  </span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <h2 class="txt-black txt-lr md-lh txt-right">Drivers information
+        </h2>
+        <div class="row">
+          <h3>Driver Name</h3>
+          <div class="col-xs-12 col-lg-3 col-md-3">
+            <span class="input input--ichiro">
+              <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.drivers[0].usagePersentageCode">
+                <option class="removeonfocus"></option>
+                <option value="1">100%</option>
+              </select>
+              <label class="input-label input-label--ichiro" for="usagePersentageCode">
+                <span class="input-label-content input-label-content--ichiro">Percentage of Driving</span>
+              </label>
+            </span>
+            <span style="color:red;position:absolute" id="usagePersentageCodeError"></span>
+          </div>
+          <div class="col-xs-12 col-lg-3 col-md-3">
+            <span class="input input--ichiro">
+              <select class="input__field input__field--ichiro" id="driverEducationLevelCode" [(ngModel)]="additionalInfo.drivers[0].educationLevelCode">
+                <option value="cairo">ال يوجد</option>
+                <option value="mercedes">ابتدائي</option>
+                <option value="audi">ثانوي</option>
+                <option value="audi">جامعي</option>
+                <option value="audi">دراسات عليا</option>
+              </select>
+              <label class="input-label input-label--ichiro" for="driverEducationLevelCode">
+                <span class="input-label-content input-label-content--ichiro">مستوى التعليم</span>
+              </label>
+            </span>
+            <span style="color:red;position:absolute" id="DriverEducationLevelCodeError"></span>
+          </div>
+          <div class="col-xs-12 col-lg-3 col-md-3">
+            <span class="input input--ichiro">
+              <select class="input__field input__field--ichiro" id="medicalCondition" [(ngModel)]="additionalInfo.drivers[0].medicalConditionCode">
+                <option value="1">No Restriction</option>
+              </select>
+              <label class="input-label input-label--ichiro" for="medicalCondition">
+                <span class="input-label-content input-label-content--ichiro">Medical Condition</span>
+              </label>
+            </span>
+            <span style="color:red;position:absolute" id="driverMedicalConditionError"></span>
+          </div>
+          <div class="col-xs-12 col-lg-3 col-md-3"></div>
+          <div class="col-xs-12 col-lg-3 col-md-3">
+            <span class="input input--ichiro">
+              <input class="input__field input__field--ichiro DriverChildrenCount" type="text" [(ngModel)]="additionalInfo.drivers[0].childrenCount"
+              />
+              <label class="input-label input-label--ichiro" for="childrenCount">
+                <span class="input-label-content input-label-content--ichiro">Number of children under age 16 years</span>
+              </label>
+            </span>
+          </div>
+          <div class="col-xs-12 col-lg-3 col-md-3">
+            <span class="input input--ichiro">
+              <input class="input__field input__field--ichiro accidentsCount" type="text" [(ngModel)]="additionalInfo.drivers[0].accidentsCount" />
+              <label class="input-label input-label--ichiro" for="accidentsCount">
+                <span class="input-label-content input-label-content--ichiro">Number of accidents in last 5 years</span>
+              </label>
+            </span>
+          </div>
+          <div class="col-xs-12 col-lg-3 col-md-3">
+            <span class="input input--ichiro">
+              <input class="input__field input__field--ichiro claimsCount" type="text" [(ngModel)]="additionalInfo.drivers[0].claimsCount" />
+              <label class="input-label input-label--ichiro" for="claimsCount">
+                <span class="input-label-content input-label-content--ichiro">Number of claims in last 5 years</span>
+              </label>
+            </span>
+          </div>
+          <div class="col-xs-12 col-lg-3 col-md-3">
+            <span class="input input--ichiro">
+              <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.drivers[0].homeCityCode">
+                <option value="1"> Riyadh </option>
+                <option> Jeddah </option>
+                <option> Qassim </option>
+                <option> Riyadh </option>
+                <option> Jeddah </option>
+                <option> Qassim </option>
+              </select>
+              <label class="input-label input-label--ichiro" for="driverHomecity">
+                <span class="input-label-content input-label-content--ichiro">Driver Home City</span>
+              </label>
+            </span>
+          </div>
+          <div class="col-xs-12 col-lg-3 col-md-3">
+            <span class="input input--ichiro">
+              <select class="input__field input__field--ichiro" [(ngModel)]="additionalInfo.drivers[0].workCityCode">
+                <option value="1"> Riyadh </option>
+                <option> Jeddah </option>
+                <option> Qassim </option>
+                <option> Riyadh </option>
+                <option> Jeddah </option>
+                <option> Qassim </option>
+              </select>
+              <label class="input-label input-label--ichiro" for="driverWorkcity">
+                <span class="input-label-content input-label-content--ichiro">Driver Work City</span>
+              </label>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <h3 class="txt-black txt-lr md-lh txt-right">Licenses list</h3>
+          <div class="licenses">
+            <div class="license" style="clear: both;">
+              <div class="col-xs-12 col-lg-3 col-md-3">
+                <span class="input input--ichiro">
+                  <select class="input__field input__field--ichiro" id="licenceCountry" [(ngModel)]="additionalInfo.drivers[0].licenses[0].licenceCountryCode">
+                    <option value="1"> Riyadh </option>
+                    <option> Jeddah </option>
+                    <option> Qassim </option>
+                    <option> Riyadh </option>
+                    <option> Jeddah </option>
+                    <option> Qassim </option>
+                  </select>
+                  <label class="input-label input-label--ichiro" for="licenceCountry">
+                    <span class="input-label-content input-label-content--ichiro">
+                      اسم الدولة
+                    </span>
+                  </label>
+                </span>
+                <span style="color:red;position:absolute" id="licenceCountry"></span>
+              </div>
+              <div class="col-xs-12 col-lg-3 col-md-3">
+                <span class="input input--ichiro">
+                  <select class="input__field input__field--ichiro" id="LicenceYears" [(ngModel)]="additionalInfo.drivers[0].licenses[0].licenseNumberYears">
+                    <option value="1"> Riyadh </option>
+                    <option> Jeddah </option>
+                    <option> Qassim </option>
+                    <option> Riyadh </option>
+                    <option> Jeddah </option>
+                    <option> Qassim </option>
+                  </select>
+                  <label class="input-label input-label--ichiro" for="LicenceYears">
+                    <span class="input-label-content input-label-content--ichiro">سنوات امتلاك رخصة القيادة</span>
+                  </label>
+                </span>
+                <span style="color:red;position:absolute" id="LicenceYears"></span>
+              </div>
+              <div class="col-xs-2 col-lg-1 col-md-1 remove-icon">
+                <a class="txt-sm txt-black remove remove-license-row">
+                  <i class="ic-plus rotate"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-xs-12 col-md-12">
+            <button type="button" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar bx-right right">add Licence</button>
+          </div>
+        </div>
+        <button (click)="onSubmit()" id="btnSubmit" class="no-trans btn sm dis-block bx-left txt-white submit-continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow"
+          style="margin-bottom: 15px;margin-top: 3em;">أبحث</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+.remove-driver {
+    transform: rotate(45deg);
+    color: #f00;
+}
+
+.remove-driver-old {
+    transform: rotate(45deg);
+    color: #fff;
+    margin: 0 50px;
+}
+
+.input-container {
+    background-color: #fff
+}
+
+.input-container .input-element {
+    background-color: #fff
+}
+
+.input-container .input-element[readonly] {
+    background-color: #ddd
+}
+
+.additionaDriversSave {
+    float: left;
+    margin-left: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #f4f5f7 !important;
+    background: #156495 !important;
+    font-size: 16px !important;
+    font-weight: bold;
+    margin-top: 13px;
+}
+
+    .additionaDriversSave[disabled] {
+        background: #cccccc !important;
+    }
+
+.btn.bx-shdw:hover, button.bx-shdw:hover {
+    border: 0px solid #186a9e00 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.addlicustStyle {
+    color: #186a9e !important;
+    border: 2px solid #186a9e !important;
+    text-align: center;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+    .addlicustStyle:hover {
+        border: 3px solid #186a9e !important;
+        display: flex !important;
+        align-items: center !important;
+    }

@@ -1,0 +1,2012 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutus" xml:space="preserve">
+    <value>عن الشركة</value>
+  </data>
+  <data name="add_driver" xml:space="preserve">
+    <value>هل ترغب بإضافة سائق آخر؟</value>
+  </data>
+  <data name="benefit" xml:space="preserve">
+    <value>المميزات</value>
+  </data>
+  <data name="city_vehicle" xml:space="preserve">
+    <value>مدينة قيادة المركبة</value>
+  </data>
+  <data name="coming_soon" xml:space="preserve">
+    <value>قريبًا</value>
+  </data>
+  <data name="companies" xml:space="preserve">
+    <value>الشركات</value>
+  </data>
+  <data name="condiation_policy" xml:space="preserve">
+    <value>أوافق على منح شركة عناية الوسيط الحق في الاستعلام من شركة نجم لخدمات التأمين و / أو مركز المعلومات الوطني و / أو أي جهات رسمية أخرى ذات العلاقة عن بياناتي والبيانات الخاصة بالمركبة أو أي بيانات أخرى ذات علاقة.</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="deals" xml:space="preserve">
+    <value>اتفاقية التعامل</value>
+  </data>
+  <data name="Detailed_information" xml:space="preserve">
+    <value>معلومات تفصيلية</value>
+  </data>
+  <data name="detail_button" xml:space="preserve">
+    <value>تفاصيل أكثر</value>
+  </data>
+  <data name="driver_disable" xml:space="preserve">
+    <value>هل السائق من ذوي الاحتياجات الخاصة؟</value>
+  </data>
+  <data name="driver_info" xml:space="preserve">
+    <value>معلومات السائق الإضافي</value>
+  </data>
+  <data name="editdata" xml:space="preserve">
+    <value>الملف الشخصي</value>
+  </data>
+  <data name="footer_about" xml:space="preserve">
+    <value>عن الشركة</value>
+  </data>
+  <data name="footer_description" xml:space="preserve">
+    <value>© 2020 جميع الحقوق محفوظة. شركة بي كير.</value>
+  </data>
+  <data name="footer_help" xml:space="preserve">
+    <value>المساعدة</value>
+  </data>
+  <data name="footer_policy" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
+  </data>
+  <data name="footer_terms" xml:space="preserve">
+    <value>الشروط والأحكام</value>
+  </data>
+  <data name="home_insurance" xml:space="preserve">
+    <value>تأمين المنازل</value>
+  </data>
+  <data name="id_number" xml:space="preserve">
+    <value>رقم الهوية / الإقامة</value>
+  </data>
+  <data name="index_desc" xml:space="preserve">
+    <value>أحدث وأسرع منصة إلكترونية لعرض مقارنة بين أسعار ومزايا تأمين المركبات لشركات التأمين السعودية وإصدار وثيقة التأمين .</value>
+  </data>
+  <data name="index_more_about_button" xml:space="preserve">
+    <value>المزيد عنــا</value>
+  </data>
+  <data name="index_more_desc" xml:space="preserve">
+    <value>يقوم برنامج بي كير على توفير منصة إلكترونية ذكية تمنح العميل حرية المقارنة والاختيار بين العديد من المنتجات التأمينية المتوفرة في السوق من قِبل شركات التأمين المُصرح لها بالعمل من قِبل مؤسسة النقد العربي السعودي</value>
+  </data>
+  <data name="index_more_title" xml:space="preserve">
+    <value>احصل على ما ترغب وأكثر...</value>
+  </data>
+  <data name="insured_information" xml:space="preserve">
+    <value>معلومات طالب/ ـة التأمين</value>
+  </data>
+  <data name="IsOwner" xml:space="preserve">
+    <value>هل أنت مالك المركبة؟</value>
+  </data>
+  <data name="is_vehicle_registered" xml:space="preserve">
+    <value>هل المركبة مسجلة؟</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>شكراً لاختيارك #بي_كير&lt;br/&gt;جاري البحث عن عروض شركات التأمين</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>دخــــول</value>
+  </data>
+  <data name="manufacturing_year" xml:space="preserve">
+    <value>سنة الصنع</value>
+  </data>
+  <data name="medical_insurance" xml:space="preserve">
+    <value>تأمين طبي</value>
+  </data>
+  <data name="month_expiration" xml:space="preserve">
+    <value>شهر انتهاء رخصة القيادة</value>
+  </data>
+  <data name="month_of_birth" xml:space="preserve">
+    <value>شهر الميلاد</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="partners" xml:space="preserve">
+    <value>شركاؤنا</value>
+  </data>
+  <data name="PolicyEffectiveDate" xml:space="preserve">
+    <value>تاريخ بداية التأمين</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>تسجيـــــل</value>
+  </data>
+  <data name="registration_number" xml:space="preserve">
+    <value>الرقم التسلسلى</value>
+  </data>
+  <data name="Show_offers" xml:space="preserve">
+    <value>إظهار العروض</value>
+  </data>
+  <data name="terms" xml:space="preserve">
+    <value>سياسة الاستخدام</value>
+  </data>
+  <data name="travel_insurance" xml:space="preserve">
+    <value>تأمين السفر</value>
+  </data>
+  <data name="VehicleUsingWorkPurposes" xml:space="preserve">
+    <value>هل تستخدم المركبة لأغراض تجارية؟</value>
+  </data>
+  <data name="vehicle_information" xml:space="preserve">
+    <value>معلومات المركبة</value>
+  </data>
+  <data name="vehicle_insurance" xml:space="preserve">
+    <value>تأمين المركبات</value>
+  </data>
+  <data name="Vehicle_value" xml:space="preserve">
+    <value>قيمة المركبة</value>
+  </data>
+  <data name="year_expiration" xml:space="preserve">
+    <value>سنة انتهاء رخصة القيادة</value>
+  </data>
+  <data name="year_of_birth" xml:space="preserve">
+    <value>سنة الميلاد</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>ريال سعودي</value>
+  </data>
+  <data name="Search_Additional_Benefits" xml:space="preserve">
+    <value>المنافع الإضافية</value>
+  </data>
+  <data name="Search_Add_Comparison" xml:space="preserve">
+    <value>أضف إلى المقارنة</value>
+  </data>
+  <data name="Search_Agency" xml:space="preserve">
+    <value>وكالة</value>
+  </data>
+  <data name="Search_buy_now" xml:space="preserve">
+    <value>اشتري الآن</value>
+  </data>
+  <data name="Search_Comprehensive" xml:space="preserve">
+    <value>شامل</value>
+  </data>
+  <data name="Search_Deleted" xml:space="preserve">
+    <value>تم الحذف</value>
+  </data>
+  <data name="search_Discount_Eligibility" xml:space="preserve">
+    <value>استحقاق خصم</value>
+  </data>
+  <data name="Search_edit_info" xml:space="preserve">
+    <value>تعديل المعلومات</value>
+  </data>
+  <data name="Search_High_to_Low" xml:space="preserve">
+    <value>الأعلى للأقل</value>
+  </data>
+  <data name="search_Insurance_Type" xml:space="preserve">
+    <value>نوع التأمين</value>
+  </data>
+  <data name="Search_List_of_Comparisons" xml:space="preserve">
+    <value>قائمه المقارنات</value>
+  </data>
+  <data name="Search_Low_to_High" xml:space="preserve">
+    <value>الأقل للأعلى</value>
+  </data>
+  <data name="Search_More_Detail" xml:space="preserve">
+    <value>تفاصيل أكثر</value>
+  </data>
+  <data name="Search_Restore" xml:space="preserve">
+    <value>إعادة</value>
+  </data>
+  <data name="Search_See_Comparison" xml:space="preserve">
+    <value>شاهد المقارنة</value>
+  </data>
+  <data name="Search_Sort_Rates_by" xml:space="preserve">
+    <value>رتب الأسعار من</value>
+  </data>
+  <data name="Search_TPL" xml:space="preserve">
+    <value>ضد الغير</value>
+  </data>
+  <data name="search_Vehicle_Description" xml:space="preserve">
+    <value>وصف المركبة</value>
+  </data>
+  <data name="Search_Workshops" xml:space="preserve">
+    <value>ورش</value>
+  </data>
+  <data name="Search_Year" xml:space="preserve">
+    <value> سنة</value>
+  </data>
+  <data name="checkout_Additional_Info" xml:space="preserve">
+    <value>معلومات طالب الوثيقة</value>
+  </data>
+  <data name="checkout_Add_to_Cart" xml:space="preserve">
+    <value>أضف منتج آخر</value>
+  </data>
+  <data name="checkout_alert1" xml:space="preserve">
+    <value>تنبيه بياناتك غير كاملة</value>
+  </data>
+  <data name="checkout_alert2" xml:space="preserve">
+    <value>اضغط على هذا الرابط وأكمل تسجيل بياناتك</value>
+  </data>
+  <data name="checkout_alert3" xml:space="preserve">
+    <value>اضغط هنا لتسجيل بياناتك</value>
+  </data>
+  <data name="checkout_alert4" xml:space="preserve">
+    <value>ثم قم بإعادة تحميل الصفحة مرة أخرى</value>
+  </data>
+  <data name="checkout_Another_Benefit" xml:space="preserve">
+    <value>المنافع التى تم اختيارها</value>
+  </data>
+  <data name="checkout_back" xml:space="preserve">
+    <value>الرجوع</value>
+  </data>
+  <data name="checkout_back_side" xml:space="preserve">
+    <value>ظهر المركبة</value>
+  </data>
+  <data name="checkout_bank" xml:space="preserve">
+    <value>اسم البنك</value>
+  </data>
+  <data name="checkout_chasis_image" xml:space="preserve">
+    <value>صورة رقم الهيكل</value>
+  </data>
+  <data name="checkout_currency_name" xml:space="preserve">
+    <value>ريال سعودي</value>
+  </data>
+  <data name="checkout_email" xml:space="preserve">
+    <value>البريد الإلكترونى لطالب الوثيقة</value>
+  </data>
+  <data name="checkout_error_iban" xml:space="preserve">
+    <value>* يوجد خطأ في رقم الحساب المصرفي الدولي IBAN</value>
+  </data>
+  <data name="checkout_error_images" xml:space="preserve">
+    <value>برجاء إدخال جميع صور المركبة.</value>
+  </data>
+  <data name="checkout_error_phone" xml:space="preserve">
+    <value>برجاء إدخال رقم جوال صحيح</value>
+  </data>
+  <data name="checkout_Front_Side" xml:space="preserve">
+    <value>مقدمة المركبة</value>
+  </data>
+  <data name="checkout_iban" xml:space="preserve">
+    <value>رقم الحساب الدولي (IBAN)</value>
+  </data>
+  <data name="checkout_Insurance_policy_information" xml:space="preserve">
+    <value>بيانات الوثيقة</value>
+  </data>
+  <data name="checkout_left_side" xml:space="preserve">
+    <value>الجانب الأيسر</value>
+  </data>
+  <data name="checkout_mastercard" xml:space="preserve">
+    <value>ماستر كارد</value>
+  </data>
+  <data name="checkout_next" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="checkout_payment_desc" xml:space="preserve">
+    <value>اختيار طريقة الدفع</value>
+  </data>
+  <data name="checkout_phone" xml:space="preserve">
+    <value>رقم جوال طالب الوثيقة</value>
+  </data>
+  <data name="checkout_right_side" xml:space="preserve">
+    <value>الجانب الأيمن</value>
+  </data>
+  <data name="checkout_sadad" xml:space="preserve">
+    <value>سداد</value>
+  </data>
+  <data name="checkout_total" xml:space="preserve">
+    <value>الإجمالي</value>
+  </data>
+  <data name="checkout_visa" xml:space="preserve">
+    <value>بطاقة الفيزا</value>
+  </data>
+  <data name="download_txt" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="Purchesed_add_product" xml:space="preserve">
+    <value>أضف منتج آخر</value>
+  </data>
+  <data name="Purchesed_Comprehensive_insurance" xml:space="preserve">
+    <value>التعاونية - شامل</value>
+  </data>
+  <data name="purchesed_description" xml:space="preserve">
+    <value>سوف تجد معلومات الوثائق الخاصة بك دائمًا في ملفك الشخصي إذا ما رغبت بتحميلها مرة أخرى فى المستقبل</value>
+  </data>
+  <data name="Purchesed_Najm_Status" xml:space="preserve">
+    <value>الحالة: مُفعل</value>
+  </data>
+  <data name="Purchesed_PolicyEffectiveDate" xml:space="preserve">
+    <value>بداية الوثيقة</value>
+  </data>
+  <data name="Purchesed_PolicyExpiryDate" xml:space="preserve">
+    <value>نهاية الوثيقة</value>
+  </data>
+  <data name="Purchesed_Policy_number" xml:space="preserve">
+    <value>رقم الوثيقة</value>
+  </data>
+  <data name="Purchesed_Policy_status" xml:space="preserve">
+    <value>حالة الوثيقة بنجم</value>
+  </data>
+  <data name="Purchesed_Profile" xml:space="preserve">
+    <value>عرض الملف الشخصي</value>
+  </data>
+  <data name="purchesed_title" xml:space="preserve">
+    <value>تم شراء الوثيقة بنجاح</value>
+  </data>
+  <data name="Purchesed_valid" xml:space="preserve">
+    <value>سارية</value>
+  </data>
+  <data name="error_description" xml:space="preserve">
+    <value>نأسف، حدث خطأ اثناء معالجة طلبك.</value>
+  </data>
+  <data name="error_title" xml:space="preserve">
+    <value>عُـذرًا حدث خطأ</value>
+  </data>
+  <data name="login_button" xml:space="preserve">
+    <value>تسجيل دخول</value>
+  </data>
+  <data name="login_email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="login_email_erorr" xml:space="preserve">
+    <value>البريد الإلكتروني مطلوب</value>
+  </data>
+  <data name="login_email_erorr1" xml:space="preserve">
+    <value>البريد الإلكتروني مكتوب بصيغة خاطئة</value>
+  </data>
+  <data name="login_have_account" xml:space="preserve">
+    <value>ليس لديك حساب؟</value>
+  </data>
+  <data name="login_password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="login_password_error" xml:space="preserve">
+    <value>كلمة المرور مطلوبة</value>
+  </data>
+  <data name="login_password_error1" xml:space="preserve">
+    <value>كلمة المرور يجب ألا تقل عن 4 أرقام</value>
+  </data>
+  <data name="login_registernew" xml:space="preserve">
+    <value>قم بتسجيل حساب جديد</value>
+  </data>
+  <data name="login_register_button" xml:space="preserve">
+    <value>مستخدم جديد</value>
+  </data>
+  <data name="login_title" xml:space="preserve">
+    <value>تسجيل دخول المستخدمين</value>
+  </data>
+  <data name="login_txtmsg" xml:space="preserve">
+    <value>قم بالدخول إلى حسابك</value>
+  </data>
+  <data name="notfound_description" xml:space="preserve">
+    <value>نأسف، المحتوى الذي تبحث عنه غير متوفر. من الممكن أن يكون هناك تهجئة خاطئة، أو أنك قُمت بالنقر على رابط غير متوفر حالياَ. تأكد من الأمر، أو عد إلى الصفحة الرئيسية</value>
+  </data>
+  <data name="notfound_title" xml:space="preserve">
+    <value>عُـذرًا قد تم حذف الملف أو إلغاؤه</value>
+  </data>
+  <data name="PolicyError" xml:space="preserve">
+    <value>نأسف حدث خطأ فى إنشاء وثيقة التامين خاصتكم
+                        &lt;br /&gt;
+                        يرجى الاتصال بخدمة العملاء في أقرب وقت ممكن للتعامل مع هذه المشكلة على: +966 920010050</value>
+  </data>
+  <data name="register_confirm_error" xml:space="preserve">
+    <value>تأكيدالبريد الإلكتروني مطلوب</value>
+  </data>
+  <data name="register_confirm_error1" xml:space="preserve">
+    <value>تأكيدالبريد الإلكتروني غير مطابق</value>
+  </data>
+  <data name="register_email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="register_email1" xml:space="preserve">
+    <value>تأكيد البريد الإلكتروني</value>
+  </data>
+  <data name="register_mobile" xml:space="preserve">
+    <value>رقم الجوال</value>
+  </data>
+  <data name="register_mobile_error" xml:space="preserve">
+    <value>رقم الجوال مطلوب</value>
+  </data>
+  <data name="register_password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="register_policy" xml:space="preserve">
+    <value>بالنقر على ‏تسجيل حساب‏، فإنك توافق على &lt;a style="color:#f7811c; text-decoration: underline;" href="/Home/TermsCondition" target="_blank" rel="noopener"&gt; الشروط‏ والأحكام&lt;/a&gt; التي نتبعها وأنك قرأت &lt;a style="color:#f7811c; text-decoration: underline;" href="/Home/PrivacyPolicy" target="_blank" rel="noopener"&gt;سياسة الخصوصية&lt;/a&gt; ,وأقر أن جميع البيانات المدخلة صحيحة و أتحمل مسؤولية صحتها.</value>
+  </data>
+  <data name="register_title" xml:space="preserve">
+    <value>تسجيل حساب جديد</value>
+  </data>
+  <data name="register_txt_button" xml:space="preserve">
+    <value>تسجيل حساب</value>
+  </data>
+  <data name="Additional_age" xml:space="preserve">
+    <value>العمر الإضافي</value>
+  </data>
+  <data name="Additional_expenses" xml:space="preserve">
+    <value>المصاريف الإضافية</value>
+  </data>
+  <data name="additional_price" xml:space="preserve">
+    <value>)الحوادث بسبب )إضافي تحمي</value>
+  </data>
+  <data name="Discount_no_claims" xml:space="preserve">
+    <value>خصم عدم وجود مطالبات</value>
+  </data>
+  <data name="Extra_Premium" xml:space="preserve">
+    <value>القسط الإضافي</value>
+  </data>
+  <data name="loyalty_Discount" xml:space="preserve">
+    <value>خصم الولاء</value>
+  </data>
+  <data name="Special_Discount" xml:space="preserve">
+    <value>خصم خاص</value>
+  </data>
+  <data name="VAT__Tax" xml:space="preserve">
+    <value>ضريبة القيمة المضافة</value>
+  </data>
+  <data name="checkout_Vehicle_Photos" xml:space="preserve">
+    <value>صور المركبة</value>
+  </data>
+  <data name="login_rememberMe" xml:space="preserve">
+    <value>تذكرني؟</value>
+  </data>
+  <data name="SmsTwoFactorCodeProviderName" xml:space="preserve">
+    <value>ArabicPhoneCodeMessage</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="VerifyCode_Code" xml:space="preserve">
+    <value>الرمز</value>
+  </data>
+  <data name="VerifyCode_CodeRequiredMsg" xml:space="preserve">
+    <value>الرمز مطلوب</value>
+  </data>
+  <data name="VerifyCode_Failed" xml:space="preserve">
+    <value>فشل في تأكيد الجوال</value>
+  </data>
+  <data name="VerifyCode_SubTitle" xml:space="preserve">
+    <value>أدخل رمز التحقق</value>
+  </data>
+  <data name="VerifyCode_Title" xml:space="preserve">
+    <value>تأكيد رقم الجوال</value>
+  </data>
+  <data name="is_benefit_found" xml:space="preserve">
+    <value>لا توجد منافع إضافية</value>
+  </data>
+  <data name="purchased_successfulMessage" xml:space="preserve">
+    <value>لقد قمت بإتمام عملية الشراء بنجاح. سوف يتم إرسال وثيقة التأمين إليكم عن طريق البريد الإلكتروني وسوف تكون جاهزة للتنزيل من حسابكم لدينا في ظرف الدقائق القليلة القادمة.</value>
+  </data>
+  <data name="Logout_Button" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="CustomsCardNumber" xml:space="preserve">
+    <value>رقم البطاقة الجمركية</value>
+  </data>
+  <data name="login_have_account1" xml:space="preserve">
+    <value>لديك حساب؟</value>
+  </data>
+  <data name="Search_not_found" xml:space="preserve">
+    <value>لا يوجد</value>
+  </data>
+  <data name="Search_Years" xml:space="preserve">
+    <value> سنوات</value>
+  </data>
+  <data name="Captcha" xml:space="preserve">
+    <value>أدخل الرمز</value>
+  </data>
+  <data name="CaptchaError" xml:space="preserve">
+    <value>كلمة التحقق غير صالحة</value>
+  </data>
+  <data name="header_phone" xml:space="preserve">
+    <value>الرقم الموحــد</value>
+  </data>
+  <data name="MyAddresses" xml:space="preserve">
+    <value>عناويني</value>
+  </data>
+  <data name="MyBankAccounts" xml:space="preserve">
+    <value>حساباتي البنكية</value>
+  </data>
+  <data name="MyInfo" xml:space="preserve">
+    <value>البيانات الشخصية</value>
+  </data>
+  <data name="MyProducts" xml:space="preserve">
+    <value>وثائق التأمين</value>
+  </data>
+  <data name="MyVehicles" xml:space="preserve">
+    <value>المركبات</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>قيد التفعيل</value>
+  </data>
+  <data name="Addresses" xml:space="preserve">
+    <value>عناويني</value>
+  </data>
+  <data name="Bank_Accounts" xml:space="preserve">
+    <value>حساباتي البنكية</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="Mystatistics" xml:space="preserve">
+    <value>الإحصائيات</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>التنبيهات</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>منتجاتي</value>
+  </data>
+  <data name="Profile_AddBankAccount" xml:space="preserve">
+    <value>إضافة حسابات مصرفية</value>
+  </data>
+  <data name="Profile_AddBenefit" xml:space="preserve">
+    <value>إضافة مميزات</value>
+  </data>
+  <data name="Profile_AddNewAddress" xml:space="preserve">
+    <value>إضافه عنوان جديد</value>
+  </data>
+  <data name="Profile_EditMyData" xml:space="preserve">
+    <value>تعديل بياناتي</value>
+  </data>
+  <data name="Profile_Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Profile_Phonenumber" xml:space="preserve">
+    <value>رقم الجوال</value>
+  </data>
+  <data name="Profile_UserName" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="Purchase_Log" xml:space="preserve">
+    <value>الفواتير</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>مطالباتي</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="InsuranceCompanyName" xml:space="preserve">
+    <value>اسم شركة التأمين</value>
+  </data>
+  <data name="ErrorCode" xml:space="preserve">
+    <value>رقم الخطأ</value>
+  </data>
+  <data name="InvoiceInsuranceCompanyName" xml:space="preserve">
+    <value>تفاصيل الفاتورة: شراء من شركة التأمين </value>
+  </data>
+  <data name="InvoiceNo" xml:space="preserve">
+    <value>رقم الفاتورة</value>
+  </data>
+  <data name="MyPurchases" xml:space="preserve">
+    <value>مشترياتي</value>
+  </data>
+  <data name="DownloadInvoice" xml:space="preserve">
+    <value>تحميل الفاتورة</value>
+  </data>
+  <data name="SAR" xml:space="preserve">
+    <value>ر.س</value>
+  </data>
+  <data name="Notification_Request_Sent" xml:space="preserve">
+    <value>تم إرسال التعديل إلى شركة التأمين بنجاح.</value>
+  </data>
+  <data name="Notification_request_vehicle" xml:space="preserve">
+    <value>طلب تعديل استمارة المركبة - الوثيقة رقم</value>
+  </data>
+  <data name="Register_FullName" xml:space="preserve">
+    <value>الاسم بالكامل</value>
+  </data>
+  <data name="slide_bg3" xml:space="preserve">
+    <value>
+    بناءًا على التعميم الصادر من مؤسسة النقد العربي السعودي 
+    &lt;br /&gt;
+    رقم (ت.ع/138/201711) وابتداءًا من تاريخ 19/03/2018 يعتبر
+    &lt;br /&gt;
+    العنوان الوطني الموثق شرط إلزامي عند إصدار وثيقة التأمين
+    </value>
+  </data>
+  <data name="Vehicle_RegistrationType" xml:space="preserve">
+    <value>نوع تسجيل المركبة</value>
+  </data>
+  <data name="Vehicle_RegistrationType1" xml:space="preserve">
+    <value>استمارة</value>
+  </data>
+  <data name="Vehicle_RegistrationType2" xml:space="preserve">
+    <value>بطاقة جمركية</value>
+  </data>
+  <data name="owner_id_number" xml:space="preserve">
+    <value>رقم هوية / إقامة مالك المركبة</value>
+  </data>
+  <data name="payment_instruction" xml:space="preserve">
+    <value>لإتمام عملية الدفع عن طريق سداد، عبر جميع البنوك فى المملكة بإتباع الخطوات التالية:</value>
+  </data>
+  <data name="payment_instruction_bill_exp" xml:space="preserve">
+    <value>يُرجى سداد الفاتورة قبل</value>
+  </data>
+  <data name="payment_instruction_bill_N" xml:space="preserve">
+    <value>رقم سداد:</value>
+  </data>
+  <data name="payment_instruction_error" xml:space="preserve">
+    <value>هناك خطأ في الدفع بواسطة سداد نرجو إعادة المحاولة في وقت آخر</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>الترقية إلى التأمين الشامل</value>
+  </data>
+  <data name="UpgradeToComprehensive" xml:space="preserve">
+    <value>الترقية إلى التأمين الشامل تبدأ من</value>
+  </data>
+  <data name="comprehensive_condiation_policy" xml:space="preserve">
+    <value>بالنقر أقر بالإطلاع على &lt;a href="{0}" target="_blank" rel="noopener"&gt;شروط وثيقة التأمين&lt;/a&gt; والموافقة عليها دون أدنى مسئولية علي #بي_كير</value>
+  </data>
+  <data name="tpl_condiation_policy" xml:space="preserve">
+    <value>بالنقر أقر بالإطلاع على &lt;a href="{0}" target="_blank" rel="noopener"&gt;شروط وثيقة التأمين&lt;/a&gt; والموافقة عليها وعدم رغبتي بالتأمين الشامل، دون أدنى مسئولية علي #بي_كير</value>
+  </data>
+  <data name="NajmStatus" xml:space="preserve">
+    <value>حالة الوثيقة بنجم</value>
+  </data>
+  <data name="img_condiation_policy" xml:space="preserve">
+    <value>أقر بأن الصور المرفوعة أعلاه هي الصور الحقيقة للمركبة المؤمن عليها، والتي تم أخذها مؤخرًا ولم يتم عليها التعديل بأي شكل من الأشكال. وأقر بمعرفتي بأن في حال إثبات عكس ذلك فإن هذا سيؤدي إلى إلغاء وثيقة التأمين وسيؤثر على المطالبات المرفوعة على المركبة.</value>
+  </data>
+  <data name="company_email" xml:space="preserve">
+    <value>البريد الإلكترونى</value>
+  </data>
+  <data name="company_fax" xml:space="preserve">
+    <value>فاكس</value>
+  </data>
+  <data name="company_phone" xml:space="preserve">
+    <value>هاتف</value>
+  </data>
+  <data name="payment_biller_name" xml:space="preserve">
+    <value>مدفوعات بنك الرياض</value>
+  </data>
+  <data name="payment_biller_name_heading" xml:space="preserve">
+    <value>اسم المُفوتر:</value>
+  </data>
+  <data name="login_password_confirm" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="password_reset_btn" xml:space="preserve">
+    <value>تغيير</value>
+  </data>
+  <data name="password_reset_title" xml:space="preserve">
+    <value>تغيير كلمة المرور</value>
+  </data>
+  <data name="forget_password_btn" xml:space="preserve">
+    <value>أرسل الرابط</value>
+  </data>
+  <data name="forget_password_heading" xml:space="preserve">
+    <value>أعد ضبط كلمة مرورك</value>
+  </data>
+  <data name="forget_password_link" xml:space="preserve">
+    <value>هل نسيت كلمة مرورك؟</value>
+  </data>
+  <data name="forget_password_email_sent" xml:space="preserve">
+    <value>تم إرسال رسالة إعادة الضبط إلى بريدك الإلكتروني</value>
+  </data>
+  <data name="home_slider_cta" xml:space="preserve">
+    <value>ابدأ المقارنة</value>
+  </data>
+  <data name="add_another_driver_btn" xml:space="preserve">
+    <value>إضافة سائق آخر</value>
+  </data>
+  <data name="bills" xml:space="preserve">
+    <value>الفواتير</value>
+  </data>
+  <data name="edit_requests" xml:space="preserve">
+    <value>طلبات التعديل</value>
+  </data>
+  <data name="policies" xml:space="preserve">
+    <value>عدد الوثائق</value>
+  </data>
+  <data name="policies_expired" xml:space="preserve">
+    <value>عدد الوثائق المنتهية</value>
+  </data>
+  <data name="policies_valid" xml:space="preserve">
+    <value>عدد الوثائق السارية</value>
+  </data>
+  <data name="quotations" xml:space="preserve">
+    <value>عروض الأسعار</value>
+  </data>
+  <data name="Invoice_not_found" xml:space="preserve">
+    <value>الفاتوره غير متاحة بعد</value>
+  </data>
+  <data name="Policy_not_found" xml:space="preserve">
+    <value>البوليصة غير متاحة بعد</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Contact_us" xml:space="preserve">
+    <value>راسلنا</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="ContactUsEmailBody" xml:space="preserve">
+    <value>تم استلام طلبك و جارِ العمل عليه الآن</value>
+  </data>
+  <data name="ContactUsEmailSubject" xml:space="preserve">
+    <value>راسلنا</value>
+  </data>
+  <data name="deductible" xml:space="preserve">
+    <value>مبلغ التحمل</value>
+  </data>
+  <data name="new_insurance" xml:space="preserve">
+    <value>تأمين جديد</value>
+  </data>
+  <data name="purpose_of_insurance" xml:space="preserve">
+    <value>الغرض من التأمين</value>
+  </data>
+  <data name="transfer_insurance" xml:space="preserve">
+    <value>نقل ملكية</value>
+  </data>
+  <data name="ContactUsSupportEmailBody" xml:space="preserve">
+    <value>لقد قام العميل {X} بإرسال هذه الرسالة :</value>
+  </data>
+  <data name="ContactUsSupportEmailSubject" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="education_level" xml:space="preserve">
+    <value>مستوى التعليم</value>
+  </data>
+  <data name="occupation" xml:space="preserve">
+    <value>المهنة</value>
+  </data>
+  <data name="percentage_of_use" xml:space="preserve">
+    <value>نسبة الاستخدام</value>
+  </data>
+  <data name="ContactUsMessageReceivedBody" xml:space="preserve">
+    <value>شكراً لك، تم إرسال طلبك بنجاح وسيقوم موظف خدمة العملاء بالتواصل معك قريباً</value>
+  </data>
+  <data name="ContactUsMessageReceivedHeader" xml:space="preserve">
+    <value>شكراً لك، تم إرسال طلبك بنجاح</value>
+  </data>
+  <data name="ResetPasswordUserEmailNotFound" xml:space="preserve">
+    <value>لا يوجد عميل بهذا الايميل.</value>
+  </data>
+  <data name="ApprovedPolicyUpdReqNotification" xml:space="preserve">
+    <value>تم قبول طلب التعديل برقم</value>
+  </data>
+  <data name="AwaitingPaymentPolicyUpdReqNotification" xml:space="preserve">
+    <value>في انتظار دفع الفاتورة</value>
+  </data>
+  <data name="PayUsingDebit" xml:space="preserve">
+    <value>ادفع ببطاقه الائتمان</value>
+  </data>
+  <data name="login_incorrect_email_message" xml:space="preserve">
+    <value>هذا البريد الإلكتروني غير مسجل فى قاعده البيانات </value>
+  </data>
+  <data name="login_incorrect_password_message" xml:space="preserve">
+    <value>تسجيل دخول غير صالح</value>
+  </data>
+  <data name="password_confirm_error" xml:space="preserve">
+    <value>كلمه المرور غير مطابقة</value>
+  </data>
+  <data name="exist_email_signup_error" xml:space="preserve">
+    <value>البريد الإلكتروني مُسجل مُسبقًا</value>
+  </data>
+  <data name="exist_phone_signup_error" xml:space="preserve">
+    <value>الرقم المحمول مُسجل مُسبقًا</value>
+  </data>
+  <data name="JoinProgramConfirmationBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; تفعيل إشتراك&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;لتأكيد الانضمام إلى برنامج الخصومات يُرجى الضغط على "تفعيل"&lt;/p&gt;
+														&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 تفعيل
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="JoinProgramConfirmationSubject" xml:space="preserve">
+    <value>تأكيد الاشتراك في نظام وفير</value>
+  </data>
+  <data name="ErrorWhileJoiningPromotionProgram" xml:space="preserve">
+    <value>حدث خطأ أثناء الاشتراك في البرنامج, برجاء المحاولة مرة أخرى</value>
+  </data>
+  <data name="JoinProgramMailSent" xml:space="preserve">
+    <value>تم إرسال بريد إلكتروني للتأكيد إلى بريدك الإلكتروني، يُرجى التحقق منه للاستمرار في الانضمام إلى برنامج الترويج.</value>
+  </data>
+  <data name="login_phone_number_error" xml:space="preserve">
+    <value>رقم سعودي غير صالح</value>
+  </data>
+  <data name="ConfirmJoinProgramRequestExpired" xml:space="preserve">
+    <value>لقد انتهت صلاحية طلبك للانضمام إلى البرنامج.</value>
+  </data>
+  <data name="ConfirmJoinProgramSuccess" xml:space="preserve">
+    <value>.تم تأكيد انضمامك بنجاح</value>
+  </data>
+  <data name="ConfirmJoinProgramTokenInvalid" xml:space="preserve">
+    <value>الرمز المميز غير صالح.</value>
+  </data>
+  <data name="join" xml:space="preserve">
+    <value>انضم</value>
+  </data>
+  <data name="profile_join_promotion" xml:space="preserve">
+    <value>انضم إلى برنامج الترويج</value>
+  </data>
+  <data name="profile_promotion" xml:space="preserve">
+    <value>برنامج الترويج</value>
+  </data>
+  <data name="program_description" xml:space="preserve">
+    <value>وصف البرنامج</value>
+  </data>
+  <data name="program_name" xml:space="preserve">
+    <value>اسم البرنامج</value>
+  </data>
+  <data name="promotion_programs" xml:space="preserve">
+    <value>برامج الترويج</value>
+  </data>
+  <data name="sending" xml:space="preserve">
+    <value>جاري الإرسال</value>
+  </data>
+  <data name="login_phone_number_error_length" xml:space="preserve">
+    <value>يجب ألا يقل رقم المحمول عن 10 خانات</value>
+  </data>
+  <data name="notEligible" xml:space="preserve">
+    <value>غير مستحق لخصم</value>
+  </data>
+  <data name="city" xml:space="preserve">
+    <value>المدينة</value>
+  </data>
+  <data name="driver_name" xml:space="preserve">
+    <value>اسم السائق</value>
+  </data>
+  <data name="expired" xml:space="preserve">
+    <value>انتهي</value>
+  </data>
+  <data name="vehicle_name" xml:space="preserve">
+    <value>اسم المركبة</value>
+  </data>
+  <data name="view_search_results" xml:space="preserve">
+    <value>عرض نتائج البحث</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="delete_vehicle" xml:space="preserve">
+    <value>حذف المركبة</value>
+  </data>
+  <data name="edit_password" xml:space="preserve">
+    <value>تعديل كلمة المرور</value>
+  </data>
+  <data name="TPL" xml:space="preserve">
+    <value>تأمين ضد الغير (طرف ثالث)</value>
+  </data>
+  <data name="company_mobile" xml:space="preserve">
+    <value>جوال</value>
+  </data>
+  <data name="edit_request" xml:space="preserve">
+    <value>طلب تعديل</value>
+  </data>
+  <data name="add_driver_edit_request" xml:space="preserve">
+    <value>إضافة سائق</value>
+  </data>
+  <data name="attach_files" xml:space="preserve">
+    <value>يُرجى إرفاق ملفات من نوع (image / pdf) لإتمام الطلب</value>
+  </data>
+  <data name="change_plate" xml:space="preserve">
+    <value>تغيير اللوحة</value>
+  </data>
+  <data name="choose_edit_request_type" xml:space="preserve">
+    <value>يُرجى تحديد غرض التعديل</value>
+  </data>
+  <data name="copy_of_national_identity" xml:space="preserve">
+    <value>صورة الهوية الوطنية / هوية مقيم</value>
+  </data>
+  <data name="copy_of_national_identity_additional_driver" xml:space="preserve">
+    <value>صورة الهوية / الإقامة للسائق الإضافي</value>
+  </data>
+  <data name="copy_of_policy" xml:space="preserve">
+    <value>صورة من وثيقة التأمين</value>
+  </data>
+  <data name="document_mistake_edit_request" xml:space="preserve">
+    <value>تعديل خطأ بالوثيقة</value>
+  </data>
+  <data name="driver_license_additional_driver" xml:space="preserve">
+    <value>رخصة القيادة للسائق الإضافي</value>
+  </data>
+  <data name="license_new_vehicle" xml:space="preserve">
+    <value>رخصة سير المركبة الجديدة</value>
+  </data>
+  <data name="purpose_of_edit_request" xml:space="preserve">
+    <value>الغرض من التعديل</value>
+  </data>
+  <data name="release_plate" xml:space="preserve">
+    <value>إصدار لوحة</value>
+  </data>
+  <data name="send_edit_request" xml:space="preserve">
+    <value>إرسال طلب تعديل</value>
+  </data>
+  <data name="vehicle_license" xml:space="preserve">
+    <value>رخصة سير المركبة</value>
+  </data>
+  <data name="edit_request_success" xml:space="preserve">
+    <value>تم إرسال طلب التعديل إلى شركه التأمين برقم</value>
+  </data>
+  <data name="payment_RiyadBank" xml:space="preserve">
+    <value>بطاقة الفيزا - ماستر كارد - مدى</value>
+  </data>
+  <data name="messageUnAuthorized" xml:space="preserve">
+    <value>غير مسموح بالدخول</value>
+  </data>
+  <data name="invaildExtension" xml:space="preserve">
+    <value>نوع الملف غير صالح</value>
+  </data>
+  <data name="sama_iban" xml:space="preserve">
+    <value>بناء على متطلبات مؤسسة النقد</value>
+  </data>
+  <data name="IBANUsedForOtherDriver" xml:space="preserve">
+    <value>رقم الايبان هذا مستخدم من قبل مع شخص آخر</value>
+  </data>
+  <data name="payment_by" xml:space="preserve">
+    <value>اختر طريقة الدفع</value>
+  </data>
+  <data name="Custom_Card" xml:space="preserve">
+    <value>بطاقة جمركية</value>
+  </data>
+  <data name="checkout_error_email" xml:space="preserve">
+    <value>برجاء إدخال بريد إلكتروني صحيح</value>
+  </data>
+  <data name="follow_us" xml:space="preserve">
+    <value>تابعنا</value>
+  </data>
+  <data name="included" xml:space="preserve">
+    <value>مشمولة</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="faq_help" xml:space="preserve">
+    <value>تصفح الإجابات على الاستعلامات الشائعة</value>
+  </data>
+  <data name="reply_field" xml:space="preserve">
+    <value>رد</value>
+  </data>
+  <data name="search_field" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="tab_chat" xml:space="preserve">
+    <value>استفسار عام</value>
+  </data>
+  <data name="tab_faq" xml:space="preserve">
+    <value>أسئلة مكررة</value>
+  </data>
+  <data name="driverIdRequired" xml:space="preserve">
+    <value>صورة الهوية / الإقامة للسائق الإضافي مطلوبة</value>
+  </data>
+  <data name="driverLicenseReuired" xml:space="preserve">
+    <value>رخصة القياده للسائق الإضافي مطلوبة</value>
+  </data>
+  <data name="fileNull" xml:space="preserve">
+    <value>ملف لا يمكن أن يكون فارغ </value>
+  </data>
+  <data name="newVehicleLicenseRequired" xml:space="preserve">
+    <value>رخصة سير  المركبة الجديدة مطلوبة</value>
+  </data>
+  <data name="PolicyFileRequired" xml:space="preserve">
+    <value>صورة من وثيقة التأمين مطلوبة</value>
+  </data>
+  <data name="userIdLinceseRequired" xml:space="preserve">
+    <value>صورة من وثيقة التأمين مطلوبة</value>
+  </data>
+  <data name="userIdRequired" xml:space="preserve">
+    <value>صورة الهوية الوطنية / هوية مقيم مطلوبة</value>
+  </data>
+  <data name="vehicleLinencesRequired" xml:space="preserve">
+    <value>رخصه سير المركبة مطلوبة</value>
+  </data>
+  <data name="forbidden_description" xml:space="preserve">
+    <value>عُـذرًا ، ليس لديك إذن لعرض هذه الصفحة. تأكد من الأمر، أو عُـد إلى الصفحة الرئيسية.</value>
+  </data>
+  <data name="forbidden_title" xml:space="preserve">
+    <value>غير مسموح بالدخول</value>
+  </data>
+  <data name="home_page" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="QuotationExpired" xml:space="preserve">
+    <value>انتهت فتره العرض, يمكنك إجراء بحث جديد</value>
+  </data>
+  <data name="exceedploicyNumber" xml:space="preserve">
+    <value>لقد استنفزت عدد البوليصات المسموح، للمزيد برجاء اضغط على الرابط للمراجعة</value>
+  </data>
+  <data name="requestmorepolicies" xml:space="preserve">
+    <value>اضغط هنا لطلب مزيد من البوليصات</value>
+  </data>
+  <data name="Promotion_StartSearch" xml:space="preserve">
+    <value>ابدأ البحث</value>
+  </data>
+  <data name="Wafier_Index_EnterWafierEmail" xml:space="preserve">
+    <value>يُرجى إدخال البريد الإلكتروني الخاص بعملك الرسمي</value>
+  </data>
+  <data name="Wafier_Index_NoWafierProgramExists" xml:space="preserve">
+    <value>عفوًا لا يوجد برنامج وفير</value>
+  </data>
+  <data name="wafier_program" xml:space="preserve">
+    <value>برنامج وفير</value>
+  </data>
+  <data name="SandPlus" xml:space="preserve">
+    <value>سند بلس</value>
+  </data>
+  <data name="Tameenk_ConfirmPhoneNumber_CodeNotCorrect" xml:space="preserve">
+    <value>رمز التحقق غير صحيح</value>
+  </data>
+  <data name="Tameenk_ConfirmPhoneNumber_Length6" xml:space="preserve">
+    <value>حد أقصى 6 أرقام</value>
+  </data>
+  <data name="Tameenk_ConfirmPhoneNumber_Resend" xml:space="preserve">
+    <value>إعادة إرسال رمز التفعيل</value>
+  </data>
+  <data name="Tameenk_ConfirmPhoneNumber_ResendCode" xml:space="preserve">
+    <value>لقد تم إعادة إرسال كود التفعيل إليك</value>
+  </data>
+  <data name="Tameenk_MaxCheckoutEmail_Error" xml:space="preserve">
+    <value>عُـذرًا, لقد تخطيت عدد مرات الشراء المسموح بها  لهذا البريد الإلكتروني </value>
+  </data>
+  <data name="payment_Hyperpay" xml:space="preserve">
+    <value>بطاقة الفيزا - ماستر كارد</value>
+  </data>
+  <data name="Tameenk_VerifyCode_ResendError" xml:space="preserve">
+    <value>هذا الرقم موجود مع شخص آخر</value>
+  </data>
+  <data name="WafierContent" xml:space="preserve">
+    <value>للاستفادة من الخصم نُرحب بمنسوبي الجامعات السعودية ومنسوبى المؤسسه العامه للتدريب التقنى والمهنى ومدينه الملك فهد الطبية؛ من الموظفين المؤهلون للخصم الخاص وذَويهم: الوالدين، الزوج، الزوجة، الأولاد، والبنات</value>
+  </data>
+  <data name="Tameenk_DDL_SelectOption" xml:space="preserve">
+    <value>اختر</value>
+  </data>
+  <data name="PhoneNoWithAnotherDriver" xml:space="preserve">
+    <value>رقم الجوال خاص بسائق اخر من فضلك ادخل رقم جوال طالب التأمين</value>
+  </data>
+  <data name="VerificationCodeMessage" xml:space="preserve">
+    <value>كود التفعيل الخاص برقم الجوال هو {0}</value>
+  </data>
+  <data name="GenericError" xml:space="preserve">
+    <value>لقد حدث خطأ من فضلك حاول فى وقت اخر </value>
+  </data>
+  <data name="ReachedTheMaxPhoneChange" xml:space="preserve">
+    <value>لقد وصلت الى الحد الاقصى المسموح به لتغير رقم الهاتف</value>
+  </data>
+  <data name="MOIContent" xml:space="preserve">
+    <value>للاستفادة من الخصم نُرحب بمنسوبي وزارة الداخلية؛ من الموظفين المؤهلون للخصم الخاص وذَويهم: الوالدين، الزوج، الزوجة، الأولاد، والبنات</value>
+  </data>
+  <data name="MOI_description" xml:space="preserve">
+    <value>تحرص وزارة الداخلية على تقديم مزايا وأسعار خاصة لمنسوبيها وأسرهم، وأسر شهداء الواجب، وذلك بالشراكة مع شركة بي كير لتقديم خدمات التأمين بأسعار منافسة مع مجموعة من شركات التأمين.</value>
+  </data>
+  <data name="MOI_notfound" xml:space="preserve">
+    <value>عفوًا لا يوجد برنامج وزارة الداخلية</value>
+  </data>
+  <data name="MOI_program" xml:space="preserve">
+    <value>برنامج وزارة الداخلية</value>
+  </data>
+  <data name="Sabic_Content" xml:space="preserve">
+    <value>للاستفادة من الخصم نُرحب بمنسوبي سابك؛ من الموظفين المؤهلون للخصم الخاص وذَويهم: الوالدين، الزوج، الزوجة، الأولاد، والبنات</value>
+  </data>
+  <data name="Sabic_description" xml:space="preserve">
+    <value>تحرص شركة سابك على مصلحة منسوبيها فى الحصول على افضل العروض والخصومات لهم. فقدتم الاتفاق مع شركة بى كير لمنح منسوبى شركة سابك وعوائلهم خصومات خاصه.</value>
+  </data>
+  <data name="Sabic_notfound" xml:space="preserve">
+    <value>عفوًا لا يوجد برنامج سابك</value>
+  </data>
+  <data name="Sabic_program" xml:space="preserve">
+    <value>برنامج سابك</value>
+  </data>
+  <data name="SadadCode" xml:space="preserve">
+    <value>٠٦٧</value>
+  </data>
+  <data name="SadadCodeText" xml:space="preserve">
+    <value>رمز سداد</value>
+  </data>
+  <data name="authentication_by_email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="authentication_by_upload" xml:space="preserve">
+    <value>ارفاق بطاقة العمل أو تعريف من جهة العمل</value>
+  </data>
+  <data name="image_identity" xml:space="preserve">
+    <value>صورة الهوية</value>
+  </data>
+  <data name="method_of_authentication" xml:space="preserve">
+    <value>طريقة التوثيق</value>
+  </data>
+  <data name="login_emailWork" xml:space="preserve">
+    <value>البريد الإلكتروني للعمل الرسمي</value>
+  </data>
+  <data name="login_emailWorkInfo" xml:space="preserve">
+    <value>سيتم حذف بطاقة العمل من النظام بعد التوثيق</value>
+  </data>
+  <data name="BusinessCardUploaded" xml:space="preserve">
+    <value>تم رفع بطاقة العمل بنجاح</value>
+  </data>
+  <data name="EmailUsedWithAnotherDriver" xml:space="preserve">
+    <value>البريد الألكترونى خاص بسائق اخر من فضلك ادخل البريد الألكترونى الخاص بطالب التأمين</value>
+  </data>
+  <data name="IBANWithAnotherDriver" xml:space="preserve">
+    <value>رقم الحساب خاص بسائق اخر من فضلك ادخل رقم حساب طالب التأمين</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 920010050  (NA-99)</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>الحساب مغلق: يرجى الاتصال على خدمة العملاء 920010050</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>مغلق</value>
+  </data>
+  <data name="STCPay" xml:space="preserve">
+    <value>مدفوعات الاتصالات السعودية</value>
+  </data>
+  <data name="MoiRequestRecieved" xml:space="preserve">
+    <value>تم استلام طلب الانضمام سيتم مراجعه الطلب وابلاغكم بالتفعيل من خلال البريد الألكترونى</value>
+  </data>
+  <data name="alreadyRegistered" xml:space="preserve">
+    <value>لقد قمت بالتسجيل من قبل, طلبك قيد المراجعة</value>
+  </data>
+  <data name="clickToKnowMoreAboutMinistryOfInterior" xml:space="preserve">
+    <value>انقر لمعرفة المزيد عن وزارة الداخلية</value>
+  </data>
+  <data name="compareBetweenDiffrentInsuranceQuotations" xml:space="preserve">
+    <value>قارن بين عروض التأمين المختلفة</value>
+  </data>
+  <data name="compareQuotations" xml:space="preserve">
+    <value>قارن العروض</value>
+  </data>
+  <data name="doInsuranceTransaction" xml:space="preserve">
+    <value>قم بعملية التأمين</value>
+  </data>
+  <data name="enterData" xml:space="preserve">
+    <value>أدخل البيانات</value>
+  </data>
+  <data name="enterInsuranceData" xml:space="preserve">
+    <value>أدخل بيانات التأمين</value>
+  </data>
+  <data name="fileSizeLimitExceeded" xml:space="preserve">
+    <value>مساحة الملف اكبر من الحد المسوح به , و هو {0} ميجا</value>
+  </data>
+  <data name="insureNow" xml:space="preserve">
+    <value>أمّـن الآن!</value>
+  </data>
+  <data name="invalidFileExtension" xml:space="preserve">
+    <value>امتداد الملف غير صحيح, الامتدادات المسموح بها هي</value>
+  </data>
+  <data name="ministryOfInterior" xml:space="preserve">
+    <value>وزارة الداخلية</value>
+  </data>
+  <data name="alreadyRegisteredAndApproved" xml:space="preserve">
+    <value>البريد الإلكترونى مسجل بالفعل</value>
+  </data>
+  <data name="checkout_alert5" xml:space="preserve">
+    <value>بناءاً على تعليمات مؤسسة النقد العربي السعودي العنوان الوطني الموثق شرط إلزامي عند إصدار الوثيقة لجميع أنوع التأمين بادر بالتسجيل بالضغط </value>
+  </data>
+  <data name="checkout_alert_here" xml:space="preserve">
+    <value>هنا</value>
+  </data>
+  <data name="BcareConfirmationEmail" xml:space="preserve">
+    <value>تأكيد بي كير</value>
+  </data>
+  <data name="CheckYourEmail" xml:space="preserve">
+    <value>تم إرسال بريد إلكتروني لاكمال عملية التسجيل، يُرجى التحقق منه.</value>
+  </data>
+  <data name="ConfirmationEmailAfterVerificationCode" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; مرحباً بك في بي كير&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;نشكر لك انضمامك لعائلة &lt;b&gt;#بي_كير&lt;/b&gt;، تم تسجيل حساب جديد لبريدك الإلكتروني&lt;/p&gt;
+														&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 تسجيل دخول
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>البريد الإليكتروني غير مفعل</value>
+  </data>
+  <data name="receivePolicyByEmail" xml:space="preserve">
+    <value>أرغب باستلام وثيقة التأمين وملحقاتها وكافة الإشعارات علي الإيميل المذكور أعلاه</value>
+  </data>
+  <data name="checkout_esal" xml:space="preserve">
+    <value>سداد</value>
+  </data>
+  <data name="EsalPaymentInstruction" xml:space="preserve">
+    <value>تم إرسال بيانات الدفع إلى بريدك الإلكترونى و جوالك</value>
+  </data>
+  <data name="payment_biller_name_esal" xml:space="preserve">
+    <value>Bcare - بى كير</value>
+  </data>
+  <data name="payment_code_esal" xml:space="preserve">
+    <value>رمز السداد:</value>
+  </data>
+  <data name="payment_code_esal_val" xml:space="preserve">
+    <value>553</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكترونى: </value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>رقم الجوال: </value>
+  </data>
+  <data name="SadadMessage" xml:space="preserve">
+    <value>سيتم إرسال بيانات الدفع فى رسالة نصية والبريد الإلكترونى</value>
+  </data>
+  <data name="ProgramJoinedSuccessfully" xml:space="preserve">
+    <value>تم الإنضمام الي البرنامج بنجاح</value>
+  </data>
+  <data name="program_code" xml:space="preserve">
+    <value>رقم العضوية</value>
+  </data>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 920010050  (V-01)</value>
+  </data>
+  <data name="CustomCard" xml:space="preserve">
+    <value>بطاقة جمركية</value>
+  </data>
+  <data name="CustomCardInput" xml:space="preserve">
+    <value>الرقم الجمركي</value>
+  </data>
+  <data name="DownloadPolicy" xml:space="preserve">
+    <value>طباعة وثيقة التـأمين</value>
+  </data>
+  <data name="EnglishFirstName" xml:space="preserve">
+    <value>الأسم الاول </value>
+  </data>
+  <data name="EnglishLastName" xml:space="preserve">
+    <value>الأسم الاخير </value>
+  </data>
+  <data name="NIN" xml:space="preserve">
+    <value>رقم هوية / إقامة طالب التأمين</value>
+  </data>
+  <data name="PolicyExpiryDate" xml:space="preserve">
+    <value>تاريخ انتهاء الوثيقة</value>
+  </data>
+  <data name="PolicyNo" xml:space="preserve">
+    <value>رقم الوثيقه</value>
+  </data>
+  <data name="PrintYourPolicy" xml:space="preserve">
+    <value>اطبع وثيقتك</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>استمارة</value>
+  </data>
+  <data name="SequenceNumberInput" xml:space="preserve">
+    <value>الرقم التسلسلي</value>
+  </data>
+  <data name="CustomCardReq" xml:space="preserve">
+    <value>الرقم الجمركى مطلوب</value>
+  </data>
+  <data name="NinReq" xml:space="preserve">
+    <value>رقم هوية / إقامة طالب التأمين مطلوب</value>
+  </data>
+  <data name="PoliciesNotFound" xml:space="preserve">
+    <value>لا يوجد وثائق</value>
+  </data>
+  <data name="SequenceNumberReq" xml:space="preserve">
+    <value>الرقم التسلسلي مطلوب</value>
+  </data>
+  <data name="IBAN_Validation" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي يجب ان يكون أرقام فقط او وجود حرف واحد فقط</value>
+  </data>
+  <data name="checkout_total_note" xml:space="preserve">
+    <value>شامل قيمة عمولة الوسيط %{0}</value>
+  </data>
+  <data name="PayNow" xml:space="preserve">
+    <value>أدفع الاّن!</value>
+  </data>
+  <data name="PolicyEndDate" xml:space="preserve">
+    <value>تاريخ إنتهاء الوثيقة</value>
+  </data>
+  <data name="PolicyPrintDate" xml:space="preserve">
+    <value>تاريخ طباعة الوثيقة</value>
+  </data>
+  <data name="PolicyStartDate" xml:space="preserve">
+    <value>تاريخ بدء الوثيقة</value>
+  </data>
+  <data name="PriceDetails" xml:space="preserve">
+    <value>تفاصيل السعر</value>
+  </data>
+  <data name="QuotationPrices" xml:space="preserve">
+    <value>عرض الأسعار</value>
+  </data>
+  <data name="RequesterInsuranceName" xml:space="preserve">
+    <value>اسم طالب التأمين</value>
+  </data>
+  <data name="RequesterInsuranceNIN" xml:space="preserve">
+    <value>رقم هوية طالب التأمين</value>
+  </data>
+  <data name="SequenceNumberOrCustomCard" xml:space="preserve">
+    <value>الرقم التسلسلي/الجمركي</value>
+  </data>
+  <data name="SubTotal" xml:space="preserve">
+    <value>المجموع</value>
+  </data>
+  <data name="completeOnMobileApplication" xml:space="preserve">
+    <value>لإكمال عملية الشراء يجب رفع صور المركبة عبر تطبيق بي كير أو متصفح الجوال</value>
+  </data>
+  <data name="checkout_error_payment" xml:space="preserve">
+    <value>برجاء إختيار وسيلة دفع</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Bcare" xml:space="preserve">
+    <value>بي كير</value>
+  </data>
+  <data name="CompareQuotations_2" xml:space="preserve">
+    <value>2.قارن العروض</value>
+  </data>
+  <data name="EnterData_1" xml:space="preserve">
+    <value>1.أدخل البيانات</value>
+  </data>
+  <data name="FastestPlatform" xml:space="preserve">
+    <value>أسرع منصة تأمين بالمملكة</value>
+  </data>
+  <data name="InsureNow_3" xml:space="preserve">
+    <value>3.أمن الآن</value>
+  </data>
+  <data name="ThreeSimpleStepts" xml:space="preserve">
+    <value>بـ 3 خطوات بسيطة</value>
+  </data>
+  <data name="ActivateEmailToReceivePolicyEmail" xml:space="preserve">
+    <value>يجب تفعيل البريد الإلكتروني ({0}) لاستلام وثيقة التأمين علماً أنه يمكن طباعة الوثيقة من الملف الشخصي &gt; منتجاتي .</value>
+  </data>
+  <data name="ActivateEmailToReceivePolicySubject" xml:space="preserve">
+    <value>تفعيل البريد الالكتروني</value>
+  </data>
+  <data name="ActivateYourEmailToReceivePolicy" xml:space="preserve">
+    <value>فعل الايميل لتصلك الوثيقة</value>
+  </data>
+  <data name="DeclareYourInfo" xml:space="preserve">
+    <value>وأقر بأن المعلومات المدخله أعلاه صحيحه وهي خاصة بي، حيث سيتم إرسال رابط تحقق عبر البريد الإلكتروني لإرسال وثيقة التأمين</value>
+  </data>
+  <data name="EmailActivationBodyToReceivePolicy" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                    &lt;h2&gt; تفعيل البريد الالكتروني&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;
+																	لاستلام وثيقه التأمين علي البريد الالكتروني يجب استكمال عمليه التفعيل. يُرجى الضغط على "تفعيل"
+																	&lt;/p&gt;
+														&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 تفعيل
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="PopupConfirmYourEmail" xml:space="preserve">
+    <value>قم بتأكيد بريدك الالكتروني</value>
+  </data>
+  <data name="PopupPolicyOwnerEmail" xml:space="preserve">
+    <value>البريد الالكتروني لمالك الوثيقة</value>
+  </data>
+  <data name="PopupSendActivationEmail" xml:space="preserve">
+    <value>ارسال بريد التحقق</value>
+  </data>
+  <data name="PopupTitle" xml:space="preserve">
+    <value>لاستلام وثيقه التأمين علي البريد الالكتروني يجب استكمال عمليه التحقق من بريدك الالكتروني</value>
+  </data>
+  <data name="UserExceedsInsuranceNumberLimitCheckoutPopup" xml:space="preserve">
+    <value>نأمل مراجعة شركة التأمين مباشرة وذلك لوجود أكثر من 5 مركبات مؤمن عليها لنفس صاحب الهوية</value>
+  </data>
+  <data name="Agree" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="ActivationEmailSent" xml:space="preserve">
+    <value>تم إرسال التفعيل لبريدكم الالكتروني</value>
+  </data>
+  <data name="ResendActivationEmail" xml:space="preserve">
+    <value>إعادة إرسال</value>
+  </data>
+  <data name="EmailActivated" xml:space="preserve">
+    <value>تم تفعيل البريد الالكتروني</value>
+  </data>
+  <data name="ResetPaswordTokenInvalid" xml:space="preserve">
+    <value>الرمز المميز غير صالح, الرمز صالح لمرة واحدة فقط, من فضلك اعد المحاولة ل "نسيت كلمة المرور" من صفحة تسجيل الدخول.</value>
+  </data>
+  <data name="DriverName" xml:space="preserve">
+    <value>اسم سائق المركبة</value>
+  </data>
+  <data name="DriverNIN" xml:space="preserve">
+    <value>رقم هوية سائق المركبة</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>المدونة</value>
+  </data>
+  <data name="SadadLoading" xml:space="preserve">
+    <value>جارى إصدار رقم سداد</value>
+  </data>
+  <data name="BCareTitle" xml:space="preserve">
+    <value>قارن تأمين السيارات أون لاين واشترى تأمينك فوراً|بي كير</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>عناية الوسيط, بي كير, بيكير, تأمين إلكتروني, تأمين سيارات, تأمين صحي، تأمين طبي، تأمين المنازل، تأمين على الحياة، تأمين على البضائع, بروكر كير , بروكركير, ميدغلف, وسيط تأميني، تأمينك، مين ضد الغير للسيارات والمركبات، لكزس، تويوتا، هونداي، كامري، يوكون، هوندا، كوريلا، فورد، تورس، بورش، بي ام دبليو، أودي، أكورد، تورس، جيب، كيا، مرسيدس، رانج روفر، كابريس، شفروليت، مازدا، هيونداي، تأمين ,ضد الغير ,المركبات,مركبات,اونلاين ,شراء,طرف ثالث,سيارة ,سيارات ,وثائق ,مقارنة ,شامل ,طبي ,سفر , تأميني,السعودية,السعوديه,المملكة العربية السعودية,المملكه العربيه السعوديه,تامين,التامين,اسعار التامين,تامين اون لاين,تأمين ضد الغير,اسعار شركات التأمين,اسعار تأمين السيارات,اسعار تأمين السيارات ضد الغير,تامين شامل,أسعار التأمين ضد الغير,اسعار شركات التأمين للسيارات,ارخص تأمين ضد الغير,ارخص تامين,اسعار تامين المركبات,اسعار التأمين الشامل,التأمين الالكتروني,تأمين السيارات اون لاين,تأمين السيارات ضد الغير,ارخص تامين سيارات,سعر تامين السيارة,اسعار التامين للمركبات ضد الغير,تامين المركبات اون لاين,اسعار تأمين السيارات الشامل,تأمين ملاذ,سعر التامين,تامين السيارة عن طريق النت,ارخص شركة تامين ضد الغير,التأمين الشامل,الاستفسار عن تامين مركبة,التأمينات اون لاين,شركات التأمين في الرياض,سعر التأمين الشامل,افضل تامين سيارات,تأمين السيارات الشامل,افضل شركة تأمين سيارات,استعلام عن تامين,تأمين المركبات,ارخص شركة تامين سيارات,كم تامين السيارة,اسعار التامين على السيارات في السعودية,التأمين الشامل للسيارات,بحث عن تأمين السيارات,اسعار التامين على السيارات ضد الغير,شروط تامين السيارة,الاستعلام عن التامين,تأمين السيارات,تأمين شامل للسيارات,اسعار التامين على السيارات,اسعار تامين المركبات في السعودية,استعلام عن تامين مركبة,تأمين المركبات السعودية,سعر التأمين الشامل للسيارات,استعلام عن التامينات,التامينات برقم الهويه,تجديد تأمين السيارة,شركات تأمين السيارات,استعلام عن تامين مقيم,اسعار تامين السيارات في السعودية,ولاء للتأمين,المتحدة للتأمين,ميدغلف للتأمين,الأهلية للتأمين,سوليدرتي للتأمين,الدرع العربي للتأمين,اسيج للتامين,سلامه للتامين,التأمين التعاوني,اتحاد الخليج,الوطنية للتأمين</value>
+  </data>
+  <data name="MetaDescription" xml:space="preserve">
+    <value>قارن أسعار تأمين ضد الغير والتأمين الشامل للسيارات والمركبات، وأشترى تأمينك مباشرة خلال دقيقتين، ربط فورى لتأمينك فى نجم والمرور</value>
+  </data>
+  <data name="Profile_AddTicket" xml:space="preserve">
+    <value>إضافة تذكرة</value>
+  </data>
+  <data name="Tickets" xml:space="preserve">
+    <value>التذاكر</value>
+  </data>
+  <data name="renewal" xml:space="preserve">
+    <value>تجديد الوثيقة</value>
+  </data>
+  <data name="DeserveDiscount" xml:space="preserve">
+    <value>نعم يستحق الخصم</value>
+  </data>
+  <data name="NotDeserveDiscount" xml:space="preserve">
+    <value>لا يستحق الخصم</value>
+  </data>
+  <data name="DeserveDiscountTitle" xml:space="preserve">
+    <value>استحقاق الخصم</value>
+  </data>
+  <data name="BillDueDate" xml:space="preserve">
+    <value>تاريخ الإنتهاء</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>الأولى</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>الأخيرة</value>
+  </data>
+  <data name="MySadadBills" xml:space="preserve">
+    <value>فواتير سداد</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="Payed" xml:space="preserve">
+    <value>تم الدفع</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="WaitForPayment" xml:space="preserve">
+    <value>فى إنتظار الدفع</value>
+  </data>
+  <data name="DownloadTempPolicy" xml:space="preserve">
+    <value>تحميل وثيقة مؤقتة</value>
+  </data>
+  <data name="SadadNo" xml:space="preserve">
+    <value>رقم سداد</value>
+  </data>
+  <data name="EmailNotRegisteredOnBcare" xml:space="preserve">
+    <value>البريد الإلكتروني ليس لديه حساب لدينا لذلك يرجي التسجيل بهذا البريد الإلكتروني أولا</value>
+  </data>
+  <data name="comprehensive_condiation_policy_ACIG" xml:space="preserve">
+    <value>بالنقر أقر بالإطلاع على &lt;a href="https://www.bcare.com.sa/ACIG_policy.pdf" target="_blank" rel="noopener"&gt;شروط وثيقة التأمين&lt;/a&gt; والموافقة عليها دون أدنى مسئولية علي #بي_كير</value>
+  </data>
+  <data name="edaat_payment_instruction" xml:space="preserve">
+    <value>يمكنك دفع الفواتير عن طريق احدى القنوات البنكية الخاصة بك وذلك عن طريق الخطوات التالية:</value>
+  </data>
+  <data name="ChooseMofawter" xml:space="preserve">
+    <value>3.اختيار المفوتر ( ايداع 903 )</value>
+  </data>
+  <data name="ChoosePayInvoices" xml:space="preserve">
+    <value>1.اختر سداد الفواتير / المدفوعات</value>
+  </data>
+  <data name="ChoosePaySadadInvoices" xml:space="preserve">
+    <value>2.اختر مدفوعات سداد / اضافة فاتورة جديدة</value>
+  </data>
+  <data name="ChooseServiceType" xml:space="preserve">
+    <value>4.اختيار نوع الخدمة ( دفع الفواتير )</value>
+  </data>
+  <data name="EnterInvoiceNumer" xml:space="preserve">
+    <value>5.ادخل رقم الفاتورة التي تم ارسالها لكم مسبقا، عن طريق الرسائل النصية</value>
+  </data>
+  <data name="Edaat_Instruction" xml:space="preserve">
+    <value>عزيزي العميل&lt;br/&gt;
+رقم سداد الخاص بالفاتورة:</value>
+  </data>
+  <data name="SadadAmount" xml:space="preserve">
+    <value>مبلغ الشراء: </value>
+  </data>
+  <data name="SadadEXPDATE" xml:space="preserve">
+    <value>تاريخ انتهاء الفاتورة: </value>
+  </data>
+  <data name="SadadNumber" xml:space="preserve">
+    <value>رقم سداد: </value>
+  </data>
+  <data name="EDAA" xml:space="preserve">
+    <value>إيداع</value>
+  </data>
+  <data name="EdaatCode" xml:space="preserve">
+    <value>رمز سداد</value>
+  </data>
+  <data name="MofaterName" xml:space="preserve">
+    <value>اسم المفوتر</value>
+  </data>
+  <data name="MotorFlex" xml:space="preserve">
+    <value>موتور فليكس</value>
+  </data>
+  <data name="WoorefDiscount" xml:space="preserve">
+    <value>إستعلام عن خصم</value>
+  </data>
+  <data name="WafiSmart" xml:space="preserve">
+    <value>وافي سمارت</value>
+  </data>
+  <data name="Otp_Popup_code_input" xml:space="preserve">
+    <value>الكود</value>
+  </data>
+  <data name="Otp_Popup_header" xml:space="preserve">
+    <value>أدخل كود التأكيد</value>
+  </data>
+  <data name="Otp_Popup_submit_btn" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="CorporateAccountInfo" xml:space="preserve">
+    <value>بيانات الشركة</value>
+  </data>
+  <data name="CorporateBalance" xml:space="preserve">
+    <value>رصيد حساب الشركة</value>
+  </data>
+  <data name="CorporateNameArabic" xml:space="preserve">
+    <value>اسم الشركة باللغة العربية</value>
+  </data>
+  <data name="CorporateNameEnglish" xml:space="preserve">
+    <value>اسم الشركة باللغة الانجليزية</value>
+  </data>
+  <data name="CorporateUsers" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>مفعل</value>
+  </data>
+  <data name="oldPassword" xml:space="preserve">
+    <value>كلمة المرور القديمة</value>
+  </data>
+  <data name="resetPassword" xml:space="preserve">
+    <value>تغيير كلمة المرور</value>
+  </data>
+  <data name="CorporatePolicies" xml:space="preserve">
+    <value>وثائق الشركة</value>
+  </data>
+  <data name="ErrorOTPCompare" xml:space="preserve">
+    <value>خطأ في رمز التحقق</value>
+  </data>
+  <data name="ErrorOTPEmpty" xml:space="preserve">
+    <value>من فضلك ادخل رمز التحقق</value>
+  </data>
+  <data name="ErrorOTPExpire" xml:space="preserve">
+    <value>انتهت صلاحيه رمز التحقق</value>
+  </data>
+  <data name="ErrorOTPSend" xml:space="preserve">
+    <value>حدث خطأ اثناء ارسال كلمه السر المؤقت</value>
+  </data>
+  <data name="ErrorYakeenMobileVerification" xml:space="preserve">
+    <value>حدث خطأ اثناء التحقق من رقم الجوال</value>
+  </data>
+  <data name="InvalidMobileOwner" xml:space="preserve">
+    <value>رقم الجوال لا ينتمي الي رقم الهويه</value>
+  </data>
+  <data name="MobileEmpty" xml:space="preserve">
+    <value>من فضلك ادخل رقم الجوال</value>
+  </data>
+  <data name="NationalIdEmpty" xml:space="preserve">
+    <value>من فضلك ادخل رقم الهويه</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserYakeenNationalIdNotVerified" xml:space="preserve">
+    <value>رقم الهويه غير مؤكد</value>
+  </data>
+</root>

@@ -1,0 +1,1072 @@
+﻿@model Tamkeen.bll.Model.QuotationServicesApiRequestMessage
+@using CaptchaMvc.HtmlHelpers
+@using BotDetect.Web.Mvc;
+@using Tameenk.Services.Extensions;
+<script type="text/javascript" src="/dist/main.js" defer></script>
+<style>  
+    .item img {
+        height: 100% !important;
+    }
+</style>
+<script>
+   var Resources = {
+
+       RegistrationNumber: '@LangText.registration_number',
+       CustomsCardNumber: '@LangText.CustomsCardNumber',
+
+   };
+</script>
+<section id="slider" class="section slides overview  slidesCover">
+    <div class="slider slider-imgs">
+        <span>
+            <div class="bg" style="background-image: url(@Href("/resources/imgs/slide-bg1.jpg"))">
+            </div>
+        </span>
+        <span>
+            <div class="bg" style="background-image: url(@Href("/resources/imgs/slide-bg2.jpg"))"></div>
+        </span>
+    </div>
+    <div class="container text-container relative-index">
+        <div id="top-slider">
+            <!-- slide -->
+            <article>
+                <header style="text-align: center">
+                    <h1 class="txt-white txt-lr md-lh txt-right">
+                    loza    @Html.Raw(Tameenk.LangText.index_desc)
+                    </h1>
+                    <a href="#cars" class="md-lh l-shadow sm-mar">@Html.Raw(Tameenk.LangText.home_slider_cta)</a>
+                </header>
+            </article>
+            <!-- slide -->
+            <article>
+                <header style="text-align: center">
+                    <h1 class="txt-white txt-lr md-lh txt-right">
+                        @Html.Raw(Tameenk.LangText.index_desc)
+                    </h1>
+                    <a href="#cars" class="md-lh l-shadow sm-mar">@Html.Raw(Tameenk.LangText.home_slider_cta)</a>
+                </header>
+            </article>
+            <!-- slide -->
+        </div>
+        <!-- slider -->
+        <div class="arrows-move md-mar"></div>
+    </div>
+    <div class="scroll-down">
+        <a href="#cars">
+            <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+<section id="tabs" class="section tabs-section">
+    <div class="container relative-index" style="z-index:1">
+        <ul class="tabs inline-list">
+            <li class="active" data-link="cars">
+                <span class="circlecor"></span>
+                <span class="circlecor left"></span>
+                <a class="carsLink">
+                    <span class="icon-wrapper" style="line-height: 60px;">
+                        <i style=" top: 3px; position: relative;" class="ic-carico"></i>
+                    </span>
+                    <div class="tab-info">
+                        <div class="soon">
+                            <span class="relative-index">@Html.Raw(Tameenk.LangText.coming_soon)</span>
+                        </div>
+                        <h2 class="txt-md l-shadow">@Html.Raw(Tameenk.LangText.vehicle_insurance)</h2>
+                        <span class="avilable txt-xs xs-mar dis-block" style="color: white;">.</span>
+                    </div>
+                </a>
+            </li>
+            <li class="active not-now" data-link="travel">
+                <span class="circlecor"></span>
+                <span class="circlecor left"></span>
+                <a class="travelLink">
+                    <span class="icon-wrapper">
+                        <i class="ic-icons-620"></i>
+                    </span>
+                    <div class="tab-info">
+                        <h2 class="txt-md l-shadow">@Html.Raw(Tameenk.LangText.travel_insurance)</h2>
+                        <span class="avilable txt-xs xs-mar dis-block">@Html.Raw(Tameenk.LangText.coming_soon)</span>
+                    </div>
+                </a>
+            </li>
+            <li class="active not-now" data-link="home">
+                <span class="circlecor"></span>
+                <span class="circlecor left"></span>
+                <a class="homeLink">
+                    <span class="icon-wrapper">
+                        <i style="position: relative; right: -2px;" class="ic-icons-688"></i>
+                    </span>
+                    <div class="tab-info">
+                        <div class="soon l-shadow">
+                            <span class="relative-index">@Html.Raw(Tameenk.LangText.coming_soon)</span>
+                        </div>
+                        <h2 class="txt-md">@Html.Raw(Tameenk.LangText.home_insurance)</h2>
+                        <span class="avilable txt-xs xs-mar dis-block">@Html.Raw(Tameenk.LangText.coming_soon)</span>
+                    </div>
+                </a>
+            </li>
+            @*
+                <li class="active not-now" data-link="medical">
+                   <span class="circlecor"></span>
+                   <span class="circlecor left"></span>
+                   <a class="medicalLink">
+                      <span class="icon-wrapper">
+                      <i class="ic-icons-103"></i>
+                      </span>
+                      <div class="tab-info">
+                         <h2 class="txt-md">@Html.Raw(Tameenk.LangText.medical_insurance)</h2>
+                         <span class="avilable txt-xs xs-mar dis-block">@Html.Raw(Tameenk.LangText.coming_soon)</span>
+                      </div>
+                   </a>
+                </li>
+            *@
+        </ul>
+    </div>
+    <div class="container">
+        <div class="tab-content active" id="cars">
+            @using (Html.BeginForm("SubmitRequest", "Quotation", FormMethod.Post, new { @class = "homeform" }))
+            {
+                @Html.AntiForgeryToken()
+                <div id="yakeen_erros">
+                    @if (Model != null && Model.Errors.Count > 0)
+                    {
+                        <a class="yakeen-erros-close" href="#">x</a>
+                        <section class="inactive md-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info">
+                            <div class="container">
+                                <h1 style="color:#f7811c; padding-bottom: 0px;" class="txt-black txt-lr md-lh txt-right">
+                                    @Html.Raw(Tameenk.LangText.error_title)
+                                </h1>
+                                <h3 class="txt-black txt-md">
+                                    @Html.Raw(Tameenk.LangText.error_description).
+                                    <br />
+                                </h3>
+                                <br />
+                                @foreach (var error in Model.Errors)
+                                {
+                                    <div>@error</div>
+                                }
+                            </div>
+                        </section>
+                    }
+                </div>
+                <div class="row">
+                    <!-- Right side -->
+                    <div class="col-xs-12 col-lg-6 col-md-6">
+                        <h3 class="md-mar col-xs-12">@Html.Raw(Tameenk.LangText.vehicle_information)</h3>
+                        <div class="col-xs-12 col-lg-6 col-md-6 md-mar">
+                            <h4 class="txt-black txt-xs dis-block over-hidden xs-mar-bot">@Html.Raw(Tameenk.LangText.Vehicle_RegistrationType)</h4>
+                            <label class="radio-holder">
+                                @Html.Raw(Tameenk.LangText.Vehicle_RegistrationType1)
+                                <input type="radio" id="vehicleRegistertype1" name="radio-group" class="register-type" checked onchange="RegisteredCar(this, true)">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-holder">
+                                @Html.Raw(Tameenk.LangText.Vehicle_RegistrationType2)
+                                <input type="radio" id="vehicleRegistertype2" class="register-type" name="radio-group" onchange="RegisteredCar(this, false)">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        @Html.HiddenFor(model => model.VehicleIsRegistered, true)
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro selectinside switchin registerdCarInput">
+                                @Html.DropDownListFor(model => model.ManufactureYear, ViewBag.Years as SelectList, new { @class = "select2" })
+                                <label class="input-label input-label--ichiro" for="caryear">
+                                    <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.manufacturing_year)</span>
+                                </label>
+                            </span>
+                            <span style="color:red;position:absolute" id="ManfactYearError"></span>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro">
+                                @Html.TextBoxFor(model => model.VehicleID, new { @class = "input__field input__field--ichiro carregister" })
+                                <label class="input-label input-label--ichiro" for="carregister">
+                                    <span class="input-label-content input-label-content--ichiro registerdCarLabel">
+                                        @Html.Raw(Tameenk.LangText.registration_number)
+                                    </span>
+                                </label>
+                            </span>
+                            <span style="color:red;position:absolute" id="VehicleIDError">@Html.ValidationMessageFor(model => model.VehicleID)</span>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro selectinside">
+                                @Html.DropDownList("CityCode", ViewBag.Cities as SelectList, "", new { @class = "select2" })
+                                <label class="input-label input-label--ichiro" for="carcity">
+                                    <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.city_vehicle)</span>
+                                </label>
+                            </span>
+                            <span style="color:red;position:absolute" id="CityCodeError">
+                                @Html.ValidationMessageFor(model => model.CityCode)
+                            </span>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro">
+                                <input class="input__field input__field--ichiro endcarregister" data-min-date="@DateTime.Now.AddDays(1).ToArabStandardTime().ConvertToGregorianString()" data-max-date="@DateTime.Now.AddDays(14).ToArabStandardTime().ConvertToGregorianString()" name="EffectiveDate" type="text" />
+                                <label class="input-label input-label--ichiro" for="endcarregister">
+                                    <span class="input-label-content input-label-content--ichiro">
+                                        @Html.Raw(Tameenk.LangText.PolicyEffectiveDate)
+                                    </span>
+                                </label>
+                            </span>
+                            <span style="color:red;position:absolute" id="StartDocDateError">
+                                @Html.ValidationMessageFor(model => model.PolicyEffectiveDate)
+                            </span>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro">
+                                @Html.TextBoxFor(model => model.VehicleValue, new { @class = "input__field input__field--ichiro carprice" })
+                                <label class="input-label input-label--ichiro" for="carprice">
+                                    <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.Vehicle_value)</span>
+                                </label>
+                            </span>
+                            <span style="color:red;position:absolute" id="VehicleValueError">
+                                @Html.ValidationMessageFor(model => model.VehicleValue)
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Left Side -->
+                    <div class="col-xs-12 col-lg-6 col-md-6">
+                        <h3 class="md-mar col-xs-12">@Html.Raw(Tameenk.LangText.insured_information)</h3>
+                        <div class="idnumber_wrapper">
+                            <div class="col-xs-12 col-lg-6 col-md-6">
+                                <span class="input input--ichiro">
+                                    @Html.TextBoxFor(model => model.UserID, new { @maxlength = "10", @class = "user-id-input input__field input__field--ichiro idnumber UserID", onchange = "idChange(this); validateUserId(this);" })
+                                    <label class="input-label input-label--ichiro" for="idnumber">
+                                        <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.id_number)</span>
+                                    </label>
+                                </span>
+                                <span style="color:red;position:absolute" id="IdNoError">
+                                    @Html.ValidationMessageFor(model => model.UserID)
+                                </span>
+                            </div>
+                            <div id="hijriDate">
+                                <div class="col-xs-6 col-lg-3 col-md-3">
+                                    <span class="input input--ichiro selectinside">
+                                        @Html.DropDownListFor(model => model.UserMonthBirthDate, ViewBag.ArabicMonthes as SelectList, "", new { @class = "userMonthBirthDate select2 hijriDateItem" })
+                                        <label class="input-label input-label--ichiro">
+                                            <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.month_of_birth)</span>
+                                        </label>
+                                    </span>
+                                    <span style="color:red;position:absolute" id="MonthError">@Html.ValidationMessageFor(model => model.UserMonthBirthDate)</span>
+                                </div>
+                                <div class="col-xs-6 col-lg-3 col-md-3">
+                                    <span class="input input--ichiro selectinside">
+                                        @Html.DropDownListFor(model => model.UserYearBirthDate, ViewBag.ArabicYears as SelectList, "", new { @class = "userYearBirthDate select2 hijriDateItem" })
+                                        <label class="input-label input-label--ichiro" for="Years">
+                                            <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.year_of_birth)</span>
+                                        </label>
+                                    </span>
+                                    <span style="color:red;position:absolute" id="YearError">@Html.ValidationMessageFor(model => model.UserYearBirthDate)</span>
+                                </div>
+                            </div>
+                            <div hidden>
+                                @Html.DropDownList("georgMonthes", ViewBag.Monthes as SelectList, "")
+                                @Html.DropDownList("georgYears", ViewBag.Years as SelectList, "")
+                                @Html.DropDownList("arabicMonthes", ViewBag.ArabicMonthes as SelectList, "")
+                                @Html.DropDownList("arabicYears", ViewBag.ArabicYears as SelectList, "")
+                            </div>
+                            <div id="georgDate" hidden>
+                                <div class="col-xs-6 col-lg-3 col-md-3">
+                                    <span class="input input--ichiro selectinside">
+                                        @Html.DropDownListFor(model => model.UserMonthBirthDate, ViewBag.Monthes as SelectList, "", new { @class = "userMonthBirthDate select2  georgDateItem" })
+                                        <label class="input-label input-label--ichiro">
+                                            <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.month_of_birth)</span>
+                                        </label>
+                                    </span>
+                                    <span style="color:red;position:absolute" id="MonthError">@Html.ValidationMessageFor(model => model.UserMonthBirthDate)</span>
+                                </div>
+                                <div class="col-xs-6 col-lg-3 col-md-3">
+                                    <span class="input input--ichiro selectinside">
+                                        @Html.DropDownListFor(model => model.UserYearBirthDate, ViewBag.Years as SelectList, "", new { @class = "userYearBirthDate select2 georgDateItem" })
+                                        <label class="input-label input-label--ichiro" for="Years">
+                                            <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.year_of_birth)</span>
+                                        </label>
+                                    </span>
+                                    <span style="color:red;position:absolute" id="YearError">@Html.ValidationMessageFor(model => model.UserYearBirthDate)</span>
+                                </div>
+                            </div>
+                            <div class="hidden-xs hidden-lg">
+                                <div class="input input--ichiro">
+                                </div>
+                            </div>
+                            @Html.HiddenFor(model => model.DriverDisabled, false)
+                            <div class="col-xs-6 md-mar">
+                                <h3 class="txt-black txt-xs dis-block over-hidden xs-mar xs-mar-bot">@Html.Raw(Tameenk.LangText.add_driver)</h3>
+                                <input type="checkbox" class="addnewdriverCheck switchIco md-mar dis-block addnewdriver" onchange="AddAnotherDriver(this)" />
+                                <label class="labelSwitch" for="addnewdriver">
+                                    <span class="stat true txt-brand">@Html.Raw(Tameenk.LangText.yes)</span>
+                                    <span class="stat false txt-gray">@Html.Raw(Tameenk.LangText.no)</span>
+                                </label>
+                            </div>
+                            <input type="hidden" name="AddAnotherDriverHidden" id="AddAnotherDriverHidden" value="false" />
+                            <div class="col-xs-6 md-mar">
+                                <h4 class="txt-black txt-xs dis-block over-hidden xs-mar xs-mar-bot">@Html.Raw(Tameenk.LangText.driver_disable)</h4>
+                                <input id="myBox" type="checkbox" class="switchIco md-mar dis-block driverdisabilty" onchange="CheckHandiCap(this)" />
+                                <label class="labelSwitch" for="driverdisabilty">
+                                    <span class="stat true txt-brand">@Html.Raw(Tameenk.LangText.yes)</span>
+                                    <span class="stat false txt-gray">@Html.Raw(Tameenk.LangText.no)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="over-hidden col-xs-12 col-lg-12 col-md-12 bx-right md-mar hidden driver-fields" id="AddDriver">
+                            <h3 class="no-pd-r col-xs-12">@Html.Raw(Tameenk.LangText.driver_info)</h3>
+                            <div class="over-hidden f_width bx-right driverspace">
+                                <div class="row idnumber_wrapper">
+                                    <div class="col-xs-12 col-lg-5 col-md-5">
+                                        <span class="input input--ichiro">
+                                            @Html.TextBoxFor(model => model.DriverId, new { @maxlength = "10", @minlength = "10", @class = "user-id-input input__field input__field--ichiro driveridnumber UserID", required = "required" })
+                                            <label class="input-label input-label--ichiro" for="driveridnumber">
+                                                <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.id_number)</span>
+                                            </label>
+                                        </span>
+                                        <span style="color:red;position:absolute" class="IdNoError2">@Html.ValidationMessageFor(x => x.DriverId)</span>
+                                    </div>
+                                    <div class="col-xs-5 col-lg-3 col-md-3">
+                                        <span class="input input--ichiro selectinside">
+                                            @Html.DropDownListFor(model => model.DriverlicenseExpiryDate, ViewBag.ArabicMonthes as SelectList, "", new { @class = "select2 arabicmonth" })
+                                            <label class="input-label input-label--ichiro">
+                                                <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.month_expiration)</span>
+                                            </label>
+                                        </span>
+                                        <span style="color:red" class="MonthExpiryError2">@Html.ValidationMessageFor(x => x.DriverlicenseExpiryDate)</span>
+                                    </div>
+                                    <div class="col-xs-5 col-lg-3 col-md-3">
+                                        <span class="input input--ichiro selectinside yearexpiry">
+                                            @Html.DropDownListFor(model => model.DriverLicenseExpirationYear, ViewBag.licenseYears as SelectList, "", new { @class = "select2 arabicyear" })
+                                            <label class="input-label input-label--ichiro" for="yearexpiry">
+                                                <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.year_expiration)</span>
+                                            </label>
+                                        </span>
+                                        <span style="color:red;" class="YearExpiryError2">@Html.ValidationMessageFor(x => x.DriverLicenseExpirationYear)</span>
+                                    </div>
+                                    <div class="col-xs-2 col-lg-1 col-md-1 remove-icon">
+                                        <a class="txt-sm txt-black remove">
+                                            <i class="ic-plus rotate"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xs-12 col-md-12 driver-fields hidden">
+                            <a class="add-driver bx-shdw btn sm dis-block bx-right txt-brand txt-white-hvr login txt-brand  txt-xs bg-gr-main  circ-rdus l-shadow bx-right right">@Html.Raw(Tameenk.LangText.add_another_driver_btn)</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-12 col-md-12 md-mar">
+                        <div class="col-xs-12 col-md-6 xs-mar">
+                            <h4 class="">@Html.Raw(Tameenk.LangText.Detailed_information)</h4>
+                            <div class="col-xs-6 col-lg-6 col-md-6 xs-mar">
+                                <h4 class="txt-black txt-xs dis-block over-hidden xs-mar xs-mar-bot">@Html.Raw(Tameenk.LangText.VehicleUsingWorkPurposes)</h4>
+                                <input id="MyCommercialPurposeChkBox" type="checkbox" class="switchIco switch" class="md-mar dis-block" onchange="PurposeCommercial(this)" />
+                                <label class="labelSwitch" for="switch">
+                                    <span class="stat true txt-brand">@Html.Raw(Tameenk.LangText.yes)</span>
+                                    <span class="stat false txt-gray">@Html.Raw(Tameenk.LangText.no)</span>
+                                </label>
+                            </div>
+                            @Html.HiddenFor(model => model.VehicleUsingWorkPurposes, false)
+
+                            <div class="col-xs-12 col-lg-6 col-md-6 md-mar divOwner">
+                                <h4 class="txt-black txt-xs dis-block over-hidden xs-mar-bot">@Html.Raw(Tameenk.LangText.purpose_of_insurance)</h4>
+                                <label class="radio-holder">
+                                    @Html.Raw(Tameenk.LangText.new_insurance)
+                                    <input type="radio" id="purpose1" class="purpose-of-insurance" name="purpose-of-insurance" checked onchange="OwnerCar(this, true)">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-holder">
+                                    @Html.Raw(Tameenk.LangText.transfer_insurance)
+                                    <input type="radio" id="purpose2" class="purpose-of-insurance" name="purpose-of-insurance" onchange="OwnerCar(this, false)">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            @Html.Hidden("IsOwner", true)
+                            <div class="col-xs-12 col-lg-8 col-md-8">
+                                <span class="input input--ichiro switchin ownerIdInput">
+                                    @Html.TextBoxFor(model => model.OwnerId, new { @class = "input__field input__field--ichiro idnumber" })
+                                    <label class="input-label input-label--ichiro" for="ownerid">
+                                        <span class="input-label-content input-label-content--ichiro">
+                                            @Html.Raw(Tameenk.LangText.owner_id_number)
+                                        </span>
+                                    </label>
+                                </span>
+                                <span style="color:red;position:absolute" id="OwnerError"></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <label for="checkValidation">
+                                <div class="col-xs-2 col-lg-1 col-md-1 md-mar sm-mar-bot checkbox-holder bx-right">
+                                    <input type="checkbox" onchange="checkValidationFunc(this)" id="checkValidation" class="inp-checkbox" style="display: none">
+                                    <label for="checkValidation" class="checkValidation">
+                                        <span>
+                                            <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                            </svg>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-10 col-lg-11 col-md-11 sm-mar sm-mar-bot txt-justify">
+                                    <h4>@Html.Raw(Tameenk.LangText.condiation_policy)</h4>
+                                </div>
+                            </label>
+                            <input type="hidden" name="checkValidationHidden" id="checkValidationHidden" value="N" />
+                            <div class="col-xs-9 col-lg-12 col-md-12 md-mar bx-right" style="padding-left: 0">
+                                <div class="col-xs-12 col-lg-3 col-md-3 sm-mar bx-left">
+                                </div>
+                                @{
+                                    MvcCaptcha searchCaptcha = new MvcCaptcha("SearchCaptcha");
+                                    searchCaptcha.UserInputID = "CaptchaCode";
+                                }
+                                <div class="captcha-img col-sm-12 col-md-7 col-lg-5 bx-right">
+                                    @Html.Captcha(searchCaptcha)
+                                </div>
+                                <div class="captcha-input col-sm-12 col-md-5 col-lg-4">
+                                    <span class="input input--ichiro" style="margin-top: 0em !important;">
+                                        @Html.TextBox("CaptchaCode", null, new { @class = "input__field input__field--ichiro idnumber UserID", maxlength = "4", onkeyup = "checkRobotFunc(this)" })
+                                        <label class="input-label input-label--ichiro" for="idnumber">
+                                            <span class="input-label-content input-label-content--ichiro">@Html.Raw(Tameenk.LangText.Captcha)</span>
+                                        </label>
+                                    </span>
+                                    <span style="color:red;">
+                                        @Html.ValidationMessage("CaptchaCode")
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" id="btnSubmit" onclick="ValidateAndSubmitShowOffer(); return false;" disabled="disabled" class="no-trans bx-left btn sm dis-block bx-left txt-white submit-continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow" value="@Html.Raw(Tameenk.LangText.Show_offers)" style="    margin-bottom: 15px;" />
+            }
+        </div>
+        <div class="tab-content" id="home" style="padding: 60px">
+            <i class="general-ico ic-icons-265 txt-lr"></i>
+            <h2 class="txt-lr txt-black txt-right dis-block f_width md-mar over-hidden">@Html.Raw(Tameenk.LangText.coming_soon)</h2>
+        </div>
+        <div class="tab-content" id="travel" style="padding: 60px">
+            <i class="general-ico ic-icons-265 txt-lr"></i>
+            <h2 class="txt-lr txt-black txt-right dis-block f_width md-mar over-hidden">@Html.Raw(Tameenk.LangText.coming_soon)</h2>
+        </div>
+        <!-- <div class="tab-content" id="medical" style="padding: 60px">
+           <i class="general-ico ic-icons-265 txt-lr"></i>
+           <h2 class="txt-lr txt-black txt-right dis-block f_width md-mar over-hidden">@Html.Raw(Tameenk.LangText.coming_soon)</h2>
+           </div> -->
+    </div>
+</section>
+<section id="needs" class="section needs">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-6 col-md-6 bx-left md-mar-bot">
+                <div id="slider-steps">
+                    <div class="item" style="border-top-left-radius:0px;">
+                        <img src="/resources/imgs/sc1.png" alt="أدخل بيانات التأمين" title="أدخل بيانات التأمين"/>
+                        <h3 style="background: #efefef; color:black; ">أدخل البيانات</h3>
+                    </div>
+                    <div class="item" style="border-top-left-radius:0px;">
+                        <img src="/resources/imgs/sc2.png" alt="قارن بين عروض التأمين المختلفة " title="قارن بين عروض التأمين المختلفة "/>
+                        <h3>قارن العروض</h3>
+                    </div>
+                    <div class="item" style="border-top-left-radius:0px;">
+                        <img src="/resources/imgs/sc3.png" alt="قم بعملية التأمين" title="قم بعملية التأمين"/>
+                        <h3>أمّن الآن!</h3>
+                    </div>
+                </div>
+                <div id="arrows-slider" class="md-mar">
+                    <span id="next-step">
+                        <i class="ic-asset-5-1"></i>
+                    </span>
+                    <span id="prev-step">
+                        <i class="ic-asset-5-1"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-4 col-md-4 bxt-right">
+                <h1 class="txt-lr txt-brand txt-right dis-block">@Html.Raw(Tameenk.LangText.index_more_title)...</h1>
+                <p class="txt-md no-mar lr-mar txt-black txt-justify dis-block md-lh">@Html.Raw(Tameenk.LangText.index_more_desc)</p>
+                <a href="#" class="bx-right md-mar btn sm dis-block bx-left txt-white login txt-brand borderd-hvr txt-xs bg-gr-main  circ-rdus l-shadow">@Html.Raw(Tameenk.LangText.index_more_about_button)</a>
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</section>
+<section id="portfolio" class="section portfolio sm-mar">
+    <div class="container">
+        <div class="row">
+            <h1 class="txt-lr txt-brand txt-center dis-block">@Html.Raw(Tameenk.LangText.partners)</h1>
+            <div class="img-list slider sm-mar partners-slider">
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Sagr.png" alt="AlSagr Insurance" title="AlSagr Insurance" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Solidarity.png" alt="سوليدرتي للتأمين" title="سوليدرتي للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Alalamiya.png" alt="العالمية للتأمين" title="العالمية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/MedGulf.png" alt="ميدغلف للتأمين" title="ميدغلف للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/GGI.png" alt="العالمية للتأمين" title="العالمية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/ACIG.png" alt="أسيج للتأمين" title="أسيج للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/ArabianShield.png" alt="الدرع العربي للتأمين" title="الدرع العربي للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Ahlia.png" alt="الأهلية للتأمين" title="الأهلية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/AICC.png" alt="العربية للتأمين" title="العربية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/TUIC.png" alt="الاتحاد التجاري للتأمين" title="الاتحاد التجاري للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Tawuniya.png" alt="التعاونية للتأمين" title="التعاونية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Wafa.png" alt="وفاء للتأمين" title="وفاء للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Wala.png" alt="ولاء للتأمين" title="ولاء للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Salama.png" alt="سلامة للتأمين" title="سلامة للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/UCA.png" alt="المتحدة للتأمين التعاوني" title="المتحدة للتأمين التعاوني" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/RT.png" alt="تكافل الراجحي" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/SC.png" alt="سايكو للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Malath.png" title="ملاذ" alt="ملاذ" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/TokioMarine.png" title="طوكيو مارين" alt="طوكيو مارين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Allianz.png" title="أليانز" alt="أليانز" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/AXA.png" title="أكسا" alt="أكسا" />
+                </div>
+                <div id="arrows">
+                    <span id="next-comp">
+                        <i class="ic-asset-5-1"></i>
+                    </span>
+                    <span id="prev-comp" style="margin-top: 5px;">
+                        <i class="ic-asset-5-1"></i>
+                    </span>
+                </div>
+            </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</section>
+<!--
+   <section id="contact" class="section contact xl-mar">
+       <div class="container">
+           <div class="row">
+               <div class="col-xs-12 col-md-6 col-lg-6 bx-left">
+                   <h1 class="txt-lr txt-brand no-mar txt-right dis-block">كن علي تواصل</h1>
+                   <p class="txt-md txt-gray lr-mar txt-right dis-block">نرحب دائما بالإقتراحات و الشكاوى الخاصة بكم ..</p>
+                   <form>
+                       <div class="row material">
+                           <div class="col-xs-12 col-lg-6 col-md-12">
+                               <div class="group">
+                                   <input type="text" required="required" />
+                                   <span class="highlight"></span>
+                                   <span class="bar"></span>
+                                   <label>الاسم</label>
+                               </div>
+                           </div>
+                           <div class="col-xs-12 col-lg-6 col-md-12">
+                               <div class="group">
+                                   <input type="text" required="required" />
+                                   <span class="highlight"></span>
+                                   <span class="bar"></span>
+                                   <label>البريد الالكتروني</label>
+                               </div>
+                           </div>
+                           <div class="col-xs-12 col-lg-12 col-md-12">
+                               <div class="group">
+                                   <textarea></textarea>
+                                   <label>نص الرساله ..</label>
+                               </div>
+                           </div>
+                           < <div class="col-xs-12 col-lg-12 md-mar col-md-12">
+                               <button class=" no-trans bx-left btn sm dis-block bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main sm-mar circ-rdus l-shadow">ارسل الان</button>
+                       </div>
+               </div>
+               </form>
+           </div>
+       </div>
+       </div>
+       <div class="col-xs-12 col-md-5 col-lg-5 bx-right map">
+           <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'>
+           </script>
+           <div id='gmap_canvas' style='border-radius: 90px 0 0 0;height:100%;width:100%;'></div>
+           <script type='text/javascript'>
+           function init_map() {
+        var myOptions = {
+                   zoom: 10,
+                   center: new google.maps.LatLng(51.5073509, -0.12775829999998223),
+                   mapTypeId: google.maps.MapTypeId.ROADMAP,
+                   // This is where you would paste any style found on Snazzy Maps.
+                   styles: [{ "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#e9e9e9" }, { "lightness": 17 }] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }, { "lightness": 20 }] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#ffffff" }, { "lightness": 17 }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#ffffff" }, { "lightness": 29 }, { "weight": 0.2 }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }, { "lightness": 18 }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }, { "lightness": 16 }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }, { "lightness": 21 }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#dedede" }, { "lightness": 21 }] }, { "elementType": "labels.text.stroke", "stylers": [{ "visibility": "on" }, { "color": "#ffffff" }, { "lightness": 16 }] }, { "elementType": "labels.text.fill", "stylers": [{ "saturation": 36 }, { "color": "#333333" }, { "lightness": 40 }] }, { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#f2f2f2" }, { "lightness": 19 }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#fefefe" }, { "lightness": 20 }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "color": "#fefefe" }, { "lightness": 17 }, { "weight": 1.2 }] }]
+
+               };
+               map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+               var image = new google.maps.MarkerImage('/resources/imgs/pin.png',
+                   null, null, null, new google.maps.Size(46, 70));
+    marker = new google.maps.Marker({
+                   map: map,
+                   icon: image,
+                   position: new google.maps.LatLng(51.5073509, -0.12775829999998223)
+               });
+               google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
+    infowindow.open(map, marker);
+    }
+    google.maps.event.addDomListener(window, 'load', init_map);
+           </script>
+       </div>
+   </section>
+
+   <div class="modal-compare table-info content-view active" id="CompareModal">
+           <div class="content">
+               <div class="table">
+                   <table>
+                       <td>
+                           <a href="#" class="closeThis bx-left btn sm dis-block bx-right txt-white login txt-brand borderd-hvr txt-xs bg-gr-main  circ-rdus l-shadow">إغلاق</a>
+                       </td>
+                       <td>
+                           <img src="/resources/imgs/package.png" alt="تكافل الراجحى" />
+                       </td>
+                       <td>
+                           <img src="/resources/imgs/package.png" alt="تكافل الراجحى" />
+                       </td>
+                       <td>
+                           <img src="/resources/imgs/package.png" alt="تكافل الراجحى" />
+                       </td>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md t-bottom" data-tooltip="وصف">
+                                   <i class="ic-icons-352 bx-left general-icon pointer"></i>المنافع
+                               </span>
+                           </td>
+                           <td>300 &#65020;</td>
+                           <td>300 &#65020;</td>
+                           <td>300 &#65020;</td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#1</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#2</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#3</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#4</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#5</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#6</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#7</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#8</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#9</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <span class="txt-black txt-md">#10</span>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-right txt-green"></i>
+                           </td>
+                           <td>
+                               <i class="ic-plus rotate dis-inline-block txt-red"></i>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>&nbsp;</td>
+                           <td>
+                               <a href="#" class="bx-left btn sm dis-block bx-right txt-white login txt-brand borderd-hvr txt-xs bg-gr-main circ-rdus l-shadow over-hidden">إشتري الآن</a>
+                           </td>
+                           <td>
+                               <a href="#" class="bx-left btn sm dis-block bx-right txt-white login txt-brand borderd-hvr txt-xs bg-gr-main circ-rdus l-shadow over-hidden">إشتري الآن</a>
+                           </td>
+                           <td>
+                               <a href="#" class="bx-left btn sm dis-block bx-right txt-white login txt-brand borderd-hvr txt-xs bg-gr-main circ-rdus l-shadow over-hidden">إشتري الآن</a>
+                           </td>
+                       </tr>
+                   </table>
+               </div>
+           </div>
+       </div>
+       -->
+@section scripts
+{
+    <script>
+   $(document).ready(function () {
+            idChange($('.user-id-input'));
+       $("input[name='StartDocDate']").val("");
+            RegisteredCar($("#vehicleRegistertype1"), true);
+   $('#SearchCaptcha_CaptchaImageDiv a').remove();
+        });
+
+   $(function () {
+       $('.tabs li').on('click', function () {
+           $('#'+$(this).data('link')).addClass('active').siblings().removeClass('active');
+           $(this).removeClass('not-now').siblings().addClass('not-now');
+           $('html, body').animate({
+                    scrollTop: $('#'+$(this).data('link')).offset().top - 180
+           }, 1000);
+            });
+        });
+        var captchaFill = false,
+            agreeChecked = false;
+
+        function checkValidationFunc(obj) {
+            if ($(obj).is(':checked')) {
+            agreeChecked = true
+            } else {
+            agreeChecked = false;
+        }
+        if (agreeChecked && captchaFill) {
+           $("#btnSubmit").removeAttr("disabled", "");
+        } else {
+           $("#btnSubmit").attr("disabled", "disabled");
+        }
+    }
+
+    function checkRobotFunc($this) {
+        if ($this.value.length === 4) {
+            captchaFill = true
+        } else {
+            captchaFill = false
+       }
+        if (captchaFill && agreeChecked) {
+           $("#btnSubmit").removeAttr("disabled", "");
+        } else {
+           $("#btnSubmit").attr("disabled", "disabled");
+        }
+    }
+
+
+    function CheckHandiCap(obj) {
+
+        if ($(obj).is(':checked')) {
+           $("#DriverDisabled").val(true);
+        } else {
+           $("#DriverDisabled").val(false);
+        }
+    }
+    function AddAnotherDriver(obj) {
+        if ($(obj).is(':checked')) {
+           $("#AddAnotherDriverHidden").val(true);
+           $(".arabicyear").prop("disabled", false);
+           $(".arabicmonth").prop("disabled", false);
+           $(".year").prop("disabled", false);
+           $(".month").prop("disabled", false);
+           $(".id_no").prop("disabled", false);
+
+        } else {
+           $("#AddAnotherDriverHidden").val(false);
+           $(".arabicyear").prop("disabled", true);
+           $(".arabicmonth").prop("disabled", true);
+           $(".year").prop("disabled", true);
+           $(".month").prop("disabled", true);
+           $(".id_no").prop("disabled", true);
+        }
+    }
+    function RegisteredCar(obj, show) {
+       $("#VehicleIsRegistered").val(show);
+    }
+    function PurposeCommercial(obj) {
+        if ($(obj).is(':checked')) {
+           $("#VehicleUsingWorkPurposes").val(true);
+        } else {
+           $("#VehicleUsingWorkPurposes").val(false);
+        }
+    }
+    function OwnerCar(obj, show) {
+       $(".ownerIdInput").toggleClass("switchin");
+        if ($('#IsOwner').val() == "false" || $('#IsOwner').val() == "False" || $('#IsOwner').val() == false) {
+            $('#IsOwner').val("true");
+        }
+        else {
+            $('#IsOwner').val("false");
+        }
+    }
+
+    //used to make any validation before submiting the form (show offer)
+    function ValidateAndSubmitShowOffer()
+    {
+        $('#page-loading').show();
+        //get the form
+        var form = $('#btnSubmit').closest('form');
+        //check if the form is valid and if not valid we dont show the loading image, to do so we remove the submit event from the form
+        // we remove submit event bcz any form when submit will show loading page
+        //return false so that not submit form
+        if (!form.valid())
+        {
+                $(form).unbind('submit');
+                $('#page-loading').hide();
+            return;
+        }
+            $.ajax({
+            url: $(form).attr('action'),
+                type: 'POST',
+                data: $(form).serializeArray(),
+                success: function (data, status, xhr) {
+                //$('#page-loading').hide();
+                //if success redirect to SearchResult in QuotationController with qtRqstExtrnlId string
+                if (data.Success) {
+                    window.location = '@Url.Action("SearchResult", "Quotation")' + '?qtRqstExtrnlId=' + data.qtRqstExtrnlId;
+                }
+                else {
+                    $('.BDC_ReloadLink').get(0).click();
+                        $(form).validate().showErrors(data.notValidFields);
+                    if (data.requestMessage != null) {
+                        if (data.requestMessage.Errors != null) {
+                            showQuotationErrors(data.requestMessage.Errors);
+                        }
+                    }
+                        $('#page-loading').hide();
+                }
+
+
+            },
+                error: function (xhr, status, err) {
+                if (xhr.status == 400) {
+                    // this is our erroneous result
+                }
+                else {
+                }
+            }
+        });
+
+    }
+    //make a get request to server with list of errors
+    //then the server responde with html errors view, this view replaced in yakeen_erros div
+    function showQuotationErrors(errorsList) {
+            $.get('@Url.Action("GetQuotationErrors", "Quotation")' + '?errors=' + errorsList, function (data) {
+                                    $('#yakeen_erros').html(data);
+        });
+    }
+
+
+    function idChange(input) {
+        var id = $(input).val();
+        if (id != undefined && id != '') {
+            if (id[0] == '1') {
+                //  $("#georgDate").hide();
+                //$("#hijriDate").show();
+                loadDropDownsWithHijiriDate();
+
+            } else if (id[0] == '2') {
+                //$("#hijriDate").hide();
+                //$("#georgDate").show();
+                loadDropDownsWithGeorgDate();
+
+
+            }
+        }
+    }
+
+    // fill the user month date with georg monthes and years
+    function loadDropDownsWithGeorgDate() {
+       $('.userMonthBirthDate').html($('#georgMonthes').html());
+
+       $('.userYearBirthDate').html($('#georgYears').html());
+    }
+
+    // fill the user month date with hijiri monthes and years
+    function loadDropDownsWithHijiriDate() {
+       $('.userMonthBirthDate').html($('#arabicMonthes').html());
+
+       $('.userYearBirthDate').html($('#arabicYears').html());
+    }
+
+    function checkDriver(val) {
+
+    }
+    //validate user id
+    function validateUserId(userIdCtrl)
+    {
+        //if data is entered then validate the user id from server side
+        if (isUserIDAndBirthDateEntered(userIdCtrl))
+        {
+            var data = { userId: $(userIdCtrl).val(), userMonthBirthDate: getUserMonthBirthDate(userIdCtrl), userYearBirthDate: getUserYearBirthDate(userIdCtrl) };
+
+           // make Ajax request to validate the user id
+           $.ajax({
+            url: '@Url.Action("IsValidUser", "User")',
+               data: data,
+               type: 'GET',
+               dataType: 'json',
+               success: function (response)
+               {
+                if (response != true)
+                {
+                    alert('رقم الهوية / الإقامة غير صحيح');
+                       $(userIdCtrl).val(null);
+                }
+            },
+               error: function (err) {
+                alert(err.statusText);
+            }
+
+        });
+    }
+   }
+
+   //return true if user Id and birthdate are enterd
+   function isUserIDAndBirthDateEntered(userIdCtrl)
+    {
+        if ($(userIdCtrl).val() != '' && getUserMonthBirthDate(userIdCtrl) != '' && getUserYearBirthDate(userIdCtrl) != '')
+           return true;
+
+        return false;
+    }
+    function getUserMonthBirthDate(userIdCtrl) {
+        var georgOrHijriDate = $('#georgDate').is(':visible') ? 'georgDate' : 'hijriDate';
+        return $(userIdCtrl).closest('.row').find('#' + georgOrHijriDate).find('.userMonthBirthDate').val();
+
+    }
+    function getUserYearBirthDate(userIdCtrl) {
+        var georgOrHijriDate = $('#georgDate').is(':visible') ? 'georgDate' : 'hijriDate';
+        return $(userIdCtrl).closest('.row').find('#' + georgOrHijriDate).find('.userYearBirthDate').val();
+    }
+    </script>
+}
+<style>
+    .slidesCover {
+        /*background: #0C101A;*/
+    }
+
+        .slidesCover .bg {
+            /*opacity: 0.8;*/
+        }
+</style>

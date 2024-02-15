@@ -1,0 +1,455 @@
+﻿@model Tameenk.Models.PolicyViewModel
+@using Tameenk.Core.Domain.Enums;
+@{
+    ViewBag.Title = "Policy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">*@
+
+@if
+        (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(),
+        StringComparison.InvariantCultureIgnoreCase))
+{
+
+    <style>
+        .customContainerCard {
+            line-height: 2;
+            min-height: 370px;
+        }
+
+        .customInputsStyle {
+            margin: 0px -13px 0px 0px;
+            width: 100%;
+            height: 99%;
+            border: 0;
+            background-color: #fff;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        .customContainerCardgrey {
+            background-color: rgba(233, 233, 233, 0.66);
+            padding: 15px;
+            margin: 10px;
+            float: left;
+        }
+
+        .margB {
+            margin: 10px 41px 0px 5px;
+            margin-bottom: 20px;
+            border: 2px solid #257cb3;
+            border-radius: 5px;
+            display: block;
+            position: relative;
+            height: 45px;
+            background: white;
+        }
+
+        .headerthreestyle {
+            font-weight: bold;
+            font-size: 23px;
+            border-radius: 0px 25px 0 0;
+            background: #cececebf;
+            padding: 0px 15px 10px 10px;
+        }
+
+        .tableDesign {
+            background: white;
+            padding: 20px;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table td, .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .mybtnCustomStyle {
+            margin-right: 13px;
+        }
+
+        .captchaClass {
+            margin-left: 40px;
+        }
+
+        .paddTop {
+            padding-top: 40px;
+        }
+
+        .margRi {
+            margin-left: 27px;
+        }
+
+        .floatLeft {
+            float: left;
+        }
+
+        @@media (max-width: 997px) {
+            .active .header__navbar {
+                margin-top: 11px;
+            }
+
+            .printUrDoc {
+                margin-right: 20px;
+            }
+
+            .margRi {
+                margin-left: 60px;
+            }
+
+            .floatLeft {
+                float: none;
+            }
+        }
+
+        .errMessageDesign {
+            color: red;
+            padding: 0px 80px;
+        }
+
+
+        @@media (max-width: 1024px) {
+            .floatLeft {
+                float: none;
+            }
+        }
+
+
+
+        .validationErr {
+            color: red;
+            display: none;
+        }
+    </style>
+}
+else
+{
+
+    <style>
+        .customContainerCard {
+            line-height: 2;
+            min-height: 370px;
+        }
+
+        .customInputsStyle {
+            margin: 0px -13px 0px 0px;
+            width: 100%;
+            height: 99%;
+            border: 0;
+            background-color: #fff;
+            border-radius: 5px;
+            padding-right: 10px;
+        }
+
+        .customContainerCardgrey {
+            background-color: rgba(233, 233, 233, 0.66);
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .margB {
+            margin: 10px 41px 0px 5px;
+            margin-bottom: 20px;
+            border: 2px solid #257cb3;
+            border-radius: 5px;
+            display: block;
+            position: relative;
+            height: 45px;
+            background: white;
+        }
+
+        .headerthreestyle {
+            font-weight: bold;
+            font-size: 23px;
+            border-radius: 25px 5px 0 0;
+            background: #cececebf;
+            padding: 0px 15px 10px 0px;
+        }
+
+        .tableDesign {
+            background: white;
+            padding: 20px;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table td, .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .mybtnCustomStyle {
+            margin-left: 13px;
+        }
+
+        .captchaClass {
+            margin-right: 40px;
+        }
+
+        .paddTop {
+            padding-top: 40px;
+        }
+
+        .margRi {
+            margin-right: 27px;
+        }
+
+        @@media (max-width: 997px) {
+            .active .header__navbar {
+                margin-top: 11px;
+            }
+
+            .printUrDoc {
+                margin-left: 20px;
+            }
+
+            .margRi {
+                margin-right: 60px;
+            }
+        }
+
+        .validationErr {
+            color: red;
+            display: none;
+        }
+
+        .errMessageDesign {
+            color: red;
+            padding: 0px 80px;
+        }
+    </style>
+}
+
+
+
+@using (Html.BeginForm("Policy", "Account", new { ReturnUrl = @Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { id = "frmshow", onsubmit = "btnSubmit.disabled = true; return true;" }))
+{
+    <div class="container customContainerCard">
+        <div class="row col-lg-12 paddTop">
+            <div class="col-lg-7 customContainerCardgrey">
+                <div class="col-lg-8 floatLeft">
+                    <h3 class="txt-black dis-block over-hidden sm-mar headerthreestyle">@Html.Raw(Tameenk.LangText.DownloadPolicy)</h3>
+                    <div class="radio-container" style="margin-top: 10px">
+                        <label class="radio-holder" for="VehicleRegistered-1">
+                            @Html.Raw(Tameenk.LangText.SequenceNumber)
+                            <input name="VehicleIdTypeId" type="radio" id="VehicleIdTypeId-1" value="1" required checked class="customInputsStyle" onclick="showHideByType(1)">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-holder" for="vehicleRegistered-2">
+                            @Html.Raw(Tameenk.LangText.CustomCard)
+                            <input name="VehicleIdTypeId" type="radio" id="VehicleIdTypeId-2" value="2" required class="customInputsStyle" onclick="showHideByType(2)">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-5 margB nationalIDEN ">
+                        <input class="customInputsStyle " placeholder="@Html.Raw(Tameenk.LangText.NIN)" type="text" id="NIN" name="NIN" value="@Model.NIN" />
+                        <span class="validationErr" id="NinReqError">
+                            @Html.Raw(Tameenk.LangText.NinReq)
+                        </span>
+                    </div>
+                    <div class="col-lg-5 margB " id="SequenceNumberDiv">
+                        <input class="customInputsStyle " type="text" placeholder=" @Html.Raw(Tameenk.LangText.SequenceNumberInput)" id="SequenceNumber" name="SequenceNumber" value="@Model.SequenceNumber" />
+                        <span class="validationErr SequenceNumberReqError" id="SequenceNumberReqError">
+                            @Html.Raw(Tameenk.LangText.SequenceNumberReq)
+                        </span>
+                    </div>
+                    <div class="col-lg-5 margB " id="CustomCardNumberDiv">
+                        <input class="customInputsStyle " placeholder=" @Html.Raw(Tameenk.LangText.CustomCardInput)" type="text" id="CustomCardNumber" name="CustomCardNumber" value="@Model.CustomCardNumber" />
+                        <span class="validationErr CustomCardReqError" id="CustomCardReqError">
+                            @Html.Raw(Tameenk.LangText.CustomCardReq)
+                        </span>
+                    </div>
+                </div>
+                @if (Model.Captcha != null)
+                {
+                    <input type="hidden" name="Captcha.Token" value="@Model.Captcha.Token" />
+                    <input type="hidden" name="Captcha.Captcha" value="@Model.Captcha.Captcha" />
+                    <input type="hidden" name="Captcha.ExpiredInSeconds" value="@Model.Captcha.ExpiredInSeconds" />
+                    <input type="hidden" name="Captcha.ExpiryDate" value="@Model.Captcha.ExpiryDate" />
+                    <div class="col-lg-8 captchaClass">
+                        <div class="col-xs-4 bx-right md-mar no-pd">
+                            <span class="captcha-container">
+                                <img class="captcha-img" alt="الرمز" title="الرمز" src="@Model.Captcha.Image">
+                                <button type="submit" class="reload-btn" id="btnRefresh" name="ButtonType" value="Refresh"><i class="fas fa-sync"></i></button>
+                            </span>
+                        </div>
+                        <div class="col-xs-3 bx-right md-mar no-pd margRi">
+                            <div class="input-container" style="margin-top: 3px">
+                                <input class="input-element" appFloatedLabel type="text" id="captchaCode" name="Captcha.Input" value="@Model.Captcha.Input" appNumberOnly autocomplete="off" maxlength="4" />
+                                <label class="input-label" for="captchaCode"></label>
+                                @*<span *ngFor="let error of validationErrors.captcha['captchaInput']" class="field-error" style="color:red;position:absolute;min-width: 140px">{{error | translate}}</span>*@
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <span class="validationErr CustomCardReqError" id="CaptchaReqError">
+                                @Html.Raw(Tameenk.LangText.CaptchaError)
+                            </span>
+                        </div>
+                    </div>
+                }
+
+                <div class="col-lg-3 floatEN">
+                    <button id="btnSubmit" onclick="return showValidation();" name="ButtonType" value="Save" class="mybtnCustomStyle bx-left btn sm pointer dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar">@Html.Raw(Tameenk.LangText.Search) </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="">
+        <div class="col-lg-10">
+            @*@Model.PolicyOutput.ErrorDescription*@
+
+            @if (Model.PolicyOutput.ErrorDescription == "Invalid Captcha")
+            {
+            <div class="errMessageDesign">
+                @Html.Raw(Tameenk.LangText.CaptchaError)
+            </div>
+            }
+            else if ((Model.PolicyOutput.Policies == null || Model.PolicyOutput.Policies.Count == 0) && (Model.PolicyOutput.FailedPolicies == null || Model.PolicyOutput.FailedPolicies.Count == 0) && !string.IsNullOrEmpty(Model.NIN))
+            {
+                <div class="errMessageDesign">
+                    @Html.Raw(Tameenk.LangText.PoliciesNotFound)
+                </div>
+            }
+            else if ((Model.PolicyOutput.Policies != null && Model.PolicyOutput.Policies.Count > 0) || (Model.PolicyOutput.FailedPolicies != null && Model.PolicyOutput.FailedPolicies.Count > 0))
+            {
+                <div class="col-lg-10 tableDesign">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>@Html.Raw(Tameenk.LangText.PolicyNo) </th>
+                                <th>@Html.Raw(Tameenk.LangText.PolicyEffectiveDate) </th>
+                                <th>@Html.Raw(Tameenk.LangText.PolicyExpiryDate) </th>
+                                <th>@Html.Raw(Tameenk.LangText.EnglishFirstName) </th>
+                                <th>@Html.Raw(Tameenk.LangText.EnglishLastName) </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.PolicyOutput.Policies != null && Model.PolicyOutput.Policies.Count > 0)
+                            {
+                                foreach (var item in Model.PolicyOutput.Policies)
+                                {
+                                    <tr>
+                                        <td> @item.PolicyNo</td>
+                                        <td> @item.PolicyEffectiveDate</td>
+                                        <td> @item.PolicyExpiryDate</td>
+                                        <td> @item.EnglishFirstName</td>
+                                        <td> @item.EnglishLastName</td>
+                                        <td> <a href="Account/DownloadPolicyFile?fileId=@item.FileId" target="_blank">@Html.Raw(Tameenk.LangText.Download)</a></td>
+                                    </tr>
+                                }
+                            }
+
+                            @if (Model.PolicyOutput.FailedPolicies != null && Model.PolicyOutput.FailedPolicies.Count > 0)
+                            {
+                                foreach (var item in Model.PolicyOutput.FailedPolicies)
+                                {
+                                    <tr>
+                                        <td> @item.QuotationNo</td>
+                                        <td> @item.PolicyEffectiveDate</td>
+                                        <td> @item.PolicyExpiryDate</td>
+                                        <td> @item.EnglishFirstName</td>
+                                        <td> @item.EnglishLastName</td>
+                                        <td> <a href="Account/GenerateAndDownloadFailedPolicyFile?referenceId=@item.ReferenceId&lang=@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower()" target="_blank">@Html.Raw(Tameenk.LangText.DownloadTempPolicy)</a></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+
+}
+
+<script type="text/javascript">
+    var NinInput = document.getElementById("NIN");
+    var CustomCardNumberInput = document.getElementById("CustomCardNumber");
+    var CustomCardNumberDiv = document.getElementById("CustomCardNumberDiv");
+    var SequenceNumberInput = document.getElementById("SequenceNumber");
+    var SequenceNumberDiv = document.getElementById("SequenceNumberDiv");
+    CustomCardNumberInput.style.display = "none";
+    CustomCardNumberDiv.style.display = "none";
+    var NinReqError = document.getElementById("NinReqError");
+    var SequenceNumberReqError = document.getElementById("SequenceNumberReqError");
+    var CustomCardReqError = document.getElementById("CustomCardReqError");
+    var captchaCode = document.getElementById("captchaCode");
+    var CaptchaReqError = document.getElementById("CaptchaReqError");
+
+    var VehicleIdTypeId = 1;
+
+    function showHideByType(type) {
+        VehicleIdTypeId = type;
+        SequenceNumberInput.value = '';
+        CustomCardNumberInput.value = '';
+        if (type == 1) {
+            CustomCardNumberInput.style.display = "none";
+            CustomCardNumberDiv.style.display = "none";
+            SequenceNumberInput.style.display = "block";
+            SequenceNumberDiv.style.display = "block";
+            $('#SequenceNumber').show();
+        } else if (type == 2) {
+            SequenceNumberInput.style.display = "none";
+            SequenceNumberDiv.style.display = "none";
+            CustomCardNumberInput.style.display = "block";
+            CustomCardNumberDiv.style.display = "block";
+        }
+    }
+
+    function showValidation() {
+        if (NinInput.value == '') {
+            NinReqError.style.display = "block";
+            return false;
+        } else {
+            NinReqError.style.display = "none";
+        }
+        if (VehicleIdTypeId == 1) {
+            if (SequenceNumberInput.value == '') {
+                SequenceNumberReqError.style.display = "block";
+                return false;
+            } else {
+                SequenceNumberReqError.style.display = "none";
+            }
+        }
+        else if (VehicleIdTypeId == 2) {
+            if (CustomCardNumberInput.value == '') {
+                CustomCardReqError.style.display = "block";
+                return false;
+            } else {
+                CustomCardReqError.style.display = "none";
+            }
+        }
+        if (captchaCode.value == '') {
+            CaptchaReqError.style.display = "block";
+            return false;
+        } else {
+            CustomCardReqError.style.display = "none";
+        }
+        return true;
+    }
+</script>

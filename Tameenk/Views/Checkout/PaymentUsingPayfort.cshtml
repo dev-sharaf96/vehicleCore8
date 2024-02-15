@@ -1,0 +1,21 @@
+﻿@model IEnumerable<KeyValuePair<string, string>>
+<div>
+    @* Production : https://checkout.payfort.com/FortAPI/paymentPage*@
+    @* Testing : https://sbcheckout.payfort.com/FortAPI/paymentPage*@
+
+    <form id="PayForm" method='post' action="https://checkout.payfort.com/FortAPI/paymentPage">
+        @foreach (var item in Model)
+        {
+            @Html.Hidden(item.Key, item.Value)
+        }
+    </form>
+</div>
+
+@section scripts {
+
+    <script type='text/javascript'>
+        $(function () {
+           $("form#PayForm").submit();
+        });
+    </script>
+}

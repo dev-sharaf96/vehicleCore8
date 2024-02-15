@@ -1,0 +1,63 @@
+﻿@model List<Tameenk.Models.QuotationRequestDetailsViewModel>
+
+<div class="pd-inside">
+    <article>
+        @foreach (var request in Model)
+        {
+            <div class="wrapper-bx md-mar vehicle-row  search-info bg-ofwhite section  active search-car" style="background-image: url('/resources/imgs/CarLogos/@(int.Parse(request.VehicleMakerCode).ToString("0000")).jpg');">
+                <div class="row">
+                      <header class="col-xs-12 col-md-6 col-lg-6 over-hidden bx-right customClassForquotsStyle">
+                        <h2 class="txt-sm  txt-mgray dis-block xs-mar"><span class="txt-md  txt-black">@Html.Raw(Tameenk.LangText.vehicle_name): </span>@($"{request.VehicleMaker}  {request.VehicleModel}  {request.VehicleModelYear}" )</h2>
+                        <h2 class="txt-sm  txt-mgray dis-block xs-mar"><span class="txt-md  txt-black">@Html.Raw(Tameenk.LangText.driver_name): </span>@request.DriverFirstName</h2>
+                        <h2 class="txt-sm  txt-mgray dis-block xs-mar"><span class="txt-md  txt-black">@Html.Raw(Tameenk.LangText.city): </span>@request.CityArabicDescription</h2>
+                        <h2 class="txt-sm  txt-mgray dis-block xs-mar"> @request.CreatedDateTime</h2>
+                    </header>
+                    <div class="col-xs-12 col-md-6 col-lg-6 bx-right">
+                      @Html.Partial("_VehiclePlate",request.VehiclePlate)
+                        <div class="col-xs-6 col-md-10 bx-right md-mar">
+                            <span id="expired-text" class="hidden">@Html.Raw(Tameenk.LangText.expired)</span>
+                            <center><span class="expiryDateHolder hide" dir="ltr">@request.RemainingTimeToExpireInSeconds</span></center>
+                        </div>
+                    </div>
+                <div class="small-desc over-hidden f_width sm-mar bx-right txt-mgray">
+                    <a href="/Quotation/SearchResult?qtRqstExtrnlId=@request.ExternalId" onclick="ShowSearchResult(this); return false;" class="dis-block txt-right bx-left right-mar-10 left-mar-10 txt-black show-extra-features " data-toshow="#features-id1">
+                        <i class="ic-icons-86 txt-black bx-right general-ico"></i>
+                        @Html.Raw(Tameenk.LangText.view_search_results)
+                    </a>
+                </div>
+                </div>
+            </div>
+        }
+
+        <script>
+          function quotationExpiryCountDown(e) {
+            // get RemainingTimeToExpireInSeconds
+            let countDownDate = new Number(e.innerText),
+            x = setInterval(function() {
+              let distance = countDownDate -= 1,
+              hours = Math.floor(distance / 3600),
+              minutes = Math.floor(distance % 3600 / 60),
+              seconds = Math.floor(distance % 3600 % 60);
+              if (distance > 0) {
+                if (hours > 0) {
+                  e.innerText = hours + " : " + minutes + " : " + seconds;
+                  e.classList.remove("hide");
+                  } else {
+                    e.innerText = minutes + " : " + seconds;
+                    e.classList.remove("hide");
+                }
+              } else {
+                clearInterval(x);
+                e.innerText = document.getElementById('expired-text').innerText;
+                e.classList.remove("hide");
+              }
+            }, 1000);
+          }
+          (function() {
+            document.querySelectorAll('.expiryDateHolder').forEach(function(e) {
+              quotationExpiryCountDown(e);
+            });
+          })();
+        </script>
+    </article>
+</div>

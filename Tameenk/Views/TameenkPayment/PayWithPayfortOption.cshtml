@@ -1,0 +1,21 @@
+﻿@using Tameenk.Core.Domain.Enums.Payments;
+@{
+    Layout = null;
+}
+
+<article class="wrapper-bx md-mar-bot no-toggle" onclick="submitnow(@((int)PaymentMethodCode.Payfort))">
+    <header class="f_width bx-right">
+        <h3 class="bx-right" style="color: #535f69">@Html.Raw(Tameenk.LangText.checkout_mastercard)</h3>
+        <span>
+        <img src="~/resources/imgs/MasterCard-Logo.svg" alt="MasterCard" title="MasterCard"class="bx-left" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.1)));" />
+        </span>
+    </header>
+</article>
+<article class="wrapper-bx md-mar-bot no-toggle" onclick="submitnow(@((int)PaymentMethodCode.Payfort))">
+    <header class="f_width bx-right">
+        <h3 class="bx-right" style="color: #535f69">@Html.Raw(Tameenk.LangText.checkout_visa)</h3>
+        <span>
+        <img src="~/resources/imgs/card-visa.svg" alt="Visa" title="Visa" class="bx-left" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.1)));" />
+        </span>
+    </header>
+</article>

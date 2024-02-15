@@ -1,0 +1,59 @@
+<div class="accordion md-mar" [ngClass]="accordionIsActive ? 'active' : ''">
+  <button class="accordion-heading" (click)="toggleAccordion()">
+    <h3 class="accordion-title" translate>inquiry.driver_information</h3>
+  </button>
+  <div class="accordion-body md-mar-bot">
+    <div class="col-xs-12">
+      <div class="col-xs-12 col-lg-4 col-md-4 md-mar bx-right">
+        <h3 class="txt-black txt-sm dis-block over-hidden xs-mar xs-mar-bot" translate>inquiry.driver_has_violations</h3>
+        <input type="checkbox" class="thereViolationCheck switchIco md-mar dis-block thereViolation" [(ngModel)]="thereViolation"
+          (change)="toggleViolations($event.target.checked)" />
+        <label class="labelSwitch txt-xs" for="thereViolation">
+          <span class="stat true txt-brand" translate>common.yes</span>
+          <span class="stat false txt-gray" translate>common.no</span>
+        </label>
+        <div *ngIf="violations?.length > 0">
+          <div *ngFor="let v of violations; let i = index">
+            <div class="col-xs-10 col-lg-10 bx-right">
+              <span class="input input--ichiro" [ngClass]="focusViolation.dirty ? 'input--filled' : ''">
+                <select class="input__field input__field--ichiro" [id]="'v'+i" #focusViolation="ngModel" [(ngModel)]="v.id" (change)="changeViolation()">
+                  <option *ngFor="let v of violationsCodes" [value]="v.id">{{v.name}}</option>
+                </select>
+                <label class="input-label input-label--ichiro" [for]="'v'+i">
+                  <span class="input-label-content input-label-content--ichiro" translate>inquiry.violation_type</span>
+                </label>
+              </span>
+            </div>
+            <div class="col-xs-2 col-lg-1 col-md-1 remove-icon">
+              <a class="txt-sm txt-black remove" (click)="removeViolation(i)">
+                <i class="ic-plus rotate"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-12 col-xs-12 col-md-12 driver-fields md-mar xs-mar-bot bx-right">
+            <a class="add-driver bx-shdw btn sm dis-block bx-right txt-brand txt-white-hvr login txt-brand  txt-xs bg-gr-main  circ-rdus l-shadow bx-right right"
+              (click)="addViolation()" translate>inquiry.add_violation</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-4 col-md-4 bx-right">
+        <!-- <h3 class="txt-black txt-xs dis-block over-hidden xs-mar xs-mar-bot" translate>inquiry.driver_has_medical_cond</h3>
+        <input type="checkbox" class="thereViolationCheck switchIco md-mar dis-block thereMedical" [(ngModel)]="thereMedical" (change)="toggleMedical($event.target.checked)"
+        />
+        <label class="labelSwitch txt-xs" for="thereMedical">
+          <span class="stat true txt-brand" translate>common.yes</span>
+          <span class="stat false txt-gray" translate>common.no</span>
+        </label> -->
+        <span class="input input--ichiro">
+          <select class="input__field input__field--ichiro" id="medicalCondition" [(ngModel)]="driver.medicalConditionId">
+            <option *ngFor="let code of medicalCondations" [value]="code.id">{{code.name}}</option>
+          </select>
+          <label class="input-label input-label--ichiro" for="medicalCondition">
+            <span class="input-label-content input-label-content--ichiro" translate>inquiry.driver_medical_cond</span>
+          </label>
+        </span>
+      </div>
+    </div>
+    <button class="no-trans bx-left btn sm txt-white txt-xs bg-gr-main circ-rdus sm-mar" (click)="openPrevStep()" style="margin-left: 10px;margin-right: 10px;" translate>common.prev</button>
+  </div>
+</div>

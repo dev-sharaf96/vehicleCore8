@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/sampleData.css">
+    <script>
+        $(function () {
+            var myData =
+                {
+                    "ReferenceId": "C0595cdfda3df6d",
+                    "StatusCode": 1,
+                    "PolicyNo": "P/2017/2478981",
+                    "PolicyIssuanceDate": "2017-08-23T20:40:20+03:00",
+                    "PolicyEffectiveDate": "2017-08-24T00:00:00+03:00",
+                    "PolicyExpiryDate": "2018-08-24T00:00:00+03:00",
+                    "PolicyFile": "JVBERi0xLjUNJeLjz9MNCjY2IDAgb2JqDTw8L0xpbmVhcml6ZWQgMS9MIDk5MzUyL08gNjgvRSAzOTMyMS9OIDIvVCA5OTAxMi9IIFsgNDgyIDIyMF0+Pg1...."
+                };
+            var textedJson = JSON.stringify(myData, undefined, 4);
+            $('#myTextarea').text(textedJson);
+        });
+
+    </script>
+    
+</head>
+<body>
+    <textarea name="" id="myTextarea"></textarea>
+
+
+</body>
+</html>

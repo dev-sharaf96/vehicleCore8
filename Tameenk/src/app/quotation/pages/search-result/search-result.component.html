@@ -1,0 +1,14 @@
+<bcare-search-result-options [insuranceTypeCode]="insuranceTypeId" [vehicleAgencyRepair]="vehicleAgencyRepair" [deductibleValue]="deductibleValue" (onChangeInsuranceType)="changeInsuranceType($event)" (onChangeRepairType)="changeRepairType($event)" (onChangeDeductibleValue)="changeDeductibleValue($event)" (onChangeProductsSorting)="productsSorting($event)"></bcare-search-result-options>
+<bcare-product-list #productList [companyAllowAnonymous]="companyAllowAnonymous" [anonymousRequest]="anonymousRequest" [products]="filteredProducts" 
+                    [quotationRequestId]="quotationRequestId" [companyInfo]="companyInfo" [isDone]="isDone" [recalled]="recalled" 
+                    [IsAgency]="IsAgency" (getCompany)="getCompanyInfo($event)"
+                    (emitChangeMedGulfDeductableValue)="changeMedGulfDeductableValue($event)" [medGulfDeductableValue]="medGulfDeductableValue" 
+                    [isMedGulfDeductableValueChenged]="isMedGulfDeductableValueChenged"
+                    (emitChangeArabianShieldDeductableValue)="changeArabianShieldDeductableValue($event)" [ArabianShieldDeductableValue]="ArabianShieldDeductableValue"
+                    [isArabianShieldDeductableValueChenged]="isArabianShieldDeductableValueChenged" 
+                    (emitChangeACIGDeductableValue)="changeACIGDeductableValue($event)" [ACIGDeductableValue]="ACIGDeductableValue"
+                    [isACIGDeductableValueChenged]="isACIGDeductableValueChenged" 
+                    (emitChangeAlRajhiDeductableValue)="changeAlRajhiDeductableValue($event)" 
+                    [AlRajhiDeductableValue]="AlRajhiDeductableValue"
+                    [isAlRajhiDeductableValueChenged]="isAlRajhiDeductableValueChenged"
+                    (downloadCompanyPolicyTermsAndConditions)="downloadCompanyTermsAndConditionsFile($event)"></bcare-product-list>

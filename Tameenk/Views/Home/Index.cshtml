@@ -1,0 +1,58 @@
+﻿@model Tameenk.Models.HomeModel
+@section headScripts{
+    <script type="text/javascript" src="https://www.bcare.com.sa/resources/js/app-ng.js" defer></script>
+}
+<bcare-root currentLang="@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName"
+            isEditRequest=@(Model.IsEditRequest == true ? "true" : "false")
+            qtRqstExtrnlId="@Model.QuotationRequestExternalId"
+            isRenualRequest=@(Model.IsRenual == true ? "true" : "false")
+            isCustomCard=@(Model.IsCustomCard == true ? "true" : "false")
+            referenceId="@Model.ReferenceId">
+
+    @if (Model.IsRenual == false || Model.IsCustomCard == true)
+    {
+        <div class="home-loading">
+            <span class="loading-outer">
+                <span class="static-logo">
+                    <img src="/resources/imgs/logo-short.png" draggable="false" alt="bcare logo short" title="BCare">
+                </span>
+                <span class="moving-logo">
+                    <img class="logo-bcare" draggable="false" src="/resources/imgs/bcaretab.png" alt="bcare logo" title="BCare">
+                </span>
+            </span>
+        </div>
+    }
+    else
+    {
+        <div id="page-loading">
+            <div class="home-loading" style="height: 80%;flex-direction: column;">
+                <span class="loading-outer">
+                    <span class="static-logo">
+                        <img src="/resources/imgs/logo-short.png" draggable="false" alt="bcare logo short" title="BCare">
+                    </span>
+                    <span class="moving-logo">
+                        <img class="logo-bcare" draggable="false" src="/resources/imgs/bcaretab.png" alt="bcare logo" title="BCare">
+                    </span>
+                </span>
+                <span class="text-loading">
+                    شكراً لإختيارك #تأمينك
+                    <br />
+                    جاري البحث عن عروض شركات التأمين
+                </span>
+            </div>
+        </div>
+    }
+</bcare-root>
+<script>
+    window.checkoutErrors = [];
+    @{
+        var checkoutErrors = ViewData.ModelState.Where(n => n.Value.Errors.Count > 0 && n.Key.Equals("CheckoutError")).ToList();
+        foreach (var checkoutError in checkoutErrors) {
+            foreach (var error in checkoutError.Value.Errors)
+            {
+            @: window.checkoutErrors.push('@(error.ErrorMessage)');
+            }
+        }
+    }
+</script>
+<script type="text/javascript" src="../../dist/main.84f590986e8d3a879bec.js" defer></script>

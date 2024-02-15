@@ -1,0 +1,482 @@
+.bold {
+    font-weight: bold
+}
+
+.data-container {
+    overflow-x: auto;
+    max-height: 90vh;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap
+}
+
+a {
+    cursor: pointer;
+}
+
+h2.row.benefits-heading.txt-md.txt-black.no-mar.f_width.dis-block {
+    margin-bottom: 21px;
+}
+
+.insurance-logo {
+    /*height: 119px;
+  width: 158px;*/
+}
+
+.insurance-type {
+    border: 2px solid #0771b4;
+    display: inline-block;
+    padding: 8px 0;
+    border-radius: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #0771b4;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+    .insurance-type.comprehensive {
+        border-color: #22d022;
+        color: #22d022;
+    }
+
+    .insurance-type.sanadPlus {
+        border-color: #d99340;
+        color: #d99340;
+    }
+
+    .insurance-type.wafiSmart {
+        border-color: #d99340;
+        color: #d99340;
+    }
+.show-benefits {
+    display: none;
+}
+
+.product-benefits {
+    flex-grow: 3;
+    border-right: 1px solid #dcdcdc;
+    border-left: 1px solid #dcdcdc;
+    padding: 30px;
+    position: relative;
+}
+
+.product-price {
+    padding: 30px
+}
+
+.price-discount {
+    text-align: center;
+    font-size: 1.8rem;
+    background-color: #fcfcfc;
+    padding: 5px 0;
+    margin-bottom: 20px;
+    color: #535f69;
+}
+
+.price-description {
+    font-size: 14px;
+    color: #186a9ecc;
+    max-width: 78%;
+}
+
+.value {
+    font-weight: bold;
+    min-width: 22%;
+    display: inline-block;
+    text-align: left;
+    font-size: 18px;
+    color: #186a9ecc;
+}
+
+@media (max-width: 769px) {
+    img.compntProdLogo {
+        width: 83px;
+    }
+
+    a.txt-black.txt-brand-hvr {
+        color: #156495bd;
+        font-size: 12px !important;
+        margin: 10px;
+    }
+
+    .product-heading {
+        order: 1;
+        border-bottom: 1px solid #dcdcdc
+    }
+
+    .show-benefits {
+        display: block;
+    }
+
+    .product-benefits {
+        /*display: none;*/
+        padding: 0px;
+        text-align: right;
+        order: 2;
+        border: 0;
+        border-bottom: 1px solid #dcdcdc;
+        width: 100%;
+    }
+
+    .product-price {
+        order: 3;
+    }
+}
+
+@media (max-width: 426px) {
+    .insurance-type {
+        width: 100px;
+        height: 45px;
+        font-size: 13px;
+    }
+
+    .product-heading {
+        padding: 30px 10px 30px 10px;
+        text-align: center;
+        display: flex;
+    }
+
+    .insurance-logo {
+        padding: 0 10px;
+        display: inline-block;
+    }
+
+    .product-price {
+        padding: 30px 30px 30px 30px;
+        border-right: 1px solid #efefef;
+    }
+    /*.product-price h3 {
+      border-bottom: 1px solid #ccc;
+    }*/
+    .price-description {
+        font-size: 14px;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .value {
+        min-width: auto;
+    }
+}
+
+.customStyleBtnBuy {
+    display: block;
+    margin: 0 auto;
+    background: #f79818;
+    color: white !important;
+    width: 74%;
+    height: 50px;
+    border-radius: 10px !important;
+    box-shadow: 4px 9px 7px 0px #80808057;
+}
+
+    .customStyleBtnBuy:hover {
+        background: #FFC107 !important;
+    }
+
+section.md-ver-spc.search-result.section {
+    background: #eaeaea;
+}
+
+
+
+.result-cards article {
+    background: white;
+    border-radius: 25px;
+}
+
+@media screen and (max-width: 550px) and (min-width: 10px) {
+    .customStyleBtnBuy {
+        width: 111px;
+        float: left;
+        margin-top: 30px;
+    }
+
+    .product {
+        text-align: center;
+    }
+}
+
+
+a.txt-black.txt-brand-hvr {
+    color: #156495bd;
+    font-size: 12px;
+}
+
+select#ddlDeductableValue {
+    border: 1px solid #186a9e87;
+    padding: 5px;
+    border-radius: 7px;
+    color: #186a9ecc;
+}
+
+select#ddlMedGulfDeductibleValue {
+    border: 1px solid #186a9e87;
+    padding: 5px;
+    border-radius: 7px;
+    color: #186a9ecc;
+}
+
+select#ddlArabianShieldDeductibleValue {
+    border: 1px solid #186a9e87;
+    padding: 5px;
+    border-radius: 7px;
+    color: #186a9ecc;
+}
+
+select#ddlACIGDeductibleValue {
+    border: 1px solid #186a9e87;
+    padding: 5px;
+    border-radius: 7px;
+    color: #186a9ecc;
+}
+
+select#ddlAlRajhiDeductibleValue {
+    border: 1px solid #186a9e87;
+    padding: 5px;
+    border-radius: 7px;
+    color: #186a9ecc;
+}
+
+@media screen and (min-width: 900px) {
+    .compntProdLogo {
+        width: 100%;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .customStyleBtnBuy {
+        width: initial !important;
+        float: none !important;
+        margin-top: 50px;
+    }
+
+    .bx-left {
+        float: none;
+    }
+
+
+
+    .imgInResponsiveOffer {
+        width: 30px !important;
+    }
+
+
+
+    .eventBarContainer {
+        height: 131px !important;
+        display: inline-block !important;
+        align-items: center;
+        border-bottom: 2px solid #dcdcdcab;
+    }
+
+
+
+    .offerContainerDiv {
+        height: 30% !important;
+    }
+
+
+
+    .helpServiceDiv {
+        font-size: 14px !important;
+    }
+
+
+    .slash200:after {
+        /*position: absolute;*/
+        content: "/";
+        color: #de3894;
+        font-weight: 700;
+        font-size: 1.7em;
+        /*top: 11px !important;*/
+        transform: rotate(40deg);
+        /*left: 181px !important;*/
+    }
+
+    .roundedBorderShamel {
+        width: 13% !important;
+        border-top: 5px solid #f79818;
+        position: absolute;
+        border-radius: 6px;
+        height: 30px !important;
+        left: 150px !important;
+        transform: rotate(-11deg);
+        width: 67px;
+        height: 100px !important;
+        border: solid 5px #000;
+        border-color: #f79818 transparent transparent transparent;
+        border-radius: 51%/11px 19px 0 0;
+        top: 18px !important;
+    }
+
+
+
+    .loveShamel {
+        color: #156495;
+        display: block !important;
+        font-size: 12px;
+        text-align: center;
+    }
+
+
+
+    .tooltip .tooltiptext {
+        top: -50px !important;
+    }
+
+
+
+
+
+
+
+    .shamelSVGStyle {
+        width: 130px !important;
+    }
+}
+
+.vehicleLimitValue {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    background: #2196F3;
+    color: white !important;
+    width: 85%;
+    height: 50px;
+    border-radius: 10px !important;
+    box-shadow: 4px 9px 7px 0px #80808057;
+}
+
+.carValueLogo {
+    width: 60px;
+    height: 40px;
+    margin: 8px;
+}
+
+
+
+
+
+
+
+.eventBarContainer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #dcdcdcab;
+}
+
+
+.helpServiceDiv {
+    color: #156495;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+
+.offerContainerDiv {
+    background: #50aa5a;
+    color: white;
+    font-size: 10px;
+    height: 50%;
+    text-align: center;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.reyalDiv {
+    margin: 0px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.loveShamel {
+    color: #156495;
+    display: flex;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.roundedBorderShamel {
+    width: 35%;
+    border-top: 5px solid #f79818;
+    position: absolute;
+    border-radius: 6px;
+    height: 30px;
+    left: 18px;
+    top: 12px;
+    transform: rotate(-11deg);
+    width: 40px;
+    height: 100px;
+    border: solid 4px #000;
+    border-color: #f79818 transparent transparent transparent;
+    border-radius: 51%/11px 19px 0 0;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    /*width: 120px;*/
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/*.tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }*/
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+.shamelSVGStyle {
+    width: 100%;
+}

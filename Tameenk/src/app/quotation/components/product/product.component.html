@@ -1,0 +1,202 @@
+﻿<!-- Company Modal -->
+<div class="popup" [ngClass]="{'show': popupIsActive}" *ngIf="companyInfo">
+    <div class="popup-inner">
+        <div class="data-container">
+            <div class="modal-header">
+                <h2>{{isEnglish ? companyInfo?.nameEN : companyInfo?.nameAR || '---------'}}</h2>
+            </div>
+            <div class="model-img">
+                <img [src]="'/resources/imgs/insurerlogos/' + companyInfo.key + '.png'" [alt]="companyInfo.nameEN" [title]="companyInfo.nameEN">
+            </div>
+            <!-- Here -->
+            <div class="modal-body">
+                <p>{{isEnglish ? companyInfo?.descEN : companyInfo?.descAR || '---------'}}</p>
+                <div *ngIf="companyInfo?.address?.addressLoction">
+                    <i class="ic-icons-78 txt-black bx-right general-ico"></i>
+                    <a href="${result.AddressLoction}" target="_blank">
+                        {{companyInfo?.address?.addressLoction || '---------'}}
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer txt-right" *ngIf="companyInfo.contact">
+                {{'quotation.company_email' | translate}}:
+                <a href="mailto:${result.Email}" *ngIf="companyInfo?.contact?.email">{{companyInfo?.contact?.email || '---------'}}</a>
+                <br /> {{'quotation.company_phone' | translate}}: {{companyInfo?.contact?.homePhone || '---------'}}
+                <br /> {{'quotation.company_mobile' | translate}}: {{companyInfo?.contact?.mobileNumber || '---------'}}
+                <br /> {{'quotation.company_fax' | translate}}: {{companyInfo?.contact?.fax || '---------'}}
+            </div>
+        </div>
+        <a class="popup-close pointer" (click)="hidePopup()">x</a>
+    </div>
+</div>
+<!-- /Company Modal -->
+<input type="hidden" name="ReferenceId" [value]="product.referenceId">
+<section class="product">
+    <div class="product-heading col-xs-12 col-md-3 col-lg-2">
+        <div class="insurance-logo">
+            <img [src]="'/resources/imgs/insurerlogos/' + product.companyKey + '.png'" [alt]="product.companyKey" [title]="product.companyKey" class="compntProdLogo">
+        </div>
+        <p class="insurance-type txt-md no-mar sm-mar" [ngClass]="insuranceTypes[product.insuranceTypeCode]" *ngIf="product.insuranceTypeCode">
+            <label *ngIf="product.insuranceTypeCode == 1 && product.providerId == 12">
+                {{'bind.motorFlex'| translate}}
+            </label>
+            <label *ngIf="product.insuranceTypeCode != 1 || product.providerId != 12">
+                {{'bind.' + insuranceTypes[product.insuranceTypeCode] | translate}}
+            </label>
+
+
+
+
+        </p>
+
+        <div class="more-detail txt-md txt-black no-mar sm-mar">
+
+            <a (click)="showPopup()" class="txt-black txt-brand-hvr" translate>quotation.Search_More_Detail</a>
+        </div>
+        <div class="add-to-compare txt-md txt-black no-mar sm-mar" *ngIf="companyAllowAnonymous == true || companyAllowAnonymous == null||product.anonymousRequest == false">
+
+            <a *ngIf="!isAddedToCompare" class="txt-black txt-brand-hvr" (click)="addToCompare()" translate>quotation.Search_Add_Comparison</a>
+            <i *ngIf="isAddedToCompare" class="ic-minus general-ico"></i>
+            <a *ngIf="isAddedToCompare" class="txt-black txt-brand-hvr" (click)="removeFromCompare()" translate>quotation.Search_Remove_Comparison</a>
+        </div>
+
+    </div>
+    <div class="product-benefits col-xs-12 col-md-6 col-lg-7" *ngIf="product.companyAllowAnonymous == true || product.companyAllowAnonymous == null||product.anonymousRequest == false">
+        <div class="col-md-12">
+            <bcare-benefits class="container-fluid" [benefits]="product.productBenefits" (onBenfitChange)="benfitChange($event)" [companyKey]="product.companyKey" [productInsuranceTypeCode]="product.insuranceTypeCode" ></bcare-benefits>
+        </div>
+    </div>
+    <div class="product-price col-xs-12 col-md-3 col-lg-3" *ngIf="product.companyAllowAnonymous == true || product.companyAllowAnonymous == null||product.anonymousRequest == false">
+        <h3 class="price-discount" *ngIf="product.hasDiscount">{{ product.discountText }}</h3>
+        <span class="removeInMobileResonsive">
+            <div *ngIf="product.priceDetails && product.priceDetails.length > 0">
+                <h3 *ngFor="let price of product.priceDetails;trackBy:productIdWithPrice" class="txt-mgray no-mar f_width bx-right" style="margin-bottom:5px;">
+                    <span class="price-description bx-right">{{price.priceType != null ? price.priceType.priceDescription : ''}}</span>
+                    <span class="value bx-left">{{price.priceValue |  number:'1.0-2'}}</span>
+                </h3>
+            </div>
+        </span>
+        <div *ngIf="product.insuranceTypeCode == 2 && product.providerId == 8">
+            <h3 class="price-discount">{{'quotation.deductible' | translate}}</h3>
+            <select [disabled]="!isDone || isMedGulfDeductableValueChenged" [(ngModel)]="medGulfDeductableValue"
+                    name="MedGulfDeductibleValue" (change)="changeMedGulfDeductibleValue($event)"
+                    id="ddlMedGulfDeductibleValue" class="col-md-11">
+                <option>1000</option>
+                <option>1250</option>
+                <option>1500</option>
+                <option>1750</option>
+                <option>2000</option>
+                <option>2250</option>
+                <option>2500</option>
+                <option>3000</option>
+                <option>3500</option>
+                <option>4000</option>
+                <option>4500</option>
+                <option>5000</option>
+                <option>6000</option>
+                <option>7000</option>
+            </select>
+        </div>
+        <div *ngIf="product.insuranceTypeCode == 2 && product.providerId == 9">
+            <h3 class="price-discount">{{'quotation.deductible' | translate}}</h3>
+            <select [disabled]="!isDone || isArabianShieldDeductableValueChenged" [(ngModel)]="ArabianShieldDeductableValue"
+                    name="ArabianShieldDeductableValue" (change)="changeArabianShieldDeductibleValue($event)"
+                    id="ddlArabianShieldDeductibleValue" class="col-md-11">
+                <option>1000</option>
+                <option>2000</option>
+                <option>3000</option>
+                <option>3500</option>
+                <option>5000</option>
+                <option>10000</option>
+            </select>
+        </div>
+
+        <div *ngIf="product.insuranceTypeCode == 2 && product.providerId == 2">
+            <h3 class="price-discount">{{'quotation.deductible' | translate}}</h3>
+            <select [disabled]="!isDone || isACIGDeductableValueChenged" [(ngModel)]="ACIGDeductableValue"
+                    name="ACIGDeductableValue" (change)="changeACIGDeductibleValue($event)"
+                    id="ddlACIGDeductibleValue" class="col-md-11">
+                <option>500</option>
+                <option>1000</option>
+                <option>1500</option>
+                <option>2000</option>
+                <option>3000</option>
+                <option>5000</option>
+            </select>
+        </div>
+        <div *ngIf="product.insuranceTypeCode == 2 && product.providerId == 20">
+            <h3 class="price-discount">{{'quotation.deductible' | translate}}</h3>
+            <select [disabled]="!isDone || isAlRajhiDeductableValueChenged" [(ngModel)]="AlRajhiDeductableValue"
+                    name="AlRajhiDeductableValue" (change)="changeAlRajhiDeductibleValue($event)"
+                    id="ddlAlRajhiDeductibleValue" class="col-md-11">
+                <option>1500</option>
+                <option>2000</option>
+                <option>2500</option>
+                <option>3000</option>
+                <option>5000</option>
+            </select>
+        </div>
+
+        <div *ngIf="product.insuranceTypeCode == 8 && product.providerId == 20">
+            <h3 class="price-discount">{{'quotation.deductible' | translate}}</h3>
+            <select [disabled]="true" class="col-md-11">
+                <option>2000</option>
+            </select>
+        </div>
+
+        <h3 *ngIf="(product.insuranceTypeCode == 2 && isHasMultiProducts == true  && product.providerId != 2 && product.providerId != 8 && product.providerId != 9 && product.providerId != 20)" class="price-discount">{{'quotation.deductableValue' | translate}}</h3>
+        <select [disabled]="!isDone" *ngIf="product.insuranceTypeCode == 2 && isHasMultiProducts == true  && product.providerId != 2 && product.providerId != 8 && product.providerId != 9 && product.providerId != 20" name="ddlDeductableValue" id="ddlDeductableValue" [(ngModel)]="productId" class="col-md-11" (change)="changeDeductableValue($event)">
+            <option *ngFor="let item of deductableValues" [value]="item.id">{{item.value}}</option>
+        </select>
+        <h3 class="txt-mgray no-mar f_width bx-right" style="margin-bottom: 40px; margin-top: 30px;">
+            <span class="price-description bx-right removeInMobileResonsive">{{'quotation.total' | translate}}</span>
+            <span class="value bx-left">{{productPrice | number:'1.0-2'}} <span class="dis-inline-block txt-md right-mar-10 left-mar-10"> {{'quotation.SAR' | translate}}</span></span>
+        </h3>
+
+        <!--&& (product.providerId == 12 || product.providerId == 20)-->
+        <h2 class="vehicleLimitValue" *ngIf="product.insuranceTypeCode == 2 && product.vehicleLimitValue > 0">
+            {{'quotation.vehicleLimitValue' | translate}}: {{product.vehicleLimitValue | number:'1.0-2'}}
+            <img src="/resources/imgs/carValue.svg" class="carValueLogo" />
+        </h2>
+
+
+        <input type="submit" [value]="'quotation.Search_buy_now' | translate"
+               class="buy-now borderd-hvr btn sm dis-inline-block sm-mar txt-white  txt-green txt-green-hvr  txt-sm bg-green  circ-rdus l-shadow customStyleBtnBuy"
+               [disabled]="product.insuranceTypeCode == 2 && (
+               (product.providerId == 8 && isMedGulfDeductableValueChenged) 
+               ||(product.providerId == 20 && isAlRajhiDeductableValueChenged)
+               ||(product.providerId == 2 && isACIGDeductableValueChenged)
+               ||(product.providerId == 9 && isArabianShieldDeductableValueChenged)
+               )">
+
+        <!--<div *ngIf="product.insuranceTypeCode == 1 &&
+    (product.providerId == 2 || product.providerId == 4 || product.providerId == 8 || product.providerId == 9 ||
+    product.providerId == 10 || product.providerId == 11 || product.providerId == 12 || product.providerId == 13 ||
+    product.providerId == 19 || product.providerId == 20 || product.providerId == 21 || product.providerId == 22 ||
+    product.providerId == 23 || product.providerId == 25)"
+    class="more-detail txt-md txt-black no-mar sm-mar" style="text-align: center;">
+        <a (click)="downloadTermsAndConditionsFile()" class="txt-black txt-brand-hvr" style="font-weight: bold" translate>quotation.PolicyTermsAndConditions</a>
+    </div>
+
+    <div *ngIf="product.insuranceTypeCode == 2 &&
+    (product.providerId == 2 || product.providerId == 4 || product.providerId == 8 || product.providerId == 9 || product.providerId == 11 ||
+    product.providerId == 21 || product.providerId == 20 || product.providerId == 23 || product.providerId == 25)"
+    class="more-detail txt-md txt-black no-mar sm-mar" style="text-align: center;">
+        <a (click)="downloadTermsAndConditionsFile()" class="txt-black txt-brand-hvr" style="font-weight: bold" translate>quotation.PolicyTermsAndConditions</a>
+    </div>
+
+    <div *ngIf="product.insuranceTypeCode == 7 && product.providerId == 12"
+    class="more-detail txt-md txt-black no-mar sm-mar" style="text-align: center;">
+        <a (click)="downloadTermsAndConditionsFile()" class="txt-black txt-brand-hvr" style="font-weight: bold" translate>quotation.PolicyTermsAndConditions</a>
+    </div>-->
+
+        <div *ngIf="termsFilePath"
+             class="more-detail txt-md txt-black no-mar sm-mar" style="text-align: center;">
+            <a (click)="downloadTermsAndConditionsFile()" class="txt-black txt-brand-hvr" style="font-weight: bold" translate>quotation.PolicyTermsAndConditions</a>
+        </div>
+    </div>
+
+    <div class="product-benefits col-xs-12 col-md-6 col-lg-7" style="text-align: center !important;font-size: 25pt;padding-top: 120px;background-color: #e8ecef;display: flex;justify-content: center;width:180px;" *ngIf="product.companyAllowAnonymous == false && product.anonymousRequest == true ">
+        <a [href]="loginUrl" translate>quotation.Company_Req_Login_Msg</a>
+    </div>
+</section>

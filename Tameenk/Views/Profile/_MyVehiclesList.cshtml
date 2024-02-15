@@ -1,0 +1,266 @@
+﻿@model Tameenk.Models.MyVehiclesViewModel
+@using Tameenk.Resources.Profile;
+@{
+    double pages = (double)Model.VehiclesTotalCount / 10;
+    var pagesCount = Math.Ceiling(pages);
+}
+<article id="MyVehiclesList">
+    @if (Model != null && Model.VehiclesList != null && Model.VehiclesList.Count > 0)
+    {
+        foreach (TameenkDAL.Models.VehicleModel VehicleObj in Model.VehiclesList)
+        {
+            <div class="wrapper-bx md-mar vehicle-row  search-info bg-ofwhite section  active search-car" style="background-image: url('/resources/imgs/CarLogos/@(VehicleObj.VehicleMakerCode.HasValue ? VehicleObj.VehicleMakerCode.Value.ToString("0000") : "0000").jpg');">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-4 col-lg-2 bx-right">
+                    </div>
+                    <header class="col-xs-12 col-lg-5 col-lg-6 over-hidden bx-right">
+                        <span class="txt-sm  txt-mgray dis-block ">@Html.Raw(Tameenk.LangText.search_Vehicle_Description)</span>
+                        <h2 class="txt-lr txt-black no-mar">@VehicleObj.VehicleMaker @VehicleObj.ModelYear @VehicleObj.Vehicle_Model </h2>
+                        <h3 class="txt-sm  txt-mgray dis-block xs-mar">@VehicleObj.RegisterationPlace</h3>
+                    </header>
+                    @Html.Partial("_VehiclePlate", VehicleObj.VehiclePlate)
+                </div>
+                <div class="small-desc over-hidden f_width sm-mar bx-right txt-mgray">
+                    <a data-popup-open="confirmDelete" href="@VehicleObj.ID" onclick="DeleteVehicle(this); return false;" class="txt-right bx-left txt-black">
+                        <i class="ic-icons-316 txt-black bx-right general-ico"></i>@Html.Raw(Tameenk.LangText.delete_vehicle)
+                    </a>
+                </div>
+            </div>
+        }
+
+        <div>
+            @if (Model.Lang == "en")
+            {
+                <ul class="pagination">
+                    @if (Model.CurrentPage == 1)
+                    {
+                        @*<li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+                    else
+                    {
+                        @*<li><a class="previous" onclick="SearchMyVehicles(1)"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="previous" onclick="SearchMyVehicles(@Model.CurrentPage - 1)"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+
+                    @if (pagesCount <= 5)
+                    {
+                        if (pagesCount == 1)
+                        {
+                            <li><a class="active"> 1 </a></li>
+                        }
+
+                        else
+                        {
+                            for (int i = 1; i <= pagesCount; i++)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        if (Model.CurrentPage <= 3)
+                        {
+                            for (int i = 1; i <= 5; i++)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                        else if (Model.CurrentPage >= pagesCount - 1)
+                        {
+                            if (Model.CurrentPage == pagesCount - 1)
+                            {
+                                for (int i = Model.CurrentPage - 3; i <= pagesCount; i++)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (int i = Model.CurrentPage - 4; i <= pagesCount; i++)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int j = Model.CurrentPage - 2; j <= Model.CurrentPage + 2; j++)
+                            {
+                                if (Model.CurrentPage == j)
+                                {
+                                    <li><a class="active" onclick="SearchMyVehicles(@j)"> @j </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyVehicles(@j)"> @j </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    @if (Model.CurrentPage == pagesCount)
+                    {
+                        <li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                    else
+                    {
+                        <li><a class="next" onclick="SearchMyVehicles(@Model.CurrentPage + 1)"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="next" onclick="SearchMyVehicles(@pagesCount)"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                </ul>
+            }
+            else
+            {
+                <ul class="pagination">
+                    @if (Model.CurrentPage == 1)
+                    {
+                        @*<li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+                    else
+                    {
+                        @*<li><a class="previous" onclick="SearchMyVehicles(1)"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="previous" onclick="SearchMyVehicles(@Model.CurrentPage - 1)"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+
+                    @if (pagesCount <= 5)
+                    {
+                        if (pagesCount == 1)
+                        {
+                            <li><a class="active"> 1 </a></li>
+                        }
+
+                        else
+                        {
+                            for (double i = pagesCount; i >= 1; i--)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        if (Model.CurrentPage <= 3)
+                        {
+                            for (int i = 5; i >= 1; i--)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                        else if (Model.CurrentPage >= pagesCount - 1)
+                        {
+                            if (Model.CurrentPage == pagesCount - 1)
+                            {
+                                for (double i = pagesCount; i >= Model.CurrentPage - 3; i--)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (double i = pagesCount; i >= Model.CurrentPage - 4; i--)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyVehicles(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int j = Model.CurrentPage + 2; j >= Model.CurrentPage - 2; j--)
+                            {
+                                if (Model.CurrentPage == j)
+                                {
+                                    <li><a class="active" onclick="SearchMyVehicles(@j)"> @j </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyVehicles(@j)"> @j </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    @if (Model.CurrentPage == pagesCount)
+                    {
+                        <li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                    else
+                    {
+                        <li><a class="next" onclick="SearchMyVehicles(@Model.CurrentPage + 1)"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="next" onclick="SearchMyVehicles(@pagesCount)"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                </ul>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="wrapper-bx md-mar vehicle-row  search-info bg-ofwhite section  active search-car">
+            <div class="row">
+                @Html.Raw(ProfileResources.NoDataFound)
+            </div>
+        </div>
+    }
+</article>

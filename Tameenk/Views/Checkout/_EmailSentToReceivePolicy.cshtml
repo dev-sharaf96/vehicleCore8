@@ -1,0 +1,31 @@
+﻿@model Tameenk.Models.Payments.SendActivationEmailModel 
+
+<div id="EmailSentToReceivePolicyCheckoutPopup" class="popup" data-popup="EmailSentToReceivePolicyCheckoutPopup">
+    <div class="popup-inner">
+        <div class="modal-body">
+            <p>@Html.Raw(string.Format(Tameenk.LangText.ActivateEmailToReceivePolicyEmail,Model.CheckoutEmail))</p>
+        </div>
+        <div class="model-footer">
+            <input type="button" data-popup-close="EmailSentToReceivePolicyCheckoutPopup" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow" value="@LangText.Close">
+            <input type="button" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow" 
+                   value="@LangText.ResendActivationEmail" 
+                   onclick="SendActivationEmail('@Model.ReferenceId')"
+                   id="SendActivationEmailBtn">
+            <label id="messageLabel" style="display:none;">-</label>
+        </div>
+        @*<a class="popup-close" data-popup-close="EmailSentToReceivePolicyCheckoutPopup" href="#">x</a>*@
+    </div>
+</div>
+
+<style>
+    #EmailSentToReceivePolicyCheckoutPopup .modal-body {
+        padding-bottom: 0;
+    }
+    #EmailSentToReceivePolicyCheckoutPopup .model-footer {
+        padding: 10px;
+    }
+        #EmailSentToReceivePolicyCheckoutPopup .model-footer input {
+            line-height: 0px;
+            height: 35px;
+        }
+</style>

@@ -1,0 +1,878 @@
+﻿@model Tameenk.Models.Checkout.CheckoutModel
+@using Tameenk.Core.Domain.Enums;
+<style>
+
+    ul.block-list.over-hidden.bx-right.f_width.no-mar {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #727373;
+    }
+
+        h3.txt-md.f_width.dis-block.lr-mar.txt-md.lr-mar.col-xs-12.col-lg-12.col-md-12 {
+            margin-bottom: 8px;
+            color: #166595;
+            font-weight: bold;
+        }
+
+        h1.txt-md.txt-black.no-mar.sm-mar.bx-right.f_width.dis-block.txt-center {
+            color: #727373 !important;
+        }
+
+    span.marg15 {
+        color: #727373;
+    }
+
+    h2.value.bx-left {
+        color: #727373;
+    }
+
+    .col-xs-12.txt-justify.bx-right {
+        font-size: 13px;
+    }
+
+    .removeLeftPAdd {
+        padding-left: 0px !important;
+    }
+
+    @@media screen and (max-width: 600px) and (min-width: 10px) {
+        h3.txt-md.f_width.dis-block.lr-mar.txt-md.lr-mar.col-xs-12.col-lg-12.col-md-12 {
+            margin-bottom: 8px;
+            color: #727373;
+            font-weight: bold;
+        }
+
+        ul.block-list.over-hidden.bx-right.f_width.no-mar {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        .prcDetailsInRespnsv {
+            background: #F0F0F0;
+            padding: 10px 0px 10px 0px;
+            justify-content: center;
+        }
+
+        .process article.single-process {
+            width: auto;
+        }
+    }
+
+    h3.txt-mgray.no-mar {
+        margin: 15px;
+    }
+    /*my check out */
+    aside.col-xs-12.col-md-4.col-lg-3.bg-ofwhite.md-ver-spc.bx-left {
+        background: #fdfdfd;
+        margin: 60px 0 0 0;
+    }
+
+    aside.col-xs-12.col-md-3.col-lg-3.bg-ofwhite.md-ver-spc.bx-left {
+        min-height: 550px;
+        background: #ffffffc4;
+        margin: 20px 0 0 0;
+        box-shadow: -11px 1px 28px -17px #888888;
+    }
+
+    aside.col-xs-12.col-md-4.col-lg-4.bg-ofwhite.md-ver-spc.bx-left {
+        background: #fdfdfd;
+        margin: 60px 0px 0px 0px;
+    }
+
+    span.img-cutter {
+        text-align: center;
+    }
+
+    .checokutDetImg {
+        width: auto;
+    }
+
+    .curvImgClass {
+        padding: 40px 0px 0px 0px;
+    }
+
+    .removeLeftPAdd {
+        padding-left: 0px !important;
+    }
+
+    .newContainercheckout {
+        background: #F4F4F5;
+        margin: 40px 20px 10px 70px;
+        padding: 10px;
+    }
+
+    .newContainercheckouttwo {
+        margin: 40px 0px 10px 70px;
+        padding: 10px;
+    }
+
+    .over-hidden.col-xs-6.col-lg-2.col-md-2.bx-right.md-mar {
+        margin-left: 40px;
+    }
+
+    .totalDivNewDes {
+        background: #e6e7e7;
+        width: 100%;
+        min-height: 180px;
+        /* padding: 15px; */
+    }
+
+    .upgradeContainer {
+        background: #D9EBCE;
+        border: 3px solid #80F236;
+    }
+
+    .upgradeSectionClss {
+        margin-top: 3px;
+        display: inline-flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    span.upgradeContainer {
+        line-height: 2;
+        height: 90px;
+        width: 90%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: inline-grid;
+    }
+
+    .marg15 {
+        margin: 15px;
+    }
+
+    .hideInWeb {
+        display: none;
+    }
+
+    @@media only screen and (max-width: 600px) {
+        .curvImgClass {
+            padding-top: 0px !important;
+        }
+
+        .col-xs-3.col-lg-2.ths.col-md-5.ths.sm-mar.bx-right {
+            margin: 6px !important;
+        }
+
+        span.img-cutter {
+            display: none !important;
+        }
+
+        .imgCarLogoInRespnsvhold {
+            display: none;
+        }
+
+        h2.hideInWeb {
+            text-align: center;
+            width: 100% !important;
+            background: rgb(255, 255, 255) !important;
+            justify-content: right;
+            margin: 10px 0px 0px 0px;
+            padding: 10px 10px 10px 10px;
+            box-shadow: 1px 8px 20px 4px #E0E0E0;
+            color: #727373;
+        }
+
+        .hideInWeb {
+            display: block;
+        }
+
+        .mycontainerToOrder {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row.newContainercheckout {
+            order: 1;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        aside.col-xs-12.col-md-3.col-lg-3.bg-ofwhite.md-ver-spc.bx-left {
+            order: 2;
+        }
+
+        div#nextBtnDiv {
+            width: 93% !important;
+        }
+
+        .removeLeftPAdd {
+            padding-left: 15px !important;
+        }
+
+        .newContainercheckouttwo {
+            margin: 0px 0px 0px 0px !important;
+            padding: 0px !important;
+        }
+
+        .col-xs-12.txt-justify.bx-right {
+            font-size: 12px;
+        }
+
+        article.CustomStylePaymentMethod.md-mar-bot.no-toggle {
+            display: inline-block;
+            margin-left: 0px;
+        }
+
+        .spanHolder {
+            width: 100px !important;
+            margin: 10px !important
+        }
+
+        .md-mar-bot {
+            margin-bottom: 0px;
+        }
+
+        .displyGrodNo {
+            grid-area: 1;
+        }
+    }
+
+    .activeClass {
+        background: #FFE8D2 !important;
+        border: 2px solid #f7d0ac !important;
+    }
+</style>
+<section class="section checkout page" id="checkout-steps" style='background-image: url(../../../../../resources/imgs/AssetCover.png);    background-repeat: no-repeat;
+    background-size: 100% 50%;'>
+    <!-- <span class="bg-ofwhite space-overly left-pos"></span> -->
+    <!-- <span class="bg-ofwhite space-overly left-side"></span> -->
+    <div class="container">
+        <div class="row mycontainerToOrder">
+            <aside class="col-xs-12 col-md-3 col-lg-3 bg-ofwhite md-ver-spc bx-left">
+                <span class="img-cutter">
+                    <img src="/resources/imgs/insurerlogos/@string.Concat(Model.InsuranceCompanyKey, ".png")" alt="Logo" title="" class="checokutDetImg" style="width: 80%;" />
+                    <div>
+
+                        @{ if (Model.ProductInsuranceTypeCode == 1 && Model.InsuranceCompanyKey == "Tawuniya")
+                            {
+                                <h1 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block txt-center">@LangText.MotorFlex</h1>
+                            }
+                            else if (Model.TypeOfInsurance == 1 && Model.IsSanadPlus == false)
+                            {
+                                <h1 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block txt-center">@LangText.TPL</h1>
+                            }
+                            else if (Model.IsSanadPlus == true)
+                            {
+                                <h1 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block txt-center">@LangText.SandPlus</h1>
+                            }
+                            else if (Model.ProductInsuranceTypeCode == 8) //Wafi Smart
+                            {
+                                <h1 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block txt-center">@LangText.WafiSmart</h1>
+                            }
+                            else if ((Model.TypeOfInsurance == 2 || Model.ProductInsuranceTypeCode == 2) && Model.IsSanadPlus == false)
+                            {
+                                <h1 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block txt-center">@LangText.Search_Comprehensive</h1>
+                            }
+                        }
+                    </div>
+                </span>
+                <div style='background: #e6e7e7;' class='curvImgClass'>
+                    <div class='col-lg-12 prcDetailsInRespnsv' style="display: flex;align-items: center;">
+                        <div class="col-lg-5">
+                            <span class="txt-black no-mar bx-right f_width dis-block txt-center bold" style="font-size: 13px; color: #727373;">@Html.Raw(Tameenk.LangText.PriceDetails)</span>
+                        </div>
+                        <div class="col-lg-5">
+                            <img src="/resources/imgs/priceDetaillsSv.svg" ) alt="Logo" style="width: 50px;height:50px;" />
+                        </div>
+                    </div>
+
+                    @{Decimal subTotal = 0; }
+                    @if (Model.SelectedProduct.PriceDetails != null)
+                    {
+                        <ul class="block-list over-hidden bx-right f_width no-mar" style="padding: 0 20px">
+                            @foreach (var detail in Model.SelectedProduct.PriceDetails.FindAll(p => p.PriceTypeCode != 8))
+                            {
+                                <h3 class="txt-mgray no-mar">
+                                    @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        <span class="price-description bx-right">@detail.PriceNameEn</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="price-description bx-right">@detail.PriceNameAr</span>
+                                    }
+                                    <span class="value bx-left">@Html.Raw(Tameenk.LangText.SAR)</span>
+                                    @if (detail.PriceTypeCode == 1 || detail.PriceTypeCode == 2 || detail.PriceTypeCode == 3
+                                    || detail.PriceTypeCode == 10 || detail.PriceTypeCode == 11)
+                                    {
+                                        subTotal -= @detail.PriceValue;
+                                        <span class="value bx-left">(@detail.PriceValue.ToString("0.00"))</span>
+                                    }
+                                    else
+                                    {
+                                        subTotal += @detail.PriceValue;
+                                        <span class="value bx-left">@detail.PriceValue.ToString("0.00")</span>
+                                    }
+
+                                    <div class="clear-b"></div>
+                                </h3>
+
+                            }
+                        </ul>
+                        <hr style="border-top: 1px عغ #798B9B;margin-top: 15x;margin-bottom: 5px;clear: both;">
+
+                    }
+                    @if (Model.SelectedProduct.Benefits != null && Model.SelectedProduct.Benefits.Count > 0)
+                    {
+                        <!-- <h2 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block txt-center">@Html.Raw(Tameenk.LangText.checkout_Another_Benefit)</h2> -->
+                        <ul class="block-list over-hidden bx-right f_width no-mar" style="padding: 0 20px">
+                            @foreach (var benefit in Model.SelectedProduct.Benefits)
+                            {
+                                <h3 class="txt-mgray no-mar">
+                                    @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        <span class="price-description bx-right">@benefit.BenefitNameEn</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="price-description bx-right">@benefit.BenefitNameAr</span>
+                                    }
+                                    @if (benefit.IsReadOnly && benefit.BenefitPrice == 0)
+                                    {
+                                        <span class="value bx-left">@Html.Raw(Tameenk.LangText.included)</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="value bx-left"> @Html.Raw(Tameenk.LangText.SAR)</span>
+                                        <span class="value bx-left">@benefit.BenefitPrice.Value.ToString("0.00")</span>
+                                        subTotal += benefit.BenefitPrice.Value;
+                                    }
+                                    <div class="clear-b"></div>
+                                </h3>
+                            }
+                        </ul>
+                        <hr style="border-top: 1px عغ #798B9B;margin-top: 15x;margin-bottom: 5px;clear: both;">
+                    }
+
+                    @if (Model.SelectedProduct.PriceDetails != null)
+                    {
+                        <ul class="block-list over-hidden bx-right f_width no-mar" style="padding: 0 20px">
+
+                            <h3 class="txt-mgray no-mar">
+                                <span class="price-description bx-right">@Html.Raw(Tameenk.LangText.SubTotal)</span>
+                                <span class="value bx-left"> @Html.Raw(Tameenk.LangText.SAR)</span>
+                                <span class="value bx-left">@subTotal.ToString("0.00")</span>
+                                <div class="clear-b"></div>
+                            </h3>
+                            @{var detail = Model.SelectedProduct.PriceDetails.Find(p => p.PriceTypeCode == 8);}  @*VAT*@
+                            <h3 class="txt-mgray no-mar">
+                                @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+                                {
+                                    <span class="price-description bx-right">@detail.PriceNameEn</span>
+                                }
+                                else
+                                {
+                                    <span class="price-description bx-right">@detail.PriceNameAr</span>
+                                }
+                                <span class="value bx-left"> @Html.Raw(Tameenk.LangText.SAR)</span>
+                                <span class="value bx-left">@detail.PriceValue.ToString("0.00")</span>
+                                <div class="clear-b"></div>
+                            </h3>
+                        </ul>
+                    }
+                    <hr style="border-top: 1px عغ #798B9B;margin-top: 15x;margin-bottom: 5px;clear: both;">
+                    <div class='totalDivNewDes'>
+                        <span class="marg15" style="padding-top: 10px;">@Html.Raw(Tameenk.LangText.checkout_total)</span>
+                        <h2 class="value bx-left" style="margin: 0px 0px 0px 10px !important;display: flex;justify-content: center;align-items: center;">
+                            @Model.PaymentAmount.ToString("0.00")
+                            <span class="dis-inline-block txt-md right-mar-10 left-mar-10 bold">@Html.Raw(Tameenk.LangText.SAR)</span>
+                        </h2>
+                        @{
+                            int commissionPersentage = 0;
+
+                            if (Model.IsSanadPlus)
+                            {
+                                commissionPersentage = 8;
+                            }
+                            if (Model.TypeOfInsurance == 1)
+                            {
+                                commissionPersentage = 2;
+                            }
+                            else if (Model.TypeOfInsurance == 2)
+                            {
+                                commissionPersentage = 15;
+                            }
+                        }
+                        <span class="marg15checkOutNo" class="marg15" style="padding-top: 10px;display: block;">@Html.Raw(string.Format(Tameenk.LangText.checkout_total_note, commissionPersentage))</span>
+                        @if (Model.TypeOfInsurance == 1)
+                        {
+                            <div id="upgradeSection" class="upgradeSectionClss" style="display:none;">
+
+                                <span class="upgradeContainer" style="line-height:2;color:#727373;cursor:pointer" onclick="ShowComprehensiveQuotation();">
+                                    @Html.Raw(Tameenk.LangText.Upgrade)
+                                    <br />
+                                    <span style="display:block;color:#727373;font-weight:bold;" id="comperehensivePrice"></span>
+                                </span>
+                                <div class="clear-b"></div>
+                            </div>
+                        }
+
+                        @if (!Model.PurchaseByMobile || Model.IsMobileBrowser)
+                        {
+                            <div id="nextBtnDiv" class="content-process process-number-2" style="position: absolute; bottom: 0px; width: 100%;">
+                                <!-- <input type="submit" id="nextSubmit" onclick="submitnow(0);" disabled="disabled" class="bx-left btn sm dis-block bx-left txt-white login txt-brand borderd-hvr txt-sm bg-green txt-green-hvr circ-rdus l-shadow" value="@Html.Raw(Tameenk.LangText.checkout_next)" /> -->
+                                <input type="submit" id="nextSubmit" onclick="submitnow()" disabled="disabled" class="bx-left btn sm dis-block bx-left txt-white login txt-brand borderd-hvr txt-sm bg-green txt-green-hvr circ-rdus l-shadow" value="@Html.Raw(Tameenk.LangText.PayNow)" style="    width: 100%;
+                          height: 60px;  border-radius: 1px;" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </aside>
+            <div class="col-xs-12 col-md-9 col-lg-9 removeLeftPAdd">
+                <!-- process -->
+                <div class="content-display over-hidden">
+                    <div class="msgbox success-color icon hidden">
+                        <i class="ic-icons-267"></i>
+                        <p>تم بنجاح</p>
+                    </div>
+                    <div class="msgbox alert-color icon hidden">
+                        <i class="ic-icons-274"></i>
+                        <p>حدث خطا ما</p>
+                    </div>
+                    <div class="row content-process process-number-1 hidden">
+                        <!-- empty content -->
+                    </div>
+
+                    @if (ViewBag.ErrorValidatingUserData)
+                    {
+                        @Html.Partial("_CheckoutError")
+                    }
+                    else
+                    {
+                        @Html.Partial("_CheckoutDetails", Model);
+                    }
+                    <br />
+                    <div class="row">
+
+                    </div>
+                </div>
+                @*@if (!ViewBag.ErrorValidatingUserData)
+                    {
+                        if (Model.InsuranceCompanyId != 13 && Model.InsuranceCompanyId != 20 && Model.InsuranceCompanyId != 9 && Model.InsuranceCompanyId != 3) //Not Salama Comprehensive  - AlRajhi - Arabian Shield - Solidarity
+                        {
+
+                        }
+
+                    }*@
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+    <!-- Modal -->
+    @Html.Partial("~/Views/Checkout/_ConfirmPhoneNumber.cshtml", new Tameenk.Models.VerifyCodeCheckoutViewModel { UserId = Model.UserId, PhoneNumber = Model.Phone, ReferenceId = Model.ReferenceId })
+    @Html.Partial("~/Views/Checkout/_MaxEmailCheckoutNumber.cshtml")
+    @Html.Partial("~/Views/Checkout/_PhoneNoAssignedToAnotherDriver.cshtml")
+    @Html.Partial("~/Views/Checkout/_PhoneReachMaxAllowedChanges.cshtml")
+    @Html.Partial("~/Views/Checkout/_IBANAssignedToAnotherDriver.cshtml")
+    @Html.Partial("~/Views/Checkout/_ErrorPopup.cshtml")
+    @Html.Partial("~/Views/Checkout/_PaymentMethodNotSelected.cshtml")
+    @Html.Partial("~/Views/Checkout/_UserExceedsInsuranceNumberLimit.cshtml")
+    @Html.Partial("~/Views/Checkout/_ComprehensiveImagesNotSelected.cshtml")
+    @Html.Partial("~/Views/Checkout/_InvaidIBAN.cshtml")
+</section>
+
+@section scripts{
+    <script>
+        $(function () {
+
+ $("#mainSideBarNew").css('width','100%');
+            $('.input-element').not('.bank').each(function (index) {
+                if (!$(this).val()) {
+                    $(this).attr('readonly', false);
+                    $(this).closest(".input-container").find('.edit-btn').parent().hide();
+                }
+            });
+
+            $('.edit-btn').on('click', function () {
+                $(this).parent().hide().closest(".input-container").find('.input-element')
+                    .attr('readonly', false).focus();
+            });
+            CheckIbanNumber();
+            if (@Model.TypeOfInsurance == 1) {
+                getLowestComprehensivePrice();
+                    var interval = setInterval(function () {
+                        getLowestComprehensivePrice();
+                }, 10000);
+
+                setTimeout(function () {
+                    clearInterval(interval);
+                }, 60000);
+            }
+          $('#checkTPLAgreement, #checkImgAgreement, #checkComprehensiveAgreement').prop('checked', false);
+            $('.single-process:eq(1)').on('click', function () {
+                if ($(this).index() == 2) {
+                    CheckIbanNumber();
+                    if (!CheckIbanNumber()) {
+                        return false;
+                    }
+                }
+                $('.single-process:eq(' + $(this).index() + ')').addClass('current');
+                $('.single-process:not(:eq(' + $(this).index() + '))').removeClass('current');
+                $('.single-process:eq(' + $(this).index() + ') >  span').addClass('txt-green');
+                $('.single-process:not(:eq(' + $(this).index() + ')) >  span').removeClass('txt-green');
+                $('.single-process:eq(' + $(this).index() + ') > .info span').addClass('txt-black');
+                $('.single-process:not(:eq(' + $(this).index() + ')) > .info span').removeClass('txt-black');
+                $('.single-process:eq(' + $(this).index() + ') > .info h3').addClass('txt-green');
+                $('.single-process:not(:eq(' + $(this).index() + ')) > .info h3').removeClass('txt-green');
+                $('.content-process:not(.process-number-' + $(this).data('number') + ')').addClass('hidden');
+                $('.content-process.process-number-' + $(this).data('number')).removeClass('hidden');
+            });
+
+            $('.payments-cards .pointer').on('click', function () {
+                var method = $(this).find('img');
+                $(this).closest('form').attr('action', method.attr('target')).find('.payments-cards .payment-type').val(method.attr('alt')).click();
+            });
+
+            $('.fileupload input[type=file]').each(function(index) {
+                var that = this;
+                if ($(that)[0].files[0]) {
+                    var type = $(that)[0].files[0].type;
+                    $(that).closest('div').find('.preview-upload').html('');
+                    if (type.includes('image')) {
+                    var oFReader = new FileReader();
+                    oFReader.readAsDataURL($(that)[0].files[0]);
+                    oFReader.onload = function (oFREvent) {
+                      //  $(that).closest('div').find('.preview-upload').html('<img src="' + oFREvent.target.result + '" style="border: solid 1px #22d022;" />');
+                      $(that).closest('div').find('.preview-upload').html('<img src="' + oFREvent.target.result + '" style="" />');
+                        $('[src*="' + $(that).attr('target') + '"]').show()
+                        };
+                    } else {
+                        $(this).val('');
+                    }
+                }
+            });
+            $('.fileupload input[type=file]').on('change', function () {
+                var that = this;
+                var type = $(that)[0].files[0].type;
+                $(that).closest('div').find('.preview-upload').html('');
+                if (type.includes('image')) {
+                var oFReader = new FileReader();
+                oFReader.readAsDataURL($(that)[0].files[0]);
+                oFReader.onload = function (oFREvent) {
+                    $(that).closest('div').find('.preview-upload').html('<img src="' + oFREvent.target.result + '" style="" />');
+                    $('[src*="' + $(that).attr('target') + '"]').show()
+                    };
+                } else {
+                    $(this).val('');
+                }
+            });
+            SelectBanck();
+
+        });
+        function SelectBanck() {
+            // Select back bankcode ..
+            if ($("#IBAN").val().length == 22) {
+                // Select By Code ..
+                var thirdCharacter = $("#IBAN").val().charAt(2);
+                var fourthCharacter = $("#IBAN").val().charAt(3);
+                // Select Bank Code ..
+                var Conc = thirdCharacter + fourthCharacter;
+                $("#BankCode").val(Conc);
+                $("#BankCode").val(Conc);
+                // Print Bank Name ..
+                var title = $("#BankCode  option:selected").text();
+                $("#select2-BankCode-container").text(title).click();
+            }
+        }
+
+        function BankCodeChanged() {
+            CheckIbanNumber();
+        }
+
+        function CheckIbanNumber() {
+            var fCharacter = $("#IBAN").val().charAt(0);
+            var sCharacter = $("#IBAN").val().charAt(1);
+            var ConcateTwoChars = fCharacter + sCharacter;
+            if ($("#IBAN").val().length === 24) {
+            if (ConcateTwoChars.length == 2) {
+                if (ConcateTwoChars.toLowerCase() == "sa") {
+                    $("#IBAN").val($("#IBAN").val().slice(2));
+                } else {
+                    $("#ibanError").html("@Html.Raw(Tameenk.LangText.checkout_error_iban)");
+                    return false;
+                }
+            }
+            }  else {
+                if ($("#IBAN").val().length != 22) {
+                $("#IBANError").html("@Html.Raw(Tameenk.LangText.checkout_error_iban)");
+                return false;
+            } else {
+                SelectBanck();
+                $("#IBANError").html("");
+                $('#bankPlaceholder').val($("#BankCode option:selected").text());
+            }
+            $("#IBANError").html("");
+            }
+            //if there is no bank selected then select the bank according to the iban
+            if ($("#BankCode").val() == '') {
+                SelectBanck();
+                $('#bankPlaceholder').val($("#BankCode option:selected").text());
+            }
+            var thirdCharacter = $("#IBAN").val().charAt(2);
+            var fourthCharacter = $("#IBAN").val().charAt(3);
+            var Conc = thirdCharacter + fourthCharacter;
+            if (Conc != $("#BankCode").val()) {
+                $("#IBANError").html("@Html.Raw(Tameenk.LangText.checkout_error_iban)");
+                return false;
+            }
+            $("#IBANError").html("");
+            $('#bankPlaceholder').val($("#BankCode option:selected").text());
+            return true;
+        }
+
+        var firstSubmit = true;
+        function submitnow() {
+
+        var paymentMethodCode = $("#@Html.IdFor(mpdel => Model.PaymentMethodCode)").val();
+            // reset error msgs
+            $("#IBANError").html('');
+            $("#PhoneError").html('');
+            $("#EmailError").html('');
+			$("#ChoosePaymentError").html('');
+            $("#imgsError").html('');
+             var isValid = true;
+                var phoneRegx = new RegExp(/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/);
+                var phone = $("#Phone").val();
+                if (!CheckIbanNumber()) {
+                    isValid=false;
+                    $("#IBANError").html("@Html.Raw(Tameenk.LangText.checkout_error_iban)");
+                }
+               if (!phoneRegx.test(phone)) {
+                    isValid=false;
+                    $("#PhoneError").html("@Html.Raw(Tameenk.LangText.checkout_error_phone)");
+                }
+                if (!$("#Email").valid()) {
+                    isValid=false;
+                    $("#EmailError").html("@Html.Raw(Tameenk.LangText.checkout_error_email)");
+                }
+
+				if (!paymentMethodCode) {
+                    isValid=false;
+                    $('#paymentMethodCheckoutPopup').show();
+                }
+                else if (($("#ImageFront") && $("#ImageFront").val() == "") ||
+                    ($("#ImageRight") && $("#ImageRight").val() == "") ||
+                    ($("#ImageLeft") && $("#ImageLeft").val() == "") ||
+                    ($("#ImageBack") && $("#ImageBack").val() == "") ||
+                    ($("#ImageBody") && $("#ImageBody").val() == "")) {
+                    isValid=false;
+                    $('#ComprehensiveImagesNotSelectedCheckoutPopup').show();
+                }
+
+        if(!isValid)
+            return false;
+        if(isValid)
+        {
+                 var checkoutPhoneNumber = $('#Phone').val();
+                 var referenceId = '@Model.ReferenceId';
+                 var userEmail = $('#Email').val();
+                 var checkReceivePolicyByEmail;
+                    if( $('#IsReceivePolicyByEmailChecked').is(':checked')){
+                        checkReceivePolicyByEmail = "true";
+                    }
+                    else{
+                        checkReceivePolicyByEmail = "false";
+                    }
+                 $("#nextSubmit").attr("disabled", "disabled");
+                 var userIban = 'sa'+$("#IBAN").val();
+                   var phoneVerficationUrl = "@Url.Action("VerifyCheckoutDriverInfo", "Checkout")";
+                     $.ajax({
+                    url: phoneVerficationUrl,
+                    type: "GET",
+                    data: {userId:'@Model.UserId',PhoneNumber: checkoutPhoneNumber,referenceId : referenceId,email:userEmail,iban:userIban,isReceivePolicyByEmailChecked:checkReceivePolicyByEmail},
+                    success: function (data) {
+
+                    if(data.data==0)
+                    {
+                        if (paymentMethodCode)
+                        {
+                            $("#@Html.IdFor(mpdel => Model.PaymentMethodCode)").val(paymentMethodCode);
+                            $("#IBAN").val('sa'+$("#IBAN").val());
+                            //let abs = $("#IBAN").val();
+                            if (firstSubmit) {
+                                $("#frmshow").submit();
+                                firstSubmit = false;
+                                $("#nextSubmit").attr("disabled", "disabled");
+                            }
+                        }
+                    }
+                    else if(data.data==1)
+                    {
+                        $('#phoneCheckoutPopup').show();
+                        $("#nextSubmit").removeAttr("disabled");
+                        return false;
+                    }
+                    else if(data.data==2)
+                    {
+                       
+                         $('#ReachedTheMaxPhoneChange').show();
+                          $("#nextSubmit").removeAttr("disabled");
+                        return false;
+                    }
+                    else if(data.data==3)
+                    {
+                        
+                        $('#PhoneNumber').val(checkoutPhoneNumber);
+                        $('#span-errorcode').hide();
+                        $('#span-resendmessage').hide();
+                        $('#ichiro_el0').val('');
+                        $('#ichiro_el0-error').remove();
+                        $('#editPhonePopup').show();
+                          $("#nextSubmit").removeAttr("disabled");
+                        return false;
+                    }
+                    else if(data.data==4)
+                    {
+                        
+                        $('#emailCheckoutPopup').show();
+                          $("#nextSubmit").removeAttr("disabled");
+                        return false;
+                    }
+                    else if(data.data==5)
+                    {
+                        
+                         $('#GenericErrorPopup').show();
+                          $("#nextSubmit").removeAttr("disabled");
+                        return false;
+                    }
+                    else if(data.data==6)
+                    {
+                         
+                         $('#IbanCheckoutPopup').show();
+                         $("#nextSubmit").removeAttr("disabled");
+                        return false;
+                    }
+                    else if(data.data==9)
+                    {
+                         
+                         $('#InvalidIbanCheckoutPopup').show();
+                         $("#nextSubmit").removeAttr("disabled");
+                        return false;
+                    }
+                    else if(data.data==10)
+                    {
+                        
+                        $('#UserExceedsInsuranceNumberLimitCheckoutPopup').show();
+                         $("#nextSubmit").removeAttr("disabled");
+                        return false;
+                    }
+              }
+		    });
+		}
+    }
+        function changePaymentMethod(paymentMethodCode){
+            $("#@Html.IdFor(mpdel => Model.PaymentMethodCode)").val(paymentMethodCode);
+        }
+        function getLowestComprehensivePrice() {
+         var accessToken = '@Model.AccessToken';
+            $.ajax({
+                url: '@System.Configuration.ConfigurationManager.AppSettings["ComprehensiveLowestPrice"]?QtRqstExtrnlId=@Model.QtRqstExtrnlId',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+                }
+                })
+                .done(function(response) {
+                    //$('#upgradeSection').show();
+                     $('#upgradeSection').css('display','inline-flex');
+                    $("#comperehensivePrice").html(response.data.productPrice.toFixed(2));
+                    $("#test").html(response.data.providerId);
+                }).fail(function(err) {
+                    $('#upgradeSection').hide();
+                     return err.statusText
+                }
+                );
+        }
+        function ShowComprehensiveQuotation() {
+            var url = "@Url.Action("SearchResult", "Quotation")";
+            url = url + '?qtRqstExtrnlId=' + '@Model.QtRqstExtrnlId' + '&TypeOfInsurance=2&VehicleAgencyRepair=false&DeductibleValue=2000';
+            window.location.href = url;
+        }
+            $('.selectinside').has('option[selected]').addClass('clicked');
+
+            function checkAgreeFunc(obj,VehicleIdTypeId) {
+              if ($(obj).is(':checked')) {
+                var VehicleIdTypeVal = '@Model.VehicleIdType';
+                if((VehicleIdTypeId == 2 || VehicleIdTypeVal=='CustomCard')&& $('#checkComprehensiveAgreement').is(':checked'))
+                {
+                    $("#nextSubmit").removeAttr("disabled");
+                }
+                else if($('#checkComprehensiveAgreement').is(':checked') && $('#checkImgAgreement').is(':checked'))
+                {
+                    $("#nextSubmit").removeAttr("disabled");
+                }
+                else if ($('#checkTPLAgreement').is(':checked')){
+                    $("#nextSubmit").removeAttr("disabled");
+                }
+              } else {
+                $("#nextSubmit").attr("disabled", "disabled");
+              }
+            }
+            //if checkbox is checked then set the value of hidden field of the checkbox true
+            //the function get the id of the field by data attrbute on the field : field - id
+            function CheckboxToggle(obj) {
+                if ($(obj).is(':checked')) {
+                    $("#" + $(obj).data('field-id')).val(true);
+                } else {
+                    $("#" + $(obj).data('field-id')).val(false);
+                }
+            }
+
+             // Add active class to the current button (highlight it)
+            //var header = document.getElementById("parentPaymentMethods");
+            var btns = document.getElementsByName("paymentHolder");
+            for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function() {
+              var current = document.getElementsByClassName("activeClass");
+              if (current.length > 0) {
+                current[0].className = current[0].className.replace(" activeClass", "");
+              }
+              this.className += " activeClass";
+              });
+        }
+    </script>
+}
+
+<style>
+    .car-upload-images {
+        position: relative;
+        height: 150px;
+    }
+
+        .car-upload-images img {
+            width: 350px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+        }
+
+    .price-description {
+        font-size: 13px;
+        color: #535f69;
+        max-width: 78%
+    }
+
+    .value {
+        font-weight: bold;
+        max-width: 22%;
+        display: inline-block;
+        text-align: left;
+        font-size: 13px;
+        margin: 2px;
+    }
+
+    .bold {
+        font-weight: bold
+    }
+
+    #checkout-steps .input-container label {
+        font-size: 1.5rem;
+    }
+</style>

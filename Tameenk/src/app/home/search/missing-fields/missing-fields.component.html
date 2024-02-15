@@ -1,0 +1,18 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div class="col-xs-12 bx-right">
+      <h3 class="md-mar" translate>MissingFields.heading</h3>
+  </div>
+  <div class="col-xs-12 bx-right">
+      <div *ngFor="let field of missingFields" class="form-row">
+          <div>
+              <bcare-missing-field [field]="field" [vehicleMakerCode]="vehicleMakerCode" (changeVehicleMakerCode)="changeVehicleMakerCode($event)" [form]="form"></bcare-missing-field>
+          </div>
+        </div>
+  </div>
+  <div class="col-xs-12 bx-right">
+      <div class="form-row">
+          <input type="submit" (click)="onSubmit()" id="btnSubmit" [disabled]="!form.valid" class="no-trans bx-left btn sm dis-block bx-left txt-white submit-continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow sm-mar missingFieldSubmit"
+          value="{{ 'inquiry.show_quotes' | translate }}" style="margin-bottom: 15px;" />
+      </div>
+  </div>
+</form>

@@ -1,0 +1,120 @@
+<div class="accordion md-mar" [ngClass]="accordionIsActive ? 'active' : ''">
+  <button class="accordion-heading" (click)="accordionIsActive = !accordionIsActive">
+    <h3 class="accordion-title" translate>inquiry.additional_Driver_info.driver_information
+      <span> {{index + 1}}</span>
+    </h3>
+    <div class="remove-driver-old bx-left" (click)="destroy()">
+      <i class="ic-plus rotate"></i>
+    </div>
+  </button>
+  <div class="accordion-body md-mar-bot">
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right">
+      <span class="input input--ichiro" [ngClass]="idNumberField.dirty ? 'input--filled' : ''">
+        <input class="input__field input__field--ichiro" [id]="'driverIdNumber'+index" type="text" #idNumberField="ngModel" [(ngModel)]="driver.nationalId"
+        />
+        <label class="input-label input-label--ichiro" [for]="'driverIdNumber'+index">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.id_residence_number</span>
+        </label>
+      </span>
+      <span class="error-field" id="driverIdNumberError"></span>
+    </div>
+    <div class="col-xs-5 col-lg-2 col-md-2 bx-right">
+      <span class="input input--ichiro" [ngClass]="monthField.dirty ? 'input--filled' : ''">
+        <select class="input__field input__field--ichiro" [id]="'monthExpiry'+index" #monthField="ngModel" required [(ngModel)]="driver.licenseExpiryMonth">
+          <option *ngFor="let month of hijriMonths;let i = index" [value]="i + 1">{{i + 1}} - {{month}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" [for]="'monthExpiry'+index">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.additional_Driver_info.month_license_expiration</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-5 col-lg-2 col-md-2 bx-right">
+      <span class="input input--ichiro" [ngClass]="yearField.dirty ? 'input--filled' : ''">
+        <select class="input__field input__field--ichiro" [id]="'yearExpiry'+index" #yearField="ngModel" required [(ngModel)]="driver.licenseExpiryYear">
+          <option *ngFor="let year of years" [value]="year">{{year}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" [for]="'yearExpiry'+index">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.additional_Driver_info.year_license_expiration</span>
+        </label>
+      </span>
+      <span style="color:red;position:absolute" id="yearExpiryError"></span>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right">
+      <span class="input input--ichiro" [ngClass]="education.dirty ? 'input--filled' : ''">
+        <select class="input__field input__field--ichiro" [id]="'driverEducationLevelCode'+index" #education="ngModel" [(ngModel)]="driver.edcuationId">
+          <option *ngFor="let code of educationCodes" [value]="code.id">{{code.name}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" [for]="'driverEducationLevelCode'+index">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.education_level</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 md-mar">
+      <h3 class="txt-black txt-sm dis-block xs-mar xs-mar-bot" translate>inquiry.driver_has_violations</h3>
+      <input type="checkbox" class="thereViolationCheck switchIco md-mar dis-block thereViolation" [id]="'thereViolation_'+index" [(ngModel)]="thereViolation"
+        (change)="toggleViolations($event.target.checked)" />
+      <label class="labelSwitch txt-xs" [for]="'thereViolation_'+index">
+        <span class="stat true txt-brand" translate>common.yes</span>
+        <span class="stat false txt-gray" translate>common.no</span>
+      </label>
+      <div *ngIf="violations?.length > 0">
+        <div *ngFor="let v of violations; let i = index">
+          <div class="col-xs-10 col-lg-10 bx-right">
+            <span class="input input--ichiro" [ngClass]="focusViolation.dirty ? 'input--filled' : ''">
+              <select class="input__field input__field--ichiro" [id]="'violation'+index+i" #focusViolation="ngModel" [(ngModel)]="v.id"
+                (change)="changeViolation()">
+                <option *ngFor="let v of violationsCodes" [value]="v.id">{{v.name}}</option>
+              </select>
+              <label class="input-label input-label--ichiro" [for]="'violation'+index+i">
+                <span class="input-label-content input-label-content--ichiro" translate>inquiry.violation_type</span>
+              </label>
+            </span>
+          </div>
+          <div class="col-xs-2 col-lg-1 col-md-1 remove-icon">
+            <a class="txt-sm txt-black remove" (click)="removeViolation(i)">
+              <i class="ic-plus rotate"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-12 col-xs-12 col-md-12 driver-fields md-mar xs-mar-bot">
+          <a class="add-driver bx-shdw btn sm dis-block bx-right txt-brand txt-white-hvr login txt-brand  txt-xs bg-gr-main  circ-rdus l-shadow bx-right right"
+            (click)="addViolation()" translate>inquiry.add_violation</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right">
+      <span class="input input--ichiro" [ngClass]="medicalCondition.dirty ? 'input--filled' : ''">
+        <select class="input__field input__field--ichiro" [id]="'medicalCondition'+index" #medicalCondition="ngModel" [(ngModel)]="driver.medicalConditionId">
+          <option *ngFor="let code of medicalCondations" [value]="code.id">{{code.name}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" [for]="'medicalCondition'+index">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.driver_medical_cond</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-2 col-md-2 bx-right">
+      <span class="input input--ichiro" [ngClass]="childrens.dirty || childrens.update ? 'input--filled' : ''">
+        <input class="input__field input__field--ichiro driverChildrenCount"
+        (focus)="removeDefaultZero()" (blur)="addDefaultZero()" type="text" [id]="'driverChildrenCount'+index" #childrens="ngModel"
+          [(ngModel)]="driver.childrenBelow16Years" />
+        <label class="input-label input-label--ichiro" [for]="'driverChildrenCount'+index">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.children_below_16_years</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-2 col-md-2 bx-right">
+      <span class="input input--ichiro" [ngClass]="usagePersentage.dirty ? 'input--filled' : ''">
+        <select class="input__field input__field--ichiro" [id]="'usagePersentage'+index" #usagePersentage="ngModel" [(ngModel)]="driver.drivingPercentage"
+          (blur)="focusViolation = true">
+          <option value="100">100%</option>
+          <option value="75">75%</option>
+          <option value="50">50%</option>
+          <option value="25">25%</option>
+        </select>
+        <label class="input-label input-label--ichiro" [for]="'usagePersentage'+index">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.additional_Driver_info.driving_percentage</span>
+        </label>
+      </span>
+    </div>
+  </div>
+</div>

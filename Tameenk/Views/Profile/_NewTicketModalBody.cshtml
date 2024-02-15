@@ -1,0 +1,56 @@
+﻿@using Tameenk.Resources.UserTicket;
+@using Tameenk.Core.Domain.Enums;
+<div class="headerModall">
+    <h2 id="ticketModalTitle" class="col-12">@UserTicketResources.NewTicket</h2>
+    <span class="closeticketModal" onclick="closeTicketModal()">&times;</span>
+</div>
+<div id="ticketModalBody" class="bodyModall ticketBodyModal">
+    <div class="row">
+        <h3>@UserTicketResources.TicketType</h3>
+        @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+        {
+            @Html.DropDownList("ticketTypes", new SelectList(Model.UserTicketTypeList, "Id", "TicketTypeNameEn"), UserTicketResources.ChooseTicketType,
+           new { id = "ticketType", @class = "ticketTypes", onchange = "GetExtraDataForUserTicketPopup()"})
+        }
+        else
+        {
+            @Html.DropDownList("ticketTypes", new SelectList(Model.UserTicketTypeList, "Id", "TicketTypeNameAr"), UserTicketResources.ChooseTicketType,
+           new { id = "ticketType", @class = "ticketTypes", onchange = "GetExtraDataForUserTicketPopup()" })
+        }
+    </div>
+    @*<div id="extraDataDiv" style="margin-top: 10px !important; display:none" class="row">
+            <h3 id="extraDataLabel"></h3>
+            <select id="extraDataList" onchange="validateExtraData('extraDataList')" class="ticketTypes"></select>
+            <span id="extraDataListValidation" style="display:none;color:darkred" class="error">@UserTicketResources.Required</span>
+        </div>*@
+
+    <div id="sequenceOrCustomCardNumberDiv" style="margin-top: 10px !important; display:none" class="row">
+        <h3>@UserTicketResources.SequenceOrCustomCardNumber</h3>
+        <input id="sequenceOrCustomCardNumber" type="number" onblur="validateExtraData('sequenceOrCustomCardNumber')" onkeypress="validateExtraData('sequenceOrCustomCardNumber')" class="ticketTypes">
+        <span id="sequenceOrCustomCardNumberValidation" style="display:none;color:darkred" class="error">@UserTicketResources.Required</span>
+    </div>
+
+    <div id="ninDiv" style="margin-top: 10px !important; display:none" class="row">
+        <h3>@UserTicketResources.Nin</h3>
+        <input id="nin" type="number" onblur="validateExtraData('nin')" onkeypress="validateExtraData('nin')" class="ticketTypes">
+        <span id="ninValidation" style="display:none;color:darkred" class="error">@UserTicketResources.Required</span>
+    </div>
+
+    <div onchange="validateTicketNotes()" style="margin-top: 10px !important;display:none" id="userNotesHolderDiv" class="row">
+        <h3>@UserTicketResources.Notes</h3>
+        <div>
+            <textarea id="ticketNotes" name="textarea" rows="4" maxlength="200" cols="50" style="resize: none; width: 100%;"></textarea>
+            <span id="ticketNotesValidation" style="display:none" class="error"></span>
+
+        </div>
+    </div>
+    <div class='attchmentHolder' style="margin-top: 10px !important; display:none" id="attchmentHolderDiv">
+        <h3>@UserTicketResources.Attachments</h3>
+        <button id='buttonIDaddAttch' onclick="AddAttachment()" class='addAttchClass'>@UserTicketResources.AddAttachment</button>
+        <div id='AttachmentsDiv'></div>
+
+    </div>
+</div>
+<div class="footerModall">
+    <button onclick="CreateTicket()" id="createTicket" disabled class='funcButtons'> @UserTicketResources.SubmitTicket</button>
+</div>

@@ -1,0 +1,16 @@
+@media (min-width: 992px) {
+    .cars-row {
+      position: relative;
+    }
+    .cars-row:before {
+      content: '';
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      box-shadow: -2px 2px 20px 0 rgba(0, 0, 0, 0.05);
+      right: 0px;
+      top: 0px;
+      border-bottom-left-radius: 50px;
+      opacity: 0.7;
+    }
+  }

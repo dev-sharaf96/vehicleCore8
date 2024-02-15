@@ -1,0 +1,41 @@
+﻿@using Tameenk.Resources.Corporate;
+@using Tameenk.Core.Domain.Enums;
+<div class="headerModall">
+    <h2 id="addCorporateUserModalTitle" class="col-12">@CorporateResources.AddCorporateUser</h2>
+    <span class="closeticketModal" onclick="closeAddCorporateUserModal()">&times;</span>
+</div>
+<div id="addCorporateUserModalBody" class="bodyModall addCorporateUserBodyModal">
+    <div id="corporateUserNameDiv" style="margin-top: 10px !important;" class="row">
+        <h3>@CorporateResources.Name</h3>
+        <input id="corporateUserName" type="text" onblur="validateCorporateUserName()" onkeypress="validateCorporateUserName()" class="ticketTypes">
+        <span id="corporateUserNameValidation" style="display:none;color:darkred" class="error">@CorporateResources.Required</span>
+    </div>
+
+    <div id="corporateUserEmailDiv" style="margin-top: 10px !important;" class="row">
+        <h3>@CorporateResources.Email</h3>
+        <input id="corporateUserEmail" type="text" onblur="validateCorporateUserEmail()" onkeypress="validateCorporateUserEmail()" class="ticketTypes">
+        <span id="corporateUserEmailValidation" style="display:none;color:darkred" class="error">@CorporateResources.Required</span>
+    </div>
+
+    <div id="corporateUserPhoneNumberDiv" style="margin-top: 10px !important;" class="row">
+        <h3>@CorporateResources.PhoneNumber</h3>
+        <input id="corporateUserPhoneNumber" type="number" onblur="validateCorporateUserPhoneNumber()" onkeypress="validateCorporateUserPhoneNumber()" class="ticketTypes">
+        <span id="corporateUserPhoneNumberValidation" style="display:none;color:darkred" class="error">@CorporateResources.Required</span>
+    </div>
+
+
+    <div id="corporateUserPasswordDiv" style="margin-top: 10px !important;" class="row">
+        <h3>@CorporateResources.Password</h3>
+        <input id="corporateUserPassword" type="password" onblur="validateCorporateUserPassword()" onkeypress="validateCorporateUserPassword()" class="ticketTypes">
+        <span id="corporateUserPasswordValidation" style="display:none;color:darkred" class="error">@CorporateResources.Required</span>
+    </div>
+
+    <div id="corporateUserReEnterPasswordDiv" style="margin-top: 10px !important;" class="row">
+        <h3>@CorporateResources.ReEnterPassword</h3>
+        <input id="corporateUserReEnterPassword" type="password" onblur="validateCorporateUserPassword()" onkeypress="validateCorporateUserPassword()" class="ticketTypes">
+        <span id="corporateUserReEnterPasswordValidation" style="display:none;color:darkred" class="error">@CorporateResources.PasswordNotMatched</span>
+    </div>
+</div>
+<div class="footerModall">
+    <button onclick="AddCorporateUser()" id="addCorporateUser" disabled class='funcButtons'> @CorporateResources.Add</button>
+</div>

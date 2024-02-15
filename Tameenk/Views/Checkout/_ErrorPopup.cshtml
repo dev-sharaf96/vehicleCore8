@@ -1,0 +1,25 @@
+﻿
+<div id="GenericErrorPopup" class="popup" data-popup="GenericErrorPopup">
+    <div class="popup-inner">
+        <div class="modal-body">
+            <p>@Html.Raw(Tameenk.LangText.Error)</p>
+        </div>
+        <div class="model-footer">
+            <input type="button" data-popup-close="GenericErrorPopup" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow" value="@LangText.yes">
+        </div>
+        <a class="popup-close" data-popup-close="GenericErrorPopup" href="#">x</a>
+    </div>
+</div>
+
+<style>
+    #GenericErrorPopup .modal-body {
+        padding-bottom: 0;
+    }
+    #GenericErrorPopup .model-footer {
+        padding: 10px;
+    }
+        #GenericErrorPopup .model-footer input {
+            line-height: 0px;
+            height: 35px;
+        }
+</style>

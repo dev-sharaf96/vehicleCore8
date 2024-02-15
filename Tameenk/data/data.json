@@ -1,0 +1,150 @@
+{
+  "quote": {
+    "id": 2083,
+    "requestId": 674,
+    "insuranceTypeCode": 1,
+    "createDateTimeUtc": "2018-07-03T08:34:58.283",
+    "vehicleAgencyRepair": false,
+    "deductibleValue": null,
+    "referenceId": "4e17b218aaf4431",
+    "products": [{
+      "id": "00000000-0000-0000-0000-000000000000",
+      "externalProductId": "string",
+      "quotaionNo": "string",
+      "quotationDate": "2018-07-02T08:39:23.028Z",
+      "quotationExpiryDate": "2018-07-02T08:39:23.028Z",
+      "providerId": 1,
+      "productNameAr": "string",
+      "productNameEn": "string",
+      "productDescAr": "string",
+      "productDescEn": "string",
+      "productPrice": 0,
+      "deductableValue": 0,
+      "vehicleLimitValue": 0,
+      "quotationResponseId": 0,
+      "productImage": "https://www.bcare.com.sa/resources/imgs/insurerlogos/SD.png",
+      "priceDetails": [{
+        "detailId": "00000000-0000-0000-0000-000000000000",
+        "productID": "00000000-0000-0000-0000-000000000000",
+        "priceTypeCode": 0,
+        "priceValue": 0,
+        "percentageValue": 0,
+        "priceType": {
+          "code": 0,
+          "englishDescription": "string",
+          "arabicDescription": "string"
+        }
+      },{
+        "detailId": "00000000-0000-0000-0000-000000000000",
+        "productID": "00000000-0000-0000-0000-000000000000",
+        "priceTypeCode": 0,
+        "priceValue": 225.9,
+        "percentageValue": 0,
+        "priceType": {
+          "code": 0,
+          "englishDescription": "string",
+          "arabicDescription": "string"
+        }
+      },{
+        "detailId": "00000000-0000-0000-0000-000000000000",
+        "productID": "00000000-0000-0000-0000-000000000000",
+        "priceTypeCode": 0,
+        "priceValue": 305.6,
+        "percentageValue": 0,
+        "priceType": {
+          "code": 0,
+          "englishDescription": "string",
+          "arabicDescription": "string"
+        }
+      }],
+      "productBenefits": [{
+          "id": 0,
+          "productId": "00000000-0000-0000-0000-000000000000",
+          "benefitId": 0,
+          "isSelected": true,
+          "benefitPrice": 0,
+          "benefitExternalId": "string",
+          "benefit": {
+            "code": 1,
+            "englishDescription": "string",
+            "arabicDescription": "string"
+          }
+        },
+        {
+          "id": 0,
+          "productId": "00000000-0000-0000-0000-000000000000",
+          "benefitId": 0,
+          "isSelected": false,
+          "benefitPrice": 0,
+          "benefitExternalId": "string",
+          "benefit": {
+            "code": 0,
+            "englishDescription": "string",
+            "arabicDescription": "string"
+          }
+        }
+      ]
+    }, {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "externalProductId": "string",
+      "quotaionNo": "string",
+      "quotationDate": "2018-07-02T08:39:23.028Z",
+      "quotationExpiryDate": "2018-07-02T08:39:23.028Z",
+      "providerId": 2,
+      "productNameAr": "string",
+      "productNameEn": "string",
+      "productDescAr": "string",
+      "productDescEn": "string",
+      "productPrice": 0,
+      "deductableValue": 0,
+      "vehicleLimitValue": 0,
+      "quotationResponseId": 0,
+      "productImage": "https://www.bcare.com.sa/resources/imgs/insurerlogos/GG.png",
+      "priceDetails": [{
+        "detailId": "00000000-0000-0000-0000-000000000000",
+        "productID": "00000000-0000-0000-0000-000000000000",
+        "priceTypeCode": 0,
+        "priceValue": 0,
+        "percentageValue": 0,
+        "priceType": {
+          "code": 0,
+          "englishDescription": "string",
+          "arabicDescription": "string"
+        }
+      }],
+      "productBenefits": [{
+        "id": 0,
+        "productId": "00000000-0000-0000-0000-000000000000",
+        "benefitId": 0,
+        "isSelected": true,
+        "benefitPrice": 0,
+        "benefitExternalId": "string",
+        "benefit": {
+          "code": 0,
+          "englishDescription": "string",
+          "arabicDescription": "string"
+        }
+      }]
+    }],
+    "productType": {
+      "code": 0,
+      "englishDescription": "string",
+      "arabicDescription": "string"
+    },
+    "quotationRequest": {
+      "id": 674,
+      "externalId": "49d6f83962dc447",
+      "mainDriverId": "3b768426-5dc6-4e65-b264-117b7cf3167c",
+      "cityCode": 2,
+      "requestPolicyEffectiveDate": "2018-07-03T00:00:00",
+      "vehicleId": "70d00767-cbe8-4e84-9d6d-5e7dba360385",
+      "userId": null,
+      "najmNcdRefrence": "NCD02071881634",
+      "najmNcdFreeYears": 5,
+      "createdDateTimeUtc": "2018-07-02T15:44:13.653",
+      "isComprehensiveGenerated": true,
+      "isComprehensiveRequested": true
+    }
+
+  }
+}

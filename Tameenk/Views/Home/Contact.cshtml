@@ -1,0 +1,208 @@
+﻿@model Tameenk.Models.ContactUsViewModel
+
+<section class="md-ver-spc search-inputs  section min-height-vh normal-page">
+    <div class="container">
+        <div class="wrapper-bx md-mar-bot">
+            <div class="row contact-us">
+                <div class="col-xs-12 col-lg-8 bx-center">
+                    <h1 class="txt-black txt-lr md-lh txt-center" style="color:#f7811c; padding-bottom: 0px;">@Html.Raw(Tameenk.LangText.Contact_us)</h1>
+                    <form id="contact-form" method="post" action="@Url.Action("Contact","Home")">
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro">
+                                <label class="input__label input__label--ichiro" for="full-name">
+                                    <span class="input__label-content input__label-content--ichiro">
+                                        @Html.Raw(Tameenk.LangText.Register_FullName)
+                                    </span>
+                                </label>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "input__field input__field--ichiro full-name" })
+                            </span>
+                            <span style="color:red;position:absolute" id="IdNoError">
+                                @Html.ValidationMessageFor(model => model.Name)
+                            </span>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro">
+                                <label class="input__label input__label--ichiro" for="email">
+                                    <span class="input__label-content input__label-content--ichiro">@Html.Raw(Tameenk.LangText.register_email)</span>
+                                </label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "input__field input__field--ichiro register-email" })
+                            </span>
+                            <span style="color:red;position:absolute" id="IdNoError">
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </span>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro">
+                                @Html.TextBoxFor(m => m.Mobile, new { @class = "input__field input__field--ichiro mobileno register-mobile" })
+                                <label class="input__label input__label--ichiro" for="mobileno">
+                                    <span class="input__label-content input__label-content--ichiro">
+                                        @Html.Raw(Tameenk.LangText.register_mobile)
+                                    </span>
+                                </label>
+                            </span>
+                            <span style="color:red;position:absolute" id="IdNoError">
+                                @Html.ValidationMessageFor(model => model.Mobile)
+                            </span>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-md-6">
+                            <span class="input input--ichiro">
+                                @Html.TextBoxFor(m => m.Address, new { @class = "input__field input__field--ichiro address" })
+                                <label class="input__label input__label--ichiro" for="address">
+                                    <span class="input__label-content input__label-content--ichiro">
+                                        @Html.Raw(Tameenk.LangText.Address)
+                                    </span>
+                                </label>
+                            </span>
+                            <span style="color:red;position:absolute" id="IdNoError">
+                                @Html.ValidationMessageFor(model => model.Address)
+                            </span>
+                        </div>
+                        <div class="col-xs-12 col-lg-12 col-md-12">
+                            <span class="input input--ichiro">
+                                @Html.TextAreaFor(m => m.Message, new { @class = "input__field input__field--ichiro message", style = "padding-top: 10px;resize:  none;" })
+                                @*<textarea class="input__field input__field--ichiro message" id="Message" name="Message" style="padding-top: 10px;resize:  none;"></textarea>*@
+                                <label class="input__label input__label--ichiro contact-message" style="height: 250px" for="Message">
+                                    <span class="input__label-content input__label-content--ichiro">
+                                        @Html.Raw(Tameenk.LangText.Message)
+                                    </span>
+                                </label>
+                            </span>
+                            <span style="color:red;position:absolute" id="IdNoError">
+                                @Html.ValidationMessageFor(model => model.Message)
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="hidden-xs hidden-sm col-md-4 bx-right md-mar"></div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 bx-right md-mar">
+                            <span class="captcha-container">
+                                <img class="captcha-img" id="captchaImg" src="">
+                                <button type="button" class="reload-btn" onclick="getCaptcha()" title="reload"><i class="fas fa-sync"></i></button>
+                                <span class="field-error" style="color:red;position:absolute;display: none" id="captchaImgError">
+                                    @Html.Raw(Tameenk.Resources.ContactUs.ContactUsResource.Captcha_expired)
+                                </span>
+                            </span>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 bx-right md-mar">
+                            <div class="input-container" style="margin: 0">
+                            @Html.TextBoxFor(m => m.CaptchaInput, new { @id="captchaCode", @class = "input-element", @placeholder=" ", @maxlength="4" })
+                            <label class="input__label" for="captchaCode">@Html.Raw(Tameenk.Resources.ContactUs.ContactUsResource.input_symbols)</label>
+                                <span class="field-error" style="color:red;position:absolute;" id="captchaInvalid">
+                                    @Html.ValidationMessageFor(model => model.CaptchaInput)
+                                </span>
+                            </div>
+                            </div>
+                        @Html.HiddenFor(model => model.CaptchaToken)
+                        <div class="col-xs-12 col-sm-4 col-md-2">
+                            <button type="submit" id="sendMsg" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar">@Html.Raw(Tameenk.LangText.Send)</button>
+                        </div>
+                        </div>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="popup" id="plain-popup" data-popup="waitingSendMsg">
+    <div class="popup-inner" style="border: 4px solid #186a9e;">
+        <div class="modal-body" style="padding: 0">
+            <p class="loading">@Html.Raw(Tameenk.LangText.sending)<span>.</span><span>.</span><span>.</span></p>
+        </div>
+        <a class="popup-close hide" id="closeWaiting" data-popup-close="waitingSendMsg" href="#"></a>
+    </div>
+</div>
+<!--Message Received popup-->
+<div class="popup" data-popup="MessageReceived">
+    <div class="popup-inner">
+        <div class="modal-header">
+          <h1>@Html.Raw(Tameenk.LangText.ContactUsMessageReceivedHeader)</h1>
+        </div>
+        <!-- Here -->
+        <div class="modal-body">
+          <h2>@Html.Raw(Tameenk.LangText.ContactUsMessageReceivedBody)</h2>
+        </div>
+        <a class="popup-close" id="MessageReceivedClose" data-popup-close="MessageReceived" href="#">x</a>
+    </div>
+</div>
+<a data-popup-open="MessageReceived" id="MessageReceivedOpen"></a>
+<a data-popup-open="waitingSendMsg" id="openWaiting"></a>
+<!--End Message Received popup-->
+@section Scripts{
+    <script>
+        var captchaTokenId = '@Html.IdFor(model => model.CaptchaToken)';
+        var identityUrl = '@(Model.IdentityUrl)';
+        var expiryTime;
+        function getCaptcha() {
+            let currentUser = JSON.parse(localStorage.getItem("userToken"));
+            $.ajax({
+                url: identityUrl + 'api/identity/captcha',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + currentUser.access_token);
+                    xhr.setRequestHeader("Cache-Control", 'no-cache, no-store, must-revalidate');
+                    xhr.setRequestHeader("Pragma", 'no-cache');
+                    xhr.setRequestHeader("Expires", 'Sat, 01 Jan 2000 00:00:00 GMT');
+                }
+                })
+                .done(function(data) {
+                    $('#'+captchaTokenId).val(data.data.token);
+                    $('#captchaImg').attr("src", data.data.image);
+                    expiryTime = data.data.expiredInSeconds * 1000;
+                    setTimeout(function() {
+                        $('#captchaImgError').show();
+                    }, expiryTime);
+                }).fail(function(err) {
+                    return err.statusText
+                }
+                );
+        }
+        $(function() {
+            getCaptcha();
+            $('#contact-form').on('submit', function (e) {
+                e.preventDefault();
+                $('#captchaInvalid').text(' ');
+                var $form = $(this);
+                if (!$form.valid()) {
+                    return;
+                }
+                $('#openWaiting')[0].click();
+                let currentUser = JSON.parse(localStorage.getItem("userToken"));
+                $.ajax({
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", 'Bearer ' + currentUser.access_token);
+                    },
+                url: identityUrl + 'api/identity/captcha/validate',
+                type: 'POST',
+                dataType: 'JSON',
+                data: {
+                    token: $('#'+captchaTokenId).val(),
+                    input: $('#captchaCode').val()
+                }
+                }).done(function(data) {
+                $.ajax({
+                    url: $form.attr('action'),
+                    data: $form.serializeArray(),
+                    type: 'POST',
+                    dataType: 'JSON',
+                    success: function (result, status) {
+                        $('#closeWaiting')[0].click();
+                        //trigger the ancor click to show message received popup
+                        $('#MessageReceivedOpen')[0].click();
+                        //$('#contact-form').load(document.URL + ' #contact-form');
+                        setTimeout(function () { $('#MessageReceivedClose')[0].click(); location.reload(); }, 3000);
+                        //reset the form fields
+                        $form[0].reset();                    
+                    },
+                    error: function () {
+                        $('#closeWaiting')[0].click();
+                        $$('#MessageReceivedClose')[0].click();
+                        alert("An error occurred while processing your request.");
+                    }
+                });
+                }).fail(function(err) {                  
+                    $('#closeWaiting')[0].click();
+                    $('#captchaInvalid').text(err.responseJSON.errors[0].description);
+                });
+            });
+        });
+    </script>
+
+}

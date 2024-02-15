@@ -1,0 +1,61 @@
+<div class="accordion md-mar" [ngClass]="accordionIsActive ? 'active' : ''">
+  <button class="accordion-heading" (click)="toggleAccordion()">
+    <h3 class="accordion-title" translate>inquiry.insured_info.insured_information</h3>
+  </button>
+  <div class="accordion-body md-mar-bot">
+    <div class="col-xs-12 col-lg-3 col-md-3 bx-right">
+      <span class="input input--ichiro">
+        <input class="input__field input__field--ichiro idnumber" type="text" [(ngModel)]="insured.nationalId" (change)="changeId()"
+        (blur)="checkIdValidation()" />
+        <label class="input-label input-label--ichiro" for="idnumber">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.id_residence_number</span>
+        </label>
+        <span class="field-error" style="color:red;position:absolute;" id="nationalIdError">
+          {{nationalIdError | translate}}
+        </span>
+      </span>
+    </div>
+    <div class="col-xs-6 col-lg-2 col-md-2 bx-right">
+      <span class="input input--ichiro">
+        <select class="input__field input__field--ichiro" id="birthMonth" [(ngModel)]="insured.birthDateMonth">
+          <option *ngFor="let month of months;let i = index" [value]="i + 1">{{i + 1}} - {{month}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" for="birthMonth">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.insured_info.birth_month</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-6 col-lg-2 col-md-2 bx-right">
+      <span class="input input--ichiro">
+        <select class="input__field input__field--ichiro" id="birthYear" [(ngModel)]="insured.birthDateYear">
+          <option *ngFor="let year of years" [value]="year">{{year}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" for="birthYear">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.insured_info.birth_year</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-3 col-md-3 bx-right">
+      <span class="input input--ichiro">
+        <select class="input__field input__field--ichiro" id="insuredEducationLevelCode" [(ngModel)]="insured.edcuationId">
+          <option *ngFor="let code of educationCodes" [value]="code.id">{{code.name}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" for="insuredEducationLevelCode">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.education_level</span>
+        </label>
+      </span>
+      <span style="color:red;position:absolute" id="EducationLevelCodeError"></span>
+    </div>
+    <div class="col-xs-12 col-lg-2 col-md-2 bx-right">
+      <span class="input input--ichiro">
+        <input class="input__field input__field--ichiro insuredChildrenCount" type="text"
+        [(ngModel)]="insured.childrenBelow16Years" (focus)="removeDefaultZero()" (blur)="addDefaultZero()" />
+        <label class="input-label input-label--ichiro" for="insuredChildrenCount">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.children_below_16_years</span>
+        </label>
+      </span>
+    </div>
+    <button class="no-trans bx-left btn sm txt-white txt-xs bg-gr-main circ-rdus sm-mar" (click)="openNextStep()" style="margin-left: 10px;margin-right: 10px" translate>common.next</button>
+    <button class="no-trans bx-left btn sm txt-white txt-xs bg-gr-main circ-rdus sm-mar" (click)="openPrevStep()" style="margin-left: 10px;margin-right: 10px;" translate>common.prev</button>
+  </div>
+</div>

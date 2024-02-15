@@ -1,0 +1,22 @@
+﻿@model Tameenk.Models.ClearBrowserLocalStorageModel
+@{
+    ViewBag.Title = "ClearBrowserLocalStorage";
+}
+
+@section scripts
+{
+
+    <script type="text/javascript">
+       $(document).ready(function(){
+           localStorage.clear();
+		   var toredirecturl = '@Model.ReturnUrl';
+		   toredirecturl = toredirecturl.replace('&amp;','&');	
+         toredirecturl = toredirecturl.replace('&amp;','&');
+         toredirecturl = toredirecturl.replace('&amp;','&');
+         toredirecturl = toredirecturl.replace('&amp;','&');
+         toredirecturl = toredirecturl.replace('&amp;','&');
+           window.location.href = toredirecturl;
+       });
+    </script>
+}
+

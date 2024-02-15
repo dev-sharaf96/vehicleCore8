@@ -1,0 +1,37 @@
+﻿@model TameenkDAL.Models.UserProfileData
+
+<div class="md-ver-spc inactive content col-xs-12  col-md-9 col-lg-9 content-view active" id="info">
+    <div class="pd-inside">
+        <h1 class="txt-lr txt-black lr-mar col-xs-12">
+            معلوماتي
+            <a id="profileEditURL" class="bx-left btn  sm dis-block bx-left txt-white-hvr bg-brand-hvr login sm-mar txt-brand borderd-inset txt-xs   circ-rdus l-shadow">تعديل البيانات</a>
+        </h1>
+        <div class="row clear-b">
+            <div class="col-xs-12 col-md-6 col-lg-6 md-mar">
+                <div class="wrapper-bx">                    
+                    <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.Profile_UserName)</span>
+                    <h2 class="txt-lr txt-black no-mar">@Model.UserObj.FullName</h2>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6 md-mar">
+                <div class="wrapper-bx">                    
+                    <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.register_email)</span>
+                    <h2 class="txt-lr txt-black no-mar">@Model.UserObj.Email</h2>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6 md-mar">
+                <div class="wrapper-bx">                    
+                    <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.register_mobile)</span>
+                    <h2 class="txt-lr txt-black no-mar">@Model.UserObj.PhoneNumber</h2>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6 md-mar">
+                <div class="wrapper-bx">                    
+                    <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.Address)</span>
+                    <h2 class="txt-lr txt-black no-mar">@Model.UserObj</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pd inside -->
+</div>

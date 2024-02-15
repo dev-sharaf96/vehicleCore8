@@ -1,0 +1,137 @@
+<h2 class="md-mar" translate>inquiry.vehicle.vehicle_information</h2>
+<div class="col-xs-12 col-md-6 col-lg-6 bx-right">
+  <h3 class="txt-black dis-block over-hidden sm-mar" translate>inquiry.vehicle.registration_type</h3>
+  <div class="radio-container" style="margin-top: 10px;margin-bottom: 18px;">
+    <label class="radio-holder" for="VehicleRegistered-1" translate>
+      inquiry.vehicle.sequence_num
+      <input type="radio" id="VehicleRegistered-1" name="vehicleRegistered" [value]="1" [(ngModel)]="vehicle.VehicleIdTypeId" (change)="toggleVehicleRegistered(true)" checked>
+      <span class="checkmark"></span>
+    </label>
+    <label class="radio-holder" for="vehicleRegistered-2" translate>
+      inquiry.vehicle.custom_card
+      <input type="radio" id="vehicleRegistered-2" name="vehicleRegistered" [value]="2" [(ngModel)]="vehicle.VehicleIdTypeId" (change)="toggleVehicleRegistered(false)">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+</div>
+<div class="col-xs-12 col-md-6 col-lg-6 bx-right">
+    <div class="input-container" [ngClass]="{'red-border': isValid('manufactureYear'), 'visually-hide': vehicle.VehicleIdTypeId === 1, 'visually-show': vehicle.VehicleIdTypeId === 2, 'active': manfactYear.isOpen || manfactYear.hasValue}">
+        <label class="input-label" for="manfactYear" translate>inquiry.vehicle.manufacturing_year</label>
+        <ng-select #manfactYear class="input-element inq-vh-manfactYear" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" labelForId="manfactYear" [items]="years" (focus)="manfactYear.open()"
+           [clearable]="false" [(ngModel)]="vehicle.manufactureYear" (blur)="checkManufactureYear()">
+          <ng-template ng-option-tmp let-item="item">
+            <div title="{{item}}">{{item}}</div>
+          </ng-template>
+        </ng-select>
+        <span *ngFor="let error of vehicle.validationErrors['manufactureYear']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+      </div>
+</div>
+<div [ngClass]="vehicle.VehicleIdTypeId === 1 ? 'visually-show' : 'visually-hide'">
+  <div class="col-xs-12 col-md-6 col-lg-6 divOwner bx-right">
+    <h3 class="txt-black dis-block over-hidden sm-mar" translate>inquiry.detailed_info.purpose_of_insurance</h3>
+    <div class="radio-container" style="margin-top: 10px;margin-bottom: 18px;">
+      <label class="radio-holder" translate>
+        inquiry.detailed_info.new_insurance
+        <input type="radio" id="purpose1" name="purpose-of-insurance" [value]="false" [(ngModel)]="vehicle.ownerTransfer" (change)="togglePurposeOfInsurance(false)" checked>
+        <span class="checkmark"></span>
+      </label>
+      <label class="radio-holder" translate>
+        inquiry.detailed_info.transfer_insurance
+        <input type="radio" id="purpose2" name="purpose-of-insurance" [value]="true" [(ngModel)]="vehicle.ownerTransfer" (change)="togglePurposeOfInsurance(true)">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="input-container f_width bx-right" [ngClass]="{'red-border': isValid('oldOwnerNin'), 'visually-hide': !vehicle.ownerTransfer, 'visually-show': vehicle.ownerTransfer}">
+      <input class="input-element" type="text" (keypress)="isNumberKey($event)" id="ownerId" [(ngModel)]="vehicle.oldOwnerNin" (blur)="checkIdValidation()" placeholder=" " />
+      <label class="input-label" for="ownerId" translate>inquiry.detailed_info.id_residence_number</label>
+    <span *ngFor="let error of vehicle.validationErrors['oldOwnerNin']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+    </div>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right no-mar-lg">
+  <div class="input-container" [ngClass]="{'red-border': isValid('vehicleId')}">
+    <input class="input-element" type="text" (keypress)="isNumberKey($event)" id="vehicleId" [(ngModel)]="vehicle.vehicleId" (blur)="checkSerialValidation()" placeholder=" " />
+    <label class="input-label" for="vehicleId" translate>{{vehicle.VehicleIdTypeId === 1 ?'inquiry.vehicle.sequence_number':'inquiry.vehicle.custom_sequence_number'}}</label>
+    <span *ngFor="let error of vehicle.validationErrors['vehicleId']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+  <div class="input-container" [ngClass]="{'red-border': isValid('cityCode'), 'active': carcity.isOpen || carcity.hasValue}">
+    <label class="input-label" for="carcity" translate>inquiry.vehicle.city</label>
+    <ng-select #carcity class="input-element inq-vh-city" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" labelForId="carcity" [items]="cities" (focus)="carcity.open()" bindLabel="name"
+      dropdownPosition="bottom" bindValue="code" [clearable]="false" [(ngModel)]="vehicle.cityCode" (change)="carcity.close()"
+      (blur)="checkDrivingCity()">
+      <ng-template ng-option-tmp let-item="item">
+        <div title="{{item.name}}">{{item.name}}</div>
+      </ng-template>
+    </ng-select>
+    <span *ngFor="let error of vehicle.validationErrors['cityCode']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right no-mar-lg">
+  <div class="input-container active" [ngClass]="{'red-border': isValid('policyEffectiveDate')}">
+    <input class="input-element endcarregister" type="text" id="effectiveDate" [attr.data-min-date]="today | date:'yyyy-MM-dd'"
+      [attr.data-max-date]="afterTowWeeks | date:'yyyy-MM-dd'" (change)="onChangeEffectiveDate($event.target.value)"
+      (blur)="checkEffectiveDate()" (keypress)="isNumberKey($event)" placeholder=" " />
+    <label class="input-label" for="effectiveDate" translate>inquiry.vehicle.policy_effective_date</label>
+    <span *ngFor="let error of vehicle.validationErrors['policyEffectiveDate']" class="field-error" style="color:red;position:absolute;">{{error |
+      translate}}</span>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+  <div class="input-container" [ngClass]="{'red-border': isValid('estimatedVehiclePrice')}">
+    <input class="input-element" type="text" (keypress)="isNumberKey($event)" id="carPrice" [(ngModel)]="vehicle.estimatedVehiclePrice" (blur)="checkPriceValidation()"
+      placeholder=" " />
+    <label class="input-label" for="carPrice" translate>inquiry.vehicle.vehicle_value</label>
+    <span *ngFor="let error of vehicle.validationErrors['estimatedVehiclePrice']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+  <div class="input-container" [ngClass]="parking.isOpen || parking.hasValue ? 'active' : ''">
+    <label class="input-label" for="parking" translate>inquiry.vehicle.vehicle_overnight_parking_location</label>
+    <ng-select #parking class="input-element inq-vh-parking" appendTo="body" labelForId="parking" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" [items]="parkingLocations" (focus)="parking.open()"
+      bindLabel="name" [clearable]="false" bindValue="id" [(ngModel)]="vehicle.parkingLocationId">
+      <ng-template ng-option-tmp let-item="item">
+        <div title="{{item.name}}">{{item.name}}</div>
+      </ng-template>
+    </ng-select>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+  <div class="input-container" [ngClass]="transimission.isOpen || transimission.hasValue ? 'active' : ''">
+    <label class="input-label" for="transimission" translate>inquiry.vehicle.vehicle_transmission_type_code</label>
+    <ng-select #transimission class="input-element inq-vh-trans" appendTo="body" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" labelForId="transimission" [items]="transimissionTypes" (focus)="transimission.open()"
+      bindLabel="name" [clearable]="false" bindValue="id" [(ngModel)]="vehicle.transmissionTypeId">
+      <ng-template ng-option-tmp let-item="item">
+        <div title="{{item.name}}">{{item.name}}</div>
+      </ng-template>
+    </ng-select>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 sm-mar bx-right">
+  <h3 class="txt-black dis-block over-hidden xs-mar xs-mar-bot" translate>inquiry.vehicle.is_there_vehicle_modifications</h3>
+  <input type="checkbox" class="addnewdriverCheck switchIco md-mar dis-block" id="toggleModification" (change)="toggleModification($event.target.checked)" />
+  <label class="labelSwitch" for="toggleModification">
+    <span class="stat true txt-brand" translate>common.yes</span>
+    <span class="stat false txt-gray" translate>common.no</span>
+  </label>
+</div>
+<div class="col-xs-12 bx-right">
+  <div class="input-container" *ngIf="vehicle.hasModification">
+    <textarea class="input-element" id="modificationInput" style="padding-top: 10px;resize:  none;" [(ngModel)]="vehicle.modification"
+      placeholder=" "></textarea>
+    <label class="input-label" for="modificationInput" translate>inquiry.vehicle.modifications</label>
+    <span class="field-error" style="color:red;position:absolute;" id="modificationInputError"></span>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+    <div class="input-container" [ngClass]="kilometer.isOpen || kilometer.hasValue ? 'active' : ''">
+        <label class="input-label" for="kilometer" translate>inquiry.vehicle.VehicleMileageExpectedAnnual</label>
+        <ng-select #kilometer class="input-element inq-vh-trans" appendTo="body" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" labelForId="kilometer" [items]="kilometers" (focus)="kilometer.open()"
+                   bindLabel="name" [clearable]="false" bindValue="id" [(ngModel)]="vehicle.MileageExpectedAnnualId">
+            <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+            </ng-template>
+        </ng-select>
+    </div>
+</div>

@@ -1,0 +1,994 @@
+﻿@model Tameenk.Models.DiscountsViewModel
+@using System.Globalization;
+@using Tameenk.Core.Domain.Enums;
+@{
+    ViewBag.Title = "Discounts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string lang = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+}
+
+@*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">*@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+@if (lang.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.InvariantCultureIgnoreCase))
+{
+<style>
+
+    .validateFire {
+        color: red;
+    }
+
+
+    .items .item:nth-child(odd) .card {
+        flex-direction: row-reverse;
+    }
+
+    .items .item:nth-child(odd) .data::after {
+        right: 0;
+        left: auto;
+    }
+
+    .items .item:nth-child(odd) .data {
+        border-radius: 30px 0 0 30px;
+    }
+
+    .items .item:nth-child(even) .card {
+        flex-direction: row;
+    }
+
+    .items .item:nth-child(even) .data::after {
+        left: 0;
+        right: auto;
+    }
+
+    .items .item:nth-child(even) .data {
+        border-radius: 0 30px 30px 0;
+    }
+
+    .terq-bg {
+        background: #f2f9f9;
+        padding: 7rem 4rem 0;
+    }
+
+    .content-wrapper {
+        position: relative;
+    }
+
+    .white-wrapper {
+        background: #fff;
+        border-radius: 60px;
+        position: relative;
+    }
+
+    .flowers-bg {
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* .white-wrapper .title{
+            background-image: url('./resources/imgs/woreef/bluebg-title.png');
+            background-repeat: no-repeat;
+        } */
+    .img-parent {
+        width: 415px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -50px;
+    }
+
+        .img-parent .title {
+            position: absolute;
+            top: 11px;
+            left: 27%;
+            transform: translateX(-50%);
+            color: #146394;
+            font-size: 3rem;
+        }
+
+        .img-parent img {
+            width: 260px;
+        }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        padding-top: 6rem;
+    }
+
+    .image {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /*******/
+    .item-wrapper {
+        margin-top: 20px;
+        position: relative;
+    }
+
+        .item-wrapper:after {
+            position: absolute;
+            left: 50%;
+            background: #fff;
+            height: 100%;
+            top: 0;
+            width: 2px;
+            content: "";
+        }
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        background: #fff;
+        border-radius: 43px;
+        padding: 15px;
+        align-items: center;
+    }
+
+    .data {
+        background: #f2f9f9;
+        position: relative;
+        padding: 10px 15px;
+    }
+
+        .data::after {
+            position: absolute;
+            background: #146394;
+            width: 2px;
+            height: 100%;
+            content: "";
+            top: 0;
+        }
+
+        .data div {
+            margin-bottom: 10px;
+            color: #727373;
+            font-size: 1.0625rem;
+        }
+
+        .data span {
+            color: #146394;
+            font-size: 1.2rem;
+        }
+
+    /***************************/
+    .oneflower-bg {
+        position: absolute;
+        top: -100px;
+        right: 10%;
+    }
+
+    .credit-card img {
+        width: 300px;
+    }
+
+    .second-header .white-wrapper {
+        padding: 2rem;
+        margin-top: 48px;
+    }
+
+    .custom-flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .parent-img {
+        position: relative;
+    }
+
+        .parent-img .title {
+            right: 43%;
+            position: absolute;
+            top: 10px;
+            color: #146394;
+            font-size: 3rem;
+        }
+
+        .parent-img img {
+            width: 260px;
+        }
+
+    .second-header .header {
+        color: #146394;
+        font-size: 2rem;
+    }
+
+    .items .item .logo img {
+        width: 66%;
+        justify-content: center;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .items .item {
+        margin-bottom: 25px;
+    }
+
+
+
+    .credit-card img {
+        width: 200px;
+    }
+
+    /* .item-wrapper:after {
+            display: none;
+            } */
+    .second-header .white-wrapper {
+        padding: 1.0625rem;
+    }
+
+    .flowers-bg {
+        display: none;
+    }
+
+    }
+
+    /******* regression *******/
+    .debit-card {
+        width: 100%;
+        height: 175px;
+        border-radius: 15px;
+        background: url("/resources/imgs/woreef/credit-card-bg.svg") no-repeat center center;
+        background-size: 184%;
+    }
+
+        .debit-card .mainHeader img {
+            width: 52px;
+        }
+
+        .debit-card .mainHeader {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            padding: 15px 20px;
+            background: #c9ac00;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .debit-card .mainHeader {
+            color: #fff;
+            flex-direction: row-reverse;
+        }
+
+    .mainBody {
+        color: #fff;
+        padding: 0 20px;
+    }
+
+        .mainBody .wooref-name {
+            font-size: 43px;
+            display: flex;
+        }
+
+    .numbers {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .expiredDate {
+        font-size: 11px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .expirdDateName {
+        width: 20px;
+        font-size: 7px;
+        display: flex;
+    }
+
+    .expirdDateNumber {
+        margin: 0 5px;
+    }
+
+    .investigate {
+        font-size: 8.5px;
+        display: flex;
+    }
+
+    /******* regression *******/
+    .debit-card {
+        width: 100%;
+        height: 175px;
+        border-radius: 15px;
+        background: url("/resources/imgs/woreef/credit-card-bg.svg") no-repeat center center;
+        background-size: 184%;
+    }
+
+        .debit-card .mainHeader img {
+            width: 52px;
+        }
+
+        .debit-card .mainHeader {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            padding: 15px 20px;
+            background: #c9ac00;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .debit-card .mainHeader {
+            color: #fff;
+            flex-direction: row-reverse;
+        }
+
+    .mainBody {
+        position: relative;
+        z-index: 1;
+    }
+
+        .mainBody:before {
+            position: absolute;
+            content: url("/resources/imgs/woreef/side-flower.png");
+            right: 0;
+            width: 25%;
+            z-index: -1;
+        }
+
+    .custom-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+}
+else
+{
+<style>
+
+    .validateFire {
+        color: red;
+    }
+
+
+
+    .items .item:nth-child(odd) .card {
+        flex-direction: row-reverse;
+    }
+
+    .items .item:nth-child(odd) .data::after {
+        right: 0;
+        left: auto;
+    }
+
+    .items .item:nth-child(odd) .data {
+        border-radius: 30px 0 0 30px;
+    }
+
+    .items .item:nth-child(even) .card {
+        flex-direction: row;
+    }
+
+    .items .item:nth-child(even) .data::after {
+        left: 0;
+        right: auto;
+    }
+
+    .items .item:nth-child(even) .data {
+        border-radius: 0 30px 30px 0;
+    }
+
+    .terq-bg {
+        background: #f2f9f9;
+        padding: 7rem 4rem 0;
+    }
+
+    .content-wrapper {
+        position: relative;
+    }
+
+    .white-wrapper {
+        background: #fff;
+        border-radius: 60px;
+        position: relative;
+    }
+
+    .flowers-bg {
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* .white-wrapper .title{
+            background-image: url('./resources/imgs/woreef/bluebg-title.png');
+            background-repeat: no-repeat;
+        } */
+    .img-parent {
+        width: 415px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -50px;
+    }
+
+        .img-parent .title {
+            position: absolute;
+            top: 10px;
+            left: 27%;
+            transform: translateX(-50%);
+            color: #146394;
+            font-size: 3rem;
+        }
+
+        .img-parent img {
+            width: 260px;
+        }
+
+
+    .form {
+        display: flex;
+        justify-content: center;
+        padding-top: 6rem;
+    }
+
+    .image {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /*******/
+    .item-wrapper {
+        margin-top: 20px;
+        position: relative;
+    }
+
+        .item-wrapper:after {
+            position: absolute;
+            left: 50%;
+            background: #fff;
+            height: 100%;
+            top: 0;
+            width: 2px;
+            content: "";
+        }
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        background: #fff;
+        border-radius: 43px;
+        padding: 15px;
+        align-items: center;
+    }
+
+    .data {
+        background: #f2f9f9;
+        position: relative;
+        padding: 10px 15px;
+    }
+
+        .data::after {
+            position: absolute;
+            background: #146394;
+            width: 2px;
+            height: 100%;
+            content: "";
+            top: 0;
+        }
+
+        .data div {
+            margin-bottom: 10px;
+            color: #727373;
+            font-size: 1.0625rem;
+        }
+
+        .data span {
+            color: #146394;
+            font-size: 1.2rem;
+        }
+
+    /***************************/
+    .oneflower-bg {
+        position: absolute;
+        top: -100px;
+        right: 10%;
+    }
+
+    .credit-card img {
+        width: 300px;
+    }
+
+    .second-header .white-wrapper {
+        padding: 2rem;
+        margin-top: 48px;
+    }
+
+    .custom-flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .parent-img {
+        position: relative;
+    }
+
+        .parent-img .title {
+            right: 41%;
+            position: absolute;
+            top: 10px;
+            color: #146394;
+            font-size: 3rem;
+        }
+
+        .parent-img img {
+            width: 260px
+        }
+
+    .second-header .header {
+        color: #146394;
+        font-size: 2rem;
+    }
+
+    .items .item .logo img {
+        width: 66%;
+        justify-content: center;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .items .item {
+        margin-bottom: 25px;
+    }
+
+
+
+    .credit-card img {
+        width: 200px;
+    }
+
+    /* .item-wrapper:after {
+            display: none;
+            } */
+    .second-header .white-wrapper {
+        padding: 1.0625rem;
+    }
+
+    .flowers-bg {
+        display: none;
+    }
+
+    }
+
+    /******* regression *******/
+    .debit-card {
+        width: 100%;
+        height: 175px;
+        border-radius: 15px;
+        background: url("/resources/imgs/woreef/credit-card-bg.svg") no-repeat center center;
+        background-size: 184%;
+    }
+
+        .debit-card .mainHeader img {
+            width: 52px;
+        }
+
+        .debit-card .mainHeader {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            padding: 15px 20px;
+            background: #c9ac00;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .debit-card .mainHeader {
+            color: #fff;
+            flex-direction: row-reverse;
+        }
+
+    .mainBody {
+        color: #fff;
+        padding: 0 20px;
+    }
+
+        .mainBody .wooref-name {
+            font-size: 43px;
+            display: flex;
+        }
+
+    .numbers {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .expiredDate {
+        font-size: 11px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .expirdDateName {
+        width: 20px;
+        font-size: 7px;
+        display: flex;
+    }
+
+    .expirdDateNumber {
+        margin: 0 5px;
+    }
+
+    .investigate {
+        font-size: 8.5px;
+        display: flex;
+    }
+
+    /******* regression *******/
+    .debit-card {
+        width: 100%;
+        height: 175px;
+        border-radius: 15px;
+        background: url("/resources/imgs/woreef/credit-card-bg.svg") no-repeat center center;
+        background-size: 184%;
+    }
+
+        .debit-card .mainHeader img {
+            width: 52px;
+        }
+
+        .debit-card .mainHeader {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            padding: 15px 20px;
+            background: #c9ac00;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .debit-card .mainHeader {
+            color: #fff;
+            flex-direction: row-reverse;
+        }
+
+    .mainBody {
+        position: relative;
+        z-index: 1;
+    }
+
+        .mainBody:before {
+            position: absolute;
+            content: url("/resources/imgs/woreef/side-flower.png");
+            right: 0;
+            width: 25%;
+            z-index: -1;
+        }
+
+    .custom-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+}
+
+@using (Html.BeginForm("Index", "Offers", null, FormMethod.Post, new { onsubmit = "return validate()" }))
+{
+<div class="container">
+    <!-- <div class="row serverErrValidation" [hidden]="!showErrDesc">
+          <div class="col-lg-12">
+              {{servererror}}
+          </div>
+      </div> -->
+    <div class="terq-bg">
+        <div class="row">
+            <div class="col-lg-12 col-xs-12">
+                <div class="content-wrapper">
+                    <div class="flowers-bg"><img src="/resources/imgs/woreef/flowersBg.png"></div>
+                    <div class="white-wrapper">
+                        <div class="image">
+                            <div class="img-parent">
+                                <img src="/resources/imgs/woreef/bluebg-title.png">
+                                <div class="title">Wareef</div>
+                            </div>
+                        </div>
+                        <div class="row form">
+                            <div class="col-lg-6 col-xs-12">
+                                <div class="row ">
+                                    <div class="col-lg-12 col-xs-12 mb-15 custom-float-left">
+                                        <label> @Html.Raw(Tameenk.LangText.NIN)</label>
+                                        <input class="customInputsStyle form-control" placeholder="@Html.Raw(Tameenk.LangText.NIN)" type="text" id="DriverNIN" name="DriverNIN" value="@Model.DriverNIN" />
+                                        <div id="NINvalidationMessgae" style="text-align: right; color: red" class="col-lg-12"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    @if (Model.ActivePolicyData == null)
+                                    {
+                                    if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                                    {
+                                    <div class="errClsMsg">@Model.ErrorMessage</div>
+                                    }
+                                    }
+                                    else if (Model.ActivePolicyData.HasActivePolicy == 0)
+                                    {
+                                    @*<div class="errClsMsg">@(Model.Language.ToLower() == "en" ? "Doesn't Deserve Discount" : "لا يستحق الخصم")</div>*@
+                                    <div class="errClsMsg">
+                                        @(lang.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.InvariantCultureIgnoreCase) ? "Doesn't Deserve Discount" : "لا يستحق الخصم")
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    }
+                                    else if (Model.ActivePolicyData.HasActivePolicy == 1)
+                                    {
+                                    @*<div class="succssClsMsg">@(Model.Language.ToLower() == "en" ? $"Deserves Discount and membership expires on {Model.ActivePolicyData.ExpiryDate}" : $"يستحق الخصم وعضويته تنتهى فى {Model.ActivePolicyData.ExpiryDate}")</div>*@
+                                    <div class="succssClsMsg">
+                                        @(lang.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.InvariantCultureIgnoreCase) ? $"Deserves Discount and membership expires on {Model.ActivePolicyData.ExpiryDate.Value.ToString("dd-MM-yyyy", new CultureInfo("en-US"))}" : $"يستحق الخصم وعضويته تنتهى فى {Model.ActivePolicyData.ExpiryDate.Value.ToString("dd-MM-yyyy", new CultureInfo("en-US"))}")
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    }
+                                </div>
+
+                                <div class="row">
+                                    @if (Model.Captcha != null)
+                                    {
+                                    <input type="hidden" name="Captcha.Token" value="@Model.Captcha.Token" />
+                                    <input type="hidden" name="Captcha.ExpiredInSeconds" value="@Model.Captcha.ExpiredInSeconds" />
+                                    <input type="hidden" name="Captcha.ExpiryDate" value="@Model.Captcha.ExpiryDate" />
+                                    <div class="col-lg-9 col-xs-12 custom-float-left">
+                                        <div class="caption">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-xs-12">
+
+                                                    <input class="input-element form-control mt-2" appFloatedLabel type="text" id="captchaCode" name="Captcha.Input" appNumberOnly autocomplete="off" maxlength="4" />
+                                                </div>
+                                                <div class="col-lg-6 col-xs-12">
+                                                    <img class="captcha-img" alt="الرمز" title="الرمز" src="@Model.Captcha.Image">
+                                                    <label class="input-label" for="captchaCode"></label>
+                                                    <button type="submit" class="reload-btn reloadClsCustom" id="btnRefresh" name="ButtonType" value="Refresh"><i class="fas fa-sync"></i></button>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    }
+                                    <div class="col-lg-3 col-xs-12 custom-float-right">
+                                        <button id="btnSubmit" name="ButtonType" value="Save" class="mybtnCustomStyle bx-left btn sm pointer dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar">@Html.Raw(Tameenk.LangText.Search) </button>
+
+                                        <div id="validationMessgae" style="text-align: right; color: red" class="col-lg-12"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-xs-12">
+                <div class="content-wrapper second-header">
+                    <!-- <div class="oneflower-bg"><img src="/resources/imgs/woreef/oneflower.png"></div> -->
+                    <div class="white-wrapper">
+
+                        <div class="row custom-flex" id="pdfTable" #pdfTable>
+                            <div class="col-lg-4 ustom-float-left">
+                                <div class="title-img">
+                                    <div class="parent-img">
+                                        <img src="/resources/imgs/woreef/bluebg-title.png">
+                                        <div class="title">Wareef</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 custom-float-left">
+                                <div class="header">
+                                    @Html.Raw(Tameenk.LangText.WoorefDiscount)
+                                </div>
+                            </div>
+                            <div class="col-lg-4  custom-float-left">
+                                <!-- <div class="credit-card">
+                                            <img src="/resources/imgs/woreef/bcare-credit.png">
+                                        </div> -->
+                                <div class="debit-card">
+                                    <div class="mainHeader">
+                                        <img src="/resources/imgs/woreef/white-logo.svg" class="white-logo">
+                                        <div class="title">بي كير</div>
+                                    </div>
+                                    <div class="mainBody">
+                                        <div class="wooref-name">وريف</div>
+                                        <div class="numbers">
+                                            @if (Model.ActivePolicyData != null)
+                                            {
+                                            if (Model.ActivePolicyData.HasActivePolicy == 1)
+                                            {
+                                            {
+                                            <span>@Model.DriverNIN</span>
+                                            }
+                                            }
+                                            }
+                                        </div>
+                                        <div class="expiredDate">
+                                            @if (Model.ActivePolicyData != null)
+                                            {
+                                            if (Model.ActivePolicyData.HasActivePolicy == 1)
+                                            {
+                                            <div class="expirdDateNumber">
+                                                @Model.ActivePolicyData.ExpiryDate.Value.ToString("dd-MM-yyyy", new CultureInfo("en-US"))
+                                            </div>
+                                            }
+                                            }
+                                            else
+                                            {
+                                            <div class="expirdDateNumber">
+                                            </div>
+                                            }
+
+                                            <div class="expirdDateName">
+                                                Express Card
+                                            </div>
+
+                                        </div>
+                                        <div class="investigate">
+                                            للتحقق يرجى زيارة
+                                        </div>
+                                        <div class="investigate">
+                                            https://bcare.com.sa/wareef
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div> <button (click)="downloadAsPDF()">Export To PDF</button></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="item-wrapper">
+            <div class="row items">
+                <div class="col-lg-6 col-xs-12 item">
+                    <div class="card">
+                        <div class="data">
+                            <div class="discount">
+                                <span>20%</span> خصم باستخدام كود خصم
+                            </div>
+                            <div class="percentage">
+                                <span>BCARE</span>
+                            </div>
+                            <div class="date"> حتى 4/7/2021</div>
+                        </div>
+                        <div class="logo"> <img src="/resources/imgs/woreef/daily.png"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12 item">
+                    <div class="card">
+                        <div class="data">
+                            <div class="discount">
+                                <span>45%</span> خصم على التظليل والحماية
+                            </div>
+                            <div class="percentage">
+                                <span>55%</span> خصم علـى بـاقي الـخدمات
+                            </div>
+                            <div class="date"> حتى 4/7/2021</div>
+                        </div>
+                        <div class="logo"> <img src="/resources/imgs/woreef/3m.png"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12 item">
+                    <div class="card">
+                        <div class="data">
+                            <div class="discount">
+                                <span>10%</span> خصم على الفوم والباركيه
+                            </div>
+                            <div class="percentage">
+                                <span>15%</span> خصم على ورق الجدران
+                            </div>
+                            <div class="date"> حتى 8/7/2021</div>
+                        </div>
+                        <div class="logo"> <img src="/resources/imgs/woreef/alghomlas.png"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12 item">
+                    <div class="card">
+                        <div class="data">
+                            <div class="discount">
+                                <span>10%</span> خصم
+                            </div>
+                            @*<div class="percentage">
+                                <span>55%</span> خصم علـى بـاقي الـخدمات
+                            </div>*@
+                            <div class="date"> حتى 4/7/2021</div>
+                        </div>
+                        <div class="logo"> <img src="/resources/imgs/woreef/saza.png"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12 item">
+                    <div class="card">
+                        <div class="data">
+                            <div class="discount">
+                                <span>10%</span> خصم
+                            </div>
+                            <div class="percentage">
+                                @*<span>55%</span>*@ وفحص نظر مجاني
+                            </div>
+                            @*<div class="date"> حتى 4/7/2021</div>*@
+                        </div>
+                        <div class="logo"> <img src="/resources/imgs/woreef/fiveseasons.png"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12 item">
+                    <div class="card">
+                        <div class="data">
+                            <div class="discount">
+                                <span>15%</span> خصم
+                            </div>
+                            @*<div class="percentage">
+                                <span>55%</span> خصم علـى بـاقي الـخدمات
+                            </div>*@
+                            <div class="date"> حتى 4/7/2021</div>
+                        </div>
+                        <div class="logo"> <img src="/resources/imgs/woreef/dara.png"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12 item">
+                    <div class="card">
+                        <div class="data">
+                            <div class="discount">
+                                <span>12%</span> خصم
+                            </div>
+                            @*<div class="percentage">
+                                <span>55%</span> خصم علـى بـاقي الـخدمات
+                            </div>*@
+                            <div class="date"> حتى 23/8/2021</div>
+                        </div>
+                        <div class="logo"> <img src="/resources/imgs/woreef/alina.png"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xs-12 item">
+                    <div class="card">
+                        <div class="data">
+                            <div class="discount">
+                                <span>25%</span> خصم
+                            </div>
+                            @*<div class="percentage">
+                                <span>50%</span> خصم علـى بـاقي الـخدمات
+                            </div>*@
+                            <div class="date"> حتى 8/3/2022</div>
+                        </div>
+                        <div class="logo"> <img src="/resources/imgs/offers/fitness-time-logo.png"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+
+
+        function validate() {
+		if (!document.getElementById('DriverNIN').value) {
+            document.getElementById('NINvalidationMessgae').innerText = '@(Model.Language == "en" ? "National ID is required" : "رقم الهوية مطلوب")';
+			return false;
+        }
+
+		if (!document.getElementById('captchaCode').value) {
+			document.getElementById('validationMessgae').innerText = '@(Model.Language == "en" ? "Captcha code is required" : "كود التحقق مطلوب")';
+			return false;
+		}
+
+        document.getElementById('NINvalidationMessgae').innerText = '';
+		document.getElementById('validationMessgae').innerText = '';
+	}
+</script>

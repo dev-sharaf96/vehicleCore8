@@ -1,0 +1,181 @@
+﻿@using Tameenk.Services.Checkout.Components
+@model EdaatPaymentResponseModel
+<style>
+    .container {
+        width: 1170px
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    .arabic-bill {
+        direction: rtl;
+    }
+
+    .custom-ul-li {
+        list-style: none !important;
+        padding: 6px;
+    }
+
+    .head {
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .custom-table tr td {
+        min-width: 200px;
+    }
+
+    .custom-table {
+        margin-bottom: 20px;
+    }
+
+    .custom-ul {
+        color: #808080;
+        padding: 0 15px;
+        margin: 0;
+        list-style-type: urdu;
+    }
+
+    .grey-title {
+        color: #808080
+    }
+
+    @@media only screen and (max-width: 600px) {
+        .custom-table tr td {
+            min-width: 100% !important;
+        }
+        .grey-title {
+            max-width: 30% !important;
+        }
+        ul.custom-ul {
+            max-width: 30% !important;
+        }
+    }
+</style>
+
+@if (!Model.IsCheckoutEmailVerified)
+{
+    @Html.Partial("~/Views/Checkout/_EmailSentToReceivePolicy.cshtml", new Tameenk.Models.Payments.SendActivationEmailModel() { CheckoutEmail = Model.CheckoutEmail, ReferenceId = Model.CheckoutReferenceId })
+}
+<section class="md-ver-spc search-inputs  section normal-page" style="min-height: calc(100vh - 234px);">
+    <div class="container">
+        <div class="wrapper-bx md-mar-bot">
+            <div class="row">
+                @if (Model.Status == "Succeeded")
+                {
+
+                    <div class="container">
+                        <div class="arabic-bill">
+                            <div class="head">
+
+                                <div class="title">
+                                    @Html.Raw(string.Format(Tameenk.LangText.Edaat_Instruction, Model.CompanyName))
+                                </div>
+                            </div>
+                            <table class="custom-table">
+                                <tr>
+                                    <td>
+                                        @Html.Raw(Tameenk.LangText.MofaterName)
+                                    </td>
+                                    <td>
+                                        @Html.Raw(Tameenk.LangText.EDAA)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.Raw(Tameenk.LangText.EdaatCode)
+                                    </td>
+                                    <td>
+                                        903
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.Raw(Tameenk.LangText.SadadNumber)
+                                    </td>
+                                    <td>
+                                        @Model.InvoiceNo
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.Raw(Tameenk.LangText.SadadAmount)
+                                    </td>
+                                    <td>
+                                        @Model.PremiumAmount
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        @Html.Raw(Tameenk.LangText.SadadEXPDATE)
+                                    </td>
+                                    <td>
+                                        @Model.BillDueDate.ToString("dd-MM-yyyy hh:mm:ss tt", new System.Globalization.CultureInfo("En"))
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="grey-title">@Html.Raw(Tameenk.LangText.edaat_payment_instruction)</div>
+                            <ul class="custom-ul" style="padding-top: 0px !important;">
+
+                                <li class="custom-ul-li" style="list-style: none !important;">
+                                    @Html.Raw(Tameenk.LangText.ChoosePayInvoices)
+                                </li>
+                                <li class="custom-ul-li" style="list-style: none !important;">
+                                    @Html.Raw(Tameenk.LangText.ChoosePaySadadInvoices)
+                                </li>
+                                <li class="custom-ul-li" style="list-style: none !important;">
+                                    @Html.Raw(Tameenk.LangText.ChooseMofawter)
+                                </li>
+                                <li class="custom-ul-li" style="list-style: none !important;">
+                                    @Html.Raw(Tameenk.LangText.ChooseServiceType)
+                                </li>
+                                <li class="custom-ul-li" style="list-style: none !important;">
+                                    @Html.Raw(Tameenk.LangText.EnterInvoiceNumer)
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                }
+                else
+                {
+                    <p>
+                        @Html.Raw(Tameenk.LangText.payment_instruction_error)
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+         window.onload = function(){
+            document.getElementById('EmailSentToReceivePolicyCheckoutPopup').style.display = 'block'; // show
+        };
+
+        function SendActivationEmail(referenceId)
+        {
+            $("#SendActivationEmailBtn").attr("disabled", "disabled");
+            var url = "@Url.Action("SendActivationEmailToReceivePolicy", "Checkout")";
+            $.ajax({
+            url: url,
+            type: "GET",
+            data: {referenceId:referenceId},
+            success: function (data) {
+                if(data.data==0)
+                {
+                    $("#messageLabel").html("@Html.Raw(LangText.ActivationEmailSent)");
+                }
+                else{
+                    $("#SendActivationEmailBtn").removeAttr("disabled");
+                    $("#messageLabel").html("@Html.Raw(LangText.GenericError)");
+                }
+
+                $('#messageLabel').css('display','inline-flex');
+                }
+            });
+        }
+</script>

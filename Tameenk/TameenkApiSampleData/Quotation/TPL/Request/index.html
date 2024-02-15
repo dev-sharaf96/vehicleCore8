@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../css/sampleData.css">
+    <script>
+        $(function () {
+            var myData =
+                {
+                    "ReferenceId": "T0126738e266f2c",
+                    "ProductTypeCode": 1,
+                    "PolicyEffectiveDate": "2017-08-24T00:00:00+03:00",
+                    "InsuredIdTypeCode": 2,
+                    "InsuredId": 2007146976,
+                    "InsuredBirthDate": "01-01-1985",
+                    "InsuredGenderCode": "M",
+                    "InsuredNationalityCode": "102",
+                    "InsuredFirstNameAr": "فادي",
+                    "InsuredMiddleNameAr": "اسامه",
+                    "InsuredLastNameAr": "شلطف",
+                    "InsuredFirstNameEn": "FADI",
+                    "InsuredMiddleNameEn": "OSAMA",
+                    "InsuredLastNameEn": "SHALTAF",
+                    "InsuredSocialStatusCode": "2",
+                    "InsuredEducationCode": 4,
+                    "InsuredOccupationCode": "2612031",
+                    "InsuredChildrenBelow16Years": 1,
+                    "InsuredWorkCityCode": "1",
+                    "InsuredWorkCity": "الرياض",
+                    "InsuredIdIssuePlaceCode": "1",
+                    "InsuredIdIssuePlace": "الرياض",
+                    "InsuredCityCode": "1",
+                    "InsuredCity": "الرياض",
+                    "VehicleIdTypeCode": 1,
+                    "VehiclePlateNumber": 5440,
+                    "VehiclePlateText1": "ب",
+                    "VehiclePlateText2": "ر",
+                    "VehiclePlateText3": "ص",
+                    "VehicleChassisNumber": "1G1ZE5E75AF271395",
+                    "VehicleId": 389482010,
+                    "VehicleOwnerTransfer": false,
+                    "VehicleOwnerName": "فادي اسامه شلطف",
+                    "VehicleOwnerId": 2007146976,
+                    "VehiclePlateTypeCode": "1",
+                    "VehicleModelYear": 2010,
+                    "VehicleMaker": "شيفورلية",
+                    "VehicleMakerCode": "20",
+                    "VehicleModel": "ماليبو",
+                    "VehicleModelCode": "5",
+                    "VehicleMajorColor": "ابيض",
+                    "VehicleMajorColorCode": "1",
+                    "VehicleBodyTypeCode": "5",
+                    "VehicleRegPlaceCode": "1",
+                    "VehicleRegPlace": "الرياض",
+                    "VehicleRegExpiryDate": "22-11-1437",
+                    "VehicleCylinders": 6,
+                    "VehicleWeight": 1570,
+                    "VehicleLoad": 5,
+                    "VehicleUseCode": 1,
+                    "VehicleMileage": 10205,
+                    "VehicleTransmissionTypeCode": 2,
+                    "VehicleMileageExpectedAnnualCode": 1,
+                    "VehicleAxleWeight": 1,
+                    "VehicleEngineSizeCode": 1,
+                    "VehicleOvernightParkingLocationCode": 1,
+                    "VehicleModification": false,
+                    "NCDFreeYears": 0,
+                    "NCDReference": "NCD24081726802",
+                    "Drivers": [
+                        {
+                            "DriverTypeCode": 1,
+                            "DriverId": 2007146976,
+                            "DriverIdTypeCode": 2,
+                            "DriverBirthDate": "01-01-1985",
+                            "DriverGenderCode": "M",
+                            "DriverBirthDateG": "1982-01-01T00:00:00+00:00",
+                            "DriverNationalityCode": "102",
+                            "DriverFirstNameAr": "فادي",
+                            "DriverMiddleNameAr": "اسامه",
+                            "DriverLastNameAr": "شلطف",
+                            "DriverFirstNameEn": "FADI",
+                            "DriverMiddleNameEn": "OSAMA",
+                            "DriverLastNameEn": "SHALTAF",
+                            "DriverSocialStatusCode": "2",
+                            "DriverDrivingPercentage": 100,
+                            "DriverEducationCode": 4,
+                            "DriverOccupationCode": "2612031",
+                            "DriverMedicalConditionCode": 1,
+                            "DriverChildrenBelow16Years": 1,
+                            "DriverHomeCityCode": "1",
+                            "DriverHomeCity": "الرياض",
+                            "DriverWorkCityCode": "1",
+                            "DriverWorkCity": "الرياض",
+                            "DriverNOALast5Years": 0,
+                            "DriverNOCLast5Years": 0,
+                            "DriverNCDFreeYears": 0,
+                            "DriverNCDReference": "NCD24081726802",
+                            "DriverLicenses": [
+                                {
+                                    "LicenseCountryCode": 113,
+                                    "LicenseNumberYears": 3,
+                                    "DriverLicenseTypeCode": "3",
+                                    "DriverLicenseExpiryDate": "15-10-1440"
+                                },
+                                {
+                                    "LicenseCountryCode": 102,
+                                    "LicenseNumberYears": 7
+                                }
+                            ],
+                            "DriverViolations": [
+                                { "ViolationCode": 1 },
+                                { "ViolationCode": 2 }
+                            ]
+                        }]
+                };
+            var textedJson = JSON.stringify(myData, undefined, 4);
+            $('#myTextarea').text(textedJson);
+        });
+
+    </script>
+    
+</head>
+<body>
+    <textarea name="" id="myTextarea" ></textarea>
+
+
+</body>
+</html>

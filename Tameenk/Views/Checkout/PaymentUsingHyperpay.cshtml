@@ -1,0 +1,125 @@
+﻿@*@model IEnumerable<KeyValuePair<string, string>>*@
+@using Tameenk.Core.Domain.Enums;
+<script src="https://oppwa.com/v1/paymentWidgets.js?checkoutId=@ViewBag.Id"></script>
+
+
+@{
+    var id = ViewBag.Id;
+    var email = ViewBag.Email;
+    var referenceId = ViewBag.ReferenceId;
+    var isCheckoutEmailVerified = ViewBag.IsCheckoutEmailVerified;
+    var url = Url.Action("PaymentHyperpayResponse", "TameenkPayment");
+    url = $"{this.Request.Url.Scheme}://{this.Request.Url.Authority}{url}";
+    var PaymentMethodCode = ViewBag.PaymentMethod;
+
+}
+
+@if (!isCheckoutEmailVerified)
+{
+    @Html.Partial("~/Views/Checkout/_EmailSentToReceivePolicy.cshtml", new Tameenk.Models.Payments.SendActivationEmailModel() { CheckoutEmail = email, ReferenceId = referenceId })
+}
+
+<div class="center-div">
+
+    @if (PaymentMethodCode == 10)
+    {
+
+        <form action="@url" class="paymentWidgets" data-brands="MADA"></form>
+    }
+    else if (PaymentMethodCode == 13)
+    {
+        <form action="@url" class="paymentWidgets" data-brands="AMEX"></form>
+    }
+    else if (PaymentMethodCode == 7)
+    {
+        <form action="@url" class="paymentWidgets" data-brands="APPLEPAY"></form>
+        <script>
+            var wpwlOptions = {
+                applePay: {
+                   displayName: "BCare",
+                   total: { label: "BCare" },
+                   supportedNetworks: ["mada","visa","masterCard","amex"]
+                }
+            }
+        </script>
+    }
+    else
+    {
+        <form action="@url" class="paymentWidgets" data-brands="VISA MASTER"></form>
+    }
+
+</div>
+
+@section scripts {
+    <script type='text/javascript'>
+        $(function () {
+            $("form#PayForm").submit();
+        });
+    </script>
+    @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(),
+StringComparison.OrdinalIgnoreCase))
+    {
+        <script>
+            var wpwlOptions = {
+                locale: "en",
+                paymentTarget: "_top"
+            }
+        </script>
+
+    }
+    else
+    {
+        <script>
+            var wpwlOptions = {
+                locale: "ar",
+                paymentTarget: "_top"
+            }
+        </script>
+    }
+    <script type="text/javascript">
+         window.onload = function(){
+            document.getElementById('EmailSentToReceivePolicyCheckoutPopup').style.display = 'block'; // show
+        };
+
+        function SendActivationEmail(referenceId)
+        {
+            $("#SendActivationEmailBtn").attr("disabled", "disabled");
+            var url = "@Url.Action("SendActivationEmailToReceivePolicy", "Checkout")";
+            $.ajax({
+            url: url,
+            type: "GET",
+            data: {referenceId:referenceId},
+            success: function (data) {
+                if(data.data==0)
+                {
+                    $("#messageLabel").html("@Html.Raw(LangText.ActivationEmailSent)");
+                }
+                else{
+                    $("#SendActivationEmailBtn").removeAttr("disabled");
+                    $("#messageLabel").html("@Html.Raw(LangText.GenericError)");
+                }
+
+                $('#messageLabel').css('display','inline-flex');
+                }
+            });
+        }
+    </script>
+}
+
+<style>
+    .wpwl-wrapper-cardNumber, wpwl-group {
+        direction: ltr !important;
+    }
+
+    .center-div {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        border-radius: 3px;
+    }
+</style>

@@ -1,0 +1,14 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Locked Out";
+}
+@section AdditionalMeta
+{
+    <meta name="robots" content="noindex"/>
+}
+
+<hgroup>
+    <h1 class="text-danger">@Html.Raw(Tameenk.LangText.Locked)</h1>
+    <h2 class="text-danger">@Html.Raw(Tameenk.LangText.AccountLocked)</h2>
+</hgroup>

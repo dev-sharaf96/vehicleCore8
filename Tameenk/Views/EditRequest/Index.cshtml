@@ -1,0 +1,271 @@
+﻿@model TameenkDAL.Models.PolicyModel
+   <!-- <section class="md-ver-spc  bg-ofwhite section " >
+      <div class="container">
+        <h1 class="txt-black txt-lr  md-lh xs-mar-bot txt-right">
+          مرحبا بك, محمد
+        </h1>
+        <p class="txt-gray txt-sm no-mar  md-lh txt-right">
+          يمكنك رؤيه بياناتك والمرجع الخاص بك من خلال هذه الصفحة
+
+        </p>
+      </div>
+    </section> -->
+    <section class=" section profile-view min-height-vh">
+        <!-- <span class="space-overly"></span>  class="container relative-index" -->
+        <div class="md-ver-spc inactive content col-xs-12 col-md-9 col-lg-9 content-view active" id="editRequest" style="float: none;margin: 0 auto">
+            <div class="pd-inside">
+                <article>
+                    <div class="wrapper-bx md-mar-bot">
+                        <div class="row">
+                            @Html.HiddenFor(x => x.Id, new { @class = "policy-id" })
+                            <header class="col-xs-12 col-lg-8 col-lg-4 over-hidden bx-right">
+                                <span class="txt-sm  txt-mgray dis-block ">@Html.Raw(Tameenk.LangText.Purchesed_Policy_number): @Model.PolicyNo</span>
+                                <h2 class="txt-sm  txt-mgray dis-block xs-mar">@Html.Raw(Tameenk.LangText.InsuranceCompanyName): @Model.InsuranceCompanyName</h2>
+                                <h3 class="txt-sm  txt-mgray dis-block xs-mar">@Html.Raw(Tameenk.LangText.Status): @Model.PolicyStatusName</h3>
+                            </header>
+                            <footer class="col-xs-12 col-lg-4 col-lg-4 over-hidden sm-mar bx-right">
+                                <h3 class="txt-resp-left txt-sm  txt-mgray dis-block bx-left f_width  ">@Html.Raw(Tameenk.LangText.PolicyEffectiveDate): @Model.PolicyEffectiveDate</h3>
+                                <h3 class="txt-resp-left txt-sm  txt-mgray dis-block bx-left f_width  xs-mar">@Html.Raw(Tameenk.LangText.Purchesed_PolicyExpiryDate): @Model.PolicyExpiryDate</h3>
+                            </footer>
+                            <div class="col-xs-12 col-lg-4 col-lg-4 bx-right">
+                            <center>
+                                <div class="belt @Model.VehiclePlateColor">
+                                    <span class="arabic-character">@Model.CarPlateTextAr</span>
+                                    <span class="arabic-number">@Model.CarPlateNumberAr</span>
+                                    <span class="english-number">@Model.CarPlateNumberEn</span>
+                                    <span class="english-character">@Model.CarPlateTextEn</span>
+                                </div>
+                            </center>
+                            </div>
+                        </div>
+                        <div class="small-desc over-hidden f_width md-mar bx-right txt-mgray">
+                            <span class="dis-block bx-right">
+                                @Html.Raw(Tameenk.LangText.NajmStatus):
+                                <strong class="txt-green">@Model.NajimStatus</strong>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+                <div class="form bx-right f_width over-hidden">
+                    <h2 class="txt-lr txt-black no-mar sm-mar bx-right">@Html.Raw(Tameenk.LangText.edit_request)</h2>
+                    <div class="col-xs-12 col-lg-4 col-md-6 sm-mar bx-right">
+                        <div class="input-container" style="margin: 0;">
+                            <select class="select2 input-element selectres" id="manfactYear">
+                                <option value="option0">@Html.Raw(Tameenk.LangText.choose_edit_request_type)</option>
+                                <option value="option1">@Html.Raw(Tameenk.LangText.document_mistake_edit_request)</option>
+                                <option value="option2">@Html.Raw(Tameenk.LangText.change_plate)</option>
+                                <option value="option3">@Html.Raw(Tameenk.LangText.release_plate)</option>
+                                <option value="option4">@Html.Raw(Tameenk.LangText.add_driver_edit_request)</option>
+                            </select>
+                            <span class="field-error" style="color:red;position:absolute;"></span>
+                            </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-12 col-md-12 sm-mar sm-mar-bot">
+                        <!-- content option 1 -->
+                        <form action="@Url.Action("FixPolicyError","EditRequest")" method="post" id="option1Form">
+                            <div id="option1" class="hidden options-list">
+                                <p class="sm-text col-xs-12 col-md-12 col-lg-12 txt-brand">
+                                    @Html.Raw(Tameenk.LangText.attach_files).
+                                </p>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.vehicle_license)</span>
+                                        <input type="file" name="vehicleLicense" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.copy_of_national_identity)</span>
+                                        <input type="file" name="userId" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.copy_of_policy)</span>
+                                        <input type="file" name="policyFile" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 md-mar">
+                                    <button target="option1"  class="submit-edit bx-left btn sm dis-block no-trans bx-right txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow input-submit" onclick="EditRequest(this); return false;">@Html.Raw(Tameenk.LangText.send_edit_request)</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- content option 2 -->
+                        <form action="@Url.Action("ChangeLicense","EditRequest")" method="post" id="option2Form">
+                            <div id="option2" class="hidden options-list">
+                                <p class="sm-text col-xs-12 col-md-12 col-lg-12 txt-brand">
+                                    @Html.Raw(Tameenk.LangText.attach_files).
+                                </p>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.license_new_vehicle)</span>
+                                        <input type="file" name="newVehicleLicense" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.copy_of_policy)</span>
+                                        <input type="file" name="userId" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 md-mar">
+                                    <button target="option2"  class="bx-left btn sm dis-block no-trans bx-right txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow input-submit" onclick="EditRequest(this);return false;">@Html.Raw(Tameenk.LangText.send_edit_request)</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- content option 3 -->
+                        <form action="@Url.Action("CreateLicense","EditRequest")" method="post" id="option3Form">
+                            <div id="option3" class="hidden options-list">
+                                <p class="sm-text col-xs-12 col-md-12 col-lg-12 txt-brand">
+                                    @Html.Raw(Tameenk.LangText.attach_files).
+                                </p>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.license_new_vehicle)</span>
+                                        <input type="file" name="newVehicleLicense" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.copy_of_policy)</span>
+                                        <input type="file" name="policyFile" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.copy_of_national_identity)</span>
+                                        <input type="file" name="userId" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 md-mar">
+                                    <button target="option3"  class="bx-left btn sm dis-block no-trans bx-right txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow input-submit" onclick="EditRequest(this);return false;">@Html.Raw(Tameenk.LangText.send_edit_request)</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- content option 4 -->
+                        <div id="option4" class="hidden options-list">
+                            <form action="@Url.Action("AddDriver","EditRequest")" method="post" id="option4Form" enctype="multipart/form-data">
+                                <p class="sm-text col-xs-12 col-md-12 col-lg-12 txt-brand">
+                                    @Html.Raw(Tameenk.LangText.attach_files).
+                                </p>
+
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.driver_license_additional_driver)</span>
+                                        <input type="file" name="driverLicense" class="input__field" accept="image/*,application/pdf" required />
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-lg-5ths col-md-5ths bx-right">
+                                    <label class="fileupload input--file">
+                                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.copy_of_national_identity_additional_driver)</span>
+                                        <input type="file" name="driverId" class="input__field" accept="image/*,application/pdf" required>
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-lg-12 md-mar">
+                                    <button target="option4"  class="bx-left btn sm dis-block no-trans bx-right txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow input-submit" onclick="EditRequest(this); return false;">@Html.Raw(Tameenk.LangText.send_edit_request)</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="temp-success hidden">@Html.Raw(Tameenk.LangText.edit_request_success) </p>
+                    <p class="info-message sm-text col-xs-12 col-md-12 col-lg-12 txt-brand"></p>
+                    <p class="error-message sm-text col-xs-12 col-md-12 col-lg-12" style="color:red;"></p>
+                </div><!-- pd inside -->
+            </div>
+    </section>
+
+<style>
+#editRequest span.input__text {
+    min-height: 40px;
+}
+.error {
+        position: absolute;
+    bottom: -18px;
+    color: #f00;
+}
+</style>
+ <script>
+        function EditRequest(ctr) {
+            $('.input-submit').prop('disabled', true);
+
+            var formId = $(ctr).attr('target');
+            var form = $("#" + formId + "Form");
+            $(form).unbind('submit');
+            $.validator.messages.required = 'مطلوب';
+            if (form.valid()) {
+                var data = new FormData(form[0]);
+                data.append('policyId', $('.policy-id').val());
+                $.ajax({
+                    url: $(form).attr('action'),
+                    data: data,
+                    type: "POST",
+                    //datatype: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+
+                    success: function (result) {
+                        if (result.NotificationId != 0) {
+                            $('.info-message').text($('.temp-success').text() + result.NotificationId);
+                            setTimeout(function () {
+                                window.location = '@Url.Action("Index","Profile")';
+                            }, 1500);
+                        }
+                        else {
+                            $('.info-message').text($('.temp-fail').text() + result.message);
+                            $('.input-submit').prop('disabled', false);
+                        }
+                    },
+                    error: function (result) {
+                        $('.info-message').text(result.data);
+                 
+                        $('.input-submit').prop('disabled', false);
+                    }
+                });
+            } else {
+                $('.input-submit').prop('disabled', false);
+            }
+        }
+    </script>

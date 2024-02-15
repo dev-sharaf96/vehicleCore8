@@ -1,0 +1,298 @@
+﻿<section class="lr-ver-spc  bg-ofwhite section over-hidden">
+    <div id="login-tabs" class="col-xs-12 col-lg-8 bx-center @(ViewBag.isLogin == 0 ? "active-register" : "")">
+        <div id="login-form" class="@(ViewBag.islogin == 1 ? "tab active" : "tab")">
+            @Html.Partial("Login")
+        </div>
+        <div id="register-form" class="@(ViewBag.islogin == 0 ? "tab active" : "tab")">
+            @Html.Partial("Register")
+        </div>
+        <div class="current-active bg-gr-main">
+            <div class="register headoff active">
+                <h1 class="txt-white txt-lr no-mar txt-right ">
+                    @Html.Raw(Tameenk.LangText.login_have_account)
+                </h1>
+                <p class="txt-white txt-md no-mar xs-mar-bot txt-right sm-mar-bot">@Html.Raw(Tameenk.LangText.login_registernew)</p>
+                <a class="bx-left btn sm dis-block bg-white-hvr txt-brand-hvr bx-right md-mar txt-white txt-brand borderd txt-xs   circ-rdus l-shadow">@Html.Raw(Tameenk.LangText.login_register_button)</a>
+            </div>
+            <div class="login headoff">
+                <h1 class="txt-white txt-lr no-mar txt-right ">
+                    @Html.Raw(Tameenk.LangText.login_have_account1)
+                </h1>
+                <p class="txt-white txt-md   no-mar xs-mar-bot txt-right sm-mar-bot">@Html.Raw(Tameenk.LangText.login_txtmsg)</p>
+                <a class="bx-left btn sm dis-block bg-white-hvr txt-brand-hvr bx-right md-mar txt-white txt-brand borderd txt-xs   circ-rdus l-shadow">@Html.Raw(Tameenk.LangText.login_button)</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts
+{
+    <script src="~/Scripts/Ecryption/aes.js"></script>
+    <script>
+        window.onunload = function(){};
+        $(window).ready(function(){
+            if(@ViewBag.islogin == 1 && @ViewBag.IsCorporateUser == 1) { $('#verifyOTpModal').css('display','block'); }
+            else { $('#verifyOTpModal').css('display','none'); }
+        });
+
+        function validateEmailLogin(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        function ValidateLogin() {
+            if ($("#ichiro_el0").val() == "") {
+                $("#EmailError").html("@Html.Raw(Tameenk.LangText.login_email_erorr)");
+                return false;
+            } else {
+                $("#EmailError").html("");
+            }
+            if (!validateEmailLogin($("#ichiro_el0").val())) {
+                $("#EmailError").html("@Html.Raw(Tameenk.LangText.login_email_erorr1)");
+                return false;
+            } else {
+                $("#EmailError").html("");
+            }
+            if ($("#ichiro_el1").val() == "") {
+                $("#PasswordError").html("@Html.Raw(Tameenk.LangText.login_password_error)");
+                return false;
+            } else {
+                $("#PasswordError").html("");
+            }
+            if ($("#ichiro_el1").val().length < 4 && $("#ichiro_el1").val() != "") {
+                $("#PasswordError").html("@Html.Raw(Tameenk.LangText.login_password_error1)");
+                return false;
+            } else {
+                $("#PasswordError").html("");
+            }
+
+            return true;
+        }
+        $("#btn_login_Submit").click(function (e) {
+            if (!ValidateLogin()) {
+                e.preventDefault(); //prevent the default action
+                return false;
+            } else {
+                if(!EncryptData()) { e.preventDefault(); return false; }
+                else { $("#frm_login_show").submit(); }
+            }
+        })
+
+        function EncryptData() {
+            var key = CryptoJS.enc.Utf8.parse('BcARe_2021_N0MeM');
+            var iv = CryptoJS.enc.Utf8.parse('BcARe_2021_N0MeM');
+            
+            var plainUserName = $("#ichiro_el0").val();
+            var encryptedUserName = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(plainUserName), key,
+            {
+                keySize: 128 / 8,
+                iv: iv,
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            }).toString();
+            $("input[name='UserName']").val(encryptedUserName);
+
+            var plainPassword = $("#ichiro_el1").val();
+            var encryptedPassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(plainPassword), key,
+            {
+                keySize: 128 / 8,
+                iv: iv,
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            }).toString();
+            $("input[name='PWD']").val(encryptedPassword);
+
+            if(encryptedUserName != null && encryptedPassword != null) { return true; }
+            else { return false; }
+        }
+
+        function CheckRememberMe(obj) { }
+        function ForgetPassword($this) {
+            $('#ResetEmailsuccess, #ResetEmailError').fadeOut();
+            if ($("input[name='ResetEmail']").is(':valid')) {
+                $.ajax({
+                url: "@Url.Action("ResetPassword", "Account")",
+                data: { email: $("input[name='ResetEmail']").val()},
+                type: "GET",
+                datatype: "json",
+                    success: function(result) {
+                        //server send the request result message
+                        $('#ResetEmailsuccess').html(result.Message);
+                        $('#ResetEmailsuccess').fadeIn(300);
+                        //if success set the color to normal color else set to red color
+                    if (result.Success == true)
+                            $('#ResetEmailsuccess').css('color', '#186A9E');
+                            // setTimeout(() => {
+                            //     $('[data-popup="forgetpassword"]').fadeOut(350);
+
+                            // }, 5000);
+                    else {
+                        $('#ResetEmailsuccess').css('color', 'red');
+                    }
+                    setTimeout(function() {
+                        $('[data-popup="forgetpassword"]').fadeOut(350);
+                        $("input[name='ResetEmail']").val('');
+                        $('#ResetEmailsuccess').fadeOut();
+                    }, 2000);
+                },
+                error: function (result) {
+                    $('#ResetEmailError').empty().append('Failed while sending email').fadeIn(300);
+
+                }
+            });
+            } else {
+                $('#ResetEmailError').empty().append(document.querySelector("input[name='ResetEmail']").validationMessage).fadeIn(300);
+            }
+        }
+
+        $("#btn_VerifyOtp_Submit").click(function (e) {
+            if(!ValidateOtp()) {
+                e.preventDefault(); //prevent the default action
+                return false;
+            } else {
+                if(!EncryptData()) { e.preventDefault(); return false; }
+                else { $("#frm_VerifyOtp_show").submit(); }
+                
+            }
+        })
+
+        function ValidateOtp() {
+            if ($("#VerifyOTP_code").val() == "") {
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+    <script>
+
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        function Validate() {
+            var strongRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+            var passRegex = new RegExp("(?=.{4,})");
+            var PhoneNumberRegx = new RegExp(/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/);
+
+
+            if ($(".register-email").val() == "") {
+                $(".register-email-error").html("@Html.Raw(Tameenk.LangText.login_email_erorr)");
+                return false;
+            } else {
+                $(".register-email-error").html("");
+            }
+            if (!($(".register-email").val())) {
+                $(".register-email-error").html("@Html.Raw(Tameenk.LangText.login_email_erorr1)");
+                return false;
+            } else {
+                $(".register-email-error").html("");
+            }
+            @*if ($(".register-confirmEmail").val() == "") {
+                $(".register-confirmEmail-error").html("@Html.Raw(Tameenk.LangText.register_confirm_error)");
+                return false;
+            } else {
+                $(".register-confirmEmail-error").html("");
+            }
+            if (($(".register-email").val() != $(".register-confirmEmail").val()) && $(".register-confirmEmail").val() != "") {
+
+                $(".register-confirmEmail-error").html("@Html.Raw(Tameenk.LangText.register_confirm_error1)");
+                return false;
+            }*@
+            if ($(".register-mobile").val() == "") {
+                $(".register-mobile-error").html("@Html.Raw(Tameenk.LangText.register_mobile_error)");
+                return false;
+            } else {
+                $(".register-mobile-error").html("");
+            }
+
+
+              if ($(".register-mobile").val().length < 10 && $(".register-mobile").val()!="") {
+                $(".register-mobile-error").html("@Html.Raw(Tameenk.LangText.login_phone_number_error_length)");
+                return false;
+            } else {
+                $(".register-mobile-error").html("");
+            }
+
+
+            if ($(".register-password").val() == "") {
+                $(".register-password-error").html("@Html.Raw(Tameenk.LangText.login_password_error)");
+                return false;
+            } else {
+                $(".register-password-error").html("");
+            }
+           if (passRegex.test($(".register-password").val()) == false) {
+              $(".register-password-error").html("@Html.Raw(Tameenk.LangText.login_password_error1)");
+                return false;
+            } else {
+                $(".register-password-error").html("");
+        }
+
+            if (PhoneNumberRegx.test($(".register-mobile").val()) == false) {
+                $(".register-mobile-error").html("@Html.Raw(Tameenk.LangText.login_phone_number_error)");
+                return false;
+            } else {
+                $(".register-mobile-error").html("");
+            }
+
+            // *************************************************
+
+        if ($("#ichiro_el1").val().length < 4 && $("#ichiro_el1").val() != "") {
+                $("#PasswordError").html("@Html.Raw(Tameenk.LangText.login_password_error1)");
+                return false;
+            } else {
+                $("#PasswordError").html("");
+            }
+
+
+
+
+            return true;
+        }
+
+        $("#btnSubmit").click(function (e) {
+            if (!Validate()) {
+                e.preventDefault(); //prevent the default action
+                return false;
+            } else {
+                $("#frmshow").submit();
+            }
+        })
+
+
+    </script>
+    <script>
+
+        function confirmEmail() {
+            if (($(".register-email").val() != $(".register-confirmEmail").val()) && $(".register-confirmEmail").val() != "" && $(".register-email").val() != "") {
+                $(".register-confirmEmail-error").html("@Html.Raw(Tameenk.LangText.register_confirm_error1)");
+            } else {
+                  $(".register-confirmEmail-error").html("");
+            }
+        }
+
+        function confirmEmailFromEmail() {
+            if ($(".register-confirmEmail").val() != "")
+                {
+                if ($(".register-confirmEmail").val() != $(".register-email").val() && $(".register-email").val() != "") {
+                     $(".register-confirmEmail-error").html("@Html.Raw(Tameenk.LangText.register_confirm_error1)");
+                }
+            }
+        }
+
+
+        $(document).ready(function () {
+            $('.register-confirmEmail').bind("paste", function (e) {
+                e.preventDefault();
+            });
+        });
+
+
+                                        // window.onhashchange = function () {
+                                        //     $(window.location.hash.substr(1) + ' a').trigger('click');
+                                        //     window.location.hash = '';
+                                        // }
+                                        // $(onhashchange);
+    </script>
+}

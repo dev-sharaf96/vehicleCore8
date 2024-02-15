@@ -1,0 +1,115 @@
+﻿@using Tameenk.Core.Domain.Enums;
+
+@model TameenkDAL.Models.StatisticsModel
+@{
+    ViewBag.Title = Tameenk.LangText.Mystatistics;
+}
+<style>
+    a:hover {
+        color: #FB9C65 !important;
+    }
+</style>
+<section class="section profile-view min-height-vh">
+    <div>
+        @Html.Partial("~/Views/Home/SideBar.cshtml", EProfileSection.Statistics)
+        <!-- My Stats begains -->
+        <div class="active content col-xs-12 col-md-9 col-lg-10 content-view p-section" id="stat">
+            <div class="pd-inside">
+                <h1 class="txt-lr txt-black md-mar-bot md-mar col-xs-12">@Html.Raw(Tameenk.LangText.Mystatistics)</h1>
+                <div class="row clear-b">
+                    <div class="col-xs-12 col-md-4 col-lg-4 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <i class="fas fa-file-alt"></i>
+                            <span>
+                                <span class="dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.policies)</span>
+                                <h2 class="txt-white no-mar">
+                                    @Model.PolicysCount
+                                </h2>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <i class="fas fa-file-contract"></i>
+                            <span>
+                                <span class="dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.policies_valid)</span>
+                                <h2 class="txt-white no-mar">@Model.ActivePolicysCount</h2>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4 md-mar bx-right">
+                        <div class="wrapper-bx container-bx" style="border: 2px solid #c0392b;color: #c0392b;box-shadow: 0 5px 20px 0 rgba(192, 57, 43, 0.35);">
+                            <i class="fas fa-file"></i>
+                            <span>
+                                <span class="dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.policies_expired)</span>
+                                <h2 class="txt-white no-mar">@Model.PoliciesExpiredCount</h2>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <i class="fas fa-poll-h"></i>
+                            <span>
+                                <span class="dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.quotations)</span>
+                                <h2 class="txt-white no-mar">
+                                    @Model.OffersCount
+                                    @if (@Model.OffersCount > 0)
+                                    {
+                                        <a href="#" onclick="GetUserOffers(); return false;" class="show bx-left" style="font-size: 18px;">@Tameenk.LangText.show</a>
+                                    }
+                                </h2>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>
+                                <span class="dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.bills)</span>
+                                <h2 class="txt-white no-mar">
+                                    @Model.InvoicesCount
+                                </h2>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <i class="fas fa-pen-square"></i>
+                            <span>
+                                <span class="dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.edit_request)</span>
+                                <h2 class="txt-white no-mar">@Model.EditRequestsCount</h2>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- pd inside -->
+        </div>
+        <div class="md-ver-spc inactive content col-xs-12  col-md-9 col-lg-10 content-view p-section" id="status_details"></div>
+        <!-- My Stats ends -->
+    </div>
+</section>
+
+@section scripts{
+    <script type="text/javascript">
+        function GetUserOffers() {
+                 $.ajax({
+                    url: "@Url.Action("GetQuotationRequestDetail", "Profile")",
+                    //data: data,
+                    type: "GET",
+                    datatype: "json",
+                    success: function (result) {
+                    //$("#stat").html(result);
+                    $("#stat").hide();
+                    $('#status_details').html(result);
+                    $('#status_details').addClass('active');
+                    $('#status_details').show();
+
+                    },
+                    error: function (result) {
+
+                    }
+                    });
+        }
+    </script>
+}

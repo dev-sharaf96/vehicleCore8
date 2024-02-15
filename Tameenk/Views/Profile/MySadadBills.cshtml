@@ -1,0 +1,237 @@
+﻿@using Tameenk.Core.Domain.Enums;
+
+@model Tameenk.Services.Profile.Component.Output.MySadadBillsOutput
+@{
+    ViewBag.Title = Tameenk.LangText.MySadadBills;
+}
+
+<style>
+    .input-group {
+        position: relative;
+        /* margin: 40px 0 20px;
+     */
+        display: inline-block;
+    }
+
+    .customInpStyle {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        /* display: block;
+     */
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid #757575;
+    }
+
+        .customInpStyle:focus {
+            outline: none;
+        }
+
+    .customLBLStyle {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        right: 5px;
+        top: 10px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+    .customInpStyle:focus ~ label, .customInpStyle:valid ~ label {
+        top: -20px;
+        font-size: 14px;
+        color: #156494;
+    }
+
+    .bar {
+        position: relative;
+        display: block;
+        width: auto;
+    }
+
+        .bar:before, .bar:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: #156494;
+            ;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+
+        .bar:before {
+            right: 50%;
+        }
+
+        .bar:after {
+            left: 50%;
+        }
+
+    .customInpStyle:focus ~ .bar:before, .customInpStyle:focus ~ .bar:after {
+        width: 50%;
+    }
+
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        right: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    .customInpStyle:focus ~ .highlight {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        -moz-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
+    /* animations */
+    @@-webkit-keyframes inputHighlighter {
+        from {
+            background: #156494;
+            ;
+        }
+
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+
+    @@-moz-keyframes inputHighlighter {
+        from {
+            background: #156494;
+            ;
+        }
+
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+
+    @@keyframes inputHighlighter {
+        from {
+            background: #156494;
+            ;
+        }
+
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+
+    .submitSearchBtn {
+        height: 50px;
+        border-radius: 11px;
+        line-height: 10px;
+        margin-top: 0px;
+        width: 8%;
+        text-align: center;
+        font-size: 14px;
+        color: white;
+        background: #FBA72F !important;
+        margin-right: 33px;
+    }
+
+        .submitSearchBtn:hover {
+            background: #ffba57 !important;
+        }
+
+    .sectionprofViewTit {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #efefef;
+    }
+
+    .not-active {
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+        color: black;
+    }
+
+    .previous {
+        background-color: #ddd;
+        color: white;
+    }
+
+    .next {
+        background-color: #ddd;
+        color: white;
+    }
+
+    .pagination {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+            .pagination a.active {
+                background-color: #156495;
+                color: white;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+                color: white;
+            }
+
+    .sectionprofViewTit {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #efefef;
+    }
+</style>
+
+<section class="section profile-view min-height-vh">
+    <div>
+        @Html.Partial("~/Views/Home/SideBar.cshtml", EProfileSection.SadadBills)
+
+        <div class="content col-xs-12 col-md-9 col-lg-10 content-view active" id="SadadBills">
+            <div class="pd-inside">
+                <h1 class="txt-lr txt-black md-mar-bot md-mar col-xs-12"> @Html.Raw(Tameenk.LangText.MySadadBills) </h1>
+
+                <div id="MySadadBillsListDiv">
+                    @Html.Partial("_MySadadBills", Model)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script type="text/javascript">
+    function GetNextPageData(pageNumer) {
+        $.ajax({
+            url: "@Url.Action("MySadadBillsPagination", "Profile")",
+            data: { pageIndex: pageNumer },
+            type: "GET",
+            datatype: "json",
+            success: function (result) {
+                $("#MySadadBillsListDiv").html("");
+                $("#MySadadBillsListDiv").html(result);
+            },
+            error: function(result) {
+                alert('error');
+            }
+        });
+    }
+    </script>
+}

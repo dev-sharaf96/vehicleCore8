@@ -1,0 +1,382 @@
+
+/*.scroll-down {
+  position: absolute;
+  text-align: center;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.scroll-down a {
+  color: #fff;
+}
+
+.slidesCover .bg {
+  position: absolute;
+  height: 100%;
+  width: inherit;
+  top: 0px;
+  background-size: cover;
+  background-position: top;
+}
+
+#top-slider a {
+  display: inline-block;
+  background-color: #f79818;
+  padding: 15px 25px;
+  color: #FFF;
+  font-size: 25px;
+  font-weight: bold;
+  -moz-box-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  margin: 50px 0 10px;
+  outline: 0
+}
+
+#top-slider a:hover {
+  background-color: #ffc107;
+}
+
+button {
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  text-align: inherit;
+}
+
+.section.overview {
+  position: relative;
+  background-size: inherit;
+  min-height: calc(100vh - 50px);
+  padding: 100px 0;
+}
+
+@media screen and (min-width: 64em) {
+  .section.overview {
+    background-size: cover;
+  }
+}
+
+.section.overview:after {
+  height: 80%;
+  position: absolute;
+  background-image: -moz-linear-gradient(-90deg, transparent 60%, #fff 100%);
+  background-image: -webkit-linear-gradient(-90deg, transparent 60%, #fff 100%);
+  background-image: -ms-linear-gradient(-90deg, transparent 60%, #fff 100%);
+  width: 100%;
+  content: '';
+  bottom: -1px;
+  z-index: 2;
+}
+
+.slider-imgs {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+}
+
+.slider-imgs * {
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  #top-slider a {
+    padding: 15px 90px;
+  }
+}
+
+@media (max-width: 570px) {
+  #top-slider a {
+    width: 90%;
+    text-align: center;
+    font-size: 18px;
+    padding: 15px 0;
+  }
+}
+
+#slider.slides>div {
+  display: none;
+}
+
+.arrows {
+  width: 60px;
+  height: 72px;
+}
+
+.arrows path {
+  stroke: #186AA5;
+  fill: transparent;
+  stroke-width: 1px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;textAbsoluteDesi2  -webkit-animation-delay: -1s;
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+}
+
+/*! CSS Used from: Embedded 
+.slidesCover {
+  /*background: #0C101A;
+}
+
+.slidesCover .bg {
+ opacity: 0.8;
+}
+
+! CSS Used keyframes
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}*/
+
+
+
+
+.mainContainerGeneric {
+    font-size: 20px;
+    background-size: cover;
+    /*height: 730px;*/
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+    section#portfolio {
+        margin-bottom: 0px !important;
+        position: relative !important;
+        display: block !important;
+        margin-top: 100% !important;
+    }
+
+    img.smIconss {
+        width: 30px !important;
+        display: block;
+    }
+
+    .container-fluid.mainContainerGeneric {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .overlayBanner2 {
+        position: absolute;
+        background-repeat: no-repeat;
+        width: 749px;
+        height: 490px;
+        left: 0;
+        background-position: center;
+        top: 0px;
+        background-size: contain;
+        width: 66%;
+        z-index: 100 !important;
+    }
+
+    .eqrarStyle {
+        padding: 0px 0px 30px 0px;
+    }
+
+    .input-container {
+        width: 100% !important;
+    }
+
+    section#portfolio {
+        margin-top: 120px;
+    }
+
+    .myRowCustomNewDesign {
+        background: #ffffff;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    .search-container {
+        top: 0px;
+        z-index: 111 !important;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    .logoImgtoHome.col-lg-6 {
+        display: none !important;
+    }
+
+    .caryellowLog {
+        right: 20px;
+        top: 50px;
+    }
+
+    span .taamenManasaClaass {
+        font-size: 20px;
+    }
+
+    .search-container {
+        top: 0px !important;
+        z-index: 111 !important;
+    }
+
+    .overlayBanner2 {
+        /*display: none !important;*/
+    }
+
+    .overlayBanner {
+        display: none !important;
+    }
+
+    .textAbsoluteDesi2 {
+        position: absolute;
+        top: 340px;
+        z-index: 10000;
+        color: #fff;
+        text-align: center;
+        text-align: -webkit-center;
+        /*float: left;
+        left: 0;*/
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .textAbsoluteDesi {
+        position: relative;
+        z-index: 100;
+        text-align: center;
+        color: white;
+        background: #156495;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 550px) {
+
+    .col-xs-12.col-md-6.bx-right.widthInInsured {
+        width: 100%;
+    }
+
+    #mainSideBarNew {
+        width: 100%;
+    }
+
+    .textAbsoluteDesi2 {
+        display: none !important;
+    }
+
+    .textAbsoluteDesi {
+        display: none !important;
+    }
+}
+
+
+
+.logoImgtoHome.col-lg-6 {
+    padding: 30px 80px 0px 0px;
+    z-index: 100000 !important;
+    margin-bottom: 78px;
+}
+
+img.logoDisplayingResponsivetoHome {
+    width: 160px !important;
+    display: none;
+}
+
+.textAbsoluteDesi {
+    position: relative;
+    z-index: 100;
+    text-align: center;
+    color: white;
+}
+
+img.smIconss {
+    width: 50px;
+    display: block;
+}
+
+
+@media screen and (max-width: 550px) and (min-width: 10px) {
+    img.logoDisplayingResponsivetoHome {
+        display: none !important;
+    }
+
+    .mainContainerGeneric {
+        /*height:830px;*/
+    }
+}
+
+@media screen and (max-width: 1900px) and (min-width: 1300px) {
+    .caryellowLog {
+        right: 130px;
+    }
+}
+
+/*@media only screen and (min-height: 701px) and (min-widht: 1500px) and (max-width: 1600px) {
+    .textAbsoluteDesi2 {
+        bottom: 35%;
+     bottom: 165px;
+    }
+}
+
+/*@media only screen and (min-height: 813px) {
+    .textAbsoluteDesi2 {
+       bottom: 35%;
+        bottom: 165px;
+        top: 400px%;
+    }
+}*/
+@media screen and (max-height: 660) and (min-height: 13px) {
+    .textAbsoluteDesi2 {
+        bottom: 0px;
+    }
+}

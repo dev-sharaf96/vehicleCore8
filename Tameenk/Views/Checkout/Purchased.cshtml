@@ -1,0 +1,65 @@
+﻿@using Tameenk.Models;
+@model  PurchasedProductModel
+
+<section class="inactive md-ver-spc bg-ofwhite content-view over-hidden section active">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 bx-right">
+                <div class="company-card">                
+                    <img class="company-img bx-right" src="/resources/imgs/insurerlogos/@string.Concat(Model.InsuranceCompanyKey, ".png")" alt="@Model.InsuranceCompanyKey" title="@Model.InsuranceCompanyKey"/>
+                    <div class="company-info txt-gray txt-right bx-right">
+                        <p>@(Model.CompanyEmail != null ? @Html.Raw(Tameenk.LangText.company_email) + ": " + Model.CompanyEmail : " ")</p>
+                        <p>@(Model.CompanyHomePhone != null ? @Html.Raw(Tameenk.LangText.company_phone) + ": " + Model.CompanyHomePhone : " ")</p>
+                        <p>@(Model.CompanyMobile != null ? @Html.Raw(Tameenk.LangText.company_mobile) + ": " + Model.CompanyMobile : " ")</p>
+                        <p>@(Model.CompanyFax != null ? @Html.Raw(Tameenk.LangText.company_fax) + ": " + Model.CompanyFax : " ")</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 bx-right">
+                <h3 class="txt-md txt-black no-mar lr-mar">@Model.InsuranceType</h3>
+                <div class="md-mar">
+                    <svg class="no-mar bx-left" style="height: 60px; width: 60px;" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path fill="#186A9E" d="m42.199 74.5c0.39844 0.39844 0.89844 0.60156 1.3984 0.60156s1-0.19922 1.3984-0.60156l30.504-30.5c0.80078-0.80078 0.80078-2 0-2.8008l-8.6016-8.6016c-0.39844-0.39844-0.89844-0.59766-1.3984-0.59766s-1 0.19922-1.3984 0.60156l-20.5 20.5-7.6016-7.6016c-0.80078-0.80078-2.1016-0.80078-2.8008 0l-8.6992 8.5c-0.80078 0.80078-0.80078 2 0 2.8008zm-7.6992-24.801l7.6016 7.6016c0.39844 0.39844 0.89844 0.60156 1.3984 0.60156s1-0.19922 1.3984-0.60156l20.5-20.5 5.8008 5.8008-27.598 27.598-14.801-14.801z"></path>
+                            <path fill="#186A9E" d="m50 93c22.602 0 41-18.398 41-41s-18.398-41-41-41-41 18.398-41 41 18.398 41 41 41zm0-78c20.398 0 37 16.602 37 37s-16.602 37-37 37-37-16.602-37-37 16.602-37 37-37z"></path>
+                        </g>
+                    </svg>
+                    <h3 class="txt-black txt-md ">@Html.Raw(Tameenk.LangText.purchased_successfulMessage).</h3>
+                </div>
+                @using (Html.BeginForm("Purchased", "Home", FormMethod.Post, new { id = "frmshow" }))
+                {
+                    <a href="@Url.Action("Index", "Profile")" class="btn sm dis-block txt-white txt-brand txt-xs borderd-hvr bg-green txt-green-hvr circ-rdus l-shadow bx-right lr-mar">
+                        @Html.Raw(Tameenk.LangText.Purchesed_Profile)
+                    </a>
+                    <a href="#" class="bx-shdw btn sm dis-block txt-white-hvr txt-brand txt-xs bg-gr-main circ-rdus l-shadow bx-left lr-mar" title="@Html.Raw(Tameenk.LangText.coming_soon)">
+                        @Html.Raw(Tameenk.LangText.Purchesed_add_product)
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@*
+<section class="inactive md-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info">
+    <div class="container">
+
+        <svg class="no-mar bx-left" style="height: 60px; width: 60px;" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path fill="#186A9E" d="m42.199 74.5c0.39844 0.39844 0.89844 0.60156 1.3984 0.60156s1-0.19922 1.3984-0.60156l30.504-30.5c0.80078-0.80078 0.80078-2 0-2.8008l-8.6016-8.6016c-0.39844-0.39844-0.89844-0.59766-1.3984-0.59766s-1 0.19922-1.3984 0.60156l-20.5 20.5-7.6016-7.6016c-0.80078-0.80078-2.1016-0.80078-2.8008 0l-8.6992 8.5c-0.80078 0.80078-0.80078 2 0 2.8008zm-7.6992-24.801l7.6016 7.6016c0.39844 0.39844 0.89844 0.60156 1.3984 0.60156s1-0.19922 1.3984-0.60156l20.5-20.5 5.8008 5.8008-27.598 27.598-14.801-14.801z"></path>
+                <path fill="#186A9E" d="m50 93c22.602 0 41-18.398 41-41s-18.398-41-41-41-41 18.398-41 41 18.398 41 41 41zm0-78c20.398 0 37 16.602 37 37s-16.602 37-37 37-37-16.602-37-37 16.602-37 37-37z"></path>
+            </g>
+        </svg>
+
+        <h1 class="txt-black txt-lr md-lh txt-right">@Html.Raw(Tameenk.LangText.purchesed_title)</h1>
+        <h3 class="txt-black txt-md">@Html.Raw(Tameenk.LangText.purchased_successfulMessage).</h3>
+    </div>
+</section>
+*@
+
+<script>
+
+    function submit() {
+        $("#frmshow").submit();
+    }
+</script>

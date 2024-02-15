@@ -1,0 +1,16 @@
+﻿@model TameenkDAL.Models.Notifications.RejectedPolicyUpdReqNotification
+
+<article>
+    <div class="wrapper-bx md-mar">
+        <div class="row">
+            <div class="col-xs-12 col-lg-1 col-lg-1">
+                <i class="ic-icons-344 txt-red txt-lr"></i>
+            </div>
+            <header class="col-xs-12 col-lg-11 col-lg-11 over-hidden">
+                <span class="txt-sm txt-red dis-block ">الرفض على الطلب رقم</span>
+                <h2 class="txt-lr txt-black no-mar">#@Model.PolicyUpdateRequestGuid</h2>
+                <h3 class="txt-sm txt-mgray dis-block xs-mar">@Html.Raw(Tameenk.LangText.Notification_request_vehicle) #@Model.PolicyId</h3>
+            </header>
+        </div>
+    </div>
+</article>

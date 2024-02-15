@@ -1,0 +1,72 @@
+﻿@using Tameenk.Payment.Esal.Component
+@model EsalPaymentResponseModel
+
+@*<section class="inactive md-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info">
+        <div class="container">
+            <h1 class="txt-black txt-lr md-lh txt-right">شكرا لإختياركم طلب عرض السعر من شركة العربيه للتأمين</h1>
+        </div>
+    </section>*@
+<section class="md-ver-spc search-inputs  section normal-page" style="min-height: calc(100vh - 234px);">
+    <div class="container">
+        <div class="wrapper-bx md-mar-bot">
+            <div class="row">
+                @foreach (var invoice in Model.invoices)
+                {
+                    <h2>
+                        @Html.Raw(Tameenk.LangText.EsalPaymentInstruction)
+                    </h2>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.payment_code_esal) <b class="txt-black">@Html.Raw(Tameenk.LangText.payment_code_esal_val)</b></span>
+                    </p>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.payment_biller_name_heading) <b class="txt-black">@Html.Raw(Tameenk.LangText.payment_biller_name_esal)</b></span>
+                    </p>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.payment_instruction_bill_N) <b id="sadadNo" class="txt-black">@Html.Raw(Tameenk.LangText.SadadLoading) <i class="fas fa-spinner fa-spin"></i></b></span>
+                    </p>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.PhoneNumber) <b class="txt-black">@invoice.Phone</b></span>
+                    </p>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.Email) <b class="txt-black">@invoice.Email</b></span>
+                    </p>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.payment_instruction_bill_exp) <b class="txt-black">@invoice.BillDueDate</b></span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+    <script>
+    
+        var interval = setInterval(function () {
+                  getSadadNo();
+                }, 15000);
+
+                setTimeout(function () {
+                    clearInterval(interval);
+                }, 90000);
+
+    
+    function getSadadNo() {
+         var accessToken = '@Model.AccessToken';
+            $.ajax({
+                    url: 'https://www.bcare.com.sa/CheckoutApi/api/checkout/getSadadNo',
+                    type: "get",
+                    data:{invoiceNo:'@Model.invoices[0].InvoiceNumber',referenceId:'@Model.ReferenceId',lang:'@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName'},
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+                    }
+                })
+                .done(function(response) {
+                    $("#sadadNo").html(response.data);
+                    clearInterval(interval);
+                }).fail(function(err) {
+                    return err.statusText
+                }
+                );
+        }
+    </script>
+}

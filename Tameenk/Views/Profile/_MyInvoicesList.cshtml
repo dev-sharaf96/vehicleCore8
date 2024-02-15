@@ -1,0 +1,278 @@
+﻿@model Tameenk.Models.MyInvoicesViewModel
+@using Tameenk.Resources.Profile;
+@using Tameenk.Core.Domain.Dtos.Profile;
+@{
+    double pages = (double)Model.InvoicesTotalCount / 10;
+    var pagesCount = Math.Ceiling(pages);
+}
+<article id="MyInvoicesList">
+    @if (Model != null && Model.InvoicesList != null && Model.InvoicesList.Count > 0)
+    {
+        foreach (InvoiceModel invoice in Model.InvoicesList)
+        {
+            <div class="wrapper-bx md-mar vehicle-row dl-section" data-file-id="@invoice.Id">
+                <div class="row">
+                    <header class="col-xs-12 col-lg-8 col-lg-12 over-hidden bx-right">
+                        <span class="txt-sm  txt-mgray dis-block ">@Html.Raw(Tameenk.LangText.InvoiceNo) : @invoice.InvoiceNo</span>
+                        <h2 class="txt-lr txt-black no-mar">@invoice.UserEmail</h2>
+                        <h3 class="txt-sm  txt-mgray dis-block xs-mar">@invoice.InvoiceDate</h3>
+                    </header>
+                    <footer class="col-xs-12 col-lg-4 col-lg-12 over-hidden bx-right">
+                        <h2 class="txt-xl txt-black no-mar  bx-left  dis-block resp txt-right">
+                            @invoice.TotalPrice
+                            <span class="dis-inline-block txt-md right-mar-10">@Html.Raw(Tameenk.LangText.SAR)</span>
+                        </h2>
+                    </footer>
+                </div>
+                <div class="small-desc over-hidden f_width md-mar bx-right txt-mgray">
+                    <span class="dis-block bx-right">
+                        @if (!string.IsNullOrEmpty(invoice.InsuranceCompanyNameAR))
+                        {
+                            @Html.Raw(Tameenk.LangText.InvoiceInsuranceCompanyName) @invoice.InsuranceCompanyNameAR
+                        }
+                    </span>
+                    <a href="#" data-download-url="@Url.Action("DownloadInvoiceFilePDF","Profile")"
+                       data-not-found="@Html.Raw(Tameenk.LangText.Invoice_not_found)" download="Invoice.pdf"
+                       class="dis-block txt-right bx-left right-mar-10 txt-black dl-link">
+                        <i class="ic-icons-502 txt-black bx-right general-ico"></i>@Html.Raw(Tameenk.LangText.DownloadInvoice)
+                    </a>
+                </div>
+            </div>
+        }
+
+        <div>
+            @if (Model.Lang == "en")
+            {
+                <ul class="pagination">
+                    @if (Model.CurrentPage == 1)
+                    {
+                        @*<li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+                    else
+                    {
+                        @*<li><a class="previous" onclick="SearchMyInvoices(1)"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="previous" onclick="SearchMyInvoices(@Model.CurrentPage - 1)"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+
+                    @if (pagesCount <= 5)
+                    {
+                        if (pagesCount == 1)
+                        {
+                            <li><a class="active"> 1 </a></li>
+                        }
+
+                        else
+                        {
+                            for (int i = 1; i <= pagesCount; i++)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        if (Model.CurrentPage <= 3)
+                        {
+                            for (int i = 1; i <= 5; i++)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                        else if (Model.CurrentPage >= pagesCount - 1)
+                        {
+                            if (Model.CurrentPage == pagesCount - 1)
+                            {
+                                for (int i = Model.CurrentPage - 3; i <= pagesCount; i++)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (int i = Model.CurrentPage - 4; i <= pagesCount; i++)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int j = Model.CurrentPage - 2; j <= Model.CurrentPage + 2; j++)
+                            {
+                                if (Model.CurrentPage == j)
+                                {
+                                    <li><a class="active" onclick="SearchMyInvoices(@j)"> @j </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyInvoices(@j)"> @j </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    @if (Model.CurrentPage == pagesCount)
+                    {
+                        <li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                    else
+                    {
+                        <li><a class="next" onclick="SearchMyInvoices(@Model.CurrentPage + 1)"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="next" onclick="SearchMyInvoices(@pagesCount)"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                </ul>
+            }
+            else
+            {
+                <ul class="pagination">
+                    @if (Model.CurrentPage == 1)
+                    {
+                        @*<li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+                    else
+                    {
+                        @*<li><a class="previous" onclick="SearchMyInvoices(1)"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="previous" onclick="SearchMyInvoices(@Model.CurrentPage - 1)"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+
+                    @if (pagesCount <= 5)
+                    {
+                        if (pagesCount == 1)
+                        {
+                            <li><a class="active"> 1 </a></li>
+                        }
+
+                        else
+                        {
+                            for (double i = pagesCount; i >= 1; i--)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        if (Model.CurrentPage <= 3)
+                        {
+                            for (int i = 5; i >= 1; i--)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                        else if (Model.CurrentPage >= pagesCount - 1)
+                        {
+                            if (Model.CurrentPage == pagesCount - 1)
+                            {
+                                for (double i = pagesCount; i >= Model.CurrentPage - 3; i--)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (double i = pagesCount; i >= Model.CurrentPage - 4; i--)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyInvoices(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int j = Model.CurrentPage + 2; j >= Model.CurrentPage - 2; j--)
+                            {
+                                if (Model.CurrentPage == j)
+                                {
+                                    <li><a class="active" onclick="SearchMyInvoices(@j)"> @j </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyInvoices(@j)"> @j </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    @if (Model.CurrentPage == pagesCount)
+                    {
+                        <li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                    else
+                    {
+                        <li><a class="next" onclick="SearchMyInvoices(@Model.CurrentPage + 1)"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="next" onclick="SearchMyInvoices(@pagesCount)"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                </ul>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="wrapper-bx md-mar vehicle-row  search-info bg-ofwhite section  active search-car">
+            <div class="row">
+                @Html.Raw(ProfileResources.NoDataFound)
+            </div>
+        </div>
+    }
+</article>

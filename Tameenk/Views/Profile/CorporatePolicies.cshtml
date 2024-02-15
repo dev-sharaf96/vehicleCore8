@@ -1,0 +1,531 @@
+﻿@model Tameenk.Models.MyPoliciesViewModel
+@using Tameenk.Resources.Profile;
+@using Tameenk.Core.Domain.Enums;
+
+@{
+    ViewBag.Title = Tameenk.LangText.MyProducts;
+}
+
+<style>
+    .input-group {
+        position: relative;
+        /* margin: 40px 0 20px; */
+        display: inline-block;
+    }
+
+    .customInpStyle {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        border: none;
+        border-bottom: 1px solid #757575;
+    }
+
+        .customInpStyle:focus {
+            outline: none;
+        }
+
+    .customLBLStyle {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        right: 22px;
+        top: 10px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+    .customInpStyle:focus ~ label,
+    .customInpStyle:valid ~ label {
+        top: -20px;
+        font-size: 14px;
+        color: #156494;
+    }
+
+    .bar {
+        position: relative;
+        display: block;
+        width: 85%;
+    }
+
+        .bar:before,
+        .bar:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: #156494;
+            ;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+
+        .bar:before {
+            right: 50%;
+        }
+
+        .bar:after {
+            left: 50%;
+        }
+
+    .customInpStyle:focus ~ .bar:before,
+    .customInpStyle:focus ~ .bar:after {
+        width: 50%;
+    }
+
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        right: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    .customInpStyle:focus ~ .highlight {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        -moz-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
+
+    /* animations */
+    @@-webkit-keyframes inputHighlighter {
+        from {
+            background: #156494;
+            ;
+        }
+
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+
+    @@-moz-keyframes inputHighlighter {
+        from {
+            background: #156494;
+            ;
+        }
+
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+
+    @@keyframes inputHighlighter {
+        from {
+            background: #156494;
+            ;
+        }
+
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+
+    .submitSearchBtn {
+        height: 50px;
+        border-radius: 11px;
+        line-height: 10px;
+        margin-top: 0px;
+        width: 8%;
+        text-align: center;
+        font-size: 14px;
+        color: white;
+        background: #FBA72F !important;
+        margin-right: 2px;
+    }
+
+        .submitSearchBtn:hover {
+            background: #ffba57 !important;
+        }
+
+    .sectionprofViewTit {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #efefef;
+    }
+
+    .class {
+        color: darkred;
+    }
+
+    .ticketTypes {
+        width: 100%;
+        height: 50px;
+        border-radius: 7px;
+        border: 1px solid;
+        background: white !important;
+    }
+
+    .newTick {
+        /*margin: 20px;*/
+        background: #24799e;
+        border-radius: 11px;
+        color: white;
+        font-size: 20px;
+    }
+
+    /* The Close Button */
+
+
+    .closeticketModal:hover,
+    .closeticketModal:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .beltWhite {
+        float: right !important;
+        margin-left: 10px;
+    }
+
+    .not-active {
+        pointer-events: none;
+    }
+
+    .isDisabled {
+        color: currentColor;
+        cursor: not-allowed;
+        opacity: 0.5;
+        text-decoration: none;
+    }
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        /* background-color: #fefefe; */
+        margin: auto;
+        /* padding: 20px; */
+        border: 1px solid #888;
+        width: 58%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .userTicketModal {
+        width: 41%;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .containerModall {
+        background-color: white;
+        width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        /* margin-top: 100px; */
+        border-radius: 20px;
+        /* max-width:90%; */
+    }
+
+    .notificationItem {
+        border: 2px solid #0771b4;
+        border-radius: 5px;
+        margin: 8px 0px 8px 0px;
+        padding: 11px;
+        display: flex;
+        align-items: center;
+        color: #0771b4;
+        box-shadow: 0 5px 20px 0 rgba(93, 148, 183, 0.36);
+    }
+
+    .addAttchClass {
+        background: #24799e;
+        color: white;
+        width: 120px;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .attchContainer {
+        margin: 5px 0px 7px 0px;
+        box-shadow: 2px 3px 10px 0px #80808057;
+        padding: 10px;
+    }
+
+    .headerModall {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footerModall {
+        padding: 20px 0px;
+    }
+
+    .bodyModall {
+        background-color: #ffff !important;
+        border-radius: 10px;
+        margin: 0px 40px;
+        max-height: 600px;
+        color: rgb(59, 59, 59) !important;
+        font-size: 16px;
+        direction: rtl;
+        padding: 10px 10px 20px 0px;
+        text-align: right;
+    }
+
+    .close {
+        float: left;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: rgb(216, 7, 7);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    p {
+        margin: 30px 0px 50px 0px;
+    }
+
+    a:hover {
+        color: #FB9C65 !important;
+    }
+
+
+    .row {
+        margin: 0 !important;
+    }
+
+
+    .funcButtons {
+        background-color: #FFBC39;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
+        padding: 14px 40px;
+    }
+
+    .wrapper-bx {
+        padding-left: 0px !important;
+    }
+
+    .btnModall {
+        top: -30px;
+        position: absolute;
+        left: 10px;
+        border: none;
+        color: #FAA62F;
+        text-align: center;
+        text-decoration: none;
+        display: inline-flex;
+        font-size: 18px;
+        /* margin: 4px 2px; */
+        cursor: pointer;
+        /* padding: 14px 40px; */
+    }
+
+    .not-active {
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+        color: black;
+    }
+
+    .previous {
+        background-color: #ddd;
+        color: white;
+    }
+
+    .next {
+        background-color: #ddd;
+        color: white;
+    }
+
+    .pagination {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+            .pagination a.active {
+                background-color: #156495;
+                color: white;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+                color: white;
+            }
+</style>
+
+<section class="section profile-view min-height-vh">
+    <div>
+        @Html.Partial("~/Views/Home/SideBar.cshtml", EProfileSection.Policies)
+
+        <div class="content col-xs-12 col-md-9 col-lg-10 content-view active">
+            <div class="pd-inside">
+                <h1 class="txt-lr txt-black md-mar-bot  col-xs-12 sectionprofViewTit">
+                    @Html.Raw(Tameenk.LangText.MyProducts)
+                </h1>
+
+                <div class="input-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <input type="text" class='customInpStyle' id="policyNumber" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class='customLBLStyle'>@Html.Raw(ProfileResources.PolicyNumber)</label>
+                </div>
+
+                <div class="input-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <input type="text" class='customInpStyle' id="sequenceOrCustomCardNumber" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class='customLBLStyle'>@Html.Raw(ProfileResources.SequenceOrCustomCardNumber)</label>
+                </div>
+
+                <div class="input-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <input type="text" class='customInpStyle' id="insuredNIN" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class='customLBLStyle'>@Html.Raw(ProfileResources.InsuredNIN)</label>
+                </div>
+
+                <button onclick="SearchMyPolicies(1)" id="SearchMyPolicies" class='submitSearchBtn'> @ProfileResources.Search</button>
+                <div id="MyPoliciesListDiv">
+                    @Html.Partial("_MyPoliciesList", Model)
+                </div>
+            </div>
+            <!-- pd inside -->
+        </div>
+    </div>
+</section>
+@section scripts{
+    <script type="text/javascript">
+
+        function SearchMyPolicies(pageNumer){
+            var policyNumberValue = $("#policyNumber").val();
+            var sequenceOrCustomCardNumberValue = $("#sequenceOrCustomCardNumber").val();
+            var insuredNINValue = $("#insuredNIN").val();
+            var data = { policyNumber: policyNumberValue,
+                         sequenceOrCustomCardNumber: sequenceOrCustomCardNumberValue,
+                         insuredNIN: insuredNINValue,
+                         pageIndex: pageNumer
+                        };
+            $("#MyPoliciesListDiv").html("");
+
+            $.ajax({
+                url: "@Url.Action("SearchCorporatePolicies", "Profile")",
+                data: data,
+                type: "GET",
+                datatype: "json",
+                success: function(result) {
+                        $("#MyPoliciesListDiv").html(result);
+                },
+                error: function(result) {
+                    alert('error');
+                }
+                });
+        }
+
+         $('.dl-section').each(function () {
+                var $dlSection = $(this);
+                var fileId = $dlSection.data("file-id");
+                $dlSection.find(".dl-link").each(function () {
+                    var $dlLink = $(this);
+
+                    $dlLink.on('click.getDownloadFile', function () {
+
+                        $('#page-loading').show();
+                        $.ajax({
+                            url: $dlLink.data("download-url"),
+                            data: { "fileId": fileId},
+                            type: "GET",
+                            datatype: "json",
+                            success: function (result) {
+                                $('#page-loading').hide();
+                                if (result) {
+                                    $dlLink.attr('href', "data:application/pdf;base64," + escape(result));
+                                    $dlLink.off('click.getDownloadFile');
+
+                                    $dlLink.get(0).click();
+                                } else { alert($dlLink.data("not-found")); }
+
+                            },
+                            error: function (result) {
+                                $('#page-loading').hide();
+                                alert($dlLink.data("not-found"));
+
+                            }
+                        });
+                        return false;
+                    });
+                });
+            });
+
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // When the user clicks the button, open the modal
+            function openEmailModal(email) {
+              document.getElementById("CheckOutDetailsEmail").innerHTML=email;
+              modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            function closeEmailModal(){
+              modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+
+            
+    </script>
+}

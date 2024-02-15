@@ -1,0 +1,191 @@
+﻿@model  Tameenk.Models.Promotion.PromotionProgramModel
+<section class="inactive sm-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info">
+    <div class="container">
+        <h1 style="color:#f7811c; padding-bottom: 0px;" class="txt-black txt-lr md-lh txt-right">@Html.Raw(Tameenk.LangText.promotion_programs)</h1>
+        <!-- <h3 class="txt-black txt-md">@Html.Raw(Tameenk.LangText.promotion_programs) Description</h3> -->
+    </div>
+</section>
+<section class="sm-ver-spc search-inputs section normal-page">
+    <div class="container">
+        <div class="row clear-b promotion-main-div payments-cards">
+
+            @if (Model != null)
+            {
+
+                <span class="txt-black txt-xs dis-block over-hidden xs-mar-bot">@Html.Raw(Tameenk.LangText.method_of_authentication)</span>
+                <label class="radio-holder">
+                    @Html.Raw(Tameenk.LangText.authentication_by_email)
+                    <input onchange="toggleMethod('email')" type="radio" name="radio-group" class="authentication_by_email" checked>
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="radio-holder">
+                    @Html.Raw(Tameenk.LangText.authentication_by_upload)
+                    <input onchange="toggleMethod('upload')" type="radio" class="authentication_by_upload" name="radio-group">
+                    <span class="checkmark"></span>
+                </label>
+
+                <div class="email method">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4 bx-right">
+                            <div class="input-container">
+                                <input class="input-element" type="email" id="email-@Model.Id" placeholder=" " />
+                                <label class="input-label" for="email-@Model.Id">@Html.Raw(Tameenk.LangText.login_emailWork)</label>
+                                <span class="field-error" style="color:red;position:absolute;" id="emailError-@Model.Id"></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 bx-right" style="margin-top: 3em;">
+                            <button onclick="joinProgram('@Model.Id');" id="btnSubmit-@Model.Id" class="bx-left btn sm dis-block no-trans bx-right txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow input-submit">@Html.Raw(Tameenk.LangText.join)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload method hidden md-mar">
+                    <div class="row">
+                        <form action="@Url.Action("UploadImage", "MOI")" method="post" id="uploadForm">
+                            <div id="divContent">
+                                <div class="col-xs-12 col-md-4 bx-right">
+                                    <label class="fileupload input--file">
+                                        @*<span class="input__text dis-block">@Html.Raw(Tameenk.LangText.image_identity)</span>*@
+                                        <input type="file" id="uploadInput" name="MoiFile" class="input__field" accept="image/*" required>
+                                        <span class="input__support sm-mar">
+                                            <span class="input__helper"></span>
+                                        </span>
+                                        <br />
+                                        <span class="" style="color:silver;position:absolute;">@Html.Raw(Tameenk.LangText.login_emailWorkInfo)</span>
+
+                                    </label>
+                                    <div class="preview-upload"></div>
+                                </div>
+                                <div class="col-xs-2 bx-right md-mar">
+                                    <button type="submit" class="bx-left btn sm dis-block no-trans bx-right txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow input-submit" onclick="uploadImage(this); return false;">@Html.Raw(Tameenk.LangText.join)</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <p class="temp-success hidden">@Html.Raw(Tameenk.LangText.edit_request_success) </p>
+                    <p class="info-message sm-text col-xs-12 col-md-12 col-lg-12 txt-brand" style="top:20px;"></p>
+                    <p class="error-message sm-text col-xs-12 col-md-12 col-lg-12" style="color:red;"></p>
+                </div>
+            }
+            else
+            {
+                <h1 style="color:red; padding-bottom: 0px;" class="txt-black txt-lr md-lh txt-right">
+                    @Html.Raw(Tameenk.LangText.MOI_notfound)
+                </h1>
+            }
+
+        </div>
+    </div>
+
+    <div id="messageDiv" style="display:none">
+        <div class="lr-mar">
+            <h3 class="txt-black txt-md" id="messageSpan"></h3>
+        </div>
+    </div>
+</section>
+<script>
+    function toggleMethod(selector) {
+        $('.method').addClass('hidden');
+        $('.' + selector).removeClass('hidden');
+    }
+    function joinProgram(programId) {
+        $('#emailError-'+programId).text('');
+        $('#btnSubmit-'+programId).attr("disabled", true);
+        $('html, body').css('cursor', 'progress');
+        var data = {
+            promotionProgramId: programId,
+            userEmail: $('#email-'+programId).val()
+        };
+        //console.log(data);
+        $.ajax({
+        url: "@Url.Action("JoinProgram", "Promotion")",
+        data: data,
+        type: "GET",
+        datatype: "json",
+            success: function(result) {
+                $('html, body').css('cursor', 'default');
+                $('#btnSubmit-'+programId).removeAttr("disabled");
+                if (result.Success == true) {
+                  //  $('#ResetEmailsuccess').css('color', '#186A9E');
+                    $('#messageSpan').css('color', '#186A9E').html(result.Message);
+                    $('.promotion-main-div').html($('#messageDiv').html());
+                }
+            else {
+                $('#emailError-'+programId).text(result.Message);
+            }
+        },
+        error: function (result) {
+            $('html, body').css('cursor', 'default');
+            $('#btnSubmit-'+programId).removeAttr("disabled");
+            console.error(result);
+        }
+    });
+    }
+
+    function uploadImage(ctr) {
+    var fileUploader = $('.fileupload input[type=file]')[0];
+
+    if ( /\.(jpeg|jpg|png|gif|bmp|tif|tiff|webp|jfif)$/i.test(fileUploader.files[0].name) === false ) {
+        $('.info-message').text('@Tameenk.LangText.invalidFileExtension' + 'jpeg,jpg,png,gif,bmp,tif,tiff,webp,jfif');
+        return;
+    }
+
+    @{int maxSize = 5; } //Mega Byte
+    if(fileUploader.files[0].size > @maxSize * 1048576) // 1048576 = 1024 * 1024
+    {
+       $('.info-message').text('@string.Format(Tameenk.LangText.fileSizeLimitExceeded, maxSize)');
+        return;
+    };
+
+$('.input-submit').prop('disabled', true);
+
+            var form = document.getElementById('uploadForm');
+            // $(form).unbind('submit');
+            // $.validator.messages.required = 'مطلوب';
+        if (form.checkValidity()) {
+                var oFReader = new FileReader();
+            var data;
+            oFReader.readAsDataURL( $('.fileupload input[type=file]')[0].files[0]);
+                oFReader.onload = function (oFREvent) {
+                data = oFREvent.target.result;
+            };
+            var fd = new FormData();
+            var files = $('.fileupload input[type=file]')[0].files[0];
+                fd.append('file', files);
+                $.ajax({
+            url: $(form).attr('action'),
+                    data: fd,
+                    type: "POST",
+                    //datatype: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+
+                    success: function (result) {
+                    console.log(result);
+                        $('.input-submit').prop('disabled', false)
+                        // if (result.NotificationId != 0) {
+                            $('.info-message').text(result.message);
+                    var x = document.getElementById("divContent");
+                    x.style.display = "none";
+
+                    //     // setTimeout(function () {
+                    //     //     window.location = '@Url.Action("Index","Profile")';
+                    //     // }, 1500);
+                    // }
+                    // else {
+                    //     $('.info-message').text($('.temp-fail').text() + result.message);
+                    //     $('.input-submit').prop('disabled', false);
+                    // }
+                },
+                    error: function (result) {
+                        $('.info-message').text(result.data);
+
+                        $('.input-submit').prop('disabled', false);
+                }
+            });
+            } else {
+                $('.input-submit').prop('disabled', false);
+            }
+        }
+</script>

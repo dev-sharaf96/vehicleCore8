@@ -1,0 +1,7 @@
+.input-container .input-element {
+    background-color: #fff
+}
+
+.input-container .input-element[readonly] {
+    background-color: #ddd
+}

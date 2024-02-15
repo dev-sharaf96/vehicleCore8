@@ -1,0 +1,82 @@
+<div id="page-loading">
+    <video poster="/resources/imgs/loader-min.gif" loop autoplay  class="loading-img">
+    <source src="/resources/imgs/loader.mp4" type="video/mp4">
+    </video>
+    <span class="text-loading">شكراً لإختيارك #تأمينك
+      <br/>
+      جاري البحث عن عروض شركات التأمين</span>
+      
+    <!-- @Html.Partial("/Views/Shared/Footer.cshtml") -->
+</div>
+
+<header id="top-page">
+    <div class="container">
+        <!-- logo -->
+        <a href="#" class="logo"></a>
+        <a class="menuToggle" style="margin-right: 15px;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+        <!-- @if (Request.IsAuthenticated)
+        {
+            <a href="@Url.Action("ShoppingCart", "Home")" title="My Cart" class="cutter hidden-lg hidden-md bx-left" style="border-radius: 50%; box-shadow: 0 0 0px 2px #f79818; background: #f79818;">
+                <img src="/resources/imgs/cart.png" alt="shopping-cart" style="height: 40px; width: 40px;" />
+            </a>
+        } -->
+        <img src="/resources/imgs/2030.jpeg" alt="رؤية 2030" title="رؤية 2030" class="bx-left hidden-lg hidden-md" style="height: 50px; width: 90px; margin-left: 15px;" />
+        <div class="mobile-nav">
+            <!-- top links -->
+            <ul class="site-nav inline-list bx-right">
+                <li class="hidden-xs hidden-sm hidden-md">
+                    <a href="/Lang/Change?lang=En" *ngIf="localizationService.getCurrentLanguage().id == 1">English</a>
+                    <a href="/Lang/Change?lang=Ar" *ngIf="localizationService.getCurrentLanguage().id == 2">عربي</a>
+                </li>
+                <li class="menu">
+                    <ul class="dropdown">
+                        <li class="hidden-lg">
+                            <a href="/Lang/Change?lang=En">English</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="user-profile bx-left">
+                <!-- @if (Request.IsAuthenticated)
+                {
+                    <a href="@Url.Action("ShoppingCart", "Home")" title="My Cart" class="cutter hidden-xs hidden-sm hidden" style="float: left; box-shadow: 0 0 0px 2px #f79818; background: #f79818;">
+                        <img src="/resources/imgs/cart.png" alt="عربة التسوق" style="height: 50px; width: 50px;" />
+                    </a>
+                } -->
+                <div style="order:2">
+                    <div class="info" style="width: auto;order: 3;" *ngIf="isAuthenticated">
+                        <h3 class="txt-md txt-black no-mar bx-right dis-block">mostafazke@gmail.com</h3>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="/Profile/Index" class="txt-xs txt-mgray pointer no-mar xs-mar bx-left f_width dis-block">الملف الشخصي</a>
+                            </div>
+                            <div class="col-md-5">
+                                <a href="javascript:document.getElementById('logoutForm').submit()" class="txt-xs txt-mgray pointer no-mar xs-mar bx-left f_width dis-block">خروج</a>
+                            </div>
+                        </div>
+                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="elKGohptFfu6by1_yJ3olSRf7ErG0t2UFoOAw6AJexMRHRRQtJYaEfDQguLxVOeMigV2dwh21s6Gy1w1JZE858yKCPMVrbPT8W5XeyEtDoLZw1q3R4f2WkbcT5U5RKo9Vbg1MWNo-twGHuLD-N_I8Q2"></form>
+
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="logout pointer" title="Logout" style="float: left; top: -18px;">
+                            <i class="ic-icons-507"></i>
+                        </a>
+                    </div>
+                    <!-- user area -->
+                    <div *ngIf="!isAuthenticated">
+                        <a href="/Account/Register" class="bx-left btn sm dis-block bx-left pull-right-xs txt-white login txt-brand borderd-hvr txt-xs bg-gr-main circ-rdus l-shadow" style="order:3">مستخدم جديد</a>
+                      <a href="/Account/Login" class="bx-left btn sm dis-block bx-left pull-right-xs txt-black register txt-brand-hvr txt-xs bg-transparent  circ-rdus" style="padding-right: 20px;padding-left: 20px;order:2"><i class="ic-user-ico"></i>دخول المستخدمين</a>
+                    </div>
+                </div>
+                <img src="/resources/imgs/2030.jpeg" alt="صورة المستخدم" title="صورة المستخدم" class="_2030 hidden-xs hidden-sm bx-left" style="height: 50px; width: 90px;" />
+                <div class="call-us bx-left btn sm dis-block pull-right-xs txt-white txt-brand txt-xs bg-gr-main circ-rdus l-shadow" style="order:1">
+                    <!-- <h3 style="width:auto; text-align: justify;">@Html.Raw(LangText.header_phone)</h3> -->
+                    <i class="ic-phone-icon"></i>
+                    920010050
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

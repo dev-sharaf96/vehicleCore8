@@ -1,0 +1,41 @@
+﻿@using Tameenk.Core;
+@using Tameenk.Core.Domain.Enums;
+
+@model IPagedList<Tameenk.Core.Domain.Entities.ProfileNotification>
+@{
+    ViewBag.Title = Tameenk.LangText.Notification;
+}
+
+<style>
+    .notificationItem {
+        border: 2px solid #0771b4;
+        border-radius: 5px;
+        margin: 8px 0px 8px 0px;
+        padding: 11px;
+        display: flex;
+        align-items: center;
+        color: #0771b4;
+        box-shadow: 0 5px 20px 0 rgba(93, 148, 183, 0.36);
+    }
+</style>
+
+<section class="section profile-view min-height-vh">
+    <div>
+        @Html.Partial("~/Views/Home/SideBar.cshtml", EProfileSection.Notifications)
+        <!-- My Notifications begains -->
+        <div class="active content col-xs-12 col-md-9 col-lg-10 content-view" id="notifications">
+            <div class="pd-inside">
+                <h1 class="txt-lr txt-black md-mar-bot md-mar col-xs-12">@Html.Raw(Tameenk.LangText.Notification)</h1>
+
+                <article id="ProfileNotificationList">
+                    @foreach (var notification in Model)
+                    {
+                        @Html.Partial("_ProfileNotificationItem", notification)
+
+                    }
+                </article>
+            </div>
+        </div>
+        <!-- My Notifications ends -->
+    </div>
+</section>

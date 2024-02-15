@@ -1,0 +1,144 @@
+<div class="accordion md-mar" [ngClass]="accordionIsActive ? 'active' : ''">
+  <button class="accordion-heading" (click)="toggleAccordion()">
+    <h3 class="accordion-title" translate>inquiry.vehicle.vehicle_information</h3>
+  </button>
+  <div class="accordion-body md-mar-bot">
+
+    <div class="col-xs-12 col-lg-3 col-md-3 md-mar bx-right bx-right">
+      <h4 class="txt-black txt-sm dis-block over-hidden xs-mar-bot" translate>inquiry.vehicle.registration_type</h4>
+      <label class="radio-holder" translate>
+        inquiry.vehicle.sequence_num
+        <input type="radio" name="radio-group" (change)="toggleVehicleRegistered(true)" checked>
+        <span class="checkmark"></span>
+      </label>
+      <label class="radio-holder" translate>
+        inquiry.vehicle.custom_card
+        <input type="radio" name="radio-group" (change)="toggleVehicleRegistered(false)">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="col-xs-12 col-lg-3 col-md-3 bx-right">
+      <span class="input input--ichiro switchin" [ngClass]="!togglManfactYear ? 'active' : ''">
+        <input class="input__field input__field--ichiro manfactYear" type="text" [(ngModel)]="vehicle.manufactureYear" />
+        <label class="input-label input-label--ichiro" for="manfactYear">
+          <span class="input-label-content input-label-content--ichiro registerdCarLabel" translate>
+            inquiry.vehicle.manufacturing_year
+          </span>
+        </label>
+      </span>
+    </div>
+    <div class="switchin" [ngClass]="togglManfactYear ? 'active' : ''">
+      <div class="col-xs-12 col-lg-3 col-md-3 md-mar divOwner bx-right">
+        <h4 class="txt-black txt-sm dis-block over-hidden xs-mar-bot" translate>inquiry.detailed_info.purpose_of_insurance</h4>
+        <label class="radio-holder" translate>
+          inquiry.detailed_info.new_insurance
+          <input type="radio" id="purpose1" class="purpose-of-insurance" name="purpose-of-insurance" checked (change)="togglePurposeOfInsurance(false)">
+          <span class="checkmark"></span>
+        </label>
+        <label class="radio-holder" translate>
+          inquiry.detailed_info.transfer_insurance
+          <input type="radio" id="purpose2" class="purpose-of-insurance" name="purpose-of-insurance" (change)="togglePurposeOfInsurance(true)">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="col-xs-12 col-lg-3 col-md-3 md-mar-bot bx-right">
+        <span class="input input--ichiro switchin ownerIdInput" [ngClass]="vehicle.ownerTransfer ? 'active' : ''">
+          <input class="input__field input__field--ichiro ownerId" type="text" [(ngModel)]="vehicle.ownerNationalId" />
+          <label class="input-label input-label--ichiro" for="ownerId">
+            <span class="input-label-content input-label-content--ichiro" translate>inquiry.detailed_info.id_residence_number</span>
+          </label>
+        </span>
+        <span class="error-field" id="ownerIdError"></span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right no-mar-lg">
+      <span class="input input--ichiro">
+        <input class="input__field input__field--ichiro vehicleId" type="text" [(ngModel)]="vehicle.vehicleId" />
+        <label class="input-label input-label--ichiro" for="vehicleId">
+          <span class="input-label-content input-label-content--ichiro registerdCarLabel" translate>
+            inquiry.vehicle.sequence_number
+          </span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right no-mar-lg">
+      <span class="input input--ichiro">
+        <select class="input__field input__field--ichiro" id="carcity" [(ngModel)]="vehicle.cityCode">
+          <option *ngFor="let city of cities" [value]="city.code">{{city.name}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" for="carcity">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.vehicle.city</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right no-mar-lg">
+      <span class="input input--ichiro input--filled">
+        <input class="input__field input__field--ichiro EffectiveDate endcarregister" type="text" [attr.data-min-date]="today | date:'yyyy-MM-dd'" [attr.data-max-date]="afterTowWeeks | date:'yyyy-MM-dd'" (change)="onChangeEffectiveDate($event.target.value)"
+        />
+        <label class="input-label input-label--ichiro" for="EffectiveDate">
+          <span class="input-label-content input-label-content--ichiro" translate>
+            inquiry.vehicle.policy_effective_date
+          </span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right">
+      <span class="input input--ichiro">
+        <input class="input__field input__field--ichiro carPrice" type="text" [(ngModel)]="vehicle.estimatedVehiclePrice" />
+        <label class="input-label input-label--ichiro" for="carPrice">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.vehicle.vehicle_value</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right">
+      <span class="input input--ichiro">
+        <select class="input__field input__field--ichiro" [(ngModel)]="vehicle.parkingLocationId">
+          <option *ngFor="let location of parkingLocations" [value]="location.id">{{location.name}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" for="parking">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.vehicle.vehicle_overnight_parking_location</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 bx-right">
+      <span class="input input--ichiro">
+        <select class="input__field input__field--ichiro" [(ngModel)]="vehicle.transmissionTypeId">
+          <option *ngFor="let transimission of transimissionTypes" [value]="transimission.id">{{transimission.name}}</option>
+        </select>
+        <label class="input-label input-label--ichiro" for="transmissionType">
+          <span class="input-label-content input-label-content--ichiro" translate>inquiry.vehicle.vehicle_transmission_type_code</span>
+        </label>
+      </span>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-md-4 sm-mar bx-right">
+      <h3 class="txt-black txt-sm dis-block over-hidden xs-mar xs-mar-bot" translate>inquiry.vehicle.is_there_vehicle_modifications</h3>
+      <input type="checkbox" class="addnewdriverCheck switchIco md-mar dis-block addnewdriver" (change)="toggleModification($event.target.checked)"
+      />
+      <label class="labelSwitch" for="addnewdriver">
+        <span class="stat true txt-brand" translate>common.yes</span>
+        <span class="stat false txt-gray" translate>common.no</span>
+      </label>
+    </div>
+    <div class="col-xs-12 col-lg-8 col-md-8 bx-right">
+      <span class="input input--ichiro switchin" [ngClass]="vehicle.hasModification ? 'active' : ''">
+        <textarea class="input__field input__field--ichiro" id="modification-input" style="padding-top: 10px;resize:  none;" [(ngModel)]="vehicle.modification"></textarea>
+        <label class="input-label input-label--ichiro" for="modification-input">
+          <span class="input-label-content input-label-content--ichiro" translate>
+            inquiry.vehicle.modifications
+          </span>
+        </label>
+      </span>
+    </div>
+    <!-- <h4 class="sm-mar" translate>inquiry.detailed_info.detailed_information</h4>
+  <div class="col-xs-6 col-lg-6 col-md-6 xs-mar">
+    <h3 class="txt-black txt-sm dis-block over-hidden xs-mar xs-mar-bot" translate>inquiry.detailed_info.is_commercial_purposes</h3>
+    <input type="checkbox" class="switchIco switch md-mar dis-block" [(ngModel)]="detailedInfo.isVehicleUsedCommercially" id="MyCommercialPurposeChkBox"
+    />
+    <label class="labelSwitch" for="switch">
+      <span class="stat true txt-brand" translate>common.yes</span>
+      <span class="stat false txt-gray" translate>common.no</span>
+    </label>
+  </div> -->
+    <button class="no-trans bx-left btn sm txt-white txt-xs bg-gr-main circ-rdus sm-mar" (click)="openNextStep()" style="margin-left: 10px;margin-right: 10px" translate>common.next</button>
+  </div>
+</div>

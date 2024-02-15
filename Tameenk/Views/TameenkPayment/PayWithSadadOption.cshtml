@@ -1,0 +1,71 @@
+﻿<style>
+    .CustomStylePaymentMethod {
+        width: 115px;
+        margin-left: 30px;
+    }
+
+    span.spanHolder:hover {
+        background: #FFE8D2;
+        border: 2px solid #f7d0ac;
+    }
+
+    .spanHolder {
+        width: 143px;
+        padding: 20px;
+        margin: 20px;
+        height: 75px;
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid #d0d0d0;
+        background: #F4F4F5;
+        justify-content: center;
+        border-radius: 20px;
+    }
+
+    .flexHeaderPayment {
+        display: inline-flex;
+    }
+
+    .madaStyle {
+        width: 146px;
+        margin: 5px 5px 5px 0px;
+    }
+
+    .botomImg {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .spanHoldercustom {
+        width: 145px !important;
+        margin: 22px !important;
+    }
+
+    @@media only screen and (max-width: 600px) {
+        .spanHoldercustom {
+            width: 100px !important;
+            margin: 17px !important;
+        }
+    }
+
+</style>
+
+
+
+@using Tameenk.Core.Domain.Enums.Payments;
+@{
+    Layout = null;
+}
+
+<article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.Sadad))">
+
+    <!-- <h3 class="bx-right" style="color: #535f69">@Html.Raw(Tameenk.LangText.checkout_sadad)</h3> -->
+    <header class="flexHeaderPayment">
+        <span class="spanHolder spanHoldercustom"  name="paymentHolder">
+            <img src="~/resources/imgs/sadad_logo.svg" alt="SADAD" title="SADAD" class="bx-left" style="width: 80px;height: 45px;" />
+        </span>
+    </header>
+</article>

@@ -1,0 +1,43 @@
+<h2 class="row benefits-heading txt-md txt-black no-mar f_width dis-block" *ngIf="benefits && benefits.length > 0">{{'quotation.Search_Additional_Benefits' | translate}}</h2>
+<h3 class="no-benefit txt-mgray" *ngIf="!benefits || benefits.length === 0">{{'quotation.no_benefits' | translate}}</h3>
+<div class="row benefits-container" *ngIf="benefits && benefits.length > 0" [ngClass]="{'over-weight': isOverWeight, 'full': isFull}">
+    <div class="benefit single-feature md-mar col-xs-11 col-md-12 col-lg-10 bx-right" *ngIf="companyKey === 'Tawuniya' && productInsuranceTypeCode===2" [ngClass]="{'active': true, 'disabled': true}">
+
+        <div class="benefit-icon">
+            <i class="benefit-check ic-plus"></i>
+        </div>
+        <span class="benefit-detail txt-md txt-black txt-mgray"><b>{{'quotation.TawuniyaDrive' | translate}}</b>
+        <a href="/Tawuniya-Drive-Booklet-Bilingual-V5.pdf" target="_blank"> {{'quotation.LearnMore' | translate}}</a></span>
+        <span style="color:#186a9e;" class="benefit-price txt-xs txt-mgray">
+            ( {{'quotation.included' | translate}} )
+        </span>
+    </div>
+    <div class="benefit single-feature md-mar col-xs-11 col-md-12 col-lg-10 bx-right" *ngFor="let benefit of benefits;let i = index" [ngClass]="{'active': benefit.isSelected, 'disabled': benefit.isDisabled}" (click)="changeSelected(i)">
+        <input type="hidden" name="SelectedProductBenfitId" [value]="benefit.id" *ngIf="benefit.isSelected">
+        <!--<input type="hidden" name="SelectedProductBenfit" [value]="JSON.stringify(benefit)" *ngIf="benefit.isSelected">-->
+        <div class="benefit-icon">
+            <!--<img [src]="'/resources/imgs/benfitsicons/' + benefitsList[benefit.benefit.code] + '.png'" [alt]="benefit.benefit.benefitDescription" class="benefit-logo fixedcolor" />-->
+            <!--<img [src]="'/resources/imgs/benfitsicons/' +   benefit.benefitId + '.png'" [alt]="benefit.benefit.benefitDescription" [title]="benefit.benefit.benefitDescription" class="benefit-logo fixedcolor" />-->
+            <i class="benefit-check ic-plus"></i>
+        </div>
+        <span class="benefit-detail txt-md txt-black">{{benefit.benefit.benefitDescription}}</span>
+        <!--<span class="benefit-price txt-xs txt-mgray no-mar bx-right f_width dis-block" *ngIf="benefit.isReadOnly && benefit.isSelected; else notIncluded">
+         {{'quotation.included' | translate}}
+        </span>-->
+
+        <span style="color:#186a9e;" class="" *ngIf="benefit.isReadOnly && benefit.isSelected && isIncluded; else notIncluded">
+            ( {{'quotation.included' | translate}} )
+        </span>
+
+        <ng-template #notIncluded>
+            <span class="benefit-price txt-xs txt-mgray">
+                {{benefit.benefitPrice |  number:'1.0-2'}} <span class="benefit-currency">{{'quotation.SAR' | translate}}</span>
+            </span>
+        </ng-template>
+    </div>
+</div>
+<!-- toggle addin features -->
+
+
+
+<a class="show-more pointer openMore" *ngIf="isOverWeight" (click)="isFull = !isFull" translate>{{!isFull? 'quotation.show_more_benefits' : 'quotation.hide_more_benefits'}}</a>

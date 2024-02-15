@@ -1,0 +1,22 @@
+﻿@model TameenkDAL.Models.VehiclePlateModel
+
+<div class="col-xs-6 col-lg-2 col-md-2 bx-right md-mar">
+    <center>
+        <div class="belt @Model.PlateColor">
+            <span class="arabic-character">@Model.CarPlateTextAr</span>
+            <span class="arabic-number">
+            @if (!Model.CarPlateNumberAr.Equals("."))
+            {
+                @Model.CarPlateNumberAr
+            }
+            </span>
+            <span class="english-number"> 
+            @if(!Model.CarPlateNumberEn.Equals("0"))
+            {
+                @Model.CarPlateNumberEn
+            }
+            </span>
+            <span class="english-character">@Model.CarPlateTextEn</span>
+        </div>
+    </center>
+</div>

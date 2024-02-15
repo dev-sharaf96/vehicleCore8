@@ -1,0 +1,56 @@
+<h2 class="md-mar" translate>inquiry.insured_info.insured_information</h2>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+  <div class="input-container" [ngClass]="{'red-border': isValid('nationalId')}">
+    <input class="input-element" type="text" id="idnumber" [(ngModel)]="insured.nationalId" (keypress)="isNumberKey($event)" (input)="changeId()" (blur)="checkIdValidation()"
+      placeholder=" " />
+    <label class="input-label" for="idnumber" translate>inquiry.id_residence_number</label>
+    <span *ngFor="let error of insured.validationErrors['nationalId']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+  </div>
+</div>
+<div class="col-xs-6 col-lg-3 col-md-3 bx-right">
+  <div class="input-container" [ngClass]="{'red-border': isValid('birthDateMonth'), 'active': birthMonth.isOpen || birthMonth.hasValue}">
+    <label class="input-label" for="birthMonth" translate>inquiry.insured_info.birth_month</label>
+    <ng-select #birthMonth class="input-element inq-ins-month" labelForId="birthMonth" [items]="months" (focus)="birthMonth.open()"
+      (blur)="checkBirthMonth()" [clearable]="false" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" bindLabel="name" bindValue="id" [(ngModel)]="insured.birthDateMonth">
+      <ng-template ng-option-tmp let-item="item">
+        <div title="{{item.name}}">{{item.name}}</div>
+      </ng-template>
+    </ng-select>
+    <span *ngFor="let error of insured.validationErrors['birthDateMonth']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+  </div>
+</div>
+<div class="col-xs-6 col-lg-3 col-md-3 bx-right">
+  <div class="input-container" [ngClass]="{'red-border': isValid('birthDateYear'), 'active': birthYear.isOpen || birthYear.hasValue}">
+    <label class="input-label" for="birthYear" translate>inquiry.insured_info.birth_year</label>
+      <ng-select #birthYear class="input-element inq-ins-year" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" labelForId="birthYear" [items]="years" (focus)="birthYear.open()"
+      (blur)="checkBirthYear()" [clearable]="false" [(ngModel)]="insured.birthDateYear">
+      <ng-template ng-option-tmp let-item="item">
+        <div title="{{item}}">{{item}}</div>
+      </ng-template>
+    </ng-select>
+    <span *ngFor="let error of insured.validationErrors['birthDateYear']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+  <div class="input-container" [ngClass]="insuredEducation.isOpen || insuredEducation.hasValue ? 'active' : ''">
+    <label class="input-label" for="insuredEducation" translate>inquiry.education_level</label>
+    <ng-select #insuredEducation class="input-element inq-ins-edu" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" labelForId="insuredEducation" [items]="educationCodes" (focus)="insuredEducation.open()"
+      [clearable]="false" bindLabel="name" bindValue="id" [(ngModel)]="insured.edcuationId">
+      <ng-template ng-option-tmp let-item="item">
+        <div title="{{item.name}}">{{item.name}}</div>
+      </ng-template>
+    </ng-select>
+  </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+  <div class="input-container" [ngClass]="insuredChildrenCount.isOpen || insuredChildrenCount.hasValue ? 'active' : ''">
+    <label class="input-label" for="insuredChildrenCount" translate>inquiry.children_below_16_years</label>
+    <ng-select #insuredChildrenCount class="input-element inq-ins-Childs" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" labelForId="insuredChildrenCount" [items]="childrenCount"
+      (focus)="insuredChildrenCount.open()" [clearable]="false" bindLabel="name" bindValue="id" [(ngModel)]="insured.childrenBelow16Years">
+      <ng-template ng-option-tmp let-item="item">
+        <div title="{{item.name}}">{{item.name}}</div>
+      </ng-template>
+    </ng-select>
+    <span class="field-error" style="color:red;position:absolute;" id="childrenCountError"></span>
+  </div>
+</div>

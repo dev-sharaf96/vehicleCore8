@@ -1,0 +1,132 @@
+<h3 class="md-mar" style="clear: both" translate>
+    inquiry.additional_Driver_info.driver_information <span> {{index + 1}}</span>
+    <a class="remove-driver bx-left" (click)="destroy()">
+        <i class="ic-plus rotate"></i>
+    </a>
+</h3>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+    <div class="input-container" [ngClass]="{'red-border': isValid('nationalId')}">
+        <input class="input-element" type="text" [id]="'driverIdNumber'+index" (keypress)="isNumberKey($event)" [(ngModel)]="driver.nationalId" (input)="changeId()" (blur)="checkIdValidation()" placeholder=" " />
+        <label class="input-label" [for]="'driverIdNumber'+index" translate>inquiry.id_residence_number</label>
+        <span *ngFor="let error of driver.validationErrors['nationalId']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+    </div>
+</div>
+
+
+<!-- driver Month &  year -->
+
+
+
+<!-- insured  -->
+
+
+<div class="col-xs-6 col-lg-3 col-md-3 bx-right">
+    <div class="input-container" [ngClass]="{'red-border': isValid('birthDateMonth'), 'active': birthMonth.isOpen || birthMonth.hasValue}">
+        <label class="input-label" [for]="'driverBirthMonth'+index" translate>inquiry.insured_info.birth_month</label>
+        <ng-select #birthMonth class="input-element inq-ins-month" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" [labelForId]="'driverBirthMonth'+index" [items]="months" (focus)="birthMonth.open()"
+                   (blur)="checkSelects('birthDateMonth')" [clearable]="false" bindLabel="name" bindValue="id" [(ngModel)]="driver.birthDateMonth">
+            <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+            </ng-template>
+        </ng-select>
+        <span *ngFor="let error of driver.validationErrors['birthDateMonth']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+    </div>
+</div>
+<div class="col-xs-6 col-lg-3 col-md-3 bx-right">
+    <div class="input-container" [ngClass]="{'red-border': isValid('birthDateYear'), 'active': birthYear.isOpen || birthYear.hasValue}">
+        <label class="input-label" [for]="'driverBirthYear'+index" translate>inquiry.insured_info.birth_year</label>
+        <ng-select #birthYear class="input-element inq-ins-year" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" [labelForId]="'driverBirthYear'+index" [items]="years" (focus)="birthYear.open()"
+                   (blur)="checkSelects('birthDateYear')" [clearable]="false" [(ngModel)]="driver.birthDateYear">
+            <ng-template ng-option-tmp let-item="item">
+                <div title="{{item}}">{{item}}</div>
+            </ng-template>
+        </ng-select>
+        <span *ngFor="let error of driver.validationErrors['birthDateYear']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+    </div>
+</div>
+
+
+<!-- Rest of driver -->
+
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+    <div class="input-container" [ngClass]="education.isOpen || education.hasValue ? 'active' : ''">
+        <label class="input-label" [for]="'driverEducationLevelCode'+index" translate>inquiry.education_level</label>
+        <ng-select #education class="input-element" [ngClass]="'inq-d_'+index+'-edu'" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" [labelForId]="'driverEducationLevelCode'+index" [items]="educationCodes"
+                   (focus)="education.open()" [clearable]="false" bindLabel="name" bindValue="id" [(ngModel)]="driver.edcuationId">
+            <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+            </ng-template>
+        </ng-select>
+    </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+    <div class="input-container" [ngClass]="medicalCondition.isOpen || medicalCondition.hasValue ? 'active' : ''">
+        <label class="input-label" [for]="'medicalCondition'+index" translate>inquiry.driver_medical_cond</label>
+        <ng-select #medicalCondition class="input-element" [ngClass]="'inq-d_'+index+'-medi'" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" [labelForId]="'medicalCondition'+index" [items]="medicalCondations"
+                   (focus)="medicalCondition.open()" [clearable]="false" bindLabel="name" bindValue="id" [(ngModel)]="driver.medicalConditionId">
+            <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+            </ng-template>
+        </ng-select>
+    </div>
+</div>
+<div class="col-xs-12 col-lg-6 col-md-6 md-mar">
+    <h3 class="txt-black dis-block xs-mar xs-mar-bot" translate>inquiry.driver_has_violations</h3>
+    <input type="checkbox" class="thereViolationCheck switchIco md-mar dis-block thereViolation" [id]="'thereViolation_'+index"
+           [(ngModel)]="thereViolation" (change)="toggleViolations($event.target.checked)" />
+    <label class="labelSwitch" [for]="'thereViolation_'+index">
+        <span class="stat true txt-brand" translate>common.yes</span>
+        <span class="stat false txt-gray" translate>common.no</span>
+    </label>
+    <div *ngIf="violations?.length > 0">
+        <div *ngFor="let v of violations; let i = index">
+            <div class="col-xs-10 col-lg-10 bx-right">
+                <div class="input-container" [ngClass]="focusViolation.isOpen || focusViolation.hasValue ? 'active' : ''">
+                    <label class="input-label" [for]="'violation'+index+i" translate>inquiry.violation_type</label>
+                    <ng-select #focusViolation class="input-element" [ngClass]="'inq-d_'+index+'-vio_'+i" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" [labelForId]="'violation'+index+i" [items]="violationsCodes"
+                               (focus)="focusViolation.open()" [clearable]="false" bindLabel="name" bindValue="id" (change)="changeViolation()"
+                               [(ngModel)]="v.id">
+                        <ng-template ng-option-tmp let-item="item">
+                            <div title="{{item.name}}">{{item.name}}</div>
+                        </ng-template>
+                    </ng-select>
+                </div>
+            </div>
+            <div class="col-xs-2 col-lg-1 col-md-1 remove-icon">
+                <a class="txt-black remove" (click)="removeViolation(i)">
+                    <i class="ic-plus rotate"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-12 col-xs-12 col-md-12 driver-fields md-mar xs-mar-bot">
+            <a class="add-driver bx-shdw btn sm dis-block bx-right txt-brand txt-white-hvr login txt-brand bg-gr-main  circ-rdus l-shadow bx-right right"
+               (click)="addViolation()" translate>inquiry.add_violation</a>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-lg-3 col-md-3 bx-right">
+    <div class="input-container" [ngClass]="driverChildrenCount.isOpen || driverChildrenCount.hasValue ? 'active' : ''">
+        <label class="input-label" [for]="'driverChildrenCount'+index" style="top: -5px;" translate>inquiry.children_below_16_years</label>
+        <ng-select #driverChildrenCount appendTo="body" class="input-element" [ngClass]="'inq-d_'+index+'-child'" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" [labelForId]="'driverChildrenCount'+index"
+                   [items]="childrenCount" (focus)="driverChildrenCount.open()" [clearable]="false" bindLabel="name" bindValue="id" [(ngModel)]="driver.childrenBelow16Years">
+            <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+            </ng-template>
+        </ng-select>
+    </div>
+    <span class="field-error" style="color:red;position:absolute;" id="childrenCountError"></span>
+</div>
+<div class="col-xs-12 col-lg-3 col-md-3 bx-right">
+    <div class="input-container" [ngClass]="{'red-border': isValid('cityCode'), 'active': usagePersentage.isOpen || usagePersentage.hasValue}">
+        <label class="input-label" [for]="'usagePersentage'+index" style="top: -5px;" translate>inquiry.additional_Driver_info.driving_percentage</label>
+        <ng-select #usagePersentage appendTo="body" class="input-element" [ngClass]="'inq-d_'+index+'-use'" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate" [labelForId]="'usagePersentage'+index" [items]="localDrivingPercentageList"
+                   (focus)="usagePersentage.open()" [clearable]="false" bindLabel="name" bindValue="id" (change)="changeTotalPercentage(usagePersentage.selectedValues[0].id)"
+                   [(ngModel)]="driver.drivingPercentage">
+            <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+            </ng-template>
+        </ng-select>
+        <span *ngFor="let error of driver.validationErrors['drivingPercentage']" class="field-error" style="color:red;position:absolute;">{{error | translate}}</span>
+    </div>
+</div>
+<div style="clear: both"></div>

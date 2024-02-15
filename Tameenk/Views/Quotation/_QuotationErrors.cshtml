@@ -1,0 +1,22 @@
+﻿@model List<string>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <a class="yakeen-erros-close" href="#">x</a>
+        <section class="inactive md-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info">
+            <div class="container">
+                <h1 style="color:#f7811c; padding-bottom: 0px;" class="txt-black txt-lr md-lh txt-right">
+                    @Html.Raw(Tameenk.LangText.error_title)
+                </h1>
+                <h3 class="txt-black txt-md">
+                    @Html.Raw(Tameenk.LangText.error_description).
+                    <br />
+                </h3>
+                <br />
+                @foreach (var error in Model)
+                {
+                    <div>@error</div>
+                }
+            </div>
+        </section>
+    }

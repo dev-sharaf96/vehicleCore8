@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+		<link rel="stylesheet" type="text/css" href="../../../css/sampleData.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            var myData =
+               {
+"ReferenceId" : "T0126738e266f2c",
+"QuotationNo" : "5639036",
+"InsuredId" : 2007146976,
+"InsuredMobileNumber" : "966552660771",
+"InsuredEmail" : "malmutlaq@bcare.com.sa",
+"InsuredBuildingNo" : 2335,
+"InsuredZipCode" : 12477,
+"InsuredAdditionalNumber" : 7889,
+"InsuredUnitNo" : 1,
+"InsuredCity" : "Riyadh",
+"InsuredDistrict" : "Altaawn",
+"InsuredStreet" : "North Ring Rd",
+"PaymentMethodCode" : 2,
+"PaymentMethod" : "SADAD",
+"PaymentAmount" : 850.00,
+"PaymentBillNumber" : "111103210000044",
+"PaymentUsername" : "FADI",
+"InsuredIBAN" : "SA7620000000000123456789",
+"InsuredBankCode" : "20"
+}
+            var textedJson = JSON.stringify(myData, undefined, 4);
+            $('#myTextarea').text(textedJson);
+        });
+
+    </script>
+</head>
+<body>
+    <textarea name="" id="myTextarea" ></textarea>
+
+
+</body>
+</html>

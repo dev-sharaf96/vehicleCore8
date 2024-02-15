@@ -1,0 +1,20 @@
+﻿@model Tameenk.Models.Promotion.ConfirmJoinProgramViewModel
+
+<section class="inactive sm-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info">
+    <div class="container">
+        <h1 style="color:#f7811c; padding-bottom: 0px;" class="txt-black txt-lr md-lh txt-right">@Html.Raw(Tameenk.LangText.promotion_programs)</h1>
+    </div>
+</section>
+<section class="sm-ver-spc search-inputs section normal-page">
+<div class="container">
+    @if (Model != null) {
+    <div class="row clear-b promotion-main-div payments-cards">
+        <div class="lr-mar">
+            <h2 class="txt-lr txt-black no-mar">@Model.Message</h2>
+            <a href="@Url.Action("Index", "Profile")" class="btn sm dis-block txt-white txt-brand txt-xs borderd-hvr bg-green txt-green-hvr circ-rdus l-shadow bx-right">@Html.Raw(Tameenk.LangText.Purchesed_Profile)</a>
+            <a href="@Url.Action("Index", "Home")" class="btn sm dis-block txt-white txt-brand txt-xs borderd-hvr bg-green txt-green-hvr circ-rdus l-shadow bx-right">@Html.Raw(Tameenk.LangText.Promotion_StartSearch)</a>
+        </div>
+    </div>
+        }
+</div>
+</section>

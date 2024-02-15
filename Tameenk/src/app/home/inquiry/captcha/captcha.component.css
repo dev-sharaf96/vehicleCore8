@@ -1,0 +1,1 @@
+.captcha-container {    position: relative;    display: flex;    align-items: flex-end}.captcha-img {    border: 2px solid #257cb3;    border-radius: 5px;    position: relative;    max-width: 80%;    width: 130px;    height: 50px;}.red-border {    border-color: #e60000;}.reload-btn {    color: #186A9E;    margin: 0 5px;}

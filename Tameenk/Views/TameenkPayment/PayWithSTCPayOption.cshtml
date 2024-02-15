@@ -1,0 +1,74 @@
+﻿<style>
+    .CustomStylePaymentMethodx {
+        width: 86px;
+        /* margin-left: 30px; */
+    }
+
+    span.spanHolder:hover {
+        background: #FFE8D2;
+        border: 2px solid #f7d0ac;
+    }
+
+    .spanHolderx {
+        width: 73px;
+        padding: 20px;
+        margin: 25px;
+        height: 75px;
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid #d0d0d0;
+        background: #F4F4F5;
+        justify-content: center;
+        border-radius: 20px;
+    }
+
+    .flexHeaderPayment {
+        display: inline-flex;
+    }
+
+    .madaStyle {
+        width: 146px;
+        margin: 5px 5px 5px 0px;
+    }
+
+    .botomImg {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img.bx-leftx {
+        width: 70px;
+        border-radius: 20px
+    }
+
+    @@media only screen and (max-width:600px){
+        spanHolder {
+            width: 115px !important;       
+        }   
+
+    }
+
+    span.spanHolderx:hover {
+        background: #FFE8D2;
+        border: 2px solid #f7d0ac;
+    }
+</style>
+
+
+
+
+@using Tameenk.Core.Domain.Enums.Payments;
+@{
+    Layout = null;
+}
+<article class="CustomStylePaymentMethodx  md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.STCPay))">
+    <header class="flexHeaderPayment">
+        <span class="spanHolderx" name="paymentHolder">
+            <!-- <h3 class="bx-right xs-mar-bot" style="color: #535f69">@Html.Raw(Tameenk.LangText.STCPay)</h3> -->
+            <img src="~/resources/imgs/STC-pay-NN.svg" alt="STCPay" style="" class="bx-leftx" />
+        </span>
+    </header>
+</article>

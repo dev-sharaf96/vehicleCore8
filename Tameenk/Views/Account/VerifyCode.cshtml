@@ -1,0 +1,112 @@
+﻿@model Tameenk.Models.VerifyCodeViewModel
+<section class="bg-ofwhite section over-hidden" style="min-height: calc(100vh - 234px);padding: 50px 0;">
+    <div class="col-xs-12 col-lg-8 bx-center">
+        <h1 class="txt-black txt-lr  md-lh xs-mar-bot txt-right sm-mar-bot">
+            @Html.Raw(Tameenk.LangText.VerifyCode_Title)
+        </h1>
+        <div class="mb-50"></div>
+        <div>
+            @using (Html.BeginForm("VerifyCode", "Account", FormMethod.Post, new { id = "frmshow" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.UserId)
+                @Html.HiddenFor(m => m.PhoneNumber)
+                @Html.HiddenFor(m => m.ReturnUrl)
+                @Html.HiddenFor(m => m.RememberBrowser)
+
+                <h4>@Html.Raw(Tameenk.LangText.VerifyCode_SubTitle)</h4>
+                <h5></h5>
+                <hr />
+                <div>
+                    <span style="color:red">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                </div>
+                <div class="col-xs-12 col-lg-6 col-md-6">
+                    <div class="input-container">
+                        <input class="input-element" type="text" value="@Model.PhoneNumber" style="text-align: left" id="Phone" readonly name="@Html.NameFor(model => model.PhoneNumber)" required="required" placeholder="05xxxxxxx" />
+                        <label class="input-label" for="Phone">@Html.Raw(Tameenk.LangText.register_mobile)</label>
+                        <span class="field-error" style="color:red;position:absolute;" id="PhoneError"></span>
+                        <span class="prefix txt-center" style="right: 1px;left: auto;padding: 0;border-radius: 0 5px 5px 0;box-shadow: 0 0 8px rgba(0, 0, 0, .4);"><a class="edit-btn  txt-md" title="@Html.Raw(Tameenk.LangText.Edit)"><i class="fas fa-edit"></i></a></span>
+                    </div>
+                </div>
+                <div class="col-md-12 form-group mb-10">
+                    <span class="input input--ichiro">
+                        @Html.TextBoxFor(m => m.Code, htmlAttributes: new { @id = "Code", @class = "input__field input__field--ichiro", data_val = "true", data_val_required = LangText.VerifyCode_CodeRequiredMsg })
+                        <label class="input__label input__label--ichiro" for="Code">
+                            <span class="input__label-content input__label-content--ichiro registerdCarLabel">
+                                @Html.Raw(Tameenk.LangText.VerifyCode_Code)
+                            </span>
+                        </label>
+                    </span>
+                    <span id="codeValidationMessage" class="field-validation-valid text-danger" data-valmsg-for="Code" data-valmsg-replace="true"></span>
+                </div>
+                @Html.HiddenFor(m => m.RememberMe, false)
+                <div class="col-xs-12 col-lg-6 col-md-4 bx-left">
+                    <br>
+                    <input type="submit" onclick="return submitNow();" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar" value="@LangText.confirm">
+                    <input type="button" onclick="ResendVerifyCode()" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar" value="@LangText.Tameenk_ConfirmPhoneNumber_Resend">
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@section scripts
+{
+    <script>
+
+        $(function(){
+        
+        
+        $('.edit-btn').on('click', function () {
+                $(this).parent().hide().closest(".input-container").find('.input-element')
+                    .attr('readonly', false).focus();
+            });
+        
+        });
+
+        function submitNow() {
+            if ($("input[name='Code']").val() == "") {
+                $('#codeValidationMessage').html('@LangText.VerifyCode_CodeRequiredMsg');
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+
+      function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+
+            function  ResendVerifyCode()
+    {
+
+        var phoneNumber = getUrlParameter('PhoneNumber');
+        var editablePhoneNumber  = $('#Phone').val();
+
+        if(phoneNumber == editablePhoneNumber)
+               window.location.reload();
+        else
+        {
+        
+        var newUrl = location.href.replace("PhoneNumber="+phoneNumber, "PhoneNumber="+editablePhoneNumber);
+        newUrl = newUrl.replace("isEdit=False", "isEdit=True");
+        window.location.href = newUrl;
+        
+        }
+    
+    }
+
+    </script>
+}

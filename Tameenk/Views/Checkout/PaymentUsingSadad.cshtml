@@ -1,0 +1,76 @@
+﻿@using Tameenk.Models.Payments.Sadad
+@model SadadPaymentResponseModel
+
+@*<section class="inactive md-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info">
+        <div class="container">
+            <h1 class="txt-black txt-lr md-lh txt-right">شكرا لإختياركم طلب عرض السعر من شركة العربيه للتأمين</h1>
+        </div>
+    </section>*@
+@if (!Model.IsCheckoutEmailVerified)
+{
+    @Html.Partial("~/Views/Checkout/_EmailSentToReceivePolicy.cshtml", new Tameenk.Models.Payments.SendActivationEmailModel() { CheckoutEmail = Model.CheckoutEmail, ReferenceId = Model.CheckoutReferenceId })
+}
+<section class="md-ver-spc search-inputs  section normal-page" style="min-height: calc(100vh - 234px);">
+    <div class="container">
+        <div class="wrapper-bx md-mar-bot">
+            <div class="row">
+                @if (Model.Status == "Succeeded")
+                {
+                    <h2>
+                        @Html.Raw(Tameenk.LangText.payment_instruction)
+                    </h2>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.SadadCodeText) <b class="txt-black">@Html.Raw(Tameenk.LangText.SadadCode)</b></span>
+                    </p>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.payment_biller_name_heading) <b class="txt-black">@Html.Raw(Tameenk.LangText.payment_biller_name)</b></span>
+                    </p>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.payment_instruction_bill_N) <b class="txt-black">@Model.ReferenceNumber</b></span>
+                    </p>
+                    <p>
+                        <span class="txt-mgray dis-block no-mar">@Html.Raw(Tameenk.LangText.payment_instruction_bill_exp) <b class="txt-black">@Model.BillDueDate</b></span>
+                    </p>
+                    @*<h2>
+                            @Html.Raw(string.Format(Tameenk.LangText.ActivateEmailToReceivePolicyEmail, @Model.CheckoutEmail))
+                        </h2>*@
+
+                }
+                else
+                {
+                    <p>
+                        @Html.Raw(Tameenk.LangText.payment_instruction_error)
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+         window.onload = function(){
+            document.getElementById('EmailSentToReceivePolicyCheckoutPopup').style.display = 'block'; // show
+        };
+
+        function SendActivationEmail(referenceId)
+        {
+            $("#SendActivationEmailBtn").attr("disabled", "disabled");
+            var url = "@Url.Action("SendActivationEmailToReceivePolicy", "Checkout")";
+            $.ajax({
+            url: url,
+            type: "GET",
+            data: {referenceId:referenceId},
+            success: function (data) {
+                if(data.data==0)
+                {
+                    $("#messageLabel").html("@Html.Raw(LangText.ActivationEmailSent)");
+                }
+                else{
+                    $("#SendActivationEmailBtn").removeAttr("disabled");
+                    $("#messageLabel").html("@Html.Raw(LangText.GenericError)");
+                }
+
+                $('#messageLabel').css('display','inline-flex');
+                }
+            });
+        }
+</script>

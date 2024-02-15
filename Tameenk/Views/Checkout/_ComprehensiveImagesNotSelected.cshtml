@@ -1,0 +1,28 @@
+﻿
+
+<div id="ComprehensiveImagesNotSelectedCheckoutPopup" class="popup" data-popup="ComprehensiveImagesNotSelectedCheckoutPopup">
+    <div class="popup-inner">
+        <div class="modal-body">
+            <p>@Html.Raw(Tameenk.LangText.checkout_error_images)</p>
+        </div>
+        <div class="model-footer">
+            <input type="button" data-popup-close="ComprehensiveImagesNotSelectedCheckoutPopup" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow" value="@LangText.yes">
+        </div>
+        <a class="popup-close" data-popup-close="ComprehensiveImagesNotSelectedCheckoutPopup" href="#">x</a>
+    </div>
+</div>
+
+<style>
+    #ComprehensiveImagesNotSelectedCheckoutPopup .modal-body {
+        padding-bottom: 0;
+    }
+
+    #ComprehensiveImagesNotSelectedCheckoutPopup .model-footer {
+        padding: 10px;
+    }
+
+        #ComprehensiveImagesNotSelectedCheckoutPopup .model-footer input {
+            line-height: 0px;
+            height: 35px;
+        }
+</style>

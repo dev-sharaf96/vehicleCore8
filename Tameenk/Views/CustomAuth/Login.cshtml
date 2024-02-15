@@ -1,0 +1,36 @@
+﻿@model Tameenk.Models.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Login"))
+        {
+            @Html.AntiForgeryToken()
+            <div style="margin: 0 auto; width:200px;">
+                <table>
+                    <tr>
+                        <td>Username: </td>
+                        <td>@Html.TextBoxFor(m => m.Email)</td>
+                    </tr>
+                    <tr>
+                        <td>Password
+                        <td>@Html.PasswordFor(m => m.Password)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit">Submit</button></td>
+                    </tr>
+                </table>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@using Tameenk.Resources.UserTicket;
+@model TameenkDAL.Models.UserTicketHistoryModel
+<div class="wrapper-bx md-mar dl-section blackBorder" style="padding:10px;">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-lg-4 over-hidden bx-right">
+        <h2 class="txt-sm  txt-mgray dis-block tickNumber blackColor">@UserTicketResources.TicketNumber #@Model.UserTicketId.ToString("00000")</h2>
+        @if (!string.IsNullOrEmpty(@Model.UserNotes))
+        {
+            <h3 class="txt-sm  txt-mgray dis-block xs-mar blackColor">@UserTicketResources.Notes: @Model.UserNotes</h3>
+        }
+        </div>
+
+        @if (Model.TicketTypeId != 5 && Model.TicketTypeId != 6) // Not Others and not National Address
+        {
+        <div class="col-xs-12 col-sm-3 col-lg-3 over-hidden bx-right customCardTicket" style="height: 200px;">
+            @if (!string.IsNullOrEmpty(Model.PolicyNo))
+            {
+                <span class="txt-sm  txt-mgray dis-block blackColor ">@UserTicketResources.PolicyNo: @Model.PolicyNo</span>
+
+                if (!string.IsNullOrEmpty(Model.InsuranceCompanyName))
+                {
+                    <h2 class="txt-sm  txt-mgray dis-block xs-mar blackColor">@UserTicketResources.InsuranceCompanyName: @Model.InsuranceCompanyName</h2>
+                }
+            }
+            <h3 class="txt-sm  txt-mgray dis-block xs-mar blackColor">@UserTicketResources.VehicleName: @Model.VehicleName</h3>
+            @if (Model.VehiclePlate != null) {
+            <div class='col-xs-12 col-sm-12 col-lg-12 beltCustomStyle'>
+                <br />
+                @Html.Partial("_VehiclePlate", Model.VehiclePlate)
+            </div>
+            }
+        </div>
+        }
+
+        <div class="col-xs-12 col-sm-5 col-lg-5 over-hidden bx-right customCardTicket" style="height: 200px;">
+            <h2 class="txt-sm  txt-mgray dis-block tickNumber blackColor">@UserTicketResources.Status: @Model.UserTicketStatus</h2>
+            @if (!string.IsNullOrEmpty(@Model.UserTicketAdminReply))
+            {
+                <h3 class="txt-sm  txt-mgray dis-block xs-mar blackColor">@UserTicketResources.Details: @Model.UserTicketAdminReply</h3>
+            }
+        </div>
+    </div>
+
+</div>

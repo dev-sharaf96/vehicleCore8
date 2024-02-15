@@ -1,0 +1,23 @@
+﻿@using Tameenk.Core.Domain.Enums;
+@model Tameenk.Core.Domain.Entities.ProfileNotification
+
+<div class="col-xs-12 col-sm-12 col-lg-12 notificationItem">
+    @if (Model.TypeId == (int)EProfileNotificationType.Success)
+    {
+        <i class="fa fa-check-circle" aria-hidden="true" style="font-size: 25px;color: green;margin-left: 8px;"></i>
+    }
+    else if (Model.TypeId == (int)EProfileNotificationType.UnderProcessing)
+    {
+        <i class="fa fa-tasks" aria-hidden="true" style="font-size: 25px;color: green;margin-left: 8px;"></i>
+    }
+
+
+    @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+    {
+        @Model.DescriptionEn
+    }
+    else
+    {
+        @Model.DescriptionAr
+    }
+</div>

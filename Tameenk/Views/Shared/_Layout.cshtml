@@ -1,0 +1,155 @@
+﻿﻿@using Tameenk.Core.Domain.Enums;
+
+<!doctype html>
+<html dir='ltr' lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <!-- SEO -->
+    <title>@Html.Raw(Tameenk.LangText.BCareTitle)</title>
+    <base href="/">
+    <meta name="description" content="@Html.Raw(Tameenk.LangText.MetaDescription)" />
+    <meta name="keywords" content="@Html.Raw(Tameenk.LangText.Keywords)" />
+    <link rel="icon" href="~/resources/imgs/bcaretab.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    @RenderSection("AdditionalMeta", false)
+    <!-- Head Inc -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    @Styles.Render("~/Content/css")
+
+    @if
+    (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(),
+    StringComparison.OrdinalIgnoreCase))
+    {
+        <link rel="stylesheet" href="~/resources/css/override_en.css?dc=20180203c" />
+    }
+    <script src="https://wchat.freshchat.com/js/widget.js"></script>
+
+    @* @if (ViewBag.AddAnotherUrls != null)
+        {
+
+        <!-- SEO -->
+        <title>Becare</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <!-- Google Authorship and Publisher Markup -->
+        <link rel="author" href="" />
+        <link rel="publisher" href="" />
+        <!-- Schema.org markup for Google+ -->
+        <meta itemprop="name" content="Bcare" />
+        <meta itemprop="description" content="واجهة مميزة من الاعمال" />
+        <meta itemprop="image" content="resources/imgs/logo.png" />
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="resources/imgs/logo.png" />
+        <meta name="twitter:site" content="" />
+        <meta name="twitter:title" content="Bcare" />
+        <meta name="twitter:description" content="واجهة مميزة من الاعمال" />
+        <meta name="twitter:creator" content="" />
+        <meta name="twitter:image:src" content="resources/imgs/logo.png" />
+        <!-- Open Graph data -->
+        <meta property="og:title" content="Bcare" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://bcare.sa/" />
+        <meta property="og:image" content="resources/imgs/logo.png" />
+        <meta property="og:description" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="fb:admins" content="" />
+        <!-- other SEO info -->
+        <meta name="revisit-after" content="5 days">
+        <meta name="robots" content="index,follow" />
+        <meta name="rating" content="general" />
+        <meta name="author" content="" />
+        <meta name="copyrights" content="" />
+        <meta name="alexaVerifyID" content="" />
+        <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="rsslink" />
+        <!-- FavsIcons -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <!-- Head Inc -->
+        <link rel="stylesheet" href="resources/css/layout.css" />
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+        }*@
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143288098-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-143288098-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PCTJM9M');</script>
+    <!-- End Google Tag Manager -->
+    @RenderSection("headScripts", required: false)
+</head>
+<body id="home-page">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCTJM9M" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    @*@RenderSection("featured", required: false)*@
+    <div class="body-content">
+        @Html.Partial("~/Views/Shared/Header.cshtml")
+        @RenderBody()
+    </div>
+
+    @Html.Partial("~/Views/Shared/_ConfirmDeletePopup.cshtml")
+    @Html.Partial("~/Views/Shared/Footer.cshtml")
+    @Html.Partial("~/Views/Shared/MainFoot.cshtml")
+    @RenderSection("scripts", required: false)
+
+    <script>
+      window.fcWidget.init({
+      token: "d7e94752-e315-416f-8e90-71c87679b05b",
+      host: "https://wchat.freshchat.com",
+      locale: "@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName",
+      config: {
+        content: {
+          placeholders: {
+            search_field: '@Tameenk.LangText.search_field',
+            reply_field: '@Tameenk.LangText.reply_field'
+          },
+          actions: {
+            tab_faq: '@Tameenk.LangText.tab_faq',
+            tab_chat: '@Tameenk.LangText.tab_chat'
+          },
+          headers: {
+            faq: '@Tameenk.LangText.tab_faq',
+            faq_help: '@Tameenk.LangText.faq_help'
+          }
+        }
+      }
+    });
+    </script>
+    <style>
+        #ember468 > div.d-hotline {
+            border-radius: 8px 34px 34px 34px;
+        }
+
+        #fc_frame,
+        #fc_frame.fc-widget-normal {
+            right: auto;
+            left: 15px;
+            bottom: 70px
+        }
+    </style>
+</body>
+</html>

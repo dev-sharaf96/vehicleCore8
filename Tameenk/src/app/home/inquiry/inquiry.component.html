@@ -1,0 +1,56 @@
+<div *ngIf="!showYakeenMissingFields" class="row" id="inquiry-section">
+  <!-- Right side -->
+  <div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+    <bcare-vehicle-info [(vehicle)]="inquiry.vehicle"></bcare-vehicle-info>
+  </div>
+  <!-- Left Side -->
+  <div class="col-xs-12 col-lg-6 col-md-6">
+    <bcare-insured-info [(insured)]="inquiry.insured"></bcare-insured-info>
+    <bcare-main-driver [(driver)]="inquiry.drivers[0]"></bcare-main-driver>
+
+    <div class="col-xs-12 col-md-4 bx-right" style="clear: both;">
+      <h3 class="txt-black dis-block xs-mar xs-mar-bot" translate>inquiry.add_another_driver</h3>
+      <input type="checkbox" class="switchIco md-mar dis-block" id="addnewdriver" [(ngModel)]="thereDriver" (change)="toggleDriver($event.target.checked)" />
+      <label class="labelSwitch" for="addnewdriver">
+        <span class="stat true txt-brand" translate>common.yes</span>
+        <span class="stat false txt-gray" translate>common.no</span>
+      </label>
+    </div>
+    <div class="col-xs-12 col-lg-12 col-md-12 bx-right driver-fields" *ngIf="additionalDrivers?.length > 0">
+      <bcare-additonal-driver *ngFor="let driver of additionalDrivers; let i = index" [driver]="driver" [index]="i"
+        [totalPercentage]="totalPercentage" (changedTotalPercentage)="changeTotalPercentage()" (removeComponent)="removeDriver($event)"></bcare-additonal-driver>
+
+      <div class="col-lg-12 col-xs-12 col-md-12 driver-fields md-mar xs-mar-bot">
+        <a class="add-driver bx-shdw btn sm dis-block bx-right txt-brand txt-white-hvr login txt-brand bg-gr-main  circ-rdus l-shadow bx-right right"
+          (click)="addDriver()" translate>inquiry.additional_Driver_info.add_driver</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 bx-right md-mar">
+        <label for="checkValidation">
+          <div class="checkbox-holder bx-right">
+            <input type="checkbox" (change)="checkagreement($event.target.checked)" id="checkValidation" class="inp-checkbox" style="display: none">
+            <label for="checkValidation" class="checkValidation">
+              <span>
+                <svg width="12px" height="10px" viewBox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg>
+              </span>
+            </label>
+          </div>
+          <div class="txt-justify pad-sm-r">
+            <h3 translate>inquiry.agreement</h3>
+          </div>
+        </label>
+      </div>
+      <div class="col-xs-12 col-md-9 md-mar-bot bx-right">
+        <bcare-captcha [(captcha)]="inquiry.captcha" (success)="checkCaptcha($event)"></bcare-captcha>
+      </div>
+      <input type="submit" (click)="onSubmit()" id="btnSubmit" [attr.disabled]="isDisable ? '' : null" class="no-trans bx-left btn sm dis-block bx-left txt-white submit-continue txt-brand bg-brand-hvr bg-gr-main  circ-rdus l-shadow md-mar"
+        value="{{ 'inquiry.show_quotes' | translate }}" />
+    </div>
+  </div>
+</div>
+<div *ngIf="showYakeenMissingFields" class="row" id="missing-fields-section">
+    <bcare-yakeen-missing-fields [missingFields] ="yakeenMissingFields" [quotationRequestExternalId]="quotationRequestExternalId"></bcare-yakeen-missing-fields>
+</div>

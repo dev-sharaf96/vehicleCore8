@@ -1,0 +1,88 @@
+@model Tamkeen.bll.Model.QuotationResponseModel
+
+@section headScripts {
+    <script>
+    window.checkoutErrors = [];
+    @{
+        var checkoutErrors = ViewData.ModelState.Where(n => n.Value.Errors.Count > 0 && n.Key.Equals("CheckoutError")).ToList();
+        foreach (var checkoutError in checkoutErrors)
+        {
+            foreach (var error in checkoutError.Value.Errors)
+            {
+            @: window.checkoutErrors.push('@(error.ErrorMessage)');
+        }
+            }
+        }
+    </script>
+}
+<section class="md-ver-spc search-info bg-ofwhite section search-result-info active search-car" style="background-image: url('/resources/imgs/CarLogos/@(Model.Vehicle.MakerCode.ToString("0000")).jpg');" id="show_data">
+    <div class="container">
+        <div class="row">
+            <!-- block -->
+            <div class="over-hidden col-xs-12 col-lg-3 col-md-3 bx-right md-mar">
+                <!--
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">حالة نجم</span>
+                <h2 class="txt-lr txt-black no-mar">ساريه</h2>
+                -->
+            </div>
+            <!-- block -->
+            <div class="over-hidden col-xs-12 col-lg-3 col-md-3 bx-right md-mar">
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.search_Vehicle_Description)</span>
+                <h2 class="txt-lr txt-black no-mar txt-en">@Model.Vehicle.Maker  @Model.Vehicle.ModelYear @Model.Vehicle.Model</h2>
+            </div>
+            <!-- block -->
+            <div class="over-hidden col-xs-12 col-lg-2 col-md-2 bx-right md-mar">
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.search_Discount_Eligibility)</span>
+                <h2 class="txt-lr txt-black no-mar">
+                    @Model.NCDFreeYears
+                </h2>
+            </div>
+            <!-- block -->
+            @if (Model.Vehicle.PlateTypeCode != null)
+            {
+                <div class="col-xs-6 col-lg-2 col-md-2 bx-right md-mar">
+                    <div class="belt @Model.Vehicle.PlateColor">
+                        <span class="arabic-character">@Model.Vehicle.CarPlate.CarPlateTextAr</span>
+                        <span class="arabic-number">@Model.Vehicle.CarPlate.CarPlateNumberAr</span>
+                        <span class="english-number">@Model.Vehicle.CarPlate.CarPlateNumberEn</span>
+                        <span class="english-character">@Model.Vehicle.CarPlate.CarPlateTextEn</span>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-6 col-lg-2 col-md-2 bx-right md-mar">
+                    <b>
+                        @Tameenk.LangText.Custom_Card
+                    </b>
+                </div>
+            }
+            <!-- block -->
+            <div class="over-hidden col-xs-6 col-lg-2 col-md-2 md-mar">
+                <a href="@Url.Action("EditRequestInformation", "Home", new { quotationExterlanId = Model.QtRqstExtrnlId })" class="bx-right btn  sm dis-block txt-white login sm-mar txt-brand borderd-hvr txt-xs bg-gr-main  circ-rdus l-shadow txt-center"
+                   style="background: #f79818;
+    font-size: 18px;
+    padding: 5px 17px 10px 23px;
+    border-radius: 50px;
+    color: #fff !important;">@Html.Raw(Tameenk.LangText.Search_edit_info)</a>
+</div>
+<!-- block -->
+</div>
+</div>
+</section>
+<section class="md-ver-spc search-result  section">
+    <div class="container">
+        <qoute-root QtRqstExtrnlId="@Model.QtRqstExtrnlId" TypeOfInsurance="@Model.TypeOfInsurance" VehicleAgencyRepair="@Model.VehicleAgencyRepair" DeductibleValue="@Model.DeductibleValue" currentLang="@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName">
+            <div class="home-loading">
+                <span class="loading-outer">
+                    <span class="static-logo">
+                        <img src="@(BaseUrl)resources/imgs/logo-short.png" draggable="false" alt="bcare logo short">
+                    </span>
+                    <span class="moving-logo">
+                        <img class="logo-bcare" draggable="false" src="@(BaseUrl)resources/imgs/bcaretab.png" alt="bcare logo">
+                    </span>
+                </span>
+            </div>
+        </qoute-root>
+    </div>
+</section>

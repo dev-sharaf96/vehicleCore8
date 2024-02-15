@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Forbidden";
+}
+@section AdditionalMeta
+{
+    <meta name="robots" content="noindex"/>
+}
+
+<div class="container" style="min-height: calc(100vh - 234px);">
+    <article class="over-hidden md-mar-bot">
+        <!-- Company Modal -->
+        <!-- /Modal -->
+        <div class="row">
+            <section class="inactive md-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info txt-center">
+                <div class="container">
+                    <h1 style="color:#f7811c; padding-bottom: 0px;" class="txt-black txt-lr md-lh md-mar-bot">
+                        <i class="fa fa-lock"></i> @Html.Raw(Tameenk.LangText.forbidden_title)
+                    </h1>
+                    <h2 class="txt-black txt-md">
+                        @Html.Raw(Tameenk.LangText.forbidden_description)
+                    </h2>
+                    <br />
+                    @Html.ActionLink(Tameenk.LangText.home_page, "Index", "Home", null, new { @class = "home-page_link" })
+                </div>
+            </section>
+        </div>
+    </article>
+</div>

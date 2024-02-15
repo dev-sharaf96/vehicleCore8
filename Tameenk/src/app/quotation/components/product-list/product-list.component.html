@@ -1,0 +1,65 @@
+﻿<!-- row -->
+<div class="row lr-mar result-cards">
+    <div class="full-view">
+        <ng-container *ngFor="let product of productsToRender;let i = index;trackBy:trackByProductId">
+            <form ngNoForm [action]="checkoutPath" method="POST" *ngIf="product.productPrice > 0">
+                <input type="hidden" name="QuotaionRequestExternalId" [value]="quotationRequestId">
+                <input [id]="'product_' + i" type="hidden" name="ProductId" [value]="product.id">
+                <article class="over-hidden md-mar-bot" style="margin-left: auto; margin-right: auto;" [ngClass]="{'promoted': product.isPromoted, 'hasDiscount': product.hasDiscount && !product.isPromoted}">
+                    <bcare-product [product]="product"
+                                   [hiddenId]="'product_'+i"
+                                   [products]="products"
+                                   [productsToRender]="productsToRender"
+                                   (getCompany)="sendCompanyId($event)"
+                                   [companyInfo]="companyInfo"
+                                   [companyAllowAnonymous]="companyAllowAnonymous"
+                                   [anonymousRequest]="anonymousRequest"
+                                   (addProductToCompare)="productsComparison($event)"
+                                   (deletedProduct)="deleteProduct($event)"
+                                   [comparProducts]="comparProducts"
+                                   [IsAgency]="IsAgency"
+                                   [deductableValueList]="deductableValueList"
+                                   (emitChangeDeductableValue)="changeDeductableValue($event)"
+                                   (emitChangeMedGulfDeductableValue)="changeMedGulfDeductableValue($event)"
+                                   [medGulfDeductableValue]="medGulfDeductableValue"
+                                   [isMedGulfDeductableValueChenged]="isMedGulfDeductableValueChenged"
+                                   (emitChangeArabianShieldDeductableValue)="changeArabianShieldDeductableValue($event)"
+                                   [ArabianShieldDeductableValue]="ArabianShieldDeductableValue"
+                                   [isArabianShieldDeductableValueChenged]="isArabianShieldDeductableValueChenged"
+                                   (emitChangeACIGDeductableValue)="changeACIGDeductableValue($event)"
+                                   [ACIGDeductableValue]="ACIGDeductableValue"
+                                   [isACIGDeductableValueChenged]="isACIGDeductableValueChenged"
+                                    (emitChangeAlRajhiDeductableValue)="changeAlRajhiDeductableValue($event)"
+                                   [AlRajhiDeductableValue]="AlRajhiDeductableValue"
+                                   [isAlRajhiDeductableValueChenged]="isAlRajhiDeductableValueChenged"
+                                   (downloadCompanyPolicyTermsAndConditions)="downloadTermsAndConditionsFile($event)"
+                                   [isDone]="isDone"
+                                   ></bcare-product>
+                </article>
+            </form>
+        </ng-container>
+        <div class="loader" *ngIf="!isDone && products?.length === 0">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+            </svg>
+        </div>
+        <div class="products-spinner" *ngIf="!isDone && products?.length !== 0">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+            </svg>
+        </div>
+        <article class="over-hidden md-mar-bot dummy" *ngIf="isDone && products?.length === 0">
+            <div class="overlay"></div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="no-offers">
+                        <h2 class="txt-xl" translate>quotation.no_offers</h2>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+<!-- row -->
+
+<bcare-comparison [comparProducts]="comparProducts" [quotationRequestId]="quotationRequestId" (deletedProduct)="deleteProduct($event)"></bcare-comparison>

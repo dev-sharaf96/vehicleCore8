@@ -1,0 +1,316 @@
+﻿@model Tameenk.Models.MyPoliciesViewModel
+@using Tameenk.Resources.Profile;
+@using TameenkDAL.Models;
+@{
+    double pages = (double)Model.PoliciesTotalCount / 10;
+    var pagesCount = Math.Ceiling(pages);
+}
+<article id="MyPoliciesList">
+    @if (Model != null && Model.PoliciesList != null && Model.PoliciesList.Count > 0)
+    {
+        foreach (PolicyModel PolicyObj in Model.PoliciesList)
+        {
+            <div class="wrapper-bx md-mar dl-section" data-file-id="@PolicyObj.PolicyFileId">
+                <div class="row">
+                    <header class="col-xs-12 col-sm-4 over-hidden bx-right">
+                        <span class="txt-sm  txt-mgray dis-block ">@Html.Raw(Tameenk.LangText.Purchesed_Policy_number): @PolicyObj.PolicyNo</span>
+                        <h2 class="txt-sm  txt-mgray dis-block xs-mar">@Html.Raw(Tameenk.LangText.InsuranceCompanyName): @PolicyObj.InsuranceCompanyName</h2>
+                        <h3 class="txt-sm  txt-mgray dis-block xs-mar">@Html.Raw(Tameenk.LangText.Status): @PolicyObj.PolicyStatusName</h3>
+                    </header>
+                    <footer class="col-xs-12 col-sm-4 over-hidden sm-mar bx-right">
+                        <h3 class="txt-resp-left txt-sm  txt-mgray dis-block bx-left f_width  ">@Html.Raw(Tameenk.LangText.PolicyEffectiveDate): @PolicyObj.PolicyEffectiveDate</h3>
+                        <h3 class="txt-resp-left txt-sm  txt-mgray dis-block bx-left f_width  xs-mar">@Html.Raw(Tameenk.LangText.Purchesed_PolicyExpiryDate): @PolicyObj.PolicyExpiryDate</h3>
+                    </footer>
+
+                    <div class="col-xs-12 col-sm-4 col-lg-4 col-lg-4">
+                        <div>
+                            @Html.Partial("_VehiclePlate", PolicyObj.VehiclePlate)
+
+                            @if (PolicyObj.CheckOutDetailsIsEmailVerified.HasValue && !PolicyObj.CheckOutDetailsIsEmailVerified.Value)
+                            {
+                                <button id="myBtn" onclick="openEmailModal('@PolicyObj.CheckOutDetailsEmail')" class="btnModall">
+                                    <span>&#9888;</span>
+                                    <span onclick="changeHiddenFieldsValue('@PolicyObj.PolicyNo','@PolicyObj.CheckOutDetailsId')" style="font-weight: bold;font-size: 10px;">@Html.Raw(Tameenk.LangText.ActivateYourEmailToReceivePolicy)</span>
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="small-desc over-hidden f_width md-mar bx-right txt-mgray">
+                    <span class="dis-block bx-right">
+                        @Html.Raw(Tameenk.LangText.NajmStatus):
+                        <strong class="txt-green">@PolicyObj.NajimStatus</strong>
+                    </span>
+                    <h2 class="txt-md txt-black dis-block bx-right model-name">@PolicyObj.VehicleModelName</h2>
+                    <div class="bx-left">
+                        @if (PolicyObj.PolicyStatusKey == "Available")
+                        {
+
+                            <a href="#" download="Policy_@(PolicyObj.PolicyNo).pdf" data-download-url="@Url.Action("DownloadPolicyFile","Profile")"
+                               data-not-found="@Html.Raw(Tameenk.LangText.Policy_not_found)"
+                               class="dis-block txt-right bx-left right-mar-10 txt-black dl-link">
+                                <i class="ic-icons-502 txt-black bx-right general-ico"></i>@Html.Raw(Tameenk.LangText.Download)
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="dis-block txt-right bx-left right-mar-10 txt-black ">
+                                <i class="ic-icons-502 txt-black bx-right general-ico"></i>@Html.Raw(Tameenk.LangText.Download)
+                            </a>
+                        }
+
+                        @if (PolicyObj.PolicyExpiryDate != null && PolicyObj.PolicyExpiryDate.Value.AddDays(-14).CompareTo(DateTime.Now) < 0)
+                        {
+                            <a href="@Url.Action("EditRequestInformation", "Home", new {eid = PolicyObj.ExternalId, r = 1, re = PolicyObj.CheckOutDetailsId})"
+                               target="_blank" class="dis-block txt-right bx-left right-mar-10 txt-black">
+                                <i class="fa fa-refresh" aria-hidden="true"></i>@Html.Raw(Tameenk.LangText.renewal)
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="dis-block txt-right bx-left right-mar-10 txt-black isDisabled">
+                                <i class="fa fa-refresh" aria-hidden="true"></i>@Html.Raw(Tameenk.LangText.renewal)
+                            </a>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @if (Model.Lang == "en")
+            {
+                <ul class="pagination">
+                    @if (Model.CurrentPage == 1)
+                    {
+                        @*<li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+                    else
+                    {
+                        @*<li><a class="previous" onclick="SearchMyPolicies(1)"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="previous" onclick="SearchMyPolicies(@Model.CurrentPage - 1)"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+
+                    @if (pagesCount <= 5)
+                    {
+                        if (pagesCount == 1)
+                        {
+                            <li><a class="active"> 1 </a></li>
+                        }
+
+                        else
+                        {
+                            for (int i = 1; i <= pagesCount; i++)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        if (Model.CurrentPage <= 3)
+                        {
+                            for (int i = 1; i <= 5; i++)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                        else if (Model.CurrentPage >= pagesCount - 1)
+                        {
+                            if (Model.CurrentPage == pagesCount - 1)
+                            {
+                                for (int i = Model.CurrentPage - 3; i <= pagesCount; i++)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (int i = Model.CurrentPage - 4; i <= pagesCount; i++)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int j = Model.CurrentPage - 2; j <= Model.CurrentPage + 2; j++)
+                            {
+                                if (Model.CurrentPage == j)
+                                {
+                                    <li><a class="active" onclick="SearchMyPolicies(@j)"> @j </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyPolicies(@j)"> @j </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    @if (Model.CurrentPage == pagesCount)
+                    {
+                        <li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                    else
+                    {
+                        <li><a class="next" onclick="SearchMyPolicies(@Model.CurrentPage + 1)"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="next" onclick="SearchMyPolicies(@pagesCount)"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                </ul>
+            }
+            else
+            {
+                <ul class="pagination">
+                    @if (Model.CurrentPage == 1)
+                    {
+                        @*<li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="not-active previous"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+                    else
+                    {
+                        @*<li><a class="previous" onclick="SearchMyPolicies(1)"> @Html.Raw(Tameenk.LangText.First) </a></li>*@
+                        <li><a class="previous" onclick="SearchMyPolicies(@Model.CurrentPage - 1)"> @Html.Raw(Tameenk.LangText.Previous) </a></li>
+                    }
+
+                    @if (pagesCount <= 5)
+                    {
+                        if (pagesCount == 1)
+                        {
+                            <li><a class="active"> 1 </a></li>
+                        }
+
+                        else
+                        {
+                            for (double i = pagesCount; i >= 1; i--)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        if (Model.CurrentPage <= 3)
+                        {
+                            for (int i = 5; i >= 1; i--)
+                            {
+                                if (Model.CurrentPage == i)
+                                {
+                                    <li><a class="active" onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                }
+                            }
+                        }
+                        else if (Model.CurrentPage >= pagesCount - 1)
+                        {
+                            if (Model.CurrentPage == pagesCount - 1)
+                            {
+                                for (double i = pagesCount; i >= Model.CurrentPage - 3; i--)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (double i = pagesCount; i >= Model.CurrentPage - 4; i--)
+                                {
+                                    if (Model.CurrentPage == i)
+                                    {
+                                        <li><a class="active" onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a onclick="SearchMyPolicies(@i)"> @i </a></li>
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int j = Model.CurrentPage + 2; j >= Model.CurrentPage - 2; j--)
+                            {
+                                if (Model.CurrentPage == j)
+                                {
+                                    <li><a class="active" onclick="SearchMyPolicies(@j)"> @j </a></li>
+                                }
+                                else
+                                {
+                                    <li><a onclick="SearchMyPolicies(@j)"> @j </a></li>
+                                }
+                            }
+                        }
+                    }
+
+                    @if (Model.CurrentPage == pagesCount)
+                    {
+                        <li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="not-active next"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                    else
+                    {
+                        <li><a class="next" onclick="SearchMyPolicies(@Model.CurrentPage + 1)"> @Html.Raw(Tameenk.LangText.Next) </a></li>
+                        @*<li><a class="next" onclick="SearchMyPolicies(@pagesCount)"> @Html.Raw(Tameenk.LangText.Last) </a></li>*@
+                    }
+                </ul>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="wrapper-bx md-mar vehicle-row  search-info bg-ofwhite section  active search-car">
+            <div class="row">
+                @Html.Raw(ProfileResources.NoDataFound)
+            </div>
+        </div>
+    }
+</article>

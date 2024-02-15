@@ -1,0 +1,37 @@
+.notification {
+  color: #000;
+  margin: 10px 0;
+}
+.notification > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.notification > div > div {
+  display: flex;
+  align-items: center;
+}
+.notification .icon {
+  font-size: 24px;
+}
+.notification h1 {
+  margin: 0 10px;
+}
+
+.notification .fail {
+  border: 2px solid #bc3834;
+  background: #edece7;
+}
+
+.notification .fail .icon {
+  color: #ec130e;
+}
+
+.notification .success {
+  border: 2px solid #3d950d;
+  background: #f8f8f6;
+}
+.notification .success .icon {
+  color: #4fc600;
+}

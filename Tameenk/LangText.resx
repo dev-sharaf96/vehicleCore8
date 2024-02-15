@@ -1,0 +1,2012 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutus" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="add_driver" xml:space="preserve">
+    <value>Do you want to add another driver?</value>
+  </data>
+  <data name="benefit" xml:space="preserve">
+    <value>Advantages</value>
+  </data>
+  <data name="city_vehicle" xml:space="preserve">
+    <value>City </value>
+  </data>
+  <data name="coming_soon" xml:space="preserve">
+    <value>Coming Soon</value>
+  </data>
+  <data name="companies" xml:space="preserve">
+    <value>Companies</value>
+  </data>
+  <data name="condiation_policy" xml:space="preserve">
+    <value>I agree to grant the Broker Care Company the right to inquire from Najm Insurance Services and / or National Information Center and / or other relevant official systems on my data and data Of vehicles or any other relevant data.</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="deals" xml:space="preserve">
+    <value>Deal Agreement</value>
+  </data>
+  <data name="Detailed_information" xml:space="preserve">
+    <value>Detailed information</value>
+  </data>
+  <data name="detail_button" xml:space="preserve">
+    <value>Company Information</value>
+  </data>
+  <data name="driver_disable" xml:space="preserve">
+    <value>Is the driver with special needs?</value>
+  </data>
+  <data name="driver_info" xml:space="preserve">
+    <value>Driver Information</value>
+  </data>
+  <data name="editdata" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="footer_about" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="footer_description" xml:space="preserve">
+    <value>&amp;amp;#9400; 2020 All rights reserved. Broker Care Insurance Brokers</value>
+  </data>
+  <data name="footer_help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="footer_policy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="footer_terms" xml:space="preserve">
+    <value>Terms and Conditions</value>
+  </data>
+  <data name="home_insurance" xml:space="preserve">
+    <value>Home Insurance</value>
+  </data>
+  <data name="id_number" xml:space="preserve">
+    <value>ID / Residence Number</value>
+  </data>
+  <data name="index_desc" xml:space="preserve">
+    <value> Tameenk (Bcare) provides a platform
+&lt;br /&gt; A smart electronic gives the customer the freedom to compare</value>
+  </data>
+  <data name="index_more_about_button" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="index_more_desc" xml:space="preserve">
+    <value>Tameenk (Bcare) provides a smart electronic platform that gives the customer the freedom to compare and choose between the insurance products available in the market by the insurance companies authorized to work by the Saudi Arabian Monetary Agency</value>
+  </data>
+  <data name="index_more_title" xml:space="preserve">
+    <value>Get what you want and more ...</value>
+  </data>
+  <data name="insured_information" xml:space="preserve">
+    <value>Insured information</value>
+  </data>
+  <data name="IsOwner" xml:space="preserve">
+    <value>Are you the owner of the vehicle?</value>
+  </data>
+  <data name="is_vehicle_registered" xml:space="preserve">
+    <value>Is the vehicle registered ?</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Thank you for choosing #Bcare
+&lt;br/&gt;
+We are collecting quotes from Insurance companies</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="manufacturing_year" xml:space="preserve">
+    <value>Manufacturing Year</value>
+  </data>
+  <data name="medical_insurance" xml:space="preserve">
+    <value>Medical Insurance</value>
+  </data>
+  <data name="month_expiration" xml:space="preserve">
+    <value>Month of driving license expiration</value>
+  </data>
+  <data name="month_of_birth" xml:space="preserve">
+    <value>Birth Month</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="partners" xml:space="preserve">
+    <value>Our partners</value>
+  </data>
+  <data name="PolicyEffectiveDate" xml:space="preserve">
+    <value>Policy Effective Date</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="registration_number" xml:space="preserve">
+    <value>Sequence number</value>
+  </data>
+  <data name="Show_offers" xml:space="preserve">
+    <value>Show Quotes</value>
+  </data>
+  <data name="terms" xml:space="preserve">
+    <value>Terms &amp; Condition</value>
+  </data>
+  <data name="travel_insurance" xml:space="preserve">
+    <value>Travel insurance</value>
+  </data>
+  <data name="VehicleUsingWorkPurposes" xml:space="preserve">
+    <value>Do you use the vehicle for commercial purposes?</value>
+  </data>
+  <data name="vehicle_information" xml:space="preserve">
+    <value>Vehicle Information</value>
+  </data>
+  <data name="vehicle_insurance" xml:space="preserve">
+    <value>Vehicle Insurance</value>
+  </data>
+  <data name="Vehicle_value" xml:space="preserve">
+    <value>Vehicle value</value>
+  </data>
+  <data name="year_expiration" xml:space="preserve">
+    <value>Year of driving license expiration</value>
+  </data>
+  <data name="year_of_birth" xml:space="preserve">
+    <value>Birth Year</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>SR</value>
+  </data>
+  <data name="Search_Additional_Benefits" xml:space="preserve">
+    <value>Additional Benefits</value>
+  </data>
+  <data name="Search_Add_Comparison" xml:space="preserve">
+    <value>Add Comparison</value>
+  </data>
+  <data name="Search_Agency" xml:space="preserve">
+    <value>Agency</value>
+  </data>
+  <data name="Search_buy_now" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="Search_Comprehensive" xml:space="preserve">
+    <value>Comprehensive</value>
+  </data>
+  <data name="Search_Deleted" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="search_Discount_Eligibility" xml:space="preserve">
+    <value>Discount Eligibility</value>
+  </data>
+  <data name="Search_edit_info" xml:space="preserve">
+    <value>Edit Information</value>
+  </data>
+  <data name="Search_High_to_Low" xml:space="preserve">
+    <value>High to Low</value>
+  </data>
+  <data name="search_Insurance_Type" xml:space="preserve">
+    <value>Insurance Type</value>
+  </data>
+  <data name="Search_List_of_Comparisons" xml:space="preserve">
+    <value>List of Comparisons</value>
+  </data>
+  <data name="Search_Low_to_High" xml:space="preserve">
+    <value>Low to High</value>
+  </data>
+  <data name="Search_More_Detail" xml:space="preserve">
+    <value>More Detail</value>
+  </data>
+  <data name="Search_Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="Search_See_Comparison" xml:space="preserve">
+    <value>See Comparison</value>
+  </data>
+  <data name="Search_Sort_Rates_by" xml:space="preserve">
+    <value>Sort Rates by</value>
+  </data>
+  <data name="Search_TPL" xml:space="preserve">
+    <value>Third Party Liability</value>
+  </data>
+  <data name="search_Vehicle_Description" xml:space="preserve">
+    <value>Vehicle Description</value>
+  </data>
+  <data name="Search_Workshops" xml:space="preserve">
+    <value>Workshops</value>
+  </data>
+  <data name="Search_Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="checkout_Additional_Info" xml:space="preserve">
+    <value>Policy Customer Info</value>
+  </data>
+  <data name="checkout_Add_to_Cart" xml:space="preserve">
+    <value>Add to Cart</value>
+  </data>
+  <data name="checkout_alert1" xml:space="preserve">
+    <value>Alert your data is incomplete</value>
+  </data>
+  <data name="checkout_alert2" xml:space="preserve">
+    <value>Click on this link to complete your registration</value>
+  </data>
+  <data name="checkout_alert3" xml:space="preserve">
+    <value>Click here to register your data</value>
+  </data>
+  <data name="checkout_alert4" xml:space="preserve">
+    <value>Then reload the page again</value>
+  </data>
+  <data name="checkout_Another_Benefit" xml:space="preserve">
+    <value>Another Benefit</value>
+  </data>
+  <data name="checkout_back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="checkout_back_side" xml:space="preserve">
+    <value>Back Side</value>
+  </data>
+  <data name="checkout_bank" xml:space="preserve">
+    <value>Bank Name</value>
+  </data>
+  <data name="checkout_chasis_image" xml:space="preserve">
+    <value>Chasis Image</value>
+  </data>
+  <data name="checkout_currency_name" xml:space="preserve">
+    <value>Saudi Riyal</value>
+  </data>
+  <data name="checkout_email" xml:space="preserve">
+    <value>Insured E-Mail</value>
+  </data>
+  <data name="checkout_error_iban" xml:space="preserve">
+    <value>* There is an error in IBAN</value>
+  </data>
+  <data name="checkout_error_images" xml:space="preserve">
+    <value>Please insert all vehicle images.</value>
+  </data>
+  <data name="checkout_error_phone" xml:space="preserve">
+    <value>Please enter a valid mobile number</value>
+  </data>
+  <data name="checkout_Front_Side" xml:space="preserve">
+    <value>Front Side</value>
+  </data>
+  <data name="checkout_iban" xml:space="preserve">
+    <value>IBAN</value>
+  </data>
+  <data name="checkout_Insurance_policy_information" xml:space="preserve">
+    <value>Insurance policy information</value>
+  </data>
+  <data name="checkout_left_side" xml:space="preserve">
+    <value>Left Side</value>
+  </data>
+  <data name="checkout_mastercard" xml:space="preserve">
+    <value>MasterCard</value>
+  </data>
+  <data name="checkout_next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="checkout_payment_desc" xml:space="preserve">
+    <value>Select payment method</value>
+  </data>
+  <data name="checkout_phone" xml:space="preserve">
+    <value>Insured Mobile Number</value>
+  </data>
+  <data name="checkout_right_side" xml:space="preserve">
+    <value>Right Side</value>
+  </data>
+  <data name="checkout_sadad" xml:space="preserve">
+    <value>SADAD</value>
+  </data>
+  <data name="checkout_total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="checkout_visa" xml:space="preserve">
+    <value>Visa</value>
+  </data>
+  <data name="download_txt" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Purchesed_add_product" xml:space="preserve">
+    <value>Add another product</value>
+  </data>
+  <data name="Purchesed_Comprehensive_insurance" xml:space="preserve">
+    <value>Third party insurance (TPL) - Comprehensive insurance</value>
+  </data>
+  <data name="purchesed_description" xml:space="preserve">
+    <value>You will always find your Policy information in your profile if you wish to download it again in the future.</value>
+  </data>
+  <data name="Purchesed_Najm_Status" xml:space="preserve">
+    <value>Najm Status: Active</value>
+  </data>
+  <data name="Purchesed_PolicyEffectiveDate" xml:space="preserve">
+    <value>Policy Effective Date</value>
+  </data>
+  <data name="Purchesed_PolicyExpiryDate" xml:space="preserve">
+    <value>Policy Expiry Date</value>
+  </data>
+  <data name="Purchesed_Policy_number" xml:space="preserve">
+    <value>Policy Number</value>
+  </data>
+  <data name="Purchesed_Policy_status" xml:space="preserve">
+    <value>Policy Status</value>
+  </data>
+  <data name="Purchesed_Profile" xml:space="preserve">
+    <value>Go to my profile</value>
+  </data>
+  <data name="purchesed_title" xml:space="preserve">
+    <value>Policy purchased successfully</value>
+  </data>
+  <data name="Purchesed_valid" xml:space="preserve">
+    <value>Valid</value>
+  </data>
+  <data name="error_description" xml:space="preserve">
+    <value>Sorry, an error occurred while processing your request.</value>
+  </data>
+  <data name="error_title" xml:space="preserve">
+    <value>Sorry there was an error</value>
+  </data>
+  <data name="login_button" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="login_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="login_email_erorr" xml:space="preserve">
+    <value>Email is required</value>
+  </data>
+  <data name="login_email_erorr1" xml:space="preserve">
+    <value>Email is in wrong format</value>
+  </data>
+  <data name="login_have_account" xml:space="preserve">
+    <value>Don't have an account?</value>
+  </data>
+  <data name="login_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="login_password_error" xml:space="preserve">
+    <value>Password is required</value>
+  </data>
+  <data name="login_password_error1" xml:space="preserve">
+    <value>Password must not be less than 4 digits</value>
+  </data>
+  <data name="login_registernew" xml:space="preserve">
+    <value>Register new account</value>
+  </data>
+  <data name="login_register_button" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="login_title" xml:space="preserve">
+    <value>Users Login</value>
+  </data>
+  <data name="login_txtmsg" xml:space="preserve">
+    <value>Sign in to your account</value>
+  </data>
+  <data name="notfound_description" xml:space="preserve">
+    <value>Sorry, the content you are looking for is not available. You may have the wrong spelling, or you clicked a link that is currently unavailable. Be sure of it, or return to the home page</value>
+  </data>
+  <data name="notfound_title" xml:space="preserve">
+    <value>Sorry, the file has been deleted or canceled</value>
+  </data>
+  <data name="PolicyError" xml:space="preserve">
+    <value>There has been an error in generating your policy.&lt;br /&gt; Please contact customer service as soon as possible to handle this problem at: +966 920010050</value>
+  </data>
+  <data name="register_confirm_error" xml:space="preserve">
+    <value>Email confirmation is required</value>
+  </data>
+  <data name="register_confirm_error1" xml:space="preserve">
+    <value>Email confirmation does not match</value>
+  </data>
+  <data name="register_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="register_email1" xml:space="preserve">
+    <value>Confirm Email</value>
+  </data>
+  <data name="register_mobile" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="register_mobile_error" xml:space="preserve">
+    <value>Phone number is required</value>
+  </data>
+  <data name="register_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="register_policy" xml:space="preserve">
+    <value>By clicking on Register Account, you agree to &lt;a style="color:#f7811c; text-decoration: underline;" href="/Home/TermsCondition" target="_blank" rel="noopener"&gt; Terms and Conditions&lt;/a&gt; Which we and you have read &lt;a style="color:#f7811c; text-decoration: underline;" href="/Home/PrivacyPolicy" target="_blank" rel="noopener"&gt;Privacy policy&lt;/a&gt; ,I acknowledge that all data entered is correct and I am responsible for its accuracy.</value>
+  </data>
+  <data name="register_title" xml:space="preserve">
+    <value>Register new account</value>
+  </data>
+  <data name="register_txt_button" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Additional_age" xml:space="preserve">
+    <value>Additional age</value>
+  </data>
+  <data name="Additional_expenses" xml:space="preserve">
+    <value>Additional_expenses</value>
+  </data>
+  <data name="additional_price" xml:space="preserve">
+    <value>(Accidents due to) additional protection</value>
+  </data>
+  <data name="Discount_no_claims" xml:space="preserve">
+    <value>Discount no claims</value>
+  </data>
+  <data name="Extra_Premium" xml:space="preserve">
+    <value>Extra Premium</value>
+  </data>
+  <data name="loyalty_Discount" xml:space="preserve">
+    <value>loyalty Discount</value>
+  </data>
+  <data name="Special_Discount" xml:space="preserve">
+    <value>Special Discount</value>
+  </data>
+  <data name="VAT__Tax" xml:space="preserve">
+    <value>VAT</value>
+  </data>
+  <data name="checkout_Vehicle_Photos" xml:space="preserve">
+    <value>Vehicle Photos</value>
+  </data>
+  <data name="login_rememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="SmsTwoFactorCodeProviderName" xml:space="preserve">
+    <value>EnglishPhoneCodeMessage</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>submit</value>
+  </data>
+  <data name="VerifyCode_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="VerifyCode_CodeRequiredMsg" xml:space="preserve">
+    <value>The Code field is required.</value>
+  </data>
+  <data name="VerifyCode_Failed" xml:space="preserve">
+    <value>Failed to verify phone</value>
+  </data>
+  <data name="VerifyCode_SubTitle" xml:space="preserve">
+    <value>Please Enter Verification Code</value>
+  </data>
+  <data name="VerifyCode_Title" xml:space="preserve">
+    <value>VERIFY PHONE NUMBER</value>
+  </data>
+  <data name="is_benefit_found" xml:space="preserve">
+    <value>There are no additional benefits</value>
+  </data>
+  <data name="purchased_successfulMessage" xml:space="preserve">
+    <value>Your purchase completed successfully. Your policy will be emailed to you and will be available in your account to download within the next few minutes</value>
+  </data>
+  <data name="Logout_Button" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="CustomsCardNumber" xml:space="preserve">
+    <value>Customs card number</value>
+  </data>
+  <data name="login_have_account1" xml:space="preserve">
+    <value>Do you have an account?</value>
+  </data>
+  <data name="Search_not_found" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="Search_Years" xml:space="preserve">
+    <value> Years</value>
+  </data>
+  <data name="Captcha" xml:space="preserve">
+    <value>Input Symbols</value>
+  </data>
+  <data name="CaptchaError" xml:space="preserve">
+    <value>Captcha is not valid</value>
+  </data>
+  <data name="header_phone" xml:space="preserve">
+    <value>Unified Number</value>
+  </data>
+  <data name="MyAddresses" xml:space="preserve">
+    <value>Addresses</value>
+  </data>
+  <data name="MyBankAccounts" xml:space="preserve">
+    <value>Bank Accounts</value>
+  </data>
+  <data name="MyInfo" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MyProducts" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="MyVehicles" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Addresses" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Bank_Accounts" xml:space="preserve">
+    <value>Bank Accounts</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Mystatistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Profile_AddBankAccount" xml:space="preserve">
+    <value>Add Bank Accounts</value>
+  </data>
+  <data name="Profile_AddBenefit" xml:space="preserve">
+    <value>Add Benefit</value>
+  </data>
+  <data name="Profile_AddNewAddress" xml:space="preserve">
+    <value>Add New Address</value>
+  </data>
+  <data name="Profile_EditMyData" xml:space="preserve">
+    <value>Edit my Info</value>
+  </data>
+  <data name="Profile_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Profile_Phonenumber" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Profile_UserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="Purchase_Log" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>Requests</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="InsuranceCompanyName" xml:space="preserve">
+    <value>Insurance Company Name</value>
+  </data>
+  <data name="ErrorCode" xml:space="preserve">
+    <value>Error Code</value>
+  </data>
+  <data name="InvoiceInsuranceCompanyName" xml:space="preserve">
+    <value>Invoice generated for insurance company : </value>
+  </data>
+  <data name="InvoiceNo" xml:space="preserve">
+    <value>Invoice No.</value>
+  </data>
+  <data name="MyPurchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="DownloadInvoice" xml:space="preserve">
+    <value>Download Invoice</value>
+  </data>
+  <data name="SAR" xml:space="preserve">
+    <value>SAR</value>
+  </data>
+  <data name="Notification_Request_Sent" xml:space="preserve">
+    <value>Your edits has been successfully sent to the insurance company.</value>
+  </data>
+  <data name="Notification_request_vehicle" xml:space="preserve">
+    <value>Request edit for vehicle - policy</value>
+  </data>
+  <data name="Register_FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="slide_bg3" xml:space="preserve">
+    <value>
+    Based on the circular issued by the Saudi Arabian
+    &lt;br /&gt;
+    Monetary Authority as of 19/03/2018, A registered national
+    &lt;br /&gt;
+    address is mandatory when issuing any insurance policy
+</value>
+  </data>
+  <data name="Vehicle_RegistrationType" xml:space="preserve">
+    <value>Registration Type</value>
+  </data>
+  <data name="Vehicle_RegistrationType1" xml:space="preserve">
+    <value>Sequence Num.</value>
+  </data>
+  <data name="Vehicle_RegistrationType2" xml:space="preserve">
+    <value>Custom Card</value>
+  </data>
+  <data name="owner_id_number" xml:space="preserve">
+    <value>ID / Residence Number</value>
+  </data>
+  <data name="payment_instruction" xml:space="preserve">
+    <value>To pay the bill via Sadad,in all Saudi Arabia Banks follow the following instruction:</value>
+  </data>
+  <data name="payment_instruction_bill_exp" xml:space="preserve">
+    <value>Please pay the bill before</value>
+  </data>
+  <data name="payment_instruction_bill_N" xml:space="preserve">
+    <value>Sadad Id:</value>
+  </data>
+  <data name="payment_instruction_error" xml:space="preserve">
+    <value>An issue has been happened during Sadad payment. please try again later</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Upgrade to comprehensive insurance</value>
+  </data>
+  <data name="UpgradeToComprehensive" xml:space="preserve">
+    <value>The upgrading to comprehensive starting from</value>
+  </data>
+  <data name="comprehensive_condiation_policy" xml:space="preserve">
+    <value>By clicking I have read and agree to the &lt;a href="{0}" target="_blank" rel="noopener"&gt;Terms and conditions of the insurance policy&lt;/a&gt;, and I do not wish to buy comprehensive policy, without any liability on #Bcare</value>
+  </data>
+  <data name="tpl_condiation_policy" xml:space="preserve">
+    <value>By clicking I have read and agree to the &lt;a href="{0}" target="_blank" rel="noopener"&gt;Terms of the Insurance Policy&lt;/a&gt; without any liability on #Bcare</value>
+  </data>
+  <data name="NajmStatus" xml:space="preserve">
+    <value>Najm Status</value>
+  </data>
+  <data name="img_condiation_policy" xml:space="preserve">
+    <value>I declare that the vehicle images are of my vehicle, were taken recently and have not been amended in any way. I accept that the false declaration could affect any claims or invalidate my policy.</value>
+  </data>
+  <data name="company_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="company_fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="company_phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="payment_biller_name" xml:space="preserve">
+    <value>Bank of Riyadh Payments</value>
+  </data>
+  <data name="payment_biller_name_heading" xml:space="preserve">
+    <value>Biller Name:</value>
+  </data>
+  <data name="login_password_confirm" xml:space="preserve">
+    <value>Password Confirmation</value>
+  </data>
+  <data name="password_reset_btn" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="password_reset_title" xml:space="preserve">
+    <value>Password Reset</value>
+  </data>
+  <data name="forget_password_btn" xml:space="preserve">
+    <value>Send Link</value>
+  </data>
+  <data name="forget_password_heading" xml:space="preserve">
+    <value>Reset Your Password</value>
+  </data>
+  <data name="forget_password_link" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="forget_password_email_sent" xml:space="preserve">
+    <value>reset email has been sent to your email.</value>
+  </data>
+  <data name="home_slider_cta" xml:space="preserve">
+    <value>Start comparison</value>
+  </data>
+  <data name="add_another_driver_btn" xml:space="preserve">
+    <value>Add another driver</value>
+  </data>
+  <data name="bills" xml:space="preserve">
+    <value>Bills</value>
+  </data>
+  <data name="edit_requests" xml:space="preserve">
+    <value>Edit requests</value>
+  </data>
+  <data name="policies" xml:space="preserve">
+    <value>Policies</value>
+  </data>
+  <data name="policies_expired" xml:space="preserve">
+    <value>Expired policies</value>
+  </data>
+  <data name="policies_valid" xml:space="preserve">
+    <value>Valid policies</value>
+  </data>
+  <data name="quotations" xml:space="preserve">
+    <value>Quotations</value>
+  </data>
+  <data name="Invoice_not_found" xml:space="preserve">
+    <value>Invoice file not ready yet.</value>
+  </data>
+  <data name="Policy_not_found" xml:space="preserve">
+    <value>Policy file not ready yet.</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Contact_us" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="ContactUsEmailBody" xml:space="preserve">
+    <value>We have received your request and it's being processed now</value>
+  </data>
+  <data name="ContactUsEmailSubject" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="ContactUsSupportEmailBody" xml:space="preserve">
+    <value>Customer {X} sent this message:</value>
+  </data>
+  <data name="ContactUsSupportEmailSubject" xml:space="preserve">
+    <value>راسلنا</value>
+  </data>
+  <data name="deductible" xml:space="preserve">
+    <value>deductible</value>
+  </data>
+  <data name="new_insurance" xml:space="preserve">
+    <value>New insurance</value>
+  </data>
+  <data name="purpose_of_insurance" xml:space="preserve">
+    <value>Purpose of insurance</value>
+  </data>
+  <data name="transfer_insurance" xml:space="preserve">
+    <value>Transfer insurance</value>
+  </data>
+  <data name="education_level" xml:space="preserve">
+    <value>Education level</value>
+  </data>
+  <data name="occupation" xml:space="preserve">
+    <value>Occupation</value>
+  </data>
+  <data name="percentage_of_use" xml:space="preserve">
+    <value>Percentage of use</value>
+  </data>
+  <data name="ContactUsMessageReceivedBody" xml:space="preserve">
+    <value>Someone from our support team will contact you shortly.</value>
+  </data>
+  <data name="ContactUsMessageReceivedHeader" xml:space="preserve">
+    <value>Thank you, your message was received successfully</value>
+  </data>
+  <data name="ResetPasswordUserEmailNotFound" xml:space="preserve">
+    <value>There is no user with this email address</value>
+  </data>
+  <data name="ApprovedPolicyUpdReqNotification" xml:space="preserve">
+    <value>Approved policy update request number </value>
+  </data>
+  <data name="AwaitingPaymentPolicyUpdReqNotification" xml:space="preserve">
+    <value>Waiting payment </value>
+  </data>
+  <data name="PayUsingDebit" xml:space="preserve">
+    <value>Pay using debit card</value>
+  </data>
+  <data name="login_incorrect_email_message" xml:space="preserve">
+    <value>No user with this email in our database</value>
+  </data>
+  <data name="login_incorrect_password_message" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
+  <data name="password_confirm_error" xml:space="preserve">
+    <value>Password and confirm password doesn't match.</value>
+  </data>
+  <data name="exist_email_signup_error" xml:space="preserve">
+    <value>Email already registed</value>
+  </data>
+  <data name="exist_phone_signup_error" xml:space="preserve">
+    <value>phone number already registered </value>
+  </data>
+  <data name="ErrorWhileJoiningPromotionProgram" xml:space="preserve">
+    <value>An occurred while joining the program, please try again</value>
+  </data>
+  <data name="JoinProgramConfirmationBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; Subscription Activation&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    Dear customer, &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;To confirm joining the promotion program, please click "Activate"&lt;/p&gt;
+&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 Activate
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  Thanks for giving us the opportunity to serve you ,,,
+																  &lt;br&gt;
+																	&lt;b&gt;#Bcare&lt;/b&gt; Team &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="JoinProgramConfirmationSubject" xml:space="preserve">
+    <value>Join Promotion Program Confirmation</value>
+  </data>
+  <data name="JoinProgramMailSent" xml:space="preserve">
+    <value>A Confirmation e-mail has been sent to your email, please check it to continue joining the promotion program.</value>
+  </data>
+  <data name="login_phone_number_error" xml:space="preserve">
+    <value>Invaild soudi number</value>
+  </data>
+  <data name="ConfirmJoinProgramRequestExpired" xml:space="preserve">
+    <value>Your request to join the program has been expired.</value>
+  </data>
+  <data name="ConfirmJoinProgramSuccess" xml:space="preserve">
+    <value>You are confirmed to join the program.</value>
+  </data>
+  <data name="ConfirmJoinProgramTokenInvalid" xml:space="preserve">
+    <value>The given token isn't valid.</value>
+  </data>
+  <data name="join" xml:space="preserve">
+    <value>Join</value>
+  </data>
+  <data name="profile_join_promotion" xml:space="preserve">
+    <value>Join Promotion Program</value>
+  </data>
+  <data name="profile_promotion" xml:space="preserve">
+    <value>Promotion Program</value>
+  </data>
+  <data name="program_description" xml:space="preserve">
+    <value>Program Description</value>
+  </data>
+  <data name="program_name" xml:space="preserve">
+    <value>Program Name</value>
+  </data>
+  <data name="promotion_programs" xml:space="preserve">
+    <value>Promotion Programs</value>
+  </data>
+  <data name="sending" xml:space="preserve">
+    <value>Sending</value>
+  </data>
+  <data name="login_phone_number_error_length" xml:space="preserve">
+    <value>phone number must be at least 10 digit</value>
+  </data>
+  <data name="notEligible" xml:space="preserve">
+    <value>Not eligible</value>
+  </data>
+  <data name="city" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="driver_name" xml:space="preserve">
+    <value>Driver name</value>
+  </data>
+  <data name="expired" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="vehicle_name" xml:space="preserve">
+    <value>Vehicle name</value>
+  </data>
+  <data name="view_search_results" xml:space="preserve">
+    <value>View search results</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="delete_vehicle" xml:space="preserve">
+    <value>delete vehicle</value>
+  </data>
+  <data name="edit_password" xml:space="preserve">
+    <value>change password</value>
+  </data>
+  <data name="TPL" xml:space="preserve">
+    <value>Third Party Liability</value>
+  </data>
+  <data name="company_mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="edit_request" xml:space="preserve">
+    <value>Edit request</value>
+  </data>
+  <data name="add_driver_edit_request" xml:space="preserve">
+    <value>Add driver</value>
+  </data>
+  <data name="attach_files" xml:space="preserve">
+    <value>Please attach files of type (image / pdf) to complete the request</value>
+  </data>
+  <data name="change_plate" xml:space="preserve">
+    <value>Change plate</value>
+  </data>
+  <data name="choose_edit_request_type" xml:space="preserve">
+    <value>Please specify the purpose of the Edit</value>
+  </data>
+  <data name="copy_of_national_identity" xml:space="preserve">
+    <value>Copy of national identity / resident ID</value>
+  </data>
+  <data name="copy_of_national_identity_additional_driver" xml:space="preserve">
+    <value>Copy of national identity / residence of the additional driver</value>
+  </data>
+  <data name="copy_of_policy" xml:space="preserve">
+    <value>Copy of the insurance policy</value>
+  </data>
+  <data name="document_mistake_edit_request" xml:space="preserve">
+    <value>Mistake in document</value>
+  </data>
+  <data name="driver_license_additional_driver" xml:space="preserve">
+    <value>Driver 's license for additional driver</value>
+  </data>
+  <data name="license_new_vehicle" xml:space="preserve">
+    <value>License for the new vehicle</value>
+  </data>
+  <data name="purpose_of_edit_request" xml:space="preserve">
+    <value>Purpose of the edit request</value>
+  </data>
+  <data name="release_plate" xml:space="preserve">
+    <value>Release plate</value>
+  </data>
+  <data name="send_edit_request" xml:space="preserve">
+    <value>Send edit request</value>
+  </data>
+  <data name="vehicle_license" xml:space="preserve">
+    <value>Vehicle license</value>
+  </data>
+  <data name="edit_request_success" xml:space="preserve">
+    <value>The edit request has been sent to the insurance company by number</value>
+  </data>
+  <data name="payment_RiyadBank" xml:space="preserve">
+    <value>Visa - MasterCard - Mada</value>
+  </data>
+  <data name="messageUnAuthorized" xml:space="preserve">
+    <value>Un Authorized</value>
+  </data>
+  <data name="invaildExtension" xml:space="preserve">
+    <value>Invaild File extension</value>
+  </data>
+  <data name="sama_iban" xml:space="preserve">
+    <value>Based on SAMA requirements</value>
+  </data>
+  <data name="IBANUsedForOtherDriver" xml:space="preserve">
+    <value>IBAN already used before for another driver</value>
+  </data>
+  <data name="payment_by" xml:space="preserve">
+    <value>Select Your Payment Method</value>
+  </data>
+  <data name="Custom_Card" xml:space="preserve">
+    <value>Custom Card</value>
+  </data>
+  <data name="checkout_error_email" xml:space="preserve">
+    <value>Please enter a valid e-mail</value>
+  </data>
+  <data name="follow_us" xml:space="preserve">
+    <value>Follow us</value>
+  </data>
+  <data name="included" xml:space="preserve">
+    <value>Included</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="faq_help" xml:space="preserve">
+    <value>Browse through answers to common queries</value>
+  </data>
+  <data name="reply_field" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="search_field" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="tab_chat" xml:space="preserve">
+    <value>Help and Support</value>
+  </data>
+  <data name="tab_faq" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="driverIdRequired" xml:space="preserve">
+    <value>Copy of national identity / residence of the additional driver is required</value>
+  </data>
+  <data name="driverLicenseReuired" xml:space="preserve">
+    <value>Driver 's license for additional driver is required</value>
+  </data>
+  <data name="fileNull" xml:space="preserve">
+    <value>File can't be null</value>
+  </data>
+  <data name="newVehicleLicenseRequired" xml:space="preserve">
+    <value>License for the new vehicle is Required</value>
+  </data>
+  <data name="PolicyFileRequired" xml:space="preserve">
+    <value>Copy of the insurance policy is required</value>
+  </data>
+  <data name="userIdLinceseRequired" xml:space="preserve">
+    <value>Copy of the insurance policy is required</value>
+  </data>
+  <data name="userIdRequired" xml:space="preserve">
+    <value>Copy of national identity / resident ID is Required</value>
+  </data>
+  <data name="vehicleLinencesRequired" xml:space="preserve">
+    <value>Vehicle license is required</value>
+  </data>
+  <data name="forbidden_description" xml:space="preserve">
+    <value>Sorry, you do not have permission to view this page. Be sure of it, or return to the home page.</value>
+  </data>
+  <data name="forbidden_title" xml:space="preserve">
+    <value>Access denied</value>
+  </data>
+  <data name="home_page" xml:space="preserve">
+    <value>Home page</value>
+  </data>
+  <data name="QuotationExpired" xml:space="preserve">
+    <value>Quotation is expired, you can make a new search again.</value>
+  </data>
+  <data name="exceedploicyNumber" xml:space="preserve">
+    <value>You exceeded the allowed number of policies if you want more please ask for admin permissions</value>
+  </data>
+  <data name="requestmorepolicies" xml:space="preserve">
+    <value>Please click here to request more ploicies</value>
+  </data>
+  <data name="Promotion_StartSearch" xml:space="preserve">
+    <value>Start search</value>
+  </data>
+  <data name="Wafier_Index_EnterWafierEmail" xml:space="preserve">
+    <value>Please Enter Your Official Work Email</value>
+  </data>
+  <data name="Wafier_Index_NoWafierProgramExists" xml:space="preserve">
+    <value>Sorry No wafier program exists</value>
+  </data>
+  <data name="wafier_program" xml:space="preserve">
+    <value>Wafier program</value>
+  </data>
+  <data name="SandPlus" xml:space="preserve">
+    <value>Sand Plus</value>
+  </data>
+  <data name="Tameenk_ConfirmPhoneNumber_CodeNotCorrect" xml:space="preserve">
+    <value>Verification code is incorrect</value>
+  </data>
+  <data name="Tameenk_ConfirmPhoneNumber_Length6" xml:space="preserve">
+    <value>Max 6 digits allowed</value>
+  </data>
+  <data name="Tameenk_ConfirmPhoneNumber_Resend" xml:space="preserve">
+    <value>Resend Code</value>
+  </data>
+  <data name="Tameenk_ConfirmPhoneNumber_ResendCode" xml:space="preserve">
+    <value>Verification code was resent to you</value>
+  </data>
+  <data name="Tameenk_MaxCheckoutEmail_Error" xml:space="preserve">
+    <value>Sorry, you exceeded purchase amount with this email.</value>
+  </data>
+  <data name="payment_Hyperpay" xml:space="preserve">
+    <value>Visa - MasterCard</value>
+  </data>
+  <data name="Tameenk_VerifyCode_ResendError" xml:space="preserve">
+    <value>this phone number is already registered with another user</value>
+  </data>
+  <data name="WafierContent" xml:space="preserve">
+    <value>To benefit from the discount, we welcome employees of Saudi universities, employees of the Technical and Vocational Training Corporation and King Fahd Medical City; qualified staff for special discount and their families: parents, husband, wife, boys and girls.</value>
+  </data>
+  <data name="Tameenk_DDL_SelectOption" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="PhoneNoWithAnotherDriver" xml:space="preserve">
+    <value>This phone  number assigned to another driver so please enter the insured mobile number</value>
+  </data>
+  <data name="VerificationCodeMessage" xml:space="preserve">
+    <value>Verification code for phone no is {0}</value>
+  </data>
+  <data name="GenericError" xml:space="preserve">
+    <value>There is an error occured, please try again later</value>
+  </data>
+  <data name="ReachedTheMaxPhoneChange" xml:space="preserve">
+    <value>You reached the maximum number for phone number changes</value>
+  </data>
+  <data name="MOIContent" xml:space="preserve">
+    <value>The Ministry of Interior is keen to provide special benefits and prices to its employees and families, and families of martyrs duty, in partnership with Bcare to provide insurance services at competitive prices with a group of best insurance companies.</value>
+  </data>
+  <data name="MOI_description" xml:space="preserve">
+    <value>The Ministry of the Interior represents a social responsibility initiative that seeks to create preferential treatment and quality service in the areas of health, recreation, service and trade for Ministry of Interior employees and administrators, their families and employees of the Technical and Vocational Training Corporation of trainers, employees and their families through active partnership with these sectors</value>
+  </data>
+  <data name="MOI_notfound" xml:space="preserve">
+    <value>Sorry No MOI program exists</value>
+  </data>
+  <data name="MOI_program" xml:space="preserve">
+    <value>MOI program</value>
+  </data>
+  <data name="Sabic_Content" xml:space="preserve">
+    <value>To benefit from the discount, welcome to the Kingdom of Saudi Arabia from qualified employees to your deductible and their parents: parents, husband, wife, children, and daughters</value>
+  </data>
+  <data name="Sabic_description" xml:space="preserve">
+    <value>SABIC is keen on its employees to grant the best offers and discounts for them.
+As agreed with BCARE to provide SABIC employees and their relatives special discounts</value>
+  </data>
+  <data name="Sabic_notfound" xml:space="preserve">
+    <value>Sorry No Sabic program exists</value>
+  </data>
+  <data name="Sabic_program" xml:space="preserve">
+    <value>Sabic program</value>
+  </data>
+  <data name="SadadCode" xml:space="preserve">
+    <value>067</value>
+  </data>
+  <data name="SadadCodeText" xml:space="preserve">
+    <value>Sadad Code</value>
+  </data>
+  <data name="authentication_by_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="authentication_by_upload" xml:space="preserve">
+    <value>Attach a business card or identification from the employer</value>
+  </data>
+  <data name="image_identity" xml:space="preserve">
+    <value>Image of identity</value>
+  </data>
+  <data name="method_of_authentication" xml:space="preserve">
+    <value>Method of authentication</value>
+  </data>
+  <data name="login_emailWork" xml:space="preserve">
+    <value>Official Work Email</value>
+  </data>
+  <data name="login_emailWorkInfo" xml:space="preserve">
+    <value>The business card will be deleted from the system after authentication</value>
+  </data>
+  <data name="BusinessCardUploaded" xml:space="preserve">
+    <value>Business card has been uploaded</value>
+  </data>
+  <data name="EmailUsedWithAnotherDriver" xml:space="preserve">
+    <value>This email assigned to another driver so please enter the insured email</value>
+  </data>
+  <data name="IBANWithAnotherDriver" xml:space="preserve">
+    <value>This IBAN number assigned to another driver so please enter the insured IBAN</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error: Please contact Customer Service 920010050 (NA-99)</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>This Account is Locked, Please Contact Customer Service 920010050</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Locked out</value>
+  </data>
+  <data name="STCPay" xml:space="preserve">
+    <value>STCPay</value>
+  </data>
+  <data name="MoiRequestRecieved" xml:space="preserve">
+    <value>Your request recieved successfully and will be reviewd and we will inform you by email</value>
+  </data>
+  <data name="alreadyRegistered" xml:space="preserve">
+    <value>You are already registered, your request is under revision</value>
+  </data>
+  <data name="clickToKnowMoreAboutMinistryOfInterior" xml:space="preserve">
+    <value>Click To Know More About Ministry Of Interior</value>
+  </data>
+  <data name="compareBetweenDiffrentInsuranceQuotations" xml:space="preserve">
+    <value>Compare Between Diffrent Insurance Quotations</value>
+  </data>
+  <data name="compareQuotations" xml:space="preserve">
+    <value>Compare Quotations</value>
+  </data>
+  <data name="doInsuranceTransaction" xml:space="preserve">
+    <value>Do Insurance Proccess</value>
+  </data>
+  <data name="enterData" xml:space="preserve">
+    <value>Enter your data</value>
+  </data>
+  <data name="enterInsuranceData" xml:space="preserve">
+    <value>Enter Insurance Data</value>
+  </data>
+  <data name="fileSizeLimitExceeded" xml:space="preserve">
+    <value>File size limit exceeded, Max file size is {0} MB</value>
+  </data>
+  <data name="insureNow" xml:space="preserve">
+    <value>Insure Now</value>
+  </data>
+  <data name="invalidFileExtension" xml:space="preserve">
+    <value>Invalid File Extension, allowed extensions are :</value>
+  </data>
+  <data name="ministryOfInterior" xml:space="preserve">
+    <value>Ministry Of Interior</value>
+  </data>
+  <data name="alreadyRegisteredAndApproved" xml:space="preserve">
+    <value>Your email already registered</value>
+  </data>
+  <data name="checkout_alert5" xml:space="preserve">
+    <value>As per SAMA regulations, National Address is mandatory when issuing the policy and for any types of insurance, Register now by clicking </value>
+  </data>
+  <data name="checkout_alert_here" xml:space="preserve">
+    <value>here</value>
+  </data>
+  <data name="BcareConfirmationEmail" xml:space="preserve">
+    <value>Bcare Confirmation</value>
+  </data>
+  <data name="CheckYourEmail" xml:space="preserve">
+    <value>A Confirmation e-mail has been sent to your email, please check it to complete your registeration process.</value>
+  </data>
+  <data name="ConfirmationEmailAfterVerificationCode" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; Welcome to Bcare&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    Dear customer, &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;Thank you for joining the &lt;b&gt;#Bcare&lt;/b&gt; family, a new email account has been registered&lt;/p&gt;
+&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 Login
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  Thanks for giving us the opportunity to serve you ,,,
+																  &lt;br&gt;
+																	&lt;b&gt;#Bcare&lt;/b&gt; Team &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Email Not Confirmed</value>
+  </data>
+  <data name="receivePolicyByEmail" xml:space="preserve">
+    <value>I would like to receive the insurance policy, its attachments and all notifications on the above email</value>
+  </data>
+  <data name="checkout_esal" xml:space="preserve">
+    <value>Sadad</value>
+  </data>
+  <data name="EsalPaymentInstruction" xml:space="preserve">
+    <value>Payment details was sent to your email and sms to your phone</value>
+  </data>
+  <data name="payment_biller_name_esal" xml:space="preserve">
+    <value>Bcare - بى كير</value>
+  </data>
+  <data name="payment_code_esal" xml:space="preserve">
+    <value>Pyamnet Code:</value>
+  </data>
+  <data name="payment_code_esal_val" xml:space="preserve">
+    <value>553</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone Number:</value>
+  </data>
+  <data name="SadadMessage" xml:space="preserve">
+    <value>Payment Information will be sent via sms and email</value>
+  </data>
+  <data name="ProgramJoinedSuccessfully" xml:space="preserve">
+    <value>The Program Joined Successfully</value>
+  </data>
+  <data name="program_code" xml:space="preserve">
+    <value>Membership Number</value>
+  </data>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>Error: Please contact Customer Service 920010050 (V-01)</value>
+  </data>
+  <data name="CustomCard" xml:space="preserve">
+    <value>Custom Card</value>
+  </data>
+  <data name="CustomCardInput" xml:space="preserve">
+    <value>Custom Card</value>
+  </data>
+  <data name="DownloadPolicy" xml:space="preserve">
+    <value>Print Insurance Policy</value>
+  </data>
+  <data name="EnglishFirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="EnglishLastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="NIN" xml:space="preserve">
+    <value>Insured national ID/Iqama number</value>
+  </data>
+  <data name="PolicyExpiryDate" xml:space="preserve">
+    <value>Policy Expiry Date</value>
+  </data>
+  <data name="PolicyNo" xml:space="preserve">
+    <value>Policy No</value>
+  </data>
+  <data name="PrintYourPolicy" xml:space="preserve">
+    <value>Print Your Policy</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SequenceNumber" xml:space="preserve">
+    <value>Sequence Number</value>
+  </data>
+  <data name="SequenceNumberInput" xml:space="preserve">
+    <value>Sequence Number</value>
+  </data>
+  <data name="CustomCardReq" xml:space="preserve">
+    <value>Custom card number is required</value>
+  </data>
+  <data name="NinReq" xml:space="preserve">
+    <value>Insured national ID/Iqama number is required.</value>
+  </data>
+  <data name="PoliciesNotFound" xml:space="preserve">
+    <value>Policies Not Found</value>
+  </data>
+  <data name="SequenceNumberReq" xml:space="preserve">
+    <value>Sequence number is required</value>
+  </data>
+  <data name="IBAN_Validation" xml:space="preserve">
+    <value>IBAN accept numbers with only one char</value>
+  </data>
+  <data name="checkout_total_note" xml:space="preserve">
+    <value>Include {0}% broker commission</value>
+  </data>
+  <data name="PayNow" xml:space="preserve">
+    <value>Pay Now!</value>
+  </data>
+  <data name="PolicyEndDate" xml:space="preserve">
+    <value>Policy End Date</value>
+  </data>
+  <data name="PolicyPrintDate" xml:space="preserve">
+    <value>Policy Print Date</value>
+  </data>
+  <data name="PolicyStartDate" xml:space="preserve">
+    <value>Policy Start Date</value>
+  </data>
+  <data name="PriceDetails" xml:space="preserve">
+    <value>Price Details</value>
+  </data>
+  <data name="QuotationPrices" xml:space="preserve">
+    <value>Quotation Prices</value>
+  </data>
+  <data name="RequesterInsuranceName" xml:space="preserve">
+    <value>Insured Name</value>
+  </data>
+  <data name="RequesterInsuranceNIN" xml:space="preserve">
+    <value>Insured ID</value>
+  </data>
+  <data name="SequenceNumberOrCustomCard" xml:space="preserve">
+    <value>Vehicle Sequence Number/Custom Card</value>
+  </data>
+  <data name="SubTotal" xml:space="preserve">
+    <value>Sub Total</value>
+  </data>
+  <data name="completeOnMobileApplication" xml:space="preserve">
+    <value>To complete the purchase, the vehicle images must be uploaded through Bcare mobile application OR mobile browser</value>
+  </data>
+  <data name="checkout_error_payment" xml:space="preserve">
+    <value>Please select a payment method</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Bcare" xml:space="preserve">
+    <value>Bcare</value>
+  </data>
+  <data name="CompareQuotations_2" xml:space="preserve">
+    <value>2.Compare Quotations</value>
+  </data>
+  <data name="EnterData_1" xml:space="preserve">
+    <value>1.Enter Data</value>
+  </data>
+  <data name="FastestPlatform" xml:space="preserve">
+    <value>The Fastest Insurance Platform in Saudi Arabia </value>
+  </data>
+  <data name="InsureNow_3" xml:space="preserve">
+    <value>3.Insure Now</value>
+  </data>
+  <data name="ThreeSimpleStepts" xml:space="preserve">
+    <value>With 3 Simple Steps</value>
+  </data>
+  <data name="ActivateEmailToReceivePolicyEmail" xml:space="preserve">
+    <value>You have to activate the email ({0}) to receive the insurance policy, knowing that the document can be printed from Profile &gt; Products .</value>
+  </data>
+  <data name="ActivateEmailToReceivePolicySubject" xml:space="preserve">
+    <value>Email Activation</value>
+  </data>
+  <data name="ActivateYourEmailToReceivePolicy" xml:space="preserve">
+    <value>Activate Your Email To Receive Policy</value>
+  </data>
+  <data name="DeclareYourInfo" xml:space="preserve">
+    <value>and I declare that the information entered above is true and related to me, a verification link will be sent via email to complete receiving your policy</value>
+  </data>
+  <data name="EmailActivationBodyToReceivePolicy" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; Email Activation&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    Dear customer, &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;To receive the insurance policy on e-mail, you must complete the activation process. Please click "Activate"&lt;/p&gt;
+&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 Activate
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  Thanks for giving us the opportunity to serve you ,,,
+																  &lt;br&gt;
+																	&lt;b&gt;#Bcare&lt;/b&gt; Team &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="PopupConfirmYourEmail" xml:space="preserve">
+    <value>Confirm your email</value>
+  </data>
+  <data name="PopupPolicyOwnerEmail" xml:space="preserve">
+    <value>Policy owner Email</value>
+  </data>
+  <data name="PopupSendActivationEmail" xml:space="preserve">
+    <value>Send Activation Email</value>
+  </data>
+  <data name="PopupTitle" xml:space="preserve">
+    <value>To receive the email insurance policy, you must complete the verification of your email</value>
+  </data>
+  <data name="UserExceedsInsuranceNumberLimitCheckoutPopup" xml:space="preserve">
+    <value>We hope to contact with the insurance company directly, as you have more than 5 insured vehicles for the same insured person.</value>
+  </data>
+  <data name="Agree" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ActivationEmailSent" xml:space="preserve">
+    <value>Activation Email Sent</value>
+  </data>
+  <data name="ResendActivationEmail" xml:space="preserve">
+    <value>Resend</value>
+  </data>
+  <data name="EmailActivated" xml:space="preserve">
+    <value>Email is activated</value>
+  </data>
+  <data name="ResetPaswordTokenInvalid" xml:space="preserve">
+    <value>The given token isn't valid, it is valid for one time, Please retry "Forget Pasword" from login page.</value>
+  </data>
+  <data name="DriverName" xml:space="preserve">
+    <value>Driver Name</value>
+  </data>
+  <data name="DriverNIN" xml:space="preserve">
+    <value>Driver National ID</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="SadadLoading" xml:space="preserve">
+    <value>Generating Sadad Number</value>
+  </data>
+  <data name="BCareTitle" xml:space="preserve">
+    <value>Compare/Buy Cheap Car Insurance Quotes Online in Mintues | BCare</value>
+  </data>
+  <data name="Keywords" xml:space="preserve">
+    <value>Car Insurance, Cheap Car Insurance, Saudi Insurance, Car Insurance Online, Insurance Quotes, Bcare</value>
+  </data>
+  <data name="MetaDescription" xml:space="preserve">
+    <value>Compare cheap car insurance quotes using BCare's comparison service. See the cheapest policies and buy from the best car insurance providers in Saudi.</value>
+  </data>
+  <data name="Profile_AddTicket" xml:space="preserve">
+    <value>Add Ticket</value>
+  </data>
+  <data name="Tickets" xml:space="preserve">
+    <value>Tickets</value>
+  </data>
+  <data name="renewal" xml:space="preserve">
+    <value>Polic Renewal</value>
+  </data>
+  <data name="DeserveDiscount" xml:space="preserve">
+    <value>Deserve Discount</value>
+  </data>
+  <data name="NotDeserveDiscount" xml:space="preserve">
+    <value>Not Deserve Discount</value>
+  </data>
+  <data name="DeserveDiscountTitle" xml:space="preserve">
+    <value>Check Discount</value>
+  </data>
+  <data name="BillDueDate" xml:space="preserve">
+    <value>Bill Due Date</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="MySadadBills" xml:space="preserve">
+    <value>Sadad Bills</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Payed" xml:space="preserve">
+    <value>Payed</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="WaitForPayment" xml:space="preserve">
+    <value>Wait ForPayment</value>
+  </data>
+  <data name="DownloadTempPolicy" xml:space="preserve">
+    <value>Download Temporary Policy</value>
+  </data>
+  <data name="SadadNo" xml:space="preserve">
+    <value>Sadad Number</value>
+  </data>
+  <data name="EmailNotRegisteredOnBcare" xml:space="preserve">
+    <value>This email has not any account on Bcare so please register with this email first</value>
+  </data>
+  <data name="comprehensive_condiation_policy_ACIG" xml:space="preserve">
+    <value>By clicking I have read and agree to the &lt;a href="https://www.bcare.com.sa/ACIG_policy.pdf" target="_blank" rel="noopener"&gt;Terms and conditions of the insurance policy&lt;/a&gt;, and I do not wish to buy comprehensive policy, without any liability on #Bcare</value>
+  </data>
+  <data name="edaat_payment_instruction" xml:space="preserve">
+    <value>You can pay your bills through one of your bank channels, using the following steps:</value>
+  </data>
+  <data name="ChooseMofawter" xml:space="preserve">
+    <value>3. Select Biller company ( EDAA 903 )</value>
+  </data>
+  <data name="ChoosePayInvoices" xml:space="preserve">
+    <value>1. Select Payment</value>
+  </data>
+  <data name="ChoosePaySadadInvoices" xml:space="preserve">
+    <value>2. Select SADAD payment / Add Invoice</value>
+  </data>
+  <data name="ChooseServiceType" xml:space="preserve">
+    <value>4. Select service type ( Bills payment )</value>
+  </data>
+  <data name="Edaat_Instruction" xml:space="preserve">
+    <value>Dear Customer&lt;br/&gt;
+SADAD Bill Details:</value>
+  </data>
+  <data name="EnterInvoiceNumer" xml:space="preserve">
+    <value>5. Type number of Invoice that already sent to you through phone number</value>
+  </data>
+  <data name="SadadAmount" xml:space="preserve">
+    <value>Amount: </value>
+  </data>
+  <data name="SadadEXPDATE" xml:space="preserve">
+    <value>Invoice Expiry Date: </value>
+  </data>
+  <data name="SadadNumber" xml:space="preserve">
+    <value>SADAD Number:</value>
+  </data>
+  <data name="EDAA" xml:space="preserve">
+    <value>EDAA</value>
+  </data>
+  <data name="EdaatCode" xml:space="preserve">
+    <value>Biller ID</value>
+  </data>
+  <data name="MofaterName" xml:space="preserve">
+    <value>Biller Name</value>
+  </data>
+  <data name="MotorFlex" xml:space="preserve">
+    <value>Motor Flex</value>
+  </data>
+  <data name="WoorefDiscount" xml:space="preserve">
+    <value>Due for discount</value>
+  </data>
+  <data name="WafiSmart" xml:space="preserve">
+    <value>Wafi Smart</value>
+  </data>
+  <data name="Otp_Popup_code_input" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Otp_Popup_header" xml:space="preserve">
+    <value>Enter Verification Code</value>
+  </data>
+  <data name="Otp_Popup_submit_btn" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="CorporateAccountInfo" xml:space="preserve">
+    <value>Corporate Account Info</value>
+  </data>
+  <data name="CorporateBalance" xml:space="preserve">
+    <value>Corporate Balance</value>
+  </data>
+  <data name="CorporateNameArabic" xml:space="preserve">
+    <value>Corporate Name Arabic</value>
+  </data>
+  <data name="CorporateNameEnglish" xml:space="preserve">
+    <value>Corporate Name English</value>
+  </data>
+  <data name="CorporateUsers" xml:space="preserve">
+    <value>Corporate Users</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="oldPassword" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="resetPassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="CorporatePolicies" xml:space="preserve">
+    <value>Corporate Policies</value>
+  </data>
+  <data name="ErrorOTPCompare" xml:space="preserve">
+    <value>Error In OTP</value>
+  </data>
+  <data name="ErrorOTPEmpty" xml:space="preserve">
+    <value>Please Enter OTP</value>
+  </data>
+  <data name="ErrorOTPExpire" xml:space="preserve">
+    <value>OTP Expired</value>
+  </data>
+  <data name="ErrorOTPSend" xml:space="preserve">
+    <value>Error happened during sending OTP</value>
+  </data>
+  <data name="ErrorYakeenMobileVerification" xml:space="preserve">
+    <value>Error happened during verifying the phone number</value>
+  </data>
+  <data name="InvalidMobileOwner" xml:space="preserve">
+    <value>Mobile number is not belong to National Id</value>
+  </data>
+  <data name="MobileEmpty" xml:space="preserve">
+    <value>Mobile is empty</value>
+  </data>
+  <data name="NationalIdEmpty" xml:space="preserve">
+    <value>NationalId  is Empty</value>
+  </data>
+  <data name="UserYakeenNationalIdNotVerified" xml:space="preserve">
+    <value>User NationalId is not verified </value>
+  </data>
+</root>

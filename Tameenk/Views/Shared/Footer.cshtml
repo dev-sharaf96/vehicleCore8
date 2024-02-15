@@ -1,0 +1,56 @@
+﻿<style>
+    .col-xs-12.col-lg-5.col-md-4.bx-right {
+        text-align: center;
+    }
+</style>
+<footer class="main-footer l-shadow xl-mar bx-right">
+    <div class="container">
+        <div class="row">
+            <div class="v-center">
+                <div class="col-xs-12 col-md-5 bx-right">
+                    <img class="sama-logo bx-right" src="/resources/imgs/logosama.png" alt="sama" title="Sama" style='width: 100%;'>
+                </div>
+                <div class="col-xs-12 col-lg-2 col-md-3 bx-right" style="    text-align: center;">
+                    <h3 class="social-heading txt-md txt-brand dis-block">@Html.Raw(Tameenk.LangText.follow_us)</h3>
+                    <ul class="social-icons txt-center">
+                        <li><a href="https://twitter.com/bcareksa" target="_blank" rel="noopener" class="tw"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://facebook.com/Bcareksa-115093535762889/" target="_blank" rel="noopener" class="fb"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://instagram.com/bcareksa" target="_blank" rel="noopener" class="st"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/bcareksa" target="_blank" rel="noopener" class="in"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+
+                </div>
+                <div class="col-xs-12 col-lg-5 col-md-4 bx-right">
+                    <div class='iconsInResponsivex'>
+                        <a href="https://play.google.com/store/apps/details?id=com.app.bcare"><img style='width: 100px;margin-left: 3px;padding-top: 10px;' class="sama-logo bx-right" src="/resources/imgs/android_moblie_app.png" alt="sama" title="Sama"></a>
+                        <a href="https://apps.apple.com/us/app/bcare-%D8%A8%D9%8A-%D9%83%D9%8A%D8%B1/id1490248033?ls=1">  <img style='width: 100px;margin-left: 3px;padding-top: 10px;' class="sama-logo bx-right" src="/resources/imgs/ios_moblie_app.png" alt="sama" title="Sama"></a>
+                    </div>
+                    <ul class="links-list inline-list txt-center f_width" style="margin: 10px 0 0;">
+                        <li>
+                            <a href="@Url.Action("TermsCondition", "Home")" rel="noopener">@Html.Raw(Tameenk.LangText.footer_terms)</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("PrivacyPolicy", "Home")" rel="noopener">@Html.Raw(Tameenk.LangText.footer_policy)</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("AboutUs", "Home")" rel="noopener">@Html.Raw(Tameenk.LangText.footer_about)</a>
+                        </li>
+                        <li>
+                            <a href="/Account/Policy" rel="noopener"> @Html.Raw(Tameenk.LangText.PrintYourPolicy)</a>
+
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Contact", "Home")" rel="noopener">@Html.Raw(Tameenk.LangText.Contact_us)</a>
+                        </li>
+                        <li>
+                            <a href="https://blog.bcare.com.sa/" target="_blank" rel="noopener">@Html.Raw(Tameenk.LangText.Blog)</a>
+                        </li>
+                    </ul>
+
+                    <p class="txt-xs no-mar xs-mar bx-center txt-black text-center" style="text-align: center;">@Html.Raw(Tameenk.LangText.footer_description)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+

@@ -1,0 +1,383 @@
+﻿@model TameenkDAL.Models.UserProfileData
+@using Tameenk.Core.Domain.Enums.Messages
+@using Tameenk.Core.Domain.Enums;
+@using TameenkDAL.Models
+@using System.Collections.Generic;
+@using Tameenk.Resources.UserTicket;
+@{
+    ViewBag.Title = "My Profile";
+}
+<style>
+    .class {
+    color :darkred;
+    }
+    .ticketTypes {
+        width: 100%;
+        height: 50px;
+        border-radius: 7px;
+        border: 1px solid;
+        background:white !important;
+    }
+
+    .newTick {
+        /*margin: 20px;*/
+        background: #24799e;
+        border-radius: 11px;
+        color: white;
+        font-size: 20px;
+    }
+
+    /* The Close Button */
+
+
+    .closeticketModal:hover,
+    .closeticketModal:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .beltWhite {
+        float: right !important;
+        margin-left: 10px;
+    }
+
+    .not-active {
+        pointer-events: none;
+    }
+
+    .isDisabled {
+        color: currentColor;
+        cursor: not-allowed;
+        opacity: 0.5;
+        text-decoration: none;
+    }
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        /* background-color: #fefefe; */
+        margin: auto;
+        /* padding: 20px; */
+        border: 1px solid #888;
+        width: 58%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .userTicketModal {
+        width: 41%;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+    .containerModall {
+        background-color: white;
+        width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        /* margin-top: 100px; */
+        border-radius: 20px;
+        /* max-width:90%; */
+    }
+
+    .addAttchClass {
+        background: #24799e;
+        color: white;
+        width: 120px;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .attchContainer {
+        margin: 5px 0px 7px 0px;
+        box-shadow: 2px 3px 10px 0px #80808057;
+        padding: 10px;
+    }
+
+    .headerModall {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footerModall {
+        padding: 20px 0px;
+    }
+
+    .bodyModall {
+        background-color: #ffff !important;
+        border-radius: 10px;
+        margin: 0px 40px;
+        max-height: 600px;
+        color: rgb(59, 59, 59) !important;
+        font-size: 16px;
+        direction: rtl;
+        padding: 10px 10px 20px 0px;
+        text-align: right;
+    }
+
+    .close {
+        float: left;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: rgb(216, 7, 7);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    p {
+        margin: 30px 0px 50px 0px;
+    }
+
+    a:hover {
+        color: #FB9C65 !important;
+    }
+
+
+    .row {
+        margin: 0 !important;
+    }
+
+
+    .funcButtons {
+        background-color: #FFBC39;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
+        padding: 14px 40px;
+    }
+
+    .wrapper-bx {
+        padding-left: 0px !important;
+    }
+
+    .btnModall {
+        top: -30px;
+        position: absolute;
+        left: 10px;
+        border: none;
+        color: #FAA62F;
+        text-align: center;
+        text-decoration: none;
+        display: inline-flex;
+        font-size: 18px;
+        /* margin: 4px 2px; */
+        cursor: pointer;
+        /* padding: 14px 40px; */
+    }
+</style>
+
+
+<section class="section profile-view min-height-vh">
+    <!-- <span class="space-overly"></span> class="container relative-index" -->
+    <div>
+        @Html.Partial("~/Views/Home/SideBar.cshtml", EProfileSection.Info)
+
+        <!-- My Information begains -->
+        <!-- inactive content col-xs-12  col-md-9 col-lg-10 content-view active -->
+        <div class="inactive content col-xs-12 col-md-9 col-lg-10 content-view active p-section" id="info">
+            <div class="pd-inside">
+                <h1 class="txt-lr txt-black md-mar-bot md-mar col-xs-12">@Html.Raw(Tameenk.LangText.MyInfo)</h1>
+                <div class="row clear-b">
+                    <div class="col-xs-12 col-md-6 col-lg-6 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <span class="txt-sm dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.Profile_UserName)</span>
+                            <h2 class="txt-lr no-mar">
+                                @if (Model.UserObj != null && !string.IsNullOrEmpty(Model.UserObj.FullName))
+                                {
+                                    @Model.UserObj.FullName
+                                }
+                                else
+                                {
+                                    @Model.UserObj.UserName
+                                }
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-6 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <span class="txt-sm dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.Profile_Email)</span>
+                            <h2 class="txt-lr no-mar">@Model.UserObj.Email</h2>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-6 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <span class="txt-sm dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.Profile_Phonenumber)</span>
+                            <h2 class="txt-lr no-mar">@Model.UserObj.PhoneNumber</h2>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-6 md-mar bx-right">
+                        <div class="wrapper-bx container-bx">
+                            <div class="join-promotion">
+                                <span class="txt-sm dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.profile_promotion)</span>
+                                <h2 class="txt-lr no-mar">
+                                    @if (string.IsNullOrEmpty(Model.PromotionProgramName))
+                                    {
+                                        <a href="@Url.Action("Programs","Promotion")">@Html.Raw(Tameenk.LangText.profile_join_promotion)</a>
+
+                                    }
+                                    else
+                                    {
+                                        @Model.PromotionProgramName
+                                        <a data-popup-open="removePromotion" href="#" class="bx-left txt-md">خروج</a>
+                                    }
+                                </h2>
+                            </div>
+                            <div class="promotion-section" style="display: none">
+                                <div class="col-xs-12 col-md-8 bx-right">
+                                    <div class="input-container" style="margin-top: 1em;">
+                                        <input class="input-element" type="email" id="promotion-email" placeholder=" " />
+                                        <label class="input-label" for="promotion-email">@Html.Raw(Tameenk.LangText.login_email)</label>
+                                        <span class="field-error" style="color:red;position:absolute;" id="emailError-promotion"></span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 bx-right" style="margin-top: 1em;">
+                                    <button id="submit-promotion" onclick="joinProgram()" class="no-trans btn sm dis-block txt-white submit-continue txt-brand bg-brand-hvr txt-xs bg-gr-main circ-rdus l-shadow">@Html.Raw(Tameenk.LangText.join)</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- pd inside -->
+            <div class="popup" data-popup="removePromotion">
+                <div class="popup-inner">
+                    <div class="modal-header">
+                        @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+                        {
+                            <h2>Exit</h2>
+                        }
+                        else
+                        {
+                            <h2>خروج</h2>
+                        }
+                    </div>
+                    @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        <div class="modal-body">
+                            <p>Are you sure you want to exit this promotion?</p>
+                        </div>
+                        <div class="model-footer">
+                            <button data-popup-close="removePromotion" class="btn sm dis-block txt-white txt-brand txt-xs bg-green circ-rdus l-shadow bx-left left-mar-10 right-mar-10" type="button">no</button>
+                            <button class="btn sm dis-block txt-white txt-brand txt-xs bg-red circ-rdus l-shadow bx-left left-mar-10 right-mar-10" type="button" onClick="exitPromotion()">yes</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="modal-body">
+                            <p>هل أنت متأكد من الخروج من هذا البرنامج؟</p>
+                        </div>
+                        <div class="model-footer">
+                            <button data-popup-close="removePromotion" class="btn sm dis-block txt-white txt-brand txt-xs bg-green circ-rdus l-shadow bx-left left-mar-10 right-mar-10" type="button">لا</button>
+                            <button class="btn sm dis-block txt-white txt-brand txt-xs bg-red circ-rdus l-shadow bx-left left-mar-10 right-mar-10" type="button" onClick="exitPromotion()">نعم</button>
+                        </div>
+                    }
+                    <a class="popup-close" data-popup-close="removePromotion" href="#">x</a>
+                </div>
+            </div>
+        </div>
+        <!-- My Information ends -->
+</section>
+@section scripts{
+
+<script type="text/javascript">
+        $('a.prevent-click').click(function (event) {
+            event.preventDefault();
+        });
+            
+        function exitPromotion() {
+                $.ajax({
+                url: "@Url.Action("DisenrollUserFromPromotionProgram", "Promotion")",
+                //data: data,
+                type: "GET",
+                datatype: "json",
+                success: function (result) {
+                    if (result.Success)
+                        location.reload();
+                    else {
+                        console.error(result.Error);
+                    }
+                },
+                error: function (result) {
+                    console.error(result);
+                }
+            });
+        }
+
+    function openJoinPromotion() {
+        $('#promotion-email').val('');
+        $('#emailError-promotion').text('');
+        $('.join-promotion').slideUp(300);
+        $('.promotion-section').slideDown(300);
+    }
+        function joinProgram() {
+        $('#emailError-promotion').text('');
+        $('#submit-promotion').attr("disabled", true);
+        $('html, body').css('cursor', 'progress');
+        var data = {
+            userEmail: $('#promotion-email').val()
+        };
+        console.log(data);
+        $.ajax({
+        url: "@Url.Action("JoinProgram", "Promotion")",
+        data: data,
+        type: "GET",
+        datatype: "json",
+            success: function(result) {
+                $('html, body').css('cursor', 'default');
+                $('#submit-promotion').removeAttr("disabled");
+                if (result.Success == true) {
+                  //  $('#ResetEmailsuccess').css('color', '#186A9E');
+                    $('#messageSpan').css('color', '#186A9E').html(result.Message);
+                    $('.promotion-main-div').html($('#messageDiv').html());
+                }
+            else {
+                $('#emailError-promotion').text(result.Message);
+            }
+        },
+        error: function (result) {
+            $('html, body').css('cursor', 'default');
+            $('#submit-promotion').removeAttr("disabled");
+            console.error(result);
+        }
+    });
+    }
+</script>
+    }

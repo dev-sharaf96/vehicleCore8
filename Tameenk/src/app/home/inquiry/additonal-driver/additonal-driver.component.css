@@ -1,0 +1,9 @@
+.remove-driver {
+  transform: rotate(45deg);
+  color: #f00;
+}
+.remove-driver-old {
+  transform: rotate(45deg);
+  color: #fff;
+  margin: 0 50px;
+}

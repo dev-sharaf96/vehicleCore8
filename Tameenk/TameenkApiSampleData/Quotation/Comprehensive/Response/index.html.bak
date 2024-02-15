@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../css/sampleData.css">
+    <script>
+        $(function () {
+            var myData =
+                {
+                    "ReferenceId": "C0595cdfda3df6d",
+                    "StatusCode": 1,
+                    "QuotationNo": "4324057",
+                    "QuotationDate": "2017-08-24T15:45:28+03:00",
+                    "QuotationExpiryDate": "2017-08-25T15:45:28+03:00",
+                    "Products": [
+                        {
+                            "ProductId": "864",
+                            "ProductPrice": 1569.75,
+                            "DeductibleValue": 1000,
+                            "VehicleLimitValue": 45000,
+                            "PriceDetails": [
+                                { "PriceTypeCode": 2, "PriceValue": 210.00, "PercentageValue": 10.00 },
+                                { "PriceTypeCode": 3, "PriceValue": 420.00, "PercentageValue": 20.00 },
+                                { "PriceTypeCode": 6, "PriceValue": 25.00 },
+                                { "PriceTypeCode": 7, "PriceValue": 2100.00 },
+                                { "PriceTypeCode": 8, "PriceValue": 74.75 }
+                            ],
+                            "Benefits": [
+                                {
+                                    "BenefitCode": 1, "BenefitId": "110",
+                                    "BenefitNameAr": "", "BenefitNameEn": "", "BenefitPrice": 0.00
+                                },
+                                {
+                                    "BenefitCode": 6, "BenefitId": "120",
+                                    "BenefitNameAr": "Hire Car", "BenefitNameEn": "سيارة بديلة", "BenefitPrice": 150.00
+                                },
+                                {
+                                    "BenefitCode": 0, "BenefitId": "132",
+                                    "BenefitNameAr": "اسم الميزة", "BenefitNameEn": "Benefit Name", "BenefitPrice": 200.00
+                                }
+                            ]
+                        },
+                        {
+                            "ProductId": "865",
+                            "ProductPrice": 1349.25,
+                            "DeductibleValue": 1500,
+                            "VehicleLimitValue": 45000,
+                            "PriceDetails": [
+                                { "PriceTypeCode": 2, "PriceValue": 180.00, "PercentageValue": 10.00 },
+                                { "PriceTypeCode": 3, "PriceValue": 360.00, "PercentageValue": 20.00 },
+                                { "PriceTypeCode": 6, "PriceValue": 25.00 },
+                                { "PriceTypeCode": 7, "PriceValue": 1800.00 },
+                                { "PriceTypeCode": 8, "PriceValue": 64.25 }
+                            ], "Benefits": [
+                                {
+                                    "BenefitCode": 1, "BenefitId": "110",
+                                    "BenefitNameAr": "", "BenefitNameEn": "", "BenefitPrice": 0.00
+                                },
+                                {
+                                    "BenefitCode": 6, "BenefitId": "120",
+                                    "BenefitNameAr": "Hire Car", "BenefitNameEn": "سيارة بديلة", "BenefitPrice": 150.00
+                                },
+                                {
+                                    "BenefitCode": 0, "BenefitId": "132",
+                                    "BenefitNameAr": "اسم الميزة", "BenefitNameEn": "Benefit Name", "BenefitPrice": 200.00
+                                }
+                            ]
+                        },
+                        {
+                            "ProductId": "866",
+                            "ProductPrice": 1128.75,
+                            "DeductibleValue": 2000,
+                            "VehicleLimitValue": 45000,
+                            "PriceDetails": [
+                                { "PriceTypeCode": 2, "PriceValue": 150.00, "PercentageValue": 10.00 },
+                                { "PriceTypeCode": 3, "PriceValue": 300.00, "PercentageValue": 20.00 },
+                                { "PriceTypeCode": 6, "PriceValue": 25.00 },
+                                { "PriceTypeCode": 7, "PriceValue": 1500.00 },
+                                { "PriceTypeCode": 8, "PriceValue": 53.75 }
+                            ],
+                            "Benefits": [
+                                {
+                                    "BenefitCode": 1, "BenefitId": "110",
+                                    "BenefitNameEn": "", "BenefitNameAr": "", "BenefitPrice": 0.00
+                                },
+                                {
+                                    "BenefitCode": 6, "BenefitId": "120",
+                                    "BenefitNameEn": "Hire Car", "BenefitNameAr": "سيارة بديلة", "BenefitPrice": 150.00
+                                },
+                                {
+                                    "BenefitCode": 0, "BenefitId": "132",
+                                    "BenefitNameEn": "Benefit Name", "BenefitNameAr": "اسم الميزة", "BenefitPrice": 200.00
+                                }
+                            ]
+                        }
+                    ]
+                };
+            var textedJson = JSON.stringify(myData, undefined, 4);
+            $('#myTextarea').text(textedJson);
+        });
+
+    </script>
+
+</head>
+<body>
+    <textarea name="" id="myTextarea"></textarea>
+
+
+</body>
+</html>

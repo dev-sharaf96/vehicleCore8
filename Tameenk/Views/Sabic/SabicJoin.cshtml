@@ -1,0 +1,78 @@
+﻿@model  Tameenk.Models.Promotion.PromotionProgramModel
+<section class="inactive sm-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info">
+    <div class="container">
+        <h1 style="color:#f7811c; padding-bottom: 0px;" class="txt-black txt-lr md-lh txt-right">@Html.Raw(Tameenk.LangText.promotion_programs)</h1>
+        <!-- <h3 class="txt-black txt-md">@Html.Raw(Tameenk.LangText.promotion_programs) Description</h3> -->
+    </div>
+</section>
+<section class="sm-ver-spc search-inputs section normal-page">
+    <div class="container">
+        <div class="row clear-b promotion-main-div payments-cards">
+            @if (Model != null)
+            {
+
+                @Html.Raw(Tameenk.LangText.Wafier_Index_EnterWafierEmail)
+                <div class="row">
+                    <div class="col-xs-12 col-md-8 bx-right">
+                        <div class="input-container">
+                            <input class="input-element" type="email" id="email-@Model.Id" placeholder=" " />
+                            <label class="input-label" for="email-@Model.Id">@Html.Raw(Tameenk.LangText.login_email)</label>
+                            <span class="field-error" style="color:red;position:absolute;" id="emailError-@Model.Id"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 bx-right" style="margin-top: 3em;">
+                        <input type="submit" onclick="joinProgram('@Model.Id');" id="btnSubmit-@Model.Id" value="@Html.Raw(Tameenk.LangText.join)" class="no-trans btn sm dis-block txt-white submit-continue txt-brand bg-brand-hvr txt-xs bg-gr-main circ-rdus l-shadow" />
+                    </div>
+                </div>
+            }
+            else
+            {
+                <h1 style="color:red; padding-bottom: 0px;" class="txt-black txt-lr md-lh txt-right">
+                    @Html.Raw(Tameenk.LangText.Sabic_notfound)</h1>
+                                }
+
+</div>
+    </div>
+
+    <div id="messageDiv" style="display:none">
+        <div class="lr-mar">
+            <h3 class="txt-black txt-md" id="messageSpan"></h3>
+        </div>
+    </div>
+</section>
+<script>
+
+    function joinProgram(programId) {
+        $('#emailError-'+programId).text('');
+        $('#btnSubmit-'+programId).attr("disabled", true);
+        $('html, body').css('cursor', 'progress');
+        var data = {
+            promotionProgramId: programId,
+            userInput: $('#email-'+programId).val()
+        };
+        //console.log(data);
+        $.ajax({
+        url: "@Url.Action("JoinProgram", "Promotion")",
+        data: data,
+        type: "GET",
+        datatype: "json",
+            success: function(result) {
+                $('html, body').css('cursor', 'default');
+                $('#btnSubmit-'+programId).removeAttr("disabled");
+                if (result.Success == true) {
+                  //  $('#ResetEmailsuccess').css('color', '#186A9E');
+                    $('#messageSpan').css('color', '#186A9E').html(result.Message);
+                    $('.promotion-main-div').html($('#messageDiv').html());
+                }
+            else {
+                $('#emailError-'+programId).text(result.Message);
+            }
+        },
+        error: function (result) {
+            $('html, body').css('cursor', 'default');
+            $('#btnSubmit-'+programId).removeAttr("disabled");
+            console.error(result);
+        }
+    });
+    }
+</script>

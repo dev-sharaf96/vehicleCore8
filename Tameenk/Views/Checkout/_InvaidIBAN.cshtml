@@ -1,0 +1,25 @@
+﻿
+<div id="InvalidIbanCheckoutPopup" class="popup" data-popup="InvalidIbanCheckoutPopup">
+    <div class="popup-inner">
+        <div class="modal-body">
+            <p>@Html.Raw(Tameenk.LangText.IBAN_Validation)</p>
+        </div>
+        <div class="model-footer">
+            <input type="button" data-popup-close="InvalidIbanCheckoutPopup" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow" value="@LangText.yes">
+        </div>
+        <a class="popup-close" data-popup-close="InvalidIbanCheckoutPopup" href="#">x</a>
+    </div>
+</div>
+
+<style>
+    #emailCheckoutPopup .modal-body {
+        padding-bottom: 0;
+    }
+    #emailCheckoutPopup .model-footer {
+        padding: 10px;
+    }
+    #emailCheckoutPopup .model-footer input {
+        line-height: 0px;
+        height: 35px;
+    }
+</style>

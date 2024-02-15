@@ -1,0 +1,31 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+@section AdditionalMeta
+{
+<meta name="robots" content="noindex" />
+}
+
+<div class="container" style="min-height: calc(100vh - 234px);">
+    <article class="over-hidden md-mar-bot">
+        <!-- Company Modal -->
+        <!-- /Modal -->
+        <div class="row">
+            <section class="inactive md-ver-spc search-info bg-ofwhite content-view over-hidden section active show-search-info txt-center">
+                <div class="container">
+                    @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+                    {
+                    <h1 style="color:green; padding-bottom: 0px;" class="txt-black txt-lr md-lh md-mar-bot">
+                        <i class="fas fa-check"></i> @Html.Raw(ViewBag.Message)
+                    </h1>
+                    }
+                    <br />
+                    @Html.ActionLink(Tameenk.LangText.home_page, "Index", "Home", null, new { @class = "home-page_link" })
+                </div>
+            </section>
+        </div>
+    </article>
+</div>

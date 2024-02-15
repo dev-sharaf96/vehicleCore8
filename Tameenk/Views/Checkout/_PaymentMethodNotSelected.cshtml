@@ -1,0 +1,28 @@
+﻿
+
+<div id="paymentMethodCheckoutPopup" class="popup" data-popup="paymentMethodCheckoutPopup">
+    <div class="popup-inner">
+        <div class="modal-body">
+            <p>@Html.Raw(Tameenk.LangText.checkout_error_payment)</p>
+        </div>
+        <div class="model-footer">
+            <input type="button" data-popup-close="paymentMethodCheckoutPopup" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow" value="@LangText.yes">
+        </div>
+        <a class="popup-close" data-popup-close="paymentMethodCheckoutPopup" href="#">x</a>
+    </div>
+</div>
+
+<style>
+    #paymentMethodCheckoutPopup .modal-body {
+        padding-bottom: 0;
+    }
+
+    #paymentMethodCheckoutPopup .model-footer {
+        padding: 10px;
+    }
+
+        #paymentMethodCheckoutPopup .model-footer input {
+            line-height: 0px;
+            height: 35px;
+        }
+</style>

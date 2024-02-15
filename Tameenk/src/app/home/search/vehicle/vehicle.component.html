@@ -1,0 +1,157 @@
+<div class="vehicle">
+    <h2 translate>inquiry.vehicle.vehicle_information</h2>
+    <form #vehicleForm="ngForm" (submit)="next(vehicleForm)" class="editForm" novalidate>
+        <div class="col-xs-12 col-sm-3 bx-right" *ngIf="inquiryModel.vehicle.VehicleIdTypeId === 2 && !inquiryModel.isRenualRequest">
+            <div class="input-container" [ngClass]="{'red-border': manufactureYear.invalid && vehicleForm.submitted, 'active': manfactYear.isOpen || manfactYear.hasValue}">
+                <label class="input-label" for="manfactYear" translate>inquiry.vehicle.manufacturing_year</label>
+                <ng-select #manfactYear class="input-element inq-vh-manfactYear" [loadingText]="'common.loading' | translate"
+                           [notFoundText]="'common.no_items_found' | translate" labelForId="manfactYear" required [items]="years" (focus)="manfactYear.open()"
+                           [clearable]="false" #manufactureYear="ngModel" name="manufactureYear" [(ngModel)]="inquiryModel.vehicle.manufactureYear">
+                    <ng-template ng-option-tmp let-item="item">
+                        <div title="{{item}}">{{item}}</div>
+                    </ng-template>
+                </ng-select>
+                <span *ngIf="manufactureYear.invalid && vehicleForm.submitted">
+                    <span class="field-error" *ngIf="manufactureYear.errors['required']" translate>requestmodel.vehicle.manufactureYear</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 bx-right">
+            <div class="input-container" [ngClass]="{'red-border': estimatedVehiclePrice.invalid && vehicleForm.submitted}">
+                <input class="input-element" type="tel" required bcareCheckVehicleValue appFloatedLabel appNumberOnly id="carPrice" #estimatedVehiclePrice="ngModel" name="estimatedVehiclePrice" (keypress)="restrictNumeric($event)" [(ngModel)]="inquiryModel.vehicle.estimatedVehiclePrice" />
+                <label class="input-label" for="carPrice" translate>inquiry.vehicle.vehicle_value</label>
+                <span *ngIf="estimatedVehiclePrice.invalid && vehicleForm.submitted">
+                    <span class="field-error" *ngIf="estimatedVehiclePrice.errors['required']" translate>inquiry.vehicle.vehicle_value_error_required</span>
+                    <span class="field-error" *ngIf="estimatedVehiclePrice.errors['invalid']" translate>inquiry.vehicle.vehicle_value_error_invalid</span>
+                </span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 bx-right">
+            <div class="input-container" [ngClass]="{'red-border': parkingLocationId.invalid && vehicleForm.submitted, 'active': parking.isOpen || parking.hasValue}">
+                <label class="input-label" for="parking" translate>inquiry.vehicle.vehicle_overnight_parking_location</label>
+                <ng-select #parking class="input-element inq-vh-parking" appendTo="body" labelForId="parking" [loadingText]="'common.loading' | translate"
+                           [notFoundText]="'common.no_items_found' | translate" required [items]="parkingLocations" (focus)="parking.open()"
+                           bindLabel="name" [clearable]="false" bindValue="id" #parkingLocationId="ngModel" name="parkingLocationId" [(ngModel)]="inquiryModel.vehicle.parkingLocationId">
+                    <ng-template ng-option-tmp let-item="item">
+                        <div title="{{item.name}}">{{item.name}}</div>
+                    </ng-template>
+                </ng-select>
+            </div>
+        </div>
+        <div *ngIf="!inquiryModel.isRenualRequest" class="col-xs-12 col-sm-3 bx-right">
+            <div class="input-container" [ngClass]="{'red-border': transmissionTypeId.invalid && vehicleForm.submitted, 'active': transimission.isOpen || transimission.hasValue}">
+                <label class="input-label" for="transimission" translate>inquiry.vehicle.vehicle_transmission_type_code</label>
+                <ng-select #transimission class="input-element inq-vh-trans" appendTo="body" [loadingText]="'common.loading' | translate"
+                           [notFoundText]="'common.no_items_found' | translate" labelForId="transimission" required [items]="transimissionTypes"
+                           (focus)="transimission.open()" bindLabel="name" [clearable]="false" bindValue="id" #transmissionTypeId="ngModel" name="transmissionTypeId" [(ngModel)]="inquiryModel.vehicle.transmissionTypeId">
+                    <ng-template ng-option-tmp let-item="item">
+                        <div title="{{item.name}}">{{item.name}}</div>
+                    </ng-template>
+                </ng-select>
+            </div>
+        </div>
+        <!-- <div class="col-xs-12 col-sm-6 bx-right">
+          <div class="input-container" [ngClass]="{'red-border': brakeSystemId.invalid && vehicleForm.submitted, 'active': braking.isOpen || braking.hasValue}">
+            <label class="input-label" for="braking" translate>inquiry.vehicle.braking_systems</label>
+            <ng-select #braking class="input-element inq-vh-trans" appendTo="body" [loadingText]="'common.loading' | translate"
+              [notFoundText]="'common.no_items_found' | translate" labelForId="braking" required [items]="brakingSystems"
+              (focus)="braking.open()" bindLabel="name" [clearable]="false" bindValue="id" #brakeSystemId="ngModel" name="brakeSystemId" [(ngModel)]="inquiryModel.vehicle.brakeSystemId">
+              <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 bx-right">
+          <div class="input-container" [ngClass]="{'red-border': cruiseControlTypeId.invalid && vehicleForm.submitted, 'active': cruise.isOpen || cruise.hasValue}">
+            <label class="input-label" for="cruise" translate>inquiry.vehicle.cruise_control_type</label>
+            <ng-select #cruise class="input-element inq-vh-trans" appendTo="body" [loadingText]="'common.loading' | translate"
+              [notFoundText]="'common.no_items_found' | translate" labelForId="cruise" required [items]="cruiseControlTypes"
+              (focus)="cruise.open()" bindLabel="name" [clearable]="false" bindValue="id" #cruiseControlTypeId="ngModel" name="cruiseControlTypeId" [(ngModel)]="inquiryModel.vehicle.cruiseControlTypeId">
+              <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 bx-right">
+          <div class="input-container" [ngClass]="{'red-border': parkingSensorId.invalid && vehicleForm.submitted, 'active': sensor.isOpen || sensor.hasValue}">
+            <label class="input-label" for="sensor" translate>inquiry.vehicle.parking_sensors</label>
+            <ng-select #sensor class="input-element inq-vh-trans" appendTo="body" [loadingText]="'common.loading' | translate"
+              [notFoundText]="'common.no_items_found' | translate" labelForId="sensor" required [items]="parkingSensors"
+              (focus)="sensor.open()" bindLabel="name" [clearable]="false" bindValue="id" #parkingSensorId="ngModel" name="parkingSensorId" [(ngModel)]="inquiryModel.vehicle.parkingSensorId">
+              <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 bx-right">
+          <div class="input-container" [ngClass]="{'red-border': cameraTypeId.invalid && vehicleForm.submitted, 'active': camera.isOpen || camera.hasValue}">
+            <label class="input-label" for="camera" translate>inquiry.vehicle.camera</label>
+            <ng-select #camera class="input-element inq-vh-trans" appendTo="body" [loadingText]="'common.loading' | translate"
+              [notFoundText]="'common.no_items_found' | translate" labelForId="camera" required [items]="cameraTypes"
+              (focus)="camera.open()" bindLabel="name" [clearable]="false" bindValue="id" #cameraTypeId="ngModel" name="cameraTypeId" [(ngModel)]="inquiryModel.vehicle.cameraTypeId">
+              <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 bx-right">
+          <h3 class="txt-black dis-block over-hidden md-mar xs-mar-bot" translate>inquiry.vehicle.anti_theft_alarm</h3>
+          <input type="checkbox" class="switchIco md-mar dis-block" id="toggleAntiTheftAlarm" #hasAntiTheftAlarm="ngModel" name="hasAntiTheftAlarm" [(ngModel)]="inquiryModel.vehicle.hasAntiTheftAlarm" />
+          <label class="labelSwitch" for="toggleAntiTheftAlarm">
+            <span class="stat true txt-brand" translate>common.yes</span>
+            <span class="stat false txt-gray" translate>common.no</span>
+          </label>
+        </div>
+        <div class="col-xs-12 col-sm-6 bx-right">
+          <div class="input-container" [ngClass]="{'red-border': currentMileageKM.invalid && vehicleForm.submitted}">
+            <input class="input-element" type="text" required appFloatedLabel appNumberOnly id="mileage" #currentMileageKM="ngModel" name="currentMileageKM"  [(ngModel)]="inquiryModel.vehicle.currentMileageKM" />
+            <label class="input-label" for="mileage" translate>inquiry.vehicle.current_mileage</label>
+            <span *ngIf="currentMileageKM.invalid && vehicleForm.submitted">
+                <span class="field-error" *ngIf="currentMileageKM.errors['required']" translate>inquiry.vehicle.current_mileage_required</span>
+              </span>
+            </div>
+        </div> -->
+        <div *ngIf="!inquiryModel.isRenualRequest" class="col-xs-12 col-sm-3 bx-right">
+            <div class="input-container" [ngClass]="{'red-border': MileageExpectedAnnualId.invalid && vehicleForm.submitted, 'active': kilometer.isOpen || kilometer.hasValue}">
+                <label class="label" for="kilometer" translate>inquiry.vehicle.VehicleMileageExpectedAnnual</label>
+                <ng-select #kilometer class="input-element inq-vh-trans" appendTo="body" [loadingText]="'common.loading' | translate"
+                           [notFoundText]="'common.no_items_found' | translate" labelForId="kilometer" required [items]="kilometers"
+                           (focus)="kilometer.open()" bindLabel="name" [clearable]="false" bindValue="id" #MileageExpectedAnnualId="ngModel" name="MileageExpectedAnnualId" [(ngModel)]="inquiryModel.vehicle.MileageExpectedAnnualId">
+                    <ng-template ng-option-tmp let-item="item">
+                        <div title="{{item.name}}">{{item.name}}</div>
+                    </ng-template>
+                </ng-select>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 bx-right">
+            <h3 class="txt-black dis-block over-hidden sm-mar xs-mar-bot" translate>inquiry.vehicle.is_there_vehicle_modifications</h3>
+            <input type="checkbox" class="addnewdriverCheck switchIco md-mar dis-block" id="toggleModification" #hasModification="ngModel" name="hasModification" [(ngModel)]="inquiryModel.vehicle.hasModification" />
+            <label class="labelSwitch" for="toggleModification">
+                <span class="stat true txt-brand" translate>common.yes</span>
+                <span class="stat false txt-gray" translate>common.no</span>
+            </label>
+        </div>
+        <div class="col-xs-9 bx-right" *ngIf="inquiryModel.vehicle.hasModification">
+            <div class="input-container" [ngClass]="{'red-border': modification.invalid && vehicleForm.submitted}">
+                <textarea class="input-element" id="modificationInput" appFloatedLabel style="padding-top: 10px;resize:  none;" #modification="ngModel" name="modification" required [(ngModel)]="inquiryModel.vehicle.modification" minlength="5" maxlength="200"></textarea>
+                <label class="input-label" for="modificationInput" translate>inquiry.vehicle.modifications</label>
+                <span *ngIf="modification.invalid && vehicleForm.submitted">
+                    <span class="field-error" *ngIf="modification.errors['required']" translate>common.required</span>
+                    <span class="field-error" *ngIf="modification.errors['minlength']" translate>inquiry.vehicle.vehicleModificationMinLength</span>
+
+                </span>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 bx-left" style="text-align: left;">
+            <input type="button" (click)="prev()" class="no-trans btn sm dis-block  txt-white submit-continue txt-brand bg-brand-hvr bg-gr-main circ-rdus l-shadow sm-mar prevTobResponsv" value="{{ 'common.prev' | translate }}" />
+            <input type="submit" [disabled]="inquiryModel.isShowQuotationsDisable" class="no-trans btn sm dis-block bx-left txt-white submit-continue txt-brand bg-brand-hvr bg-gr-main circ-rdus l-shadow sm-mar nxtTobResponsv"
+                   value="{{ 'inquiry.show_quotes' | translate }}" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,1788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{547B4BA2-895B-4FC5-B0A7-94D72FAFDA6D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk</RootNamespace>
+    <AssemblyName>Tameenk</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BotDetect, Version=4.2.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BotDetect\BotDetect.dll</HintPath>
+    </Reference>
+    <Reference Include="BotDetect.Web.Mvc, Version=4.2.0.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BotDetect\BotDetect.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.2.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.2.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Captcha\captcha1.jpg" />
+    <EmbeddedResource Include="Captcha\captcha10.jpg" />
+    <EmbeddedResource Include="Captcha\captcha2.jpg" />
+    <EmbeddedResource Include="Captcha\captcha3.jpg" />
+    <EmbeddedResource Include="Captcha\captcha4.jpg" />
+    <EmbeddedResource Include="Captcha\captcha5.jpg" />
+    <EmbeddedResource Include="Captcha\captcha6.jpg" />
+    <EmbeddedResource Include="Captcha\captcha7.jpg" />
+    <EmbeddedResource Include="Captcha\captcha8.jpg" />
+    <EmbeddedResource Include="Captcha\captcha9.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="resources\css\jquery.calendars.picker.css" />
+    <Content Include="resources\css\layout.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\css\ltr.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\css\modal.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\css\override.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\css\override_en.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\css\redmond.calendars.picker.css" />
+    <Content Include="resources\css\select.theme.css" />
+    <Content Include="resources\css\toastr.css" />
+    <Content Include="resources\css\tooltip.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\arabic\FrutigerLTArabic-55Roman.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\english\Gotham-Medium.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\icons\fonts\icons.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\icons\icons-reference.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\icons\styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\2030.jpg" />
+    <Content Include="resources\imgs\android_moblie_app.png" />
+    <Content Include="resources\imgs\banner_1.jpg" />
+    <Content Include="resources\imgs\Banner_2.jpg" />
+    <Content Include="resources\imgs\bcarelogo.svg" />
+    <Content Include="resources\imgs\bcaretab.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\belt-black.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\belt-blue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\belt-green.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\belt-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\belt-yellow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\belt.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\benfitsicons\AgencyRepairs.jpg" />
+    <Content Include="resources\imgs\benfitsicons\AgencyRepairs.png" />
+    <Content Include="resources\imgs\benfitsicons\AgencyRepairs.svg" />
+    <Content Include="resources\imgs\benfitsicons\Benefitnotcovered.jpg" />
+    <Content Include="resources\imgs\benfitsicons\Benefitnotcovered.png" />
+    <Content Include="resources\imgs\benfitsicons\car-replacement.png" />
+    <Content Include="resources\imgs\benfitsicons\driver-passenger.png" />
+    <Content Include="resources\imgs\benfitsicons\extra.png" />
+    <Content Include="resources\imgs\benfitsicons\geographic-coverage.png" />
+    <Content Include="resources\imgs\benfitsicons\geographicbahrain-coverage.png" />
+    <Content Include="resources\imgs\benfitsicons\geographicbahraingcc-coverage.png" />
+    <Content Include="resources\imgs\benfitsicons\geographicbahrainnorth-coverage.png" />
+    <Content Include="resources\imgs\benfitsicons\pin.png" />
+    <Content Include="resources\imgs\benfitsicons\roadside-assistance.png" />
+    <Content Include="resources\imgs\benfitsicons\svg-driver.png" />
+    <Content Include="resources\imgs\benfitsicons\svg-fire.png" />
+    <Content Include="resources\imgs\benfitsicons\svg-noclaim.png" />
+    <Content Include="resources\imgs\benfitsicons\svg-passenger.png" />
+    <Content Include="resources\imgs\benfitsicons\svg-wiper.png" />
+    <Content Include="resources\imgs\benfitsicons\theft-fire-frontglass.png" />
+    <Content Include="resources\imgs\benfitsicons\waiver.png" />
+    <Content Include="resources\imgs\bluesignCar.png" />
+    <Content Include="resources\imgs\car-replacement.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\car-upload-0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\car-upload-back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\car-upload-front.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\car-upload-left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\car-upload-middle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\car-upload-right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\car.png" />
+    <Content Include="resources\imgs\card-sadad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\card-visa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\card-visa.svg" />
+    <Content Include="resources\imgs\CarLogos\0001.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0002.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0003.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0006.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0007.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0008.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0009.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0010.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0011.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0012.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0013.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0014.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0015.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0016.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0017.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0018.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0019.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0020.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0021.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0022.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0023.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0024.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0025.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0026.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0027.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0028.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0029.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0030.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0031.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0032.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0033.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0034.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0035.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0036.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0037.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0038.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0039.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0041.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0043.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0044.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0046.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0048.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0049.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0050.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0051.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0053.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0054.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0058.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0059.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0060.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0061.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0069.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0090.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0108.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0127.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0164.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0199.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0276.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0349.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0370.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0415.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0424.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0426.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0429.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0432.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0451.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0469.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0478.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0508.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0509.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0513.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0520.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0550.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0552.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0705.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0784.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0789.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0790.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\0792.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Abarth-emblem-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Abarth-logo-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Abarth-symbol-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Alfa-Romeo-emblem-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Alfa-Romeo-logo-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Alfa-Romeo-symbol-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\AMG-emblem-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Holden-logo-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Karma-640x460-2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Karma-640x460-3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Koenigsegg-emblem-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Koenigsegg-logo-1994-640x550.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Koenigsegg-logo-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Koenigsegg-symbol-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Lagonda-emblem-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Lagonda-logo-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Lagonda-symbol-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Mazzanti-Automobili-640x480-2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Mercury-emblem-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Noble-emblem-black-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Noble-emblem-yellow-640x430.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Scion-logo-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Skoda-emblem-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\tahoe_example.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CarLogos\Vauxhall-logo-640x480.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\cart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\cd-icon-arrow-next.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\cd-icon-select.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\cd-icons-cart-close.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\CEO.jpg" />
+    <Content Include="resources\imgs\CEO_2.jpg" />
+    <Content Include="resources\imgs\CurvBG.png" />
+    <Content Include="resources\imgs\driver-passenger.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\EmailTemplateImages\24Hours.png" />
+    <Content Include="resources\imgs\EmailTemplateImages\ActivateEmailToReceivePolicy.png" />
+    <Content Include="resources\imgs\EmailTemplateImages\PasswordReset.png" />
+    <Content Include="resources\imgs\EmailTemplateImages\PolicyComp.png" />
+    <Content Include="resources\imgs\EmailTemplateImages\PolicyTPL.png" />
+    <Content Include="resources\imgs\EmailTemplateImages\PromoActivation.png" />
+    <Content Include="resources\imgs\EmailTemplateImages\Welcome.png" />
+    <Content Include="resources\imgs\eventGreenCircle.png" />
+    <Content Include="resources\imgs\extra.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\footer2030.png" />
+    <Content Include="resources\imgs\geographic-coverage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\image1.jpg" />
+    <Content Include="resources\imgs\imgpsh_fullsize_anim.png" />
+    <Content Include="resources\imgs\insurerlogos\ACIG.png" />
+    <Content Include="resources\imgs\benfitsicons\AGENCYRepairs1500.png" />
+    <Content Include="resources\imgs\insurerlogos\Ahlia.png" />
+    <Content Include="resources\imgs\insurerlogos\AICC.png" />
+    <Content Include="resources\imgs\insurerlogos\Alalamiya.png" />
+    <Content Include="resources\imgs\insurerlogos\Amana.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\insurerlogos\ArabianShield.png" />
+    <Content Include="resources\imgs\insurerlogos\GGI.png" />
+    <Content Include="resources\imgs\insurerlogos\GulfUnion.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-1.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-10.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-11.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-12.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-13.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-14.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-15.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-17.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-2.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-21.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-25.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-3.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-4.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-5.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-6.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-7.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-8.png" />
+    <Content Include="resources\imgs\insurerlogos\insurer-logo-9.png" />
+    <Content Include="resources\imgs\insurerlogos\MedGulf.png" />
+    <Content Include="resources\imgs\insurerlogos\ML.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\insurerlogos\RT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\insurerlogos\Sagr.png" />
+    <Content Include="resources\imgs\insurerlogos\Salama.png" />
+    <Content Include="resources\imgs\insurerlogos\SC.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\insurerlogos\Solidarity.png" />
+    <Content Include="resources\imgs\insurerlogos\Tawuniya.png" />
+    <Content Include="resources\imgs\insurerlogos\TokioMarine.png" />
+    <Content Include="resources\imgs\insurerlogos\TUIC.png" />
+    <Content Include="resources\imgs\insurerlogos\UCA.png" />
+    <Content Include="resources\imgs\insurerlogos\Wafa.png" />
+    <Content Include="resources\imgs\insurerlogos\Wala.png" />
+    <Content Include="resources\imgs\insurerlogos\Wataniya.png" />
+    <Content Include="resources\imgs\benfitsicons\WORKSHOPRepairs750.png" />
+    <Content Include="resources\imgs\ios_moblie_app.png" />
+    <Content Include="resources\imgs\livcarBannr.png" />
+    <Content Include="resources\imgs\livcircleBls.png" />
+    <Content Include="resources\imgs\livcircleBlsEnglish.png" />
+    <Content Include="resources\imgs\livenglishmobile.png" />
+    <Content Include="resources\imgs\loader-min.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\loader.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\loader.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\logo-short.png" />
+    <Content Include="resources\imgs\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\logosama.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\mada.png" />
+    <Content Include="resources\imgs\Mada_Logo.svg" />
+    <Content Include="resources\imgs\master-card.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\MasterCard-Logo.svg" />
+    <Content Include="resources\imgs\morniImagePromo.png" />
+    <Content Include="resources\imgs\morni_logo.svg" />
+    <Content Include="resources\imgs\package.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\paymentDetls.png" />
+    <Content Include="resources\imgs\PDF.jpg" />
+    <Content Include="resources\imgs\PDF_file_icon.svg" />
+    <Content Include="resources\imgs\pin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\roadside-assistance.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\sadad_logo.svg" />
+    <Content Include="resources\imgs\sc1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\sc2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\sc3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\sc4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\slide-bg1.jpg" />
+    <Content Include="resources\imgs\slide-bg2.jpg" />
+    <Content Include="resources\imgs\slide-bg3.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\slide-bg4.jpg" />
+    <Content Include="resources\imgs\smIcon\11.png" />
+    <Content Include="resources\imgs\smIcon\22.png" />
+    <Content Include="resources\imgs\smIcon\33.png" />
+    <Content Include="resources\imgs\SocialMedia\facebook.png" />
+    <Content Include="resources\imgs\SocialMedia\instagram.png" />
+    <Content Include="resources\imgs\SocialMedia\linkedin.png" />
+    <Content Include="resources\imgs\SocialMedia\twitter.png" />
+    <Content Include="resources\imgs\solidarity.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\stcpay.png" />
+    <Content Include="resources\imgs\svg-driver.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\svg-fire.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\svg-noclaim.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\svg-passenger.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\svg-wiper.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\tawuniya.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\theft-fire-frontglass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\uploadedCarImages\back.png" />
+    <Content Include="resources\imgs\uploadedCarImages\backk.svg" />
+    <Content Include="resources\imgs\uploadedCarImages\front.png" />
+    <Content Include="resources\imgs\uploadedCarImages\front.svg" />
+    <Content Include="resources\imgs\uploadedCarImages\leftSide.png" />
+    <Content Include="resources\imgs\uploadedCarImages\leftSide.svg" />
+    <Content Include="resources\imgs\uploadedCarImages\rightSide.png" />
+    <Content Include="resources\imgs\uploadedCarImages\rightSide.svg" />
+    <Content Include="resources\imgs\uploadedCarImages\top.png" />
+    <Content Include="resources\imgs\uploadedCarImages\upper.png" />
+    <Content Include="resources\imgs\uploadedCarImages\upper.svg" />
+    <Content Include="resources\imgs\user_ex.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\wafa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\wafir-logo.jpg" />
+    <Content Include="resources\imgs\wafir.png" />
+    <Content Include="resources\imgs\walaa.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\imgs\yellowsignCar.png" />
+    <Content Include="resources\js\app-ng.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\app_en.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\app_old.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\compbox.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\compbox_en.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\forms.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\jquery.calendars-ar.js" />
+    <Content Include="resources\js\jquery.calendars.islamic-ar.js" />
+    <Content Include="resources\js\jquery.calendars.islamic.min.js" />
+    <Content Include="resources\js\jquery.calendars.min.js" />
+    <Content Include="resources\js\jquery.calendars.picker-ar.js" />
+    <Content Include="resources\js\jquery.calendars.picker.min.js" />
+    <Content Include="resources\js\jquery.calendars.plus.min.js" />
+    <Content Include="resources\js\jquery.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\jquery.plugin.min.js" />
+    <Content Include="resources\js\jquery.select2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\pikaday.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\popup.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\js\slick.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-dialog.min.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-affix.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-button.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-carousel.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-collapse.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-dropdown.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-modal.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-scrollspy.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-tab.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-tooltip.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-transition.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap-typeahead.js" />
+    <Content Include="Scripts\bootstrap\js\tests\index.html" />
+    <Content Include="Scripts\bootstrap\js\tests\phantom.js" />
+    <Content Include="Scripts\bootstrap\js\tests\server.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-affix.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-button.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-carousel.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-collapse.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-dropdown.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-modal.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-phantom.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-scrollspy.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-tab.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-tooltip.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-transition.js" />
+    <Content Include="Scripts\bootstrap\js\tests\unit\bootstrap-typeahead.js" />
+    <Content Include="Scripts\bootstrap\js\tests\vendor\jquery.js" />
+    <Content Include="Scripts\bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="Scripts\bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\general.js" />
+    <Content Include="Scripts\hijri-date.js" />
+    <Content Include="Scripts\intlTelInput.js" />
+    <AdditionalFiles Include="..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <Content Include="src\app\additonal-info\additonal-info.component.css" />
+    <Content Include="src\app\additonal-info\additonal-info.component.html" />
+    <Content Include="src\app\additonal-info\additonal-info.component.spec.ts" />
+    <Content Include="src\app\additonal-info\additonal-info.component.ts" />
+    <Content Include="src\app\additonal-info\models\driver.model.ts" />
+    <Content Include="src\app\additonal-info\models\insured.model.ts" />
+    <Content Include="src\app\additonal-info\models\vehicle.model.ts" />
+    <Content Include="src\app\home\home.component.css" />
+    <Content Include="src\app\home\home.component.html" />
+    <Content Include="src\app\home\inquiry\additonal-driver\additonal-driver.component.css" />
+    <Content Include="src\app\home\inquiry\additonal-driver\additonal-driver.component.html" />
+    <Content Include="src\app\home\inquiry\additonal-driver\additonal-driver.component.old.html" />
+    <Content Include="src\app\home\inquiry\captcha\captcha.component.css" />
+    <Content Include="src\app\home\inquiry\captcha\captcha.component.html" />
+    <Content Include="src\app\home\inquiry\inquiry.component.css" />
+    <Content Include="src\app\home\inquiry\inquiry.component.html" />
+    <Content Include="src\app\home\inquiry\inquiry.component.old.html" />
+    <Content Include="src\app\home\inquiry\insured-info\insured-info.component.css" />
+    <Content Include="src\app\home\inquiry\insured-info\insured-info.component.html" />
+    <Content Include="src\app\home\inquiry\insured-info\insured-info.component.old.html" />
+    <Content Include="src\app\home\inquiry\main-driver\main-driver.component.css" />
+    <Content Include="src\app\home\inquiry\main-driver\main-driver.component.html" />
+    <Content Include="src\app\home\inquiry\main-driver\main-driver.component.old.html" />
+    <Content Include="src\app\home\inquiry\vehicle-info\vehicle-info.component.css" />
+    <Content Include="src\app\home\inquiry\vehicle-info\vehicle-info.component.html" />
+    <Content Include="src\app\home\inquiry\vehicle-info\vehicle-info.component.old.html" />
+    <Content Include="src\app\home\inquiry\yakeen-missing-fields\yakeen-missing-fields.component.css" />
+    <Content Include="src\app\home\inquiry\yakeen-missing-fields\yakeen-missing-fields.component.html" />
+    <Content Include="src\app\home\instructions\instructions.component.css" />
+    <Content Include="src\app\home\instructions\instructions.component.html" />
+    <Content Include="src\app\home\partners-slider\partners-slider.component.css" />
+    <Content Include="src\app\home\partners-slider\partners-slider.component.html" />
+    <Content Include="src\app\home\search\insured\additional-driver\additional-driver.component_Old_Aug.html" />
+    <Content Include="src\app\home\search\insured\additional-driver\additional-driver.component.css" />
+    <Content Include="src\app\home\search\insured\additional-driver\additional-driver.component.html" />
+    <Content Include="src\app\home\search\insured\insured.component_Old_Aug.html" />
+    <Content Include="src\app\home\search\insured\insured.component.css" />
+    <Content Include="src\app\home\search\insured\insured.component.html" />
+    <Content Include="src\app\home\search\main\main.component.css" />
+    <Content Include="src\app\home\search\main\main.component.html" />
+    <Content Include="src\app\home\search\missing-fields\missing-fields.component.css" />
+    <Content Include="src\app\home\search\missing-fields\missing-fields.component.html" />
+    <Content Include="src\app\home\search\missing-fields\missing-field\missing-field.component.css" />
+    <Content Include="src\app\home\search\missing-fields\missing-field\missing-field.component.html" />
+    <Content Include="src\app\home\search\search.component.css" />
+    <Content Include="src\app\home\search\search.component.html" />
+    <Content Include="src\app\home\search\vehicle\vehicle.component.css" />
+    <Content Include="src\app\home\search\vehicle\vehicle.component.html" />
+    <Content Include="src\app\home\slider\slider.component.css" />
+    <Content Include="src\app\home\slider\slider.component.html" />
+    <Content Include="src\app\qoute.component.css" />
+    <Content Include="src\app\qoute.component.html" />
+    <Content Include="src\app\qoute.component.ts" />
+    <Content Include="src\app\qoute.module.ts" />
+    <Content Include="src\app\quotation\components\benefits\benefits.component.css" />
+    <Content Include="src\app\quotation\components\benefits\benefits.component.html" />
+    <Content Include="src\app\quotation\components\product-list\product-list.component.css" />
+    <Content Include="src\app\quotation\components\product-list\product-list.component.html" />
+    <Content Include="src\app\quotation\components\product\product.component.css" />
+    <Content Include="src\app\quotation\components\product\product.component.html" />
+    <Content Include="src\app\shared\components\header\header.component.css" />
+    <Content Include="src\app\shared\components\header\header.component.html" />
+    <Content Include="src\app\shared\components\header\header.component.spec.ts" />
+    <Content Include="src\app\shared\components\header\header.component.ts" />
+    <Content Include="src\app\shared\components\loader\loader.component.css" />
+    <Content Include="src\app\shared\components\loader\loader.component.html" />
+    <Content Include="src\app\shared\components\notification\notification.component.css" />
+    <Content Include="src\app\shared\components\notification\notification.component.html" />
+    <Content Include="src\app\shared\shared.module.spec.ts" />
+    <Content Include="src\app\shared\shared.module.ts" />
+    <Content Include="src\environments\environment.prod.ts" />
+    <Content Include="src\environments\environment.ts" />
+    <Content Include="src\quotation.ts" />
+    <Content Include="TameenkApiSampleData\css\sampleData.css" />
+    <Content Include="TameenkApiSampleData\PolicyAttachments\Request\index.html" />
+    <Content Include="TameenkApiSampleData\PolicyAttachments\Response\index.html" />
+    <Content Include="TameenkApiSampleData\PolicySchedule\Request\index.html" />
+    <Content Include="TameenkApiSampleData\PolicySchedule\Response\index.html" />
+    <Content Include="TameenkApiSampleData\PolicyUploadNotification\Request\index.html" />
+    <Content Include="TameenkApiSampleData\PolicyUploadNotification\Response\index.html" />
+    <Content Include="TameenkApiSampleData\Policy\Comprehensive\Request\index.html" />
+    <Content Include="TameenkApiSampleData\Policy\Comprehensive\Response\index.html" />
+    <Content Include="TameenkApiSampleData\Policy\ResponseError\index.html" />
+    <Content Include="TameenkApiSampleData\Policy\TPL\Request\index.html" />
+    <Content Include="TameenkApiSampleData\Policy\TPL\Response\index.html" />
+    <Content Include="TameenkApiSampleData\Quotation\Comprehensive\Request\index.html" />
+    <Content Include="TameenkApiSampleData\Quotation\Comprehensive\Response\index.html" />
+    <Content Include="TameenkApiSampleData\Quotation\ResponseError\index.html" />
+    <Content Include="TameenkApiSampleData\Quotation\TPL\Request\index.html" />
+    <Content Include="TameenkApiSampleData\Quotation\TPL\Response\index.html" />
+    <Content Include="webpack.common.js" />
+    <Content Include="webpack.common.quotation.js" />
+    <Content Include="webpack.config.js" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="assets\i18n\ar.json" />
+    <Content Include="assets\i18n\en.json" />
+    <Content Include="angular.json" />
+    <Content Include="webpack.dev.js" />
+    <Content Include="webpack.dev.quotation.js" />
+    <Content Include="webpack.prod.js" />
+    <Content Include="webpack.prod.quotation.js" />
+    <Content Include="webpack.quotation.config.js" />
+    <Content Include="resources\pdf\BrokerCare.pdf" />
+    <None Include="Properties\PublishProfiles\DevelopmentSite.pubxml" />
+    <None Include="Properties\PublishProfiles\ProductionProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\TestFolderProfile.pubxml" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.1.js" />
+    <Content Include="Scripts\jquery-ui-1.8.18.custom.min.js" />
+    <Content Include="Scripts\jquery-ui.min-1.11.1.js" />
+    <Content Include="Scripts\jquery-ui.unobtrusive.js" />
+    <Content Include="Scripts\jquery.calendars.islamic-ar.js" />
+    <Content Include="Scripts\jquery.fileupload.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\keys_handler.js" />
+    <Content Include="Scripts\lightslider.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-GB.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eu.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fo.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr-CH.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hy.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it-CH.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kh.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr-latin.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Scripts\lov.js" />
+    <Content Include="Scripts\master.js" />
+    <Content Include="Scripts\menu\jquery-loader.js" />
+    <Content Include="Scripts\menu\jquery.smartmenus.js" />
+    <Content Include="Scripts\menu\jquery.smartmenus.keyboard.js" />
+    <Content Include="Scripts\menu\jquery.smartmenus.keyboard.min.js" />
+    <Content Include="Scripts\menu\jquery.smartmenus.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\old_bootstrap.js" />
+    <Content Include="Scripts\old_bootstrap.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\run_prettify.js" />
+    <Content Include="Scripts\side_menu.js" />
+    <Content Include="Scripts\slider.js" />
+    <Content Include="Scripts\tabs.js" />
+    <Content Include="Scripts\tabular.js" />
+    <Content Include="Scripts\tree\jstree.min.js" />
+    <Content Include="Scripts\tree\themes\default-dark\32px.png" />
+    <Content Include="Scripts\tree\themes\default-dark\40px.png" />
+    <Content Include="Scripts\tree\themes\default-dark\style.css" />
+    <Content Include="Scripts\tree\themes\default-dark\style.min.css" />
+    <Content Include="Scripts\tree\themes\default-dark\throbber.gif" />
+    <Content Include="Scripts\tree\themes\default\32px.png" />
+    <Content Include="Scripts\tree\themes\default\40px.png" />
+    <Content Include="Scripts\tree\themes\default\style.css" />
+    <Content Include="Scripts\tree\themes\default\style.min.css" />
+    <Content Include="Scripts\tree\themes\default\throbber.gif" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="src\app\app.component.css" />
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\quotation\components\search-result-info\search-result-info.component.css" />
+    <Content Include="src\app\quotation\components\search-result-info\search-result-info.component.html" />
+    <Content Include="src\app\quotation\components\search-result-options\search-result-options.component.css" />
+    <Content Include="src\app\quotation\components\search-result-options\search-result-options.component.html" />
+    <Content Include="src\app\quotation\pages\search-result\search-result.component.css" />
+    <Content Include="src\app\quotation\pages\search-result\search-result.component.html" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\TameenakAuthorizeSaveFormDataActionFilter.cs" />
+    <Compile Include="AjaxOnlyAttribute.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Constants.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="AuthenticationModule.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\MOIController.cs" />
+    <Compile Include="Controllers\OffersController.cs" />
+    <Compile Include="Controllers\SabicController.cs" />
+    <Compile Include="Controllers\SuccessController.cs" />
+    <Compile Include="Controllers\WafierController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\CustomAuthController.cs" />
+    <Compile Include="Controllers\EditRequestController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LangController.cs" />
+    <Compile Include="Controllers\TameenkPaymentController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\PromotionController.cs" />
+    <Compile Include="Controllers\QuotationController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VehicleController.cs" />
+    <Compile Include="CustomAttribute\TameenkAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\AddItemToCartModel.cs" />
+    <Compile Include="Models\AuthViewModel.cs" />
+    <Compile Include="Models\CarPlateInfo.cs" />
+    <Compile Include="Models\ClearBrowserLocalStorageModel.cs" />
+    <Compile Include="Models\CommonResponseModel.cs" />
+    <Compile Include="Models\ConfirmationEmailAfterVerifyCodeModel.cs" />
+    <Compile Include="Models\DiscountsViewModel.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
+    <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\CheckDiscountViewModel.cs" />
+    <Compile Include="Models\OneTimePasswordViewModel.cs" />
+    <Compile Include="Models\PolicyViewModel.cs" />
+    <Compile Include="Models\Profile\Corporate\CorporateAccountInfoViewModel.cs" />
+    <Compile Include="Models\Profile\Corporate\CorporateUsersViewModel.cs" />
+    <Compile Include="Models\Profile\MyInvoicesViewModel.cs" />
+    <Compile Include="Models\Profile\MyPoliciesViewModel.cs" />
+    <Compile Include="Models\Profile\MyVehiclesViewModel.cs" />
+    <Compile Include="Models\Promotion\ConfirmJoinProgramViewModel.cs" />
+    <Compile Include="Models\Promotion\JoinProgramEmailConfirmModel.cs" />
+    <Compile Include="Models\Promotion\PromotionProgramModel.cs" />
+    <Compile Include="Models\PurchasedProductModel.cs" />
+    <Compile Include="Models\SaudiPostAddressModel.cs" />
+    <Compile Include="Models\SaudiPostApiResultModel.cs" />
+    <Compile Include="Models\SaudiPostResponseModel.cs" />
+    <Compile Include="Models\UserTicketViewModel.cs" />
+    <Compile Include="Models\VehicleModel.cs" />
+    <Compile Include="Models\VerifyCodeCheckoutViewModel.cs" />
+    <Compile Include="Models\WafierModel.cs" />
+    <Compile Include="Security\CustomAuthorizationAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\DependencyRegistrar.cs" />
+    <Compile Include="LangText.Ar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LangText.Ar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LangText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LangText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactUsViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\QuotationRequestDetailsViewModel.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\SadadPaymentViewModel.cs" />
+    <Compile Include="Models\VerifyCodeViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SmsService.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\CarPlateUtils.cs" />
+    <Compile Include="WebContext.cs" />
+    <Compile Include="WebViewBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="resources\fonts\arabic\FrutigerLTArabic-55Roman.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\arabic\FrutigerLTArabic-55Roman.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\arabic\FrutigerLTArabic-55Roman.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\arabic\FrutigerLTArabic-55Roman.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\english\Gotham-Medium.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\english\Gotham-Medium.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\english\Gotham-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\english\Gotham-Medium.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\english\OpenSans-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\icons\fonts\icons.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\icons\fonts\icons.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\fonts\icons\fonts\icons.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Checkout\Purchased.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\SideBar.cshtml" />
+    <Content Include="Views\Home\TermsCondition.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\MainFoot.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\bootstrap\js\.jshintrc" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Scripts\zl34jgwr.yyn" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
+    <Content Include="Views\Shared\PolicyError.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Checkout\_CheckoutError.cshtml" />
+    <Content Include="Views\Checkout\_CheckoutDetails.cshtml" />
+    <Content Include="Views\Home\TermsConditionEn.cshtml" />
+    <Content Include="Views\Home\AboutUsEn.cshtml" />
+    <Content Include="Views\Home\privacyPolicy.cshtml" />
+    <Content Include="Views\Home\privacyPolicyEn.cshtml" />
+    <Content Include="Views\Account\Auth.cshtml" />
+    <Content Include="Views\Profile\MyCars.cshtml" />
+    <Content Include="Views\Profile\MyInfo.cshtml" />
+    <Content Include="Views\Home\CustomCaptcha.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\EditRequest\Index.cshtml" />
+    <Content Include="Views\Profile\QuotationRequests.cshtml" />
+    <Content Include="Views\Quotation\SearchResult-MVC.cshtml" />
+    <Content Include="Views\Checkout\CheckoutDetails.cshtml" />
+    <Content Include="Views\Checkout\PaymentUsingSadad.cshtml" />
+    <Content Include="Views\Checkout\PaymentUsingPayfort.cshtml" />
+    <Content Include="Views\Shared\_VehiclePlate.cshtml" />
+    <Content Include="Views\CustomAuth\Login.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Shared\_ConfirmDeletePopup.cshtml" />
+    <Content Include="Views\Quotation\_QuotationErrors.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="tsconfig.json" />
+    <Content Include="Views\Quotation\SearchResult.cshtml" />
+    <Content Include="Views\Profile\NewPolicyUpdReqNotification.cshtml" />
+    <Content Include="Views\Profile\RejectPolicyUpdReqNotification.cshtml" />
+    <Content Include="Views\Profile\ApprovedPolciyUpdReqNotification.cshtml" />
+    <Content Include="Views\Profile\AwatingPaymentPolicyUpdReqNotification.cshtml" />
+    <Content Include="tslint.json" />
+    <Content Include="Views\Promotion\Programs.cshtml" />
+    <Content Include="Views\Promotion\ConfirmJoinProgram.cshtml" />
+    <Content Include="Views\Quotation\SearchResult.ng.cshtml" />
+    <Content Include="Views\Home\Index.ng.cshtml" />
+    <Content Include="Views\Home\Index-MVC.cshtml" />
+    <Content Include="Views\TameenkPayment\PayWithPayfortOption.cshtml" />
+    <Content Include="Views\TameenkPayment\PayWithSadadOption.cshtml" />
+    <Content Include="Views\TameenkPayment\PaymentMethods.cshtml" />
+    <Content Include="Views\TameenkPayment\PayWithRiydBankOption.cshtml" />
+    <Content Include="TameenkApiSampleData\Policy\Comprehensive\Request\index.html.bak" />
+    <Content Include="TameenkApiSampleData\Quotation\Comprehensive\Response\index.html.bak" />
+    <Content Include="Views\Account\ClearBrowserLocalStorage.cshtml" />
+    <Content Include="Views\Shared\Forbidden.cshtml" />
+    <Content Include="Views\Wafier\Index.cshtml" />
+    <Content Include="Views\Wafier\WafierJoin.cshtml" />
+    <Content Include="Views\Checkout\VerifyCode.cshtml" />
+    <Content Include="Views\Checkout\_ConfirmPhoneNumber.cshtml" />
+    <Content Include="Views\Checkout\_MaxEmailCheckoutNumber.cshtml" />
+    <Content Include="Views\Checkout\_PhoneNoAssignedToAnotherDriver.cshtml" />
+    <Content Include="Views\Checkout\_ErrorPopup.cshtml" />
+    <Content Include="Views\Checkout\_PhoneReachMaxAllowedChanges.cshtml" />
+    <Content Include="Views\TameenkPayment\PayWithHyperpayOption.cshtml" />
+    <Content Include="Views\Checkout\PaymentUsingHyperpay.cshtml" />
+    <Content Include="Views\MOI\Index.cshtml" />
+    <Content Include="Views\MOI\MoiJoin.cshtml" />
+    <Content Include="Views\Sabic\Index.cshtml" />
+    <Content Include="Views\Sabic\SabicJoin.cshtml" />
+    <Content Include="Views\Checkout\_IBANAssignedToAnotherDriver.cshtml" />
+    <Content Include="Views\Checkout\PaymentUsingSTCPay.cshtml" />
+    <Content Include="Views\TameenkPayment\PayWithSTCPayOption.cshtml" />
+    <Content Include="Views\Shared\Success.cshtml" />
+    <Content Include="Views\Checkout\PaymentUsingEsal.cshtml" />
+    <Content Include="Views\TameenkPayment\PayWithEsalOption.cshtml" />
+    <Content Include="Views\Checkout\_InvaidEmail.cshtml" />
+    <Content Include="Views\Checkout\_InvaidPhone.cshtml" />
+    <Content Include="Views\Checkout\_InvaidIBAN.cshtml" />
+    <Content Include="Views\Checkout\_PaymentMethodNotSelected.cshtml" />
+    <Content Include="Views\Account\Policy.cshtml" />
+    <Content Include="Views\Checkout\_UserExceedsInsuranceNumberLimit.cshtml" />
+    <Content Include="Views\Checkout\_EmailSentToReceivePolicy.cshtml" />
+    <Content Include="Views\Checkout\_ComprehensiveImagesNotSelected.cshtml" />
+    <Content Include="Views\Profile\_NewTicketModalBody.cshtml" />
+    <Content Include="Views\Profile\_ProfileNotificationItem.cshtml" />
+    <Content Include="Views\Profile\_UserTicketAttachmentFileItem.cshtml" />
+    <Content Include="Views\Profile\_UserTicketHistoryItem.cshtml" />
+    <Content Include="Views\Account\CheckDiscount.cshtml" />
+    <Content Include="Views\Profile\_MyInvoicesList.cshtml" />
+    <Content Include="Views\Profile\_MyPoliciesList.cshtml" />
+    <Content Include="Views\Profile\_MySadadBills.cshtml" />
+    <Content Include="Views\Profile\_MyVehiclesList.cshtml" />
+    <Content Include="Views\Profile\MyInvoices.cshtml" />
+    <Content Include="Views\Profile\MyNotifications.cshtml" />
+    <Content Include="Views\Profile\MyPolicies.cshtml" />
+    <Content Include="Views\Profile\MySadadBills.cshtml" />
+    <Content Include="Views\Profile\MyStatistics.cshtml" />
+    <Content Include="Views\Profile\MyTickets.cshtml" />
+    <Content Include="Views\Profile\MyVehicles.cshtml" />
+    <Content Include="Views\Offers\Index.cshtml" />
+    <Content Include="Views\TameenkPayment\PayWithHyperpayOptionMada.cshtml" />
+    <Content Include="Views\Checkout\PaymentUsingEdaat.cshtml" />
+    <Content Include="Views\TameenkPayment\PayWithEdaatOption.cshtml" />
+    <Content Include="Views\Checkout\PaymentUsingWallet.cshtml" />
+    <Content Include="Views\Profile\_resetPassword.cshtml" />
+    <Content Include="Views\Profile\ChangePassword.cshtml" />
+    <Content Include="Views\Profile\CorporateAccountInfo.cshtml" />
+    <Content Include="Views\Profile\CorporateUsers.cshtml" />
+    <Content Include="Views\Profile\_CorporateUsersList.cshtml" />
+    <Content Include="Views\Profile\ChangePassword.cshtml" />
+    <Content Include="Views\Profile\_CorporateAddUserModalBody.cshtml" />
+    <Content Include="Views\Profile\CorporatePolicies.cshtml" />
+    <Content Include="Views\Profile\_CorporatePoliciesList.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\jui_theme_switch\" />
+    <Folder Include="Views\Lang\" />
+    <Folder Include="Views\ShoppingCart\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Vehicle\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.ACIG\Tameenk.Integration.Providers.ACIG.csproj">
+      <Project>{273ed9c3-bdcc-4757-bbe1-09217521807c}</Project>
+      <Name>Tameenk.Integration.Providers.ACIG</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Ahlia\Tameenk.Integration.Providers.Ahlia.csproj">
+      <Project>{18b525eb-fe56-44de-b171-8d897dc0580f}</Project>
+      <Name>Tameenk.Integration.Providers.Ahlia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.AICC\Tameenk.Integration.Providers.AICC.csproj">
+      <Project>{62c6fcd3-56aa-413d-ad19-b360c51fdf3e}</Project>
+      <Name>Tameenk.Integration.Providers.AICC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Alamiya\Tameenk.Integration.Providers.Alalamiya.csproj">
+      <Project>{0b598b0c-121a-4679-a7bd-aa89fc89287d}</Project>
+      <Name>Tameenk.Integration.Providers.Alalamiya</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.AlRajhi\Tameenk.Integration.Providers.AlRajhi.csproj">
+      <Project>{1d7f8df6-9cb2-46e6-81d7-f0a4428df448}</Project>
+      <Name>Tameenk.Integration.Providers.AlRajhi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.ArabianShield\Tameenk.Integration.Providers.ArabianShield.csproj">
+      <Project>{82c97430-e67a-4968-8fa2-a08f9adc2f9f}</Project>
+      <Name>Tameenk.Integration.Providers.ArabianShield</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.BCARE\Tameenk.Integration.Providers.BCARE.csproj">
+      <Project>{13e68208-07c1-4835-93b6-aedadd4b8d5f}</Project>
+      <Name>Tameenk.Integration.Providers.BCARE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.GGI\Tameenk.Integration.Providers.GGI.csproj">
+      <Project>{8a12c90b-966a-4175-9e6a-6e1295999903}</Project>
+      <Name>Tameenk.Integration.Providers.GGI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.GulfUnion\Tameenk.Integration.Providers.GulfUnion.csproj">
+      <Project>{00dbd7e1-09a4-4d82-b3b7-a5cd83b04ccc}</Project>
+      <Name>Tameenk.Integration.Providers.GulfUnion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Malath\Tameenk.Integration.Providers.Malath.csproj">
+      <Project>{70112e13-32f3-44f0-8b54-316f966d05d2}</Project>
+      <Name>Tameenk.Integration.Providers.Malath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.MedGulf\Tameenk.Integration.Providers.MedGulf.csproj">
+      <Project>{bd8fb99b-4d3f-4eb3-8617-1308c2d4b35b}</Project>
+      <Name>Tameenk.Integration.Providers.MedGulf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.SAICO\Tameenk.Integration.Providers.SAICO.csproj">
+      <Project>{1cf2470e-003e-4d02-8bea-5ec0553e2da2}</Project>
+      <Name>Tameenk.Integration.Providers.SAICO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Salama\Tameenk.Integration.Providers.Salama.csproj">
+      <Project>{77905da8-676d-453e-96de-6e2cee8f9a87}</Project>
+      <Name>Tameenk.Integration.Providers.Salama</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Saqr\Tameenk.Integration.Providers.Saqr.csproj">
+      <Project>{7f41f764-fd71-433b-b15d-3fe48166e934}</Project>
+      <Name>Tameenk.Integration.Providers.Saqr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Solidarity\Tameenk.Integration.Providers.Solidarity.csproj">
+      <Project>{be2bf045-f6d4-4c19-9c8f-94fea19aed5b}</Project>
+      <Name>Tameenk.Integration.Providers.Solidarity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Tawuniya\Tameenk.Integration.Providers.Tawuniya.csproj">
+      <Project>{c867fa5e-ef7d-432b-9030-dce7d2e5594b}</Project>
+      <Name>Tameenk.Integration.Providers.Tawuniya</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.TUIC\Tameenk.Integration.Providers.TUIC.csproj">
+      <Project>{77b5aac3-70e3-428e-9a7c-d9beb7e35887}</Project>
+      <Name>Tameenk.Integration.Providers.TUIC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.UCA\Tameenk.Integration.Providers.UCA.csproj">
+      <Project>{63f1d989-6f80-411d-bc8f-a44dbbbc1951}</Project>
+      <Name>Tameenk.Integration.Providers.UCA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Wafa\Tameenk.Integration.Providers.Wafa.csproj">
+      <Project>{ccf9e62c-68ef-46e8-baa7-69426b9a0099}</Project>
+      <Name>Tameenk.Integration.Providers.Wafa</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Wala\Tameenk.Integration.Providers.Wala.csproj">
+      <Project>{bbd3054f-927a-42e9-b6ae-4cc1869579a8}</Project>
+      <Name>Tameenk.Integration.Providers.Wala</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Providers\Tameenk.Integration.Providers.Wataniya\Tameenk.Integration.Providers.Wataniya.csproj">
+      <Project>{e8a3c64c-6839-4309-aa8f-05b260b81bb5}</Project>
+      <Name>Tameenk.Integration.Providers.Wataniya</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Tameenk.Integration.Core\Tameenk.Integration.Core.csproj">
+      <Project>{75031295-c1c2-499d-8dd3-1ac7357fc897}</Project>
+      <Name>Tameenk.Integration.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj">
+      <Project>{51816323-E9BA-457F-844C-0237993AC117}</Project>
+      <Name>Tameenk.Integration.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14F920B0-E1F2-4E7B-BE22-4BDE4FC9541F}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8edfcd3e-4461-4b2c-a83e-175983e9c6b7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5cd41905-ac08-410f-9ffb-b3975ffba538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Data\Tameenk.Data.csproj">
+      <Project>{9e27f8af-2b2d-4a16-a0b3-ebf07fac188e}</Project>
+      <Name>Tameenk.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj">
+      <Project>{339cf262-0f17-4c60-bb6f-fdc5133b3132}</Project>
+      <Name>Tameenk.Loggin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Resources\Tameenk.Resources.csproj">
+      <Project>{2CFF55DC-EDD1-41C7-92F6-04C650429A9D}</Project>
+      <Name>Tameenk.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Security\Tameenk.Security.csproj">
+      <Project>{e0a5623c-439c-42ea-90d3-c40192abac16}</Project>
+      <Name>Tameenk.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Services.Policy.Components\Tameenk.Services.Policy.Components.csproj">
+      <Project>{99431696-b2b0-4507-9091-f52bf197f01f}</Project>
+      <Name>Tameenk.Services.Policy.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Tameenk.Services\Tameenk.Services.csproj">
+      <Project>{9b11f328-dbf1-4b67-b86d-f3077b4eea5e}</Project>
+      <Name>Tameenk.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Checkout\Tameenk.Services.Checkout.Components\Tameenk.Services.Checkout.Components.csproj">
+      <Project>{ADCFEAD4-4FEB-4BE4-9343-63735C160FF7}</Project>
+      <Name>Tameenk.Services.Checkout.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Inquiry\Tameenk.Services.Inquiry.Components\Tameenk.Services.Inquiry.Components.csproj">
+      <Project>{DD676510-DEEE-4664-9D2F-AF11F9B8A792}</Project>
+      <Name>Tameenk.Services.Inquiry.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Payment\Tameenk.Payment.Esal.Component\Tameenk.Payment.Esal.Component.csproj">
+      <Project>{26A5D248-8A21-44AF-9E3B-8875A4E12806}</Project>
+      <Name>Tameenk.Payment.Esal.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Profile\Tameenk.Services.Profile.Component\Tameenk.Services.Profile.Component.csproj">
+      <Project>{EAFDB2AA-1614-4A17-A264-B67F5B8EBCBA}</Project>
+      <Name>Tameenk.Services.Profile.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Quotation\Tameenk.Services.Quotation.Components\Tameenk.Services.Quotation.Components.csproj">
+      <Project>{2F9AF120-775F-488E-89F4-22A0D6EC9EE4}</Project>
+      <Name>Tameenk.Services.Quotation.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\UserTicket\Tameenk.Services.UserTicket.Components\Tameenk.Services.UserTicket.Components.csproj">
+      <Project>{714068E3-DC65-4733-B8E2-A49D9A614863}</Project>
+      <Name>Tameenk.Services.UserTicket.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tameenk.Services.Notifications\Tameenk.Services.Notifications.csproj">
+      <Project>{B4E3E35F-360A-4430-BFCD-A2DC4373D7CF}</Project>
+      <Name>Tameenk.Services.Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TameenkDAL\TameenkDAL.csproj">
+      <Project>{6ebbe2e6-d90a-4287-a92f-f0341df48186}</Project>
+      <Name>TameenkDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tamkeen.bll\Tamkeen.bll.csproj">
+      <Project>{f0344826-89df-484d-8b72-a31d51c77790}</Project>
+      <Name>Tamkeen.bll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LangText.Ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LangText.Ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LangText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\additonal-info\models\additional-info.model.ts" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\core\core.module.ts" />
+    <TypeScriptCompile Include="src\app\core\enums\index.ts" />
+    <TypeScriptCompile Include="src\app\core\enums\insurance-types.enum.ts" />
+    <TypeScriptCompile Include="src\app\core\guards\auth.guard.ts" />
+    <Content Include="src\app\core\guards\index.ts" />
+    <TypeScriptCompile Include="src\app\core\helpers\http-cancel.interceptor.ts" />
+    <TypeScriptCompile Include="src\app\core\helpers\index.ts" />
+    <TypeScriptCompile Include="src\app\core\helpers\token.interceptor.ts" />
+    <TypeScriptCompile Include="src\app\core\index.ts" />
+    <TypeScriptCompile Include="src\app\core\models\benefit.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\captcha.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\common-lookup.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\common.response.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\companies-response.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\error.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\index.ts" />
+    <TypeScriptCompile Include="src\app\core\models\insurance-company.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\price-datail.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\price-type.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\product-benefit.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\product-type.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\product.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\quotation-request.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\quotation-response.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\user-token.model.ts" />
+    <TypeScriptCompile Include="src\app\core\models\vehicle.model.ts" />
+    <TypeScriptCompile Include="src\app\core\services\administration.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\core\services\administration.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\api.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\authentication.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\http-cancel.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\core\services\http-cancel.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\index.ts" />
+    <TypeScriptCompile Include="src\app\core\services\localization.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\notification.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\core\services\notification.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\quotation.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\startup.service.ts" />
+    <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="src\app\home\home.module.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\home.module.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\additonal-driver\additonal-driver.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\additonal-driver\additonal-driver.component.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\captcha\captcha.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\captcha\captcha.component.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\inquiry.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\inquiry.component.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\insured-info\insured-info.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\insured-info\insured-info.component.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\main-driver\main-driver.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\main-driver\main-driver.component.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\vehicle-info\vehicle-info.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\vehicle-info\vehicle-info.component.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\yakeen-missing-fields\yakeen-missing-fields.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\inquiry\yakeen-missing-fields\yakeen-missing-fields.component.ts" />
+    <TypeScriptCompile Include="src\app\home\instructions\instructions.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\instructions\instructions.component.ts" />
+    <TypeScriptCompile Include="src\app\home\models\captcha.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\cities-lookup.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\driver.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\index.ts" />
+    <TypeScriptCompile Include="src\app\home\models\inquiry-request.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\inquiry-response.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\inquiry.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\insured.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\main.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\vehicle.model.ts" />
+    <TypeScriptCompile Include="src\app\home\models\yakeen-missing-field-base.ts" />
+    <TypeScriptCompile Include="src\app\home\models\yakeen-missing-field-checkbox.ts" />
+    <TypeScriptCompile Include="src\app\home\models\yakeen-missing-field-dropdown.ts" />
+    <TypeScriptCompile Include="src\app\home\models\yakeen-missing-field-textbox.ts" />
+    <TypeScriptCompile Include="src\app\home\partners-slider\partners-slider.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\partners-slider\partners-slider.component.ts" />
+    <TypeScriptCompile Include="src\app\home\search\data\form-data.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\data\form-data.service.ts" />
+    <TypeScriptCompile Include="src\app\home\search\data\form-data.ts" />
+    <TypeScriptCompile Include="src\app\home\search\insured\additional-driver\additional-driver.component_Old_Aug.ts" />
+    <TypeScriptCompile Include="src\app\home\search\insured\additional-driver\additional-driver.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\insured\additional-driver\additional-driver.component.ts" />
+    <TypeScriptCompile Include="src\app\home\search\insured\insured.component_Old_Aug.ts" />
+    <TypeScriptCompile Include="src\app\home\search\insured\insured.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\insured\insured.component.ts" />
+    <TypeScriptCompile Include="src\app\home\search\main\main.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\main\main.component.ts" />
+    <TypeScriptCompile Include="src\app\home\search\missing-fields\missing-fields.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\missing-fields\missing-fields.component.ts" />
+    <TypeScriptCompile Include="src\app\home\search\missing-fields\missing-field\missing-field.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\missing-fields\missing-field\missing-field.component.ts" />
+    <TypeScriptCompile Include="src\app\home\search\search.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\search.component.ts" />
+    <TypeScriptCompile Include="src\app\home\search\vehicle\vehicle.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\vehicle\vehicle.component.ts" />
+    <TypeScriptCompile Include="src\app\home\search\workflow\workflow.model.ts" />
+    <TypeScriptCompile Include="src\app\home\search\workflow\workflow.service_Old-Aug.ts" />
+    <TypeScriptCompile Include="src\app\home\search\workflow\workflow.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\search\workflow\workflow.service.ts" />
+    <TypeScriptCompile Include="src\app\home\services\eventEmitter.ts" />
+    <TypeScriptCompile Include="src\app\home\services\index.ts" />
+    <TypeScriptCompile Include="src\app\home\services\inquiry-new.service.ts" />
+    <TypeScriptCompile Include="src\app\home\services\inquiry.service.ts" />
+    <TypeScriptCompile Include="src\app\home\slider\slider.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\slider\slider.component.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\benefits\benefits.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\benefits\benefits.component.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\product-list\product-list.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\product-list\product-list.component.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\product\product.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\product\product.component.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\search-result-info\search-result-info.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\search-result-info\search-result-info.component.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\search-result-options\search-result-options.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\quotation\components\search-result-options\search-result-options.component.ts" />
+    <TypeScriptCompile Include="src\app\quotation\pages\search-result\search-result.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\quotation\pages\search-result\search-result.component.ts" />
+    <TypeScriptCompile Include="src\app\quotation\quotation-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\quotation\quotation.module.spec.ts" />
+    <TypeScriptCompile Include="src\app\quotation\quotation.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\loader\loader.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\loader\loader.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\notification\notification.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\notification\notification.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\directives\check-id-iqamaa.directive.ts" />
+    <TypeScriptCompile Include="src\app\shared\directives\check-id.directive.ts" />
+    <TypeScriptCompile Include="src\app\shared\directives\check-vehicle-value.directive.ts" />
+    <TypeScriptCompile Include="src\app\shared\directives\focus-blur.directive.ts" />
+    <TypeScriptCompile Include="src\app\shared\directives\number.directive.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62391</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62391/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,230 @@
+﻿@using Tameenk.Core.Domain.Enums;
+
+<style>
+    .search-box {
+        top: 15%;
+        z-index: 9999;
+        border-radius: 5px;
+    }
+
+    .item img {
+        height: 100% !important;
+    }
+
+    .custom-wafier-content p {
+        position: relative;
+        font-size: 18px;
+        color: #333;
+        text-align: justify;
+    }
+
+    .custom-wafier-content a {
+        float: left;
+    }
+
+    .header__register {
+        margin: 0 4px !important;
+    }
+</style>
+
+@section headScripts{
+    <script type="text/javascript" src="/resources/js/app-ng.js" defer></script>
+}
+
+<section id="slider" class="section slides overview slidesCover" style="min-height: 675px; height: calc(100vh - 50px);">
+    <div class="slider slider-imgs">
+        @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(),
+StringComparison.OrdinalIgnoreCase))
+        {
+            <span class="bg" style="background-image: url('/resources/imgs/wafir-eng.png')"></span>
+
+        }
+        else
+        {
+            <span class="bg" style="background-image: url('/resources/imgs/wafir.png')"></span>
+        }
+    </div>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <bcare-root style="top:60px;" currentLang="@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName"
+                    isEditRequest="false"
+                    qtRqstExtrnlId=""
+                    isWafierRequest="true">
+            <div class="home-loading">
+                <span class="loading-outer">
+                    <span class="static-logo">
+                        <img src="/resources/imgs/logo-short.png" draggable="false" alt="bcare logo short">
+                    </span>
+                    <span class="moving-logo">
+                        <img class="logo-bcare" draggable="false" src="/resources/imgs/bcaretab.png" alt="bcare logo">
+                    </span>
+                </span>
+            </div>
+        </bcare-root>
+    }
+
+
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <text>
+
+            <div class="search-box custom-wafier-content">
+                <p class="txt-justify pad-sm-r">
+                    @Html.Raw(LangText.WafierContent)
+                </p>
+                <a href="@Url.Action("Register", "Account" ,new { returnUrl = "/wafier" })" class="header__register btn sm txt-white txt-brand borderd-hvr bg-gr-main circ-rdus l-shadow">
+                    @Tameenk.LangText.register
+                </a>
+                <a href="@Url.Action("Login", "Account",new { returnUrl = "/wafier" })" class="header__register btn sm txt-white txt-brand borderd-hvr bg-gr-main circ-rdus l-shadow">
+                    @Tameenk.LangText.login
+                </a>
+            </div>
+
+        </text>
+    }
+
+</section>
+
+<section class="section needs" style="padding: 50px 0;">
+    <div class="container">
+        <h2 class="txt-lr txt-brand txt-center dis-block md-mar-bot underline">@Html.Raw(Tameenk.LangText.wafier_program)</h2>
+        <div class="col-md-6  bx-right">
+            <p class="txt-md no-mar sm-mar txt-black txt-justify dis-block md-lh">يُمثل وفير إحدى مُبادرات المسؤولية الاجتماعية التي تسعى لإيجاد معاملة تفضيلية وخدمة نوعية متميزة في المجالات الصحية والترفيهية والخدمية والتجارية لمنسوبي الجامعات السعودية وأعضاء هيئة التدريس والإداريين، وأُسرهم، ومنسوبي المؤسسة العامة للتدريب التقني والمهني من المدربين، والموظفين، وأسرهم من خلال الشراكة الفاعلة مع تلك القطاعات؛ ويؤمن وفير بدور المؤسسات التعليمية في تقدم المجتمع، ومن ثم تبَني مفهوم جودة الحياة والعمل على إيجاد بيئة تعليمية مناسبة تحفز المنسوبين وتُمكنهم من الإبداع والتميز. </p>
+        </div>
+        <div class="col-md-6 bx-left">
+            <a href="http://wafierpnircs.com/Pages/CMS/AboutUs.aspx" title="انقر لمعرفة المزيد عن وفير" target="_blank">
+                <img src="/resources/imgs/wafir-logo.jpg" />
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="needs" class="section needs">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-6 col-md-6 bx-left md-mar-bot">
+                <a href="/wafier">
+                    <div id="slider-steps">
+                        <div class="item" style="border-top-left-radius:0px;">
+                            <img src="/resources/imgs/sc1.png" alt="أدخل بيانات التأمين" />
+                            <h3 style="background: #efefef; color:black; ">أدخل البيانات</h3>
+                        </div>
+                        <div class="item" style="border-top-left-radius:0px;">
+                            <img src="/resources/imgs/sc2.png" alt="قارن بين عروض التأمين المختلفة " />
+                            <h3>قارن العروض</h3>
+                        </div>
+                        <div class="item" style="border-top-left-radius:0px;">
+                            <img src="/resources/imgs/sc3.png" alt="قم بعملية التأمين" />
+                            <h3>أمّـن الآن!</h3>
+                        </div>
+                    </div>
+                </a>
+                <div id="arrows-slider" class="md-mar">
+                    <span id="next-step">
+                        <i class="ic-asset-5-1"></i>
+                    </span>
+                    <span id="prev-step">
+                        <i class="ic-asset-5-1"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-4 col-md-4 bx-right">
+                <h1 class="txt-lr txt-brand txt-right dis-block">@Html.Raw(Tameenk.LangText.index_more_title)...</h1>
+                <p class="txt-md no-mar lr-mar txt-black txt-justify dis-block md-lh">@Html.Raw(Tameenk.LangText.index_more_desc)</p>
+                <a href="#" class="bx-right md-mar btn sm dis-block bx-left txt-white login txt-brand borderd-hvr txt-xs bg-gr-main  circ-rdus l-shadow">@Html.Raw(Tameenk.LangText.index_more_about_button)</a>
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</section>
+
+<section id="portfolio" class="section portfolio sm-mar">
+    <div class="container">
+        <div class="row">
+            <h1 class="txt-lr txt-brand txt-center dis-block">@Html.Raw(Tameenk.LangText.partners)</h1>
+            <div class="img-list slider sm-mar partners-slider">
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Sagr.png" alt="AlSagr Insurance" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Solidarity.png" alt="سوليدرتي للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Alalamiya.png" alt="العالمية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/MedGulf.png" alt="ميدغلف للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/GGI.png" alt="العالمية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/ACIG.png" alt="أسيج للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/ArabianShield.png" alt="الدرع العربي للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Ahlia.png" alt="الأهلية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/AICC.png" alt="العربية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/TUIC.png" alt="الاتحاد التجاري للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Tawuniya.png" alt="التعاونية للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Wafa.png" alt="وفاء للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Wala.png" alt="ولاء للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Salama.png" alt="سلامة للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/UCA.png" alt="المتحدة للتامين التعاوني" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/RT.png" alt="تكافل الراجحي" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/SC.png" alt="سايكو للتأمين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Malath.png" title="ملاذ" alt="ملاذ" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/TokioMarine.png" title="طوكيو مارين" alt="طوكيو مارين" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/Allianz.png" title="أليانز" alt="أليانز" />
+                </div>
+                <div>
+                    <img src="/resources/imgs/insurerlogos/AXA.png" title="أكسا" alt="أكسا" />
+                </div>
+            </div>
+            <div id="arrows">
+                <span id="next-comp">
+                    <i class="ic-asset-5-1"></i>
+                </span>
+                <span id="prev-comp" style="margin-top: 5px;">
+                    <i class="ic-asset-5-1"></i>
+                </span>
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</section>
+
+<script>
+    window.isWafier = true;
+</script>
+
+<script type="text/javascript" src="../../dist/main.js" defer></script>

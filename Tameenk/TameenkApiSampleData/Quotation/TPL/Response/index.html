@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../css/sampleData.css">
+    <script>
+        $(function () {
+            var myData =
+                {
+                    "ReferenceId": "T0126738e266f2c",
+                    "StatusCode": 1,
+                    "QuotationNo": "5639036",
+                    "QuotationDate": "2017-08-22T15:45:28+03:00",
+                    "QuotationExpiryDate": "2017-08-23T15:45:28+03:00",
+                    "Products": [{
+                        "ProductPrice": 892.50,
+                        "PriceDetails":
+                            [
+                                { "PriceTypeCode": 2, "PriceValue": 118.00, "PercentageValue": 10.00 },
+                                { "PriceTypeCode": 3, "PriceValue": 236.00, "PercentageValue": 20.00 },
+                                { "PriceTypeCode": 6, "PriceValue": 25.00 },
+                                { "PriceTypeCode": 7, "PriceValue": 1179.00 },
+                                { "PriceTypeCode": 8, "PriceValue": 42.50 }
+                            ],
+                        "Benefits": [
+                            {
+                                "BenefitCode": 1,
+                                "BenefitId": "110",
+                                "BenefitNameAr": "تغطية الحوادث الشخصية للسائق فقط",
+                                "BenefitNameEn": "Personal Accident coverage for the driver only",
+                                "BenefitPrice": 274.75
+                            },
+                            {
+                                "BenefitCode": 4,
+                                "BenefitId": "120",
+                                "BenefitNameAr": "الزجاج الأمامي والحرائق والسرقة",
+                                "BenefitNameEn": "Windscreen, fires & theft",
+                                "BenefitPrice": 100.50
+                            }
+                        ]
+                    }]
+                };
+            var textedJson = JSON.stringify(myData, undefined, 4);
+            $('#myTextarea').text(textedJson);
+        });
+
+    </script>
+    
+</head>
+<body>
+    <textarea name="" id="myTextarea" ></textarea>
+
+
+</body>
+</html>

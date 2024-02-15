@@ -1,0 +1,19 @@
+<div class="search-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 bx-right widthInInsured">
+                <div class="search-box" *ngIf="!showLoading">
+                    <h2 class="search-heading" translate>home.vehicle_insurance<span translate>home.vehicle_products</span></h2>
+                    <bcare-notification></bcare-notification>
+                    <bcare-main *ngIf="currentStep == 'main'" (nextStep)="getNextStep()" (removeStep)="removeStep($event)"></bcare-main>
+                    <bcare-insured *ngIf="currentStep == 'insured'" (nextStep)="getNextStep()" (prevStep)="getPrevStep()" [isLastStep]="lastStep == 'insured'"></bcare-insured>
+                    <bcare-vehicle *ngIf="currentStep == 'vehicle'" (nextStep)="getNextStep()" (prevStep)="getPrevStep()"></bcare-vehicle>
+                    <div *ngIf="showYakeenMissingFields" class="row" id="missing-fields-section">
+                        <bcare-missing-fields [missingFields]="yakeenMissingFields" [quotationRequestExternalId]="quotationRequestExternalId"></bcare-missing-fields>
+                    </div>
+                </div>
+                <bcare-loader *ngIf="showLoading"></bcare-loader>
+            </div>
+        </div>
+    </div>
+</div>

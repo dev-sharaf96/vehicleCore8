@@ -1,0 +1,30 @@
+@model Tameenk.Models.HomeModel
+@section headScripts{
+    <script type="text/javascript" src="@(BaseUrl)resources/js/app-ng.js" defer></script>
+}
+<bcare-root currentLang="@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName"
+            isEditRequest=@(Model.IsEditRequest == true ? "true" : "false")
+            qtRqstExtrnlId="@Model.QuotationRequestExternalId">
+    <div class="home-loading">
+        <span class="loading-outer">
+            <span class="static-logo">
+                <img src="@(BaseUrl)resources/imgs/logo-short.png" draggable="false" alt="bcare logo short" title="BCare">
+            </span>
+            <span class="moving-logo">
+                <img class="logo-bcare" draggable="false" src="@(BaseUrl)resources/imgs/bcaretab.png" alt="bcare logo" title="BCare">
+            </span>
+        </span>
+    </div>
+</bcare-root>
+<script>
+    window.checkoutErrors = [];
+    @{
+        var checkoutErrors = ViewData.ModelState.Where(n => n.Value.Errors.Count > 0 && n.Key.Equals("CheckoutError")).ToList();
+        foreach (var checkoutError in checkoutErrors) {
+            foreach (var error in checkoutError.Value.Errors)
+            {
+            @: window.checkoutErrors.push('@(error.ErrorMessage)');
+            }
+        }
+    }
+</script>

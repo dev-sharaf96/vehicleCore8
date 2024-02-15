@@ -1,0 +1,590 @@
+﻿@model Tamkeen.bll.Model.QuotationResponseModel
+@{
+    var imageArray = new List<string>();
+    //imageArray.Add("AC");
+    //imageArray.Add("AH");
+    //imageArray.Add("D3");
+    //
+    //imageArray.Add("MG");
+    //imageArray.Add("RS");
+    //imageArray.Add("SG");
+    //imageArray.Add("TU");
+    //imageArray.Add("TW");
+    //imageArray.Add("WF");
+}
+
+<section class="md-ver-spc search-info bg-ofwhite section search-result-info active search-car" style="background-image: url('/resources/imgs/CarLogos/@(Model.Vehicle.MakerCode.ToString("0000")).jpg');" id="show_data">
+    <div class="container">
+        <div class="row">
+            <!-- block -->
+            <div class="over-hidden col-xs-12 col-lg-3 col-md-3 bx-right md-mar">
+                <!--
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">حالة نجم</span>
+                <h2 class="txt-lr txt-black no-mar">ساريه</h2>
+                -->
+            </div>
+            <!-- block -->
+
+            <div class="over-hidden col-xs-12 col-lg-3 col-md-3 bx-right md-mar">
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.search_Vehicle_Description)</span>
+                <h2 class="txt-lr txt-black no-mar txt-en">@Model.Vehicle.Maker  @Model.Vehicle.ModelYear @Model.Vehicle.Model</h2>
+            </div>
+            <!-- block -->
+            <div class="over-hidden col-xs-12 col-lg-2 col-md-2 bx-right md-mar">
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.search_Discount_Eligibility)</span>
+                <h2 class="txt-lr txt-black no-mar">
+                    @if (Model.NCDFreeYears == 1 || Model.NCDFreeYears == 2)
+                    {
+                        @Model.NCDFreeYears
+                        @Html.Raw(Tameenk.LangText.Search_Year)
+                    }
+                    else if (Model.NCDFreeYears < 1)
+                    {
+
+                        @Html.Raw(Tameenk.LangText.Search_not_found)
+                    }
+                    else
+                    {
+                        @Model.NCDFreeYears
+                        @Html.Raw(Tameenk.LangText.Search_Years)
+
+                    }
+                </h2>
+            </div>
+            <!-- block -->
+            <div class="col-xs-6 col-lg-2 col-md-2 bx-right md-mar">
+                <div class="belt @Model.Vehicle.PlateColor">
+                    <span class="arabic-character">@Model.Vehicle.CarPlate.CarPlateTextAr</span>
+                    <span class="arabic-number">@Model.Vehicle.CarPlate.CarPlateNumberAr</span>
+                    <span class="english-number">@Model.Vehicle.CarPlate.CarPlateNumberEn</span>
+                    <span class="english-character">@Model.Vehicle.CarPlate.CarPlateTextEn</span>
+                </div>
+            </div>
+            <!-- block -->
+            <div class="over-hidden col-xs-6 col-lg-2 col-md-2 md-mar">
+                <a href="@Url.Action("EditRequestInformation", "Home", new { referenceId = Model.ReferenceId})" class="bx-right btn  sm dis-block txt-white login sm-mar txt-brand borderd-hvr txt-xs bg-gr-main  circ-rdus l-shadow">@Html.Raw(Tameenk.LangText.Search_edit_info)</a>
+            </div>
+            <!-- block -->
+        </div>
+    </div>
+</section>
+<section class="md-ver-spc search-result  section">
+    <div class="container">
+        @using (Html.BeginForm("SearchResult", "Quotation", FormMethod.Post, new { id = "frmshow" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.QtRqstExtrnlId)
+            @Html.HiddenFor(m => m.ReferenceId)
+            @Html.HiddenFor(m => m.TypeOfInsurance)
+            @Html.HiddenFor(m => m.VehicleAgencyRepair)
+            <!---Filter Request-->
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-lg-4 select-list-bx">
+                    <h2 class="txt-md txt-black no-mar bx-right">
+                        <i class="ic-icons-352 general-ico"></i>@Html.Raw(Tameenk.LangText.search_Insurance_Type)
+                    </h2>
+                    <ul class="select-list" id="insurance">
+                        <li onclick="submit(2)" id="general_filter" class="toggle-filters full @(@Model.TypeOfInsurance == 2 ? "active" : "")" data-tohide=".limited">
+                            <i class="fa">&#xf132;</i> @Html.Raw(Tameenk.LangText.Search_Comprehensive)
+                        </li>
+                        <li onclick="submit(1)" id="other_filter" class="toggle-filters limited @(@Model.TypeOfInsurance == 1 ? "active" : "")" data-tohide=".full">
+                            <i class="ic-icons-101 general-ico"></i>@Html.Raw(Tameenk.LangText.Search_TPL)
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-2 col-lg-1 @(Model.TypeOfInsurance == 1 ? "hidden-action" : "")" style="margin-bottom: 30px">
+                <h2 class="txt-md txt-black no-mar bx-right">
+                       @Html.Raw(Tameenk.LangText.deductible)
+                    </h2>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-2 select-field  @(Model.TypeOfInsurance == 1 ? "hidden-action" : "") full-view">
+                    <i class="ic-icons-503"></i>
+                    @Html.DropDownListFor(m => m.DeductibleValue, new SelectList(ViewBag.DeductibleValuesList), new { @class = "", onchange = "submit(2)", @Value = Model.DeductibleValue })
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-2 select-list-bx @(Model.TypeOfInsurance == 1 ? "hidden-action" : "") full-view">
+                    <!--
+                    <h2 class="txt-md txt-black no-mar bx-right left-mar-10"><i class="ic-icons-19 general-ico"></i>الشامل؟</h2>
+                    -->
+                    <ul class="select-list right-mar-10" id="insurance_type" style="margin-right: 0;">
+                        <li onclick="submitVehicleAgencyRepair(true)" class="@(@Model.VehicleAgencyRepair == true ? "active" : "")">
+                            <i class="ic-icons-703 general-ico"></i>@Html.Raw(Tameenk.LangText.Search_Agency)
+                        </li>
+                        <li onclick="submitVehicleAgencyRepair(false)" class="@(@Model.VehicleAgencyRepair == false ? "active" : "")">
+                            <i class="ic-icons-423 general-ico"></i>@Html.Raw(Tameenk.LangText.Search_Workshops)
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    function submit(typeOfInsurance) {
+                        $("#TypeOfInsurance").val(typeOfInsurance);
+                        $("#frmshow").submit();
+                    }
+                    function submitVehicleAgencyRepair(IsVehicleAgencyRepair) {
+                        debugger;
+                        $("#VehicleAgencyRepair").val(IsVehicleAgencyRepair);
+                        $("#frmshow").submit();
+                    }
+                </script>
+
+                <div class="col-xs-12 col-md-4 col-lg-3 select-list-bx hidden-action full-view">
+                    <!--
+                    <h2 class="txt-md txt-black no-mar bx-right left-mar-10"><i class="ic-icons-19 general-ico"></i>الشامل؟</h2>
+                    -->
+                    <ul class="select-list right-mar-10" id="insurance_type" style="margin-right: 0;">
+                        <li>
+                            <i class="ic-icons-703 general-ico"></i>@Html.Raw(Tameenk.LangText.Search_Agency)
+                        </li>
+                        <li class="active">
+                            <i class="ic-icons-423 general-ico"></i>@Html.Raw(Tameenk.LangText.Search_Workshops)
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-3 prices relative-index bx-left">
+                    <a class="txt-md txt-black no-mar bx-right pointer f_width" id="show-range-prices">
+                        <i class="ic-icons-487"></i>@Html.Raw(Tameenk.LangText.Search_Sort_Rates_by)
+                    </a>
+                    <ul class="profile-sidebar txt-right price-select content-view  block-list">
+                        <li class="active">
+                            <a href="#" class="bx-right f_width ">
+                                <i class="ic-icons-504"></i>@Html.Raw(Tameenk.LangText.Search_High_to_Low)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="bx-right f_width">
+                                <i class="ic-icons-376"></i>@Html.Raw(Tameenk.LangText.Search_Low_to_High)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+        <!--- End Of Filter Request-->
+        <!-- row -->
+
+        <div class="row lr-mar result-cards">
+            <div class="hidden-action full-view active">
+                @for (int i = 0; i < Model.Products.Count; i++)
+                {
+                    using (Html.BeginForm("CheckoutDetails", "Checkout", FormMethod.Post, new { id = "selectProductForm" + i.ToString() }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(a => a.QtRqstExtrnlId)
+                        @Html.HiddenFor(a => a.ReferenceId)
+                        @Html.HiddenFor(a => a.QuotationResponseId)
+                        @Html.Hidden("ProductIdentifier", Model.Products[i].ProductIdentifier)
+                        @Html.Hidden("QuotationNo", Model.Products[i].QuotationNo)
+                        @Html.Hidden("QuotationDate", Model.Products[i].QuotationDate)
+                        @Html.Hidden("QuotationExpiryDate", Model.Products[i].QuotationExpiryDate)
+                        @Html.Hidden("Provider", Model.Products[i].Provider)
+                        @Html.Hidden("ProductImage", Model.Products[i].PrdouctImage)
+                        @Html.Hidden("ProductId", Model.Products[i].ProductId)
+                        @Html.Hidden("ProductNameAr", Model.Products[i].ProductNameAr)
+                        @Html.Hidden("ProductNameEn", Model.Products[i].ProductNameEn)
+                        @Html.Hidden("ProductDescAr", Model.Products[i].ProductDescAr)
+                        @Html.Hidden("ProductDescEn", Model.Products[i].ProductDescEn)
+                        @Html.Hidden("ProductPrice", Model.Products[i].ProductPrice)
+                        @Html.Hidden("DeductibleValue", Model.Products[i].DeductibleValue)
+                        @Html.Hidden("VehicleLimitValue", Model.Products[i].VehicleLimitValue)
+                        if (Model.Products[i].PriceDetails != null)
+                        {
+                            for (int a = 0; a < Model.Products[i].PriceDetails.Count; a++)
+                            {
+                                @Html.Hidden("PriceDetails[" + a + "].PriceNameEn", Model.Products[i].PriceDetails[a].PriceNameEn)
+                                @Html.Hidden("PriceDetails[" + a + "].PriceNameAr", Model.Products[i].PriceDetails[a].PriceNameAr)
+                                @Html.Hidden("PriceDetails[" + a + "].PriceValue", Model.Products[i].PriceDetails[a].PriceValue, new { @class = "Product_" + i + "_PriceDetails_PriceValue_" + Model.Products[i].PriceDetails[a].PriceTypeCode })
+                                @Html.Hidden("PriceDetails[" + a + "].PriceTypeCode", Model.Products[i].PriceDetails[a].PriceTypeCode)
+                            }
+                        }
+
+                        <article class="over-hidden md-mar-bot">
+                            <!-- Company Modal -->
+                            <div class="popup" data-popup="company:@Model.Products[i].Provider">
+                                <div class="popup-inner">
+                                    <div class="modal-header">
+                                        @if (System.Globalization.CultureInfo.CurrentCulture.DisplayName == "English")
+                                        {
+                                            <h2>@Model.Products[i].ProductNameEn</h2>
+                                        }
+                                        else
+                                        {
+                                            <h2>@Model.Products[i].ProductNameAr</h2>
+                                        }
+                                    </div>
+                                    <div class="model-img">
+                                        @if (Model.Products[i].PrdouctImage.StartsWith("http", StringComparison.InvariantCultureIgnoreCase))
+                                        {
+                                            <img src="@Model.Products[i].PrdouctImage" alt="" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/@Model.Products[i].PrdouctImage" alt="" />
+                                        }
+                                    </div>
+                                    <!-- Here -->
+                                    <div class="data-holder"></div>
+                                    <a class="popup-close" data-popup-close="company:@Model.Products[i].Provider" href="#">x</a>
+                                </div>
+                            </div>
+                            <!-- /Modal -->
+                            <div class="row" style="height: 100%;display: table;width: 100%;">
+                                <header class="col-xs-6 col-md-4 col-lg-2">
+                                    <span class="dis-block sm-mar">
+                                        @if (Model.Products[i].PrdouctImage.StartsWith("http", StringComparison.InvariantCultureIgnoreCase))
+                                        {
+                                            <img src="@Model.Products[i].PrdouctImage" alt="" />
+                                        }
+                                        else
+                                        {
+                                            <img src="/@Model.Products[i].PrdouctImage" alt="" />
+                                        }
+                                    </span>
+                                    <h1 class="txt-xs txt-black no-mar sm-mar bx-right f_width">
+                                        @Model.TypeOfInsuranceText
+                                    </h1>
+                                    <h1 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block">
+                                        <i class="ic-icons-352 general-ico"></i>
+                                        <a data-popup-open="company:@Model.Products[i].Provider" onclick="GetInsuranceCompanyMoreDetails(@((int)Model.Products[i].Provider))">@Html.Raw(Tameenk.LangText.Search_More_Detail)</a>
+                                    </h1>
+                                    <!-- <a class="dis-block pointer bx-right txt-black fav-link txt-brand-hvr sm-mar txt-sm with-ico bg-transparent resp circ-rdus cd-add-to-cart" data-price="25.99">
+                                        <i class="ic-plus general-ico"></i>@Html.Raw(Tameenk.LangText.Search_Add_Comparison)
+                                    </a> -->
+                                </header>
+                                @if (Model.Products[i].Errors == null || Model.Products[i].Errors.Count == 0)
+                                {
+                                    <div class="price col-xs-6 col-md-3 col-lg-3 bx-left">
+                                        <div class="price-content" style="min-height: 39vh; max-height: 40vh;">
+                                            @if (Model.Products[i].PriceDetails != null)
+                                            {
+                                                for (int y = 0; y < Model.Products[i].PriceDetails.Count; y++)
+                                                {
+                                                    <span class="txt-xs txt-mgray no-mar  bx-right f_width dis-block" style="margin-bottom:5px;">
+
+                                                        <span id="Product_@(i)__PriceDetails_@(Model.Products[i].PriceDetails[y].PriceTypeCode)">
+                                                            @Model.Products[i].PriceDetails[y].PriceValue.ToString("0.00")
+                                                        </span>
+                                                        @if (System.Globalization.CultureInfo.CurrentCulture.DisplayName == "English")
+                                                        {
+                                                            <span style="padding-right: 10px;" class="txt-black"> @Model.Products[i].PriceDetails[y].PriceNameEn</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span style="padding-right: 10px;" class="txt-black"> @Model.Products[i].PriceDetails[y].PriceNameAr</span>
+                                                        }
+                                                    </span>
+
+                                                }
+                                            }
+
+                                            <h2 class="txt-lr txt-black xs-mar bx-right f_width dis-block">
+                                                <span id="Product_@(i)__Total__IsSelected">
+                                                    @Model.Products[i].ProductPrice.ToString("0.00")
+                                                </span>
+                                                <span class="dis-inline-block txt-md right-mar-10">@Html.Raw(Tameenk.LangText.Currency)</span>
+                                            </h2>
+                                            <input onclick="" type="submit" value="@Html.Raw(Tameenk.LangText.Search_buy_now)" class=" borderd-hvr bx-left btn sm dis-inline-block sm-mar bx-right txt-white  txt-green txt-green-hvr  txt-sm bg-green  circ-rdus l-shadow" style="position: absolute; bottom: 20px;  @(System.Globalization.CultureInfo.CurrentCulture.DisplayName == "English" ? "left: 10%;" : "right:10%") " />
+                                        </div>
+                                    </div>
+                                }
+
+                                @if (Model.Products[i].Errors == null || Model.Products[i].Errors.Count == 0)
+                                {
+                                    <div class="body col-xs-12 col-md-5 col-lg-7">
+                                        <div class="features-body active">
+                                            <!-- main features -->
+
+                                            <h2 class="txt-md txt-black no-mar bx-right f_width dis-block">@Html.Raw(Tameenk.LangText.Search_Additional_Benefits)</h2>
+                                            @if (Model.Products[i].Benefits != null)
+                                            {
+                                                for (int x = 0; Model.Products[i].Benefits != null && x < Model.Products[i].Benefits.Count; x++)
+                                                {
+
+                                                    var id = "selected_product_" + Model.Products[i] + "_" + Model.Products[i].Benefits[x];
+
+                                                    @Html.Hidden("Benefits[" + x + "].BenefitId", Model.Products[i].Benefits[x].BenefitId)
+                                                    @Html.Hidden("Benefits[" + x + "].IsSelected", Model.Products[i].Benefits[x].IsSelected, new { id = "Products_" + i + "__Benefits_" + x + "__IsSelected" })
+                                                    @Html.Hidden("Benefits[" + x + "].BenefitNameEn", Model.Products[i].Benefits[x].BenefitNameEn)
+                                                    @Html.Hidden("Benefits[" + x + "].BenefitNameEn", Model.Products[i].Benefits[x].BenefitNameAr)
+                                                    @Html.Hidden("Benefits[" + x + "].BenefitPrice", Model.Products[i].Benefits[x].BenefitPrice)
+                                                    @Html.Hidden("Benefits[" + x + "].BenefitCode", Model.Products[i].Benefits[x].BenefitCode)
+                                                    @Html.Hidden("Benefits[" + x + "].BenefitDescAr", Model.Products[i].Benefits[x].BenefitDescAr)
+                                                    @Html.Hidden("Benefits[" + x + "].BenefitDescEn", Model.Products[i].Benefits[x].BenefitDescEn)
+                                                    @Html.Hidden("Benefits[" + x + "].ProductBenefitId", Model.Products[i].Benefits[x].ProductBenefitId)
+                                                    <div class="single-feature md-mar @(Model.Products[i].Benefits[x].IsSelected ? "active" : "" )" onclick="changeSelected('Products_@(i)__Benefits_@(x)__IsSelected',@Model.Products[i].Benefits[x].BenefitPrice.Value,'Product_@(i)__Total__IsSelected')">
+                                                        <i>
+                                                            @if (@Model.Products[i].Benefits[x].BenefitCode == 1)
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/svg-driver.png" alt="" class="fixedcolor" />
+
+                                                            }
+                                                            else if (@Model.Products[i].Benefits[x].BenefitCode == 2)
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/driver-passenger.png" alt="" class="fixedcolor" />
+
+                                                            }
+                                                            else if (@Model.Products[i].Benefits[x].BenefitCode == 3)
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/geographic-coverage.png" alt="" class="fixedcolor" />
+
+                                                            }
+                                                            else if (@Model.Products[i].Benefits[x].BenefitCode == 4)
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/theft-fire-frontglass.png" alt="" class="fixedcolor" />
+
+                                                            }
+                                                            else if (@Model.Products[i].Benefits[x].BenefitCode == 5)
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/roadside-assistance.png" alt="" class="fixedcolor" />
+
+                                                            }
+                                                            else if (@Model.Products[i].Benefits[x].BenefitCode == 6)
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/car-replacement.png" alt="" class="fixedcolor" />
+
+                                                            }
+                                                            else if (@Model.Products[i].Benefits[x].BenefitCode == 7)
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/AgencyRepairs.svg" alt="" class="fixedcolor" />
+
+                                                            }
+                                                            else if (@Model.Products[i].Benefits[x].BenefitCode == 8)
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/svg-noclaim.png" alt="" class="fixedcolor" />
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <img src="~/resources/imgs/benfitsicons/pin.png" alt="" class="fixedcolor" />
+
+                                                            }
+
+
+
+                                                        </i>
+                                                        <h2 class="txt-md txt-black no-mar sm-mar sm-mar-bot bx-right f_width dis-block">
+                                                            @if (System.Globalization.CultureInfo.CurrentCulture.DisplayName == "English")
+                                                            {
+                                                                @Model.Products[i].Benefits[x].BenefitNameEn
+
+                                                            }
+                                                            else
+                                                            {
+                                                                @Model.Products[i].Benefits[x].BenefitNameAr
+                                                            }
+                                                        </h2>
+                                                        <span class="txt-xs txt-mgray no-mar bx-right f_width dis-block">
+                                                            @Model.Products[i].Benefits[x].BenefitPrice.Value.ToString("0.00")
+
+                                                            @Html.Raw(Tameenk.LangText.Currency)
+                                                        </span>
+                                                        <i class="stat ic-plus"></i>
+                                                    </div>
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                <h2 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block" style="text-align: center;">@Html.Raw(Tameenk.LangText.is_benefit_found)</h2>
+
+                                            }
+
+                                        </div>
+                                        <!-- row -->
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="body col-xs-12 col-md-5 col-lg-7 errors-container">
+                                        @for (int er = 0; er < Model.Products[i].Errors.Count; er++)
+                                        {
+                                            <div class="error-box">
+                                                @if (er == 0)
+                                                {
+                                                    <textarea cols="100" rows="6">@Model.Products[i].Errors[er].Message</textarea>
+
+                                                }
+                                                else
+                                                {
+                                                    <p><strong>Error! </strong>@Model.Products[i].Errors[er].Message</p>
+
+                                                }
+                                            </div>
+                                        }
+
+                                    </div>
+                                }
+
+                            </div>
+                        </article>
+
+                    }
+                }
+                @for (var i = 0; i < imageArray.Count; i++)
+                {
+                    <form action="/Checkout/CheckoutDetails" id="selectProductForm5" method="post" novalidate="novalidate">
+                        <input name="__RequestVerificationToken" type="hidden" value="_Dj2FG5SQNAW9ylYS-NaqNuyZ5R4i9tGtJ9RA3o-sNhnf2QmVJ6_B8rBFvPjgfygzb_6rsNBGKNLjms2Jgo6AWt5lBNs-PA5I95dv32Pggk1"><input id="QtRqstExtrnlId" name="QtRqstExtrnlId" type="hidden" value="d36d33ec3203406"><input id="ReferenceId" name="ReferenceId" type="hidden" value="b105f460162940f"><input data-val="true" data-val-number="The field QuotationResponseId must be a number." data-val-required="الحقل QuotationResponseId مطلوب." id="QuotationResponseId" name="QuotationResponseId" type="hidden" value="1126"><input id="ProductIdentifier" name="ProductIdentifier" type="hidden" value="a5e2d760-cb6f-49ac-9f53-0570c2607c0f"><input id="QuotationNo" name="QuotationNo" type="hidden" value="P03/QN/18/300/0000021042"><input id="QuotationDate" name="QuotationDate" type="hidden" value=""><input id="QuotationExpiryDate" name="QuotationExpiryDate" type="hidden" value="23/09/39 02:54:40 م"><input id="Provider" name="Provider" type="hidden" value="Wala"><input id="ProductImage" name="ProductImage" type="hidden" value="https://www.bcare.com.sa/resources/imgs/insurerlogos/WL.png"><input id="ProductId" name="ProductId" type="hidden" value="30030"><input id="ProductNameAr" name="ProductNameAr" type="hidden" value="تأمين مركبات طرف ثالث (ضد الغير)"><input id="ProductNameEn" name="ProductNameEn" type="hidden" value="Third-Party Vehicle Insurance"><input id="ProductDescAr" name="ProductDescAr" type="hidden" value=""><input id="ProductDescEn" name="ProductDescEn" type="hidden" value=""><input id="ProductPrice" name="ProductPrice" type="hidden" value="749.67"><input data-val="true" data-val-number="The field DeductibleValue must be a number." id="DeductibleValue" name="DeductibleValue" type="hidden" value="0"><input id="VehicleLimitValue" name="VehicleLimitValue" type="hidden" value="0"><input id="PriceDetails_0__PriceNameEn" name="PriceDetails[0].PriceNameEn" type="hidden" value="Extra Premium"><input id="PriceDetails_0__PriceNameAr" name="PriceDetails[0].PriceNameAr" type="hidden" value="القسط الاضافي"><input id="PriceDetails_0__PriceValue" name="PriceDetails[0].PriceValue" type="hidden" value="810.00"><input id="PriceDetails_0__PriceTypeCode" name="PriceDetails[0].PriceTypeCode" type="hidden" value="7"><input id="PriceDetails_1__PriceNameEn" name="PriceDetails[1].PriceNameEn" type="hidden" value="Discount no claims"><input id="PriceDetails_1__PriceNameAr" name="PriceDetails[1].PriceNameAr" type="hidden" value="خصم عدم وجود مطالبات"><input id="PriceDetails_1__PriceValue" name="PriceDetails[1].PriceValue" type="hidden" value="121.50"><input id="PriceDetails_1__PriceTypeCode" name="PriceDetails[1].PriceTypeCode" type="hidden" value="2"><input id="PriceDetails_2__PriceNameEn" name="PriceDetails[2].PriceNameEn" type="hidden" value="Additional_expenses"><input id="PriceDetails_2__PriceNameAr" name="PriceDetails[2].PriceNameAr" type="hidden" value="المصاريف الاضافيه"><input id="PriceDetails_2__PriceValue" name="PriceDetails[2].PriceValue" type="hidden" value="25.00"><input id="PriceDetails_2__PriceTypeCode" name="PriceDetails[2].PriceTypeCode" type="hidden" value="6"><input id="PriceDetails_3__PriceNameEn" name="PriceDetails[3].PriceNameEn" type="hidden" value="VAT"><input id="PriceDetails_3__PriceNameAr" name="PriceDetails[3].PriceNameAr" type="hidden" value="ضريبه قيمة المضافه"><input id="PriceDetails_3__PriceValue" name="PriceDetails[3].PriceValue" type="hidden" value="35.67"><input id="PriceDetails_3__PriceTypeCode" name="PriceDetails[3].PriceTypeCode" type="hidden" value="8">
+                        <article class="over-hidden md-mar-bot dummy">
+                            <div class="overlay"></div>
+                            <div class="row" style="height: 100%;display: table;width: 100%;">
+                                <header class="col-xs-10 col-md-4 col-lg-2">
+                                    <span class="dis-block sm-mar">
+                                        <img src="https://www.bcare.com.sa/resources/imgs/insurerlogos/@(imageArray[i]).png" alt="">
+                                    </span>
+                                    <h1 class="txt-md txt-black no-mar sm-mar bx-right f_width dis-block">
+                                        <i class="ic-icons-352 general-ico"></i>
+                                        <a class="not-clickable" onclick="return false">تفاصيل أكثر</a>
+                                    </h1>
+                                </header>
+                                <div class="price col-xs-6 col-md-3 col-lg-3 bx-left">
+                                </div>
+                                <div class="body col-xs-12 col-md-5 col-lg-9 errors-container txt-center">
+                                    <div class="features-body" style="position: relative;min-height: 250px;margin-top: 7.5px;">
+                                        <div class="soon-box">
+                                            <h2>@Html.Raw(Tameenk.LangText.coming_soon)</h2>
+                                        </div>
+                                    </div>
+                                    <!-- row -->
+                                </div>
+                            </div>
+                        </article>
+                    </form>
+                }
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+</section>
+@*
+    <div class="cd-cart-container hide-cart">
+        <a href="#0" class="cd-cart-trigger">
+            @Html.Raw(Tameenk.LangText.Search_List_of_Comparisons)
+            <ul class="count">
+                <!-- cart items count -->
+                <li>0</li>
+            </ul>
+            <!-- .count -->
+        </a>
+        <div class="cd-cart">
+            <div class="wrapper">
+                <header>
+                    <h2>@Html.Raw(Tameenk.LangText.Search_List_of_Comparisons)</h2>
+                    <span class="undo">
+                        @Html.Raw(Tameenk.LangText.Search_Deleted)
+                        <a href="#0">  @Html.Raw(Tameenk.LangText.Search_Restore)</a>
+                    </span>
+                </header>
+                <div class="body">
+                    <ul>
+                        <!-- products added to the cart will be inserted here using JavaScript -->
+                    </ul>
+                </div>
+                <footer>
+                    <a href="#0" class="checkout btn">@Html.Raw(Tameenk.LangText.Search_See_Comparison)</a>
+                </footer>
+            </div>
+        </div>
+        <!-- .cd-cart -->
+    </div>*@
+
+<script>
+    function changeSelected(id, priceValue, totalPriceControlId) {
+        var toAddValue = + priceValue;
+        var oldValue = + $("#" + totalPriceControlId)[0].innerText;
+        var newValue = oldValue;
+
+        var x = $("#" + id).val();
+        if (x == "false" || x == "False" || x == false) {
+            newValue = oldValue + (toAddValue * 1.05);
+        } else {
+            newValue = oldValue - (toAddValue * 1.05);
+        }
+        $("#" + totalPriceControlId)[0].innerText = newValue.toFixed(2);
+        //update the vat if the vat exist
+        //check if element exist
+        var vatHiddenElmId = ".Product_" + id.replace('Products_', '')[0] + "_PriceDetails_PriceValue_8";
+        if ($(vatHiddenElmId).length) {
+            var oldVatValue = Number($(vatHiddenElmId).val());
+            if (x == "false" || x == "False" || x == false) {
+                newVatValue = oldVatValue + (priceValue * 0.05);
+                x = true;
+            } else {
+                newVatValue = oldVatValue - (priceValue * 0.05);
+                x = false;
+            }
+            $("#" + id).val(x);
+            $(vatHiddenElmId).val(newVatValue);
+            $('#' + totalPriceControlId.replace('Total__IsSelected', 'PriceDetails_8')).html(newVatValue);
+
+        }
+    }
+
+
+
+</script>
+@section scripts
+    {
+
+    <script>
+        $(function () {
+            GenerateComprehensiveQuots()
+
+        });
+
+        function GetInsuranceCompanyMoreDetails(selectedCompanyId) {
+                debugger;
+                 $.ajax({
+                    url: "@Url.Action("GetCompanyMoreInfo", "Quotation")",
+                    data: {
+                        iCompanyId : selectedCompanyId
+                    },
+                    type: "GET",
+                    datatype: "json",
+                    success: function (result) {
+                        let html = `
+                        <div class="modal-body">
+                                    @if (System.Globalization.CultureInfo.CurrentCulture.DisplayName == "English") {
+                                        <p>${result.DescriptionEn}</p>
+                                    } else {
+                                        <p>${result.DescriptionAr}</p>
+                                    }
+                                       ${result.AddressLoction ?
+                                       `<i class="ic-icons-78 txt-black bx-right general-ico"></i>
+                                        <a href="${result.AddressLoction}">
+                                            ${result.AddressLoction}
+                                        </a>`
+                                        :''}
+                                    </div>
+                                    <div class="modal-footer txt-right">
+                                        @Html.Raw(Tameenk.LangText.company_email): <a href="mailto:${result.Email}">${result.Email}</a> <br />
+                                        @Html.Raw(Tameenk.LangText.company_phone): ${result.HomePhone?result.HomePhone:''} ${result.HomePhone && result.MobileNumber ? ' / ' + result.MobileNumber : result.MobileNumber? result.MobileNumber:''} <br />
+                                        ${result.Fax?'@Html.Raw(Tameenk.LangText.company_fax): '+result.Fax:''}
+                                    </div>
+                        `;
+                        $('.data-holder').empty().append(html);
+
+
+                    },
+                    error: function (result) {
+
+                    }
+                });
+
+            }
+
+        function GenerateComprehensiveQuots() {
+            var qtRqstExtrnlId = '@Model.QtRqstExtrnlId';
+            var referenceId = '@Model.ReferenceId';
+            var data = { qtRqstExtrnlId: qtRqstExtrnlId, vehicleAgencyRepair:false};
+             $.ajax({
+                    url: '@Url.Action("GenerateComprehensiveQuotation", "Quotation")',
+                    data: data,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (response)
+                    {
+                    },
+                    error: function () {
+                    }
+
+                });
+        }
+    </script>

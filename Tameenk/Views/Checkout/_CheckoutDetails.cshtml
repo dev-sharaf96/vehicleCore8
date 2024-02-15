@@ -1,0 +1,662 @@
+﻿@model Tameenk.Models.Checkout.CheckoutModel
+@using Tameenk.Core.Domain.Enums;
+@using Tameenk.Services.Extensions;
+@using System.Globalization;
+@using (Html.BeginForm("SubmitCheckoutDetails", "Checkout", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmshow" }))
+{
+    <!-- Addition info step -->
+<div id="processNo2Div" class="content-process process-number-2">
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.ReferenceId)
+    @Html.HiddenFor(model => model.QuotationResponseId)
+    @Html.HiddenFor(model => model.TypeOfInsurance)
+    @Html.HiddenFor(model => model.UserId)
+    @Html.HiddenFor(model => model.SelectedProduct.ProductNameAr)
+    @Html.HiddenFor(model => model.SelectedProduct.ProductNameEn)
+    @Html.HiddenFor(model => model.IsSanadPlus)
+    @Html.HiddenFor(model => model.Hashed)
+    @Html.HiddenFor(model => model.QtRqstExtrnlId)
+    @Html.HiddenFor(model => model.ProductId)
+    @Html.HiddenFor(model => model.SelectedProductBenfitId)
+    <style>
+
+        h2.container.bx-right.md-mar-bot {
+            color: #166595;
+            margin: 30px 0px 10px 0px;
+            font-size: 14px;
+        }
+
+        .input-container {
+            width: 100%;
+        }
+
+            .input-container .input-label {
+                color: #156494 !important;
+                font-weight: 500;
+                font-size: 14px !important;
+                margin-bottom: 8px !important;
+                line-height: 0;
+            }
+
+        /*my check out */
+        aside.col-xs-12.col-md-4.col-lg-3.bg-ofwhite.md-ver-spc.bx-left {
+            background: #fdfdfd;
+            margin: 60px 0 0 0;
+        }
+
+        aside.col-xs-12.col-md-3.col-lg-3.bg-ofwhite.md-ver-spc.bx-left {
+            min-height: 550px;
+            background: #ffffffc4;
+            margin: 20px 0 0 0;
+            border-radius: 20px 0px 0px 20px;
+            box-shadow: -11px 1px 28px -17px #888888;
+        }
+
+        aside.col-xs-12.col-md-4.col-lg-4.bg-ofwhite.md-ver-spc.bx-left {
+            background: #fdfdfd;
+            margin: 60px 0px 0px 0px;
+        }
+
+        span.img-cutter {
+            text-align: center;
+        }
+
+        .checokutDetImg {
+            width: auto;
+        }
+
+        .curvImgClass {
+            padding: 40px 0px 0px 0px;
+        }
+        /*
+            .removeLeftPAdd {
+                padding-left: 0px !important;
+            } */
+
+        .newContainercheckout {
+            background: #F4F4F5;
+            margin: 40px 20px 10px 70px;
+            padding: 10px;
+        }
+
+        .newContainercheckouttwo {
+            margin: 40px 0px 10px 70px;
+            padding: 10px;
+        }
+
+        .over-hidden.col-xs-6.col-lg-2.col-md-2.bx-right.md-mar {
+            margin-left: 40px;
+        }
+
+        .totalDivNewDes {
+            background: #e6e7e7;
+            width: 100%;
+            min-height: 185px;
+        }
+
+        .upgradeContainer {
+            background: #D9EBCE;
+            border: 3px solid #80F236;
+        }
+
+        .upgradeSectionClss {
+            margin-top: 3px;
+            display: inline-flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        span.upgradeContainer {
+            line-height: 2;
+            height: 90px;
+            width: 85%;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: inline-grid;
+        }
+
+        h2.txt-lr.txt-black.no-mar {
+            color: #727373;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .checkOutContDiv {
+            margin: 10px 0px 25px 0px;
+        }
+
+        img.imgCheckOutCar {
+            width: auto;
+            /*height:30px;*/
+            position: absolute;
+            top: 30%;
+            right: 30%;
+        }
+
+        .col-xs-3.col-lg-2.ths.col-md-5.ths.sm-mar.bx-right {
+            text-align: center;
+        }
+
+        span.input__support.sm-mar {
+            display: none !important;
+        }
+
+        .col-xs-3.col-lg-2.ths.col-md-5.ths.sm-mar.bx-right {
+            width: 140px;
+            background: #F4F4F5;
+            height: 140px;
+            ;
+            padding: 20px 0px 0px 10px;
+            margin: 15px;
+            border-radius: 10px;
+            border: 2px solid gainsboro;
+        }
+
+        span.input__text.sm-mar.dis-block {
+            position: absolute;
+            bottom: -13px;
+            width: 100%;
+            border-top: 2px solid gainsboro;
+            border-radius: 10px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #727373 !important;
+            font-size: 12px;
+        }
+
+        img {
+            width: auto;
+        }
+
+        .parentPaymentMethds {
+            display: inline-flex;
+            width: 100%;
+            align-items: center;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        @@media only screen and (max-width: 600px) {
+            .spanHolder {
+                width: 100px !important;
+                height: 50px !important;
+            }
+
+            img.imgCheckOutCar {
+                width: auto;
+                position: absolute;
+                top: 33%;
+                right: 15%;
+            }
+
+            span.input__text.sm-mar.dis-block {
+                border-radius: 0px 0px 10px 10px;
+            }
+
+            .upperOn {
+                transform: rotate(90deg);
+            }
+
+            .no-column-padding {
+                display: inline-grid;
+            }
+
+            .gridColTwo {
+                grid-column: 1;
+            }
+
+            .gridColTwo {
+                grid-column: 2;
+            }
+
+            .gridColResponsv {
+                grid-row: 1 /span 2;
+                grid-column: 3 /span 2;
+                text-align: center;
+                height: 94% !important;
+                justify-content: center;
+            }
+
+            .col-xs-3.col-lg-2.ths.col-md-5.ths.sm-mar.bx-right {
+                width: 115px;
+                background: #F4F4F5;
+                height: 100px;
+            }
+
+            .spanHolder {
+                /*width: 100px !important;*/
+                padding: 20px;
+                margin: 0px;
+                width: 143px;
+            }
+
+            .parentPaymentMethds {
+                /*display: inline-grid;*/
+                width: 100%;
+                align-items: center
+            }
+
+            h2.container.bx-right.md-mar-bot {
+                color: #727373;
+                margin: 30px 0px 10px 0px;
+                font-size: 14px;
+            }
+        }
+
+
+
+        .preview-upload img {
+            display: block;
+            position: absolute;
+            width: 82%;
+            right: 28px;
+            height: 76%;
+            right: 14px;
+            top: 0px;
+            background: #F4F4F5;
+        }
+
+        .imgCarLogoInRespnsv {
+            width: 133px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .questMark {
+            color: white;
+            background: orange;
+            padding: 0px 12px 0px 12px;
+            border-radius: 10px;
+            font-size: 17px;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .input-container .input-label {
+            color: #727373 !important;
+        }
+    </style>
+    <!--new Design -->
+    <div class="row newContainercheckout">
+        <div class="over-hidden col-xs-12 md-mar" style='padding-left: 0px; padding-right: 0px;'>
+            <h2 class="hideInWeb" translate="" style="width: 50%; background: rgb(233, 233, 233); justify-content: right;"> تفاصيل الوثيقة</h2>
+        </div>
+        <div class="over-hidden col-xs-6 col-lg-4 col-md-2 bx-right md-mar">
+            <div class='checkOutContDiv'>
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.RequesterInsuranceName)</span>
+                <h2 class="txt-lr txt-black no-mar">
+                    @if (Model.IsCompany)
+                    {
+                        @Model.Company.CompanyNameAr
+                    }
+                    else
+                    {
+                        if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+                        {
+                            @Model.Driver.FullEnglishName
+                        }
+                        else
+                        {
+                            @Model.Driver.FullArabicName
+                        }
+                    }
+                </h2>
+            </div>
+
+            @if (Model.IsCompany)
+            {
+                <div class='checkOutContDiv'>
+                    <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.DriverName)</span>
+                    <h2 class="txt-lr txt-black no-mar">
+                        @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+                        {
+                            @Model.Driver.FullEnglishName
+                        }
+                        else
+                        {
+                            @Model.Driver.FullArabicName
+                        }
+                    </h2>
+                </div>
+            }
+
+            <div class='checkOutContDiv'>
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.SequenceNumberOrCustomCard)</span>
+                <h2 class="txt-lr txt-black no-mar">
+                    @Model.SequenceNumber
+                </h2>
+            </div>
+
+            <div class='checkOutContDiv'>
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.PolicyStartDate)</span>
+                <h2 class="txt-lr txt-black no-mar">
+                    @Model.PolicyEffectiveDate.Value.ToString("dd-MM-yyyy", new CultureInfo("en-US"))
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="over-hidden col-xs-6 col-lg-4 col-md-2 bx-right md-mar">
+
+            <div class='checkOutContDiv'>
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.RequesterInsuranceNIN)</span>
+                <h2 class="txt-lr txt-black no-mar">
+                    @if (Model.IsCompany)
+                    {
+                        @Model.Company.NIN
+                    }
+                    else
+                    {
+                        @Model.Driver.NIN
+                    }
+                </h2>
+            </div>
+
+            @if (Model.IsCompany)
+            {
+                <div class='checkOutContDiv'>
+                    <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.DriverNIN)</span>
+                    <h2 class="txt-lr txt-black no-mar">
+                        @Model.Driver.NIN
+                    </h2>
+                </div>
+            }
+
+            <div class='checkOutContDiv'>
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.search_Vehicle_Description)</span>
+                <h2 class="txt-lr txt-black no-mar">
+                    @Model.Vehicle.Maker  @Model.Vehicle.ModelYear @Model.Vehicle.Model
+                </h2>
+            </div>
+            <div class='checkOutContDiv'>
+                <span class="txt-sm  txt-mgray dis-block xs-mar-bot">@Html.Raw(Tameenk.LangText.PolicyEndDate)</span>
+                <h2 class="txt-lr txt-black no-mar">
+                    @Model.PolicyEndDate.Value.ToString("dd-MM-yyyy", new CultureInfo("en-US"))
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="over-hidden col-lg-2 col-md-2 bx-right md-mar">
+        </div>
+        <div class="over-hidden col-xs-6 col-lg-3 col-md-3 bx-right md-mar" style="text-align: center;">
+            <div class="col-lg-12 col-md-12 imgCarLogoInRespnsvhold">    <img src="../../../../../resources/imgs/CarLogos/@(Model.Vehicle.MakerCode.ToString("0000")).svg" class='imgCarLogoInRespnsv' /></div>
+            <div class="col-xs-12 col-lg-12 col-md-12 bx-right md-mar" style='margin-bottom: 2px;display: flex;justify-content: center;'>
+
+                @if (Model.Vehicle.PlateTypeCode != null)
+                {
+                    <div class="belt @Model.Vehicle.PlateColor">
+                        <span class="arabic-character">@Model.Vehicle.CarPlate.CarPlateTextAr</span>
+                        <span class="arabic-number">@Model.Vehicle.CarPlate.CarPlateNumberAr</span>
+                        <span class="english-number">@Model.Vehicle.CarPlate.CarPlateNumberEn</span>
+                        <span class="english-character">@Model.Vehicle.CarPlate.CarPlateTextEn</span>
+                    </div>
+                }
+                else
+                {
+                    <b>  @Tameenk.LangText.Custom_Card </b>
+                }
+            </div>
+
+        </div>
+    </div>
+    <!--end new Design -->
+    <div class="row newContainercheckouttwo">
+        <div>
+        </div>
+        <div class="col-xs-12 col-lg-6 col-md-6 bx-right">
+            <div class="input-container">
+                <input class="input-element" type="email" value="@Model.Email" style="text-align: left" id="Email" readonly name="@Html.NameFor(model => model.Email)" required="required" placeholder=" " />
+                <label class="input-label" for="Email">@Html.Raw(Tameenk.LangText.checkout_email)</label>
+                <span class="field-error" style="color:red;position:absolute;" id="EmailError"></span>
+                <span class="prefix txt-center" style="right: 1px;left: auto;padding: 0;border-radius: 0 5px 5px 0;box-shadow: 0 0 8px rgba(0, 0, 0, .4);"><a class="edit-btn  txt-md" title="@Html.Raw(Tameenk.LangText.Edit)"><i class="fas fa-edit"></i></a></span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-6 col-md-6">
+            <div class="input-container">
+                <input class="input-element" type="tel" value="@Model.Phone" style="text-align: left" id="Phone" readonly name="@Html.NameFor(model => model.Phone)" required="required" placeholder="05xxxxxxx" />
+                <label class="input-label" for="Phone">@Html.Raw(Tameenk.LangText.checkout_phone)</label>
+                <span class="field-error" style="color:red;position:absolute;" id="PhoneError"></span>
+                <span class="prefix txt-center" style="right: 1px;left: auto;padding: 0;border-radius: 0 5px 5px 0;box-shadow: 0 0 8px rgba(0, 0, 0, .4);"><a class="edit-btn  txt-md" title="@Html.Raw(Tameenk.LangText.Edit)"><i class="fas fa-edit"></i></a></span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-6 col-md-8">
+            <div class="input-container iban-container">
+                @*@ViewBag.IBAN*@
+                <span class="prefix" style="direction: ltr">SA-</span>
+                <input class="input-element" type="text" value="@Model.IBAN" style="text-align: left;padding-left: 30px" id="IBAN" name="@Html.NameFor(model => model.IBAN)" required="required" placeholder=" " onkeyup="CheckIbanNumber()" />
+                <label class="input-label iban-label" for="IBAN">@Html.Raw(Tameenk.LangText.checkout_iban)</label>
+                <span class="field-error" style="color:red;position:absolute;" id="IBANError">@Html.ValidationMessage("IBAN")</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-6 col-md-4">
+            <div class="input-container">
+                @*@Html.DropDownList(@Html.NameFor(model => model.BankCode).ToString(), Model.BankCodes, "", new { @id="BankCode", @class = "hidden", onchange = "BankCodeChanged();" })*@
+                @Html.DropDownList(@Html.NameFor(model => model.BankCode).ToString(), Model.BankCodes.Select(item => new SelectListItem
+                {
+
+                    Value = item.Id.ToString(),
+                    Text = item.Name.ToString()
+                    }), "", new { @id = "BankCode", @class = "hidden", onchange = "BankCodeChanged();" })
+                <input class="input-element bank" type="text" id="bankPlaceholder" readonly placeholder=" " />
+                <label class="input-label" for="BankCode" style="z-index: 1;">@Html.Raw(Tameenk.LangText.checkout_bank)</label>
+                <span class="field-error" style="color:red;position:absolute;" id="BankCodeError">@Html.ValidationMessage("BankCode")</span>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.TypeOfInsurance == 1)
+    {
+        <div class="col-xs-12 lr-mar">
+            <label for="checkTPLAgreement" class="agreement-container">
+                <div class="checkbox-holder bx-right">
+                    <input type="checkbox" onchange="checkAgreeFunc(this,@((int)Model.VehicleIdType))" id="checkTPLAgreement" class="inp-checkbox" style="display: none">
+                    <label for="checkTPLAgreement" class="checkValidation">
+                        <span>
+                            <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                            </svg>
+                        </span>
+                    </label>
+                </div>
+                <div class="col-xs-12 txt-justify bx-right">
+                    <h3>@Html.Raw(Tameenk.LangText.tpl_condiation_policy.Replace("{0}", "/Companies-TermsAndConditions/" + Model.InsuranceCompanyKey + "_tpl_" + System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower() + ".pdf")), @Html.Raw(Tameenk.LangText.DeclareYourInfo).</h3>
+                </div>
+            </label>
+        </div>
+    }
+
+    @if (Model.TypeOfInsurance == 2)
+    {
+        if (Model.PurchaseByMobile && !Model.IsMobileBrowser)
+        {
+            <h3 class="txt-md f_width dis-block lr-mar txt-md lr-mar col-xs-12 col-lg-12 col-md-12">@Html.Raw(Tameenk.LangText.completeOnMobileApplication)</h3>
+            <div class="col-xs-4 col-md-4 col-lg-3 sm-mar">
+                <a href="https://play.google.com/store/apps/details?id=com.app.bcare" target="_blank">
+                    <img src="~/resources/imgs/android_moblie_app.png" style="" />
+                </a>
+            </div>
+            <div class="col-xs-4 col-md-4 col-lg-3 sm-mar">
+                <a href="https://apps.apple.com/us/app/bcare-%D8%A8%D9%8A-%D9%83%D9%8A%D8%B1/id1490248033?ls=1" target="_blank">
+                    <img src="~/resources/imgs/ios_moblie_app.png" style="" />
+                </a>
+            </div>
+        }
+        else if (Model.ImageRequired)
+        {
+            <h3 class="txt-md f_width dis-block lr-mar txt-md lr-mar col-xs-12 col-lg-12 col-md-12">@Html.Raw(Tameenk.LangText.checkout_Vehicle_Photos) <span class="questMark">?</span></h3>
+            <div class="col-xs-12 col-md-12 col-lg-12 sm-mar car-upload-images  " style="display: none;">
+                <img src="~/resources/imgs/car-upload-middle.png" style="display: none;" title="Middle" />
+                <img src="~/resources/imgs/car-upload-front.png" style="display: none;" title="Front" />
+                <img src="~/resources/imgs/car-upload-back.png" style="display: none;" title="Back" />
+                <img src="~/resources/imgs/car-upload-left.png" style="display: none;" title="Left" />
+                <img src="~/resources/imgs/car-upload-right.png" style="display: none;" title="Right" />
+                <img src="~/resources/imgs/car-upload-0.png" style="" />
+            </div>
+            <div class="no-column-padding">
+                <div class="col-xs-3 col-lg-2 ths col-md-5 ths sm-mar bx-right gridColOne">
+                    <label class="fileupload input--file">
+                        <img src="~/resources/imgs/uploadedCarImages/front.png" class="imgCheckOutCar" />
+                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.checkout_Front_Side)</span>
+                        <input type="file" class="input__field" accept="image/*" 
+                               @Html.Raw(Model.UsePhoneCamera && !Model.ShowGallery?"capture":"")
+                              name="@Html.NameFor(model => model.ImageFront)" id="ImageFront" required target="car-upload-front" />
+                        <span class="input__support sm-mar">
+                            <span class="input__helper"></span>
+                        </span>
+                    </label>
+                    <div class="preview-upload"></div>
+                </div>
+                <div class="col-xs-3 col-lg-2 ths col-md-5 ths sm-mar bx-right gridColTwo">
+                    <label class="fileupload input--file">
+                        <img src="~/resources/imgs/uploadedCarImages/rightSide.png" class="imgCheckOutCar" />
+                        <span class="input__text sm-mar dis-block">@Html.Raw(Tameenk.LangText.checkout_right_side)</span>
+                        <input type="file" class="input__field" accept="image/*" 
+                               @Html.Raw(Model.UsePhoneCamera && !Model.ShowGallery?"capture":"")
+                               name="@Html.NameFor(model => model.ImageRight)" id="ImageRight" required target="car-upload-right" />
+                        <span class="input__support sm-mar">
+                            <span class="input__helper"></span>
+                        </span>
+                    </label>
+                    <div class="preview-upload"></div>
+                </div>
+                <div class="col-xs-3 col-lg-2 ths col-md-5 ths sm-mar bx-right gridColOne">
+                    <label class="fileupload input--file">
+                        <img src="~/resources/imgs/uploadedCarImages/leftSide.png" class="imgCheckOutCar" />
+                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.checkout_left_side)</span>
+                        <input type="file" class="input__field" accept="image/*" 
+                               @Html.Raw(Model.UsePhoneCamera && !Model.ShowGallery?"capture":"")
+                               name="@Html.NameFor(model => model.ImageLeft)" id="ImageLeft" required target="car-upload-left" />
+                        <span class="input__support sm-mar">
+                            <span class="input__helper"></span>
+                        </span>
+                    </label>
+                    <div class="preview-upload"></div>
+                </div>
+                <div class="col-xs-3 col-lg-2 ths col-md-5 ths sm-mar bx-right gridColTwo">
+                    <label class="fileupload input--file">
+                        <img src="~/resources/imgs/uploadedCarImages/back.png" class="imgCheckOutCar" />
+                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.checkout_back_side)</span>
+                        <input type="file" class="input__field" accept="image/*" 
+                               @Html.Raw(Model.UsePhoneCamera && !Model.ShowGallery?"capture":"")
+                               name="@Html.NameFor(model => model.ImageBack)" id="ImageBack" required target="car-upload-back" />
+                        <span class="input__support sm-mar">
+                            <span class="input__helper"></span>
+                        </span>
+                    </label>
+                    <div class="preview-upload"></div>
+                </div>
+                <div class="col-xs-3 col-lg-2 ths col-md-5 ths sm-mar bx-right gridColResponsv">
+                    <label class="fileupload input--file">
+                        <img src="~/resources/imgs/uploadedCarImages/upper.png" class="imgCheckOutCar upperOn" />
+                        <span class="input__text  sm-mar dis-block">@Html.Raw(Tameenk.LangText.checkout_chasis_image)</span>
+                        <input type="file" class="input__field" accept="image/*"
+                               @Html.Raw(Model.UsePhoneCamera && !Model.ShowGallery?"capture":"")
+                               name="@Html.NameFor(model => model.ImageBody)" id="ImageBody" required target="car-upload-middle" />
+                        <span class="input__support sm-mar">
+                            <span class="input__helper"></span>
+                        </span>
+                    </label>
+                    <div class="preview-upload"></div>
+                </div>
+            </div>
+            <span class="field-error" style="color:red" id="imgsError"></span>
+            <div>
+
+                @if (Model.VehicleIdType == Tameenk.Core.Domain.Enums.Vehicles.VehicleIdType.SequenceNumber) // Sequence Number and not Custom Card
+                {
+                    <div class="col-xs-12 lr-mar">
+                        <label for="checkImgAgreement" class="agreement-container">
+                            <div class="checkbox-holder bx-right">
+                                <input type="checkbox" onchange="checkAgreeFunc(this,@((int)Model.VehicleIdType))" id="checkImgAgreement" class="inp-checkbox" style="display: none">
+                                <label for="checkImgAgreement" class="checkValidation">
+                                    <span>
+                                        <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-xs-12 txt-justify bx-right">
+                                <h3 style='font-size: 13px;'>@Html.Raw(Tameenk.LangText.img_condiation_policy)</h3>
+                            </div>
+                        </label>
+                    </div>
+                }
+                <div class="col-xs-12 lr-mar">
+                    <label for="checkComprehensiveAgreement" class="agreement-container">
+                        <div class="checkbox-holder bx-right">
+                            <input type="checkbox" onchange="checkAgreeFunc(this,@((int)Model.VehicleIdType))" id="checkComprehensiveAgreement" class="inp-checkbox" style="display: none">
+                            <label for="checkComprehensiveAgreement" class="checkValidation">
+                                <span>
+                                    <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                    </svg>
+                                </span>
+                            </label>
+                        </div>
+                        @if (Model.InsuranceCompanyId == 2)
+                        {
+                            <div class="col-xs-12 txt-justify bx-right">
+                                <h3 style='font-size: 13px;'>@Html.Raw(Tameenk.LangText.comprehensive_condiation_policy_ACIG), @Html.Raw(Tameenk.LangText.DeclareYourInfo).</h3>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-xs-12 txt-justify bx-right">
+                                <h3 style='font-size: 13px;'>@Html.Raw(Tameenk.LangText.comprehensive_condiation_policy.Replace("{0}", "/Companies-TermsAndConditions/" + Model.InsuranceCompanyKey + "_comp_" + System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower() + ".pdf")), @Html.Raw(Tameenk.LangText.DeclareYourInfo).</h3>
+                            </div>
+                        }
+                    </label>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-xs-12 lr-mar">
+                <label for="checkTPLAgreement" class="agreement-container">
+                    <div class="checkbox-holder bx-right">
+                        <input type="checkbox" onchange="checkAgreeFunc(this,@((int)Model.VehicleIdType))" id="checkTPLAgreement" class="inp-checkbox" style="display: none">
+                        <label for="checkTPLAgreement" class="checkValidation">
+                            <span>
+                                <svg width="12px" height="10px" viewBox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
+                    @if (Model.InsuranceCompanyId == 2)
+                    {
+                        <div class="col-xs-12 txt-justify bx-right">
+                            <h3 style='font-size: 13px;'>@Html.Raw(Tameenk.LangText.comprehensive_condiation_policy_ACIG), @Html.Raw(Tameenk.LangText.DeclareYourInfo).</h3>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-xs-12 txt-justify bx-right">
+                            <h3 style='font-size: 13px;'>@Html.Raw(Tameenk.LangText.comprehensive_condiation_policy), @Html.Raw(Tameenk.LangText.DeclareYourInfo).</h3>
+                        </div>
+                    }
+                </label>
+            </div>
+
+            }
+        }
+        @if (!Model.PurchaseByMobile || Model.IsMobileBrowser)
+        {
+            <h2 class="container bx-right md-mar-bot">@Html.Raw(Tameenk.LangText.payment_by) <span class="questMark">?</span></h2>
+            <div class="parentPaymentMethds" id="parentPaymentMethods">
+                @Html.Action("PaymentMethods", "TameenkPayment", new { showWalletPaymentOption = Model.ShowWalletPaymentOption })
+                <span class="field-error" style="color:red;position:absolute;" id="ChoosePaymentError"></span>
+                @Html.HiddenFor(model => model.PaymentMethodCode)
+            </div>
+        }
+
+</div>
+
+}
+

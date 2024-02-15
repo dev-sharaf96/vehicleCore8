@@ -1,0 +1,70 @@
+﻿<!--<section id="slider" class="section slides overview  slidesCover" *ngIf="!isWafierRequest">
+    <div *ngIf="!isEnglish" class="slider slider-imgs">
+        <span>
+            <div class="bg" style="background-image: url('/resources/imgs/slide-bg2.jpg')"></div>
+        </span>
+        <span>
+            <div class="bg" style="background-image: url('/resources/imgs/slide-bg4.jpg')"></div>
+        </span>
+    </div>
+
+    <div *ngIf="isEnglish" class="slider slider-imgs">
+        <span>
+            <div class="bg" style="background-image: url('/resources/imgs/slide-bg2-E.jpg')"></div>
+        </span>
+        <span>
+            <div class="bg" style="background-image: url('/resources/imgs/slide-bg4-E.jpg')"></div>
+        </span>
+    </div>
+
+    <bcare-search></bcare-search>
+</section>-->
+<div class="container-fluid mainContainerGeneric"
+     style=" background-image: url('/resources/imgs/oldAssetCover.png');">
+
+    <div class="col-lg-6 logoImgtoHome">
+
+        <a href="/Home">
+            <img src="/resources/imgs/bcarelogo.svg" alt="logo" title="logo"
+                 class="logoDisplayingResponsivetoHome">
+        </a>
+    </div>
+    <div class="overlayBanner" style=" background-image: url('/resources/imgs/circleBls.png');"></div>
+    <div _ngcontent-c2="" class="textAbsoluteDesi">
+        <span style="display: block;color: #f79818;font-size: 58px;margin-bottom: 10px;" class="becareSpanFEnglish" translate>home.Bcare</span>
+        <img src="/resources/imgs/bluesignCar.png" alt="logo" title="logo"
+             class="carBlueLog" />
+        <img src="/resources/imgs/yellowsignCar.png" alt="logo" title="logo"
+             class="caryellowLog" />
+        <span style="font-size: 25px;" class="taamenManasaClaass" translate>home.FastestPlatform</span>
+    </div>
+    <div class="textAbsoluteDesi2">
+        <div class="col-lg-12" style="margin-bottom: 20px;text-align:center !important;" translate> home.ThreeSimpleStepts</div>
+        <div class="col-lg-12">
+            <div class="col-lg-4 col-xs-4 captionsImgS" style="text-align: -webkit-center;" translate>
+                <img src="/resources/imgs/smIcon/22.png" alt="logo" title="logo"
+                     class="smIconss" />
+                home.EnterData_1
+
+            </div>
+            <div class="col-lg-4 col-xs-4 captionsImgS" style="text-align: -webkit-center;" translate>
+                <img src="/resources/imgs/smIcon/33.png" alt="logo" title="logo"
+                     class="smIconss" />
+                home.CompareQuotations_2
+
+            </div>
+            <div class="col-lg-4 col-xs-4 captionsImgS" style="text-align: -webkit-center;" translate>
+                <img src="/resources/imgs/smIcon/11.png" alt="logo" title="logo"
+                     class="smIconss" />
+                home.InsureNow_3
+
+            </div>
+
+        </div>
+    </div>
+    <div class="overlayBanner2" style="background-image: url('/resources/imgs/carBannr.png');
+"></div>
+    <bcare-search [isRenualRequest]="isRenualRequest" [referenceId]="referenceId" [isCustomCard]="isCustomCard"></bcare-search>
+</div>
+
+<bcare-search *ngIf="isWafierRequest"></bcare-search>

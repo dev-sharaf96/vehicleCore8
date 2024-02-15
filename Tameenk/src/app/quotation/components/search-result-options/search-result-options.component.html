@@ -1,0 +1,82 @@
+<!---Filter Request-->
+<div class="row">
+  <div class="col-xs-12 col-md-5 col-lg-4 select-list-bx bx-right sm-mar-bot">
+    <h2 class="txt-md txt-black no-mar xs-mar-bot">
+      <div class="hand-home">
+        <i class="fas fa-home"></i>
+        <i class="fas fa-hands"></i>
+      </div>
+      {{'quotation.search_Insurance_Type' | translate}}</h2>
+    <ul class="select-list no-mar left-mar-10 right-mar-10 bx-right" id="insurance">
+      <li (click)="submitInsuranceType()" id="other_filter" class="toggle-filters bx-right" [ngClass]="{'active': !insuranceTypeCode}">
+          <i class="fas fa-user-shield"></i>
+          {{'quotation.Search_all' | translate}}
+      </li>
+      <li (click)="submitInsuranceType(1)" id="other_filter" class="toggle-filters bx-right" [ngClass]="{'active': insuranceTypeCode == 1}">
+          <i class="fas fa-user-plus"></i>
+          {{'quotation.Search_TPL' | translate}}
+      </li>
+      <li (click)="submitInsuranceType(2)" id="general_filter" class="toggle-filters bx-right" [ngClass]="{'active': insuranceTypeCode == 2}">
+          <i class="fas fa-shield-alt"></i>
+          {{'quotation.Search_Comprehensive' | translate}}
+      </li>
+    </ul>
+  </div>
+  <!--<div class="col-xs-12 col-md-3 col-lg-2 select-list-bx bx-right sm-mar-bot" *ngIf="insuranceTypeCode != 1">
+    <h2 class="txt-md txt-black no-mar xs-mar-bot">
+      <i class="fas fa-money-bill"></i>
+      {{'quotation.deductible' | translate}}
+    </h2>
+    <div class="select-field full-view deductible-container no-mar left-mar-10 right-mar-10">
+      <i class="ic-icons-503"></i>
+      <select [(ngModel)]="deductibleValue" name="DeductibleValue" (change)="submitDeductibleValue($event.target.value)">
+        <option>250</option>
+        <option>500</option>
+        <option>750</option>
+        <option>1000</option>
+        <option>1500</option>
+        <option>2000</option>
+        <option>2500</option>
+        <option>3000</option>
+        <option>4000</option>
+        <option>5000</option>
+        <option>6000</option>
+        <option>7500</option>
+        <option>10000</option>
+        <option>20000</option>
+      </select>
+    </div>
+  </div>-->
+  <div class="col-xs-12 col-md-4 col-lg-4 select-list-bx bx-right sm-mar-bot" *ngIf="insuranceTypeCode != 1">
+    <h2 class="txt-md txt-black no-mar xs-mar-bot">
+      <i class="fas fa-car"></i>
+      {{'quotation.maintenance_center' | translate}}
+    </h2>
+    <ul class="select-list no-mar left-mar-10 right-mar-10 bx-right" id="insurance_type">
+      <li id="other_filter" class="toggle-filters bx-right" [ngClass]="vehicleAgencyRepair == true ? 'active' : ''" (click)="submitVehicleAgencyRepair(true)">
+        <i class="ic-icons-703 general-ico"></i>{{'quotation.Search_Agency' | translate}}
+      </li>
+      <li id="other_filter" class="toggle-filters bx-right" [ngClass]="vehicleAgencyRepair == false ? 'active' : ''" (click)="submitVehicleAgencyRepair(false)">
+        <i class="ic-icons-423 general-ico"></i>{{'quotation.Search_Workshops' | translate}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-xs-12 col-md-3 col-lg-2 prices relative-index bx-left md-mar">
+    <a class="txt-md txt-black no-mar bx-right pointer f_width" (click)="activeSorting = !activeSorting">
+      <i class="fas fa-stream"></i>
+      {{'quotation.Search_Sort_Rates_by' | translate}}
+    </a>
+    <ul class="profile-sidebar txt-right price-select content-view  block-list" [ngClass]="{'active': activeSorting}" (click)="activeSorting = false">
+      <li (click)="submitProductsSorting(1)" [ngClass]="ProductsSortingAsc == true ? 'active' : ''">
+        <a class="bx-right f_width">
+          <i class="ic-icons-504"></i>{{'quotation.Search_High_to_Low' | translate}}</a>
+      </li>
+      <li (click)="submitProductsSorting(0)" [ngClass]="ProductsSortingAsc == false ? 'active' : ''">
+        <a class="bx-right f_width">
+          <i class="ic-icons-376"></i>{{'quotation.Search_Low_to_High' | translate}}</a>
+      </li>
+    </ul>
+    <div class="sorting-overlay" *ngIf="activeSorting" (click)="activeSorting = false"></div>
+  </div>
+</div>
+<!--- End Of Filter Request -->

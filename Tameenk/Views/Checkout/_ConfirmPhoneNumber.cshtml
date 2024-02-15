@@ -1,0 +1,118 @@
+﻿@using Tameenk.Core.Domain.Enums;
+@model Tameenk.Models.VerifyCodeCheckoutViewModel
+
+<div id="editPhonePopup" class="popup" data-popup="editPhonePopup">
+    <div class="popup-inner">
+        <div class="modal-body">
+            <div>
+                @using (Html.BeginForm("VerifyCode", "Checkout", FormMethod.Post, new { id = "frmConfirmCode" }))
+                {
+                    @*@Html.AntiForgeryToken()*@
+                    @Html.HiddenFor(m => m.UserId)
+                    @Html.HiddenFor(m => m.PhoneNumber)
+                    @Html.HiddenFor(m => m.ReferenceId)
+
+                    <h4 style="padding-top:10px;">@Html.Raw(Tameenk.LangText.VerifyCode_SubTitle)</h4>
+                    <hr style="margin-top: 10px;" />
+
+                    <div>
+                        @*<span style="color:red">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>*@
+                        <div id="span-errorcode" style="display:none;color:red;margin-bottom: 3px;">
+                            @Html.Raw(Tameenk.LangText.Tameenk_ConfirmPhoneNumber_CodeNotCorrect)
+                        </div>
+                        <div id="span-resendmessage" style="display:none;color:red;margin-bottom: 3px;">
+                            @Html.Raw(Tameenk.LangText.Tameenk_ConfirmPhoneNumber_ResendCode)
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 form-group mb-10">
+                        <span class="input">
+
+                            @Html.TextBoxFor(m => m.Code, htmlAttributes: new { @id = "Code", @class = "input__field input__field--ichiro", data_val = "true"
+                           , data_val_required = LangText.VerifyCode_CodeRequiredMsg,
+                           data_val_length_max = "6",
+                           //digits="6",input__label-content input__label-content--ichiro registerdCarLabel
+                           data_val_length = LangText.Tameenk_ConfirmPhoneNumber_Length6
+                       })
+                            <label class="input__label input__label--ichiro verifiCodePadd" for="Code">
+                                <span class="registerdCarLabel">
+                                    @Html.Raw(Tameenk.LangText.VerifyCode_Code)
+                                </span>
+                            </label>
+                        </span>
+                        @Html.ValidationMessageFor(m => m.Code, string.Empty, new { @style = "color:#a94442;" })
+                    </div>
+
+                    <div class="col-xs-12 col-lg-20 col-md-20 margTopPopup">
+                        <input type="button" onclick="CheckVerifyCode()" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar" value="@LangText.confirm">
+                        <input type="button" onclick="ResendVerifyCode()" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar" value="@LangText.Tameenk_ConfirmPhoneNumber_Resend">
+                    </div>
+                }
+            </div>
+        </div>
+        <a class="popup-close" data-popup-close="editPhonePopup" href="#">x</a>
+    </div>
+</div>
+
+<script>
+                function CheckVerifyCode()
+                {
+                  $('#span-resendmessage').hide();
+                        $('#span-errorcode').hide();
+    var VerifyCodeUrl = "@Url.Action("VerifyCode", "Checkout")";
+                 $('#frmConfirmCode').validate();
+                if( $('#frmConfirmCode').valid()){
+                     $.ajax({
+                            url: VerifyCodeUrl,
+                            type: "POST",
+                            data: $('#frmConfirmCode').serialize(),
+                            success: function (data) {
+                             if (data.data) {
+                               $('#editPhonePopup').hide();
+                               submitnow();
+                            }
+                            else{
+                             $('#span-errorcode').show();
+                                $('#span-resendmessage').hide();
+                             }
+                            }
+                          });
+                       }
+    }
+
+                        function  ResendVerifyCode()
+                        {
+                         $('#span-resendmessage').hide();
+                        $('#span-errorcode').hide();   
+                          var ResendCodeUrl = "@Url.Action("ResendVerifyCode", "Checkout")";
+                            var checkoutPhoneNumber = $('#Phone').val();
+                             $.ajax({
+                                    url: ResendCodeUrl,
+                                    type: "GET",
+                                    data: { userId: '@Model.UserId', phoneNumber : checkoutPhoneNumber },
+                                    success: function (data) {
+                                        if(data.data)
+                                            $('#span-resendmessage').show();
+                                            $('#span-errorcode').hide();
+				                        }
+				                    });
+                                 }
+
+</script>
+
+<style>
+    .btn.sm {
+        height: 35px;
+        line-height: 0;
+        margin-right: 4px;
+    }
+
+    .margTopPopup {
+        margin-top: 10px;
+    }
+
+    .verifiCodePadd {
+        padding: 12px;
+        text-align: right;
+    }
+</style>

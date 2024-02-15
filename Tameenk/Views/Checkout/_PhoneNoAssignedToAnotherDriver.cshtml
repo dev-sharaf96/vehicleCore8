@@ -1,0 +1,25 @@
+﻿
+<div id="phoneCheckoutPopup" class="popup" data-popup="phoneCheckoutPopup">
+    <div class="popup-inner">
+        <div class="modal-body">
+            <p>@Html.Raw(Tameenk.LangText.PhoneNoWithAnotherDriver)</p>
+        </div>
+        <div class="model-footer">
+            <input type="button" data-popup-close="phoneCheckoutPopup" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow" value="@LangText.yes">
+        </div>
+        <a class="popup-close" data-popup-close="phoneCheckoutPopup" href="#">x</a>
+    </div>
+</div>
+
+<style>
+    #phoneCheckoutPopup .modal-body {
+        padding-bottom: 0;
+    }
+    #phoneCheckoutPopup .model-footer {
+        padding: 10px;
+    }
+        #phoneCheckoutPopup .model-footer input {
+            line-height: 0px;
+            height: 35px;
+        }
+</style>

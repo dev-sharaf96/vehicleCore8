@@ -1,0 +1,31 @@
+﻿@model TameenkDAL.Models.Notifications.AwaitingPaymentPolicyUpdNotificationModel
+<article>
+    <div class="wrapper-bx md-mar">
+        <div class="row">
+            <div class="col-xs-12 col-lg-1 col-lg-1">
+                <i class="ic-icons-345 txt-green txt-lr"></i>
+            </div>
+            <header class="col-xs-12 col-lg-11 col-lg-11 over-hidden">
+                <span class="txt-sm txt-green dis-block ">@Html.Raw(Tameenk.LangText.AwaitingPaymentPolicyUpdReqNotification)</span>
+                <h2 class="txt-lr txt-black no-mar">#@Model.PolicyUpdateRequestGuid</h2>
+                <h3 class="txt-sm txt-mgray dis-block xs-mar">@Html.Raw(Tameenk.LangText.Notification_request_vehicle) #@Model.PolicyId</h3>
+            </header>
+            @using (Html.BeginForm("PayPolicyUpdRequestUsingPayfort", "Profile", FormMethod.Post, new { id = "PolicyAwaitingPayment" }))
+            {
+                <input type="hidden" value="@Model.PolicyUpdateRequestGuid" id="policyUpdReqReferenceId" name="policyUpdReqReferenceId" />
+            }
+
+        </div>
+
+        <div class="small-desc over-hidden f_width md-mar bx-right txt-mgray">
+           @if (!Model.EnablePaymentButton)
+           {
+                <button onclick="PayUsingPayfort();return false;"  disabled class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow lr-mar">@Html.Raw(Tameenk.LangText.PayUsingDebit)</button>
+           }
+           else
+           {   
+               <button onclick="PayUsingPayfort();return false;" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow lr-mar">@Html.Raw(Tameenk.LangText.PayUsingDebit)</button>
+           }
+        </div>
+    </div>
+</article>

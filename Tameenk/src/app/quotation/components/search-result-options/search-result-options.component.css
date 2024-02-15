@@ -1,0 +1,75 @@
+.fas {
+    font-size: 12px;
+}
+
+h2 .fas {
+    font-size: 1.5rem;
+    color: #798b9b;
+}
+
+.hand-home {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 15px
+}
+
+.hand-home i {
+    position: absolute
+}
+
+.hand-home i:first-child {
+    top: 0;
+    left: 2px
+}
+
+.hand-home i:last-child {
+    bottom: -7px
+}
+
+.sorting-overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+.select-field select {
+    display: block;
+    float: right;
+    padding: 0;
+    list-style: none;
+    border: 2px solid #ebf2f9;
+    border-radius: 34px;
+    overflow: hidden;
+    width: 100%;
+    background: none;
+    height: 31px;
+    border-radius: 50px !important;
+    -webkit-appearance: none;
+    padding-right: 24px;
+    color: #798b9b;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+.select-field i {
+    color: #798b9b;
+    position: absolute;
+    top: 11px;
+    left: 23px;
+    font-size: 10px;
+}
+.select-list li {
+    cursor: pointer;
+    padding: 4px 21px;
+}
+h2.txt-md.txt-black.no-mar.xs-mar-bot {
+    color: #156495;
+    font-size: 16px;
+    font-weight: 700;
+}

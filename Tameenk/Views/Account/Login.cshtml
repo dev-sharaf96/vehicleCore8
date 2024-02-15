@@ -1,0 +1,129 @@
+﻿@model Tameenk.Models.LoginViewModel
+@using Tameenk.Core.Domain.Enums;
+
+<p> <p />
+
+<h1 class="txt-black txt-lr  md-lh xs-mar-bot txt-right sm-mar-bot">
+    @Html.Raw(Tameenk.LangText.login_title)
+</h1>
+
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = @Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { id = "frm_login_show", onsubmit = "btn_login_Submit.disabled = true; return true;" }))
+{
+    @Html.AntiForgeryToken()
+
+    if (ViewBag.islogin == 1 && ViewBag.IsCorporateUser == 0)
+    {
+        <div>
+            <h4 style="color:red">@Html.ValidationSummary(true, "", new { @class = "text-danger" })</h4>
+        </div>
+    }
+
+    <input class="" type="hidden" name="UserName" />
+    <input class="" type="hidden" name="PWD" />
+
+    <div class="sm-mar-bot">
+        <span class="input input--ichiro">
+            <input class="input__field input__field--ichiro" type="text" id="plainEmail"  value="@ViewBag.loginModel.Email"/>
+            @*<input class="input__field input__field--ichiro" type="text" name="Email" value="@ViewBag.loginModel.Email" />*@
+            <label class="input__label input__label--ichiro" for="username">
+                <span class="input__label-content input__label-content--ichiro">@Html.Raw(Tameenk.LangText.login_email)</span>
+            </label>
+        </span>
+        <span id="EmailError" style="color:red">@Html.ValidationMessageFor(m => m.Email)</span>
+        <span class="input input--ichiro">
+            <input class="input__field input__field--ichiro pass-to-show password" id="plainPassword" type="password"  value="@ViewBag.loginModel.Password"/>
+            @*<input class="input__field input__field--ichiro pass-to-show password" name="Password" type="password" value="@ViewBag.loginModel.Password" />*@
+            <label class="input__label input__label--ichiro" for="password">
+                <span class="input__label-content input__label-content--ichiro">@Html.Raw(Tameenk.LangText.login_password)</span>
+            </label>
+            @if (System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals(LanguageTwoLetterIsoCode.En.ToString(), StringComparison.OrdinalIgnoreCase))
+            {
+                <i class="ic-icons-220 in-ico txt-black pointer show-password" style="position: absolute; top: 23px; right: 20px; transform: scale(1.5); transform-origin: left center; z-index: 999;"></i>
+
+            }
+            else
+            {
+                <i class="ic-icons-220 in-ico txt-black pointer show-password" style="position: absolute; top: 23px; left: 10px; transform: scale(1.5); transform-origin: left center; z-index: 999;"></i>
+
+            }
+        </span>
+        <span id="PasswordError" style="color:red">@Html.ValidationMessageFor(m => m.Password)</span>
+    </div>
+}
+
+<div class="col-xs-12 col-lg-6 col-md-6 sm-mar bx-right">
+    <label for="myBox">
+        <div class="checkbox-holder bx-right">
+            <input type="checkbox" onchange="CheckRememberMe(this)" id="myBox" class="inp-checkbox" style="display: none">
+            <label for="myBox" class="checkValidation">
+                <span>
+                    <svg width="12px" height="10px" viewBox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                </span>
+            </label>
+        </div>
+        <div class="txt-justify bx-right" style="margin: 0 10px">
+            <h4>@Html.Raw(Tameenk.LangText.login_rememberMe)</h4>
+        </div>
+    </label>
+    @*<label class="labelSwitch" for="driverdisabilty">
+            <span class="stat true txt-brand">@Html.Raw(Tameenk.LangText.yes)</span>
+            <span class="stat false txt-gray">@Html.Raw(Tameenk.LangText.no)</span>
+        </label>*@
+    <a href="#" data-popup-open="forgetpassword" class="txt-brand txt-xs xs-mar bx-right clear-b">@Html.Raw(Tameenk.LangText.forget_password_link)</a>
+</div>
+
+<button id="btn_login_Submit" name="btn_login_Submit" class="btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow sm-mar">@Html.Raw(Tameenk.LangText.login_button)</button>
+<div class="popup" data-popup="forgetpassword">
+    <div class="popup-inner">
+        <div class="modal-header">
+            <h2>@Html.Raw(Tameenk.LangText.forget_password_heading)</h2>
+        </div>
+        <div class="modal-body">
+            <span class="input input--ichiro">
+                <input class="input__field input__field--ichiro resetrmail" type="email" id="ResetEmail" name="ResetEmail" required />
+                <label class="input__label input__label--ichiro" for="ResetEmail">
+                    <span class="input__label-content input__label-content--ichiro">@Html.Raw(Tameenk.LangText.login_email)</span>
+                </label>
+            </span>
+            <span style="color:#186A9E;display:none" id="ResetEmailsuccess">@Html.Raw(Tameenk.LangText.forget_password_email_sent)</span>
+            <span style="color:red;display:none" id="ResetEmailError"></span>
+            <button class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar reset-email-btn" onclick="ForgetPassword($(this));">@Html.Raw(Tameenk.LangText.forget_password_btn)</button>
+        </div>
+        <a class="popup-close" data-popup-close="forgetpassword" href="#">x</a>
+    </div>
+</div>
+
+@using (Html.BeginForm("VerifyOTP", "Account", new { ReturnUrl = ViewBag.returnUrl }, FormMethod.Post, new { id = "frm_VerifyOtp_show", onsubmit = "btn_VerifyOtp_Submit.disabled = true; return true;" }))
+{
+    <div class="popup" id="verifyOTpModal" data-popup="verifyOTp">
+        @*@Html.HiddenFor(m => m.Email)
+        @Html.HiddenFor(m => m.Lang)*@
+
+        <input class="" type="hidden" name="UserName" />
+        <input class="" type="hidden" name="PWD" />
+        <input class="" type="hidden" name="Lang" />
+        <div class="popup-inner">
+            <div class="modal-header">
+                <h2> @Html.Raw(Tameenk.LangText.Otp_Popup_header) </h2>
+            </div>
+            <div class="modal-body">
+                @if (ViewBag.islogin == 1 && ViewBag.IsCorporateUser == 1)
+                {
+                    <div>
+                        <h4 style="color:red">@Html.ValidationSummary(true, "", new { @class = "text-danger" })</h4>
+                    </div>
+                }
+
+                <span class="input input--ichiro">
+                    <input class="input__field input__field--ichiro" type="text" name="Otp" value="@ViewBag.loginModel.Otp" required />
+                    <label class="input__label input__label--ichiro" for="VerifyOTP_code">
+                        <span class="input__label-content input__label-content--ichiro"> @Html.Raw(Tameenk.LangText.Otp_Popup_code_input) </span>
+                    </label>
+                </span><button id="btn_VerifyOtp_Submit" name="btn_VerifyOtp_Submit" class="bx-left btn sm dis-block no-trans bx-left txt-white continue txt-brand bg-brand-hvr txt-xs bg-gr-main  circ-rdus l-shadow md-mar VerifyOTP-btn"> @Html.Raw(Tameenk.LangText.Otp_Popup_submit_btn) </button>
+            </div>
+            <a class="popup-close" data-popup-close="verifyOTp" href="#">x</a>
+        </div>
+    </div>
+}

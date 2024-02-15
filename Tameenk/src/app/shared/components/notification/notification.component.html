@@ -1,0 +1,16 @@
+<article class="notification" *ngIf="notification">
+  <div class="fail" *ngIf="notification.status === 'error'">
+      <div>
+          <i class="icon far fa-times-circle"></i>
+          <div class="txt-md" [innerHTML]="notification?.text"></div>
+      </div>
+      <!-- <a class="pointer" (click)="close()"><i class="fas fa-times"></i></a> -->
+  </div>
+  <div class="success" *ngIf="notification.status === 'success'">
+      <div>
+          <i class="icon far fa-check-circle"></i>
+          <h1 class="txt-md">{{notification?.text}}</h1>
+      </div>
+      <!-- <a class="pointer" (click)="close()"><i class="fas fa-times"></i></a> -->
+  </div>
+</article>

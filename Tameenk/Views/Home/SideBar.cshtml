@@ -1,0 +1,83 @@
+﻿@using Tameenk.Core.Domain.Enums;
+@model Tameenk.Core.Domain.Enums.EProfileSection
+
+<div class="burger bx-right">
+    <div class="burger__patty"></div>
+</div>
+
+<aside class="col-xs-12 col-md-3 col-lg-2 bg-ofwhite bx-right" id="menu">
+    <h2 class="sidebar-heading txt-md md-mar txt-white txt-center">
+        <i class="fas fa-user"></i>  @Tameenk.LangText.editdata
+    </h2>
+    <ul class="profile-sidebar block-list bx-right">
+        <li class="@(Model == EProfileSection.Info ?"active":"")">
+            <a href="@Url.Action("Index","Profile")">
+                <i class="fas fa-info-circle"></i>@Html.Raw(Tameenk.LangText.MyInfo)
+            </a>
+        </li>
+        <li class="@(Model == EProfileSection.Statistics ?"active":"")">
+            <a href="@Url.Action("MyStatistics","Profile")">
+                <i class="fas fa-chart-bar"></i>@Html.Raw(Tameenk.LangText.Mystatistics)
+            </a>
+        </li>
+        <li class="@(Model == EProfileSection.Notifications ?"active":"")">
+            <a href="@Url.Action("MyNotifications","Profile")">
+                <i class="fas fa-bell"></i>@Html.Raw(Tameenk.LangText.Notification)
+            </a>
+        </li>
+        <li class="@(Model == EProfileSection.Invoices ?"active":"")">
+            <a href="@Url.Action("MyInvoices","Profile")">
+                <i class="fas fa-list-alt"></i>@Html.Raw(Tameenk.LangText.Purchase_Log)
+            </a>
+        </li>
+        @if (ViewBag.IsCorporateAdmin == null || !ViewBag.IsCorporateAdmin)
+        {
+            <li class="@(Model == EProfileSection.Policies ? "active" : "")">
+                <a href="@Url.Action("MyPolicies", "Profile")">
+                    <i class="fas fa-shopping-cart"></i>@Html.Raw(Tameenk.LangText.MyProducts)
+                </a>
+            </li>
+        }
+        <li class="@(Model == EProfileSection.Vehicles ?"active":"")">
+            <a href="@Url.Action("MyVehicles","Profile")">
+                <i class="fas fa-car"></i>@Html.Raw(Tameenk.LangText.MyVehicles)
+            </a>
+        </li>
+        <li class="@(Model == EProfileSection.UserTickets ?"active":"")">
+            <a href="@Url.Action("MyTickets","Profile")">
+                <i class="fas fa-exchange-alt"></i>@Html.Raw(Tameenk.LangText.Tickets)
+            </a>
+        </li>
+        <li class="@(Model == EProfileSection.SadadBills ?"active":"")">
+            <a href="@Url.Action("MySadadBills","Profile")">
+                <i class="fas fa-list-alt"></i>@Html.Raw(Tameenk.LangText.MySadadBills)
+            </a>
+        </li>
+        @if (ViewBag.IsCorporateAdmin != null && ViewBag.IsCorporateAdmin)
+        {
+            <li class="@(Model == EProfileSection.CorporateAcountInfo ? "active" : "")">
+                <a href="@Url.Action("CorporateAccountInfo", "Profile")">
+                    <i class="fas fa-list-alt"></i>@Html.Raw(Tameenk.LangText.CorporateAccountInfo)
+                </a>
+            </li>
+
+            <li class="@(Model == EProfileSection.CorporateUsers ? "active" : "")">
+                <a href="@Url.Action("CorporateUsers", "Profile")">
+                    <i class="fas fa-list-alt"></i>@Html.Raw(Tameenk.LangText.CorporateUsers)
+                </a>
+            </li>
+
+            <li class="@(Model == EProfileSection.CorporatePolicies ? "active" : "")">
+                <a href="@Url.Action("CorporatePolicies", "Profile")">
+                    <i class="fas fa-list-alt"></i>@Html.Raw(Tameenk.LangText.CorporatePolicies)
+                </a>
+            </li>
+        }
+
+        <li class="@(Model == EProfileSection.ResetPassword ?"active":"")">
+            <a href="@Url.Action("ChangePassword","Profile")">
+                <i class="fas fa-list-alt"></i>@Html.Raw(Tameenk.LangText.resetPassword)
+            </a>
+        </li>
+    </ul>
+</aside>

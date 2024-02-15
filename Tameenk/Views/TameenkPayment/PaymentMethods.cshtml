@@ -1,0 +1,176 @@
+﻿
+<style>
+    img.bx-left {
+        width: 70px;
+        height: 54px;
+    }
+
+    /*.CustomStylePaymentMethod {
+        width: 115px;
+        margin-left: 30px;
+    }*/
+
+    span.spanHolder:hover {
+        background: #FFE8D2;
+        border: 2px solid #f7d0ac;
+    }
+
+    .spanHolder {
+        width: 143px;
+        padding: 20px;
+        margin: 2px;
+        height: 75px;
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid #d0d0d0;
+        background: #F4F4F5;
+        justify-content: center;
+        border-radius: 20px;
+    }
+
+    .flexHeaderPayment {
+        display: inline-flex;
+    }
+
+    .madaStyle {
+        width: 146px;
+        margin: 5px 5px 5px 0px;
+    }
+
+    .botomImg {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .spanHoldercustom {
+        width: 145px !important;
+        margin: 22px !important;
+    }
+
+    @@media only screen and (max-width: 600px) {
+        .spanHoldercustom {
+            width: 100px !important;
+            margin: 17px !important;
+        }
+
+        .spanHolder {
+            width: 100px !important;
+            padding: 30px 20px;
+            margin: 3px !important;
+        }
+    }
+
+    .stcCustomStyle {
+        width: 80px;
+        height: 70px;
+    }
+
+    span.spanHolder.spanHolderStc {
+        width: 80px;
+    }
+</style>
+
+@using Tameenk.Core.Domain.Enums.Payments;
+@model Tameenk.Models.Payments.PaymentMethodModel
+@{
+    Layout = null;
+}
+
+@foreach (var paymentMethodCode in Model.PaymentMethodCodes)
+{
+
+    if (paymentMethodCode == PaymentMethodCode.Sadad)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.Sadad))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHoldersadad" name="paymentHolder">
+                    <img src="~/resources/imgs/sadad_logo.svg" alt="SADAD" title="SADAD" class="bx-left" />
+                </span>
+            </header>
+        </article>
+    }
+    else if (paymentMethodCode == PaymentMethodCode.Hyperpay)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.Hyperpay))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHolderHyerpay" name="paymentHolder">
+                    <img src="~/resources/imgs/payment_visa_master.svg" alt="هايبر باى" title="هايبر باى" class="bx-left" />
+                </span>
+            </header>
+        </article>
+    }
+    else if (paymentMethodCode == PaymentMethodCode.Mada)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.Mada))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHolderMada" name="paymentHolder">
+                    <img src="~/resources/imgs/mada-2.svg" alt="مدى" title="مدى" class="bx-left" />
+                </span>
+            </header>
+        </article>
+    }
+    else if (paymentMethodCode == PaymentMethodCode.Esal)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.Esal))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHolderSadad" name="paymentHolder">
+                    <img src="~/resources/imgs/sadad_logo.svg" alt="سداد" title="سداد" class="bx-left" />
+                </span>
+            </header>
+        </article>
+    }
+    else if (paymentMethodCode == PaymentMethodCode.STCPay)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.STCPay))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHolderStc" name="paymentHolder">
+                    <img src="~/resources/imgs/STC-pay-NN.svg" alt="STCPay" class="bx-leftx stcCustomStyle" />
+                </span>
+            </header>
+        </article>
+    }
+    else if (paymentMethodCode == PaymentMethodCode.Edaat)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.Edaat))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHoldersadad" name="paymentHolder">
+                    <img src="~/resources/imgs/sadad_logo.svg" alt="SADAD" title="SADAD" class="bx-left" />
+                </span>
+            </header>
+        </article>
+    }
+    else if (paymentMethodCode == PaymentMethodCode.AMEX)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.AMEX))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHolderMada" name="paymentHolder">
+                    <img src="~/resources/imgs/amex.svg" alt="أمكس" title="AMEX" class="bx-left" />
+                </span>
+            </header>
+        </article>
+    }
+    else if (paymentMethodCode == PaymentMethodCode.ApplePay)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.ApplePay))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHolderMada" name="paymentHolder">
+                    <img src="~/resources/imgs/applepay.svg" alt="مدفوعات أبل" title="applepay" class="bx-left" />
+                </span>
+            </header>
+        </article>
+    }
+    else if (paymentMethodCode == PaymentMethodCode.Wallet && Model.ShowWalletPaymentOption)
+    {
+        <article class="CustomStylePaymentMethod md-mar-bot no-toggle displyGrodNo" onclick="changePaymentMethod(@((int)PaymentMethodCode.Wallet))">
+            <header class="flexHeaderPayment">
+                <span class="spanHolder spanHoldersadad" name="paymentHolder">
+                    <img src="~/resources/imgs/wallet.svg" alt="المحفظة" title="Wallet" class="bx-left" />
+                </span>
+            </header>
+        </article>
+    }
+}
+

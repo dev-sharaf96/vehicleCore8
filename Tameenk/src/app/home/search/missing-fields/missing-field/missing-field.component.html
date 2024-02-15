@@ -1,0 +1,88 @@
+<div [formGroup]="form">
+  <div [ngSwitch]="field.controlType">
+
+    <div class="col-xs-12 col-lg-3 col-md-3 bx-right" *ngIf="this.field.key !== 'VehicleLicenseExpiry'">
+      <div class="input-container" *ngSwitchCase="'textbox'">
+        <input class="input-element" type="text" appFloatedLabel [id]="field.key" [formControlName]="field.key" placeholder=" " />
+        <label class="input-label" [for]="field.key">{{'MissingFields.'+field.label | translate}}</label>
+      </div>
+      <div *ngSwitchCase="'datePicker'">
+        <div class="input-container active" *ngIf="this.field.key !== 'VehicleLicenseExpiry'">
+          <input class="input-element mydatepick" type="text" appFloatedLabel (change)="onChangeDate($event.target.value)" [id]="field.key"
+            placeholder=" " />
+          <label class="input-label" [for]="field.key">{{'MissingFields.'+field.label | translate}}</label>
+        </div>
+        <!-- <input class="input-element mydatepick" type="text" [formControlName]="field.key" [id]="field.key" placeholder=" " />
+            <label class="input-label" [for]="field.key">{{'MissingFields.'+field.label | translate}}</label> -->
+      </div>
+
+      <div class="input-container" [ngClass]="dropdown.isOpen || dropdown.hasValue ? 'active' : ''"
+        *ngSwitchCase="'dropdown'">
+        <label class="input-label" [for]="field.key">{{'MissingFields.'+field.label | translate}}</label>
+        <ng-select appendTo="body" #dropdown class="input-element inq-vh-trans" [loadingText]="'common.loading' | translate"
+          [notFoundText]="'common.no_items_found' | translate" [labelForId]="field.key" [items]="field.options" (focus)="dropdown.open()"
+          bindLabel="name" [clearable]="false" [virtualScroll]="true" bindValue="id" (change)="onChange($event,field.key)" [formControlName]="field.key">
+          <ng-template ng-option-tmp let-item="item">
+            <div title="{{item.name}}">{{item.name}}</div>
+          </ng-template>
+        </ng-select>
+      </div>
+      <label [for]="field.key" style="clear: both;display: flex;padding-top: 20px;align-items: center;" *ngSwitchCase="'checkbox'">
+        <div class="col-xs-3 col-lg-1 col-md-1 checkbox-holder">
+          <input type="checkbox" [id]="field.key" style="display:block !important" [formControlName]="field.key"
+            (change)="field.value =$event.target.checked">
+        </div>
+        <div class="txt-black txt-xs dis-block over-hidden xs-mar xs-mar-bot">
+          <h4>{{'MissingFields.'+field.label | translate}}</h4>
+        </div>
+      </label>
+      <!-- <span class="field-error" style="color:red;position:absolute;">{{'MissingFields.'+field.label | translate}}{{'common.required' | translate}}</span> -->
+    </div>
+
+
+
+    <div *ngSwitchCase="'datePicker'">
+      <div *ngIf="this.field.key === 'VehicleLicenseExpiry'">
+        <h4 class="sm-mar">{{'MissingFields.'+field.label | translate}}</h4>
+        <input class="input-element mydatepick" type="hidden" [formControlName]="field.key" [id]="field.key"
+          placeholder=" " />
+        <!-- <label class="input-label" [for]="field.key"></label> -->
+        <div class="bx-right" style="padding: 0 0 0 10px;width: 90px;">
+          <div class="input-container" [ngClass]="{'active': expiryDay.isOpen || expiryDay.hasValue}">
+            <label class="input-label" for="expiryDay" translate>common.day</label>
+            <ng-select #expiryDay class="input-element inq-ins-month" (change)="getHijri()" [(ngModel)]="expiryDayValue" [ngModelOptions]="{standalone: true}" labelForId="expiryDay" [items]="dayes" (focus)="expiryDay.open()"
+              [clearable]="false" appendTo="body" [loadingText]="'common.loading' | translate" [notFoundText]="'common.no_items_found' | translate">
+              <ng-template ng-option-tmp let-item="item">
+                <div title="{{item}}">{{item}}</div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+        <div class="bx-right" style="padding: 0 10px;width: 125px;">
+          <div class="input-container" [ngClass]="{'active': expiryMonth.isOpen || expiryMonth.hasValue}">
+            <label class="input-label" for="expiryMonth" translate>common.month</label>
+            <ng-select #expiryMonth class="input-element inq-ins-month" (change)="getHijri()" [(ngModel)]="expiryMonthValue" [ngModelOptions]="{standalone: true}" labelForId="expiryMonth" [items]="months"
+              (focus)="expiryMonth.open()" [clearable]="false" appendTo="body" [loadingText]="'common.loading' | translate"
+              [notFoundText]="'common.no_items_found' | translate" bindLabel="name" bindValue="id">
+              <ng-template ng-option-tmp let-item="item">
+                <div title="{{item.name}}">{{item.name}}</div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+        <div class="bx-right" style="padding: 0 10px 0 0;width: 100px;">
+          <div class="input-container" [ngClass]="{'active': expiryYear.isOpen || expiryYear.hasValue}">
+            <label class="input-label" for="expiryYear" translate>common.year</label>
+            <ng-select #expiryYear class="input-element inq-ins-year" appendTo="body" [loadingText]="'common.loading' | translate"
+              [notFoundText]="'common.no_items_found' | translate" labelForId="expiryYear" (change)="getHijri()" [(ngModel)]="expiryYearValue" [ngModelOptions]="{standalone: true}" [items]="years" (focus)="expiryYear.open()"
+              [clearable]="false">
+              <ng-template ng-option-tmp let-item="item">
+                <div title="{{item}}">{{item}}</div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+﻿<style>
+    .CustomStylePaymentMethod {
+        width: 100px;
+        margin-left: 45px;
+    }
+
+    span.spanHolderhyperP:hover {
+        background: #FFE8D2;
+        border: 2px solid #f7d0ac;
+    }
+
+    .spanHolderhyperP {
+        width: 144px;
+        padding: 20px;
+        margin: 20px;
+        height: 75px;
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid #d0d0d0;
+        background: #F4F4F5;
+        justify-content: center;
+        border-radius: 20px;
+    }
+
+    .flexHeaderPayment {
+        display: inline-flex;
+    }
+
+    .madaStyle {
+        width: 146px;
+        margin: 5px 5px 5px 0px;
+    }
+
+    .botomImg {
+        /* text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+        display: block;
+        position: relative;
+        top: -17px;
+        left: 50px;
+    }
+
+    @@media only screen and (max-width: 600px) {
+        .gridcc {
+            grid-area: 1;
+        }
+
+        .spanHolderhyperP {
+            margin: 0px;
+            width: 76%;
+            padding: 0px;
+        }
+
+        .botomImg {
+            left: 50px;
+            width: 46%;
+        }
+    }
+</style>
+
+@using Tameenk.Core.Domain.Enums.Payments;
+@{
+    Layout = null;
+}
+<article class="CustomStylePaymentMethod gridcc md-mar-bot no-toggle" onclick="changePaymentMethod(@((int)PaymentMethodCode.Hyperpay))">
+    <header class="flexHeaderPayment">
+
+        <span class="spanHolder" name="paymentHolder">
+            <img src="~/resources/imgs/payment-all.svg" alt="هايبر باى" title="هايبر باى" class="bx-left" style="width: 80px;height: 45px;" />
+        </span>
+    </header>
+</article>
