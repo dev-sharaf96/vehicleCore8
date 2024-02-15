@@ -1,0 +1,196 @@
+.banks-list {
+  padding: 50px 0
+}
+.banks-list table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 100%;
+}
+.inactive {
+  background-color: #aaa;
+  color: #fff;
+}
+.banks-list th {
+  background: #F5F5F5;
+  display: none;
+}
+
+.banks-list td,
+th {
+  height: 53px
+}
+
+.banks-list td,
+th {
+  text-align: center;
+  border: 1px solid #DDD;
+  padding: 10px;
+  empty-cells: show;
+}
+.banks-list tbody tr {
+  background-color: #fff
+}
+.banks-list tbody tr:nth-child(odd) {
+  background-color: #f5f7fc
+}
+
+.banks-list td+td,
+th+th {
+  text-align: center;
+  display: none;
+}
+
+.table-header {
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0097CF
+}
+
+.banks-list td.default {
+  display: table-cell;
+}
+
+.banks-list .bg-purple {
+  border-top: 3px solid #A32362;
+}
+
+.banks-list .bg-blue {
+  border-bottom: 3px solid #0097CF;
+}
+
+.banks-list .sep {
+  background: #F5F5F5;
+  font-weight: bold;
+}
+
+.banks-list .txt-l {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.banks-list .txt-top {
+  position: relative;
+  top: -9px;
+  left: -2px;
+}
+
+.banks-list .tick {
+  font-size: 18px;
+  color: #2CA01C;
+}
+
+.banks-list .hide {
+  border: 0;
+  background: none;
+}
+
+.banks-list td,
+th {
+  display: table-cell !important;
+  width: 330px;
+
+}
+
+.banks-list td+td,
+th+th {
+  width: auto;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .banks-list ul {
+    display: flex;
+  }
+}
+
+
+
+.checkbox-holder {
+  text-align: center
+}
+
+.mainCheckBox {
+  margin: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.mainCheckBox span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+
+.mainCheckBox span:first-child {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  transform: scale(1);
+  vertical-align: middle;
+  border: 1px solid #9098A9;
+  transition: all 0.2s ease;
+}
+
+.mainCheckBox span:first-child svg {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+
+.mainCheckBox span:first-child:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #186A9E;
+  display: block;
+  transform: scale(0);
+  opacity: 1;
+  border-radius: 50%;
+}
+
+.mainCheckBox span:last-child {
+  padding-left: 3px;
+}
+
+.mainCheckBox:hover span:first-child {
+  border-color: #186A9E;
+}
+
+.inp-checkbox:checked+.mainCheckBox span:first-child {
+  background: #186A9E;
+  border-color: #186A9E;
+  animation: wave 0.4s ease;
+}
+
+.inp-checkbox:checked+.mainCheckBox span:first-child svg {
+  stroke-dashoffset: 0;
+}
+
+.inp-checkbox:checked+.mainCheckBox span:first-child:before {
+  transform: scale(3.5);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.toggle-holder {
+  display: inline-block;
+}
+
+td a:not(:last-of-type) {
+  margin-inline-end: 10px
+}

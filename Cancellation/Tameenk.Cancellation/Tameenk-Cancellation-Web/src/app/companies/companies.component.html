@@ -1,0 +1,43 @@
+<section class="banks-list">
+  <div class="container">
+    <header class="table-header sm-mar-bot">
+      <h1 class="bx-right txt-white" translate>insuranceCompany.companiesList</h1>
+      <button [routerLink]="['company/']" class="no-trans btn sm dis-block bx-left txt-white txt-brand bg-brand-hvr bg-gr-main circ-rdus l-shadow"
+        translate>insuranceCompany.addCompany</button>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th class="bg-blue" translate>
+            insuranceCompany.companyName
+          </th>
+          <th class="bg-blue" translate>
+              insuranceCompany.serviceUrl
+          </th>
+          <th class="bg-blue" translate>
+              insuranceCompany.accessToken
+          </th>
+          <th class="bg-blue" translate>
+              common.action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies" [ngClass]="{'inactive': !company.isActive}">
+          <td>{{company.companyName}}</td>
+          <td>{{company.serviceUrl}}</td>
+          <td>{{company.accessToken}}</td>
+          <td>
+            <a [routerLink]="['company/']" translate>common.add</a>
+            <a [routerLink]="['company/', company.id]" translate>common.edit</a>
+            <a class="toggle-holder">
+              <input type="checkbox" class="switchIco owenerCheck" [checked]="company.isActive" [id]="company.id"
+                [(ngModel)]="company.isActive" (change)="changeActivity(company.id)">
+              <label class="labelSwitch" [for]="company.id"></label>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

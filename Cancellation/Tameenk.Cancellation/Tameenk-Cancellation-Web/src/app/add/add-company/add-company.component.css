@@ -1,0 +1,17 @@
+.add-company {
+  background-image: url('src/assets/imgs/slide-bg2.jpg');
+  height: 100%;
+  padding: 80px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.search-box {
+    padding: 15px 20px 40px;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 5px;
+}
+
+.input-container {
+  background-color: #fff
+}

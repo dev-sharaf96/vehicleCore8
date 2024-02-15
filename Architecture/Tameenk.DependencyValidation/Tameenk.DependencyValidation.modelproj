@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6afb0902-29f8-4039-b922-d029e5ab68c0}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>Tameenk.DependencyValidation</Name>
+    <RootNamespace>Tameenk.DependencyValidation</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Validate Include="DependencyValidation1.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="DependencyValidation1.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DependencyValidation1.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="DependencyValidation1.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>DependencyValidation1.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="InquaryIntegration.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="InquaryIntegration.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>InquaryIntegration.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="InquaryIntegration.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>InquaryIntegration.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.ACIG\Tameenk.Integration.Providers.ACIG.csproj">
+      <Name>Tameenk.Integration.Providers.ACIG</Name>
+      <Project>{273ed9c3-bdcc-4757-bbe1-09217521807c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Providers\Tameenk.Integration.Providers.Wafa\Tameenk.Integration.Providers.Wafa.csproj">
+      <Name>Tameenk.Integration.Providers.Wafa</Name>
+      <Project>{ccf9e62c-68ef-46e8-baa7-69426b9a0099}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Tameenk.Integration.Core\Tameenk.Integration.Core.csproj">
+      <Name>Tameenk.Integration.Core</Name>
+      <Project>{75031295-c1c2-499d-8dd3-1ac7357fc897}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj">
+      <Name>Tameenk.Integration.Dto</Name>
+      <Project>{51816323-e9ba-457f-844c-0237993ac117}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Name>Tameenk.Core.Domain</Name>
+      <Project>{8edfcd3e-4461-4b2c-a83e-175983e9c6b7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Name>Tameenk.Core</Name>
+      <Project>{5cd41905-ac08-410f-9ffb-b3975ffba538}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Data\Tameenk.Data.csproj">
+      <Name>Tameenk.Data</Name>
+      <Project>{9e27f8af-2b2d-4a16-a0b3-ebf07fac188e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Quotation\Tameenk.Services.QuotationApi\Tameenk.Services.QuotationApi.csproj">
+      <Name>Tameenk.Services.QuotationApi</Name>
+      <Project>{419b4e1c-024a-4ff9-bf58-514ecc8ba370}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Quotation\Tameenk.Services.YakeenIntegrationApi\Tameenk.Services.YakeenIntegrationApi.csproj">
+      <Name>Tameenk.Services.YakeenIntegrationApi</Name>
+      <Project>{55ae1a44-fef2-4ed0-bb33-1520c44b9394}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TameenkDAL\TameenkDAL.csproj">
+      <Name>TameenkDAL</Name>
+      <Project>{6ebbe2e6-d90a-4287-a92f-f0341df48186}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tameenk\Tameenk.csproj">
+      <Name>Tameenk</Name>
+      <Project>{547b4ba2-895b-4fc5-b0a7-94d72fafda6d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tamkeen.bll\Tamkeen.bll.csproj">
+      <Name>Tamkeen.bll</Name>
+      <Project>{f0344826-89df-484d-8b72-a31d51c77790}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

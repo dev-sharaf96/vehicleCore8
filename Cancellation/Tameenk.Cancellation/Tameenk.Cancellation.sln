@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tameenk.Cancellation.Api", "Tameenk.Cancellation.Api\Tameenk.Cancellation.Api.csproj", "{B0523A1C-C043-4D5F-80DB-8C992329A0EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tameenk.Cancellation.Service", "Tameenk.Cancellation.Service\Tameenk.Cancellation.Service.csproj", "{3C1019C7-5DF7-41B5-9D15-C58FD336DD5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tameenk.Cancellation.DAL", "Tameenk.Cancellation.DAL\Tameenk.Cancellation.DAL.csproj", "{415E2F79-50D7-4485-A310-D5BEA964880E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tameenk.Cancellation.BLL", "Tameenk.Cancellation.BLL\Tameenk.Cancellation.BLL.csproj", "{48965FB7-0B77-441C-BF10-7E4C7FFBB5C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tameenk.Cancellation.Utilities", "Tameenk.Cancellation.Utilities\Tameenk.Cancellation.Utilities.csproj", "{87947A0D-D35E-4031-86AE-E67B0B55ECD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0523A1C-C043-4D5F-80DB-8C992329A0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0523A1C-C043-4D5F-80DB-8C992329A0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0523A1C-C043-4D5F-80DB-8C992329A0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0523A1C-C043-4D5F-80DB-8C992329A0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C1019C7-5DF7-41B5-9D15-C58FD336DD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1019C7-5DF7-41B5-9D15-C58FD336DD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1019C7-5DF7-41B5-9D15-C58FD336DD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1019C7-5DF7-41B5-9D15-C58FD336DD5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415E2F79-50D7-4485-A310-D5BEA964880E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415E2F79-50D7-4485-A310-D5BEA964880E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415E2F79-50D7-4485-A310-D5BEA964880E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415E2F79-50D7-4485-A310-D5BEA964880E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48965FB7-0B77-441C-BF10-7E4C7FFBB5C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48965FB7-0B77-441C-BF10-7E4C7FFBB5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48965FB7-0B77-441C-BF10-7E4C7FFBB5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48965FB7-0B77-441C-BF10-7E4C7FFBB5C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87947A0D-D35E-4031-86AE-E67B0B55ECD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87947A0D-D35E-4031-86AE-E67B0B55ECD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87947A0D-D35E-4031-86AE-E67B0B55ECD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87947A0D-D35E-4031-86AE-E67B0B55ECD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A20899AE-5745-4F6C-9955-F8468B50C2FE}
+	EndGlobalSection
+EndGlobal

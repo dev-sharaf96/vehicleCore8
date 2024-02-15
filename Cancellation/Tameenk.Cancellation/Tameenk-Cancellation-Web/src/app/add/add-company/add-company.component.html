@@ -1,0 +1,57 @@
+<div class="add-company">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 bx-right">
+        <div class="search-box">
+          <h2 translate>add.addCompany</h2>
+          <form (ngSubmit)="addCompany(insuranceComapnyForm)" #insuranceComapnyForm="ngForm" novalidate>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': companyName.invalid && insuranceComapnyForm.submitted}">
+                  <input type="text" id="companyName" name="companyName" class="input-element" appFloatedLabel required
+                    [(ngModel)]="insuranceCompany.companyName" #companyName="ngModel" />
+                  <label class="input-label" for="companyName" translate>add.insuranceCompany.companyName</label>
+                  <span *ngIf="companyName.invalid && insuranceComapnyForm.submitted">
+                    <span class="field-error" *ngIf="companyName.errors['required']">{{'add.insuranceCompany.companyName_required'
+                      | translate}}</span>
+                    <span class="field-error" *ngIf="companyName.errors['invalid']">{{'add.insuranceCompany.companyName_invalid'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': serviceUrl.invalid && insuranceComapnyForm.submitted}">
+                  <input type="text" id="serviceUrl" name="serviceUrl" class="input-element" appFloatedLabel required
+                    [(ngModel)]="insuranceCompany.serviceUrl" #serviceUrl="ngModel" />
+                  <label class="input-label" for="serviceUrl" translate>add.insuranceCompany.serviceUrl</label>
+                  <span *ngIf="serviceUrl.invalid && insuranceComapnyForm.submitted">
+                    <span class="field-error" *ngIf="serviceUrl.errors['required']">{{'add.insuranceCompany.serviceUrl_required'
+                      | translate}}</span>
+                    <span class="field-error" *ngIf="serviceUrl.errors['invalid']">{{'add.insuranceCompany.serviceUrl_invalid'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': accessToken.invalid && insuranceComapnyForm.submitted}">
+                  <input type="text" id="accessToken" name="accessToken" class="input-element" appFloatedLabel required
+                    [(ngModel)]="insuranceCompany.accessToken" #accessToken="ngModel" />
+                  <label class="input-label" for="accessToken" translate>add.insuranceCompany.accessToken</label>
+                  <span *ngIf="accessToken.invalid && insuranceComapnyForm.submitted">
+                    <span class="field-error" *ngIf="accessToken.errors['required']">{{'add.insuranceCompany.accessToken_required'
+                      | translate}}</span>
+                    <span class="field-error" *ngIf="accessToken.errors['invalid']">{{'add.insuranceCompany.accessToken_invalid'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 input-mar bx-left">
+                <button type="submit" class="no-trans bx-left btn sm dis-block bx-left txt-white submit-continue txt-brand bg-brand-hvr bg-gr-main  circ-rdus l-shadow xs-mar-bot" translate> add.add <i class="fa fa-spinner fa-spin" *ngIf="loading"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

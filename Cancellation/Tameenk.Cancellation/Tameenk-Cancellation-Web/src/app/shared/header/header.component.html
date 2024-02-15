@@ -1,0 +1,32 @@
+<header class="header header--fixed">
+  <div class="container">
+    <div class="inner__header" [ngClass]="navIsActive ? 'active' : ''">
+      <div class="header__logo">
+        <a routerLink="/">
+          <img src="assets/imgs/bcare.svg" alt="BCare Logo" />
+        </a>
+      </div>
+      <nav class="header__navbar">
+        <button class="navbar__language_toggle" (click)="toggleLang()" translate>header.language</button>
+        <div class="nav__items">
+            <button [routerLink]="['companies/']" class="link" translate>insuranceCompany.companiesList</button>
+            <button [routerLink]="['banks/']" class="link" translate>bank.banksList</button>
+
+          <div class="nav__customer_service_number">
+            <i class="fa fa-phone"></i>
+            920010050
+          </div>
+        </div>
+      </nav>
+      <div class="vision_container">
+        <img src="assets/imgs/Saudi_Vision_2030_logo.svg" alt="رؤية 2030" class="header__vision_img bx-right" />
+        <div class="navbar__toggle bx-right" (click)="navIsActive = !navIsActive">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="header__height"></div>

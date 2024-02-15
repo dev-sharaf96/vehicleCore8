@@ -1,0 +1,336 @@
+body, html {
+  direction: ltr !important;
+  text-align: left !important;
+}
+[class*="col-"]:not(#login-tabs, #contact-form) {
+  float: left;
+}
+.bx-left {
+  float: right !important;
+}
+.bx-right {
+  float: left !important;
+}
+.txt-left {
+  text-align: right;
+}
+.txt-right {
+  text-align: left;
+}
+.left-pos {
+  right: 0 !important;
+  left: auto !important;
+}
+.right-pos {
+  left: 0 !important;
+  right: auto !important;
+}
+.select2-results__option {
+  direction: inherit;
+  text-align: inherit;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  direction: inherit;
+  text-align: inherit;
+}
+@media (max-width: 768px) {
+  .pull-right-xs {
+      float: left !important;
+  }
+  .pull-left-xs {
+      float: right !important;
+  }
+}
+.no-pd-l {
+  padding-right: 0 !important;
+  padding-left: inherit;
+}
+.no-pd-r {
+  padding-left: 0 !important;
+  padding-right: inherit;
+}
+.pad-sm-r {
+  padding-right: 0;
+  padding-left: 25px;
+}
+.input *, .select2-container * {
+  text-align: left;
+  transform-origin: left;
+}
+.slider, .slick-slider {
+  direction: rtl;
+}
+.slider .bx-right {
+  float: right;
+}
+.slider .bx-left {
+  float: left;
+}
+.cd-cart {
+  right: 30px;
+  left: auto;
+}
+.cd-cart h2 {
+  float: left;
+}
+.cd-cart .checkout {
+  margin-right: 72px;
+  margin-left: auto;
+}
+.cd-cart, .cd-cart-trigger {
+  right: 30px;
+  left: auto;
+}
+label.labelSwitch .stat {
+  left: 40px;
+}
+.select2-selection__arrow {
+  right: 1px !important;
+  left: auto !important;
+}
+.dropdown {
+  left: 0;
+}
+.general-ico {
+  float: left;
+  margin-right: 5px;
+  margin-left: 0;
+}
+.section.search-result .prices a i {
+  float: right;
+}
+.section.search-car {
+  background-position: left center;
+}
+.section.search-car:before {
+  left: 0;
+  right: auto;
+  background-image: linear-gradient(-90deg, #f5f9fd, rgba(255,255,255,0) 200%);
+}
+
+.tabs-section .tabs li {
+  padding: 15px 20px 15px 75px !important;
+  margin-left: 0;
+  margin-right: -3px;
+}
+.tabs-section .tabs li:not(:first-child) {
+  margin-right: -4px !important;
+}
+.tabs-section .tabs li .icon-wrapper {
+  float: left;
+  left: 20px;
+  right: auto;
+  /* 25px 30px 30px 80px !important */
+}
+#tabs > div.container.relative-index > ul > li:nth-child(3):not(.not-now) > span.circlecor.left {
+  display: block
+}
+.checkout.page aside {
+  float: right !important;
+}
+.checkout.page .payments-cards article header img {
+  float: right !important;
+}
+.checkout.page .process article.single-process:before {
+  right: calc(50%);
+  left: auto;
+}
+.checkout.page .process article.single-process.current:after {
+  left: 0;
+  right: auto;
+}
+.checkoutfooter .bg-ofwhite:before {
+  right: -50%;
+  left: auto;
+}
+@media (min-width: 64em) {
+  .section.checkout .space-overly {
+      height: calc(100% + 100px);
+  }
+  .section.profile-view .space-overly {
+      left: 0;
+      right: auto;
+  }
+}
+.no-column-padding .fileupload {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 15px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+@media (min-width: 992px) {
+  .no-column-padding > div:first-child {
+      padding-left: 15px;
+      padding-right: 0;
+  }
+  .no-column-padding > div {
+      padding: 0;
+  }
+  .no-column-padding > div:last-child {
+      padding-right: 15px;
+      padding-left: 0;
+  }
+}
+@media (min-width: 64em) {
+  .process article.single-process {
+      float: left;
+  }
+}
+.result-cards article .body .single-feature i svg {
+  float: left;
+}
+.result-cards article .body .single-feature i img {
+  float: left;
+}
+.result-cards article .body .single-feature {
+  float: left;
+}
+.additional-box input:checked+label:after {
+  right: 1px;
+  left: 0;
+}
+.select-field i {
+  right: 41px;
+  left: auto;
+}
+.select-field select {
+  padding-left: 24px;
+  padding-right: auto;
+}
+
+.logo {
+  float: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.menuToggle {
+  float: right !important;
+  direction: rtl !important;
+}
+#top-page .site-nav li a {
+  margin-right: 45px;
+  margin-left: 0;
+}
+#top-page .site-nav li.menu {
+  float: right;
+}
+._2030 {
+  margin: 0 0 0 20px;
+}
+
+#portfolio #arrows {
+
+  right: 0px;
+}
+
+
+.input__field:valid + .input__support .input__helper:before {
+  content: "\00a0 File selected" !important;
+  color: #7d8a96;
+}
+.input__field:invalid + .input__support .input__helper:before {
+  content: "\00a0 Choose file" !important;
+}
+.input--ichiro.selectinside .select2-container, .input--ichiro.selectinside textarea, .input--ichiro.textarea .select2-container, .input--ichiro.textarea textarea {
+  margin-left: 4px;
+}
+.slick-dots {
+  text-align: left
+}
+
+.result-cards article .body.errors-container {
+  border-right-width: 0;
+  border-left-width: 2px
+}
+.captcha-input {
+  padding-right: 0;
+  padding-left: 30px;
+}
+
+.accordion-heading:after {
+right: 0;
+left: auto;
+}
+.field-error {
+  left: 0;
+  right: auto
+}
+
+.show-password {
+  right: 20px;
+  left: auto;
+}
+
+.result-cards article .body .single-feature .stat {
+  left: 50px;
+  right: auto;
+}
+.input-container.active .input-label {
+  transform: translate(-10px, -35px);
+}
+.benefit .benefit-check {
+  right: auto;
+  left: 50px;
+}
+
+.price-description {
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.yakeen-erros-close {
+    left: auto;
+    right: -10px;
+}
+.product-heading, .product-price {
+  padding: 30px 0 30px 30px!important;
+  border-right: 1px solid #dcdcdc;
+}
+.product-price {
+  border-right: 0
+}
+.driver-dropdown-sm {
+    font-size: 1rem
+}
+#login-tabs .tab {
+    float: left
+}
+#login-tabs .current-active {
+    right: 30px;
+    left: auto
+}
+#login-tabs.active-register .current-active {
+    right: 50%;
+    left: auto
+}
+.select-list li {
+    border-left: 0;
+    border-right: 2px solid #ebf2f9
+}
+
+.hand-home i:first-child {
+    left: auto!important;
+    right: 2px
+}
+
+.vision_container {
+  margin-right: 0;
+  margin-left: 20px;
+}
+.input-container .input-label {
+  padding-right: 0;
+  padding-left: 10px;
+
+}
+.radio-holder {
+  padding-left: 35px;
+  padding-right: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1;
+}
+.checkmark {
+  left: 10px;
+  right: auto;
+}

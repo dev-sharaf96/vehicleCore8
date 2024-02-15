@@ -1,0 +1,58 @@
+<div class="add-company">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 bx-right">
+        <div class="search-box">
+          <h2 translate>{{isEditBank ? 'bank.editBank' : 'bank.addBank'}}</h2>
+          <form (ngSubmit)="submit(bankForm)" #bankForm="ngForm" novalidate>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': code.invalid && bankForm.submitted}">
+                  <input type="text" id="code" name="code" class="input-element" appFloatedLabel required [(ngModel)]="bank.code"
+                    #code="ngModel" />
+                  <label class="input-label" for="code" translate>bank.code</label>
+                  <span *ngIf="code.invalid && bankForm.submitted">
+                    <span class="field-error" *ngIf="code.errors['required']">{{'bank.code_required'
+                      | translate}}</span>
+                    <span class="field-error" *ngIf="code.errors['invalid']">{{'bank.code_invalid'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': descriptionAr.invalid && bankForm.submitted}">
+                  <input type="text" id="descriptionAr" name="descriptionAr" class="input-element" appFloatedLabel
+                    required [(ngModel)]="bank.descriptionAr" #descriptionAr="ngModel" />
+                  <label class="input-label" for="descriptionAr" translate>bank.descriptionAr</label>
+                  <span *ngIf="descriptionAr.invalid && bankForm.submitted">
+                    <span class="field-error" *ngIf="descriptionAr.errors['required']">{{'bank.descriptionAr_required'
+                      | translate}}</span>
+                    <span class="field-error" *ngIf="descriptionAr.errors['invalid']">{{'bank.descriptionAr_invalid'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': descriptionEn.invalid && bankForm.submitted}">
+                  <input type="text" id="descriptionEn" name="descriptionEn" class="input-element" appFloatedLabel
+                    required [(ngModel)]="bank.descriptionEn" #descriptionEn="ngModel" />
+                  <label class="input-label" for="descriptionEn" translate>bank.descriptionEn</label>
+                  <span *ngIf="descriptionEn.invalid && bankForm.submitted">
+                    <span class="field-error" *ngIf="descriptionEn.errors['required']">{{'bank.descriptionEn_required'
+                      | translate}}</span>
+                    <span class="field-error" *ngIf="descriptionEn.errors['invalid']">{{'bank.descriptionEn_invalid'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 input-mar bx-left">
+                <button type="submit" class="no-trans bx-left btn sm dis-block bx-left txt-white submit-continue txt-brand bg-brand-hvr bg-gr-main  circ-rdus l-shadow xs-mar-bot"
+                  translate>{{isEditBank ? 'common.edit' : 'common.add'}}<i class="fa fa-spinner fa-spin" *ngIf="loading"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

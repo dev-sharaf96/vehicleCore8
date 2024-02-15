@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7eac5586-4f6c-43a5-a2eb-20befdb7f991" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="278c5ddf-032f-4cde-b431-4e3c63124b0b" name="Tameenk.Services.YakeenIntegrationApi">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="30f74704-6435-4686-b448-fd15009e1752" direction="Forward">
+          <layerMoniker Id="3ab5a979-6500-419f-8ddd-61bb67e0ad66" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="c16e8961-8896-4b51-8902-2a995c5d1345" direction="Forward">
+          <layerMoniker Id="d6d70110-96c6-4bb9-aed9-41a6e99e3741" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="3f0f2276-c8b7-4173-89a6-6faee2bf45f7" direction="Forward">
+          <layerMoniker Id="0074bf98-bbe3-46ed-9214-e5d672376fc1" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="f66303e4-59a1-4f2b-8d4b-f4134adc825f" name="Tameenk.Services.YakeenIntegrationApi">
+          <ArtifactNode Label="Tameenk.Services.YakeenIntegrationApi" Category="CodeSchema_Project" Id="(Assembly=../../Services/Quotation/Tameenk.Services.YakeenIntegrationApi/Tameenk.Services.YakeenIntegrationApi.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Tameenk.Services.YakeenIntegrationApi)" Label="Tameenk.Services.YakeenIntegrationApi.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="3ab5a979-6500-419f-8ddd-61bb67e0ad66" name="Tameenk.Core">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a090c81f-9a0d-4d5a-a83b-83c9426d0d73" direction="Forward">
+          <layerMoniker Id="d6d70110-96c6-4bb9-aed9-41a6e99e3741" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="c906f0b5-1fc3-4405-8a6b-dc6220ee03ea" name="Tameenk.Core">
+          <ArtifactNode Label="Tameenk.Core" Category="CodeSchema_Project" Id="(Assembly=../../Libraries/Tameenk.Core/Tameenk.Core.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Tameenk.Core)" Label="Tameenk.Core.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="d6d70110-96c6-4bb9-aed9-41a6e99e3741" name="Tameenk.Core.Domain">
+      <references>
+        <reference Id="5c53c10c-530b-456b-a064-e2c0e3bb4172" name="Tameenk.Core.Domain">
+          <ArtifactNode Label="Tameenk.Core.Domain" Category="CodeSchema_Project" Id="(Assembly=../../Libraries/Tameenk.Core.Domain/Tameenk.Core.Domain.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Tameenk.Core.Domain)" Label="Tameenk.Core.Domain.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="0074bf98-bbe3-46ed-9214-e5d672376fc1" name="Tameenk.Data">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="cc3c89b6-dfa1-4052-aef9-4a993e20d26b" direction="Forward">
+          <layerMoniker Id="3ab5a979-6500-419f-8ddd-61bb67e0ad66" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="0061934a-bffc-4220-af02-e8e740829a05" direction="Forward">
+          <layerMoniker Id="d6d70110-96c6-4bb9-aed9-41a6e99e3741" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="70e93dbd-008e-488e-a4ed-46a3d48aa064" name="Tameenk.Data">
+          <ArtifactNode Label="Tameenk.Data" Category="CodeSchema_Project" Id="(Assembly=../../Libraries/Tameenk.Data/Tameenk.Data.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Tameenk.Data)" Label="Tameenk.Data.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

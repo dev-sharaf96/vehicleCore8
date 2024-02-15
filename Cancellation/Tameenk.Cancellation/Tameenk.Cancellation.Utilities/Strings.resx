@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="ArabicLoginPageUrl" xml:space="preserve">
+    <value>ArabicLoginPageUrl</value>
+  </data>
+  <data name="ArabicLoginWithCaptchaPageUrl" xml:space="preserve">
+    <value>ArabicLoginWithCaptchaPageUrl</value>
+  </data>
+  <data name="ArabicRegisterPageUrl" xml:space="preserve">
+    <value>ArabicRegisterPageUrl</value>
+  </data>
+  <data name="ArabicVideosListUrl" xml:space="preserve">
+    <value>ArabicVideosListUrl</value>
+  </data>
+  <data name="BaseSiteUrl" xml:space="preserve">
+    <value>BaseSiteUrl</value>
+  </data>
+  <data name="bodyMailReplace" xml:space="preserve">
+    <value>[%Body%]</value>
+  </data>
+  <data name="CaptchaLimit" xml:space="preserve">
+    <value>CaptchaLimit</value>
+  </data>
+  <data name="ECareResource" xml:space="preserve">
+    <value>ECareResource</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="EnglishLoginPageUrl" xml:space="preserve">
+    <value>EnglishLoginPageUrl</value>
+  </data>
+  <data name="EnglishLoginWithCaptchaPageUrl" xml:space="preserve">
+    <value>EnglishLoginWithCaptchaPageUrl</value>
+  </data>
+  <data name="EnglishRegisterPageUrl" xml:space="preserve">
+    <value>EnglishRegisterPageUrl</value>
+  </data>
+  <data name="EnglishVideosListUrl" xml:space="preserve">
+    <value>EnglishVideosListUrl</value>
+  </data>
+  <data name="FormateBody" xml:space="preserve">
+    <value>{0:X04}</value>
+  </data>
+  <data name="InfotainmentSMSPassword" xml:space="preserve">
+    <value>InfotainmentSMSPassword</value>
+  </data>
+  <data name="InfotainmentSMSUserName" xml:space="preserve">
+    <value>InfotainmentSMSUserName</value>
+  </data>
+  <data name="invalidCaptchaLogins" xml:space="preserve">
+    <value>invalidCaptchaLogins</value>
+  </data>
+  <data name="invalidLogins" xml:space="preserve">
+    <value>invalidLogins</value>
+  </data>
+  <data name="MainMailContainer" xml:space="preserve">
+    <value>MainMailContainer</value>
+  </data>
+  <data name="MemberShipProviderName" xml:space="preserve">
+    <value>MemberShipProviderName</value>
+  </data>
+  <data name="MOSS_SQL_Group" xml:space="preserve">
+    <value>MOSS_SQL_Group</value>
+  </data>
+  <data name="OrangeDSLPublicSiteUrl" xml:space="preserve">
+    <value>OrangeDSLPublicSiteUrl</value>
+  </data>
+  <data name="PublicSiteURL" xml:space="preserve">
+    <value>PublicSiteURL</value>
+  </data>
+  <data name="RecaptchaSecretKey" xml:space="preserve">
+    <value>6Le1mAUTAAAAAH-2qCy0_YATsyvptCRUVP4-0iAx</value>
+  </data>
+  <data name="RecaptchaWebApi" xml:space="preserve">
+    <value>https://www.google.com/recaptcha/api/siteverify?secret={0}&amp;response={1}</value>
+  </data>
+  <data name="RegEx1" xml:space="preserve">
+    <value>&lt;(.|\n)+?&gt;</value>
+  </data>
+  <data name="RegEx11" xml:space="preserve">
+    <value>&lt;(.|\n)+?&gt;</value>
+  </data>
+  <data name="SANDSite" xml:space="preserve">
+    <value>SANDSite</value>
+  </data>
+  <data name="SelfProvisioningRegistrationMsg" xml:space="preserve">
+    <value>SelfProvisioningRegistrationMsg</value>
+  </data>
+  <data name="ShowSiteActionMenu" xml:space="preserve">
+    <value>ShowSiteActionMenu</value>
+  </data>
+  <data name="SiteUrl" xml:space="preserve">
+    <value>[%SiteUrl%]</value>
+  </data>
+  <data name="SMSpassword" xml:space="preserve">
+    <value>SMSpassword</value>
+  </data>
+  <data name="SMSTitle" xml:space="preserve">
+    <value>SMSTitle</value>
+  </data>
+  <data name="SMSUsername" xml:space="preserve">
+    <value>SMSUsername</value>
+  </data>
+  <data name="SMTPServer" xml:space="preserve">
+    <value>SMTPServer</value>
+  </data>
+  <data name="Space" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>true</value>
+  </data>
+</root>

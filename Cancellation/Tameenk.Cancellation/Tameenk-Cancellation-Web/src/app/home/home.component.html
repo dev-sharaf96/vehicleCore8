@@ -1,0 +1,136 @@
+<div class="main-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6" style="float:none; margin: 0 auto">
+        <div class="search-box">
+          <h2 translate>home.cancelation</h2>
+          <form #mainForm="ngForm" class="editForm" (submit)="next(mainForm)" novalidate>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <h3 class="txt-black dis-block over-hidden sm-mar" translate>home.registration_type</h3>
+                <div class="radio-container" style="margin-top: 10px">
+                  <label class="radio-holder" for="VehicleRegistered-1" translate>
+                    home.sequence_num
+                    <input type="radio" id="VehicleRegistered-1" name="vehicleRegistered" [value]="1" required
+                      #VehicleIdTypeId="ngModel" name="VehicleIdTypeId" [(ngModel)]="getPolicyReq.VehicleIdTypeCode"
+                      checked>
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-holder" for="vehicleRegistered-2" translate>
+                    home.custom_card
+                    <input type="radio" id="vehicleRegistered-2" name="vehicleRegistered" [value]="2" required
+                      #VehicleIdTypeId="ngModel" name="VehicleIdTypeId" [(ngModel)]="getPolicyReq.VehicleIdTypeCode">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': vehicleId.invalid && mainForm.submitted}">
+                  <input class="input-element" type="number" appNumberOnly appFloatedLabel id="vehicleId" #vehicleId="ngModel"
+                    name="vehicleId" [(ngModel)]="getPolicyReq.VehicleId" required pattern="^[0-9]*$" />
+                  <label class="input-label" for="vehicleId" translate>{{getPolicyReq.VehicleIdTypeCode === 1
+                    ?'home.sequence_number':'home.custom_number'}}</label>
+                  <span *ngIf="vehicleId.invalid && mainForm.submitted">
+                    <span class="field-error" *ngIf="vehicleId.errors['required']" translate>{{getPolicyReq.VehicleIdTypeCode
+                      === 1 ?
+                      'home.serial_number_error_required' :
+                      'home.custom_number_error_required'}}</span>
+                    <span class="field-error" *ngIf="vehicleId.errors['pattern']" translate>{{getPolicyReq.VehicleIdTypeCode
+                      === 1 ?
+                      'home.serial_number_error_invalid' :
+                      'home.custom_number_error_invalid'}}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': insuredId.invalid && mainForm.submitted}">
+                  <input type="number" id="insuredId" name="insuredId" class="input-element" appFloatedLabel
+                    appNumberOnly required appCheckId [(ngModel)]="getPolicyReq.InsuredId" #insuredId="ngModel" />
+                  <label class="input-label" for="insuredId" translate>home.id_residence_number</label>
+                  <span *ngIf="insuredId.invalid && mainForm.submitted">
+                    <span class="field-error" *ngIf="insuredId.errors['required']">{{'home.id_number_error_required'
+                      | translate}}</span>
+                    <span class="field-error" *ngIf="insuredId.errors['invalid']">{{'home.id_number_error_invalid'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': referenceId.invalid && mainForm.submitted}">
+                  <input type="number" id="referenceId" name="referenceId" class="input-element" appFloatedLabel
+                    appNumberOnly required [(ngModel)]="getPolicyReq.ReferenceId" #referenceId="ngModel" />
+                  <label class="input-label" for="referenceId" translate>home.referenceId</label>
+                  <span *ngIf="referenceId.invalid && mainForm.submitted">
+                    <span class="field-error" *ngIf="referenceId.errors['required']">{{'home.referenceId_required'
+                      | translate}}</span>
+                    <span class="field-error" *ngIf="referenceId.errors['invalid']">{{'home.referenceId_invalid'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 bx-right">
+                <div class="input-container" [ngClass]="{'red-border': reasonCodeId.invalid && mainForm.submitted, 'active': reasonCode.isOpen || reasonCode.hasValue}">
+                  <label class="input-label" for="reasonCode" translate>home.reason</label>
+                  <ng-select #reasonCode class="input-element" labelForId="reasonCode" [items]="reasons"
+                    (focus)="reasonCode.open()" [clearable]="false" bindLabel="description" bindValue="code" [loadingText]="'common.loading' | translate"
+                    required [notFoundText]="'common.no_items_found' | translate" #reasonCodeId="ngModel" name="reasonCodeId"
+                    [(ngModel)]="getPolicyReq.ReasonCode">
+                    <ng-template ng-option-tmp let-item="item">
+                      <div title="{{item.description}}">{{item.description}}</div>
+                    </ng-template>
+                  </ng-select>
+                  <span *ngIf="reasonCodeId.invalid && mainForm.submitted">
+                    <span class="field-error" *ngIf="reasonCodeId.errors['required']">{{'home.reason_required'
+                      | translate}}</span>
+                  </span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 bx-right" *ngIf="getPolicyReq.ReasonCode">
+                <div class="input-container" [ngClass]="{'red-border': firstInsuranceCompanyId.invalid && mainForm.submitted, 'active': firstInsuranceCompany.isOpen || firstInsuranceCompany.hasValue}">
+                  <label class="input-label" for="firstInsuranceCompany" translate>{{getPolicyReq.ReasonCode === 3
+                    ?'home.firstInsuranceCompany':'home.insuranceCompany'}}
+                  </label>
+                  <ng-select #firstInsuranceCompany class="input-element" labelForId="firstInsuranceCompany" [items]="companies"
+                    (focus)="firstInsuranceCompany.open()" [clearable]="false" bindLabel="companyName" bindValue="id" [loadingText]="'common.loading' | translate"
+                    required [notFoundText]="'common.no_items_found' | translate" #firstInsuranceCompanyId="ngModel" name="firstInsuranceCompanyId"
+                    [(ngModel)]="getPolicyReq.firstInsuranceCompanyId">
+                    <ng-template ng-option-tmp let-item="item">
+                      <div title="{{item.companyName}}">{{item.companyName}}</div>
+                    </ng-template>
+                  </ng-select>
+                  <span *ngIf="firstInsuranceCompanyId.invalid && mainForm.submitted">
+                    <span class="field-error" *ngIf="firstInsuranceCompanyId.errors['required']">{{'home.insuranceCompany_required' | translate}}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6 bx-right" *ngIf="getPolicyReq.ReasonCode === 3">
+                    <div class="input-container" [ngClass]="{'red-border': secondInsuranceCompanyId.invalid && mainForm.submitted, 'active': secondInsuranceCompany.isOpen || secondInsuranceCompany.hasValue}">
+                      <label class="input-label" for="secondInsuranceCompany" translate>home.secondInsuranceCompany</label>
+                      <ng-select #secondInsuranceCompany class="input-element" labelForId="secondInsuranceCompany" [items]="companies"
+                        (focus)="secondInsuranceCompany.open()" [clearable]="false" bindLabel="companyName" bindValue="id" [loadingText]="'common.loading' | translate"
+                        required [notFoundText]="'common.no_items_found' | translate" #secondInsuranceCompanyId="ngModel" name="secondInsuranceCompanyId"
+                        [(ngModel)]="getPolicyReq.secondInsuranceCompanyId">
+                        <ng-template ng-option-tmp let-item="item">
+                          <div title="{{item.companyName}}">{{item.companyName}}</div>
+                        </ng-template>
+                      </ng-select>
+                      <span *ngIf="secondInsuranceCompanyId.invalid && mainForm.submitted">
+                        <span class="field-error" *ngIf="secondInsuranceCompanyId.errors['required']">{{'home.insuranceCompany_required' | translate}}</span>
+                        </span>
+                    </div>
+                  </div>
+              <div class="col-xs-12 col-md-6 input-mar bx-left">
+                <button type="submit" class="no-trans bx-left btn sm dis-block bx-left txt-white submit-continue txt-brand bg-brand-hvr bg-gr-main  circ-rdus l-shadow xs-mar-bot">{{
+                  'home.send' | translate }} <i class="fa fa-spinner fa-spin" *ngIf="loading"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<section class="banks-list">
+  <div class="container">
+      <header class="table-header sm-mar-bot">
+          <h1 class="bx-right txt-white" translate>bank.banksList</h1>
+          <button [routerLink]="['bank/']" class="no-trans btn sm dis-block bx-left txt-white txt-brand bg-brand-hvr bg-gr-main circ-rdus l-shadow"
+            translate>bank.addBank</button>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th class="bg-blue" translate>
+                  bank.code
+              </th>
+              <th class="bg-blue" translate>
+                  bank.descriptionAr
+              </th>
+              <th class="bg-blue" translate>
+                  bank.descriptionEn
+              </th>
+              <th class="bg-blue" translate>
+                  common.action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bank of banks" [ngClass]="{'inactive': !bank.isActive}">
+              <td>{{bank.code}}</td>
+              <td>{{bank.descriptionAr}}</td>
+              <td>{{bank.descriptionEn}}</td>
+              <td>
+                <a [routerLink]="['bank/']" translate>common.add</a>
+                <a [routerLink]="['bank/', bank.code]" translate>common.edit</a>
+                    <a class="toggle-holder">
+                      <input type="checkbox" class="switchIco owenerCheck" [checked]="bank.isActive" [id]="bank.code" [(ngModel)]="bank.isActive" (change)="changeActivity(bank.code)">
+                      <label class="labelSwitch" [for]="bank.code"></label>
+                    </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</section>
