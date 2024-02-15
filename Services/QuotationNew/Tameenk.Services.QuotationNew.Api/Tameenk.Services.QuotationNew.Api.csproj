@@ -1,0 +1,144 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>bin\Tameenk.Services.QuotationNew.Api.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="Properties\PublishProfiles\DevelopmentSite.pubxml" />
+    <None Include="Properties\PublishProfiles\ProductionProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\TestFolderProfile.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.ACIG\Tameenk.Integration.Providers.ACIG.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Ahlia\Tameenk.Integration.Providers.Ahlia.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.AICC\Tameenk.Integration.Providers.AICC.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Alamiya\Tameenk.Integration.Providers.Alalamiya.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Allianz\Tameenk.Integration.Providers.Allianz.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.AlRajhi\Tameenk.Integration.Providers.AlRajhi.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Amana\Tameenk.Integration.Providers.Amana\Tameenk.Integration.Providers.Amana.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.ArabianShield\Tameenk.Integration.Providers.ArabianShield.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.AXA\Tameenk.Integration.Providers.AXA.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.BCARE\Tameenk.Integration.Providers.BCARE.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Buruj\Tameenk.Integration.Providers.Buruj\Tameenk.Integration.Providers.Buruj.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.GGI\Tameenk.Integration.Providers.GGI.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.GulfUnion\Tameenk.Integration.Providers.GulfUnion.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Malath\Tameenk.Integration.Providers.Malath.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.MedGulf\Tameenk.Integration.Providers.MedGulf.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.SAICO\Tameenk.Integration.Providers.SAICO.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Salama\Tameenk.Integration.Providers.Salama.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Saqr\Tameenk.Integration.Providers.Saqr.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Solidarity\Tameenk.Integration.Providers.Solidarity.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Tawuniya\Tameenk.Integration.Providers.Tawuniya.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.TUIC\Tameenk.Integration.Providers.TUIC.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.UCA\Tameenk.Integration.Providers.UCA.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Wafa\Tameenk.Integration.Providers.Wafa.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Wala\Tameenk.Integration.Providers.Wala.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Providers\Tameenk.Integration.Providers.Wataniya\Tameenk.Integration.Providers.Wataniya.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Tameenk.Integration.Core\Tameenk.Integration.Core.csproj" />
+    <ProjectReference Include="..\..\..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core\Tameenk.Core.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Data\Tameenk.Data.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Redis\Tameenk.Redis.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Resources\Tameenk.Resources.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Security\Tameenk.Security.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Services\Tameenk.Services.csproj" />
+    <ProjectReference Include="..\..\..\Monitoring\Prometheus\PrometheusLib\PrometheusLib.csproj" />
+    <ProjectReference Include="..\..\..\Tameenk.Integration.Providers.TokioMarine\Tameenk.Integration.Providers.TokioMarine.csproj" />
+    <ProjectReference Include="..\Tameenk.Services.QuotationNew.Components\Tameenk.Services.QuotationNew.Components.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\uploads\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
+    <PackageReference Include="Autofac.WebApi2" Version="6.1.1" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.1" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.1" />
+    <PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Owin.Cors" Version="4.2.2" />
+    <PackageReference Include="morelinq" Version="4.1.0" />
+    <PackageReference Include="NLog" Version="5.2.8" />
+    <PackageReference Include="Swashbuckle" Version="5.6.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="WebActivatorEx" Version="2.2.0" />
+    <PackageReference Include="WebApiThrottle" Version="1.5.4" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\QuotationController_old.cs" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53872</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7001/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties Swagger_4swagger-ui_1js_1map__JSONSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
