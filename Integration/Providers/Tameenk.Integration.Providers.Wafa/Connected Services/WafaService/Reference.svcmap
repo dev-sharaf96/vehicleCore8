@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6af6459e-5d5d-466b-88b2-87fabc500623" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://uateai.wafainsurance.com/BrokerIntegration/Integration.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Integration.xsd" MetadataType="Schema" ID="3e2722df-ad6a-43ff-ae8d-cd7e012980fe" SourceId="1" SourceUrl="http://uateai.wafainsurance.com/BrokerIntegration/Integration.svc?xsd=xsd1" />
+    <MetadataFile FileName="Integration.disco" MetadataType="Disco" ID="f5f48f90-1955-492d-b6db-b7ed8a319373" SourceId="1" SourceUrl="http://uateai.wafainsurance.com/BrokerIntegration/Integration.svc?disco" />
+    <MetadataFile FileName="Integration.wsdl" MetadataType="Wsdl" ID="64ac9573-1620-4150-8773-01fa88da188b" SourceId="1" SourceUrl="http://uateai.wafainsurance.com/BrokerIntegration/Integration.svc?wsdl" />
+    <MetadataFile FileName="Integration1.xsd" MetadataType="Schema" ID="c3b07dcb-3011-42fa-a76b-15eb1a221a3f" SourceId="1" SourceUrl="http://uateai.wafainsurance.com/BrokerIntegration/Integration.svc?xsd=xsd2" />
+    <MetadataFile FileName="Integration2.xsd" MetadataType="Schema" ID="7f96c0d0-9ea3-494d-ada8-2a590208c5d6" SourceId="1" SourceUrl="http://uateai.wafainsurance.com/BrokerIntegration/Integration.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

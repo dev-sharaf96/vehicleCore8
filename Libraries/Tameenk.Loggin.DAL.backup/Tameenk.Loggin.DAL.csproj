@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{339CF262-0F17-4C60-BB6F-FDC5133B3132}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Loggin.DAL</RootNamespace>
+    <AssemblyName>Tameenk.Loggin.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\ApplepayErrorLogDataAccess.cs" />
+    <Compile Include="DAL\AddressRequestLogDataAccess.cs" />
+    <Compile Include="DAL\AdminRequestLogDataAccess.cs" />
+    <Compile Include="DAL\AutoleasingAdminRequestLogDataAccess.cs" />
+    <Compile Include="DAL\CheckoutRequestLogDataAccess.cs" />
+    <Compile Include="DAL\InquiryRequestLogDataAccess.cs" />
+    <Compile Include="DAL\ForbiddenRequestLogDataAccess.cs" />
+    <Compile Include="DAL\MissingPolicyTransactionLogDataAccess.cs" />
+    <Compile Include="DAL\IVRLogDataAccess.cs" />
+    <Compile Include="DAL\LeasingAddBenefitLogDataAccess.cs" />
+    <Compile Include="DAL\LeasingAddDriverLogDataAccess.cs" />
+    <Compile Include="DAL\LeasingPortalLogDataAccess.cs" />
+    <Compile Include="DAL\LoginRequestsLogDataAccess.cs" />
+    <Compile Include="DAL\OwnDamageDataAccess.cs" />
+    <Compile Include="DAL\PolicyFailedTransactionDataAccess.cs" />
+    <Compile Include="DAL\PdfGenerationLogDataAccess.cs" />
+    <Compile Include="DAL\PolicyModificationLogDataAccess.cs" />
+    <Compile Include="DAL\PolicyNotificationLogDataAccess.cs" />
+    <Compile Include="DAL\PowerBILogDataAccess.cs" />
+    <Compile Include="DAL\ProfileRequestsLogDataAccess.cs" />
+    <Compile Include="DAL\PromotionRequestLogDataAccess.cs" />
+    <Compile Include="DAL\QuotationRequestLogDataAccess.cs" />
+    <Compile Include="DAL\IdentityRequestLogDataAccess.cs" />
+    <Compile Include="DAL\QuotationResponseLogDataAccess.cs" />
+    <Compile Include="DAL\RegistrationRequestsLogDataAccess.cs" />
+    <Compile Include="DAL\OffersDataAccess.cs" />
+    <Compile Include="DAL\NotificationLogDataAccess.cs" />
+    <Compile Include="DAL\FirebaseNotificationLogDataAccess.cs" />
+    <Compile Include="DAL\EmailLogsDataAccess.cs" />
+    <Compile Include="DAL\CompetitionDataAccess.cs" />
+    <Compile Include="DAL\WhatsAppLogDataAccess.cs" />
+    <Compile Include="DAL\WhatsAppLogsDataAccess.cs" />
+    <Compile Include="DAL\SMSNotificationDataAccess.cs" />
+    <Compile Include="DAL\SMSLogsDataAccess.cs" />
+    <Compile Include="DAL\ServiceRequestLogDataAccess.cs" />
+    <Compile Include="DAL\PolicyRequestLogDataAccess.cs" />
+    <Compile Include="DAL\UserTicketLogDataAccess.cs" />
+    <Compile Include="DAL\YakeenRequestLogDataAccess.cs" />
+    <Compile Include="Dtos\AppNotificationsLogFilterModel.cs" />
+    <Compile Include="Dtos\AllTypeSMSRenewalLogModel.cs" />
+    <Compile Include="Dtos\CompanyAvgResponseTime.cs" />
+    <Compile Include="Dtos\Power BI\BIBaseLogModel.cs" />
+    <Compile Include="Dtos\Power BI\BIPolicyServiceLogsModel.cs" />
+    <Compile Include="Dtos\PolicyStatisticsDataModel.cs" />
+    <Compile Include="Dtos\PolicyStatisticsFilterModel.cs" />
+    <Compile Include="Dtos\Power BI\BIQuotationServiceLogsModel.cs" />
+    <Compile Include="Dtos\RequestLogFilter.cs" />
+    <Compile Include="Dtos\RequestsPerCompanyModel.cs" />
+    <Compile Include="Dtos\Power BI\BIServiceLogsModel.cs" />
+    <Compile Include="Dtos\ServiceRequestFilter.cs" />
+    <Compile Include="Dtos\ServiceRequestsPerCompany.cs" />
+    <Compile Include="Dtos\ServiceRequestResponseTimeFromDBModel.cs" />
+    <Compile Include="Dtos\ServiceResponseTimeFilterModel.cs" />
+    <Compile Include="Dtos\SMSLogFilter.cs" />
+    <Compile Include="Dtos\SMSRenewalLogFilter.cs" />
+    <Compile Include="Dtos\TabbyWebHookServiceRequestLogModel.cs" />
+    <Compile Include="Dtos\TicketFilert.cs" />
+    <Compile Include="Dtos\TicketHistory.cs" />
+    <Compile Include="Dtos\TicketLogFilter.cs" />
+    <Compile Include="Dtos\TicketLogModel.cs" />
+    <Compile Include="Dtos\VehicleMakerModel.cs" />
+    <Compile Include="Dtos\VehicleMakerModelsModel.cs" />
+    <Compile Include="Dtos\YakeenCityCenterModel.cs" />
+    <Compile Include="Entities\AddressRequestLog.cs" />
+    <Compile Include="Entities\ApplepayErrorLog.cs" />
+    <Compile Include="Entities\AdminRequestLog.cs" />
+    <Compile Include="Entities\AutoleasingAdminRequestLog.cs" />
+    <Compile Include="Entities\CheckoutRequestLog.cs" />
+    <Compile Include="Entities\IdentityRequestLog.cs" />
+    <Compile Include="Entities\CompetitionRequestLog.cs" />
+    <Compile Include="Entities\InquiryRequestLog.cs" />
+    <Compile Include="Entities\ForbiddenRequestLog.cs" />
+    <Compile Include="Entities\MissingPolicyTransactionServicesLog.cs" />
+    <Compile Include="Entities\IVRServicesLog.cs" />
+    <Compile Include="Entities\LeasingAddBenefitLog.cs" />
+    <Compile Include="Entities\LeasingAddDriverLog.cs" />
+    <Compile Include="Entities\LeasingPortalLog.cs" />
+    <Compile Include="Entities\LoginRequestsLog.cs" />
+    <Compile Include="Entities\Offers.cs" />
+    <Compile Include="Entities\OwnDamageSMSLog.cs" />
+    <Compile Include="Entities\PolicyFailedTransaction.cs" />
+    <Compile Include="Entities\PolicyModificationLog.cs" />
+    <Compile Include="Entities\PolicyRequestLog.cs" />
+    <Compile Include="Entities\PdfGenerationLog.cs" />
+    <Compile Include="Entities\PowerBIServicesLog.cs" />
+    <Compile Include="Entities\ProfileRequestsLog.cs" />
+    <Compile Include="Entities\PromotionRequestLog.cs" />
+    <Compile Include="Entities\PolicyNotificationLog.cs" />
+    <Compile Include="Entities\QuotationRequestLog.cs" />
+    <Compile Include="Entities\RegistrationRequestsLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\ACIGPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\ACIGQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AhliaPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AhliaQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AICCPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AICCQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AlalamiyaPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AlalamiyaQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\BurujQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\BurujPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AmanaPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AXAPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AXAQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AlRajhiPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AlRajhiQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\ArabianShieldPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\ArabianShieldQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\BaseServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\BCarePolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\BCareQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\CancellationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\GGIPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\GGIQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\GulfUnionPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\GulfUnionQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\IServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\MalathPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\MalathQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\MedGulfPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\MedGulfQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\NajmServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\PaymentServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SAICOPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SAICOQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AllianzPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SalamaPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AllianzQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SalamaQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SaqrPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SaqrQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SaudiPostServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\ServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SolidarityPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\SolidarityQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\TawuniyaPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\TawuniyaQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\TokioMarinePolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\TokioMarineQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\TUICPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\TUICQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\UCAPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\UCAQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\WafaPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\WafaQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\WalaPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\WalaQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\WataniyaPolicyServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\AmanaQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\WataniyaQuotationServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\WathqServiceRequestLog.cs" />
+    <Compile Include="Entities\ServiceRequestLogs\YakeenServiceRequestLog.cs" />
+    <Compile Include="Entities\QuotationStatus.cs" />
+    <Compile Include="Entities\NotificationLog.cs" />
+    <Compile Include="Entities\FirebaseNotificationLog.cs" />
+    <Compile Include="Entities\EmailLog.cs" />
+    <Compile Include="Entities\WalaaPolicies.cs" />
+    <Compile Include="Entities\WhatsAppLog.cs" />
+    <Compile Include="Entities\SMSNotification.cs" />
+    <Compile Include="Entities\SMSLog.cs" />
+    <Compile Include="Entities\UserTicketLog.cs" />
+    <Compile Include="Model\TameenkLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14F920B0-E1F2-4E7B-BE22-4BDE4FC9541F}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5CD41905-AC08-410F-9FFB-B3975FFBA538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tameenk.Data\Tameenk.Data.csproj">
+      <Project>{9E27F8AF-2B2D-4A16-A0B3-EBF07FAC188E}</Project>
+      <Name>Tameenk.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

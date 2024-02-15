@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="exceededLimit" xml:space="preserve">
+    <value>لقد استنزفت الحد الاقصى من البوليصات المسموح</value>
+  </data>
+  <data name="InvaildOldOwnerNin" xml:space="preserve">
+    <value>لا يمكن نقل الملكيه لنفسك</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>رمز التحقق غير صالح.</value>
+  </data>
+  <data name="InvalidData" xml:space="preserve">
+    <value>برجاء ادخال بيانات صحيحه</value>
+  </data>
+  <data name="InvalidPolicyEffectiveDate" xml:space="preserve">
+    <value>تاريخ بدايه التامين يجب ان يبداء من الغد ولا يزيد عن 29 يوم</value>
+  </data>
+  <data name="NationalIdRequired" xml:space="preserve">
+    <value>من فضلك ادخل رقم الهوية.</value>
+  </data>
+  <data name="RequestModelIsNullException" xml:space="preserve">
+    <value>طلب الوثائق غير مكتمل</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>تمت بنجاح</value>
+  </data>
+  <data name="NoQuotation" xml:space="preserve">
+    <value>لا يوجد عروض لذلك الطلب</value>
+  </data>
+  <data name="DrivingPercentageErrorInvalid" xml:space="preserve">
+    <value>نسبة القيادة تجاوزت 100%</value>
+  </data>
+  <data name="CustomCardRequired" xml:space="preserve">
+    <value>من فضلك ادخل البطاقة الجمركية</value>
+  </data>
+  <data name="PolicyEffectiveDateRequired" xml:space="preserve">
+    <value>من فضلك ادخل سريان الوثيقه</value>
+  </data>
+  <data name="SequenceNumberRequired" xml:space="preserve">
+    <value>من فضلك ادخل رقم الاستمارة</value>
+  </data>
+  <data name="VehicleIdTypeIdRequired" xml:space="preserve">
+    <value>من فضلك اختار نوع المركبة</value>
+  </data>
+  <data name="CityCodeRequired" xml:space="preserve">
+    <value>من فضلك ادخل كود المدينة</value>
+  </data>
+  <data name="insuranceCompanyId" xml:space="preserve">
+    <value>Insurance company Id is null</value>
+  </data>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (I-01)</value>
+  </data>
+  <data name="VehicleExceededLimit" xml:space="preserve">
+    <value>هذه السياره تخطت الحد الاقصى لطلبات الاسعار لهذا اليوم من فضلك اذهب الى صفحتك الشخصيه لترى تفاصيل العروض</value>
+  </data>
+  <data name="ExpiredCaptcha" xml:space="preserve">
+    <value>انتهت صلاحية رمز التحقق</value>
+  </data>
+  <data name="WrongInputCaptcha" xml:space="preserve">
+    <value>خطأ في إدخال رمز التحقق</value>
+  </data>
+  <data name="VehicleOwnerNinIsNull" xml:space="preserve">
+    <value>من فضلك أدخل رقم هوية مالك المركبة</value>
+  </data>
+  <data name="NationalIdIsNull" xml:space="preserve">
+    <value>من فضلك أدخل رقم الهوية</value>
+  </data>
+  <data name="AdditionalDriverYakeenError" xml:space="preserve">
+    <value>حدث خطأ اثناء التحقق من بيانات هذا السائق الأضافى {0} فى مركز المعلومات الوطنى، نرجو المحاولة في وقت لاحق </value>
+  </data>
+  <data name="MainDriverForCompanyNotExist" xml:space="preserve">
+    <value>لا يوجد سائق أساسي للشركة</value>
+  </data>
+  <data name="YakeenError_1" xml:space="preserve">
+    <value>رقم الهوية غير صحيح</value>
+  </data>
+  <data name="YakeenError_10" xml:space="preserve">
+    <value>رقم الدخول (الحدود) غير موجود في مركز المعلومات الوطني</value>
+  </data>
+  <data name="YakeenError_100" xml:space="preserve">
+    <value>حدث خطأ، نرجو المحاولة في وقت لاحق</value>
+  </data>
+  <data name="YakeenError_11" xml:space="preserve">
+    <value>رقم السجل التجاري غير مسجل في البريد السعودي</value>
+  </data>
+  <data name="YakeenError_12" xml:space="preserve">
+    <value>رقم الهوية غير صحيح</value>
+  </data>
+  <data name="YakeenError_13" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_14" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_15" xml:space="preserve">
+    <value>رقم الإقامة غير صحيح</value>
+  </data>
+  <data name="YakeenError_16" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_17" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_18" xml:space="preserve">
+    <value>تاريخ إنتهاء الرخصة غير صحيح</value>
+  </data>
+  <data name="YakeenError_19" xml:space="preserve">
+    <value>تاريخ اإنتهاء رخصة القيادة غير صحيح</value>
+  </data>
+  <data name="YakeenError_2" xml:space="preserve">
+    <value>رقم الإقامة غير صحيح</value>
+  </data>
+  <data name="YakeenError_20" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_21" xml:space="preserve">
+    <value>رقم الهوية غير صحيح</value>
+  </data>
+  <data name="YakeenError_22" xml:space="preserve">
+    <value>الرقم التسلسلي للمركبة غير صحيح</value>
+  </data>
+  <data name="YakeenError_23" xml:space="preserve">
+    <value>رقم هوية مالك المركبة غير صحبح</value>
+  </data>
+  <data name="YakeenError_24" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="YakeenError_25" xml:space="preserve">
+    <value>سنة صنع المركبة غير صحيح</value>
+  </data>
+  <data name="YakeenError_26" xml:space="preserve">
+    <value>سنة صنع المركبة غير صحيح</value>
+  </data>
+  <data name="YakeenError_27" xml:space="preserve">
+    <value>رقم الكفيل (الحاسب الآلي) غير صحيح</value>
+  </data>
+  <data name="YakeenError_28" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_29" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_3" xml:space="preserve">
+    <value>غير مصرح</value>
+  </data>
+  <data name="YakeenError_30" xml:space="preserve">
+    <value>رقم هوية مالك المركبة غير مطابق</value>
+  </data>
+  <data name="YakeenError_31" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_32" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_33" xml:space="preserve">
+    <value>رقم الكفيل (الحاسب الآلي) غير صحيح</value>
+  </data>
+  <data name="YakeenError_34" xml:space="preserve">
+    <value>رقم هوية المرافق غير صحيح</value>
+  </data>
+  <data name="YakeenError_35" xml:space="preserve">
+    <value>رقم الحدود (الدخول) غير صحيح</value>
+  </data>
+  <data name="YakeenError_36" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_37" xml:space="preserve">
+    <value>رقم هوية المرافق غير صحيح</value>
+  </data>
+  <data name="YakeenError_38" xml:space="preserve">
+    <value>رقم هوية المرافق غير صحيح</value>
+  </data>
+  <data name="YakeenError_39" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_40" xml:space="preserve">
+    <value>لغة العنوان غير صحيحة</value>
+  </data>
+  <data name="YakeenError_41" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_42" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_43" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_44" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_45" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_48" xml:space="preserve">
+    <value>تاريخ الميلاد غير صحيح</value>
+  </data>
+  <data name="YakeenError_5" xml:space="preserve">
+    <value>الرقم التسلسلي للمركبة غير مسجل في مركز المعلومات الوطني</value>
+  </data>
+  <data name="YakeenError_6" xml:space="preserve">
+    <value>رقم البطاقة الجمركية غير مسجل في مركز المعلومات الوطني</value>
+  </data>
+  <data name="YakeenError_7" xml:space="preserve">
+    <value>رقم الإقامة غير موجود في مركز المعلومات الوطني</value>
+  </data>
+  <data name="YakeenError_8" xml:space="preserve">
+    <value>رقم الجواز غير موجود في مركز المعلومات الوطني</value>
+  </data>
+  <data name="YakeenError_9" xml:space="preserve">
+    <value>رقم الجواز غير موجود في مركز المعلومات الوطني</value>
+  </data>
+  <data name="TransmissionTypeIdIsNull" xml:space="preserve">
+    <value>من فضلك أدخل نوع ناقل الحركه</value>
+  </data>
+  <data name="DrivingPercentageLessThan100" xml:space="preserve">
+    <value>نسبة القيادة أقل من 100%</value>
+  </data>
+  <data name="MissingAddress" xml:space="preserve">
+    <value>بناءاً على تعليمات مؤسسة النقد العربي السعودي, العنوان الوطني الموثق شرط إلزامي عند إصدار الوثيقة لجميع أنوع التأمين بادر بالتسجيل من
+ &lt;a href="https://register.address.gov.sa/ar/default.aspx" target="_blank"&gt;هنا&lt;/a&gt;</value>
+  </data>
+  <data name="SaudiPostError" xml:space="preserve">
+    <value>حدث خطأ أثناء التحقق من العنوان الوطنى, من فضلك حاول فى وقت لاحق</value>
+  </data>
+  <data name="SaudiPostInvalidPublicID" xml:space="preserve">
+    <value>رقم الهوية {0} غير صحيح في البريد السعودي</value>
+  </data>
+  <data name="InvalidPolicyEffectiveDateToEndOfJune" xml:space="preserve">
+    <value>تاريخ بدايه التأمين يجب ان يبداء من الغد ولا يزيد عن 30/06/2020</value>
+  </data>
+  <data name="ChildrenBelow16YearsIsNull" xml:space="preserve">
+    <value>من فضلك أدخل عدد الأبناء دون عمر 16 سنة</value>
+  </data>
+  <data name="DriverNOALast5YearsIsNull" xml:space="preserve">
+    <value>من فضلك أدخل عدد الحوادث في أخر 5 سنوات</value>
+  </data>
+  <data name="DriverNOALast5YearsIsNullAdditionalDriver" xml:space="preserve">
+    <value>من فضلك أدخل عدد الحوادث في أخر 5 سنوات للسائق {0}</value>
+  </data>
+  <data name="EducationIdIsNull" xml:space="preserve">
+    <value>من فضلك أدخل مستوى التعليم</value>
+  </data>
+  <data name="EducationIdIsNullAdditionalDriver" xml:space="preserve">
+    <value>من فضلك أدخل مستوى التعليم للسائق {0}</value>
+  </data>
+  <data name="MedicalConditionIdIsNull" xml:space="preserve">
+    <value>من فضلك أدخل القيود حسب رخصة القيادة</value>
+  </data>
+  <data name="MedicalConditionIdIsNullAdditionalDriver" xml:space="preserve">
+    <value>من فضلك أدخل القيود حسب رخصة القيادة للسائق {0}</value>
+  </data>
+  <data name="MileageExpectedAnnualIdIsNull" xml:space="preserve">
+    <value>من فضلك أدخل عدد الكيلوات المتوقع قطعها سنويا</value>
+  </data>
+  <data name="ParkingLocationIdIsNull" xml:space="preserve">
+    <value>من فضلك أدخل مكان إيقاف المركبة ليلاً</value>
+  </data>
+  <data name="VehicleValueLessThan10K" xml:space="preserve">
+    <value>قيمه المركبه غير صحيحه يجب أن لا تقل عن 10000 ريال</value>
+  </data>
+  <data name="OldMobileVersion" xml:space="preserve">
+    <value>هذا الإصدار قديم ، يرجى تحديث التطبيق</value>
+  </data>
+  <data name="autoleasing_InvalidPolicyEffectiveDate" xml:space="preserve">
+    <value>تاريخ بدايه التامين يجب ان يبداء من الغد ولا يزيد عن 30 يوم</value>
+  </data>
+  <data name="MobileNumberIsEmpty" xml:space="preserve">
+    <value>رقم الهاتف لا يمكن ان يكون فارغ</value>
+  </data>
+  <data name="MobileNumberNotValid" xml:space="preserve">
+    <value>رقم جوال السائق الأساسي غير صحيح</value>
+  </data>
+  <data name="ErrorHashing" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (H-01)</value>
+  </data>
+  <data name="InvalidMainDriverNinWith700" xml:space="preserve">
+    <value>رقم هويه السائق الاساسى غير صحيح</value>
+  </data>
+  <data name="InvalidODPolicyExpiryDate" xml:space="preserve">
+    <value>لا يمكن إتمام طلبك, حيث ان تاريخ إنتهاء وثيقة ضد الغير أقل من 90 يومًا</value>
+  </data>
+  <data name="BlockedNin" xml:space="preserve">
+    <value>رقم الهويه {0} موقوف: يرجى الاتصال على خدمة العملاء 8001180044</value>
+  </data>
+  <data name="CompanyDriverExceedsInsuranceNumberLimitPerYear" xml:space="preserve">
+    <value>تجاوز سائق الشركة الحد الأقصى لعدد الوثائق في السنة: 5</value>
+  </data>
+  <data name="CompanyDriverIsAssignedToAnotherCompany" xml:space="preserve">
+    <value>السائق الأساسي مضاف على وثيقة أخرى</value>
+  </data>
+  <data name="DriverHasEdaatValidRequest" xml:space="preserve">
+    <value>يوجد عرض سعر للسائق الأساسي على مؤمن آخر ينتهي عرض السعر خلال {0} ساعة</value>
+  </data>
+</root>

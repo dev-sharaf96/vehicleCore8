@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>Error: Please contact Customer Service 8001180044 (P-01).</value>
+  </data>
+  <data name="Error_700500003" xml:space="preserve">
+    <value>Transaction declined for unknown reason</value>
+  </data>
+  <data name="Error_800100100" xml:space="preserve">
+    <value>Transaction declined for unknown reason</value>
+  </data>
+  <data name="Error_800100150" xml:space="preserve">
+    <value>Transaction declined (refund on gambling tx not allowed)</value>
+  </data>
+  <data name="Error_800100151" xml:space="preserve">
+    <value>Transaction declined (invalid card)</value>
+  </data>
+  <data name="Error_800100152" xml:space="preserve">
+    <value>Transaction declined by authorization system</value>
+  </data>
+  <data name="Error_800100153" xml:space="preserve">
+    <value>Transaction declined (invalid CVV)</value>
+  </data>
+  <data name="Error_800100154" xml:space="preserve">
+    <value>Transaction declined (transaction marked as invalid)</value>
+  </data>
+  <data name="Error_800100155" xml:space="preserve">
+    <value>Transaction declined (amount exceeds credit)</value>
+  </data>
+  <data name="Error_800100156" xml:space="preserve">
+    <value>Transaction declined (format error)</value>
+  </data>
+  <data name="Error_800100157" xml:space="preserve">
+    <value>Transaction declined (wrong expiry date)</value>
+  </data>
+  <data name="Error_800100158" xml:space="preserve">
+    <value>Transaction declined (suspecting manipulation)</value>
+  </data>
+  <data name="Error_800100159" xml:space="preserve">
+    <value>Transaction declined (stolen card)</value>
+  </data>
+  <data name="Error_800100160" xml:space="preserve">
+    <value>Transaction declined (card blocked)</value>
+  </data>
+  <data name="Error_800100161" xml:space="preserve">
+    <value>Transaction declined (too many invalid tries)</value>
+  </data>
+  <data name="Error_800100162" xml:space="preserve">
+    <value>Transaction declined (limit exceeded)</value>
+  </data>
+  <data name="Error_800100163" xml:space="preserve">
+    <value>Transaction declined (maximum transaction frequency exceeded)</value>
+  </data>
+  <data name="Error_800100164" xml:space="preserve">
+    <value>Transaction declined (merchants limit exceeded)</value>
+  </data>
+  <data name="Error_800100165" xml:space="preserve">
+    <value>Transaction declined (card lost)</value>
+  </data>
+  <data name="Error_800100166" xml:space="preserve">
+    <value>Transaction declined (Incorrect personal identification number)</value>
+  </data>
+  <data name="Error_800100167" xml:space="preserve">
+    <value>Transaction declined (referencing transaction does not match)</value>
+  </data>
+  <data name="Error_800100168" xml:space="preserve">
+    <value>Transaction declined (restricted card)</value>
+  </data>
+  <data name="Error_800100169" xml:space="preserve">
+    <value>Transaction declined (card type is not processed by the authorization center)</value>
+  </data>
+  <data name="Error_800100170" xml:space="preserve">
+    <value>Transaction declined (transaction not permitted)</value>
+  </data>
+  <data name="Error_800100171" xml:space="preserve">
+    <value>Transaction declined (pick up card)</value>
+  </data>
+  <data name="Error_800100172" xml:space="preserve">
+    <value>Transaction declined (account blocked)</value>
+  </data>
+  <data name="Error_800100173" xml:space="preserve">
+    <value>Transaction declined (invalid currency, not processed by authorization center)</value>
+  </data>
+  <data name="Error_800100174" xml:space="preserve">
+    <value>Transaction declined (invalid amount)</value>
+  </data>
+  <data name="Error_800100175" xml:space="preserve">
+    <value>Transaction declined (invalid brand)</value>
+  </data>
+  <data name="Error_800100176" xml:space="preserve">
+    <value>Transaction declined (account temporarily not available. Please try again later)</value>
+  </data>
+  <data name="Error_800100177" xml:space="preserve">
+    <value>Transaction declined (amount field should not be empty)</value>
+  </data>
+  <data name="Error_800100178" xml:space="preserve">
+    <value>Transaction declined (PIN entered incorrectly too often)</value>
+  </data>
+  <data name="Error_800100179" xml:space="preserve">
+    <value>Transaction declined (exceeds withdrawal count limit)</value>
+  </data>
+  <data name="Error_800100190" xml:space="preserve">
+    <value>Transaction declined (invalid configuration data)</value>
+  </data>
+  <data name="Error_800100191" xml:space="preserve">
+    <value>Transaction declined (transaction in wrong state on aquirer side)</value>
+  </data>
+  <data name="Error_800100192" xml:space="preserve">
+    <value>Transaction declined (invalid CVV, Amount has still been reserved on the customer's card and will be released in a few business days. Please ensure the CVV code is accurate before retrying the transaction)</value>
+  </data>
+  <data name="Error_800100195" xml:space="preserve">
+    <value>Transaction declined (UserAccount Number/ID unknown)</value>
+  </data>
+  <data name="Error_800100196" xml:space="preserve">
+    <value>Transaction declined (registration error)</value>
+  </data>
+  <data name="Error_800100197" xml:space="preserve">
+    <value>Transaction declined (registration cancelled externally)</value>
+  </data>
+  <data name="Error_800100198" xml:space="preserve">
+    <value>Transaction declined (invalid holder)</value>
+  </data>
+  <data name="Error_800100199" xml:space="preserve">
+    <value>Transaction declined (invalid tax number)</value>
+  </data>
+  <data name="Error_800100200" xml:space="preserve">
+    <value>Refer to Payer due to reason not specified</value>
+  </data>
+  <data name="Error_800100201" xml:space="preserve">
+    <value>Account or Bank Details Incorrect</value>
+  </data>
+  <data name="Error_800100202" xml:space="preserve">
+    <value>Account Closed</value>
+  </data>
+  <data name="Error_800100203" xml:space="preserve">
+    <value>Insufficient Funds</value>
+  </data>
+  <data name="Error_800100204" xml:space="preserve">
+    <value>Mandate Expired</value>
+  </data>
+  <data name="Error_800100205" xml:space="preserve">
+    <value>Mandate Discarded</value>
+  </data>
+  <data name="Error_800100206" xml:space="preserve">
+    <value>Refund of an authorized payment requested by the customer</value>
+  </data>
+  <data name="Error_800100207" xml:space="preserve">
+    <value>Refund requested</value>
+  </data>
+  <data name="Error_800100208" xml:space="preserve">
+    <value>Direct debit not enabled for the specified account or bank</value>
+  </data>
+  <data name="Error_800100402" xml:space="preserve">
+    <value>CC/bank account holder not valid</value>
+  </data>
+  <data name="Error_800100403" xml:space="preserve">
+    <value>Transaction declined (revocation of authorisation order)</value>
+  </data>
+  <data name="Error_800100500" xml:space="preserve">
+    <value>Card holder has advised his bank to stop this recurring payment</value>
+  </data>
+  <data name="Error_800100501" xml:space="preserve">
+    <value>Card holder has advised his bank to stop all recurring payments for this merchant</value>
+  </data>
+  <data name="Error_Title_100380401" xml:space="preserve">
+    <value>User Authentication Failed</value>
+  </data>
+  <data name="Error_Title_100380501" xml:space="preserve">
+    <value>Risk Management transaction timed out</value>
+  </data>
+  <data name="Error_Title_100390103" xml:space="preserve">
+    <value>Pares Validation failed - problem with signature</value>
+  </data>
+  <data name="Error_Title_100390105" xml:space="preserve">
+    <value>Transaction rejected because of technical error in 3DSecure system</value>
+  </data>
+  <data name="Error_Title_100396103" xml:space="preserve">
+    <value>Previously pending transactions timed out</value>
+  </data>
+  <data name="Error_Title_800100151" xml:space="preserve">
+    <value>cannot refund (refund volume exceeded or tx reversed or invalid workflow?)</value>
+  </data>
+  <data name="Error_Title_800100152" xml:space="preserve">
+    <value>Transactions declined by authorization system</value>
+  </data>
+  <data name="Error_Title_800100155" xml:space="preserve">
+    <value>Transactions declined – Amount exceeds credit</value>
+  </data>
+  <data name="Error_Title_800100170" xml:space="preserve">
+    <value>Transactions declined – Transactions not permitted</value>
+  </data>
+  <data name="Error_Title_800110100" xml:space="preserve">
+    <value>Duplicate Transactions</value>
+  </data>
+  <data name="InvalidAmount" xml:space="preserve">
+    <value>The amount sent to the bank is not equal the received amount</value>
+  </data>
+  <data name="InvalidPayment" xml:space="preserve">
+    <value>Payment process failed</value>
+  </data>
+  <data name="InvalidRequestStatus" xml:space="preserve">
+    <value>The request is not in a valid status</value>
+  </data>
+  <data name="PolicyPurchasedBefore" xml:space="preserve">
+    <value>This policy was purchased before</value>
+  </data>
+  <data name="RequestIsCancelled" xml:space="preserve">
+    <value>This request was cancelled</value>
+  </data>
+  <data name="SuccessPayment" xml:space="preserve">
+    <value>The payment was done successfully, policy will be sent shortly</value>
+  </data>
+</root>

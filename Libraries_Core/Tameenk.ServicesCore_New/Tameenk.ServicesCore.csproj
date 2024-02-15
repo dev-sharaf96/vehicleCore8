@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+   <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.0" />
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj" />
+    <ProjectReference Include="..\..\Libraries\Tameenk.Data\Tameenk.Data.csproj" />
+    <ProjectReference Include="..\Tameenk.Common.UtilitiesCore_New\Tameenk.Common.UtilitiesCore.csproj" />
+    <ProjectReference Include="..\Tameenk.Core.DomainCore_New\Tameenk.Core.DomainCore.csproj" />
+    <ProjectReference Include="..\Tameenk.CoreCore_New\Tameenk.CoreCore.csproj" />
+    <ProjectReference Include="..\Tameenk.Loggin.DALCore_New\Tameenk.Loggin.DALCore.csproj" />
+    <ProjectReference Include="..\Tameenk.ResourcesCore_New\Tameenk.ResourcesCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+	<PropertyGroup>
+		<GenerateLibraryOutput>True</GenerateLibraryOutput>
+	</PropertyGroup>
+</Project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TameenK" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://tameeniservice.alrajhitakaful.com/ART.NCIS.TameeniK/TameenK.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://tameeniservice.alrajhitakaful.com/ART.NCIS.TameeniK/TameenK.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITameenK_Quotation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Quotation" />
+  </wsdl:message>
+  <wsdl:message name="ITameenK_Quotation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITameenK_Policy_InputMessage">
+    <wsdl:part name="parameters" element="tns:Policy" />
+  </wsdl:message>
+  <wsdl:message name="ITameenK_Policy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITameenK_PolicySchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:PolicySchedule" />
+  </wsdl:message>
+  <wsdl:message name="ITameenK_PolicySchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PolicyScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITameenK_VehicleImagesUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleImagesUpload" />
+  </wsdl:message>
+  <wsdl:message name="ITameenK_VehicleImagesUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VehicleImagesUploadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITameenK">
+    <wsdl:operation name="Quotation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITameenK/Quotation" message="tns:ITameenK_Quotation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITameenK/QuotationResponse" message="tns:ITameenK_Quotation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Policy">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITameenK/Policy" message="tns:ITameenK_Policy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITameenK/PolicyResponse" message="tns:ITameenK_Policy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PolicySchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITameenK/PolicySchedule" message="tns:ITameenK_PolicySchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITameenK/PolicyScheduleResponse" message="tns:ITameenK_PolicySchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehicleImagesUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITameenK/VehicleImagesUpload" message="tns:ITameenK_VehicleImagesUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITameenK/VehicleImagesUploadResponse" message="tns:ITameenK_VehicleImagesUpload_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="TameenK" />
+</wsdl:definitions>

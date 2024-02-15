@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ns0="http://service.tameenak.technoSys.com/" targetNamespace="http://service.tameenak.technoSys.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="Policy">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="PolicyRequest" type="ns0:policyRequest" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="QuotationResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="ns0:quoteResponse" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AIMSFault">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="faultString" type="xsd:string" />
+      <xsd:element minOccurs="0" name="message" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="quoteResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="resFile" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="polResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="policyResFile" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="quoteRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="authentication" type="xsd:string" />
+      <xsd:element minOccurs="0" name="quoteFile" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="policyRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="authentication" type="xsd:string" />
+      <xsd:element minOccurs="0" name="policyReqFile" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PolicyResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="return" type="ns0:polResponse" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Quotation">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="QuoteRequest" type="ns0:quoteRequest" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Policy" type="ns0:Policy" />
+  <xsd:element name="QuotationResponse" type="ns0:QuotationResponse" />
+  <xsd:element name="AIMSFault" type="ns0:AIMSFault" />
+  <xsd:element name="PolicyResponse" type="ns0:PolicyResponse" />
+  <xsd:element name="Quotation" type="ns0:Quotation" />
+</xsd:schema>

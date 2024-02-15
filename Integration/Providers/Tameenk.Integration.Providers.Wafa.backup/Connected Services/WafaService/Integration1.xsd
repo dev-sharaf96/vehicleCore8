@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://uateai.wafainsurance.com/BrokerIntegration/Integration.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="MotorQuotationRequestInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditonalAttributes" nillable="true" type="tns:AdditonalAttributes" />
+      <xs:element minOccurs="0" name="Authenticate" nillable="true" type="tns:Authenticate" />
+      <xs:element minOccurs="0" name="BrokerReferenceNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpectedEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsOwnerDriver" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OwnerInformation" nillable="true" type="tns:OwnerInformation" />
+      <xs:element minOccurs="0" name="PolicyType" type="tns:PolicyType" />
+      <xs:element minOccurs="0" name="VehicleInformation" nillable="true" type="tns:VehicleInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MotorQuotationRequestInput" nillable="true" type="tns:MotorQuotationRequestInput" />
+  <xs:complexType name="AdditonalAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeFive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeFour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeOne" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeThree" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeTwo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditonalAttributes" nillable="true" type="tns:AdditonalAttributes" />
+  <xs:complexType name="Authenticate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrokerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Authenticate" nillable="true" type="tns:Authenticate" />
+  <xs:complexType name="OwnerInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfBirthG" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfBirthH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PolicyHolderFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyHolderID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PolicyHolderIdentityTypeCode" nillable="true" type="tns:IdentityType" />
+      <xs:element minOccurs="0" name="PolicyHolderSecondName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyHolderThirdName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OwnerInformation" nillable="true" type="tns:OwnerInformation" />
+  <xs:simpleType name="IdentityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NationalId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Iqama">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IdentityType" nillable="true" type="tns:IdentityType" />
+  <xs:simpleType name="PolicyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TPL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Comprehensive">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PolicyType" nillable="true" type="tns:PolicyType" />
+  <xs:complexType name="VehicleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalCovers" nillable="true" type="tns:ArrayOfAdditionalCovers" />
+      <xs:element minOccurs="0" name="AgencyCover" nillable="true" type="tns:AgencyCover" />
+      <xs:element minOccurs="0" name="ChasisNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverDetails" nillable="true" type="tns:ArrayOfDriverDetails" />
+      <xs:element minOccurs="0" name="FirstPlateLetterID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufactureYear" type="xs:int" />
+      <xs:element minOccurs="0" name="NCDFreeYears" type="xs:int" />
+      <xs:element minOccurs="0" name="SecondPlateLetterID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SumInsured" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ThirdPlateLetterID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleColorCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleCustomID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VehicleDriveCityID" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleMake" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleMakeCode" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleModelCode" type="xs:int" />
+      <xs:element minOccurs="0" name="VehiclePlateNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleRegisterationExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleSequenceNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="tns:VehicleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformation" nillable="true" type="tns:VehicleInformation" />
+  <xs:complexType name="ArrayOfAdditionalCovers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalCovers" nillable="true" type="tns:AdditionalCovers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalCovers" nillable="true" type="tns:ArrayOfAdditionalCovers" />
+  <xs:complexType name="AdditionalCovers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalCovers" nillable="true" type="tns:AdditionalCovers" />
+  <xs:simpleType name="AgencyCover">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inside">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Outside">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AgencyCover" nillable="true" type="tns:AgencyCover" />
+  <xs:complexType name="ArrayOfDriverDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DriverDetails" nillable="true" type="tns:DriverDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDriverDetails" nillable="true" type="tns:ArrayOfDriverDetails" />
+  <xs:complexType name="DriverDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DriverDOBG" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DriverDOBH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriverId" type="xs:long" />
+      <xs:element minOccurs="0" name="DriverName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriverType" type="tns:DriverType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverDetails" nillable="true" type="tns:DriverDetails" />
+  <xs:simpleType name="DriverType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Primary">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Secondary">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DriverType" nillable="true" type="tns:DriverType" />
+  <xs:simpleType name="VehicleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Registered">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Custom">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VehicleType" nillable="true" type="tns:VehicleType" />
+  <xs:complexType name="MotorQuotationRequestOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Covers" nillable="true" type="tns:ArrayOfCovers" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfErrors" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="tns:Premium" />
+      <xs:element minOccurs="0" name="QuotationExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="QuotationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MotorQuotationRequestOutput" nillable="true" type="tns:MotorQuotationRequestOutput" />
+  <xs:complexType name="ArrayOfCovers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Covers" nillable="true" type="tns:Covers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCovers" nillable="true" type="tns:ArrayOfCovers" />
+  <xs:complexType name="Covers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverID" type="xs:int" />
+      <xs:element minOccurs="0" name="CoverPremium" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Covers" nillable="true" type="tns:Covers" />
+  <xs:complexType name="ArrayOfErrors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Errors" nillable="true" type="tns:Errors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfErrors" nillable="true" type="tns:ArrayOfErrors" />
+  <xs:complexType name="Errors">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Errors" nillable="true" type="tns:Errors" />
+  <xs:complexType name="Premium">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Discount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Fees" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GrossPremium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NCDDiscount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VAT" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Premium" nillable="true" type="tns:Premium" />
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Failure" />
+      <xs:enumeration value="Success" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="MotorPolicyConversionRequestInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressDetails" nillable="true" type="tns:AddressDetails" />
+      <xs:element minOccurs="0" name="Authenticate" nillable="true" type="tns:Authenticate" />
+      <xs:element minOccurs="0" name="BrokerReferenceNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpectedEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OwnerInformation" nillable="true" type="tns:OwnerInformation" />
+      <xs:element minOccurs="0" name="QuotationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" type="tns:ReportType" />
+      <xs:element minOccurs="0" name="VehicleInformationConversion" nillable="true" type="tns:VehicleInformationConversion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MotorPolicyConversionRequestInput" nillable="true" type="tns:MotorPolicyConversionRequestInput" />
+  <xs:complexType name="AddressDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="City" type="xs:int" />
+      <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoBox" type="xs:long" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ZipCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDetails" nillable="true" type="tns:AddressDetails" />
+  <xs:simpleType name="ReportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TriggerEmail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GenerateByteArray">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReportType" nillable="true" type="tns:ReportType" />
+  <xs:complexType name="VehicleInformationConversion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChasisNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstPlateLetterID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondPlateLetterID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdPlateLetterID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleColorCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleCustomID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VehiclePlateNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleRegisterationExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleSequenceNumber" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="tns:VehicleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformationConversion" nillable="true" type="tns:VehicleInformationConversion" />
+  <xs:complexType name="MotorPolicyConversionRequestOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ByteArray" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfErrors" />
+      <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="tns:Premium" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" name="VoucherNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MotorPolicyConversionRequestOutput" nillable="true" type="tns:MotorPolicyConversionRequestOutput" />
+  <xs:complexType name="MotorPolicyScheduleRequestInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Authenticate" nillable="true" type="tns:Authenticate" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" type="tns:ReportType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MotorPolicyScheduleRequestInput" nillable="true" type="tns:MotorPolicyScheduleRequestInput" />
+  <xs:complexType name="MotorPolicyScheduleRequestOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ByteArray" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:Errors" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MotorPolicyScheduleRequestOutput" nillable="true" type="tns:MotorPolicyScheduleRequestOutput" />
+  <xs:complexType name="NajmRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Authenticate" nillable="true" type="tns:Authenticate" />
+      <xs:element minOccurs="0" name="FilterValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NajmFilterby" type="tns:NajmFilterby" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NajmRequest" nillable="true" type="tns:NajmRequest" />
+  <xs:simpleType name="NajmFilterby">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SequenceNo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomNo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChassisNo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PolicyNo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NajmFilterby" nillable="true" type="tns:NajmFilterby" />
+  <xs:complexType name="NajmResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:Errors" />
+      <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InsuredName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NajmStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" name="StatusDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NajmResponse" nillable="true" type="tns:NajmResponse" />
+</xs:schema>

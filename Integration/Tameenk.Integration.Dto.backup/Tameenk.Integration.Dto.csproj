@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51816323-E9BA-457F-844C-0237993AC117}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Integration.Dto</RootNamespace>
+    <AssemblyName>Tameenk.Integration.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <_MigrateToProjectGuid>1d1c0294-2080-482f-a972-9c39b137c687</_MigrateToProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Najm\NajmDriverCaseRequest.cs" />
+    <Compile Include="Najm\NajmDriverCaseResponse.cs" />
+    <Compile Include="Najm\NajmErrorException.cs" />
+    <Compile Include="Najm\NajmRequest.cs" />
+    <Compile Include="Najm\NajmResponse.cs" />
+    <Compile Include="Najm\NajmVehicleCaseResponse.cs" />
+    <Compile Include="Payment\CreateOrderResponseModel.cs" />
+    <Compile Include="Payment\Edaat\EdaatRequestDto.cs" />
+    <Compile Include="Payment\Edaat\EdaatResponseDto.cs" />
+    <Compile Include="Payment\UpdateOrderResponseModel.cs" />
+    <Compile Include="Payment\UpdateOrderModel.cs" />
+    <Compile Include="Payment\HyperpayCreateOrderModel.cs" />
+    <Compile Include="Payment\SplitLoginResponseModel.cs" />
+    <Compile Include="Payment\SplitLoginModel.cs" />
+    <Compile Include="Payment\SplitOrderModel.cs" />
+    <Compile Include="Payment\SplitBeneficiaryModel.cs" />
+    <Compile Include="Payment\HyperpayPayoutBeneficiaryModel.cs" />
+    <Compile Include="Payment\HyperpayPayoutModel.cs" />
+    <Compile Include="Payment\HyperpayRequestModel.cs" />
+    <Compile Include="PromotionProgram\SCAResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ActivateVechilePolicyRequestDto.cs" />
+    <Compile Include="Providers\AddBenefitRequest.cs" />
+    <Compile Include="Providers\AddBenefitResponse.cs" />
+    <Compile Include="Providers\AddDriverRequest.cs" />
+    <Compile Include="Providers\AddDriverResponse.cs" />
+    <Compile Include="Providers\AdditionalBenefit.cs" />
+    <Compile Include="Providers\AdditionalBenefitDto.cs" />
+    <Compile Include="Providers\AdditionalDriverAdditionalInfo.cs" />
+    <Compile Include="Providers\AdditionalInfoDetails.cs" />
+    <Compile Include="Providers\AddVechileBenefitRequest.cs" />
+    <Compile Include="Providers\AlamiaPolicyResponse .cs" />
+    <Compile Include="Providers\AlamiaQuotationResponse.cs" />
+    <Compile Include="Providers\AllianzPolicyResponse.cs" />
+    <Compile Include="Providers\BenefitDto.cs" />
+    <Compile Include="Providers\BenefitRequest.cs" />
+    <Compile Include="Providers\CancelPolicyOutput.cs" />
+    <Compile Include="Providers\CancelPolicyRequestDto.cs" />
+    <Compile Include="Providers\CancelPolicyResponse.cs" />
+    <Compile Include="Providers\CancelVechilePolicyRequestDto.cs" />
+    <Compile Include="Providers\CarPlateInfo.cs" />
+    <Compile Include="Providers\CarPlateUtils.cs" />
+    <Compile Include="Providers\ClaimNotificationRequest.cs" />
+    <Compile Include="Providers\ClaimNotificationServiceOutput.cs" />
+    <Compile Include="Providers\ClaimNotificationServiceResponse.cs" />
+    <Compile Include="Providers\ClaimRegistrationRequest.cs" />
+    <Compile Include="Providers\ClaimRegistrationServiceOutput.cs" />
+    <Compile Include="Providers\ClaimRegistrationServiceResponse.cs" />
+    <Compile Include="Providers\ComprehensiveImage.cs" />
+    <Compile Include="Providers\DriverPloicyGenerationDto.cs" />
+    <Compile Include="Providers\DriverDto.cs" />
+    <Compile Include="Providers\Error.cs" />
+    <Compile Include="Providers\LicenseDto.cs" />
+    <Compile Include="Providers\MedGulfPolicyResponse.cs" />
+    <Compile Include="Providers\PolicyDetails.cs" />
+    <Compile Include="Providers\PolicyRequest.cs" />
+    <Compile Include="Providers\PolicyData.cs" />
+    <Compile Include="Providers\PolicyResponse.cs" />
+    <Compile Include="Providers\ComprehensiveImagesRequest.cs" />
+    <Compile Include="Providers\PolicyScheduleRequest.cs" />
+    <Compile Include="Providers\ComprehensiveImageResponse.cs" />
+    <Compile Include="Providers\PolicyScheduleResponse.cs" />
+    <Compile Include="Providers\PriceDto.cs" />
+    <Compile Include="Providers\ProductDto.cs" />
+    <Compile Include="Providers\ProviderInfoDto.cs" />
+    <Compile Include="Providers\PurchaseBenefitRequest.cs" />
+    <Compile Include="Providers\PurchaseBenefitResponse.cs" />
+    <Compile Include="Providers\PurchaseDriverRequest.cs" />
+    <Compile Include="Providers\PurchaseDriverResponse.cs" />
+    <Compile Include="Providers\QuotationServiceRequest.cs" />
+    <Compile Include="Providers\QuotationServiceResponse.cs" />
+    <Compile Include="Providers\CustomCardServiceOutput.cs" />
+    <Compile Include="Providers\ServiceOutput.cs" />
+    <Compile Include="Providers\UpdateCustomCardRequest.cs" />
+    <Compile Include="Providers\UpdateCustomCardResponse.cs" />
+    <Compile Include="Providers\VehicleSpecificationDto.cs" />
+    <Compile Include="Providers\ViolationDto.cs" />
+    <Compile Include="Quotation\BenefitModel.cs" />
+    <Compile Include="Quotation\CityModel.cs" />
+    <Compile Include="Quotation\DriverModel.cs" />
+    <Compile Include="Quotation\PriceDetailModel.cs" />
+    <Compile Include="Quotation\PriceTypeModel.cs" />
+    <Compile Include="Quotation\ProductBenefitModel.cs" />
+    <Compile Include="Quotation\ProductModel.cs" />
+    <Compile Include="Quotation\ProductTypeModel.cs" />
+    <Compile Include="Quotation\QuotationRequestModel.cs" />
+    <Compile Include="Quotation\QuotationResponseModel.cs" />
+    <Compile Include="Quotation\QuotationResponseModelForProfile.cs" />
+    <Compile Include="Quotation\VehicleModel.cs" />
+    <Compile Include="Quotation\VehicleModelForProfile.cs" />
+    <Compile Include="SaudiPost\SaudiPostAddressModel.cs" />
+    <Compile Include="SaudiPost\SaudiPostApiResultModel.cs" />
+    <Compile Include="SaudiPost\SaudiPostErrorModel.cs" />
+    <Compile Include="SaudiPost\SaudiPostResponseModel.cs" />
+    <Compile Include="WhatsApp\Input\Authentication.cs" />
+    <Compile Include="WhatsApp\Input\Body.cs" />
+    <Compile Include="WhatsApp\Input\Conversation.cs" />
+    <Compile Include="WhatsApp\Input\Media.cs" />
+    <Compile Include="WhatsApp\Input\Messages.cs" />
+    <Compile Include="WhatsApp\Input\MsgContent.cs" />
+    <Compile Include="WhatsApp\Input\RichContent.cs" />
+    <Compile Include="WhatsApp\Input\Template.cs" />
+    <Compile Include="WhatsApp\Input\To.cs" />
+    <Compile Include="WhatsApp\Input\WhatsAppDto.cs" />
+    <Compile Include="WhatsApp\Output\WhatsAppResponse.cs" />
+    <Compile Include="Yakeen\CustomerYakeenInfoRequestModel.cs" />
+    <Compile Include="Yakeen\CustomerYakeenInfoModel.cs" />
+    <Compile Include="Yakeen\DriverExtraLicenseModel.cs" />
+    <Compile Include="Yakeen\DriverYakeenInfoRequestModel.cs" />
+    <Compile Include="Yakeen\DriverLicenseYakeenInfoModel.cs" />
+    <Compile Include="Yakeen\DriverYakeenInfoModel.cs" />
+    <Compile Include="Yakeen\Enums\EErrorType.cs" />
+    <Compile Include="Yakeen\YakeenInfoErrorModel.cs" />
+    <Compile Include="Yakeen\VehicleInfoRequestModel.cs" />
+    <Compile Include="Yakeen\VehicleYakeenInfoModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8edfcd3e-4461-4b2c-a83e-175983e9c6b7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

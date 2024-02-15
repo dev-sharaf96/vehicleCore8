@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8A3C64C-6839-4309-AA8F-05B260B81BB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Integration.Providers.Wataniya</RootNamespace>
+    <AssemblyName>Tameenk.Integration.Providers.Wataniya</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dtos\Autolease\GeographicalAreaExtension.cs" />
+    <Compile Include="Dtos\Autolease\MainCoverageComprehensive.cs" />
+    <Compile Include="Dtos\Autolease\MedicalExpenses.cs" />
+    <Compile Include="Dtos\Autolease\NaturalHazards.cs" />
+    <Compile Include="Dtos\Autolease\PersonalAccidentDriverCover.cs" />
+    <Compile Include="Dtos\Autolease\PersonalAccidentPassengerCover.cs" />
+    <Compile Include="Dtos\Autolease\RepairCoverage.cs" />
+    <Compile Include="Dtos\Autolease\TowingBenefit.cs" />
+    <Compile Include="Dtos\Autolease\WataniyaAutoleasePolicyRequest.cs" />
+    <Compile Include="Dtos\Autolease\WataniyaAutoleasePolicyResponse.cs" />
+    <Compile Include="Dtos\Autolease\WatnyiaAutoLeaseDraftPolicyRequest.cs" />
+    <Compile Include="Dtos\Autolease\WatnyiaAutoLeaseDraftPolicyResponse.cs" />
+    <Compile Include="Dtos\Autolease\WatnyiaAutoLeaseQuotationRequest.cs" />
+    <Compile Include="Dtos\Autolease\WatnyiaAutoLeaseQuotationResponse.cs" />
+    <Compile Include="Dtos\WataniyaBenefitMmodel.cs" />
+    <Compile Include="Dtos\WataniyaCancelPolicyRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaCancelPolicyResponseDto.cs" />
+    <Compile Include="Dtos\WataniyaCompDraftPolicyRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaCompDraftPolicyResponseDto.cs" />
+    <Compile Include="Dtos\WataniyaCompIssuePolicyRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaCompQuotationRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaCompQuotationResponseDto.cs" />
+    <Compile Include="Dtos\WataniyaIssuePolicyResponseDto.cs" />
+    <Compile Include="Dtos\WataniyaNajmStatusResponse.cs" />
+    <Compile Include="Dtos\WataniyaPurchaseNotificationRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaPurchaseNotificationResponseDto.cs" />
+    <Compile Include="Dtos\WataniyaTplissuePolicyRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaTplQuotationRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaTplQuotationResponseDto.cs" />
+    <Compile Include="Dtos\WataniyaUpdatePolicyRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaUpdatePolicyResponseDto.cs" />
+    <Compile Include="Dtos\WataniyaVehicleIDUpdateRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaVehicleIDUpdateResponseDto.cs" />
+    <Compile Include="Dtos\WataniyaVehicleImageUploadRequestDto.cs" />
+    <Compile Include="Dtos\WataniyaVehicleImageUploadResponseDto.cs" />
+    <Compile Include="MappingResources\Colors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Colors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MappingResources\Nationality.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Nationality.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MappingResources\VehiclePlateLetter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehiclePlateLetter.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MappingResources\WataniyaEducation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WataniyaEducation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WataniyaInsuranceProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14F920B0-E1F2-4E7B-BE22-4BDE4FC9541F}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8EDFCD3E-4461-4B2C-A83E-175983E9C6B7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5cd41905-ac08-410f-9ffb-b3975ffba538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj">
+      <Project>{339CF262-0F17-4C60-BB6F-FDC5133B3132}</Project>
+      <Name>Tameenk.Loggin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Resources\Tameenk.Resources.csproj">
+      <Project>{2CFF55DC-EDD1-41C7-92F6-04C650429A9D}</Project>
+      <Name>Tameenk.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Services\Tameenk.Services.csproj">
+      <Project>{9b11f328-dbf1-4b67-b86d-f3077b4eea5e}</Project>
+      <Name>Tameenk.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Services\Inquiry\Tameenk.Services.Inquiry.Components\Tameenk.Services.Inquiry.Components.csproj">
+      <Project>{DD676510-DEEE-4664-9D2F-AF11F9B8A792}</Project>
+      <Name>Tameenk.Services.Inquiry.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Tameenk.Services.Notifications\Tameenk.Services.Notifications.csproj">
+      <Project>{B4E3E35F-360A-4430-BFCD-A2DC4373D7CF}</Project>
+      <Name>Tameenk.Services.Notifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tameenk.Integration.Core\Tameenk.Integration.Core.csproj">
+      <Project>{75031295-c1c2-499d-8dd3-1ac7357fc897}</Project>
+      <Name>Tameenk.Integration.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj">
+      <Project>{51816323-e9ba-457f-844c-0237993ac117}</Project>
+      <Name>Tameenk.Integration.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MappingResources\Colors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Colors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MappingResources\Nationality.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Nationality.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MappingResources\VehiclePlateLetter.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VehiclePlateLetter.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MappingResources\WataniyaEducation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WataniyaEducation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

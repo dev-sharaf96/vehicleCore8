@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EDFCD3E-4461-4B2C-A83E-175983E9C6B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Core.Domain</RootNamespace>
+    <AssemblyName>Tameenk.Core.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <_MigrateToProjectGuid>1d826a5b-6388-4d95-80b1-56ff88bcb386</_MigrateToProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dtos\ExcelTiketModel.cs" />
+    <Compile Include="Dtos\InquiryLookup.cs" />
+    <Compile Include="Dtos\RedisCache\QuotationRequestDetailsCachingModel.cs" />
+    <Compile Include="Dtos\RedisCache\QuotationRequestInfoModel.cs" />
+    <Compile Include="Dtos\RedisCache\QuotationVehicleInfoModel.cs" />
+    <Compile Include="Dtos\UserPartialLockModel.cs" />
+    <Compile Include="Entities\CheckoutInsuredMappingTemp.cs" />
+    <Compile Include="Entities\CheckoutMobileVerification.cs" />
+    <Compile Include="Dtos\AccessTokenResult.cs" />
+    <Compile Include="Dtos\ActivateUserEmailModel.cs" />
+    <Compile Include="Dtos\AddILeasingtemToCartModel.cs" />
+    <Compile Include="Dtos\AddItemToCartModel.cs" />
+    <Compile Include="Dtos\AddItemToCartResponse.cs" />
+    <Compile Include="Dtos\AttachedFiles.cs" />
+    <Compile Include="Dtos\AutoleasingLookup.cs" />
+    <Compile Include="Dtos\BaseViewModel.cs" />
+    <Compile Include="Dtos\BenefitModel.cs" />
+    <Compile Include="Dtos\CheckotDiscountModel.cs" />
+    <Compile Include="Dtos\CheckoutDriverInfoModel.cs" />
+    <Compile Include="Dtos\CheckoutModel.cs" />
+    <Compile Include="Dtos\ClaimRequesterTypeModel.cs" />
+    <Compile Include="Dtos\HyperPay\BeneficiaryModel.cs" />
+    <Compile Include="Dtos\HyperPay\PayoutModel.cs" />
+    <Compile Include="Dtos\IncomeReportDBModel.cs" />
+    <Compile Include="Dtos\Contacts.cs" />
+    <Compile Include="Dtos\ComprehensiveImagesOutput.cs" />
+    <Compile Include="Dtos\CreateUserTicketAPIModel.cs" />
+    <Compile Include="Dtos\CreateUserTicketModel.cs" />
+    <Compile Include="Dtos\InvoiceFilters.cs" />
+    <Compile Include="Dtos\LicenseModel.cs" />
+    <Compile Include="Dtos\LoginEndViewModel.cs" />
+    <Compile Include="Dtos\LoginViewModel.cs" />
+    <Compile Include="Dtos\LoginYakeenViewModel.cs" />
+    <Compile Include="Dtos\Lookup.cs" />
+    <Compile Include="Dtos\PaymentMethodModel.cs" />
+    <Compile Include="Dtos\PaymentRequestModel.cs" />
+    <Compile Include="Dtos\FileServiceOutput.cs" />
+    <Compile Include="Dtos\PriceModel.cs" />
+    <Compile Include="Dtos\ProductModel.cs" />
+    <Compile Include="Dtos\Profile\Invoice\InvoiceModel.cs" />
+    <Compile Include="Dtos\Profile\Invoice\MyInvoicesFilter.cs" />
+    <Compile Include="Dtos\Profile\MyVehicleFilter.cs" />
+    <Compile Include="Dtos\Profile\Policy\CorporatePoliciesFilter.cs" />
+    <Compile Include="Dtos\Profile\Policy\MyPoliciesFilter.cs" />
+    <Compile Include="Dtos\PromotionProgramDTO.cs" />
+    <Compile Include="Dtos\PurchasedProductModel.cs" />
+    <Compile Include="Dtos\SadadPaymentResponseModel.cs" />
+    <Compile Include="Dtos\SaudiPostAddressModel.cs" />
+    <Compile Include="Dtos\SaudiPostApiResultModel.cs" />
+    <Compile Include="Dtos\SaudiPostResponseModel.cs" />
+    <Compile Include="Dtos\SendActivationEmailModel.cs" />
+    <Compile Include="Dtos\UserTicketHistoryModel.cs" />
+    <Compile Include="Dtos\TicketModel.cs" />
+    <Compile Include="Dtos\UpdateCustomertModel.cs" />
+    <Compile Include="Dtos\UserModel.cs" />
+    <Compile Include="Dtos\FailedPolicyModel.cs" />
+    <Compile Include="Dtos\UserTicketModel.cs" />
+    <Compile Include="Dtos\ValidateCaptchaModel.cs" />
+    <Compile Include="Entities\AutoleasingQuotationFormSettings.cs" />
+    <Compile Include="Entities\AutoleasingRenewalPolicyStatistics.cs" />
+    <Compile Include="Entities\AutoleasingWallet\AutoleasingWalletHistory.cs" />
+    <Compile Include="Entities\AutoleasingInitialQuotationCompanies.cs" />
+    <Compile Include="Entities\Autoleasing\AutoleasingPortalLinkProcessingQueue.cs" />
+    <Compile Include="Entities\Autoleasing\RenwalStatitics_Old.cs" />
+    <Compile Include="Entities\BcareWithdrawalWinner.cs" />
+    <Compile Include="Entities\Claims\UserClaim.cs" />
+    <Compile Include="Entities\Claims\UserClaimFile.cs" />
+    <Compile Include="Entities\Claims\UserClaimHistory.cs" />
+    <Compile Include="Entities\Claims\UserClaimStatus.cs" />
+    <Compile Include="Entities\Identity\LeasingUser.cs" />
+    <Compile Include="Entities\Identity\LeasingUsersLocationsDeviceInfo.cs" />
+    <Compile Include="Entities\Identity\LeasingVerifyUser.cs" />
+    <Compile Include="Entities\Identity\LoginActiveTokens.cs" />
+    <Compile Include="Entities\InsuranceCompanyGrade.cs" />
+    <Compile Include="Entities\Orders\OrderItemDriver.cs" />
+    <Compile Include="Entities\Orders\ShoppingCartItemDriver.cs" />
+    <Compile Include="Entities\ForgotPasswordToken.cs" />
+    <Compile Include="Entities\Policies\MissingPolicyPolicyProcessingQueue.cs" />
+    <Compile Include="Entities\ProfileUpdatePhoneHistory.cs" />
+    <Compile Include="Entities\UpdateProfileInfoOtp.cs" />
+    <Compile Include="Entities\PolicyRenewedByCompany.cs" />
+    <Compile Include="Entities\Product_Driver.cs" />
+    <Compile Include="Entities\QuotationBlockedNins.cs" />
+    <Compile Include="Entities\CheckoutDetailsOutPut.cs" />
+    <Compile Include="Entities\CheckOutInfo.cs" />
+    <Compile Include="Entities\OtpInfo.cs" />
+    <Compile Include="Entities\EmailSettings.cs" />
+    <Compile Include="Entities\CancellationRequest.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyCaptureRequest.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyCaptureResponse.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyCaptureResponseDetails.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyNotification.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyNotificationDetails.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyRequest.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyRequestDetails.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyResponse.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyResponseDetail.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyWebHook.cs" />
+    <Compile Include="Entities\Payments\Tabby\TabbyWebHookDetails.cs" />
+    <Compile Include="Entities\Policies\OwnDamageQueue.cs" />
+    <Compile Include="Entities\Policies\RenewalPolicies.cs" />
+    <Compile Include="Entities\Policies\WataniyaNajmQueue.cs" />
+    <Compile Include="Entities\Quotations\QuotationRequestDriverModel.cs" />
+    <Compile Include="Entities\Quotation_Product_Benefit.cs" />
+    <Compile Include="Entities\SMSSkippedNumbers.cs" />
+    <Compile Include="Entities\UserInfo.cs" />
+    <Compile Include="Entities\VehicleDiscounts.cs" />
+    <Compile Include="Entities\RenewalDiscount.cs" />
+    <Compile Include="Entities\SMSProviderSettings.cs" />
+    <Compile Include="Entities\Corporate\CorporateAccount.cs" />
+    <Compile Include="Entities\Corporate\CorporateWalletHistory.cs" />
+    <Compile Include="Entities\ExpiredTokens.cs" />
+    <Compile Include="Entities\AdditionalInfo.cs" />
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\AutoleasingAgencyRepair.cs" />
+    <Compile Include="Entities\AutoleasingAgencyRepairHistory.cs" />
+    <Compile Include="Entities\AutoleasingBenefit.cs" />
+    <Compile Include="Entities\AutoleasingDeductibles.cs" />
+    <Compile Include="Entities\AutoleasingDepreciationSetting.cs" />
+    <Compile Include="Entities\AutoleasingDepreciationSettingHistory.cs" />
+    <Compile Include="Entities\AutoleasingMinimumPremium.cs" />
+    <Compile Include="Entities\AutoleasingMinimumPremiumHistory.cs" />
+    <Compile Include="Entities\AutoleasingQuotationResponseCache.cs" />
+    <Compile Include="Entities\Autoleasing\AutoleasingSelectedBenifits.cs" />
+    <Compile Include="Entities\AutomatedTestIntegrationTransaction.cs" />
+    <Compile Include="Entities\Bank.cs" />
+    <Compile Include="Entities\BankInsuranceCompany.cs" />
+    <Compile Include="Entities\BankNin.cs" />
+    <Compile Include="Entities\Career.cs" />
+    <Compile Include="Entities\Channels.cs" />
+    <Compile Include="Entities\ContactUs.cs" />
+    <Compile Include="Entities\IbanHistory.cs" />
+    <Compile Include="Entities\Identity\AutoleasingUser.cs" />
+    <Compile Include="Entities\Identity\AutoleasingVerifyUsers.cs" />
+    <Compile Include="Entities\Identity\CorporateUsers.cs" />
+    <Compile Include="Entities\Identity\CorporateVerifyUsers.cs" />
+    <Compile Include="Entities\InsuredAddressesCount.cs" />
+    <Compile Include="Entities\InvoiceFileTemplates.cs" />
+    <Compile Include="Entities\MorniRequest.cs" />
+    <Compile Include="Entities\NajmAccidentResponse.cs" />
+    <Compile Include="Entities\Offer.cs" />
+    <Compile Include="Entities\Orders\ShoppingCartItemDB.cs" />
+    <Compile Include="Entities\Payments\CommissionsAndFees.cs" />
+    <Compile Include="Entities\Payments\CompanyBankAccounts.cs" />
+    <Compile Include="Entities\Payments\Edaat\EdaatCompany.cs" />
+    <Compile Include="Entities\Payments\Edaat\EdaatCustomer.cs" />
+    <Compile Include="Entities\Payments\Edaat\EdaatNotification.cs" />
+    <Compile Include="Entities\Payments\Edaat\EdaatProduct.cs" />
+    <Compile Include="Entities\Payments\Edaat\EdaatRequest.cs" />
+    <Compile Include="Entities\Payments\Edaat\EdaatResponse.cs" />
+    <Compile Include="Entities\Payments\Esal\Customer.cs" />
+    <Compile Include="Entities\Payments\Esal\EsalRequest.cs" />
+    <Compile Include="Entities\Payments\Esal\EsalResponse.cs" />
+    <Compile Include="Entities\Payments\Esal\EsalSettlement.cs" />
+    <Compile Include="Entities\Payments\Esal\LineItem.cs" />
+    <Compile Include="Entities\Payments\Esal\ProfitMarginRequest.cs" />
+    <Compile Include="Entities\Payments\Esal\Supplier.cs" />
+    <Compile Include="Entities\Payments\Hyperpay\HyperPayCreateOrder.cs" />
+    <Compile Include="Entities\Payments\Hyperpay\HyperPayNotification.cs" />
+    <Compile Include="Entities\Payments\Hyperpay\HyperPayNotificationTransactions.cs" />
+    <Compile Include="Entities\Payments\Hyperpay\HyperPayUpdateOrder.cs" />
+    <Compile Include="Entities\Policies\CustomCardQueue.cs" />
+    <Compile Include="Entities\Policies\Endorsment.cs" />
+    <Compile Include="Entities\Policies\EndorsmentBenefit.cs" />
+    <Compile Include="Entities\Policies\MorniSMS.cs" />
+    <Compile Include="Entities\Policies\PolicyAdditionalBenefit.cs" />
+    <Compile Include="Entities\Policies\PolicyModification.cs" />
+    <Compile Include="Entities\Policies\UserPolicyModel.cs" />
+    <Compile Include="Entities\ProfileNotification.cs" />
+    <Compile Include="Entities\PromotionPrograms\DeservingDiscount.cs" />
+    <Compile Include="Entities\PromotionPrograms\PromotionProgramAttachments.cs" />
+    <Compile Include="Entities\PromotionPrograms\PromotionProgramNins.cs" />
+    <Compile Include="Entities\PromotionPrograms\PromotionProgramUserModel.cs" />
+    <Compile Include="Entities\PromotionPrograms\PromotionUser.cs" />
+    <Compile Include="Entities\QuotationResponseCache.cs" />
+    <Compile Include="Entities\Quotations\AutoleasingQuotationForm.cs" />
+    <Compile Include="Entities\Quotations\DriverData.cs" />
+    <Compile Include="Entities\Quotations\InsuredExtraLicenses.cs" />
+    <Compile Include="Entities\Quotations\QuotationResponseDBModel.cs" />
+    <Compile Include="Entities\Quotations\QuotationShares.cs" />
+    <Compile Include="Entities\ReasonCode.cs" />
+    <Compile Include="Entities\SaudiPostAddressDB.cs" />
+    <Compile Include="Entities\UserTicket.cs" />
+    <Compile Include="Entities\UserTicketAttachment.cs" />
+    <Compile Include="Entities\UserTicketHistory.cs" />
+    <Compile Include="Entities\UserTicketStatus.cs" />
+    <Compile Include="Entities\UserTicketType.cs" />
+    <Compile Include="Entities\VehicleInsurance\CustomCardInfo.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleUsage.cs" />
+    <Compile Include="Entities\VehicleRequests.cs" />
+    <Compile Include="Entities\CheckoutDriverInfo.cs" />
+    <Compile Include="Entities\CheckoutUsers.cs" />
+    <Compile Include="Entities\CityCenter.cs" />
+    <Compile Include="Entities\Identity\AspNetUser.cs" />
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\BankCode.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Benefit.cs" />
+    <Compile Include="Entities\BreakingSystem.cs" />
+    <Compile Include="Entities\CameraType.cs" />
+    <Compile Include="Entities\CheckoutAdditionalDriver.cs" />
+    <Compile Include="Entities\CheckoutCarImage.cs" />
+    <Compile Include="Entities\CheckoutDetail.cs" />
+    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\Deductible.cs" />
+    <Compile Include="Entities\DistanceRange.cs" />
+    <Compile Include="Entities\ILookupTable.cs" />
+    <Compile Include="Entities\MobileAppVersions.cs" />
+    <Compile Include="Entities\MOIDetail.cs" />
+    <Compile Include="Entities\NajmStatus.cs" />
+    <Compile Include="Entities\NajmResponse.cs" />
+    <Compile Include="Entities\Occupation.cs" />
+    <Compile Include="Entities\Orders\OrderItem.cs" />
+    <Compile Include="Entities\Orders\OrderItemBenefit.cs" />
+    <Compile Include="Entities\Payments\PaymentMethod.cs" />
+    <Compile Include="Entities\Payments\Hyperpay\HyperpayRequest.cs" />
+    <Compile Include="Entities\Payments\Hyperpay\HyperpayResponse.cs" />
+    <Compile Include="Entities\Payments\RiyadBank\RiyadBankMigsRequest.cs" />
+    <Compile Include="Entities\Payments\RiyadBank\RiyadBankMigsResponse.cs" />
+    <Compile Include="Entities\PromotionPrograms\PromotionProgram.cs" />
+    <Compile Include="Entities\PromotionPrograms\PromotionProgramCode.cs" />
+    <Compile Include="Entities\PromotionPrograms\PromotionProgramDomain.cs" />
+    <Compile Include="Entities\PromotionPrograms\PromotionProgramUser.cs" />
+    <Compile Include="Entities\PromotionPrograms\UserPurchasedPromotionPrograms.cs" />
+    <Compile Include="Entities\Quotations\Insured.cs" />
+    <Compile Include="Entities\Quotations\TawuniyaProposal.cs" />
+    <Compile Include="Entities\Region.cs" />
+    <Compile Include="Entities\Setting.cs" />
+    <Compile Include="Entities\VehicleInsurance\Driver.cs" />
+    <Compile Include="Entities\VehicleInsurance\DriverExtraLicense.cs" />
+    <Compile Include="Entities\VehicleInsurance\DriverLicense.cs" />
+    <Compile Include="Entities\VehicleInsurance\DriverMedicalCondition.cs" />
+    <Compile Include="Entities\VehicleInsurance\DriverType.cs" />
+    <Compile Include="Entities\VehicleInsurance\DriverViolation.cs" />
+    <Compile Include="Entities\VehicleInsurance\DrivingLicenceYear.cs" />
+    <Compile Include="Entities\ErrorCode.cs" />
+    <Compile Include="Entities\Identity\Client.cs" />
+    <Compile Include="Entities\InsuaranceCompanyBenefit.cs" />
+    <Compile Include="Entities\InsuranceCompany.cs" />
+    <Compile Include="Entities\InsuranceCompanyProductTypeConfig.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\InvoiceFile.cs" />
+    <Compile Include="Entities\Invoice_Benefit.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\LicenseType.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleSpecification.cs" />
+    <Compile Include="Entities\WareefProgram\Wareef.cs" />
+    <Compile Include="Entities\WareefProgram\WareefCategory.cs" />
+    <Compile Include="Entities\WareefProgram\WareefDiscountBenefit.cs" />
+    <Compile Include="Entities\WareefProgram\WareefDiscounts.cs" />
+    <Compile Include="Entities\WataniyaDraftPolicy.cs" />
+    <Compile Include="Entities\WataniyaMotorPolicyInfo.cs" />
+    <Compile Include="Entities\Watheq\WathqInfo.cs" />
+    <Compile Include="Entities\YakeenCityCenter.cs" />
+    <Compile Include="Entities\YakeenDrivers.cs" />
+    <Compile Include="Entities\YakeenVehicles.cs" />
+    <Compile Include="Enums\CheckoutProviderServicesCodes.cs" />
+    <Compile Include="Enums\ClaimModule.cs" />
+    <Compile Include="Enums\ClaimRequesterType.cs" />
+    <Compile Include="Enums\ClaimStatus.cs" />
+    <Compile Include="Enums\CodeAttribute.cs" />
+    <Compile Include="Enums\EProfileNotificationModule.cs" />
+    <Compile Include="Enums\EProfileNotificationType.cs" />
+    <Compile Include="Enums\EProfileSection.cs" />
+    <Compile Include="Enums\InsuranceCompanyEnum.cs" />
+    <Compile Include="Enums\MobiShastraSmsResponse.cs" />
+    <Compile Include="Enums\ESTCSmsResponse.cs" />
+    <Compile Include="Enums\EUserTicketStatus.cs" />
+    <Compile Include="Enums\EUserTicketTypes.cs" />
+    <Compile Include="Enums\Extensions.cs" />
+    <Compile Include="Enums\Identity\ApplicationTypes.cs" />
+    <Compile Include="Enums\IdNamePair.cs" />
+    <Compile Include="Enums\LocalizedNameAttribute.cs" />
+    <Compile Include="Enums\Messages\NotificationGroup.cs" />
+    <Compile Include="Entities\Messages\NotificationParameter.cs" />
+    <Compile Include="Enums\Messages\NotificationStatus.cs" />
+    <Compile Include="Enums\Messages\NotificationType.cs" />
+    <Compile Include="Entities\NajmStatusHistory.cs" />
+    <Compile Include="Entities\NCDFreeYear.cs" />
+    <Compile Include="Entities\Messages\Notification.cs" />
+    <Compile Include="Entities\Orders\ShoppingCartItem.cs" />
+    <Compile Include="Entities\Orders\ShoppingCartItemBenefit.cs" />
+    <Compile Include="Entities\ParkingPlace.cs" />
+    <Compile Include="Entities\PayfortPaymentRequest.cs" />
+    <Compile Include="Entities\PayfortPaymentResponse.cs" />
+    <Compile Include="Entities\Payment.cs" />
+    <Compile Include="Entities\Policies\PolicyProcessingQueue.cs" />
+    <Compile Include="Enums\Payments\PaymentMethodCode.cs" />
+    <Compile Include="Enums\Policies\PolicyProcessingQueuePriority.cs" />
+    <Compile Include="Entities\Policies\PolicyUpdateRequest.cs" />
+    <Compile Include="Entities\Policies\PolicyUpdateRequestAttachment.cs" />
+    <Compile Include="Enums\Policies\PolicyUpdateRequestStatus.cs" />
+    <Compile Include="Entities\Policy.cs" />
+    <Compile Include="Entities\PolicyDetail.cs" />
+    <Compile Include="Entities\PolicyFile.cs" />
+    <Compile Include="Entities\PolicyStatus.cs" />
+    <Compile Include="Entities\Policies\PolicyUpdatePayment.cs" />
+    <Compile Include="Entities\PriceDetail.cs" />
+    <Compile Include="Entities\PriceType.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductType.cs" />
+    <Compile Include="Entities\Product_Benefit.cs" />
+    <Compile Include="Entities\Quotations\QuotationRequest.cs" />
+    <Compile Include="Entities\Quotations\QuotationResponse.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\RoleType.cs" />
+    <Compile Include="Entities\Payments\Sadad\SadadNotificationMessage.cs" />
+    <Compile Include="Entities\Payments\Sadad\SadadNotificationResponse.cs" />
+    <Compile Include="Entities\Payments\Sadad\SadadRequest.cs" />
+    <Compile Include="Entities\Payments\Sadad\SadadRespons.cs" />
+    <Compile Include="Entities\ScheduleTask.cs" />
+    <Compile Include="Entities\Sensor.cs" />
+    <Compile Include="Entities\SpeedStabilizer.cs" />
+    <Compile Include="Entities\TawuniyaTempTable.cs" />
+    <Compile Include="Entities\VehicleInsurance\Vehicle.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleBodyType.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleColor.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleIDType.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleMaker.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleModel.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehiclePlateText.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehiclePlateType.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleTransmissionType.cs" />
+    <Compile Include="Entities\VehicleInsurance\VehicleUsagePercentage.cs" />
+    <Compile Include="Entities\YakeenEntity.cs" />
+    <Compile Include="Enums\Company.cs" />
+    <Compile Include="Enums\EPolicyStatus.cs" />
+    <Compile Include="Enums\EQyadatSmsResponse.cs" />
+    <Compile Include="Enums\EStatus.cs" />
+    <Compile Include="Enums\LanguageTwoLetterIsoCode.cs" />
+    <Compile Include="Enums\MaritalStatus.cs" />
+    <Compile Include="Enums\Policies\PolicyUpdateRequestDocumentType.cs" />
+    <Compile Include="Enums\Policies\PolicyUpdateRequestType.cs" />
+    <Compile Include="Enums\PromotionProgramOutput.cs" />
+    <Compile Include="Enums\Quotations\CardIdType.cs" />
+    <Compile Include="Enums\Quotations\EducationAr.cs" />
+    <Compile Include="Enums\Quotations\MedicalCondition.cs" />
+    <Compile Include="Enums\Quotations\Education.cs" />
+    <Compile Include="Enums\Quotations\Gender.cs" />
+    <Compile Include="Enums\Quotations\RelationShip.cs" />
+    <Compile Include="Enums\Quotations\SocialStatus.cs" />
+    <Compile Include="Enums\Quotations\Violation.cs" />
+    <Compile Include="Enums\VehicleImageType.cs" />
+    <Compile Include="Enums\Vehicles\AxlesWeight.cs" />
+    <Compile Include="Enums\Vehicles\BrakingSystem.cs" />
+    <Compile Include="Enums\Vehicles\CameraType.cs" />
+    <Compile Include="Enums\Vehicles\CruiseControlType.cs" />
+    <Compile Include="Enums\Vehicles\EngineSize.cs" />
+    <Compile Include="Enums\Vehicles\Mileage.cs" />
+    <Compile Include="Enums\Vehicles\ParkingLocation.cs" />
+    <Compile Include="Enums\Vehicles\ParkingSensors.cs" />
+    <Compile Include="Enums\Vehicles\LicenseTypeEnum.cs" />
+    <Compile Include="Enums\Vehicles\TransmissionType.cs" />
+    <Compile Include="Enums\Vehicles\VehicleIdType.cs" />
+    <Compile Include="Enums\Vehicles\VehicleUse.cs" />
+    <Compile Include="Entities\LoginSwitchAccount.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14f920b0-e1f2-4e7b-be22-4bde4fc9541f}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tameenk.Resources\Tameenk.Resources.csproj">
+      <Project>{2cff55dc-edd1-41c7-92f6-04c650429a9d}</Project>
+      <Name>Tameenk.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

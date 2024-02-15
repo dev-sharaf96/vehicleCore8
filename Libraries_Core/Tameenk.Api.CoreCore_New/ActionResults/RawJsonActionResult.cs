@@ -1,0 +1,46 @@
+﻿using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Tameenk.Api.Core.ActionResults
+{
+    public class RawJsonActionResult //: IActionResult
+    {
+
+        #region Ctor
+        public RawJsonActionResult(string jsonString, HttpStatusCode httpStatusCode = HttpStatusCode.OK)
+        {
+            JsonString = jsonString;
+            HttpStatus = httpStatusCode;
+        }
+        #endregion
+
+        #region Methods
+        public Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
+        {
+            var content = new StringContent(JsonString);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var response = new HttpResponseMessage(HttpStatus) { Content = content };
+            return Task.FromResult(response);
+        }
+
+        Task<HttpResponseMessage> IActionResult.ExecuteAsync(CancellationToken cancellationToken)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string JsonString {
+            get;
+            private set;
+        }
+
+
+        public HttpStatusCode HttpStatus
+        {
+            get;
+            private set;
+        }
+        #endregion
+    }
+}

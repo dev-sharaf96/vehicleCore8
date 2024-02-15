@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E27F8AF-2B2D-4A16-A0B3-EBF07FAC188E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Data</RootNamespace>
+    <AssemblyName>Tameenk.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginSwitchAccountMap.cs" />
+    <Compile Include="Mapping\ForgotPasswordTokenMap.cs" />
+    <Compile Include="Mapping\AutoleasingRenewalPolicyStatisticsMap.cs" />
+    <Compile Include="Mapping\AutoleasingQuotationFormSettingsMap.cs" />
+    <Compile Include="Mapping\AutoleasingWallet\AutoleasingWalletHistoryMap.cs" />
+    <Compile Include="Mapping\Autoleasing\RenwalStatitics_OldMap.cs" />
+    <Compile Include="Mapping\BcareWithdrawalWinnerMap.cs" />
+    <Compile Include="Mapping\CheckoutMobileVerificationMap.cs" />
+    <Compile Include="Mapping\Claim\UserClaimFileMap.cs" />
+    <Compile Include="Mapping\Claim\UserClaimHistoryMap.cs" />
+    <Compile Include="Mapping\Claim\UserClaimMap.cs" />
+    <Compile Include="Mapping\Claim\UserClaimStatusMap.cs" />
+    <Compile Include="Mapping\Identity\LeasingUserMap.cs" />
+    <Compile Include="Mapping\Identity\LeasingVerifyUserMap.cs" />
+    <Compile Include="Mapping\Identity\LeasingUsersLocationsDeviceInfoMap.cs" />
+    <Compile Include="Mapping\Identity\LoginActiveTokensMap.cs" />
+    <Compile Include="Mapping\InsuranceCompanyGradeMap.cs" />
+    <Compile Include="Mapping\CheckoutInsuredMappingTempMap.cs" />
+    <Compile Include="Mapping\Policies\MissingPolicyPolicyProcessingQueueMap.cs" />
+    <Compile Include="Mapping\ProfileUpdatePhoneHistoryMap.cs" />
+    <Compile Include="Mapping\UpdateProfileInfoOtpMap.cs" />
+    <Compile Include="Mapping\OtpInfoMap.cs" />
+    <Compile Include="Mapping\EmailSettingsMap.cs" />
+    <Compile Include="Mapping\CancellationRequestMap.cs" />
+    <Compile Include="Mapping\Corporate\CorporateWalletHistoryMap.cs" />
+    <Compile Include="Mapping\Corporate\CorporateAccountMap.cs" />
+    <Compile Include="Mapping\AutoleasingInitialQuotationCompaniesMap.cs" />
+    <Compile Include="Mapping\ExpiredTokensMap.cs" />
+    <Compile Include="EfDbConfiguration.cs" />
+    <Compile Include="EfRepository.cs" />
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="Mapping\AdditionalInfoMap.cs" />
+    <Compile Include="Mapping\AddressMap.cs" />
+    <Compile Include="Mapping\AutoleasingAgencyRepairHistoryMap.cs" />
+    <Compile Include="Mapping\AutoleasingAgencyRepairMap.cs" />
+    <Compile Include="Mapping\AutoleasingBenefitMap.cs" />
+    <Compile Include="Mapping\AutoleasingDeductiblesMap.cs" />
+    <Compile Include="Mapping\AutoleasingDepreciationSettingHistoryMap.cs" />
+    <Compile Include="Mapping\AutoleasingDepreciationSettingMap.cs" />
+    <Compile Include="Mapping\AutoleasingMinimumPremiumHistoryMap.cs" />
+    <Compile Include="Mapping\AutoleasingMinimumPremiumMap.cs" />
+    <Compile Include="Mapping\AutoleasingQuotationFormMap.cs" />
+    <Compile Include="Mapping\AutoleasingQuotationResponseCacheMap.cs" />
+    <Compile Include="Mapping\Autoleasing\AutoleasingSelectedBenifitsMap.cs" />
+    <Compile Include="Mapping\AutomatedTestIntegrationTransactionMap.cs" />
+    <Compile Include="Mapping\BankInsuranceCompanyMap.cs" />
+    <Compile Include="Mapping\BankMap.cs" />
+    <Compile Include="Mapping\BankNinMap.cs" />
+    <Compile Include="Mapping\CareerMap.cs" />
+    <Compile Include="Mapping\ContactUsMap.cs" />
+    <Compile Include="Mapping\DeservingDiscountMap.cs" />
+    <Compile Include="Mapping\Identity\CorporateUsersMap.cs" />
+    <Compile Include="Mapping\Identity\CorporateVerifyUsersMap.cs" />
+    <Compile Include="Mapping\InsuredAddressesCountMap.cs" />
+    <Compile Include="Mapping\InvoiceFileTemplatesMap.cs" />
+    <Compile Include="Mapping\OfferMap.cs" />
+    <Compile Include="Mapping\IbanHistoryMap.cs" />
+    <Compile Include="Mapping\Identity\AutoleasingUserMap.cs" />
+    <Compile Include="Mapping\Identity\AutoleasingVerifyUsersMap.cs" />
+    <Compile Include="Mapping\MorniRequestMap.cs" />
+    <Compile Include="Mapping\NajmAccidentResponseMap.cs" />
+    <Compile Include="Mapping\Payments\CommissionsAndFeesMap.cs" />
+    <Compile Include="Mapping\Payments\CompanyBankAccountsMap.cs" />
+    <Compile Include="Mapping\Payments\Edaat\EdaatCompanyMap.cs" />
+    <Compile Include="Mapping\Payments\Edaat\EdaatCustomerMap.cs" />
+    <Compile Include="Mapping\Payments\Edaat\EdaatNotificationMap.cs" />
+    <Compile Include="Mapping\Payments\Edaat\EdaatProductMap.cs" />
+    <Compile Include="Mapping\Payments\Edaat\EdaatRequestMap.cs" />
+    <Compile Include="Mapping\Payments\Edaat\EdaatResponseMap.cs" />
+    <Compile Include="Mapping\Payments\HyperPay\HyperPayCreateOrderMap.cs" />
+    <Compile Include="Mapping\Payments\HyperPay\HyperPayNotificationMap.cs" />
+    <Compile Include="Mapping\Payments\HyperPay\HyperPayNotificationTransactionMap.cs" />
+    <Compile Include="Mapping\Payments\HyperPay\HyperPayUpdateOrderMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyCaptureRequestMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyCaptureResponseDetailMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyCaptureResponseMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyNotificationDetailsMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyNotificationMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyReponseDetailsMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyReponseMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyRequestDetailsMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyRequestMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyWebHookDetailMap.cs" />
+    <Compile Include="Mapping\Payments\Tabby\TabbyWebHookMap.cs" />
+    <Compile Include="Mapping\Policies\CustomCardQueueMap.cs" />
+    <Compile Include="Mapping\Policies\EndorsmentBenefitMap.cs" />
+    <Compile Include="Mapping\Policies\EndorsmentMap.cs" />
+    <Compile Include="Mapping\Policies\MorniSMSMap.cs" />
+    <Compile Include="Mapping\Policies\OwnDamageQueueMap.cs" />
+    <Compile Include="Mapping\Policies\PolicyAdditionalBenefitMap.cs" />
+    <Compile Include="Mapping\Policies\PolicyModificationMap.cs" />
+    <Compile Include="Mapping\Policies\RenewalPoliciesMap.cs" />
+    <Compile Include="Mapping\Policies\WataniyaNajmQueueMap.cs" />
+    <Compile Include="Mapping\PolicyRenewedByCompanyMap.cs" />
+    <Compile Include="Mapping\Quotation_Product_BenefitMap.cs" />
+    <Compile Include="Mapping\ProfileNotificationMap.cs" />
+    <Compile Include="Mapping\PromotionPrograms\PromotionProgramAttachmentsMap.cs" />
+    <Compile Include="Mapping\PromotionPrograms\PromotionProgramNinsMap.cs" />
+    <Compile Include="Mapping\PromotionPrograms\PromotionUserMap.cs" />
+    <Compile Include="Mapping\Quotations\QuotationBlockedNinsMap.cs" />
+    <Compile Include="Mapping\Quotations\QuotationSharesMap.cs" />
+    <Compile Include="Mapping\ReasonCodeMap.cs" />
+    <Compile Include="Mapping\SMSSkippedNumbersMap.cs" />
+    <Compile Include="Mapping\UserInfoMap.cs" />
+    <Compile Include="Mapping\VehicleDiscountsMap.cs" />
+    <Compile Include="Mapping\RenewalDiscountMap.cs" />
+    <Compile Include="Mapping\SMSProviderSettingsMap.cs" />
+    <Compile Include="Mapping\UserTicket\UserTicketAttachmentMap.cs" />
+    <Compile Include="Mapping\UserTicket\UserTicketHistoryMap.cs" />
+    <Compile Include="Mapping\UserTicket\UserTicketMap.cs" />
+    <Compile Include="Mapping\UserTicket\UserTicketStatusMap.cs" />
+    <Compile Include="Mapping\UserTicket\UserTicketTypeMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\CustomCardInfoMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleUsageMap.cs" />
+    <Compile Include="Mapping\WareefMap\WareefCategoryMap.cs" />
+    <Compile Include="Mapping\WareefMap\WareefDescountsMap.cs" />
+    <Compile Include="Mapping\WareefMap\WareefDiscountBenefitMap.cs" />
+    <Compile Include="Mapping\WareefMap\WareefMap.cs" />
+    <Compile Include="Mapping\WataniyaDraftPolicyMap.cs" />
+    <Compile Include="Mapping\WataniyaMotorPolicyInfoMap.cs" />
+    <Compile Include="Mapping\Wathq\WathqInfoMap.cs" />
+    <Compile Include="Mapping\YakeenCityCenterMap.cs" />
+    <Compile Include="Mapping\Payments\Esal\CustomerMap.cs" />
+    <Compile Include="Mapping\Payments\Esal\EsalRequestMap.cs" />
+    <Compile Include="Mapping\Payments\Esal\EsalResponseMap.cs" />
+    <Compile Include="Mapping\Payments\Esal\EsalSettlementMap.cs" />
+    <Compile Include="Mapping\Payments\Esal\LineItemMap.cs" />
+    <Compile Include="Mapping\Payments\Esal\ProfitMarginRequestMap.cs" />
+    <Compile Include="Mapping\Payments\Esal\SupplierMap.cs" />
+    <Compile Include="Mapping\QuotationResponseCacheMap.cs" />
+    <Compile Include="Mapping\VehicleRequestsMap.cs" />
+    <Compile Include="Mapping\CheckoutDriverInfoMap.cs" />
+    <Compile Include="Mapping\CheckoutUsersMap.cs" />
+    <Compile Include="Mapping\CityCenterMap.cs" />
+    <Compile Include="Mapping\MobileAppVersionsMap.cs" />
+    <Compile Include="Mapping\NajmResponseMap.cs" />
+    <Compile Include="Mapping\HyperpayRequestMap.cs" />
+    <Compile Include="Mapping\MOIDetailMap.cs" />
+    <Compile Include="Mapping\Identity\AspNetUserMap.cs" />
+    <Compile Include="Mapping\Attachments\AttachmentMap.cs" />
+    <Compile Include="Mapping\BankCodeMap.cs" />
+    <Compile Include="Mapping\BenefitMap.cs" />
+    <Compile Include="Mapping\BreakingSystemMap.cs" />
+    <Compile Include="Mapping\CameraTypeMap.cs" />
+    <Compile Include="Mapping\CheckoutAdditionalDriverMap.cs" />
+    <Compile Include="Mapping\CheckoutCarImageMap.cs" />
+    <Compile Include="Mapping\CheckoutDetailMap.cs" />
+    <Compile Include="Mapping\CityMap.cs" />
+    <Compile Include="Mapping\Identity\ClientMap.cs" />
+    <Compile Include="Mapping\ContactMap.cs" />
+    <Compile Include="Mapping\CountryMap.cs" />
+    <Compile Include="Mapping\DeductibleMap.cs" />
+    <Compile Include="Mapping\DistanceRangeMap.cs" />
+    <Compile Include="Mapping\NajmStatusMap.cs" />
+    <Compile Include="Mapping\OccupationMap.cs" />
+    <Compile Include="Mapping\Orders\OrderItemBenefitMap.cs" />
+    <Compile Include="Mapping\Orders\OrderItemMap.cs" />
+    <Compile Include="Mapping\Payments\PaymentMethodMap.cs" />
+    <Compile Include="Mapping\Payments\RiyadBank\RiyadBankMigsResponseMap.cs" />
+    <Compile Include="Mapping\Payments\RiyadBank\RiyadBankMigsRequestMap.cs" />
+    <Compile Include="Mapping\PromotionPrograms\PromotionProgramCodeMap.cs" />
+    <Compile Include="Mapping\PromotionPrograms\PromotionProgramDomainMap.cs" />
+    <Compile Include="Mapping\PromotionPrograms\PromotionProgramMap.cs" />
+    <Compile Include="Mapping\PromotionPrograms\PromotionProgramUserMap.cs" />
+    <Compile Include="Mapping\Quotations\InsuredMap.cs" />
+    <Compile Include="Mapping\Quotations\TawuniyaProposalMap.cs" />
+    <Compile Include="Mapping\RegionMap.cs" />
+    <Compile Include="Mapping\SettingMap.cs" />
+    <Compile Include="Mapping\UserPurchasedPromotionProgramsMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\DriverExtraLicenseMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\DriverLicenseMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\DriverMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\DriverMedicalConditionMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\DriverTypeMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\DriverViolationMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\DrivingLicenceYearMap.cs" />
+    <Compile Include="Mapping\ErrorCodeMap.cs" />
+    <Compile Include="Mapping\InsuaranceCompanyBenefitMap.cs" />
+    <Compile Include="Mapping\InsuranceCompanyMap.cs" />
+    <Compile Include="Mapping\InsuranceCompanyProductTypeConfigMap.cs" />
+    <Compile Include="Mapping\InvoiceFileMap.cs" />
+    <Compile Include="Mapping\InvoiceMap.cs" />
+    <Compile Include="Mapping\LanguageMap.cs" />
+    <Compile Include="Mapping\LicenseTypeMap.cs" />
+    <Compile Include="Mapping\Messages\NotificationParameterMap.cs" />
+    <Compile Include="Mapping\NajmStatusHistoryMap.cs" />
+    <Compile Include="Mapping\NCDFreeYearMap.cs" />
+    <Compile Include="Mapping\Messages\NotificationMap.cs" />
+    <Compile Include="Mapping\Orders\ShoppingCartItemMap.cs" />
+    <Compile Include="Mapping\Orders\ShoppingCartItemBenefitMap.cs" />
+    <Compile Include="Mapping\ParkingPlaceMap.cs" />
+    <Compile Include="Mapping\PayfortPaymentRequestMap.cs" />
+    <Compile Include="Mapping\PayfortPaymentResponseMap.cs" />
+    <Compile Include="Mapping\PaymentMap.cs" />
+    <Compile Include="Mapping\Policies\PolicyProcessingQueueMap.cs" />
+    <Compile Include="Mapping\Policies\PolicyUpdateRequestAttachmentMap.cs" />
+    <Compile Include="Mapping\Policies\PolicyUpdateRequestMap.cs" />
+    <Compile Include="Mapping\PolicyDetailMap.cs" />
+    <Compile Include="Mapping\PolicyFileMap.cs" />
+    <Compile Include="Mapping\PolicyMap.cs" />
+    <Compile Include="Mapping\PolicyStatusMap.cs" />
+    <Compile Include="Mapping\Policies\PolicyUpdatePaymentMap.cs" />
+    <Compile Include="Mapping\PriceDetailMap.cs" />
+    <Compile Include="Mapping\PriceTypeMap.cs" />
+    <Compile Include="Mapping\ProductMap.cs" />
+    <Compile Include="Mapping\ProductTypeMap.cs" />
+    <Compile Include="Mapping\Product_BenefitMap.cs" />
+    <Compile Include="Mapping\Quotations\QuotationRequestMap.cs" />
+    <Compile Include="Mapping\Quotations\QuotationResponseMap.cs" />
+    <Compile Include="Mapping\RoleMap.cs" />
+    <Compile Include="Mapping\RoleTypeMap.cs" />
+    <Compile Include="Mapping\Payments\Sadad\SadadNotificationMessageMap.cs" />
+    <Compile Include="Mapping\Payments\Sadad\SadadNotificationResponseMap.cs" />
+    <Compile Include="Mapping\Payments\Sadad\SadadRequestMap.cs" />
+    <Compile Include="Mapping\Payments\Sadad\SadadResponseMap.cs" />
+    <Compile Include="Mapping\ScheduleTaskMap.cs" />
+    <Compile Include="Mapping\SensorMap.cs" />
+    <Compile Include="Mapping\SpeedStabilizerMap.cs" />
+    <Compile Include="Mapping\TawuniyaTempTableMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleBodyTypeMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleColorMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleIDTypeMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleMakerMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleModelMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehiclePlateTextMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehiclePlateTypeMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleSpecificationMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleTransmissionTypeMap.cs" />
+    <Compile Include="Mapping\VehicleInsurance\VehicleUsagePercentageMap.cs" />
+    <Compile Include="Mapping\YakeenDriversMap.cs" />
+    <Compile Include="Mapping\YakeenVehiclesMap.cs" />
+    <Compile Include="TameenkObjectContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8edfcd3e-4461-4b2c-a83e-175983e9c6b7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5cd41905-ac08-410f-9ffb-b3975ffba538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

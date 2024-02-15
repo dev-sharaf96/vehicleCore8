@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://service.tameenak.technoSys.com/" xmlns:wssutil="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="TameenakImplService" targetNamespace="http://service.tameenak.technoSys.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsingPolicy wssutil:Required="true" />
+  <wsp1_2:Policy wssutil:Id="DefaultFastInfoset.xml">
+    <wsp1_2:ExactlyOne>
+      <wsp1_2:All>
+        <ns1:OptimizedFastInfosetSerialization xmlns:ns1="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" enabled="true" />
+      </wsp1_2:All>
+    </wsp1_2:ExactlyOne>
+  </wsp1_2:Policy>
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://88.85.249.30:5555/Tameenak-WSUAT/TameenakImplPort?xsd=1" namespace="http://service.tameenak.technoSys.com/" />
+    </xsd:schema>
+  </types>
+  <message name="Policy">
+    <part name="parameters" element="tns:Policy" />
+  </message>
+  <message name="PolicyResponse">
+    <part name="parameters" element="tns:PolicyResponse" />
+  </message>
+  <message name="AIMSFault">
+    <part name="fault" element="tns:AIMSFault" />
+  </message>
+  <message name="Quotation">
+    <part name="parameters" element="tns:Quotation" />
+  </message>
+  <message name="QuotationResponse">
+    <part name="parameters" element="tns:QuotationResponse" />
+  </message>
+  <portType name="TameenakImpl">
+    <operation name="Policy">
+      <input wsam:Action="http://service.tameenak.technoSys.com/TameenakImpl/PolicyRequest" message="tns:Policy" />
+      <output wsam:Action="http://service.tameenak.technoSys.com/TameenakImpl/PolicyResponse" message="tns:PolicyResponse" />
+      <fault wsam:Action="http://service.tameenak.technoSys.com/TameenakImpl/Policy/Fault/AIMSFault" name="AIMSFault" message="tns:AIMSFault" />
+    </operation>
+    <operation name="Quotation">
+      <input wsam:Action="http://service.tameenak.technoSys.com/TameenakImpl/QuotationRequest" message="tns:Quotation" />
+      <output wsam:Action="http://service.tameenak.technoSys.com/TameenakImpl/QuotationResponse" message="tns:QuotationResponse" />
+      <fault wsam:Action="http://service.tameenak.technoSys.com/TameenakImpl/Quotation/Fault/AIMSFault" name="AIMSFault" message="tns:AIMSFault" />
+    </operation>
+  </portType>
+  <binding name="TameenakImplPortBinding" type="tns:TameenakImpl">
+    <wsp:PolicyReference URI="#DefaultFastInfoset.xml" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Policy">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+      <fault name="AIMSFault">
+        <soap12:fault use="literal" name="AIMSFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="Quotation">
+      <soap12:operation soapAction="" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+      <fault name="AIMSFault">
+        <soap12:fault use="literal" name="AIMSFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="TameenakImplService">
+    <port name="TameenakImplPort" binding="tns:TameenakImplPortBinding">
+      <soap12:address location="http://88.85.249.30:5555/Tameenak-WSUAT/TameenakImplPort" />
+    </port>
+  </service>
+</definitions>

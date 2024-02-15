@@ -1,0 +1,117 @@
+﻿@*// MIGS payment gateway using Asp.Net MVC5
+    // https://github.com/mwd-au/MIGS-payment-gateway-MVC5
+    // Based off https://gist.github.com/samnaseri/2211309*@
+@using MigsPayments.Models;
+@model PaymentRequestModel
+@{
+    ViewBag.Title = "Payment";
+}
+<div class="row">
+    <div class="col-sx-12">
+        <h2>Payment Confirmation</h2>
+    </div>
+</div>
+        @if (!string.IsNullOrWhiteSpace(Model.RedirectUrl))
+        {
+            <div class="row">
+                <div class="col-sx-12">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RedirectUrl, "Redirect Url", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            <a href="@Model.RedirectUrl">@Model.RedirectUrl</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.MessageToHash, "Message to hash", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Model.MessageToHash
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.GeneratedHash, "Message to hash", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Model.GeneratedHash
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="row">
+            <div class="col-sx-12">
+                <form action="@Url.RouteUrl("Default", new { action = "InitiatePayment", controller = "Payment" })" method="post" class="form-horizontal">
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Merchant Id</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.MerchantId, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Access Code</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.AccessCode, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Secure Hash Secret</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.SecureHashSecret, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Order Info</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.OrderInfo, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Merch Txn Ref</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.MerchTxnRef, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Amount</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Version, "Version", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.Version, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Command, "Command", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.Command, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Locale, "Command", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.Locale, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ReturnUrl, "Return URL", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(m => m.ReturnUrl, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+

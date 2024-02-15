@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c2c027c5-cf5f-400f-9a7c-e06904631522" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://tameenitp.der3.com:50005/BcareAutoLease.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BcareAutoLease.xsd" MetadataType="Schema" ID="61b450fd-2a4a-40b2-bc93-560091c056ff" SourceId="1" SourceUrl="https://tameenitp.der3.com:50005/BcareAutoLease.svc?xsd=xsd1" />
+    <MetadataFile FileName="BcareAutoLease1.xsd" MetadataType="Schema" ID="ced4d91a-fb10-4f00-ba43-7a0873476167" SourceId="1" SourceUrl="https://tameenitp.der3.com:50005/BcareAutoLease.svc?xsd=xsd0" />
+    <MetadataFile FileName="BcareAutoLease.wsdl" MetadataType="Wsdl" ID="617d3342-6a18-4c05-8d14-9af7247c4818" SourceId="1" SourceUrl="https://tameenitp.der3.com:50005/BcareAutoLease.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

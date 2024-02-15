@@ -1,0 +1,1192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="ArabicVideosListUrl" xml:space="preserve">
+    <value>ArabicVideosListUrl</value>
+  </data>
+  <data name="BaseSiteUrl" xml:space="preserve">
+    <value>BaseSiteUrl</value>
+  </data>
+  <data name="bodyMailReplace" xml:space="preserve">
+    <value>[%Body%]</value>
+  </data>
+  <data name="CaptchaLimit" xml:space="preserve">
+    <value>CaptchaLimit</value>
+  </data>
+  <data name="ECareResource" xml:space="preserve">
+    <value>ECareResource</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="EnglishVideosListUrl" xml:space="preserve">
+    <value>EnglishVideosListUrl</value>
+  </data>
+  <data name="FormateBody" xml:space="preserve">
+    <value>{0:X04}</value>
+  </data>
+  <data name="InfotainmentSMSPassword" xml:space="preserve">
+    <value>InfotainmentSMSPassword</value>
+  </data>
+  <data name="InfotainmentSMSUserName" xml:space="preserve">
+    <value>InfotainmentSMSUserName</value>
+  </data>
+  <data name="invalidCaptchaLogins" xml:space="preserve">
+    <value>invalidCaptchaLogins</value>
+  </data>
+  <data name="invalidLogins" xml:space="preserve">
+    <value>invalidLogins</value>
+  </data>
+  <data name="MainMailContainer" xml:space="preserve">
+    <value>MainMailContainer</value>
+  </data>
+  <data name="MemberShipProviderName" xml:space="preserve">
+    <value>MemberShipProviderName</value>
+  </data>
+  <data name="MOSS_SQL_Group" xml:space="preserve">
+    <value>MOSS_SQL_Group</value>
+  </data>
+  <data name="RecaptchaSecretKey" xml:space="preserve">
+    <value>6Le1mAUTAAAAAH-2qCy0_YATsyvptCRUVP4-0iAx</value>
+  </data>
+  <data name="RecaptchaWebApi" xml:space="preserve">
+    <value>https://www.google.com/recaptcha/api/siteverify?secret={0}&amp;response={1}</value>
+  </data>
+  <data name="RegEx1" xml:space="preserve">
+    <value>&lt;(.|\n)+?&gt;</value>
+  </data>
+  <data name="RegEx11" xml:space="preserve">
+    <value>&lt;(.|\n)+?&gt;</value>
+  </data>
+  <data name="SANDSite" xml:space="preserve">
+    <value>SANDSite</value>
+  </data>
+  <data name="SelfProvisioningRegistrationMsg" xml:space="preserve">
+    <value>SelfProvisioningRegistrationMsg</value>
+  </data>
+  <data name="ShowSiteActionMenu" xml:space="preserve">
+    <value>ShowSiteActionMenu</value>
+  </data>
+  <data name="SiteUrl" xml:space="preserve">
+    <value>[%SiteUrl%]</value>
+  </data>
+  <data name="SMSpassword" xml:space="preserve">
+    <value>SMSpassword</value>
+  </data>
+  <data name="SMSTitle" xml:space="preserve">
+    <value>SMSTitle</value>
+  </data>
+  <data name="SMSUsername" xml:space="preserve">
+    <value>SMSUsername</value>
+  </data>
+  <data name="SMTPServer" xml:space="preserve">
+    <value>SMTPServer</value>
+  </data>
+  <data name="Space" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="ArabicLoginPageUrl" xml:space="preserve">
+    <value>ArabicLoginPageUrl</value>
+  </data>
+  <data name="EnglishLoginPageUrl" xml:space="preserve">
+    <value>EnglishLoginPageUrl</value>
+  </data>
+  <data name="ArabicLoginWithCaptchaPageUrl" xml:space="preserve">
+    <value>ArabicLoginWithCaptchaPageUrl</value>
+  </data>
+  <data name="EnglishLoginWithCaptchaPageUrl" xml:space="preserve">
+    <value>EnglishLoginWithCaptchaPageUrl</value>
+  </data>
+  <data name="ArabicRegisterPageUrl" xml:space="preserve">
+    <value>ArabicRegisterPageUrl</value>
+  </data>
+  <data name="EnglishRegisterPageUrl" xml:space="preserve">
+    <value>EnglishRegisterPageUrl</value>
+  </data>
+  <data name="PublicSiteURL" xml:space="preserve">
+    <value>PublicSiteURL</value>
+  </data>
+  <data name="OrangeDSLPublicSiteUrl" xml:space="preserve">
+    <value>OrangeDSLPublicSiteUrl</value>
+  </data>
+  <data name="MailContainer" xml:space="preserve">
+    <value>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+
+&lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+ &lt;style type="text/css"&gt;
+        a {
+            text-decoration: none !important;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        body {
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        .view_button {
+            display: none !important;
+        }
+
+        @media screen and (min-width: 481px) {
+            .d_margintop0 {
+                margin-top: 0px !important
+            }
+        }
+
+        @media (max-width: 480px) {
+            .m_topic_wh_175 {
+                width: 148px !important;
+                height: 148px !important;
+            }
+
+            div,
+            p,
+            a,
+            li,
+            td {
+                -webkit-text-size-adjust: none;
+            }
+
+            .m_hide {
+                display: none !important
+            }
+
+            .m_show {
+                display: block !important
+            }
+
+            .m_hide_outlook {
+                mso-hide: all !important
+            }
+
+            .m_show_outlook {
+                mso-hide: unset !important
+            }
+
+            .m_wb {
+                width: 320px !important;
+                max-width: 320px !important
+            }
+
+            .m_wc {
+                width: 304px !important;
+                max-width: 304px !important
+            }
+
+            .m_overflowc {
+                max-width: 304px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_pr {
+                padding-right: 8px !important
+            }
+
+            .m_pl {
+                padding-left: 8px !important
+            }
+
+            .m_w11 {
+                width: 11px !important
+            }
+
+            .m_w15 {
+                width: 15px !important
+            }
+
+            .m_w25 {
+                width: 25px !important
+            }
+
+            .m_w70 {
+                width: 70px !important
+            }
+
+            .m_w72 {
+                width: 72px !important
+            }
+
+            .m_w96 {
+                width: 96px !important
+            }
+
+            .m_w110 {
+                width: 110px !important
+            }
+
+            .m_w122 {
+                width: 122px !important
+            }
+
+            .m_w135 {
+                width: 135px !important
+            }
+
+            .m_w148 {
+                width: 148px !important
+            }
+
+            .m_w150 {
+                width: 150px !important
+            }
+
+            .m_w170 {
+                width: 170px !important
+            }
+
+            .m_w248 {
+                width: 248px !important;
+                max-width: 248px !important
+            }
+
+            .m_w280 {
+                width: 280px !important;
+                max-width: 280px !important
+            }
+
+            .m_w292 {
+                width: 292px !important;
+                max-width: 292px !important
+            }
+
+            .m_w304 {
+                width: 304px !important;
+                max-width: 304px !important
+            }
+
+            .m_w320 {
+                width: 320px !important;
+                max-width: 320px !important
+            }
+
+            .m_mw280 {
+                max-width: 280px !important
+            }
+
+            .m_mw320 {
+                max-width: 320px !important
+            }
+
+            .m_min_w53 {
+                min-width: 53px !important
+            }
+
+            .m_min_w280 {
+                min-width: 280px !important
+            }
+
+            .m_hauto {
+                height: auto !important
+            }
+
+            .m_h8 {
+                height: 8px !important
+            }
+
+            .m_h15 {
+                height: 15px !important
+            }
+
+            .m_h20 {
+                height: 20px !important
+            }
+
+            .m_h23 {
+                height: 23px !important
+            }
+
+            .m_h30 {
+                height: 30px !important
+            }
+
+            .m_h34 {
+                height: 34px !important
+            }
+
+            .m_h40 {
+                height: 40px !important
+            }
+
+            .m_h67 {
+                height: 67px !important
+            }
+
+            .m_h96 {
+                height: 96px !important
+            }
+
+            .m_h110 {
+                height: 110px !important
+            }
+
+            .m_h156 {
+                height: 156px !important
+            }
+
+            .m_h210 {
+                height: 210px !important;
+            }
+
+            .m_wh24 {
+                width: 24px !important;
+                height: 24px !important
+            }
+
+            .m_wh28 {
+                width: 28px !important;
+                height: 28px !important
+            }
+
+            .m_wh30 {
+                width: 30px !important;
+                height: 28px !important
+            }
+
+            .m_wh34 {
+                width: 34px !important;
+                height: 34px !important
+            }
+
+            .m_wh39 {
+                width: 39px !important;
+                height: 39px !important
+            }
+
+            .m_wh40 {
+                width: 40px !important;
+                height: 40px !important
+            }
+
+            .m_wh46 {
+                width: 46px !important;
+                height: 46px !important
+            }
+
+            .m_wh59 {
+                width: 59px !important;
+                height: 59px !important
+            }
+
+            .m_wh64 {
+                width: 64px !important;
+                height: 64px !important
+            }
+
+            .m_wh66 {
+                width: 66px !important;
+                height: 66px !important
+            }
+
+            .m_wh67 {
+                width: 67px !important;
+                height: 67px !important
+            }
+
+            .m_wh75 {
+                width: 75px !important;
+                height: 75px !important
+            }
+
+            .m_wh80 {
+                width: 80px !important;
+                height: 80px !important
+            }
+
+            .m_wh84 {
+                width: 84px !important;
+                height: 84px !important
+            }
+
+            .m_wh90 {
+                width: 90px !important;
+                height: 90px !important
+            }
+
+            .m_wh92 {
+                width: 92px !important;
+                height: 92px !important
+            }
+
+            .m_wh93 {
+                width: 93px !important;
+                height: 93px !important
+            }
+
+            .m_wh99 {
+                width: 99px !important;
+                height: 99px !important
+            }
+
+            .m_w100p {
+                width: 100% !important;
+            }
+
+            .m_plr0 {
+                padding-left: 0 !important;
+                padding-right: 0 !important
+            }
+
+            .m_pt0 {
+                padding-top: 0px !important
+            }
+
+            .m_pt4 {
+                padding-top: 4px !important
+            }
+
+            .m_pt5 {
+                padding-top: 5px !important
+            }
+
+            .m_pt8 {
+                padding-top: 8px !important
+            }
+
+            .m_pt9 {
+                padding-top: 9px !important
+            }
+
+            .m_pt10 {
+                padding-top: 10px !important
+            }
+
+            .m_pt16 {
+                padding-top: 16px !important
+            }
+
+            .m_pt18 {
+                padding-top: 18px !important
+            }
+
+            .m_pt20 {
+                padding-top: 20px !important
+            }
+
+            .m_pt28 {
+                padding-top: 28px !important
+            }
+
+            .m_pt30 {
+                padding-top: 30px !important
+            }
+
+            .m_pt40 {
+                padding-top: 40px !important
+            }
+
+            .m_pb0 {
+                padding-bottom: 0px !important
+            }
+
+            .m_pb2 {
+                padding-bottom: 2px !important
+            }
+
+            .m_pb4 {
+                padding-bottom: 4px !important
+            }
+
+            .m_pb5 {
+                padding-bottom: 5px !important
+            }
+
+            .m_pb8 {
+                padding-bottom: 8px !important
+            }
+
+            .m_pb10 {
+                padding-bottom: 10px !important
+            }
+
+            .m_pb12 {
+                padding-bottom: 12px !important
+            }
+
+            .m_pb15 {
+                padding-bottom: 8px !important
+            }
+
+            .m_pb16 {
+                padding-bottom: 16px !important
+            }
+
+            .m_pb20 {
+                padding-bottom: 20px !important
+            }
+
+            .m_pb25 {
+                padding-bottom: 25px !important
+            }
+
+            .m_pb26 {
+                padding-bottom: 26px !important
+            }
+
+            .m_pb29 {
+                padding-bottom: 29px !important
+            }
+
+            .m_pb30 {
+                padding-bottom: 30px !important
+            }
+
+            .m_pb32 {
+                padding-bottom: 32px !important
+            }
+
+            .m_pb35 {
+                padding-bottom: 35px !important
+            }
+
+            .m_pb37 {
+                padding-bottom: 37px !important
+            }
+
+            .m_pb39 {
+                padding-bottom: 39px !important
+            }
+
+            .m_pb40 {
+                padding-bottom: 40px !important
+            }
+
+            .m_pb60 {
+                padding-bottom: 60px !important
+            }
+
+            .m_pr0 {
+                padding-right: 0px !important
+            }
+
+            .m_pr2 {
+                padding-right: 2px !important
+            }
+
+            .m_pr4 {
+                padding-right: 4px !important
+            }
+
+            .m_pr8 {
+                padding-right: 8px !important
+            }
+
+            .m_pr10 {
+                padding-right: 10px !important
+            }
+
+            .m_pr16 {
+                padding-right: 16px !important
+            }
+
+            .m_pr20 {
+                padding-right: 20px !important
+            }
+
+            .m_pr22 {
+                padding-right: 22px !important
+            }
+
+            .m_pl0 {
+                padding-left: 0px !important
+            }
+
+            .m_pl5 {
+                padding-left: 5px !important
+            }
+
+            .m_pl8 {
+                padding-left: 8px !important
+            }
+
+            .m_pl10 {
+                padding-left: 10px !important
+            }
+
+            .m_pl16 {
+                padding-left: 16px !important
+            }
+
+            .m_pl20 {
+                padding-left: 20px !important
+            }
+
+            .m_h3 {
+                font-size: 20px !important;
+                line-height: 24px !important
+            }
+
+            .m_fs8 {
+                font-size: 8px !important
+            }
+
+            .m_fs10 {
+                font-size: 10px !important
+            }
+
+            .m_fs11 {
+                font-size: 11px !important
+            }
+
+            .m_fs12 {
+                font-size: 12px !important
+            }
+
+            .m_fs14 {
+                font-size: 14px !important
+            }
+
+            .m_fs16 {
+                font-size: 16px !important
+            }
+
+            .m_fs18 {
+                font-size: 18px !important
+            }
+
+            .m_fs20 {
+                font-size: 20px !important
+            }
+
+            .m_fs21 {
+                font-size: 21px !important
+            }
+
+            .m_fs24 {
+                font-size: 24px !important
+            }
+
+            .m_fs30 {
+                font-size: 30px !important
+            }
+
+            .m_fs36 {
+                font-size: 36px !important
+            }
+
+            .m_fs41 {
+                font-size: 41px !important
+            }
+
+            .m_fs48 {
+                font-size: 48px !important
+            }
+
+            .m_lh12 {
+                line-height: 12px !important
+            }
+
+            .m_lh14 {
+                line-height: 14px !important
+            }
+
+            .m_lh16 {
+                line-height: 16px !important
+            }
+
+            .m_lh20 {
+                line-height: 20px !important
+            }
+
+            .m_lh22 {
+                line-height: 22px !important
+            }
+
+            .m_lh23 {
+                line-height: 23px !important
+            }
+
+            .m_lh25 {
+                line-height: 25px !important
+            }
+
+            .m_lh40 {
+                line-height: 40px !important
+            }
+
+            .m_lh46 {
+                line-height: 46px !important
+            }
+
+            .m_lh52 {
+                line-height: 52px !important
+            }
+
+            .m_fs40 {
+                font-size: 40px !important
+            }
+
+            .m_overflow90 {
+                max-width: 90px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow96 {
+                max-width: 96px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow112 {
+                max-width: 112px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow125 {
+                max-width: 125px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow135 {
+                max-width: 135px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow148 {
+                max-width: 148px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow156 {
+                max-width: 156px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow190 {
+                max-width: 190px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow200 {
+                max-width: 200px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow240 {
+                max-width: 240px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow280 {
+                max-width: 280px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_hoverflow280 {
+                max-height: 280px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_b0 {
+                border: none !important
+            }
+
+            .m_br0 {
+                border-radius: 0 0 0 0 !important
+            }
+
+            .m_br_l5 {
+                border-radius: 5px 0 0 5px !important
+            }
+
+            .m_br_r5 {
+                border-radius: 0 5px 5px 0 !important
+            }
+
+            .m_bg_white {
+                background-color: #ffffff !important
+            }
+
+            .m_d_block {
+                display: block;
+                width: 100%;
+            }
+
+            .icon_overlay {
+                height: 32px !important;
+                width: 32px !important;
+            }
+        }
+
+        @media (max-width: 480px) and (min-width: 375px) {
+            .m_topic_wh_175 {
+                width: 175px !important;
+                height: 175px !important;
+            }
+
+            .m_wb {
+                width: 375px !important;
+                max-width: 375px !important
+            }
+
+            .m_wc {
+                width: 355px !important;
+                max-width: 355px !important
+            }
+
+            .m_overflowc {
+                max-width: 355px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_pr {
+                padding-right: 10px !important
+            }
+
+            .m_pl {
+                padding-left: 10px !important
+            }
+
+            .m_w96 {
+                width: 113px !important
+            }
+
+            .m_w148 {
+                width: 173px !important
+            }
+
+            .m_w304 {
+                width: 355px !important;
+                max-width: 355px !important
+            }
+
+            .m_h96 {
+                height: 113px !important
+            }
+
+            .m_h110 {
+                height: 129px !important
+            }
+
+            .m_wh46 {
+                width: 54px !important;
+                height: 54px !important
+            }
+
+            .m_h96 {
+                height: 113px !important
+            }
+
+            .m_pr8 {
+                padding-right: 8px !important
+            }
+
+            .m_lh14 {
+                line-height: 15px !important
+            }
+
+            .m_lh23 {
+                line-height: 28px !important
+            }
+
+            .m_lh25 {
+                line-height: 30px !important
+            }
+
+            .m_fs8 {
+                font-size: 8px !important
+            }
+
+            .m_fs12 {
+                font-size: 13px !important
+            }
+
+            .m_fs21 {
+                font-size: 24px !important
+            }
+
+            .m_overflow90 {
+                max-width: 99px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow96 {
+                max-width: 113px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_overflow148 {
+                max-width: 173px !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis
+            }
+
+            .m_bg_white {
+                background-color: #ffffff !important
+            }
+        }
+        td.m_pt30.m_pb29 {
+    background: #F5F9FD;
+}
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body style="direction: [%BodyDirection%];"&gt;
+    &lt;table class="m_bg_white" width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+        &lt;tr&gt;
+            &lt;td class="m_wb m_pt0" width="850" align="center" style="padding-top:20px"&gt;
+                &lt;table class="m_wb m_b0" height="40" width="850" align="center" border="0" cellpadding="0"
+                    cellspacing="0" style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_wc m_pl m_pr m_pt20 m_pb15" width="850" align="center"
+                            style="padding:30px 20px 20px 20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="border-collapse:collapse;"&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_pb15 m_pt0" align="center" valign="bottom"&gt;
+                                        &lt;table class="m_wc" width="760"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_overflow200 m_fs21 m_lh23" align="center"
+                                                    style="font-size:32px; line-height:36px;padding:0 0 0 0;font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;color:#444444;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                    &lt;img src="[%Image%]"
+                                                      width="337" height="300"&gt;
+                                                &lt;/td&gt;
+                                           
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+	
+    [%MessageBody%]
+	
+    &lt;table class="m_bg_white" width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+        &lt;tr&gt;
+            &lt;td align="center"&gt;
+
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#f7f7f7"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_wc m_pl m_pr" align="center" style="padding:0px 20px 0px 20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="border-collapse:collapse;"&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                        style="padding:20px 0px 0px 0px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                     [%FollowUs%]
+
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="border-collapse:collapse;"&gt;
+                                &lt;tr&gt;
+                                    &lt;td valign="bottom" height="30" style="padding:10px 0 10px 0"&gt;
+
+                                        &lt;a href="https://facebook.com/Bcareksa-115093535762889/" target="_blank"&gt;
+                                            &lt;img width="40" height="40" src="[%SiteURL%]/resources/imgs/SocialMedia/facebook.png"
+                                                style="-ms-interpolation-mode:bicubic;text-decoration:none;display:inline;outline:none;"&gt;
+                                        &lt;/a&gt;
+
+                                        &lt;a href="http://instagram.com/bcareksa" target="_blank"&gt;
+                                            &lt;img width="40" height="40" src="[%SiteURL%]/resources/imgs/SocialMedia/instagram.png"
+                                                style="-ms-interpolation-mode:bicubic;text-decoration:none;display:inline;outline:none;"&gt;
+                                        &lt;/a&gt;
+
+
+                                        &lt;a href="https://www.linkedin.com/company/bcareksa" target="_blank"&gt;
+                                            &lt;img width="40" height="40" src="[%SiteURL%]/resources/imgs/SocialMedia/linkedin.png"
+                                                style="-ms-interpolation-mode:bicubic;text-decoration:none;display:inline;outline:none;"&gt;
+                                        &lt;/a&gt;
+
+                                        &lt;a href="https://twitter.com/bcareksa" target="_blank"&gt; &lt;img width="40"
+                                                height="40" src="[%SiteURL%]/resources/imgs/SocialMedia/twitter.png"
+                                                style="-ms-interpolation-mode:bicubic;text-decoration:none;display:inline;outline:none;" /&gt;
+                                        &lt;/a&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_wc m_pl m_pr" align="center"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="border-collapse:collapse;"&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                        style="padding:20px 20px 20px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+										
+                                        [%VisitUs%]
+
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+</root>

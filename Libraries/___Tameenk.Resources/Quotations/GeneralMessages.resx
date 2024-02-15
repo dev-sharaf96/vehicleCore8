@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccidentBenefits" xml:space="preserve">
+    <value>You can not choose the accident coverage benefit for the driver or passengers with personal accident coverage for the driver and passengers</value>
+  </data>
+  <data name="ErrorEmail" xml:space="preserve">
+    <value>Please enter a valid e-mail</value>
+  </data>
+  <data name="ErrorEmailOrEmail" xml:space="preserve">
+    <value>Please enter a valid e-mail or a valid Phone</value>
+  </data>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>Error: Please contact Customer Service 8001180044 (G-01)</value>
+  </data>
+  <data name="ErrorPhone" xml:space="preserve">
+    <value>Please enter a valid mobile number</value>
+  </data>
+  <data name="IncorrectData" xml:space="preserve">
+    <value>Please enter a valid data</value>
+  </data>
+  <data name="MaxLimitExceeded" xml:space="preserve">
+    <value>You exceeded the maximum limit</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="QuotationShareEmailBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+    &lt;tr&gt;
+        &lt;td width="850" align="center" &gt;
+            &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                style="border-collapse:collapse"&gt;
+                &lt;tr&gt;
+                    &lt;td class="m_overflow135 m_fs16" align="center"
+                        style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                        &lt;span&gt;
+                            &lt;h2&gt;Your Quotation from BCare is ready!
+                            &lt;/h2&gt;
+                        &lt;/span&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                style="background-color:#ffffff"&gt;
+                &lt;tr&gt;
+                    &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                            style="background-color:#F5F9FD"&gt;
+
+                            &lt;tr&gt;
+                                &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                    style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                    &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                        cellspacing="0" style="border-collapse:collapse;"&gt;
+                                        &lt;tr&gt;
+                                            &lt;td class="m_plr0"  &gt;
+                                                &lt;a href="#"
+                                                    style="text-decoration:none;display:block;" &gt;
+
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;   
+                                                                Dear customer , to get the quotation                                                                 &lt;/h4&gt;
+&lt;p&gt;
+&lt;br/&gt;
+&lt;b&gt;&lt;/b&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+                                                   
+                                                &lt;/a&gt;
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/table&gt;
+                                    &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                        cellspacing="0" style="border-collapse:collapse;"&gt;
+                                        &lt;tr&gt;
+                                            &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                    &lt;tr&gt;
+                                                        &lt;td align="center"
+                                                            style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                            -ms-border-radius: 50px;
+                                                            -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                            &lt;a class="m_overflow240"
+                                                                href="{0}"
+                                                                style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                             Click here                                                            &lt;/a&gt;
+                                                        &lt;/td&gt;
+                                                    &lt;/tr&gt;
+                                                &lt;/table&gt;
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/table&gt;
+
+                                 
+                                &lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                    style="padding:20 20px 20 20px;"&gt;
+                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                        style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                        &lt;tr&gt;
+                                            &lt;td&gt;
+                                                
+                                                &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                    style="border-collapse:collapse;"&gt;
+                                                    &lt;tr&gt;
+                                                        &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                            style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                        &lt;h4&gt;                                                          Thanks for giving us the opportunity to serve you ,,,
+
+                                                            &lt;br/&gt;
+                                                            &lt;b&gt;#Bcare&lt;/b&gt; Team
+                                                        &lt;/td&gt;
+
+
+                                                        &lt;br&gt;
+
+
+                                                    &lt;/tr&gt;
+                                                &lt;/table&gt;
+
+
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/table&gt;
+                                &lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</value>
+  </data>
+  <data name="QuotationShareEmailSubject" xml:space="preserve">
+    <value>Bcare Quotation</value>
+  </data>
+  <data name="QuotationShareSMSBody" xml:space="preserve">
+    <value>Your quotation is ready</value>
+  </data>
+  <data name="Succcess" xml:space="preserve">
+    <value>Quotation shared successfully </value>
+  </data>
+</root>

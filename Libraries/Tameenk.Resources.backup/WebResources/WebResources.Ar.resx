@@ -1,0 +1,1290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>مفعل</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>فشل</value>
+  </data>
+  <data name="login_incorrect_email_message" xml:space="preserve">
+    <value>هذا البريد الالكترونى غير مسجل فى قاعده البيانات</value>
+  </data>
+  <data name="login_incorrect_password_message" xml:space="preserve">
+    <value>البريد الإلكتروني أو كلمة المرور غير صحيحة</value>
+  </data>
+  <data name="login_incorrect_phonenumber_not_verifed" xml:space="preserve">
+    <value>رقم الهاتف غير مفعل لهذا الحساب</value>
+  </data>
+  <data name="UnderIssuance" xml:space="preserve">
+    <value>تحت الإصدار</value>
+  </data>
+  <data name="checkout_detail_is_already_paid" xml:space="preserve">
+    <value>تم الدفع مسبقا</value>
+  </data>
+  <data name="quotations_is_expired" xml:space="preserve">
+    <value>صلاحية عرض السعر منتهية، يرجى طلب عرض سعر جديد</value>
+  </data>
+  <data name="Request_Policy_Effective_Date_invalid" xml:space="preserve">
+    <value>تاريخ تفعيل البوليصة غير صالح</value>
+  </data>
+  <data name="shopping_cart_item_is_null" xml:space="preserve">
+    <value>لا يوجد بيانات شراء</value>
+  </data>
+  <data name="invalid_payment_response" xml:space="preserve">
+    <value>عملية دفع غير ناجحة</value>
+  </data>
+  <data name="PayfortResult_an_error_happen_whicle_processing_payfort_payment_response" xml:space="preserve">
+    <value>حدث خطأ أثناء معالجة البيانات المرسلة</value>
+  </data>
+  <data name="PayfortResult_missing_reference_id" xml:space="preserve">
+    <value>عملية الدفع مفتقدة لرقم المصدر (ReferenceId)</value>
+  </data>
+  <data name="PayfortResult_update_model_from_formCollection" xml:space="preserve">
+    <value>حدث خطأ في تحويل نتيجة الدفع المرسلة</value>
+  </data>
+  <data name="PolicyGenerationFailureEmailBody1" xml:space="preserve">
+    <value>حدث خطأ في إصدار الوثيقة ذات الرقم المرجعي </value>
+  </data>
+  <data name="PolicyGenerationFailureEmailBody2" xml:space="preserve">
+    <value> من شركة </value>
+  </data>
+  <data name="PolicyGenerationFailureEmailSubject" xml:space="preserve">
+    <value>خطأ في إصدار الوثيقة</value>
+  </data>
+  <data name="IBANUsedForOtherDriver" xml:space="preserve">
+    <value>رقم الايبان هذا مستخدم من قبل مع شخص اخر</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>غير معروف</value>
+  </data>
+  <data name="SerivceIsCurrentlyDown" xml:space="preserve">
+    <value>حدث خطأ ما ، من فضلك حاول في وقت لاحق</value>
+  </data>
+  <data name="ProcessPayment_SendingSMS" xml:space="preserve">
+    <value>تم شراء تأمين {0} من {1} بمبلغ {2}</value>
+  </data>
+  <data name="ProcessPayment_SADADNo" xml:space="preserve">
+    <value>رقم سداد الخاص بشراء تأمين من {0} بمبلغ {1} هو {2} إسم المفوتر: مدفوعات بنك الرياض ورمز سداد هو 067</value>
+  </data>
+  <data name="CAN_NOT_CREATE_USER" xml:space="preserve">
+    <value>لا يمكن إنشاء هذا الحساب , برجاء المحاولة مرة اخرى</value>
+  </data>
+  <data name="EmptyInputParameter" xml:space="preserve">
+    <value>برجاء استكمال البيانات</value>
+  </data>
+  <data name="ExceptionError" xml:space="preserve">
+    <value>يوجد خطأ ما , برجاء المحاولة مرة اخرى</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (G-01)</value>
+  </data>
+  <data name="exist_email_signup_error" xml:space="preserve">
+    <value>البريد الإلكتروني مُسجل مُسبقًا</value>
+  </data>
+  <data name="exist_phone_signup_error" xml:space="preserve">
+    <value>الرقم المحمول مُسجل مُسبقًا</value>
+  </data>
+  <data name="VerifyCode_Failed" xml:space="preserve">
+    <value>فشل في تأكيد الجوال</value>
+  </data>
+  <data name="ConfirmEmailIsNotEqualEmail" xml:space="preserve">
+    <value>تأكيدالبريد الإلكتروني غير مطابق</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>الحساب مغلق: يرجى الاتصال على خدمة العملاء 8001180044  (NA-99)</value>
+  </data>
+  <data name="EmailIsEmpty" xml:space="preserve">
+    <value>البريد الإلكتروني مطلوب</value>
+  </data>
+  <data name="email_not_verifed" xml:space="preserve">
+    <value>البريد الألكترونى غير مفعل لهذا الحساب</value>
+  </data>
+  <data name="PasswordIsEmpty" xml:space="preserve">
+    <value>كلمة المرور مطلوبة</value>
+  </data>
+  <data name="ForgetPasswordEmailBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; طلب إعادة تعيين كلمة المرور&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;برجار الضغط على "تعيين كلمة المرور" لتحديث كلمة المرور الخاصة بك.&lt;/p&gt;
+&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 ملفي الشخصي
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;   شكرًا لإعطائنا الفرصة لخدمتك،،، 
+                                                                &lt;br/&gt;
+                                                                  فريق &lt;b&gt;#بي_كير&lt;/b&gt; &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="ForgetPasswordEmailSubject" xml:space="preserve">
+    <value>تغير كلمه السر</value>
+  </data>
+  <data name="BcareConfirmationEmail" xml:space="preserve">
+    <value>تأكيد بي كير</value>
+  </data>
+  <data name="ConfirmationEmailAfterVerificationCode" xml:space="preserve">
+    <value>&lt;h1&gt;Dear Customer, &lt;/h1&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;To Confirm you Email, please click on the blow link : &lt;/h2&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 Confirm
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;</value>
+  </data>
+  <data name="VehicleValueZero" xml:space="preserve">
+    <value>من فضلك أدخل قيمه المركبه</value>
+  </data>
+  <data name="VehicleValueInvalid" xml:space="preserve">
+    <value>قيمه المركبه غير صحيحة من فضلك أدخل رقم صحيح</value>
+  </data>
+  <data name="EmailPasswordResetBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; طلب إعادة تعيين كلمة المرور&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+&lt;p&gt;
+برجاء الضغط على "تعيين كلمة المرور" لتحديث كلمة المرور الخاصة بك.
+&lt;br/&gt;
+&lt;b&gt;يرجي العلم ان هذا الطلب صالح لمرة واحدة فقط&lt;/b&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 تعيين كلمة مرور
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;   شكرًا لإعطائنا الفرصة لخدمتك،،، 
+                                                                &lt;br/&gt;
+                                                                  فريق &lt;b&gt;#بي_كير&lt;/b&gt; &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="PolicyFailedEmailBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; مرحباً بك في بي كير&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;لقد قمت بإتمام عملية الشراء بنجاح. سوف يتم إرسال وثيقة التأمين إلى البريد الإلكتروني الخاص بك، و سوف تكون 
+																   &lt;br&gt;
+																	جاهزة للتحميل من حسابكم لدينا في ال ٢٤ ساعة القادمة.&lt;/p&gt;
+														&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 ملفي الشخصي
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="PolicySuccessCompEmailBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; تأمين مركبات شامل&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;مرفق بهذه الرسالة ملف وثيقة التأمين الخاص بك مع فاتورة الشراء،
+															   &lt;br&gt;
+																وسوف تكون جاهزة للتحميل من حسابك لدينا في ظرف الدقائق القليلة القادمة.&lt;/p&gt;
+														&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 ملفي الشخصي
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="PolicySuccessTPLEmailBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; طلب توظيف&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;      &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;
+																	
+																	&lt;/p&gt;
+&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                             &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="ErrorsHappend" xml:space="preserve">
+    <value>الاخطاء التي حدثت هي :</value>
+  </data>
+  <data name="EmailFollowUs" xml:space="preserve">
+    <value>تابعنا :</value>
+  </data>
+  <data name="EmailVisitUs" xml:space="preserve">
+    <value>أو قم بزيارة موقعنا &lt;a href="https://www.bcare.com.sa" target="_blank" rel="noopener"&gt; www.bcare.com.sa&lt;/a&gt;</value>
+  </data>
+  <data name="NotAutoleasingUser" xml:space="preserve">
+    <value>خطأ فى اسم المستخدم او كلمة المرور</value>
+  </data>
+  <data name="BankNinError" xml:space="preserve">
+    <value>لا يوجد رقم هويه للبنك </value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>هذا الكود غير مطابق</value>
+  </data>
+  <data name="ExpiredPolicyEffectiveDate" xml:space="preserve">
+    <value>تاريخ بدايه الوثيقة غير صحيح</value>
+  </data>
+  <data name="EmptyConfirmNewPassword" xml:space="preserve">
+    <value>من فضلك ادخل تأكيد ل كلمه المرور الجديده</value>
+  </data>
+  <data name="EmptyEmail" xml:space="preserve">
+    <value>من فضلك ادخل البريد الالكتروني</value>
+  </data>
+  <data name="EmptyNewPassword" xml:space="preserve">
+    <value>من فضلك ادخل كلمه المرور الجديده</value>
+  </data>
+  <data name="OtpIsExpired" xml:space="preserve">
+    <value>كود التفعيل المؤقت غير ساري</value>
+  </data>
+  <data name="PasswordsNotMatch" xml:space="preserve">
+    <value>كلمه المرور الجديده لا تتوافق مع تأكيد كلمه المرور</value>
+  </data>
+  <data name="UserNotExist" xml:space="preserve">
+    <value>المستخدم غير موجود</value>
+  </data>
+  <data name="InvalidOldPassword" xml:space="preserve">
+    <value>كلمه المرور القديمه غير صحيحه</value>
+  </data>
+  <data name="ResetPasswordEmailBody" xml:space="preserve">
+    <value>&lt;p&gt; &lt;b&gt; Dear User &lt;/b&gt;,&lt;/p&gt;" +
+                                   "&lt;p&gt; Kindly, find your new password:&lt;/p&gt;&lt;p&gt;&lt;b&gt;[%newPassword%]&lt;/b&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="ResetPasswordEmailSubject" xml:space="preserve">
+    <value>تغير كلمه السر</value>
+  </data>
+  <data name="ResetPasswordEmailBody1" xml:space="preserve">
+    <value>&lt;p&gt; &lt;b&gt; Dear User &lt;/b&gt;,&lt;/p&gt;&lt;p&gt; Kindly, find your new password:&lt;/p&gt;&lt;p&gt;&lt;b&gt;[%newPassword%]&lt;/b&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="NoDataWithThisUserIdAndExternalId" xml:space="preserve">
+    <value>لا توجد بيانات للمستخدم</value>
+  </data>
+  <data name="SadadSMSMessage" xml:space="preserve">
+    <value>عزيزي العميل رقم سداد الخاص بشراء تأمين بمبلغ {1} هو {2} اسم المفوتر: إيداع/إيداعات ورمز سداد هو:903</value>
+  </data>
+  <data name="CareerMailBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; طلب توظيف&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;      &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;
+																	
+																	&lt;/p&gt;
+&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="right" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="right" width="25%"&gt;
+																الاسم:
+                                                            &lt;/td&gt;
+															&lt;td align="right"&gt;
+																{0}
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+														&lt;tr&gt;
+                                                            &lt;td align="right" width="25%"&gt;
+																البريد الإلكتروني:
+                                                            &lt;/td&gt;
+															&lt;td align="right"&gt;
+																{1}
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+														&lt;tr&gt;
+                                                            &lt;td align="right" width="25%"&gt;
+																رقم الجوال:
+                                                            &lt;/td&gt;
+															&lt;td align="right"&gt;
+																{2}
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+														&lt;tr&gt;
+                                                            &lt;td align="right" width="25%"&gt;
+																تاريخ الميلاد:
+                                                            &lt;/td&gt;
+															&lt;td align="right"&gt;
+																{3}
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+														&lt;tr&gt;
+                                                            &lt;td align="right" width="25%"&gt;
+																المدينة:
+                                                            &lt;/td&gt;
+															&lt;td align="right"&gt;
+																{4}
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+														&lt;tr&gt;
+                                                            &lt;td align="right" width="25%"&gt;
+																المسمى الوظيفي:
+                                                            &lt;/td&gt;
+															&lt;td align="right"&gt;
+																{5}
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+														&lt;tr&gt;
+                                                            &lt;td align="right" width="25%"&gt;
+																لماذا ترغب بالانضمام لفريق بي كير؟
+                                                            &lt;/td&gt;
+															&lt;td align="right"&gt;
+																{6}
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                             &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="CareerMailSubject" xml:space="preserve">
+    <value>طلب توظيف</value>
+  </data>
+  <data name="CaptchaIsNull" xml:space="preserve">
+    <value>رمز التحقق فارغ.</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>رمز التحقق غير صالح.</value>
+  </data>
+  <data name="exist_phone_or_email_signup_error" xml:space="preserve">
+    <value>الرقم المحمول أو البريد الألكتروني مُسجل مُسبقًا</value>
+  </data>
+  <data name="EmailActivated" xml:space="preserve">
+    <value>تم تفعيل البريد الالكتروني</value>
+  </data>
+  <data name="checkout_error_email" xml:space="preserve">
+    <value>برجاء إدخال بريد إلكتروني صحيح</value>
+  </data>
+  <data name="NotAuthorized" xml:space="preserve">
+    <value>غير مصرح لك بعرض بيانات هذه الصفحة</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>تم بنجاح</value>
+  </data>
+  <data name="DriverDriverExtraLicenseCountryCodeError" xml:space="preserve">
+    <value>من فضلك ادخل دولة الرخصة الاضافية</value>
+  </data>
+  <data name="DriverDriverExtraLicenseNumberOfYearsError" xml:space="preserve">
+    <value>من فضلك ادخل قيمة عدد سنوات امتلاك الرخصة</value>
+  </data>
+  <data name="SequenceIsNull" xml:space="preserve">
+    <value>الرقم التسلسلى فارغ</value>
+  </data>
+  <data name="UserDataSaved" xml:space="preserve">
+    <value>تم حفظ بيانات المستخدم بنجاح</value>
+  </data>
+  <data name="YakeenDriverData" xml:space="preserve">
+    <value>من فضلك ادخل تاريخ الميلاد </value>
+  </data>
+  <data name="YakeenVehicleError" xml:space="preserve">
+    <value>حدث خطأ فى الحصول على البيانات </value>
+  </data>
+  <data name="NinAndSequenceAlreadyExists" xml:space="preserve">
+    <value>رقم الهوية والرقم التسلسلى موجودا مسبقا</value>
+  </data>
+  <data name="OTPSent" xml:space="preserve">
+    <value>تم إرسال رمز التحقق إلى هاتفك ، يرجى التحقق.</value>
+  </data>
+  <data name="CompetitionWeekNoData" xml:space="preserve">
+    <value>لا توجد بيانات لهذا الأسبوع</value>
+  </data>
+  <data name="ErrorOTPCompare" xml:space="preserve">
+    <value>خطأ في رمز التحقق</value>
+  </data>
+  <data name="ErrorOTPEmpty" xml:space="preserve">
+    <value>من فضلك ادخل رمز التحقق</value>
+  </data>
+  <data name="ErrorOTPExpire" xml:space="preserve">
+    <value>انتهت صلاحيه رمز التحقق</value>
+  </data>
+  <data name="ErrorOTPSend" xml:space="preserve">
+    <value>حدث خطأ اثناء ارسال كلمه السر المؤقت</value>
+  </data>
+  <data name="ErrorYakeenMobileVerification" xml:space="preserve">
+    <value>حدث خطأ اثناء التحقق من رقم الجوال</value>
+  </data>
+  <data name="InvalidMobileOwner" xml:space="preserve">
+    <value>رقم الجوال لا ينتمى إلى صاحب الهوية</value>
+  </data>
+  <data name="MobileEmpty" xml:space="preserve">
+    <value>من فضلك ادخل رقم الجوال</value>
+  </data>
+  <data name="NationalIdEmpty" xml:space="preserve">
+    <value>من فضلك ادخل رقم الهويه</value>
+  </data>
+  <data name="UserYakeenNationalIdNotVerified" xml:space="preserve">
+    <value>رقم الهويه غير مؤكد</value>
+  </data>
+  <data name="VerifyOTP" xml:space="preserve">
+    <value>رمز التحقق لتفعيل الحساب هو {0}</value>
+  </data>
+  <data name="OtpReachedMaximum" xml:space="preserve">
+    <value>لقد تخطيت الحد الاقصى المسموح به فى إرسال الرسائل القصيره</value>
+  </data>
+  <data name="YakeenMobileVerificationError" xml:space="preserve">
+    <value>حدث خطأ أثناء التحقق من رقم الجوال من فضلك حاول فى وقت لاحق</value>
+  </data>
+  <data name="TrailerSumInsuredValueInvalid" xml:space="preserve">
+    <value>القيمة التقديرية للمقطورة التابعة للمركبة غير صحيحة من فضلك أدخل رقم صحيح</value>
+  </data>
+  <data name="TrailerSumInsuredValueOutOfRange" xml:space="preserve">
+    <value>القيمة التقديرية للمقطورة التابعة للمركبة غير صحيحة حيث انها يجب ان تبدأ من 1000 وحتى 999,999</value>
+  </data>
+  <data name="TrailerSumInsuredValueZero" xml:space="preserve">
+    <value>من فضلك أدخل القيمة التقديرية للمقطورة التابعة للمركبة</value>
+  </data>
+  <data name="ClaimIsClosed" xml:space="preserve">
+    <value>لا يمكن تحديث هذه المطالبة لأنها مغلقة</value>
+  </data>
+  <data name="FormatNotSupported" xml:space="preserve">
+    <value>صيغه الملف غير مدعومة</value>
+  </data>
+  <data name="ErrorBirthMonth" xml:space="preserve">
+    <value>شهر الميلاد فارغ أو قيمة غير صحيحة</value>
+  </data>
+  <data name="ErrorBirthYear" xml:space="preserve">
+    <value>سنة الميلاد فارغة أو قيمة غير صحيحة</value>
+  </data>
+  <data name="Hash_Error_BirthMonth" xml:space="preserve">
+    <value>لقد قمت بتغيير شهر الميلاد من فضلك ادخل بيانات صحيحة</value>
+  </data>
+  <data name="Hash_Error_BirthYear" xml:space="preserve">
+    <value>لقد قمت بتغيير سنة الميلاد من فضلك أدخل بيانات صحيحة</value>
+  </data>
+  <data name="Hash_Error_FullNameAr" xml:space="preserve">
+    <value>لقد قمت بتغيير الإسم بالعربية من فضلك أدخل بيانات صحيحة</value>
+  </data>
+  <data name="Hash_Error_FullNameEn" xml:space="preserve">
+    <value>لقد قمت بتغيير الإسم بالإنجليزية من فضلك أدخل بيانات صحيحة</value>
+  </data>
+  <data name="Hash_Error_Mobile" xml:space="preserve">
+    <value>لقد قمت بتغيير رقم الجوال من فضلك أدخل بيانات صحيحة</value>
+  </data>
+  <data name="Hash_Error_NationalId" xml:space="preserve">
+    <value>لقد قمت بتغيير رقم الهوية من فضلك أدخل بيانات صحيحة</value>
+  </data>
+  <data name="SwitchingAccountsHasReachedTheLimit" xml:space="preserve">
+    <value>لقد وصلت للحد الأقصى للتبديل بين حساباتك من فضلك التواصل مع خدمة العملاء 8001180044 (PV-01)</value>
+  </data>
+  <data name="ChangePasswordVerifyOTP" xml:space="preserve">
+    <value>رمز التحقق لتغيير كلمة المرور هو: {0}</value>
+  </data>
+  <data name="exist_nationalId_signup_error" xml:space="preserve">
+    <value>رقم الهوية مُسجل مُسبقًا. من فضلك التواصل مع خدمة العملاء 8001180044 (NV-01)</value>
+  </data>
+  <data name="LoginVerifyOTP" xml:space="preserve">
+    <value>كود التحقق لتسجيل الدخول هو: {0}</value>
+  </data>
+  <data name="InsuranceCompany_1" xml:space="preserve">
+    <value>وفا</value>
+  </data>
+  <data name="InsuranceCompany_10" xml:space="preserve">
+    <value>الأهلية</value>
+  </data>
+  <data name="InsuranceCompany_11" xml:space="preserve">
+    <value>الخليجية العامة</value>
+  </data>
+  <data name="InsuranceCompany_12" xml:space="preserve">
+    <value>التعاونية</value>
+  </data>
+  <data name="InsuranceCompany_13" xml:space="preserve">
+    <value>سلامة</value>
+  </data>
+  <data name="InsuranceCompany_14" xml:space="preserve">
+    <value>ألوطنية</value>
+  </data>
+  <data name="InsuranceCompany_15" xml:space="preserve">
+    <value>بي كير</value>
+  </data>
+  <data name="InsuranceCompany_17" xml:space="preserve">
+    <value>المتحدة</value>
+  </data>
+  <data name="InsuranceCompany_18" xml:space="preserve">
+    <value>العالمية</value>
+  </data>
+  <data name="InsuranceCompany_19" xml:space="preserve">
+    <value>اتحاد الخليج</value>
+  </data>
+  <data name="InsuranceCompany_2" xml:space="preserve">
+    <value>المجموعة المتحدة</value>
+  </data>
+  <data name="InsuranceCompany_20" xml:space="preserve">
+    <value>الراجحي</value>
+  </data>
+  <data name="InsuranceCompany_21" xml:space="preserve">
+    <value>سايكو</value>
+  </data>
+  <data name="InsuranceCompany_22" xml:space="preserve">
+    <value>ملاذ</value>
+  </data>
+  <data name="InsuranceCompany_23" xml:space="preserve">
+    <value>طوكيو مارين</value>
+  </data>
+  <data name="InsuranceCompany_24" xml:space="preserve">
+    <value>أليانز</value>
+  </data>
+  <data name="InsuranceCompany_25" xml:space="preserve">
+    <value>جي.آي.جي</value>
+  </data>
+  <data name="InsuranceCompany_26" xml:space="preserve">
+    <value>أمانة</value>
+  </data>
+  <data name="InsuranceCompany_27" xml:space="preserve">
+    <value>بروج</value>
+  </data>
+  <data name="InsuranceCompany_3" xml:space="preserve">
+    <value>الجزيرة</value>
+  </data>
+  <data name="InsuranceCompany_4" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="InsuranceCompany_5" xml:space="preserve">
+    <value>الاتحاد</value>
+  </data>
+  <data name="InsuranceCompany_6" xml:space="preserve">
+    <value>الصقر</value>
+  </data>
+  <data name="InsuranceCompany_7" xml:space="preserve">
+    <value>ولاء</value>
+  </data>
+  <data name="InsuranceCompany_8" xml:space="preserve">
+    <value>ميدغلف</value>
+  </data>
+  <data name="InsuranceCompany_9" xml:space="preserve">
+    <value>الدرع</value>
+  </data>
+  <data name="YakeenMobileVerificationSMS" xml:space="preserve">
+    <value>تم توثيق حسابك بنجاح برقم هوية {0}</value>
+  </data>
+  <data name="ForgetPasswordEmailAndMobileEmpty" xml:space="preserve">
+    <value>الرجاء إدخال البريد الإلكتروني أو الجوال</value>
+  </data>
+  <data name="ForgetPasswordVerifyOTP" xml:space="preserve">
+    <value>رمز التحقق لإعادة تعيين كلمة المرور هو {0}</value>
+  </data>
+  <data name="ForgotPasswordEmailSent" xml:space="preserve">
+    <value>تم إرسال رابط تغيير كلمة المرور الخاصة بك إلى بريدك الإلكتروني. يرجى التحقق</value>
+  </data>
+  <data name="ForgotPasswordPhoneSent" xml:space="preserve">
+    <value>تم إرسال كود التحقق إلى الجوال المنتهي ب {0} برجاء التحقق</value>
+  </data>
+  <data name="CaptchaExpired" xml:space="preserve">
+    <value>رمز التحقق منتهي</value>
+  </data>
+  <data name="NationalIdIsNotValid" xml:space="preserve">
+    <value>رقم الهوية غير صحيح</value>
+  </data>
+  <data name="NationalNotExist" xml:space="preserve">
+    <value>رقم الهوية غير مسجل فى قاعده البيانات</value>
+  </data>
+  <data name="PhoneNotExist" xml:space="preserve">
+    <value>رقم الجوال غير مسجل فى قاعده البيانات</value>
+  </data>
+  <data name="ActivationEmailIsExpired" xml:space="preserve">
+    <value>رابط التفعيل منتهي</value>
+  </data>
+  <data name="ActivationEmailUsedBefore" xml:space="preserve">
+    <value>رابط التفعيل مستخدم من قبل</value>
+  </data>
+  <data name="ForgotPasswordInvalidOTP" xml:space="preserve">
+    <value>رمز التحقق غير متطابق</value>
+  </data>
+  <data name="ForgotPasswordSuccess" xml:space="preserve">
+    <value>تم تغيير كلمة المرور بنجاح!</value>
+  </data>
+  <data name="LoginUserPartialLock" xml:space="preserve">
+    <value>.لقد تخطيت عدد المحاولات المسموحة، الرجاء المحاولة بعد 5 دقائق</value>
+  </data>
+  <data name="QuotationUserPartialLock" xml:space="preserve">
+    <value>.لقد تخطيت عدد المحاولات المسموحة، الرجاء المحاولة بعد 5 دقائق</value>
+  </data>
+</root>

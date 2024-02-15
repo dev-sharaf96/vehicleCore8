@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CheckoutModelIsNullException" xml:space="preserve">
+    <value>الطلب غير مكتمل</value>
+  </data>
+  <data name="Checkout_AnotherCheckoutMobileNumberUserd" xml:space="preserve">
+    <value>رقم الجوال المستخدم غير المسجل في قاعدة البيانات سيتم ارسال رساله نصيه لتاكيد رقم الجوال</value>
+  </data>
+  <data name="checkout_error_email" xml:space="preserve">
+    <value>برجاء إدخال بريد إلكتروني صحيح</value>
+  </data>
+  <data name="checkout_error_phone" xml:space="preserve">
+    <value>برجاء إدخال رقم جوال صحيح</value>
+  </data>
+  <data name="Checkout_InsuranceCompanyContactInvalid" xml:space="preserve">
+    <value>بيانات شركة التأمين غير موجودة</value>
+  </data>
+  <data name="Checkout_InvalidIBAN" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي يجب ان يكون أرقام فقط او وجود حرف واحد فقط</value>
+  </data>
+  <data name="Checkout_InvalidInputParameter" xml:space="preserve">
+    <value>بيانات الإدخال غير صحيحة</value>
+  </data>
+  <data name="Checkout_PayfortParameters_invalid" xml:space="preserve">
+    <value>بيانات payfort غير صحيحة</value>
+  </data>
+  <data name="Checkout_PayfortPaymentIsInvalid" xml:space="preserve">
+    <value>طريقة الدفع عن طريق payfort غير صحيحة</value>
+  </data>
+  <data name="Checkout_PayfortRequestIdIsNull" xml:space="preserve">
+    <value>يرجي ادخال رقم الطلب الخاص ب payfort</value>
+  </data>
+  <data name="Checkout_QtRqstExtrnlIdIsNull" xml:space="preserve">
+    <value>رقم العرض غير مكتمل</value>
+  </data>
+  <data name="Checkout_QuotationRequest_RequestPolicyEffectiveDateIsNotValid" xml:space="preserve">
+    <value>تاريخ بوليصة الطلب اقل من 16 ساعة</value>
+  </data>
+  <data name="Checkout_ReferenceIdIsNull" xml:space="preserve">
+    <value>رقم المرجع غير مكتمل</value>
+  </data>
+  <data name="Checkout_Sadadpayment_instruction_error" xml:space="preserve">
+    <value>هناك خطأ في الدفع بواسطة سداد نرجو إعادة المحاولة في وقت أخر</value>
+  </data>
+  <data name="Checkout_ShoppingCartItemIsNotValid" xml:space="preserve">
+    <value>سلة عرض المشتريات غير صالحه لمده 16 ساعة</value>
+  </data>
+  <data name="Checkout_ShoppingCartItemIsNull" xml:space="preserve">
+    <value>سلة المشريات فارغه</value>
+  </data>
+  <data name="IBANUsedForOtherDriver" xml:space="preserve">
+    <value>رقم الايبان هذا مستخدم من قبل مع شخص آخر</value>
+  </data>
+  <data name="InvalidData" xml:space="preserve">
+    <value>يرجي إدخال بيانات صحيحة</value>
+  </data>
+  <data name="Invalid_RiyadBankResponse" xml:space="preserve">
+    <value>البيانات الصادره من بنك الرياض غير صحيحة</value>
+  </data>
+  <data name="MissingCarImages" xml:space="preserve">
+    <value>برجاء إدخال جميع صور المركبة.</value>
+  </data>
+  <data name="PhoneNoWithAnotherDriver" xml:space="preserve">
+    <value>رقم الجوال خاص بسائق اخر من فضلك ادخل رقم جوال طالب التأمين</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>تمت بنجاح</value>
+  </data>
+  <data name="Tameenk_ArgumentNullException_Quotation" xml:space="preserve">
+    <value>لا يوجد عرض بهذا الرقم {0}</value>
+  </data>
+  <data name="Checkout_Esalpayment_instruction_error" xml:space="preserve">
+    <value>هناك خطأ في الدفع بواسطة ايصال نرجو إعادة المحاولة في وقت أخر</value>
+  </data>
+  <data name="RequestPolicyEffectiveDateIsNotValidForSAICO" xml:space="preserve">
+    <value>لقد انتهت صلاحيه هذا العرض</value>
+  </data>
+  <data name="Tameenk_MaxCheckoutEmail_Error" xml:space="preserve">
+    <value>عُـذرًا, لقد تخطيت عدد مرات الشراء المسموح بها لهذا البريد الإلكتروني</value>
+  </data>
+  <data name="InsuredCityDoesNotMatchAddressCity" xml:space="preserve">
+    <value>مدينة القيادة مختلفة عن العنوان الوطنى</value>
+  </data>
+  <data name="NationalAddressVlidationError" xml:space="preserve">
+    <value>حدث خطأ اثناء التحقق من العنوان الوطنى، نرجو المحاولة في وقت لاحق</value>
+  </data>
+  <data name="RefreshQuotation" xml:space="preserve">
+    <value>تحديث الاسعار</value>
+  </data>
+  <data name="MissingAddress" xml:space="preserve">
+    <value>&lt;div id="processNo2Div" class="row content-process process-number-2"&gt;
+    &lt;div style="text-align:center;font-size:20px;"&gt;
+        &lt;h4 style="color: red;"&gt;تنبيه بياناتك غير كاملة &lt;/h4&gt;
+      
+        &lt;p style=text-align:center!important;"&gt; بناءاً على تعليمات مؤسسة النقد العربي السعودي العنوان الوطني الموثق شرط إلزامي عند إصدار الوثيقة لجميع أنوع التأمين بادر بالتسجيل بالضغط 
+        "&lt;a style="float:none!important;" target="_blank" href="https://register.address.gov.sa/ar/default.aspx"&gt;هنا&lt;/a&gt;"
+        &lt;br&gt;
+	&lt;/p&gt;
+        &lt;p&gt; ثم قم بإعادة تحميل الصفحة مرة أخرى&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (NA-99)</value>
+  </data>
+  <data name="VerificationCodeMessage" xml:space="preserve">
+    <value>كود التفعيل الخاص برقم الجوال هو {0}</value>
+  </data>
+  <data name="EmailUsedWithAnotherDriver" xml:space="preserve">
+    <value>البريد الألكترونى خاص بسائق اخر من فضلك ادخل البريد الألكترونى الخاص بطالب التأمين</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>الحساب مغلق: يرجى الاتصال على خدمة العملاء 8001180044  (NA-99)</value>
+  </data>
+  <data name="ErrorAnonymous" xml:space="preserve">
+    <value>لابد من تسجيل الدخول اولا</value>
+  </data>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (G-01)</value>
+  </data>
+  <data name="ErrorHashing" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (H-01)</value>
+  </data>
+  <data name="ErrorSecurity" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (S-01)</value>
+  </data>
+  <data name="QuotationExpired" xml:space="preserve">
+    <value>انتهت صلاحيه هذا العرض</value>
+  </data>
+  <data name="IBAN_Validation" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي يجب ان يكون أرقام فقط</value>
+  </data>
+  <data name="PolicyPrice" xml:space="preserve">
+    <value>سعر الوثيقة</value>
+  </data>
+  <data name="SAR" xml:space="preserve">
+    <value>ر.س</value>
+  </data>
+  <data name="ErrorGenericException" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (E-01)</value>
+  </data>
+  <data name="ErrorNoRecordFound" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (R-01)</value>
+  </data>
+  <data name="ActivateEmailToReceivePolicySubject" xml:space="preserve">
+    <value>تفعيل البريد الالكتروني</value>
+  </data>
+  <data name="EmailActivationBodyToReceivePolicy" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                    &lt;h2&gt; تفعيل البريد الالكتروني&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;
+																	لاستلام وثيقه التأمين علي البريد الالكتروني يجب استكمال عمليه التفعيل. يُرجى الضغط على "تفعيل"
+																	&lt;/p&gt;
+														&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 تفعيل
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="UserExceedsInsuranceNumberLimitCheckoutPopup" xml:space="preserve">
+    <value>نأمل مراجعة شركة التأمين مباشرة وذلك لوجود أكثر من 5 مركبات مؤمن عليها لنفس صاحب الهوية</value>
+  </data>
+  <data name="InvalidIBANlength" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي يجب ان يكون أرقام فقط او وجود حرف واحد فقط بحد اقصى 22 رقم</value>
+  </data>
+  <data name="IBANValidationError" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي غير صحيح من فضلك تأكد من رقم الحساب</value>
+  </data>
+  <data name="SadadMessage" xml:space="preserve">
+    <value>سيتم إرسال بيانات الدفع فى رسالة نصية والبريد الإلكترونى</value>
+  </data>
+  <data name="VehicleExceededSadadLimit" xml:space="preserve">
+    <value>لقد تخطيت الحد الأقصى المسموح به لإصدار رقم سداد يمكنك الدفع عن طريق طرق الدفع الأخرى</value>
+  </data>
+  <data name="NumberOfAccidentVlidationError" xml:space="preserve">
+    <value>حدث خطأ اثناء التحقق من عدد الحوادث، نرجو المحاولة في وقت لاحق</value>
+  </data>
+  <data name="FailedToCancelInvoiceAtSadad" xml:space="preserve">
+    <value>حدث خطأ أثناء إلغاء فاتورة سداد، يرجى المحاولة مرة أخرى</value>
+  </data>
+  <data name="FailedToDeleteOldInvoice" xml:space="preserve">
+    <value>حدث خطأ أثناء إلغاء الفاتورة السابقة، يرجى المحاولة مرة أخرى</value>
+  </data>
+  <data name="InvalidPaymentMethods" xml:space="preserve">
+    <value>طريقة الدفع هذه قيد الصيانة ، يُرجى اختيار طريقة دفع أخرى</value>
+  </data>
+  <data name="COMP" xml:space="preserve">
+    <value>تأمين مركبات شامل</value>
+  </data>
+  <data name="SANADPLUS" xml:space="preserve">
+    <value>تأمين مركبات سند بلس</value>
+  </data>
+  <data name="TPL" xml:space="preserve">
+    <value>تأمين مركبات طرف ثالث (ضد الغير)</value>
+  </data>
+  <data name="DriverNinWithVehicleIdHasActivePolicies" xml:space="preserve">
+    <value>رقم الهوية {0}, و الرقم التسلسلي/الجمركي {1}, لديه وثيقة مفعلة من قبل </value>
+  </data>
+  <data name="AlreadyPaidBefore" xml:space="preserve">
+    <value>تم الدفع من قبل لهذه البيانات</value>
+  </data>
+  <data name="InvalidPayment" xml:space="preserve">
+    <value>حدث خطأ فى الدفع</value>
+  </data>
+  <data name="WataniyaDraftPolicyError" xml:space="preserve">
+    <value>حدث خطأ اثناء التحقق من إصدار الوثيقة المبدئية، نرجو المحاولة في وقت لاحق</value>
+  </data>
+  <data name="IsRenewalError" xml:space="preserve">
+    <value>هذا ليس طلب للتجديد</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>المستخدم غير موجود</value>
+  </data>
+  <data name="WAFISMART" xml:space="preserve">
+    <value>وافي سمارت</value>
+  </data>
+  <data name="InvalidPaymentMethod" xml:space="preserve">
+    <value>طريقة الدفع غير صحيحة</value>
+  </data>
+  <data name="ThereIsNotEnoughBalance" xml:space="preserve">
+    <value>لا يوجد رصيد كافي</value>
+  </data>
+  <data name="CheckoutIsNull" xml:space="preserve">
+    <value>لاتوجد بيانات لهذا الطلب</value>
+  </data>
+  <data name="InvaildRequest" xml:space="preserve">
+    <value>هناك خطأ فى هذا الطلب</value>
+  </data>
+  <data name="IsCancelled" xml:space="preserve">
+    <value>لقد تم الغاء الطلب من قبل</value>
+  </data>
+  <data name="PaymentSuccess" xml:space="preserve">
+    <value>لقد تم الدفع بنجاح</value>
+  </data>
+  <data name="PolicyAlreadyAvaiable" xml:space="preserve">
+    <value>هذا الطلب مصدر من قبل </value>
+  </data>
+  <data name="EdaatNumberReachedToMaximum" xml:space="preserve">
+    <value>لقد تجاوزت الحد الاقصى لأرقام سداد لهذا اليوم، يرجى المحاولة بعد {0}</value>
+  </data>
+  <data name="EmailActivated" xml:space="preserve">
+    <value>تم تفعيل البريد الالكتروني</value>
+  </data>
+  <data name="DiscountCodeExpired" xml:space="preserve">
+    <value>انتهت صلاحية هذا الكود</value>
+  </data>
+  <data name="DiscountCodeNotExist" xml:space="preserve">
+    <value>كود الخصم غير موجود</value>
+  </data>
+  <data name="CodeConsumedBefore" xml:space="preserve">
+    <value>لقد تم استخدام كود الخصم من قبل</value>
+  </data>
+  <data name="BurujTermsAndConditions" xml:space="preserve">
+    <value>بموافقتك على هذا الإقرار، فإنك تقر وتتعهد بأن جميع البيانات والمعلومات الخاصة بك الواردة في عرض السعر المقدمة لشركة بروج صحيحة وتحت مسؤوليتك الكاملة. كما أنك تقر على أن عنوانك الوطني المسجل في البريد السعودي. والذي يظهر في عرض السعر هو عنوانك الفعلي والصحيح. وفي حال وجود اختلاف في العنوان يجب عليك مراجعة البريد السعودي للتعديل قبل اتمام اصدار الوثيقة. حيث أن هذه البيانات قد تؤثر على قرار الشركة في تحديد قيمة الاشتراك. وفي حال ثبوت خلاف ذلك، فسيتم اعتبار هذا إدلاء بيانات غير صحيحة أو إخفاء حقيقة جوهرية، وبالتالي يحق لشركة بروج في حال دفع أي مبالغ لأي طرف من الأطراف مقابل تعويض عن ضرر أو خسارة. الرجوع على المؤمن له أو السائق لاسترداد ما سبق أن دفعته.</value>
+  </data>
+  <data name="ErrorGenericApplePay" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>كود التحقق غير صحيح</value>
+  </data>
+  <data name="Checkout_Tabbbypayment_instruction_error1" xml:space="preserve">
+    <value>هناك خطأ في الدفع بواسطة تابى. يرجى إعادة المحاولة في وقت لاحق او الدفع بطريقة اخرى</value>
+  </data>
+  <data name="YouDoNotDeserveTheDiscount" xml:space="preserve">
+    <value>انت لا تستحق هذا الخصم</value>
+  </data>
+  <data name="COMP_ACIG" xml:space="preserve">
+    <value>تأمين أسيج المميز</value>
+  </data>
+  <data name="COMP_TUIC" xml:space="preserve">
+    <value>أمان الاتحاد</value>
+  </data>
+  <data name="COMP_UCA" xml:space="preserve">
+    <value>تأمين الطرف الثالث والاضرار الخاصة للسيارات الخاصة</value>
+  </data>
+  <data name="QuotationFormNotFound" xml:space="preserve">
+    <value>من فضلك قم بتحميل نموذج عرض سعر</value>
+  </data>
+  <data name="COMP_SMS" xml:space="preserve">
+    <value>شامل</value>
+  </data>
+  <data name="TPL_SMS" xml:space="preserve">
+    <value>ضد الغير</value>
+  </data>
+  <data name="MotorPlus" xml:space="preserve">
+    <value>موتر بلس</value>
+  </data>
+  <data name="COMP_Rajhi" xml:space="preserve">
+    <value>تأمين المركبات للأفراد</value>
+  </data>
+</root>

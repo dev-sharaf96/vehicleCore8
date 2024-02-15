@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6f17814f-9f14-4a50-9e53-512ac2b864e3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://tameenitp.der3.com:588/BcareTameenk.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BcareTameenk2.xsd" MetadataType="Schema" ID="10b1873b-6a00-49b1-b64a-2f4a9f8b33d4" SourceId="1" SourceUrl="https://tameenitp.der3.com:588/BcareTameenk.svc?xsd=xsd1" />
+    <MetadataFile FileName="BcareTameenk1.wsdl" MetadataType="Wsdl" ID="0ee3c3dc-2f7b-4d4a-864f-adc340fb6476" SourceId="1" SourceUrl="https://tameenitp.der3.com:588/BcareTameenk.svc?wsdl" />
+    <MetadataFile FileName="BcareTameenk21.xsd" MetadataType="Schema" ID="b6619264-ffbd-4ea1-8e44-bef6a664a50f" SourceId="1" SourceUrl="https://tameenitp.der3.com:588/BcareTameenk.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DisenrollUserErrorHappen" xml:space="preserve">
+    <value>حدث خطأ أثناء إلغاء تسجيل دخولك من البرنامج ، يرجى المحاولة مرة أخرى.</value>
+  </data>
+  <data name="EmailAlreadyUsedByAnotherUser" xml:space="preserve">
+    <value>هذا الايميل مستخدم من قبل شخص اخر.</value>
+  </data>
+  <data name="thisdomainnotactive" xml:space="preserve">
+    <value>هذا النطاق غير فعال</value>
+  </data>
+  <data name="UserDomianDosntExistInProgramDomains" xml:space="preserve">
+    <value>لا يطابق نطاقك نطاقات برنامج الترويج هذا</value>
+  </data>
+  <data name="GeneralError" xml:space="preserve">
+    <value>خطأ عام</value>
+  </data>
+  <data name="SCAResponseCode_03" xml:space="preserve">
+    <value>لا يوجد في النظام سجل لهذا الكود</value>
+  </data>
+  <data name="SCAResponseCode_04" xml:space="preserve">
+    <value>هذا المستخدم لم يقم بتسجيل عضوية من قبل</value>
+  </data>
+  <data name="SCAResponseCode_06" xml:space="preserve">
+    <value>عضوية هذا المستخدم انتهت</value>
+  </data>
+  <data name="SCAResponseCode_07" xml:space="preserve">
+    <value>المتعاقد غير تابع لأنشطة مؤسستنا</value>
+  </data>
+  <data name="JoinProgramConfirmationSubject" xml:space="preserve">
+    <value>تأكيد الاشتراك في البرامج الترويجية</value>
+  </data>
+  <data name="JoinProgramConfirmationBody" xml:space="preserve">
+    <value>&lt;table class="m_bg_white" width="50%" align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #F5F9FD;"&gt;
+        &lt;tr&gt;
+            &lt;td width="850" align="center" &gt;
+                &lt;table width="100%"  border="0" cellpadding="0" cellspacing="0"
+                    style="border-collapse:collapse"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="m_overflow135 m_fs16" align="center"
+                            style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:20px;font-weight:bold;color:#444444;max-width:150px;overflow:hidden;text-overflow:ellipsis;padding-left:8px; padding-top:30px;"&gt;
+                            &lt;span&gt;
+                                &lt;h2&gt; تفعيل إشتراك&lt;/h2&gt;
+                            &lt;/span&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;table class="m_wb" width="850" align="center" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color:#ffffff"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="850" align="center" style="margin-bottom:20px"&gt;
+                            &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                style="background-color:#F5F9FD"&gt;
+
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:0px 20px 0px 20px; background-color:#F5F9FD; "&gt;
+                                        &lt;table class="m_wc" width="100%"  border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  &gt;
+                                                    &lt;a href="#"
+                                                        style="text-decoration:none;display:block;" &gt;
+
+                                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            style="border-collapse:collapse;"&gt;
+                                                            &lt;tr&gt;
+                                                                &lt;td class="m_fs14 m_lh20 " valign="bottom"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                                &lt;h4&gt;    عزيزنا العميل، &lt;/h4&gt;
+                                                                    
+                                                                    &lt;p&gt;لتأكيد الانضمام إلى برنامج الخصومات يُرجى الضغط على "تفعيل"&lt;/p&gt;
+														&lt;br/&gt;
+                                                                &lt;/td&gt;
+                                                            &lt;/tr&gt;
+                                                        &lt;/table&gt;
+
+                                                       
+                                                    &lt;/a&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;table class="m_wc" width="450" align="center" border="0" cellpadding="0"
+                                            cellspacing="0" style="border-collapse:collapse;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td class="m_plr0"  style="padding:0 100px 0 100px"&gt;
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="center"
+                                                                style="padding:14px 0px 14px 0px;background-color:#186a9e;border-radius:30px !important;-webkit-border-radius: 50px;
+                                                                -ms-border-radius: 50px;
+                                                                -moz-border-radius: 50px;" border-radius="20"&gt;
+                                                                &lt;a class="m_overflow240"
+                                                                    href="{0}"
+                                                                    style="font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.5;color:#ffffff;text-decoration:none;display:block;text-align:center;max-width:400px;overflow:hidden;text-overflow:ellipsis"&gt;
+                                                                 تفعيل
+                                                                &lt;/a&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+
+                                     
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td class="m_wc m_pl m_pr" width="850" align="center"
+                                        style="padding:20 20px 20 20px;"&gt;
+                                        &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="border-collapse:collapse; margin-bottom: 30px;"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td&gt;
+                                                    
+                                                    &lt;table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                        style="border-collapse:collapse;"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td class="m_fs14 m_lh20"  valign="bottom"
+                                                                style=" background-color:#F5F9FD;  padding:0px 20px 40px 20px;font-family:helvetica neue,helvetica,arial,sans-serif;font-size:16px;line-height:20px;color:#444444"&gt;
+                                                            &lt;h4&gt;  شكرًا لإعطائنا الفرصة لخدمتك،،،&lt;br&gt;
+																	فريق &lt;b&gt;#بي_كير&lt;/b&gt;  &lt;/h4&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+
+
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;</value>
+  </data>
+  <data name="ErrorWhileJoiningPromotionProgram" xml:space="preserve">
+    <value>{0} : حدث خطأ اثناء الإشتراك فى البرنامج , والخطأ هو</value>
+  </data>
+  <data name="JoinProgramIsConfirmed" xml:space="preserve">
+    <value>.تم تأكيد انضمامك بنجاح</value>
+  </data>
+  <data name="ConfirmJoinProgramRequestExpired" xml:space="preserve">
+    <value>لقد انتهت صلاحية طلبك للانضمام إلى البرنامج.</value>
+  </data>
+  <data name="Email_Format_Erorr" xml:space="preserve">
+    <value>البريد الإلكتروني مكتوب بصيغة خاطئة</value>
+  </data>
+  <data name="EmptyField" xml:space="preserve">
+    <value>( {0} ) الحقل فارغ</value>
+  </data>
+  <data name="fileSizeLimitExceeded" xml:space="preserve">
+    <value>مساحة الملف اكبر من الحد المسوح به , و هو {0} ميجا</value>
+  </data>
+  <data name="invalidFileExtension" xml:space="preserve">
+    <value>( {0} ) امتداد الملف غير صحيح, الامتدادات المسموح بها هي</value>
+  </data>
+  <data name="ProgramIdInvalid" xml:space="preserve">
+    <value>رقم البرنامج خاطئ</value>
+  </data>
+  <data name="UploadAttacmentsSuccess" xml:space="preserve">
+    <value>تم بنجاح و فى انتظار التفعيل بواسطة الأدمن</value>
+  </data>
+  <data name="EmptyData" xml:space="preserve">
+    <value>كل البيانات فارغة</value>
+  </data>
+  <data name="JoinProgramMailSent" xml:space="preserve">
+    <value>تم إرسال بريد إلكتروني للتأكيد إلى بريدك الإلكتروني، يُرجى التحقق منه للاستمرار في الانضمام إلى برنامج الترويج.</value>
+  </data>
+  <data name="NullResult" xml:space="preserve">
+    <value>هذه الهوية غير مشتركة فى اى من العروض الترويجية</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>تم بنجاح</value>
+  </data>
+  <data name="Attachment_serviceException" xml:space="preserve">
+    <value> حدث خطأ أثناء حفظ الملف والخطأ من فضلك حاول فى وقت لاحق</value>
+  </data>
+  <data name="CanNotJoinProgramBuNin" xml:space="preserve">
+    <value>هذه الهوية لا يمكنها الإشتراك فى البرنامج</value>
+  </data>
+  <data name="EmailEmpty" xml:space="preserve">
+    <value>رقم الهوية فارغ</value>
+  </data>
+  <data name="NationalIdEmpty" xml:space="preserve">
+    <value>رقم الهوية فارغ</value>
+  </data>
+  <data name="NinAlreadyJoinedToProgram" xml:space="preserve">
+    <value>{0} :هذه الهوية مشتركة فى البرنامج</value>
+  </data>
+  <data name="NinAlreadyJoinedToProgram_error" xml:space="preserve">
+    <value>{0} :هذه الهوية لا يمكنها الإشتراك فى هذا البرنامج لأنها مشتركة فى البرنامج</value>
+  </data>
+  <data name="ProgramNotFound" xml:space="preserve">
+    <value>{0} :لا يوجد برنامج بهذا الرقم</value>
+  </data>
+  <data name="SendingConfirmationEmail" xml:space="preserve">
+    <value>حدث خطأ أثناء إرسال بريد إلكتروني للتأكيد</value>
+  </data>
+  <data name="Success_Attachment" xml:space="preserve">
+    <value>تم الرفع بنجاح وفى إنتظار التأكيد من قبل الأدمن</value>
+  </data>
+  <data name="UserAlreasdyEnrolled" xml:space="preserve">
+    <value> :هذا المستخدم بالفعل مشترك على {0}</value>
+  </data>
+  <data name="VerificationMailAlreadySent" xml:space="preserve">
+    <value>تم إرسال رسالة التحقق إلى هذا البريد الإلكتروني: {0}. من فضلك انظر صندوق الوارد الخاص بك.</value>
+  </data>
+  <data name="ConfirmJoinProgram_EmailAlreadyConfirmedBefore" xml:space="preserve">
+    <value>هذا البريد الإلكترونى مفعل سابقا</value>
+  </data>
+  <data name="ConfirmJoinProgram_EmailDoesNotHaveRequest" xml:space="preserve">
+    <value>هذا المستخدم ليس لديه طلبات سابقة للتفعيل</value>
+  </data>
+  <data name="ConfirmJoinProgram_EmailEmpty" xml:space="preserve">
+    <value>حدث خطأ أثناء التفعيل: البريد الإلكترونى فارغ</value>
+  </data>
+  <data name="ConfirmJoinProgram_InvalidProgramId" xml:space="preserve">
+    <value>حدث خطأ أثناء التفعيل: رقم البرنامج فارغ</value>
+  </data>
+  <data name="TokenEmpty" xml:space="preserve">
+    <value>حدث خطأ من فضلك حاول فى وقت لاحق</value>
+  </data>
+  <data name="CaptchaEmpty" xml:space="preserve">
+    <value>رمز التحقق مطلوب</value>
+  </data>
+  <data name="CaptchaInvalid" xml:space="preserve">
+    <value>رمز التحقق خطأ</value>
+  </data>
+  <data name="EmptyUserId" xml:space="preserve">
+    <value>حدث خطأ ما من فضلك حاول فى وقت لاحق</value>
+  </data>
+  <data name="ServiceException" xml:space="preserve">
+    <value>حدث خطأ ما من فضلك حاول فى وقت لاحق</value>
+  </data>
+  <data name="AddressNotExist" xml:space="preserve">
+    <value>هذا العنوان غير موجود</value>
+  </data>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>حدث خطأ: يرجى الاتصال على خدمة العملاء 8001180044  (V-01)</value>
+  </data>
+  <data name="Attachment_Success" xml:space="preserve">
+    <value>تم تحميل الملف بنجاح و فى انتظار موافقة المسؤول</value>
+  </data>
+  <data name="emailJoinedWithAnotherNin" xml:space="preserve">
+    <value>هذا البريد مشترك بالفعل مع هوية اخرى</value>
+  </data>
+  <data name="emptyFile" xml:space="preserve">
+    <value>لا يوجد ملف ، يرجى تحميل الملف</value>
+  </data>
+  <data name="NotAuthorized" xml:space="preserve">
+    <value>غير مصرح لك برؤية البيانات في هذه الصفحة</value>
+  </data>
+  <data name="PromotionAttachmentNotFound" xml:space="preserve">
+    <value>:لا يوجد ملف بهذا الكود {0}</value>
+  </data>
+  <data name="PromotionNotFound" xml:space="preserve">
+    <value>:لا يوجد خصم بهذا الكود {0}</value>
+  </data>
+  <data name="ReadFile_ServiceException" xml:space="preserve">
+    <value>حدث خطأ اثناء إستعادة الملف من فضلك حاول فى وقت لاحق</value>
+  </data>
+  <data name="emailJoinedFromProfile" xml:space="preserve">
+    <value>من فضلك تحقق من الملف الشخصى حيث انك مشترك بالفعل فى برنامج ترويجى</value>
+  </data>
+  <data name="InvalidNationalId" xml:space="preserve">
+    <value>رقم الهوية غير صحيح</value>
+  </data>
+  <data name="InvalidSequenceNumber" xml:space="preserve">
+    <value>الرقم التسلسلى غير صحيح</value>
+  </data>
+  <data name="LoginUserPartialLock" xml:space="preserve">
+    <value>.لقد تخطيت عدد المحاولات المسموحة، الرجاء المحاولة بعد 5 دقائق</value>
+  </data>
+  <data name="ResultEmptyForWareefDiscount" xml:space="preserve">
+    <value>لا يستحق الخصم</value>
+  </data>
+  <data name="SequenceNumberEmpty" xml:space="preserve">
+    <value>الرقم التسلسلى فارغ</value>
+  </data>
+  <data name="CustomNumberEmpty" xml:space="preserve">
+    <value>الرقم الجمركى فارغ</value>
+  </data>
+  <data name="InvalidCustomNumber" xml:space="preserve">
+    <value>الرقم الجمركى غير صحيح</value>
+  </data>
+  <data name="VehicleTypeIdInvalid" xml:space="preserve">
+    <value>نوع تسجيل المركبة غير صحيح</value>
+  </data>
+</root>

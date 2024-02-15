@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://onlineservices.medgulf.com.sa/TameenK/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://onlineservices.medgulf.com.sa/TameenK/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://onlineservices.medgulf.com.sa/TameenK/">
+      <s:element name="Quotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JsonRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuotesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Policy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JsonRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PolicySchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JsonRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PolicyScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VehicleImagesDownload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VehicleImagesDownloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VehicleImagesDownloadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QuotesSoapIn">
+    <wsdl:part name="parameters" element="tns:Quotes" />
+  </wsdl:message>
+  <wsdl:message name="QuotesSoapOut">
+    <wsdl:part name="parameters" element="tns:QuotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PolicySoapIn">
+    <wsdl:part name="parameters" element="tns:Policy" />
+  </wsdl:message>
+  <wsdl:message name="PolicySoapOut">
+    <wsdl:part name="parameters" element="tns:PolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="PolicyScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:PolicySchedule" />
+  </wsdl:message>
+  <wsdl:message name="PolicyScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:PolicyScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="VehicleImagesDownloadSoapIn">
+    <wsdl:part name="parameters" element="tns:VehicleImagesDownload" />
+  </wsdl:message>
+  <wsdl:message name="VehicleImagesDownloadSoapOut">
+    <wsdl:part name="parameters" element="tns:VehicleImagesDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuotesHttpGetIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="JsonRequest" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QuotesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PolicyHttpGetIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="JsonRequest" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PolicyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PolicyScheduleHttpGetIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="JsonRequest" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PolicyScheduleHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VehicleImagesDownloadHttpGetIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ReferenceId" type="s:string" />
+    <wsdl:part name="PolicyNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VehicleImagesDownloadHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QuotesHttpPostIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="JsonRequest" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QuotesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PolicyHttpPostIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="JsonRequest" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PolicyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PolicyScheduleHttpPostIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="JsonRequest" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PolicyScheduleHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VehicleImagesDownloadHttpPostIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ReferenceId" type="s:string" />
+    <wsdl:part name="PolicyNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VehicleImagesDownloadHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="TameenkSoap">
+    <wsdl:operation name="Quotes">
+      <wsdl:input message="tns:QuotesSoapIn" />
+      <wsdl:output message="tns:QuotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Policy">
+      <wsdl:input message="tns:PolicySoapIn" />
+      <wsdl:output message="tns:PolicySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PolicySchedule">
+      <wsdl:input message="tns:PolicyScheduleSoapIn" />
+      <wsdl:output message="tns:PolicyScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VehicleImagesDownload">
+      <wsdl:input message="tns:VehicleImagesDownloadSoapIn" />
+      <wsdl:output message="tns:VehicleImagesDownloadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TameenkHttpGet">
+    <wsdl:operation name="Quotes">
+      <wsdl:input message="tns:QuotesHttpGetIn" />
+      <wsdl:output message="tns:QuotesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Policy">
+      <wsdl:input message="tns:PolicyHttpGetIn" />
+      <wsdl:output message="tns:PolicyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PolicySchedule">
+      <wsdl:input message="tns:PolicyScheduleHttpGetIn" />
+      <wsdl:output message="tns:PolicyScheduleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VehicleImagesDownload">
+      <wsdl:input message="tns:VehicleImagesDownloadHttpGetIn" />
+      <wsdl:output message="tns:VehicleImagesDownloadHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TameenkHttpPost">
+    <wsdl:operation name="Quotes">
+      <wsdl:input message="tns:QuotesHttpPostIn" />
+      <wsdl:output message="tns:QuotesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Policy">
+      <wsdl:input message="tns:PolicyHttpPostIn" />
+      <wsdl:output message="tns:PolicyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PolicySchedule">
+      <wsdl:input message="tns:PolicyScheduleHttpPostIn" />
+      <wsdl:output message="tns:PolicyScheduleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VehicleImagesDownload">
+      <wsdl:input message="tns:VehicleImagesDownloadHttpPostIn" />
+      <wsdl:output message="tns:VehicleImagesDownloadHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TameenkSoap" type="tns:TameenkSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Quotes">
+      <soap:operation soapAction="https://onlineservices.medgulf.com.sa/TameenK/Quotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Policy">
+      <soap:operation soapAction="https://onlineservices.medgulf.com.sa/TameenK/Policy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolicySchedule">
+      <soap:operation soapAction="https://onlineservices.medgulf.com.sa/TameenK/PolicySchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleImagesDownload">
+      <soap:operation soapAction="https://onlineservices.medgulf.com.sa/TameenK/VehicleImagesDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TameenkSoap12" type="tns:TameenkSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Quotes">
+      <soap12:operation soapAction="https://onlineservices.medgulf.com.sa/TameenK/Quotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Policy">
+      <soap12:operation soapAction="https://onlineservices.medgulf.com.sa/TameenK/Policy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolicySchedule">
+      <soap12:operation soapAction="https://onlineservices.medgulf.com.sa/TameenK/PolicySchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleImagesDownload">
+      <soap12:operation soapAction="https://onlineservices.medgulf.com.sa/TameenK/VehicleImagesDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TameenkHttpGet" type="tns:TameenkHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Quotes">
+      <http:operation location="/Quotes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Policy">
+      <http:operation location="/Policy" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolicySchedule">
+      <http:operation location="/PolicySchedule" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleImagesDownload">
+      <http:operation location="/VehicleImagesDownload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TameenkHttpPost" type="tns:TameenkHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Quotes">
+      <http:operation location="/Quotes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Policy">
+      <http:operation location="/Policy" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PolicySchedule">
+      <http:operation location="/PolicySchedule" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleImagesDownload">
+      <http:operation location="/VehicleImagesDownload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Tameenk">
+    <wsdl:port name="TameenkSoap" binding="tns:TameenkSoap">
+      <soap:address location="https://aggregators.medgulf.com.sa/TameenKMILTest/WebServices/Tameenk.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TameenkSoap12" binding="tns:TameenkSoap12">
+      <soap12:address location="https://aggregators.medgulf.com.sa/TameenKMILTest/WebServices/Tameenk.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TameenkHttpGet" binding="tns:TameenkHttpGet">
+      <http:address location="https://aggregators.medgulf.com.sa/TameenKMILTest/WebServices/Tameenk.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TameenkHttpPost" binding="tns:TameenkHttpPost">
+      <http:address location="https://aggregators.medgulf.com.sa/TameenKMILTest/WebServices/Tameenk.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

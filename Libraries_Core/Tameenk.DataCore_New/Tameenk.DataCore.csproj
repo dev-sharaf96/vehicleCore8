@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>enable</Nullable>
+	  <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tameenk.Core.DomainCore_New\Tameenk.Core.DomainCore.csproj" />
+    <ProjectReference Include="..\Tameenk.CoreCore_New\Tameenk.CoreCore.csproj" />
+  </ItemGroup>
+
+</Project>

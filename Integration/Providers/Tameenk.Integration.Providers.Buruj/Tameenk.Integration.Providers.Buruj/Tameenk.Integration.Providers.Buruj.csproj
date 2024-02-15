@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Tameenk.Core\Tameenk.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj" />
+    <ProjectReference Include="..\..\..\..\Libraries\Tameenk.Services\Tameenk.Services.csproj" />
+    <ProjectReference Include="..\..\..\Tameenk.Integration.Core\Tameenk.Integration.Core.csproj" />
+    <ProjectReference Include="..\..\..\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>

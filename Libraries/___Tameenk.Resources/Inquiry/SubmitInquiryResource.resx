@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="exceededLimit" xml:space="preserve">
+    <value>You exceeded the allowed number of policies</value>
+  </data>
+  <data name="InvaildOldOwnerNin" xml:space="preserve">
+    <value>you can't transfer ownership to your self</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>Invalid captcha.</value>
+  </data>
+  <data name="InvalidData" xml:space="preserve">
+    <value>Data is Invalid Please Enter Correct Data</value>
+  </data>
+  <data name="InvalidPolicyEffectiveDate" xml:space="preserve">
+    <value>Policy effective date should be within 29 days starts from toworrow</value>
+  </data>
+  <data name="NationalIdRequired" xml:space="preserve">
+    <value>Please enter national Id.</value>
+  </data>
+  <data name="RequestModelIsNullException" xml:space="preserve">
+    <value>Request Is Empty</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="CustomCardRequired" xml:space="preserve">
+    <value>Please enter custom card.</value>
+  </data>
+  <data name="PolicyEffectiveDateRequired" xml:space="preserve">
+    <value>Please enter policy effective date Id.</value>
+  </data>
+  <data name="SequenceNumberRequired" xml:space="preserve">
+    <value>Please enter sequence number.</value>
+  </data>
+  <data name="VehicleIdTypeIdRequired" xml:space="preserve">
+    <value>Please select vehicleId type.</value>
+  </data>
+  <data name="CityCodeRequired" xml:space="preserve">
+    <value>Please enter city code.</value>
+  </data>
+  <data name="NoQuotation" xml:space="preserve">
+    <value>There is no quotation request with the given external id</value>
+  </data>
+  <data name="DrivingPercentageErrorInvalid" xml:space="preserve">
+    <value>Driving Percentage exceeded 100%</value>
+  </data>
+  <data name="insuranceCompanyId" xml:space="preserve">
+    <value>Insurance company Id is null</value>
+  </data>
+  <data name="ErrorGeneric" xml:space="preserve">
+    <value>Error: Please contact Customer Service 8001180044 (I-01)</value>
+  </data>
+  <data name="VehicleExceededLimit" xml:space="preserve">
+    <value>This vehicle exceeded the maximum allowed limit for today, go to profile page to see price list for today</value>
+  </data>
+  <data name="ExpiredCaptcha" xml:space="preserve">
+    <value>Expired captcha.</value>
+  </data>
+  <data name="WrongInputCaptcha" xml:space="preserve">
+    <value>Wrong Input Captcha</value>
+  </data>
+  <data name="NationalIdIsNull" xml:space="preserve">
+    <value>Please enter national id</value>
+  </data>
+  <data name="VehicleOwnerNinIsNull" xml:space="preserve">
+    <value>Please enter vehicle owner national id</value>
+  </data>
+  <data name="AdditionalDriverYakeenError" xml:space="preserve">
+    <value>An error occurred while checking this additional driver {0} in NIC. Please try again later</value>
+  </data>
+  <data name="MainDriverForCompanyNotExist" xml:space="preserve">
+    <value>Main Driver For Company Not Exist</value>
+  </data>
+  <data name="YakeenError_1" xml:space="preserve">
+    <value>ID Number Not Found at NIC</value>
+  </data>
+  <data name="YakeenError_10" xml:space="preserve">
+    <value>The Border Number Is Not Found at NIC</value>
+  </data>
+  <data name="YakeenError_100" xml:space="preserve">
+    <value>An Error Occurred while processing your request. Please try again later</value>
+  </data>
+  <data name="YakeenError_11" xml:space="preserve">
+    <value>CR Number Not Found at Saudi Post Records</value>
+  </data>
+  <data name="YakeenError_12" xml:space="preserve">
+    <value>ID Number format is not valid</value>
+  </data>
+  <data name="YakeenError_13" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_14" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_15" xml:space="preserve">
+    <value>The Iqama Number format is not valid</value>
+  </data>
+  <data name="YakeenError_16" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_17" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_18" xml:space="preserve">
+    <value>License Expiry Date does not match NIC records</value>
+  </data>
+  <data name="YakeenError_19" xml:space="preserve">
+    <value>License Expiry Date does not match NIC records</value>
+  </data>
+  <data name="YakeenError_2" xml:space="preserve">
+    <value>The Iqama Number Is Not Found at NIC</value>
+  </data>
+  <data name="YakeenError_20" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_21" xml:space="preserve">
+    <value>The Owner ID format is not valid</value>
+  </data>
+  <data name="YakeenError_22" xml:space="preserve">
+    <value>The Sequence Number format is not valid</value>
+  </data>
+  <data name="YakeenError_23" xml:space="preserve">
+    <value>Owner ID does not match NIC records</value>
+  </data>
+  <data name="YakeenError_24" xml:space="preserve">
+    <value>The SequenceNumber format is not valid</value>
+  </data>
+  <data name="YakeenError_25" xml:space="preserve">
+    <value>Model Year does not match NIC records</value>
+  </data>
+  <data name="YakeenError_26" xml:space="preserve">
+    <value>Model Year does not match NIC records</value>
+  </data>
+  <data name="YakeenError_27" xml:space="preserve">
+    <value>The Sponsor Number format is not valid</value>
+  </data>
+  <data name="YakeenError_28" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_29" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_3" xml:space="preserve">
+    <value>Not Authorized</value>
+  </data>
+  <data name="YakeenError_30" xml:space="preserve">
+    <value>Owner ID does not match NIC records</value>
+  </data>
+  <data name="YakeenError_31" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_32" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_33" xml:space="preserve">
+    <value>Sponsor does not match NIC records</value>
+  </data>
+  <data name="YakeenError_34" xml:space="preserve">
+    <value>Dependent ID does not match NIC records</value>
+  </data>
+  <data name="YakeenError_35" xml:space="preserve">
+    <value>The Border Number format is not valid</value>
+  </data>
+  <data name="YakeenError_36" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_37" xml:space="preserve">
+    <value>Dependent ID does not match NIC records</value>
+  </data>
+  <data name="YakeenError_38" xml:space="preserve">
+    <value>Dependent ID does not match NIC records</value>
+  </data>
+  <data name="YakeenError_39" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_40" xml:space="preserve">
+    <value>The Address Language format is not valid</value>
+  </data>
+  <data name="YakeenError_41" xml:space="preserve">
+    <value>The Birth Date format is not valid</value>
+  </data>
+  <data name="YakeenError_42" xml:space="preserve">
+    <value>Birth Date format is not valid</value>
+  </data>
+  <data name="YakeenError_43" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_44" xml:space="preserve">
+    <value>Date Of Birth does not match NIC records</value>
+  </data>
+  <data name="YakeenError_45" xml:space="preserve">
+    <value>Date does not match NIC records</value>
+  </data>
+  <data name="YakeenError_48" xml:space="preserve">
+    <value>Date does not match NIC records</value>
+  </data>
+  <data name="YakeenError_5" xml:space="preserve">
+    <value>Sequence number not found in NIC</value>
+  </data>
+  <data name="YakeenError_6" xml:space="preserve">
+    <value>Custom card not found in NIC</value>
+  </data>
+  <data name="YakeenError_7" xml:space="preserve">
+    <value>Iqama Number Not Found at NIC</value>
+  </data>
+  <data name="YakeenError_8" xml:space="preserve">
+    <value>The Passport Number Is Not Found at NIC</value>
+  </data>
+  <data name="YakeenError_9" xml:space="preserve">
+    <value>The Passport Number Is Not Found at NIC</value>
+  </data>
+  <data name="TransmissionTypeIdIsNull" xml:space="preserve">
+    <value>Please select transmission type</value>
+  </data>
+  <data name="DrivingPercentageLessThan100" xml:space="preserve">
+    <value>Driving Percentage less than 100%</value>
+  </data>
+  <data name="MissingAddress" xml:space="preserve">
+    <value>As per SAMA regulations, National Address is mandatory when issuing the policy and for any types of insurance, Register now from 
+ &lt;a href="https://register.address.gov.sa/ar/default.aspx" target="_blank"&gt;here&lt;/a&gt;</value>
+  </data>
+  <data name="SaudiPostError" xml:space="preserve">
+    <value>There is an error occured while checking the national address, Please try again later</value>
+  </data>
+  <data name="SaudiPostInvalidPublicID" xml:space="preserve">
+    <value>This ID Number {0} format is not valid in Saudi Post</value>
+  </data>
+  <data name="InvalidPolicyEffectiveDateToEndOfJune" xml:space="preserve">
+    <value>Policy effective date should starts from toworrow and should not exceed 30/06/2020</value>
+  </data>
+  <data name="ChildrenBelow16YearsIsNull" xml:space="preserve">
+    <value>Please select children below 16</value>
+  </data>
+  <data name="DriverNOALast5YearsIsNull" xml:space="preserve">
+    <value>Please select number of accidents In last 5 years</value>
+  </data>
+  <data name="DriverNOALast5YearsIsNullAdditionalDriver" xml:space="preserve">
+    <value>Please select number of accidents In last 5 years for driver {0}</value>
+  </data>
+  <data name="EducationIdIsNull" xml:space="preserve">
+    <value>Please select your education qualification</value>
+  </data>
+  <data name="EducationIdIsNullAdditionalDriver" xml:space="preserve">
+    <value>Please select your education qualification for driver {0}</value>
+  </data>
+  <data name="MedicalConditionIdIsNull" xml:space="preserve">
+    <value>Please select driver medical condition</value>
+  </data>
+  <data name="MedicalConditionIdIsNullAdditionalDriver" xml:space="preserve">
+    <value>Please select driver medical condition for driver {0}</value>
+  </data>
+  <data name="MileageExpectedAnnualIdIsNull" xml:space="preserve">
+    <value>Please select vehicle expected KM annually</value>
+  </data>
+  <data name="ParkingLocationIdIsNull" xml:space="preserve">
+    <value>Please select vehicle overnight parking location</value>
+  </data>
+  <data name="VehicleValueLessThan10K" xml:space="preserve">
+    <value>Please enter a valid vehicle value it should not be less than 10K SAR</value>
+  </data>
+  <data name="OldMobileVersion" xml:space="preserve">
+    <value>This version is outdated, please update the application</value>
+  </data>
+  <data name="autoleasing_InvalidPolicyEffectiveDate" xml:space="preserve">
+    <value>Policy effective date should be within 30 days starts from toworrow</value>
+  </data>
+  <data name="MobileNumberIsEmpty" xml:space="preserve">
+    <value>Mobile Number can't be empty</value>
+  </data>
+  <data name="MobileNumberNotValid" xml:space="preserve">
+    <value>Main Driver Mobile Number Is Not Valid</value>
+  </data>
+  <data name="ErrorHashing" xml:space="preserve">
+    <value>Error: Please contact Customer Service 8001180044 (H-01)</value>
+  </data>
+  <data name="InvalidMainDriverNinWith700" xml:space="preserve">
+    <value>National Id for main driver is not correct</value>
+  </data>
+  <data name="InvalidODPolicyExpiryDate" xml:space="preserve">
+    <value>OD request is onvalid, as TPL policy expiry date less than 90 days</value>
+  </data>
+  <data name="BlockedNin" xml:space="preserve">
+    <value>National Id {0} is blocked, Please Contact Customer Service 8001180044</value>
+  </data>
+  <data name="CompanyDriverExceedsInsuranceNumberLimitPerYear" xml:space="preserve">
+    <value>Company driver exceeds insurance number limit per year: 5</value>
+  </data>
+  <data name="CompanyDriverIsAssignedToAnotherCompany" xml:space="preserve">
+    <value>The main driver is assigned to another company</value>
+  </data>
+  <data name="DriverHasEdaatValidRequest" xml:space="preserve">
+    <value>There is another quotation for the main driver related to another ensured, and the quotation expires within {0} hours</value>
+  </data>
+</root>

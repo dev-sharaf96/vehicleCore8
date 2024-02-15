@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Users\" />
+    <Folder Include="Implementation\Users\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj" />
+    <ProjectReference Include="..\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj" />
+    <ProjectReference Include="..\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj" />
+    <ProjectReference Include="..\Tameenk.Core\Tameenk.Core.csproj" />
+    <ProjectReference Include="..\Tameenk.Data\Tameenk.Data.csproj" />
+    <ProjectReference Include="..\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj" />
+    <ProjectReference Include="..\Tameenk.Resources\Tameenk.Resources.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.8.1" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
+    <PackageReference Include="morelinq" Version="4.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Core\Notifications\ISmsNotificationService.cs" />
+    <Compile Remove="Core\Provider\IProviderMappingService.cs" />
+    <Compile Remove="Core\Quotations\IQuotationRequestServices.cs" />
+    <Compile Remove="Implementation\Files\AutoleasingQuotationForm\AutoleasingQuotationFormService.cs" />
+    <Compile Remove="Implementation\Http\ResilientHttpClient.cs" />
+    <Compile Remove="Implementation\Http\ResilientHttpClientFactory.cs" />
+    <Compile Remove="Implementation\Localizations\AutoleasingQuotationForm\AutoleasingQuotationFormService.cs" />
+    <Compile Remove="Implementation\Notifications\QyadatSmsService.cs" />
+    <Compile Remove="Implementation\Orders\IntegrationTransactions\IntegrationTransactionService.cs" />
+    <Compile Remove="Implementation\Payments\CancelSadadTask.cs" />
+    <Compile Remove="Implementation\Policies\FailedFilesPolicyProcessingTask.cs" />
+    <Compile Remove="Implementation\Policies\PolicyProcessingTask.cs" />
+    <Compile Remove="Implementation\Policies\PolicyProcessingTaskWithPdfTemplate.cs" />
+    <Compile Remove="Implementation\Policies\PolicyUpdateRequestTask.cs" />
+    <Compile Remove="Implementation\Policies\SendFailurePolicyTask.cs" />
+    <Compile Remove="Implementation\Policies\SendPolicyFailuerTask.cs" />
+    <Compile Remove="Implementation\Provider\ProviderMappingService.cs" />
+    <Compile Remove="Implementation\Quotations\QuotationRequestServices.cs" />
+    <Compile Remove="Notifications\EmailAttacmentFileModel.cs" />
+    <Compile Remove="Notifications\FileAsByteArrayDetails.cs" />
+    <Compile Remove="Notifications\INotificationService.cs" />
+    <Compile Remove="Notifications\NotificationService.cs" />
+    <Compile Remove="Tasks\IScheduleTaskService.cs" />
+    <Compile Remove="Tasks\ITask.cs" />
+    <Compile Remove="Tasks\ScheduleTaskService.cs" />
+    <Compile Remove="Tasks\Task.cs" />
+    <Compile Remove="Tasks\TaskManager.cs" />
+    <Compile Remove="Tasks\TaskThread.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Extensions">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Web.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
