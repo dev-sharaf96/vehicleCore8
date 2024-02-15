@@ -1,0 +1,20 @@
+﻿insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(1,N'بدون قيود','1 year');
+
+insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(2,N'سيارة أوتوماتيك','سيارة أوتوماتيك')
+
+insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(3,N'طرف صناعي','طرف صناعي')
+insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(4,N'عدسات مقوية للنظر','عدسات مقوية للنظر')
+insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(5,N'لساعات النهار فقط','لساعات النهار فقط')
+insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(6,N'سماعة للأذن','سماعة للأذن')
+insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(7,N'للقيادة داخل المملكة فقط','للقيادة داخل المملكة فقط')
+insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(8,N'سيارة خاصة لذوي الإحتياجات الخاصة','سيارة خاصة لذوي الإحتياجات الخاصة')
+insert into DriverMedicalCondition ( Code,nameAr,nameEn)
+values(9,N'للاستخدام الخاص وبدون أجر','للاستخدام الخاص وبدون أجر')

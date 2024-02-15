@@ -1,0 +1,22 @@
+﻿{
+  "dateOfBirthG": "18-11-1987",
+  "dateOfBirthH": "27-03-1408",
+  "englishFirstName": "KHALED",
+  "englishLastName": "ALMUTLAQ",
+  "englishSecondName": "MOHAMMED",
+  "englishThirdName": "M",
+  "familyName": "المطلق",
+  "fatherName": "محمد",
+  "firstName": "خالد",
+  "gender": 0,
+  "genderSpecified": true,
+  "grandFatherName": "مبارك",
+  "licenseListList": [
+    {
+      "licnsTypeCode": 3,
+      "licssExpiryDateH": "25-12-1441"
+    }
+  ],
+  "logId": 140203428,
+  "subtribeName": ""
+}

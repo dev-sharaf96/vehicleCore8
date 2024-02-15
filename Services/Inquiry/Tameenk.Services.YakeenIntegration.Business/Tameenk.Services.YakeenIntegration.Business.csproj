@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{431DF20E-0472-4636-B5A7-8E94F2DEFE03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Tameenk.Services.YakeenIntegration.Business</RootNamespace>
+    <AssemblyName>Tameenk.Services.YakeenIntegration.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi">
+      <HintPath>..\..\..\packages\Autofac.WebApi2.4.2.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\CommonService.cs" />
+    <Compile Include="Business\CustomerBusiness.cs" />
+    <Compile Include="Business\DriverBusiness.cs" />
+    <Compile Include="Business\VehicleBusiness.cs" />
+    <Compile Include="Connected Services\VehicleYakeenBcareService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Dto\AlienYakeenInfoDto.cs" />
+    <Compile Include="Dto\CarInfoCustomTwoDto.cs" />
+    <Compile Include="Dto\ClientRequestModel.cs" />
+    <Compile Include="Dto\CustomerIdYakeenInfoDto.cs" />
+    <Compile Include="Dto\CustomerNameYakeenInfoDto.cs" />
+    <Compile Include="Dto\CustomerYakeenRequestDto.cs" />
+    <Compile Include="Dto\DriverLicenseYakeenInfoDto.cs" />
+    <Compile Include="Dto\DriverYakeenInfoDto.cs" />
+    <Compile Include="Dto\DriverYakeenRequestDto.cs" />
+    <Compile Include="Dto\Enums\EErrorType.cs" />
+    <Compile Include="Dto\Enums\EGender.cs" />
+    <Compile Include="Dto\VehiclePlateYakeenInfoDto.cs" />
+    <Compile Include="Dto\VehicleYakeenInfoDto.cs" />
+    <Compile Include="Dto\VehicleYakeenRequestDto.cs" />
+    <Compile Include="Dto\YakeenErrorDto.cs" />
+    <Compile Include="Dto\YakeenMobileVerificationDto.cs" />
+    <Compile Include="Dto\YakeenOutputModels\YakeenOutputModel.cs" />
+    <Compile Include="Extensions\MappingExtension.cs" />
+    <Compile Include="Infrastructure\AutoMapperConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyRegistrar.cs" />
+    <Compile Include="Connected Services\YakeenBCareService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RepositoryConstants.cs" />
+    <Compile Include="Services\Core\IClientServices.cs" />
+    <Compile Include="Services\Core\ICustomerServices.cs" />
+    <Compile Include="Services\Core\IDriverServices.cs" />
+    <Compile Include="Services\Core\IYakeenVehicleServices.cs" />
+    <Compile Include="Services\Implementation\ClientServices.cs" />
+    <Compile Include="Services\Implementation\CustomerServices.cs" />
+    <Compile Include="Services\Implementation\DriverServices.cs" />
+    <Compile Include="Services\Implementation\YakeenVehicleServices.cs" />
+    <Compile Include="WebClients\Core\IYakeenClient.cs" />
+    <Compile Include="WebClients\Implementation\MobileVerificationModel.cs" />
+    <Compile Include="WebClients\Implementation\NationalAddressOutput.cs" />
+    <Compile Include="WebClients\Implementation\YakeenAddressOutput.cs" />
+    <Compile Include="WebClients\Implementation\YakeenAddressResult.cs" />
+    <Compile Include="WebClients\Implementation\YakeenClient.cs" />
+    <Compile Include="WebClients\Implementation\YakeenMobileVerificationOutput.cs" />
+    <Compile Include="WebClients\Implementation\YakeenOutput.cs" />
+    <Compile Include="WebClients\Implementation\YakeenVehicleOutput.cs" />
+    <Compile Include="YakeenFakeClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienDriverInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienInfoByBorderNumberAndSponsorResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienInfoByBorderNumberResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienInfoByIqamaForInsuranceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienInfoByPassportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienInfoBySponserdIqamaThreeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienLegalStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienNameInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.alienNatAddressResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.carChassisNumberInfoByCustomResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.carInfoByCustomResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.carInfoByCustomTwoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.carInfoBySequenceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.carPlateInfoBySequenceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.citizenDepInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.citizenDriverInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.citizenIDInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.citizenInfoByPassportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.citizenInfoForInsuranceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.citizenInfoThreeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.citizenNameInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.citizenNatAddressResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.companyAddressInfoByCrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.companyInfoBySponseredIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.depAlienInfoBySponserdIqamaTwoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.depCitizenInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.depInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.depInfoByIqamaSpecResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.depInfoBySponseredIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.dobAlienInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienDriverInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienInfoByBorderNumberAndSponsorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienInfoByBorderNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienInfoByIqamaForInsuranceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienInfoByPassportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienInfoBySponserdIqamaThreeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienLegalStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienNameInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getAlienNatAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCarChassisNumberInfoByCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCarInfoByCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCarInfoByCustomTwoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCarInfoBySequenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCarPlateInfoBySequenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCitizenDepInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCitizenDriverInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCitizenIDInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCitizenInfoByPassportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCitizenInfoForInsuranceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCitizenInfoThreeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCitizenNameInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCitizenNatAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCompanyAddressInfoByCrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getCompanyInfoBySponseredIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getDepAlienInfoBySponserdIqamaTwoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getDepCitizenInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getDepInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getDepInfoByIqamaSpecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getDepInfoBySponseredIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.getDOBAlienInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.insurancePolicyTransactionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Tameenk.Services.YakeenIntegration.Business.VehicleYakeenBcareService.postInsurancePolicyTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VehicleYakeenBcareService\Yakeen4BcareService.wsdl" />
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienDriverInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienInfoByBorderNumberAndSponsorResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienInfoByBorderNumberResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienInfoByIqamaForInsuranceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienInfoByPassportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienInfoBySponserdIqamaThreeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienLegalStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienNameInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.alienNatAddressResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.carChassisNumberInfoByCustomResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.carInfoByCustomResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.carInfoByCustomTwoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.carInfoBySequenceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.carPlateInfoBySequenceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.citizenDepInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.citizenDriverInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.citizenIDInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.citizenInfoByPassportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.citizenInfoForInsuranceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.citizenInfoThreeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.citizenNameInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.citizenNatAddressResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.companyAddressInfoByCrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.companyInfoBySponseredIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.depAlienInfoBySponserdIqamaTwoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.depCitizenInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.depInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.depInfoByIqamaSpecResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.depInfoBySponseredIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.dobAlienInfoByIqamaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienDriverInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienInfoByBorderNumberAndSponsorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienInfoByBorderNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienInfoByIqamaForInsuranceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienInfoByPassportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienInfoBySponserdIqamaThreeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienLegalStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienNameInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getAlienNatAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCarChassisNumberInfoByCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCarInfoByCustomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCarInfoByCustomTwoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCarInfoBySequenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCarPlateInfoBySequenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCitizenDepInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCitizenDriverInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCitizenIDInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCitizenInfoByPassportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCitizenInfoForInsuranceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCitizenInfoThreeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCitizenNameInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCitizenNatAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCompanyAddressInfoByCrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getCompanyInfoBySponseredIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getDepAlienInfoBySponserdIqamaTwoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getDepCitizenInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getDepInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getDepInfoByIqamaSpecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getDepInfoBySponseredIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.getDOBAlienInfoByIqamaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.insurancePolicyTransactionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Tameenk.Services.YakeenIntegration.Business.YakeenBCareService.postInsurancePolicyTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\YakeenBCareService\Yakeen4BcareService.wsdl" />
+    <EmbeddedResource Include="FakeJson\GetAlienInfoByIqama.json" />
+    <EmbeddedResource Include="FakeJson\GetCarInfoBySequenceResult.json" />
+    <EmbeddedResource Include="FakeJson\GetCarPlateInfoBySequence.json" />
+    <EmbeddedResource Include="FakeJson\GetCitizenDriverInfo.json" />
+    <EmbeddedResource Include="FakeJson\GetCitizenIDInfo.json" />
+    <EmbeddedResource Include="FakeJson\GetCitizenNameInfo.json" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Tameenk.Services.YakeenIntegration.Business.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Tameenk.Services.YakeenIntegration.Business.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\Tameenk.Services.YakeenIntegrationApi.csproj.CopyComplete" />
+    <None Include="obj\Debug\Tameenk.Services.YakeenIntegrationApi.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Tameenk.Services.YakeenIntegrationApi.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="obj\Debug\TempPE\Connected Services.VehicleYakeenBcareService.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Connected Services.YakeenBCareService.Reference.cs.dll" />
+    <None Include="Connected Services\VehicleYakeenBcareService\configuration91.svcinfo" />
+    <None Include="Connected Services\VehicleYakeenBcareService\configuration.svcinfo" />
+    <None Include="Connected Services\VehicleYakeenBcareService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="obj\Debug\Tameenk.Services.YakeenIntegrationApi.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Tameenk.Services.YakeenIntegrationApi.dll" />
+    <Content Include="obj\Debug\Tameenk.Services.YakeenIntegrationApi.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj">
+      <Project>{51816323-E9BA-457F-844C-0237993AC117}</Project>
+      <Name>Tameenk.Integration.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14F920B0-E1F2-4E7B-BE22-4BDE4FC9541F}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8EDFCD3E-4461-4B2C-A83E-175983E9C6B7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5CD41905-AC08-410F-9FFB-B3975FFBA538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Data\Tameenk.Data.csproj">
+      <Project>{9e27f8af-2b2d-4a16-a0b3-ebf07fac188e}</Project>
+      <Name>Tameenk.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj">
+      <Project>{339cf262-0f17-4c60-bb6f-fdc5133b3132}</Project>
+      <Name>Tameenk.Loggin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Resources\Tameenk.Resources.csproj">
+      <Project>{2CFF55DC-EDD1-41C7-92F6-04C650429A9D}</Project>
+      <Name>Tameenk.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Security\Tameenk.Security.csproj">
+      <Project>{e0a5623c-439c-42ea-90d3-c40192abac16}</Project>
+      <Name>Tameenk.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Services\Tameenk.Services.csproj">
+      <Project>{9B11F328-DBF1-4B67-B86D-F3077B4EEA5E}</Project>
+      <Name>Tameenk.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Tameenk.Api.Core\Tameenk.Api.Core.csproj">
+      <Project>{d5ef56de-74f4-468b-94a0-73d33c2d14cc}</Project>
+      <Name>Tameenk.Api.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Tamkeen.bll\Tamkeen.bll.csproj">
+      <Project>{F0344826-89DF-484D-8B72-A31D51C77790}</Project>
+      <Name>Tamkeen.bll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\VehicleYakeenBcareService\" />
+    <WCFMetadataStorage Include="Connected Services\YakeenBCareService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\YakeenBCareService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\YakeenBCareService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\YakeenBCareService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
