@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26A5D248-8A21-44AF-9E3B-8875A4E12806}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Payment.Esal.Component</RootNamespace>
+    <AssemblyName>Tameenk.Payment.Esal.Component</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EsalDTO\CustomerDto.cs" />
+    <Compile Include="EsalDTO\EsalCancelRequestDto.cs" />
+    <Compile Include="EsalDTO\EsalCancelResponseDto.cs" />
+    <Compile Include="EsalDTO\EsalErrorDto.cs" />
+    <Compile Include="EsalDTO\EsalRequestDto.cs" />
+    <Compile Include="EsalDTO\EsalResponseDto.cs" />
+    <Compile Include="EsalDTO\InvoiceCanceledDto.cs" />
+    <Compile Include="EsalDTO\InvoiceRequestDto.cs" />
+    <Compile Include="EsalDTO\InvoiceResponseDto.cs" />
+    <Compile Include="EsalDTO\LineItemDto.cs" />
+    <Compile Include="EsalDTO\ProfitMarginRequestDto.cs" />
+    <Compile Include="EsalDTO\SupplierDto.cs" />
+    <Compile Include="EsalDTO\EsalOutput.cs" />
+    <Compile Include="EsalPaymentService.cs" />
+    <Compile Include="EsalSearchService.cs" />
+    <Compile Include="IEsalPaymentService.cs" />
+    <Compile Include="IEsalSearchService.cs" />
+    <Compile Include="Model\EsalBankDetails.cs" />
+    <Compile Include="Model\EsalbillNumberWithAccount.cs" />
+    <Compile Include="Model\EsalError.cs" />
+    <Compile Include="Model\EsalInvoiceNotification.cs" />
+    <Compile Include="Model\EsalInvoicesFilter.cs" />
+    <Compile Include="Model\EsalPayment.cs" />
+    <Compile Include="Model\EsalPaymentNotification.cs" />
+    <Compile Include="Model\EsalPaymentResponseModel.cs" />
+    <Compile Include="Model\EsalPayor.cs" />
+    <Compile Include="Model\EsalpostPaidPaymentRef.cs" />
+    <Compile Include="Model\EsalPrePaidPaymentRef.cs" />
+    <Compile Include="Model\EsalUploadInvoiceNotification.cs" />
+    <Compile Include="Model\InvoiceModel.cs" />
+    <Compile Include="Model\SearchResultOutput.cs" />
+    <Compile Include="Model\Settlement\EsalSettlementModel.cs" />
+    <Compile Include="Model\Settlement\SettlementAccountId.cs" />
+    <Compile Include="Model\Settlement\SettlementBeneficiaryId.cs" />
+    <Compile Include="Model\Settlement\SettlementCustId.cs" />
+    <Compile Include="Model\Settlement\SettlementIncludeInfoPlus.cs" />
+    <Compile Include="Model\Settlement\SettlementPhoneNum.cs" />
+    <Compile Include="Model\Settlement\SettlementPmtInfo.cs" />
+    <Compile Include="Model\Settlement\SettlementPmtStatus.cs" />
+    <Compile Include="Model\Settlement\SettlementPmtTransId.cs" />
+    <Compile Include="Model\Settlement\SettlementBillerReconUploadRq.cs" />
+    <Compile Include="Model\Settlement\SettlementPmtBankRec.cs" />
+    <Compile Include="Model\Settlement\SettlementPmtBranchRec.cs" />
+    <Compile Include="Model\Settlement\SettlementPmtRec.cs" />
+    <Compile Include="Model\Settlement\SettlementStatus.cs" />
+    <Compile Include="Model\Settlement\Status.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14F920B0-E1F2-4E7B-BE22-4BDE4FC9541F}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8EDFCD3E-4461-4B2C-A83E-175983E9C6B7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5CD41905-AC08-410F-9FFB-B3975FFBA538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Data\Tameenk.Data.csproj">
+      <Project>{9E27F8AF-2B2D-4A16-A0B3-EBF07FAC188E}</Project>
+      <Name>Tameenk.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj">
+      <Project>{339CF262-0F17-4C60-BB6F-FDC5133B3132}</Project>
+      <Name>Tameenk.Loggin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Services\Tameenk.Services.csproj">
+      <Project>{9B11F328-DBF1-4B67-B86D-F3077B4EEA5E}</Project>
+      <Name>Tameenk.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

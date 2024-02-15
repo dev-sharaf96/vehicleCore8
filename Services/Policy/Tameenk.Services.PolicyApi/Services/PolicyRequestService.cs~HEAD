@@ -1,0 +1,564 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Entity;
+using System.Globalization;
+using System.Linq;
+using System.Net.Http;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using Tameenk.Core.Data;
+using Tameenk.Core.Domain.Entities;
+using Tameenk.Core.Domain.Entities.Quotations;
+using Tameenk.Core.Domain.Enums;
+using Tameenk.Core.Domain.Enums.Vehicles;
+using Tameenk.Core.Infrastructure;
+using Tameenk.Integration.Core.Providers;
+using Tameenk.Integration.Dto.Najm;
+using Tameenk.Integration.Dto.Providers;
+using Tameenk.Integration.Dto.Yakeen;
+using Tameenk.Services.Logging;
+using Tameenk.Services.PolicyApi.Models;
+
+namespace Tameenk.Services.PolicyApi.Services
+{
+    public class PolicyRequestService : IPolicyRequestService
+    {
+        private readonly IInvoiceService _invoiceService;
+        private readonly IRepository<Policy> _policyRepository;
+        private readonly IRepository<PolicyFile> _policyFileRepository;
+        private readonly IRepository<CheckoutDetail> _checkoutDetailRepository;
+        private readonly IRepository<InsuranceCompany> _insuranceCompanyRepository;
+        private readonly IRepository<Invoice> _invoiceRepository;
+        private readonly IRepository<QuotationResponse> _quotationResponseRepository;
+        private readonly IPolicyEmailService _policyEmailService;
+        private readonly ILogger _logger;
+
+        public PolicyRequestService(IRepository<Policy> policyRepository,
+            IInvoiceService invoiceService, IPolicyEmailService policyEmailService,
+            IRepository<CheckoutDetail> checkoutDetailRepository,
+            IRepository<PolicyFile> policyFileRepository,
+            IRepository<InsuranceCompany> insuranceCompanyRepository,
+            IRepository<Invoice> invoiceRepository,
+            IRepository<QuotationResponse> quotationResponseRepository,
+            ILogger logger)
+        {
+            _invoiceService = invoiceService;
+            _policyRepository = policyRepository;
+            _policyEmailService = policyEmailService;
+            _checkoutDetailRepository = checkoutDetailRepository;
+            _policyFileRepository = policyFileRepository;
+            _insuranceCompanyRepository = insuranceCompanyRepository;
+            _invoiceRepository = invoiceRepository;
+            _quotationResponseRepository = quotationResponseRepository;
+            _logger = logger;
+        }
+
+        public async Task<bool> GeneratePolicyAsync(string referenceId, LanguageTwoLetterIsoCode userLanguage, bool showErrors = false)
+        {
+            _logger.Log($"PolicyRequestService -> GeneratePolicyAsync >>> Start <<< GeneratePolicyAsync (reference id : {referenceId}, user language : {userLanguage}, show errors : {showErrors})");
+            var checkoutDetails = _checkoutDetailRepository.Table.Include(c => c.Driver)
+                        .Include(c => c.Driver.Addresses)
+                        .Include(c => c.OrderItems.Select(oi => oi.Product.PriceDetails))
+                        .Include(c => c.OrderItems.Select(oi => oi.OrderItemBenefits.Select(oib => oib.Benefit)))
+                        .Include(c => c.CheckoutAdditionalDrivers)
+                        .Include(c => c.CheckoutAdditionalDrivers.Select(d => d.Driver))
+                        .Include(c => c.CheckoutAdditionalDrivers.Select(d => d.Driver).Select(d => d.DriverLicenses))
+                        .Include(c => c.CheckoutAdditionalDrivers.Select(d => d.Driver).Select(d => d.Addresses))
+                        .Include(c => c.Vehicle)
+                        .Include(c => c.AdditionalInfo)
+                        .FirstOrDefault(c => c.ReferenceId == referenceId);
+            var quotationResponse = _quotationResponseRepository.Table.FirstOrDefault(e => e.ReferenceId == referenceId);
+
+            PolicyRequest policyRequestMessage = GeneratePolicyRequestMessage(checkoutDetails, referenceId);
+            if (policyRequestMessage != null)
+            {
+                PolicyResponse policyResponseMessage = null;
+                try
+                {
+                    policyResponseMessage = GetPolicy(policyRequestMessage,quotationResponse.InsuranceCompanyId);
+                    policyResponseMessage.ReferenceId = referenceId;
+                }
+                catch (Exception ex)
+                {
+                    _logger.Log($"PolicyRequestService -> GeneratePolicyAsync get policy (reference id : {referenceId}, user language : {userLanguage}, show errors : {showErrors})", ex);
+                }
+                
+
+                if (policyResponseMessage == null ||
+                    policyResponseMessage.Errors != null ||
+                    policyResponseMessage.StatusCode == 2)
+                {
+                    UpdatePolicyStatus(checkoutDetails, EPolicyStatus.Pending);
+                    //log the response errors if it has errors
+                    LogPolicyResponseErrorsIfExist(policyResponseMessage);
+                    SendPolicyViaMailDto sendPolicyViaMailDto = new SendPolicyViaMailDto()
+                    {
+                        PolicyResponseMessage = policyResponseMessage,
+                        ReceiverEmailAddress = checkoutDetails.Email,
+                        ReferenceId = referenceId,
+                        UserLanguage = userLanguage,
+                        PolicyFileByteArray = null,
+                        InvoiceFileByteArray = null,
+                        IsPolicyGenerated = false,
+                        IsShowErrors = showErrors
+                    };
+                    await _policyEmailService.SendPolicyViaMail(sendPolicyViaMailDto);
+                    return false;
+                }
+
+                Invoice invoice = null;
+                byte[] invoiceFilePdf = null;
+                try
+                {
+                    invoice = await _invoiceService.GenerateAndSaveInvoicePdf(policyRequestMessage, policyResponseMessage);
+                    invoiceFilePdf = invoice == null ? null
+                            : (invoice.InvoiceFile == null ? null : invoice.InvoiceFile.InvoiceData);
+                }
+                catch (Exception ex)
+                {
+                    _logger.Log($"PolicyRequestService -> GeneratePolicyAsync generate & save invoice pdf (reference id : {referenceId}, user language : {userLanguage}, show errors : {showErrors})", ex);
+                }
+
+
+                try
+                {
+
+                    var policyId = SavePolicy(policyResponseMessage, quotationResponse.InsuranceCompanyId);
+                    if (policyId.HasValue)
+                    {
+                        invoice.PolicyId = policyId;
+                        _invoiceRepository.Update(invoice);
+                    }
+
+                    var policyStatus = HandleInsurancePolicyFileResult(policyResponseMessage, quotationResponse.InsuranceCompanyId);
+                    UpdatePolicyStatus(checkoutDetails, policyStatus);
+
+                    SavePolicyFile(policyResponseMessage);
+                }
+                catch (Exception ex)
+                {
+                    _logger.Log($"PolicyRequestService -> GeneratePolicyAsync -> Save policy (reference id : {referenceId}, user language : {userLanguage}, show errors : {showErrors})", ex);
+                }
+                finally
+                {
+                    SendPolicyViaMailDto sendPolicyViaMailDto = new SendPolicyViaMailDto()
+                    {
+                        PolicyResponseMessage = policyResponseMessage,
+                        ReceiverEmailAddress = checkoutDetails.Email,
+                        ReferenceId = referenceId,
+                        UserLanguage = userLanguage,
+                        PolicyFileByteArray = policyResponseMessage.PolicyFile,
+                        InvoiceFileByteArray = invoiceFilePdf,
+                        IsPolicyGenerated = true,
+                        IsShowErrors = showErrors
+                    };
+                    _logger.Log($"PolicyRequestService -> GeneratePolicyAsync >>> Before <<< SendPolicyViaMail (reference id : {referenceId}, user language : {userLanguage}, show errors : {showErrors})");
+                    await _policyEmailService.SendPolicyViaMail(sendPolicyViaMailDto);
+                    _logger.Log($"PolicyRequestService -> GeneratePolicyAsync >>> After <<< SendPolicyViaMail (reference id : {referenceId}, user language : {userLanguage}, show errors : {showErrors})");
+                }
+                _logger.Log($"PolicyRequestService -> GeneratePolicyAsync >>> End <<< GeneratePolicyAsync return true (reference id : {referenceId}, user language : {userLanguage}, show errors : {showErrors})");
+                return true;
+            }
+            _logger.Log($"PolicyRequestService -> GeneratePolicyAsync >>> End <<< GeneratePolicyAsync return false (reference id : {referenceId}, user language : {userLanguage}, show errors : {showErrors})");
+            return false;
+        }
+
+        private EPolicyStatus HandleInsurancePolicyFileResult(PolicyResponse policy, int iCompanyId)
+        {
+            //3 cases for Policy file
+            //  1- the insurance send policy as file byte array
+            //  2- the insurance send policy as url to download pdf
+            //  3- the insurance send policy as PolicyDetails obj to generate the file through our PDF Generation Engine
+            byte[] policyFileByteArray = null;
+
+            if (policy.PolicyFile != null)
+            {
+                policyFileByteArray = policy.PolicyFile;
+                return EPolicyStatus.Available;
+            }
+            //For case 2, we need to convert the pdf in the url into byte array
+            else if (!string.IsNullOrEmpty(policy.PolicyFileUrl))
+            {
+                try
+                {
+                    using (System.Net.WebClient client = new System.Net.WebClient())
+                    {
+                        policyFileByteArray = client.DownloadData(policy.PolicyFileUrl);
+                        policy.PolicyFile = policyFileByteArray;
+                    }
+
+                    if (policy.PolicyFile == null)
+                        return EPolicyStatus.PolicyFileDownloadFailure;
+                    else
+                        return EPolicyStatus.Available;
+                }
+                catch (Exception ex)
+                {
+                    _logger.Log($"PolicyRequestService -> HandleInsurancePolicyFileResult (Policy response : {JsonConvert.SerializeObject(policy)}, company id : {iCompanyId})", ex);
+                    return EPolicyStatus.PolicyFileDownloadFailure;
+                }
+            }
+            //for case 3 we call the engine
+            else if (string.IsNullOrEmpty(policy.PolicyFileUrl) && policy.PolicyFile == null)
+            {
+                try
+                {
+                    policyFileByteArray = GeneratePolicyFileFromPolicyDetails(policy, iCompanyId);
+                    policy.PolicyFile = policyFileByteArray;
+
+                    if (policyFileByteArray == null)
+                        return EPolicyStatus.PolicyFileGeneraionFailure;
+                    else
+                        return EPolicyStatus.Available;
+                }
+                catch (Exception ex)
+                {
+                _logger.Log($"PolicyRequestService -> HandleInsurancePolicyFileResult (Policy response : {JsonConvert.SerializeObject(policy)})", ex, LogLevel.Error);
+                    return EPolicyStatus.PolicyFileGeneraionFailure;
+                }
+            }
+            else
+            {
+                throw new Exception("error in handling insurance policy file result, output is not a valid case");
+            }
+        }
+
+        private byte[] GeneratePolicyFileFromPolicyDetails(PolicyResponse policy, int iCompanyId)
+        {
+            string policyDetailsJsonString = JsonConvert.SerializeObject(policy.PolicyDetails);
+            var insuranceCompany = _insuranceCompanyRepository.Table.FirstOrDefault(
+                i => i.InsuranceCompanyID == iCompanyId);
+
+            ReportGenerationModel reportGenerationModel = new ReportGenerationModel
+            {
+                ReportType = insuranceCompany?.ReportTemplateName,
+                ReportDataAsJsonString = policyDetailsJsonString
+            };
+            HttpClient client = new HttpClient();
+            string reportGenerationModelAsJson = JsonConvert.SerializeObject(reportGenerationModel);
+            var httpContent = new StringContent(reportGenerationModelAsJson, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = client.PostAsync(System.Configuration.ConfigurationManager.AppSettings["PolicyPDFGeneratorAPIURL"] + "api/PolicyPdfGenerator", httpContent).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var value = response.Content.ReadAsStringAsync().Result;
+                return JsonConvert.DeserializeObject<byte[]>(value);
+            }
+            return null;
+        }
+
+        private PolicyResponse GetPolicy(PolicyRequest policyRequestMessage,int companyId)
+        {
+            var providerFullTypeName = string.Empty;
+            var insuranceCompany = _insuranceCompanyRepository.Table.FirstOrDefault(
+                i => i.InsuranceCompanyID == companyId);
+
+            if (insuranceCompany != null)
+                providerFullTypeName = insuranceCompany.ClassTypeName + ", " + insuranceCompany.NamespaceTypeName;
+
+            PolicyResponse results = null;
+
+            var scope = EngineContext.Current.ContainerManager.Scope();
+            var providerType = Type.GetType(providerFullTypeName);
+            IInsuranceProvider provider = null;
+            if (providerType != null)
+            {
+                object instance;
+                if (!EngineContext.Current.ContainerManager.TryResolve(providerType, scope, out instance))
+                {
+                    //not resolved
+                    instance = EngineContext.Current.ContainerManager.ResolveUnregistered(providerType, scope);
+                }
+                provider = instance as IInsuranceProvider;
+            }
+            if (provider == null)
+            {
+                throw new Exception("Unable to find provider.");
+            }
+            if (provider != null)
+            {
+                results = provider.GetPolicy(policyRequestMessage);
+            }
+
+            return results;
+
+        }
+
+
+        private PolicyRequest GeneratePolicyRequestMessage(CheckoutDetail checkoutDetails, string referenceId)
+        {
+            if (checkoutDetails.PolicyStatusId == (int)EPolicyStatus.PaymentSuccess || checkoutDetails.PolicyStatusId == (int)EPolicyStatus.Pending)
+            {
+                var quoteResponse = _quotationResponseRepository.Table
+                    .Include(e => e.QuotationRequest)
+                    .Include(e => e.QuotationRequest.Vehicle)
+                    .Include(e => e.QuotationRequest.Driver)
+                    .FirstOrDefault(q => q.ReferenceId == referenceId);
+                //get the recent invoice
+                var invoice = _invoiceRepository.Table.OrderByDescending(e => e.Id).FirstOrDefault(i => i.ReferenceId == referenceId);
+                var orderItem = checkoutDetails.OrderItems.FirstOrDefault();
+                var selectedBenefitsData = orderItem.Product.Product_Benefits
+                        .Where(b => b.IsSelected.HasValue && b.IsSelected.Value);
+
+                var selectedBenefits = selectedBenefitsData.Select(b =>
+                    new BenefitRequest()
+                    {
+                        BenefitId = b.BenefitExternalId,
+                        BenefitCode = b.Benefit.Code,
+                        BenefitNameAr = b.Benefit.ArabicDescription,
+                        BenefitNameEn = b.Benefit.EnglishDescription,
+                        BenefitPrice = b.BenefitPrice,
+                        IsSelected = b.IsSelected.HasValue && b.IsSelected.Value
+                    });
+                var policyRequestMessagge = new PolicyRequest()
+                {
+                    ReferenceId = referenceId,
+                    QuotationNo = orderItem.Product.QuotaionNo,
+                    ProductId = orderItem.Product.ExternalProductId,
+                    Benefits = selectedBenefits.ToList(),
+                    InsuredId = long.Parse(checkoutDetails.Driver.NIN),
+                    InsuredMobileNumber = checkoutDetails.Phone,
+                    InsuredEmail = checkoutDetails.Email,
+                    InsuredBuildingNo = int.Parse(checkoutDetails.Driver.Addresses.First().BuildingNumber),
+                    InsuredZipCode = int.Parse(checkoutDetails.Driver.Addresses.First().PostCode),
+                    InsuredAdditionalNumber = int.Parse(checkoutDetails.Driver.Addresses.First().AdditionalNumber),
+                    InsuredUnitNo = int.Parse(checkoutDetails.Driver.Addresses.First().UnitNumber),
+                    InsuredCity = string.IsNullOrEmpty(checkoutDetails.Driver.Addresses.First().City) ? "غير معروف"
+                        : checkoutDetails.Driver.Addresses.First().City,
+                    InsuredDistrict = string.IsNullOrEmpty(checkoutDetails.Driver.Addresses.First().District) ? "غير معروف"
+                        : checkoutDetails.Driver.Addresses.First().District,
+                    InsuredStreet = string.IsNullOrEmpty(checkoutDetails.Driver.Addresses.First().Street) ? "غير معروف"
+                        : checkoutDetails.Driver.Addresses.First().Street,
+                    PaymentMethodCode = checkoutDetails.PaymentMethodCode.Value,
+                    PaymentAmount = invoice.TotalPrice.Value,
+                    PaymentBillNumber = invoice.InvoiceNo.ToString(),
+
+                    InsuredBankCode = checkoutDetails.BankCode,
+                    PaymentUsername = "UNKNOWN",
+                    InsuredIBAN = checkoutDetails.IBAN,
+
+                };
+
+                return policyRequestMessagge;
+            }
+
+            return null;
+        }
+
+        private int? SavePolicy(PolicyResponse policy, int? companyId)
+        {
+            int? result = null;
+            var isExist = _policyRepository.Table.Any(a => a.CheckOutDetailsId == policy.ReferenceId);
+            if (!isExist)
+            {
+                var policyData = new Policy
+                {
+                    CheckOutDetailsId = policy.ReferenceId,
+                    PolicyEffectiveDate = policy.PolicyEffectiveDate,
+                    PolicyExpiryDate = policy.PolicyExpiryDate,
+                    PolicyIssueDate = policy.PolicyIssuanceDate,
+                    PolicyNo = policy.PolicyNo,
+                    StatusCode = Convert.ToByte(policy.StatusCode),
+                    InsuranceCompanyID = companyId
+                };
+
+                var jsonSerializer = new JavaScriptSerializer();
+
+                PolicyDetail policyDetail = null;
+                if (policy.PolicyDetails != null)
+                {
+                    policyDetail = new PolicyDetail()
+                    {
+                        Id = policyData.Id,
+                        Policy = policyData,
+                        DocumentSerialNo = policy.PolicyDetails.DocumentSerialNo,
+                        PolicyNo = policy.PolicyDetails.PolicyNo,
+                        InsuranceStartDate = policy.PolicyDetails.InsuranceStartDate,
+                        InsuranceEndDate = policy.PolicyDetails.InsuranceEndDate,
+                        PolicyCoverTypeEn = policy.PolicyDetails.PolicyCoverTypeEn,
+                        PolicyCoverTypeAr = policy.PolicyDetails.PolicyCoverTypeAr,
+                        PolicyCoverAgeLimitEn = jsonSerializer.Serialize(policy.PolicyDetails.PolicyCoverAgeLimitEn),
+                        PolicyCoverAgeLimitAr = jsonSerializer.Serialize(policy.PolicyDetails.PolicyCoverAgeLimitAr),
+                        PolicyAdditionalCoversEn = jsonSerializer.Serialize(policy.PolicyDetails.PolicyAdditionalCoversEn),
+                        PolicyAdditionalCoversAr = jsonSerializer.Serialize(policy.PolicyDetails.PolicyAdditionalCoversAr),
+                        PolicyGeographicalAreaEn = policy.PolicyDetails.PolicyGeographicalAreaEn,
+                        PolicyGeographicalAreaAr = policy.PolicyDetails.PolicyGeographicalAreaAr,
+                        InsuredNameEn = policy.PolicyDetails.InsuredNameEn,
+                        InsuredNameAr = policy.PolicyDetails.InsuredNameAr,
+                        InsuredMobile = policy.PolicyDetails.InsuredMobile,
+                        InsuredID = policy.PolicyDetails.InsuredID,
+                        InsuredCity = policy.PolicyDetails.InsuredCity,
+                        InsuredDisctrict = policy.PolicyDetails.InsuredDisctrict,
+                        InsuredStreet = policy.PolicyDetails.InsuredStreet,
+                        InsuredBuildingNo = policy.PolicyDetails.InsuredBuildingNo,
+                        InsuredZipCode = policy.PolicyDetails.InsuredZipCode,
+                        InsuredAdditionalNo = policy.PolicyDetails.InsuredAdditionalNo,
+                        VehicleMakeEn = policy.PolicyDetails.VehicleMakeEn,
+                        VehicleMakeAr = policy.PolicyDetails.VehicleMakeAr,
+                        VehicleModelEn = policy.PolicyDetails.VehicleModelEn,
+                        VehicleModelAr = policy.PolicyDetails.VehicleModelAr,
+                        VehiclePlateTypeEn = policy.PolicyDetails.VehiclePlateTypeEn,
+                        VehiclePlateTypeAr = policy.PolicyDetails.VehiclePlateTypeAr,
+                        VehiclePlateNoEn = policy.PolicyDetails.VehiclePlateNoEn,
+                        VehiclePlateNoAr = policy.PolicyDetails.VehiclePlateNoAr,
+                        VehicleChassis = policy.PolicyDetails.VehicleChassis,
+                        VehicleBodyEn = policy.PolicyDetails.VehicleBodyEn,
+                        VehicleBodyAr = policy.PolicyDetails.VehicleBodyAr,
+                        VehicleYear = policy.PolicyDetails.VehicleYear,
+                        VehicleColorEn = policy.PolicyDetails.VehicleColorEn,
+                        VehicleColorAr = policy.PolicyDetails.VehicleColorAr,
+                        VehicleCapacity = policy.PolicyDetails.VehicleCapacity,
+                        VehicleSequenceNo = policy.PolicyDetails.VehicleSequenceNo,
+                        VehicleCustomNo = policy.PolicyDetails.VehicleCustomNo,
+                        VehicleOwnerName = policy.PolicyDetails.VehicleOwnerName,
+                        VehicleOwnerID = policy.PolicyDetails.VehicleOwnerID,
+                        VehicleUsingPurposesEn = policy.PolicyDetails.VehicleUsingPurposesEn,
+                        VehicleUsingPurposesAr = policy.PolicyDetails.VehicleUsingPurposesAr,
+                        VehicleRegistrationExpiryDate = policy.PolicyDetails.VehicleRegistrationExpiryDate,
+                        VehicleValue = policy.PolicyDetails.VehicleValue,
+                        OfficePremium = policy.PolicyDetails.OfficePremium,
+                        PACover = policy.PolicyDetails.PACover,
+                        ValueExcess = policy.PolicyDetails.ValueExcess,
+                        TotalPremium = policy.PolicyDetails.TotalPremium,
+                        NCDPercentage = policy.PolicyDetails.NCDPercentage,
+                        NCDAmount = policy.PolicyDetails.NCDAmount,
+                        VATPercentage = policy.PolicyDetails.VATPercentage,
+                        VATAmount = policy.PolicyDetails.VATAmount,
+                        CommissionPaid = policy.PolicyDetails.CommissionPaid,
+                        PolicyFees = policy.PolicyDetails.PolicyFees,
+                        ClalmLoadingPercentage = policy.PolicyDetails.ClalmLoadingPercentage,
+                        ClalmLoadingAmount = policy.PolicyDetails.ClalmLoadingAmount,
+                        AgeLoadingAmount = policy.PolicyDetails.AgeLoadingAmount,
+                        AgeLoadingPercentage = policy.PolicyDetails.AgeLoadingPercentage,
+                        DeductibleValue = policy.PolicyDetails.DeductibleValue,
+                        InsuranceEndDateH = policy.PolicyDetails.InsuranceEndDateH,
+                        InsuranceStartDateH = policy.PolicyDetails.InsuranceStartDateH,
+                        InsuredAge = policy.PolicyDetails.InsuredAge,
+                        NCDFreeYears = policy.PolicyDetails.NCDFreeYears,
+                        AccidentNo = policy.PolicyDetails.AccidentNo,
+                        AccidentLoadingAmount = policy.PolicyDetails.AccidentLoadingAmount,
+                        AccidentLoadingPercentage = policy.PolicyDetails.AccidentLoadingPercentage,
+                        PolicyIssueDate = policy.PolicyDetails.PolicyIssueDate,
+                        PolicyIssueTime = policy.PolicyDetails.PolicyIssueTime
+                    };
+                    policyData.PolicyDetail = policyDetail;
+                }
+
+                _policyRepository.Insert(policyData);
+                result = policyData.Id;
+            }
+
+
+            return result;
+        }
+
+        private void UpdatePolicyStatus(CheckoutDetail checkoutDetail, EPolicyStatus status)
+        {
+            //update policy status 
+            checkoutDetail.PolicyStatusId = (int)status;
+            //save the updates into db
+            _checkoutDetailRepository.Update(checkoutDetail);
+        }
+
+        private Guid SavePolicyFile(PolicyResponse policy)
+        {
+            Guid policyFileId = Guid.NewGuid();
+            PolicyFile policyFile = new PolicyFile
+            {
+                ID = policyFileId,
+                PolicyFileByte = policy.PolicyFile
+            };
+            _policyFileRepository.Insert(policyFile);
+            //get policy entity 
+            Policy policyEntity = _policyRepository.Table.FirstOrDefault(p => p.CheckOutDetailsId == policy.ReferenceId);
+            //update policy fileId 
+            policyEntity.PolicyFileId = policyFileId;
+            //save the updates into db
+            _policyRepository.Update(policyEntity);
+            return policyFileId;
+        }
+
+        #region Private Methods
+
+        /// <summary>
+        /// Log Policy Response error if the policy has errors
+        /// </summary>
+        /// <param name="policyResponseMessage"></param>
+
+        private void LogPolicyResponseErrorsIfExist(PolicyResponse policyResponseMessage)
+        {
+            if (policyResponseMessage != null)
+            {
+                if (policyResponseMessage.Errors != null)
+                {
+                    string errorsMessagesAsString = string.Empty;
+                    foreach (var error in policyResponseMessage.Errors)
+                    {
+                        errorsMessagesAsString = error.Message + Environment.NewLine;
+                    }
+                    _logger.Log($"Policy Response Errors {errorsMessagesAsString}");
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Create List of Additional drivers DTO
+        /// </summary>
+        /// <param name="additionalDriversData">List of CheckoutAdditionalDriver</param>
+        /// <param name="quoteResponse">Quotation Response</param>
+        /// <returns></returns>
+        private List<DriverDto> CreateAdditionalDriversDto(IEnumerable<CheckoutAdditionalDriver> additionalDriversData, QuotationResponse quoteResponse)
+        {
+            var additionalDrivers = new List<DriverDto>();
+            foreach (var additionaldriver in additionalDriversData)
+            {
+                var newDriverDto = new DriverDto();
+                newDriverDto.DriverTypeCode = 2;
+                newDriverDto.DriverId = additionaldriver.Driver != null ? long.Parse(additionaldriver.Driver.NIN) : 0;
+                newDriverDto.DriverIdTypeCode = additionaldriver.Driver != null && additionaldriver.Driver.IsCitizen ? 1 : 2;
+                newDriverDto.DriverBirthDate = additionaldriver.Driver != null && additionaldriver.Driver.IsCitizen ? additionaldriver.Driver.DateOfBirthH : additionaldriver.Driver.DateOfBirthG.ToString("dd-MM-yyyy", new CultureInfo("en-US"));
+                newDriverDto.DriverBirthDateG = additionaldriver.Driver != null ? additionaldriver.Driver.DateOfBirthG : new DateTime();
+                newDriverDto.DriverGenderCode = additionaldriver.Driver != null ? additionaldriver.Driver.Gender.GetCode() : "";
+                newDriverDto.DriverNationalityCode = additionaldriver.Driver != null && additionaldriver.Driver.NationalityCode != null && additionaldriver.Driver.NationalityCode.HasValue ? additionaldriver.Driver.NationalityCode.Value.ToString() : "";
+                newDriverDto.DriverFirstNameAr = additionaldriver.Driver != null ? additionaldriver.Driver.FirstName : "";
+                newDriverDto.DriverFirstNameEn = additionaldriver.Driver != null ? additionaldriver.Driver.EnglishFirstName : "";
+                newDriverDto.DriverMiddleNameAr = additionaldriver.Driver != null ? additionaldriver.Driver.SecondName : "";
+                newDriverDto.DriverMiddleNameEn = additionaldriver.Driver != null ? additionaldriver.Driver.EnglishSecondName : "";
+                newDriverDto.DriverLastNameAr = additionaldriver.Driver != null ? additionaldriver.Driver.LastName : "";
+                newDriverDto.DriverLastNameEn = additionaldriver.Driver != null ? additionaldriver.Driver.EnglishLastName : "";
+                newDriverDto.DriverBuildingNo = additionaldriver.Driver != null && additionaldriver.Driver.Addresses != null && additionaldriver.Driver.Addresses.FirstOrDefault() != null ? int.Parse(additionaldriver.Driver.Addresses.FirstOrDefault().BuildingNumber) : 0;
+                newDriverDto.DriverZipCode = additionaldriver.Driver != null && additionaldriver.Driver.Addresses != null && additionaldriver.Driver.Addresses.FirstOrDefault() != null ? int.Parse(additionaldriver.Driver.Addresses.FirstOrDefault().PostCode) : 0;
+                newDriverDto.DriverAdditionalNumber = additionaldriver.Driver != null && additionaldriver.Driver.Addresses != null && additionaldriver.Driver.Addresses.FirstOrDefault() != null ? int.Parse(additionaldriver.Driver.Addresses.FirstOrDefault().AdditionalNumber) : 0;
+                newDriverDto.DriverUnitNo = additionaldriver.Driver != null && additionaldriver.Driver.Addresses != null && additionaldriver.Driver.Addresses.FirstOrDefault() != null ? int.Parse(additionaldriver.Driver.Addresses.FirstOrDefault().UnitNumber) : 0;
+                newDriverDto.DriverCity = additionaldriver.Driver != null && additionaldriver.Driver.Addresses != null && additionaldriver.Driver.Addresses.FirstOrDefault() != null && !string.IsNullOrEmpty(additionaldriver.Driver.Addresses.FirstOrDefault().City) ?
+                 additionaldriver.Driver.Addresses.FirstOrDefault().City : "غير معروف";
+                newDriverDto.DriverCityCode = quoteResponse != null && quoteResponse.QuotationRequest != null ? quoteResponse.QuotationRequest.CityCode.ToString() : "";
+                newDriverDto.DriverDistrict = additionaldriver.Driver != null && additionaldriver.Driver.Addresses != null && additionaldriver.Driver.Addresses.FirstOrDefault() != null && !string.IsNullOrEmpty(additionaldriver.Driver.Addresses.FirstOrDefault().District) ?
+                 additionaldriver.Driver.Addresses.FirstOrDefault().District : "غير معروف";
+                newDriverDto.DriverStreet = additionaldriver.Driver != null && additionaldriver.Driver.Addresses != null && additionaldriver.Driver.Addresses.FirstOrDefault() != null && !string.IsNullOrEmpty(additionaldriver.Driver.Addresses.FirstOrDefault().Street) ?
+                 additionaldriver.Driver.Addresses.FirstOrDefault().Street : "غير معروف";
+                newDriverDto.DriverNCDFreeYears = additionaldriver.Driver?.NCDFreeYears;
+                newDriverDto.DriverNCDReference = additionaldriver.Driver?.NCDReference;
+                //newDriverDto.SaudiLicenseHeldYears = additionaldriver.Driver?.SaudiLicenseHeldYears;
+                //newDriverDto.NumOfFaultAccidentInLast5Years = najmRes.NumOfFaultAccidentInLast5Years;
+                //newDriverDto.EligibleForNoClaimsDiscountYears = najmRes.EligibleForNoClaimsDiscountYears;
+
+                //newDriverDto.MaritalStatus = additionaldriver.Driver.SocialStatus;
+                //newDriverDto.NumOfChildsUnder16 = yakeenResponse.NumOfChildsUnder16;
+                //newDriverDto.DriverOccupation = yakeenResponse.Occupation;
+                //newDriverDto.RoadConvictions = yakeenResponse.RoadConvictions;
+                additionalDrivers.Add(newDriverDto);
+            }
+            return additionalDrivers;
+        }
+
+
+
+        #endregion
+
+    }
+}

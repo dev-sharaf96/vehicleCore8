@@ -1,0 +1,211 @@
+﻿[
+  {
+    "Id": 1,
+    "ReportType": "TameenkInvoice",
+    "TemplateRelativePath": "TameenkInvoice_Template.docx"
+  },
+  {
+    "Id": 2,
+    "ReportType": "TUIC_PolicyTemplate_Third-Party Vehicle Insurance_Ar",
+    "TemplateRelativePath": "TUIC_PolicyTemplate_Third-Party Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 3,
+    "ReportType": "TUIC_PolicyTemplate_Third-Party Vehicle Insurance_En",
+    "TemplateRelativePath": "TUIC_PolicyTemplate_Third-Party Vehicle Insurance_En.docx"
+  },
+  {
+    "Id": 6,
+    "ReportType": "GGI_PolicyTemplate_Third-Party Vehicle Insurance_Ar",
+    "TemplateRelativePath": "GGI_PolicyTemplate_Third-Party Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 7,
+    "ReportType": "GGI_PolicyTemplate_Comprehensive Vehicle Insurance_Ar",
+    "TemplateRelativePath": "GGI_PolicyTemplate_Comprehensive Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 8,
+    "ReportType": "GGI_PolicyTemplate_Third-Party Vehicle Insurance_En",
+    "TemplateRelativePath": "GGI_PolicyTemplate_Third-Party Vehicle Insurance_En.docx"
+  },
+  {
+    "Id": 9,
+    "ReportType": "GGI_PolicyTemplate_Comprehensive Vehicle Insurance_En",
+    "TemplateRelativePath": "GGI_PolicyTemplate_Comprehensive Vehicle Insurance_En.docx"
+  },
+  {
+    "Id": 10,
+    "ReportType": "Ahlia_PolicyTemplate_Ar",
+    "TemplateRelativePath": "Ahlia_PolicyTemplate_Ar.docx"
+  },
+  {
+    "Id": 11,
+    "ReportType": "Ahlia_PolicyTemplate_En",
+    "TemplateRelativePath": "Ahlia_PolicyTemplate_En.docx"
+  },
+  {
+    "Id": 12,
+    "ReportType": "GUI_PolicyTemplate_Ar",
+    "TemplateRelativePath": "GUI_PolicyTemplate_Ar.docx"
+  },
+  {
+    "Id": 13,
+    "ReportType": "GUI_PolicyTemplate_En",
+    "TemplateRelativePath": "GUI_PolicyTemplate_En.docx"
+  },
+  {
+    "Id": 14,
+    "ReportType": "MedGulf_PolicyTemplate_Third-Party Vehicle Insurance_Ar",
+    "TemplateRelativePath": "MedGulf_PolicyTemplate_Third-Party Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 15,
+    "ReportType": "MedGulf_PolicyTemplate_Third-Party Vehicle Insurance_En",
+    "TemplateRelativePath": "MedGulf_PolicyTemplate_Third-Party Vehicle Insurance_En.docx"
+  },
+  {
+    "Id": 16,
+    "ReportType": "MedGulf_PolicyTemplate_Comprehensive Vehicle Insurance_Ar",
+    "TemplateRelativePath": "MedGulf_PolicyTemplate_Comprehensive Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 17,
+    "ReportType": "MedGulf_PolicyTemplate_Comprehensive Vehicle Insurance_En",
+    "TemplateRelativePath": "MedGulf_PolicyTemplate_Comprehensive Vehicle Insurance_En.docx"
+  },
+  {
+    "Id": 18,
+    "ReportType": "GGI_PolicyArabicTemplate",
+    "TemplateRelativePath": "GGI_PolicyArabicTemplate.docx"
+  },
+  {
+    "Id": 19,
+    "ReportType": "Ahlia_PolicyArabicTemplate",
+    "TemplateRelativePath": "Ahlia_PolicyArabicTemplate.docx"
+  },
+
+  {
+    "Id": 4,
+    "ReportType": "Saqr_PolicyTemplate_Third-Party Vehicle Insurance_WithoutRoadsideAssistance_Ar",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Third-Party Vehicle Insurance_WithoutRoadsideAssistance_Ar.docx"
+  },
+  {
+    "Id": 5,
+    "ReportType": "Saqr_PolicyTemplate_Third-Party Vehicle Insurance_WithoutRoadsideAssistance_En",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Third-Party Vehicle Insurance_WithoutRoadsideAssistance_En.docx"
+  },
+
+  {
+    "Id": 20,
+    "ReportType": "Saqr_PolicyTemplate_Third-Party Vehicle Insurance_WithRoadsideAssistance_Ar",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Third-Party Vehicle Insurance_WithRoadsideAssistance_Ar.docx"
+  },
+  {
+    "Id": 21,
+    "ReportType": "Saqr_PolicyTemplate_Third-Party Vehicle Insurance_WithRoadsideAssistance_En",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Third-Party Vehicle Insurance_WithRoadsideAssistance_En.docx"
+  },
+
+  {
+    "Id": 22,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithoutRoadsideAssistance_Ar",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithoutRoadsideAssistance_Ar.docx"
+  },
+  {
+    "Id": 23,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithoutRoadsideAssistance_En",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithoutRoadsideAssistance_En.docx"
+  },
+  {
+    "Id": 24,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Ar",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Ar.docx"
+  },
+  {
+    "Id": 25,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_En",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_En.docx"
+  },
+
+  {
+    "Id": 30,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Passenger_Only_Ar",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Passenger_Only_Ar.docx"
+  },
+  {
+    "Id": 31,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Passenger_Only_En",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Passenger_Only_En.docx"
+  },
+  {
+    "Id": 32,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Driver_Only_Ar",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Driver_Only_Ar.docx"
+  },
+  {
+    "Id": 33,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Driver_Only_En",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Driver_Only_En.docx"
+  },
+  {
+    "Id": 34,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Driver&Passenger_Ar",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Driver&Passenger_Ar.docx"
+  },
+  {
+    "Id": 35,
+    "ReportType": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Driver&Passenger_En",
+    "TemplateRelativePath": "Saqr_PolicyTemplate_Comprehensive Vehicle Insurance_WithRoadsideAssistance_Driver&Passenger_En.docx"
+  },
+  {
+    "Id": 36,
+    "ReportType": "TUIC_PolicyTemplate_Comprehensive Vehicle Insurance_Ar",
+    "TemplateRelativePath": "TUIC_PolicyTemplate_Comprehensive Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 37,
+    "ReportType": "TUIC_PolicyTemplate_Comprehensive Vehicle Insurance_En",
+    "TemplateRelativePath": "TUIC_PolicyTemplate_Comprehensive Vehicle Insurance_En.docx"
+  },
+  {
+    "Id": 38,
+    "ReportType": "Solidarity_PolicyTemplate_Third-Party Vehicle Insurance_Ar",
+    "TemplateRelativePath": "Solidarity_PolicyTemplate_Third-Party Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 37,
+    "ReportType": "Solidarity_PolicyTemplate_Third-Party Vehicle Insurance_En",
+    "TemplateRelativePath": "Solidarity_PolicyTemplate_Third-Party Vehicle Insurance_En.docx"
+  },
+  {
+    "Id": 39,
+    "ReportType": "Solidarity_PolicyTemplate_Comprehensive Vehicle Insurance_Ar",
+    "TemplateRelativePath": "Solidarity_PolicyTemplate_Comprehensive Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 40,
+    "ReportType": "Solidarity_PolicyTemplate_Comprehensive Vehicle Insurance_En",
+    "TemplateRelativePath": "Solidarity_PolicyTemplate_Comprehensive Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 41,
+    "ReportType": "SAICO_PolicyTemplate_Third-Party Vehicle Insurance_Ar",
+    "TemplateRelativePath": "SAICO_PolicyTemplate_Third-Party Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 42,
+    "ReportType": "SAICO_PolicyTemplate_Third-Party Vehicle Insurance_En",
+    "TemplateRelativePath": "SAICO_PolicyTemplate_Third-Party Vehicle Insurance_En.docx"
+  },
+  {
+    "Id": 43,
+    "ReportType": "SAICO_PolicyTemplate_Comprehensive Vehicle Insurance_Ar",
+    "TemplateRelativePath": "SAICO_PolicyTemplate_Comprehensive Vehicle Insurance_Ar.docx"
+  },
+  {
+    "Id": 44,
+    "ReportType": "SAICO_PolicyTemplate_Comprehensive Vehicle Insurance_En",
+    "TemplateRelativePath": "SAICO_PolicyTemplate_Comprehensive Vehicle Insurance_En.docx"
+  }
+]
