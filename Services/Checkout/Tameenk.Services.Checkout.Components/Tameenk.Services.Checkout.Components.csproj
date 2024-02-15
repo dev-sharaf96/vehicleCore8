@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADCFEAD4-4FEB-4BE4-9343-63735C160FF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tameenk.Services.Checkout.Components</RootNamespace>
+    <AssemblyName>Tameenk.Services.Checkout.Components</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Autofac.WebApi2.4.0.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNetCore.Identity.EntityFrameworkCore.2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=3.2.1.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NLog.3.2.1\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Purplelight.Framework.Autofac.Integration.WebApi, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Purplelight.Framework.Autofac.Integration.WebApi.0.2.2\lib\net45\Purplelight.Framework.Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.1.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.1.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckoutContext.cs" />
+    <Compile Include="ICheckoutContext.cs" />
+    <Compile Include="Models\Checkout\ActivationEmailToReceivePolicyModel.cs" />
+    <Compile Include="Models\Checkout\AddBenefitOutput.cs" />
+    <Compile Include="Models\Checkout\AddDriverOutput.cs" />
+    <Compile Include="Models\Checkout\BaseModel.cs" />
+    <Compile Include="Models\Checkout\BenefitModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutBCareDiscountModel.cs" />
+    <Compile Include="Models\Checkout\CheckoutModel.cs" />
+    <Compile Include="Models\Checkout\PrePaymentCheckModel.cs" />
+    <Compile Include="Models\Checkout\CompanyModel.cs" />
+    <Compile Include="Models\Checkout\IBANValidationnDictionaries.cs" />
+    <Compile Include="Models\Checkout\IbanValidationOutput.cs" />
+    <Compile Include="Models\Checkout\IbanValidationServiceResult.cs" />
+    <Compile Include="Models\Checkout\NumberOfAccidentOutput.cs" />
+    <Compile Include="Models\Checkout\ODCheckoutDetails.cs" />
+    <Compile Include="Models\Checkout\PriceModel.cs" />
+    <Compile Include="Models\Checkout\ProductModel.cs" />
+    <Compile Include="Models\Checkout\PurchaseBenefitModel.cs" />
+    <Compile Include="Models\Checkout\PurchaseDriverModel.cs" />
+    <Compile Include="Models\Payments\EdaatPaymentResponseModel.cs" />
+    <Compile Include="Models\Payments\PaymentMethodModel.cs" />
+    <Compile Include="Models\Payments\Sadad\SadadPaymentResponseModel.cs" />
+    <Compile Include="Models\Payments\SendActivationEmailModel.cs" />
+    <Compile Include="Models\Payments\WalletPaymentResponseModel.cs" />
+    <Compile Include="Output\AddressValidationOutput.cs" />
+    <Compile Include="Output\CheckoutDiscountOutput.cs" />
+    <Compile Include="Output\HyperPayOutput.cs" />
+    <Compile Include="Output\CorporateOutput.cs" />
+    <Compile Include="Output\EdaatOutput.cs" />
+    <Compile Include="Output\PolicyOutput.cs" />
+    <Compile Include="Output\CheckoutOutput.cs" />
+    <Compile Include="Output\SaudiPostAddress.cs" />
+    <Compile Include="Output\SaudiPostApiResult.cs" />
+    <Compile Include="Output\SaudiPostOutput.cs" />
+    <Compile Include="Output\WalletPaymentOutput.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\..\Architecture\Tameenk.DependencyValidation\InquaryIntegration.layerdiagram">
+      <Link>InquaryIntegration.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Integration\Tameenk.Integration.Core\Tameenk.Integration.Core.csproj">
+      <Project>{75031295-c1c2-499d-8dd3-1ac7357fc897}</Project>
+      <Name>Tameenk.Integration.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Integration\Tameenk.Integration.Dto\Tameenk.Integration.Dto.csproj">
+      <Project>{51816323-e9ba-457f-844c-0237993ac117}</Project>
+      <Name>Tameenk.Integration.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Common.Utilities\Tameenk.Common.Utilities.csproj">
+      <Project>{14f920b0-e1f2-4e7b-be22-4bde4fc9541f}</Project>
+      <Name>Tameenk.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core.Domain\Tameenk.Core.Domain.csproj">
+      <Project>{8edfcd3e-4461-4b2c-a83e-175983e9c6b7}</Project>
+      <Name>Tameenk.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Core\Tameenk.Core.csproj">
+      <Project>{5cd41905-ac08-410f-9ffb-b3975ffba538}</Project>
+      <Name>Tameenk.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Data\Tameenk.Data.csproj">
+      <Project>{9e27f8af-2b2d-4a16-a0b3-ebf07fac188e}</Project>
+      <Name>Tameenk.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Loggin.DAL\Tameenk.Loggin.DAL.csproj">
+      <Project>{339cf262-0f17-4c60-bb6f-fdc5133b3132}</Project>
+      <Name>Tameenk.Loggin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Resources\Tameenk.Resources.csproj">
+      <Project>{2cff55dc-edd1-41c7-92f6-04c650429a9d}</Project>
+      <Name>Tameenk.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Security\Tameenk.Security.csproj">
+      <Project>{e0a5623c-439c-42ea-90d3-c40192abac16}</Project>
+      <Name>Tameenk.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Tameenk.Services\Tameenk.Services.csproj">
+      <Project>{9b11f328-dbf1-4b67-b86d-f3077b4eea5e}</Project>
+      <Name>Tameenk.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Tameenk.Api.Core\Tameenk.Api.Core.csproj">
+      <Project>{d5ef56de-74f4-468b-94a0-73d33c2d14cc}</Project>
+      <Name>Tameenk.Api.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Tamkeen.bll\Tamkeen.bll.csproj">
+      <Project>{f0344826-89df-484d-8b72-a31d51c77790}</Project>
+      <Name>Tamkeen.bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Inquiry\Tameenk.Services.Inquiry.Components\Tameenk.Services.Inquiry.Components.csproj">
+      <Project>{DD676510-DEEE-4664-9D2F-AF11F9B8A792}</Project>
+      <Name>Tameenk.Services.Inquiry.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Inquiry\Tameenk.Services.YakeenIntegration.Business\Tameenk.Services.YakeenIntegration.Business.csproj">
+      <Project>{431df20e-0472-4636-b5a7-8e94f2defe03}</Project>
+      <Name>Tameenk.Services.YakeenIntegration.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Payment\Tameenk.Payment.Esal.Component\Tameenk.Payment.Esal.Component.csproj">
+      <Project>{26A5D248-8A21-44AF-9E3B-8875A4E12806}</Project>
+      <Name>Tameenk.Payment.Esal.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Quotation\Tameenk.Services.Quotation.Components\Tameenk.Services.Quotation.Components.csproj">
+      <Project>{2F9AF120-775F-488E-89F4-22A0D6EC9EE4}</Project>
+      <Name>Tameenk.Services.Quotation.Components</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
